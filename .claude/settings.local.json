@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p 01-standards/templates 01-standards/patterns 02-pipeline/skills 02-pipeline/tools 03-products/projects .claude/memory)"
+    ],
+    "additionalDirectories": [
+      "e:\\mywork\\AOS\\.claude"
+    ]
+  }
+}
