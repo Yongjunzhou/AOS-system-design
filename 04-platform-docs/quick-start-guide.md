@@ -33,15 +33,103 @@ AOS（Architecture & Orchestration System）是一个系统设计治理项目，
 
 ---
 
-## 二、我是...我应该做什么？
+## 二、6 个核心任务
+
+AOS 采用**任务驱动架构**，将整个设计流程分解为 6 个独立的工作单元。每个任务都有完整的指南、模板、检查清单、Skill 和工作流。
+
+### Task 1：需求规范化 📋
+
+**目标**：收集、规范化、分解原始需求，检测冲突和重复
+
+**快速开始**：
+- 📖 [Task 1 README](../01-task-normalization/README.md)
+- 📝 [规范化指南](../01-task-normalization/guidelines/)
+- 📋 [检查清单](../01-task-normalization/checklists/)
+- 🎯 [工作流](../01-task-normalization/workflows/)
+
+**关键输出**：规范化的相关方需求（SR）
+
+---
+
+### Task 2：SR → BA 映射 🏢
+
+**目标**：将相关方需求映射到业务架构 5 级节点
+
+**快速开始**：
+- 📖 [Task 2 README](../02-task-sr-ba-design/README.md)
+- 📝 [映射指南](../02-task-sr-ba-design/guidelines/)
+- 📋 [检查清单](../02-task-sr-ba-design/checklists/)
+- 🎯 [工作流](../02-task-sr-ba-design/workflows/)
+
+**关键输出**：业务架构设计 + SR→BA 映射矩阵
+
+---
+
+### Task 3：BA → SysReq 映射 ⚙️
+
+**目标**：将业务架构映射到系统需求 5 级节点
+
+**快速开始**：
+- 📖 [Task 3 README](../03-task-ba-sysreq-design/README.md)
+- 📝 [映射指南](../03-task-ba-sysreq-design/guidelines/)
+- 📋 [检查清单](../03-task-ba-sysreq-design/checklists/)
+- 🎯 [工作流](../03-task-ba-sysreq-design/workflows/)
+
+**关键输出**：系统需求设计 + BA→SysReq 映射矩阵
+
+---
+
+### Task 4：SR-NFR → SysReq-NFR 映射 🎯
+
+**目标**：将相关方非功能需求映射到系统非功能需求
+
+**快速开始**：
+- 📖 [Task 4 README](../04-task-sr-nfr-design/README.md)
+- 📝 [映射指南](../04-task-sr-nfr-design/guidelines/)
+- 📋 [检查清单](../04-task-sr-nfr-design/checklists/)
+- 🎯 [工作流](../04-task-sr-nfr-design/workflows/)
+
+**关键输出**：系统非功能需求 + SR-NFR→SysReq-NFR 映射矩阵
+
+---
+
+### Task 5：SysReq → PA 映射 🔧
+
+**目标**：将系统需求映射到产品架构末级节点（前后端组件）
+
+**快速开始**：
+- 📖 [Task 5 README](../05-task-sysreq-pa-design/README.md)
+- 📝 [映射指南](../05-task-sysreq-pa-design/guidelines/)
+- 📋 [检查清单](../05-task-sysreq-pa-design/checklists/)
+- 🎯 [工作流](../05-task-sysreq-pa-design/workflows/)
+
+**关键输出**：产品架构设计 + SysReq→PA 映射矩阵 + 非功能权衡决策
+
+---
+
+### Task 6：端到端追溯分析 ✅
+
+**目标**：验证完整的追溯链路，生成符合性报告
+
+**快速开始**：
+- 📖 [Task 6 README](../06-task-traceability-analysis/README.md)
+- 📝 [分析指南](../06-task-traceability-analysis/guidelines/)
+- 📋 [检查清单](../06-task-traceability-analysis/checklists/)
+- 🎯 [工作流](../06-task-traceability-analysis/workflows/)
+
+**关键输出**：追溯矩阵 + 符合性报告 + 缺陷清单
+
+---
+
+## 三、我是...我应该做什么？
 
 ### 👤 业务部门（需求提出方）
 
 **你的任务**：提出清晰的相关方需求
 
 **快速步骤**：
-1. 阅读 [需求规范化指南](../01-standards/guidelines/guideline-1-normalization.md#二规范化规则)
-2. 按照模板填写需求（参考 [相关方需求模板](../01-standards/templates/stakeholder-requirements-template.md)）
+1. 阅读 [Task 1 规范化指南](../01-task-normalization/guidelines/)
+2. 按照模板填写需求（参考 [相关方需求模板](../01-task-normalization/templates/)）
 3. 提交给企业架构团队进行规范化处理
 
 **关键点**：
@@ -53,123 +141,64 @@ AOS（Architecture & Orchestration System）是一个系统设计治理项目，
 
 ### 👨‍💼 企业架构团队
 
-**你的任务**：规范化需求，设计业务架构
+**你的任务**：执行 Task 1 和 Task 2
 
 **快速步骤**：
 
-#### 第1步：规范化和分解需求（1-2小时）
-```
-原始需求 
-  → 检查完整性（9个必填字段）
-  → 分解为原子需求
-  → 冲突检测
-  → 重复检测
-  → 分类确认
-```
+#### Task 1：需求规范化（1-2小时）
+- 参考：[Task 1 README](../01-task-normalization/README.md)
+- 检查完整性、分解、冲突检测、重复检测、分类确认
 
-参考：[准则1：需求规范化](../01-standards/guidelines/guideline-1-normalization.md)
-
-#### 第2步：创建业务架构占位符（1-2小时）
-```
-规范化的需求
-  → 快速扫描末级节点
-  → 创建BA占位符
-  → 建立映射表
-  → 冻结占位符结构
-```
-
-参考：[占位符规范](../01-standards/guidelines/guideline-placeholder.md)
-
-#### 第3步：设计业务架构（2-3天）
-```
-填充BA占位符
-  → 设计业务流程
-  → 定义参与角色
-  → 标记关键决策点
-  → 预留SysReq占位符
-```
-
-参考：[准则2：SR→BA映射](../01-standards/guidelines/guideline-2-sr-to-ba-mapping.md)
+#### Task 2：SR → BA 映射（2-3天）
+- 参考：[Task 2 README](../02-task-sr-ba-design/README.md)
+- 创建占位符、设计业务架构、建立映射关系
 
 **关键工具**：
-- 模板：[业务架构模板](../01-standards/templates/business-architecture-template.md)
-- 验证：`python 02-pipeline/tools/validate.py --project <name> --check ba`
+- 验证：`python 07-shared-assets/tools/validate.py --project <name> --check ba`
 
 ---
 
 ### 🏗️ 系统设计团队
 
-**你的任务**：设计系统需求和产品架构
+**你的任务**：执行 Task 3、Task 4 和 Task 5
 
 **快速步骤**：
 
-#### 第1步：创建系统需求占位符（1-2小时）
-```
-业务架构
-  → 快速扫描BA承接点
-  → 创建SysReq占位符
-  → 建立映射表
-  → 冻结占位符结构
-```
+#### Task 3：BA → SysReq 映射（2-3天）
+- 参考：[Task 3 README](../03-task-ba-sysreq-design/README.md)
+- 创建占位符、设计系统需求、建立映射关系
 
-#### 第2步：设计系统需求（2-3天）
-```
-填充SysReq占位符
-  → 设计功能需求
-  → 标记非功能约束
-  → 预留PA占位符
-```
+#### Task 4：SR-NFR → SysReq-NFR 映射（1-2天）
+- 参考：[Task 4 README](../04-task-sr-nfr-design/README.md)
+- 设计非功能需求、建立映射关系
 
-参考：[准则3：BA→SysReq映射](../01-standards/guidelines/guideline-3-ba-to-sr-mapping.md)
-
-#### 第3步：创建产品架构占位符（1-2小时）
-```
-系统需求
-  → 快速扫描SysReq承接点
-  → 创建PA占位符
-  → 建立映射表
-```
-
-#### 第4步：设计产品架构（2-3天）
-```
-填充PA占位符
-  → 设计组件架构
-  → 定义组件职责
-  → 设计组件通信
-```
-
-参考：[准则4：SysReq→PA映射](../01-standards/guidelines/guideline-4-sr-to-pa-mapping.md)
+#### Task 5：SysReq → PA 映射（2-3天）
+- 参考：[Task 5 README](../05-task-sysreq-pa-design/README.md)
+- 创建占位符、设计产品架构、建立映射关系
 
 **关键工具**：
-- 模板：[系统需求模板](../01-standards/templates/system-requirements-template.md)、[产品架构模板](../01-standards/templates/product-architecture-template.md)
-- 验证：`python 02-pipeline/tools/validate.py --project <name> --check all`
+- 验证：`python 07-shared-assets/tools/validate.py --project <name> --check all`
 
 ---
 
-### 🔍 IT管理部门
+### 🔍 质量保证团队
 
-**你的任务**：质量检查、版本管理、文档发布
+**你的任务**：执行 Task 6 和质量检查
 
 **快速步骤**：
 
-1. **质量检查**
-   - 检查所有文档是否符合模板要求
-   - 验证映射关系的完整性
-   - 生成质量报告
+#### Task 6：端到端追溯分析（1-2天）
+- 参考：[Task 6 README](../06-task-traceability-analysis/README.md)
+- 验证追溯链路、生成符合性报告、识别缺陷
 
-2. **版本管理**
-   - 记录所有变更到 `changelog.md`
-   - 更新版本号（v1.0 → v1.1）
-   - 追踪变更影响范围
-
-3. **文档发布**
-   - 审核文档内容
-   - 发布到文档库
-   - 管理访问权限
+#### 质量检查
+- 验证所有映射关系的完整性
+- 生成质量报告
+- 记录变更到 `changelog.md`
 
 **关键工具**：
-- 验证：`python 02-pipeline/tools/validate.py --project <name> --check all`
-- 报告：`python 02-pipeline/tools/generate-report.py --project <name> --report summary`
+- 验证：`python 07-shared-assets/tools/validate.py --project <name> --check all`
+- 报告：`python 07-shared-assets/tools/generate-report.py --project <name> --report summary`
 
 ---
 
@@ -180,17 +209,16 @@ AOS（Architecture & Orchestration System）是一个系统设计治理项目，
 **快速步骤**：
 
 1. **了解Skill定义**
-   - 阅读 [Skill定义文档](../02-pipeline/skills/)
+   - 查看各任务目录下的 `skills/` 子目录
    - 理解输入、输出、处理逻辑
 
 2. **开发核心Skill**
-   - requirement-normalization：需求规范化
-   - requirement-decomposition：需求分解
-   - conflict-detection：冲突检测
-   - duplicate-detection：重复检测
-   - sr-to-ba-mapping：SR→BA映射
-   - ba-to-sr-mapping：BA→SysReq映射
-   - sr-to-pa-mapping：SysReq→PA映射
+   - Task 1：requirement-normalization、requirement-decomposition、conflict-detection、duplicate-detection
+   - Task 2：business-pattern-matching、sr-to-ba-mapping
+   - Task 3：architecture-pattern-matching、ba-to-sysreq-mapping
+   - Task 4：sr-nfr-to-sysreq-nfr-mapping
+   - Task 5：sysreq-to-pa-mapping
+   - Task 6：traceability-analysis
 
 3. **优化提示词**
    - 建立提示词库
@@ -198,33 +226,31 @@ AOS（Architecture & Orchestration System）是一个系统设计治理项目，
    - 记录最佳实践
 
 **关键文件**：
-- Skill定义：`02-pipeline/skills/*.md`
-- 工具脚本：`02-pipeline/tools/*.py`
+- Skill定义：各任务目录下的 `skills/` 子目录
+- 工具脚本：`07-shared-assets/tools/`
 
 ---
 
-## 三、常见场景
-
 ### 场景1：新增一个相关方需求
 
-**时间**：1-2天
+**时间**：3-5天
 
 **步骤**：
 1. 业务部门提出需求
-2. 企业架构团队规范化和分解（1-2小时）
-3. 企业架构团队创建BA占位符（1-2小时）
-4. 企业架构团队设计BA（1-2天）
-5. 系统设计团队创建SysReq占位符（1-2小时）
-6. 系统设计团队设计SysReq（1-2天）
-7. 系统设计团队创建PA占位符（1-2小时）
-8. 系统设计团队设计PA（1-2天）
-9. IT管理部门质量检查和发布
+2. 执行 Task 1：需求规范化（1-2小时）
+3. 执行 Task 2：SR → BA 映射（2-3天）
+4. 执行 Task 3：BA → SysReq 映射（2-3天）
+5. 执行 Task 4：SR-NFR → SysReq-NFR 映射（1-2天）
+6. 执行 Task 5：SysReq → PA 映射（2-3天）
+7. 执行 Task 6：端到端追溯分析（1-2天）
 
 **关键文档**：
-- [准则1](../01-standards/guidelines/guideline-1-normalization.md)
-- [准则2](../01-standards/guidelines/guideline-2-sr-to-ba-mapping.md)
-- [准则3](../01-standards/guidelines/guideline-3-ba-to-sr-mapping.md)
-- [准则4](../01-standards/guidelines/guideline-4-sr-to-pa-mapping.md)
+- [Task 1 README](../01-task-normalization/README.md)
+- [Task 2 README](../02-task-sr-ba-design/README.md)
+- [Task 3 README](../03-task-ba-sysreq-design/README.md)
+- [Task 4 README](../04-task-sr-nfr-design/README.md)
+- [Task 5 README](../05-task-sysreq-pa-design/README.md)
+- [Task 6 README](../06-task-traceability-analysis/README.md)
 
 ---
 
@@ -234,14 +260,14 @@ AOS（Architecture & Orchestration System）是一个系统设计治理项目，
 
 **步骤**：
 1. 业务部门提出修改需求
-2. 企业架构团队评估影响范围
-3. 更新相关的BA、SysReq、PA文档
+2. 评估影响范围（涉及哪些任务）
+3. 更新相关任务的输出文档
 4. 更新映射关系
-5. 更新changelog.md
-6. IT管理部门质量检查和发布
+5. 执行 Task 6：端到端追溯分析
+6. 更新 changelog.md
 
 **关键工具**：
-- 影响分析：`python 02-pipeline/tools/generate-report.py --project <name> --report impact`
+- 影响分析：`python 07-shared-assets/tools/generate-report.py --project <name> --report impact`
 
 ---
 
@@ -252,13 +278,13 @@ AOS（Architecture & Orchestration System）是一个系统设计治理项目，
 **步骤**：
 ```bash
 # 验证所有映射关系
-python 02-pipeline/tools/validate.py --project <name> --check all
+python 07-shared-assets/tools/validate.py --project <name> --check all
 
 # 生成追溯矩阵报告
-python 02-pipeline/tools/generate-report.py --project <name> --report traceability
+python 07-shared-assets/tools/generate-report.py --project <name> --report traceability
 
 # 生成项目汇总报告
-python 02-pipeline/tools/generate-report.py --project <name> --report summary
+python 07-shared-assets/tools/generate-report.py --project <name> --report summary
 ```
 
 ---
@@ -335,23 +361,25 @@ python 02-pipeline/tools/validate.py --project <name> --check all
 ### 📚 核心文档
 - [CLAUDE.md](../CLAUDE.md) - 项目总体指导
 - [相关方需求文档](pipeline-stakeholder-requirements.md) - 完整的需求定义
-- [准则总览](../01-standards/guidelines/README.md) - 5条核心准则
 
-### 📋 模板库
-- [相关方需求模板](../01-standards/templates/stakeholder-requirements-template.md)
-- [业务架构模板](../01-standards/templates/business-architecture-template.md)
-- [系统需求模板](../01-standards/templates/system-requirements-template.md)
-- [产品架构模板](../01-standards/templates/product-architecture-template.md)
+### 📋 6 个核心任务
+- [Task 1：需求规范化](../01-task-normalization/README.md)
+- [Task 2：SR → BA 映射](../02-task-sr-ba-design/README.md)
+- [Task 3：BA → SysReq 映射](../03-task-ba-sysreq-design/README.md)
+- [Task 4：SR-NFR → SysReq-NFR 映射](../04-task-sr-nfr-design/README.md)
+- [Task 5：SysReq → PA 映射](../05-task-sysreq-pa-design/README.md)
+- [Task 6：端到端追溯分析](../06-task-traceability-analysis/README.md)
 
 ### 🔧 工具脚本
-- [验证工具](../02-pipeline/tools/validate.py)
-- [报告生成工具](../02-pipeline/tools/generate-report.py)
+- [验证工具](../07-shared-assets/tools/validate.py)
+- [报告生成工具](../07-shared-assets/tools/generate-report.py)
 
 ### 📖 示例项目
-- [Project-A](../03-products/projects/project-a/)
+- [Project-A](../08-products/projects/project-a/)
 
-### 🎯 工作流程
-- [新增需求处理流程](../02-pipeline/workflows.md)
+### 🎯 共享资产
+- [业务模式库](../07-shared-assets/patterns/business-patterns.md)
+- [质量检查清单](../07-shared-assets/quality-standards/quality-checklist.md)
 
 ---
 

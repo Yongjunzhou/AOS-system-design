@@ -128,20 +128,31 @@ AOS（Architecture & Orchestration System）是一个系统设计治理项目，
 - 非功能需求承接层节点必须有完整的上级节点链，直到非功能需求根节点
 - 6 级操作序列是非功能需求的验证细节，不参与需求映射
 
-## 4 条核心设计准则
+## 6 个核心任务（任务驱动架构）
 
-| 准则 | 内容 | 对应文件 |
-|------|------|----------|
-| 准则 1 | 需求规范化、分解、初步 BA 设计、冲突/重复检测、分类确认 | `01-standards/guidelines/guideline-1-normalization.md` |
-| 准则 2 | SR → BA 映射（N:1 分配） | `01-standards/guidelines/guideline-2-sr-to-ba-mapping.md` |
-| 准则 3 | BA → SysReq 映射（N:1 分配） | `01-standards/guidelines/guideline-3-ba-to-sr-mapping.md` |
-| 准则 4 | SysReq → PA 映射（N:1 分配） | `01-standards/guidelines/guideline-4-sr-to-pa-mapping.md` |
+AOS 重构采用**任务驱动架构**，将整个设计流程分解为 6 个独立的工作单元，每个任务包含完整的指南、模板、检查清单、Skill 和工作流：
+
+| 任务 | 名称 | 目标 | 对应目录 |
+|------|------|------|----------|
+| **Task 1** | 需求规范化 | 收集、规范化、分解原始需求，检测冲突和重复 | `01-task-normalization/` |
+| **Task 2** | SR → BA 映射 | 将相关方需求映射到业务架构 5 级节点 | `02-task-sr-ba-design/` |
+| **Task 3** | BA → SysReq 映射 | 将业务架构映射到系统需求 5 级节点 | `03-task-ba-sysreq-design/` |
+| **Task 4** | SR-NFR → SysReq-NFR 映射 | 将相关方非功能需求映射到系统非功能需求 | `04-task-sr-nfr-design/` |
+| **Task 5** | SysReq → PA 映射 | 将系统需求映射到产品架构末级节点（前后端组件） | `05-task-sysreq-pa-design/` |
+| **Task 6** | 端到端追溯分析 | 验证完整的追溯链路，生成符合性报告 | `06-task-traceability-analysis/` |
+
+**任务驱动架构的优势**：
+- ✅ 每个任务是独立的工作单元，包含所有必需资源
+- ✅ 支持多个团队并行工作
+- ✅ 清晰的输入/输出定义，便于协作
+- ✅ 完整的工作流和检查清单，降低出错风险
+- ✅ 易于扩展和维护
 
 ## 9 个 AI Skill（自动化资产）
 
-按处理流程排列：`requirement-normalization` → `requirement-decomposition` → `conflict-detection` → `duplicate-detection` → `business-pattern-matching` → `architecture-pattern-matching` → `sr-to-ba-mapping` → `ba-to-sr-mapping` → `sr-to-pa-mapping`
+按处理流程排列：`requirement-normalization` → `requirement-decomposition` → `conflict-detection` → `duplicate-detection` → `business-pattern-matching` → `architecture-pattern-matching` → `sr-to-ba-mapping` → `ba-to-sysreq-mapping` → `sysreq-to-pa-mapping`
 
-所有 Skill 定义位于 `02-pipeline/skills/`，每个 Skill 描述特定任务的输入、输出和处理步骤。
+所有 Skill 定义分布在各任务目录的 `skills/` 子目录中，每个 Skill 描述特定任务的输入、输出和处理步骤。
 
 ## 新增需求处理流程（12 步）
 
@@ -192,38 +203,66 @@ AOS（Architecture & Orchestration System）是一个系统设计治理项目，
 
 ```bash
 # 验证项目映射关系
-python 02-pipeline/tools/validate.py --project <project-name> --check all
+python 07-shared-assets/tools/validate.py --project <project-name> --check all
 
 # 生成追溯矩阵报告
-python 02-pipeline/tools/generate-report.py --project <project-name> --report traceability
+python 07-shared-assets/tools/generate-report.py --project <project-name> --report traceability
 
 # 生成项目汇总报告
-python 02-pipeline/tools/generate-report.py --project <project-name> --report summary
+python 07-shared-assets/tools/generate-report.py --project <project-name> --report summary
 ```
 
-## Project Structure
+## Project Structure（新的任务驱动架构）
 
 ```
-01-standards/        # 组织资产：5 条准则 + 4 个模板 + 业务模式库 + 质量检查清单
-02-pipeline/         # 自动化资产：9 个 Skill + 2 个工具脚本 + 工作流定义
-03-products/         # 产品数据：按项目组织的设计文档
-04-platform-docs/    # 平台文档：快速开始指南、相关方需求等
-.claude/             # Claude Code 配置
+01-task-normalization/           # Task 1：需求规范化
+02-task-sr-ba-design/            # Task 2：SR → BA 映射
+03-task-ba-sysreq-design/        # Task 3：BA → SysReq 映射
+04-task-sr-nfr-design/           # Task 4：SR-NFR → SysReq-NFR 映射
+05-task-sysreq-pa-design/        # Task 5：SysReq → PA 映射
+06-task-traceability-analysis/   # Task 6：端到端追溯分析
+07-shared-assets/                # 共享资产：模式库、质量标准、工具脚本
+08-products/                     # 产品数据：按项目组织的设计文档
+04-platform-docs/                # 平台文档：快速开始指南、相关方需求等
+.claude/                          # Claude Code 配置
 ```
 
-每个项目目录（`03-products/projects/<project-name>/`）包含 7 个文件：
-`requirements.md`、`business-architecture.md`、`system-requirements.md`、`product-architecture.md`、`analysis.md`（需求分析核心）、`mappings.md`（映射矩阵核心）、`changelog.md`。
+**每个任务目录结构**：
+```
+01-task-normalization/
+├── README.md                     # 任务概述和快速开始
+├── guidelines/                   # 任务指南
+├── templates/                    # 任务模板
+├── checklists/                   # 任务检查清单
+├── skills/                       # 任务相关的 AI Skill
+├── workflows/                    # 任务工作流定义
+└── examples/                     # 任务示例
+```
+
+**每个项目目录结构**（`08-products/projects/<project-name>/`）：
+```
+project-a/
+├── 01-normalization/             # Task 1 输出：规范化需求
+├── 02-sr-ba-design/              # Task 2 输出：SR → BA 映射
+├── 03-ba-sysreq-design/          # Task 3 输出：BA → SysReq 映射
+├── 04-sr-nfr-design/             # Task 4 输出：SR-NFR → SysReq-NFR 映射
+├── 05-sysreq-pa-design/          # Task 5 输出：SysReq → PA 映射
+├── 06-traceability-analysis/     # Task 6 输出：追溯分析报告
+└── changelog.md                  # 项目变更日志
+```
 
 ## 关键设计文件
 
 - `04-platform-docs/quick-start-guide.md` — ★ 新用户快速开始指南（5分钟快速了解）
 - `04-platform-docs/pipeline-stakeholder-requirements.md` — 相关方需求完整定义
-- `02-pipeline/workflows.md` — 12 步新增需求处理流程（触发所有工作的总入口）
-- `01-standards/guidelines/README.md` — 5 条准则总览
-- `01-standards/checklists/quality-checklist.md` — ★ 质量检查清单（可操作的检查工具）
-- `01-standards/patterns/business-patterns.md` — ★ 业务模式库（10+ 个常见模式）
-- `03-products/projects/<name>/analysis.md` — ★ 原始需求→规范化→分解→确认的完整链路
-- `03-products/projects/<name>/mappings.md` — ★ SR→BA→SysReq→PA 的 N:1 映射关系
+- `01-task-normalization/README.md` — Task 1 快速开始
+- `02-task-sr-ba-design/README.md` — Task 2 快速开始
+- `03-task-ba-sysreq-design/README.md` — Task 3 快速开始
+- `04-task-sr-nfr-design/README.md` — Task 4 快速开始
+- `05-task-sysreq-pa-design/README.md` — Task 5 快速开始
+- `06-task-traceability-analysis/README.md` — Task 6 快速开始
+- `07-shared-assets/patterns/business-patterns.md` — ★ 业务模式库（10+ 个常见模式）
+- `07-shared-assets/quality-standards/quality-checklist.md` — ★ 质量检查清单（可操作的检查工具）
 
 ## 文档规范
 
