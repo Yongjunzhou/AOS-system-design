@@ -16,10 +16,28 @@
 
 ## 快速开始（5分钟）
 
-1. **阅读指南**：[guideline-normalization.md](guidelines/guideline-normalization.md)
-2. **查看模板**：[sr-template.md](templates/sr-template.md) 和 [sr-nfr-template.md](templates/sr-nfr-template.md)
-3. **查看示例**：[normalization-example.md](examples/normalization-example.md)
-4. **使用检查清单**：[normalization-checklist.md](checklists/normalization-checklist.md)
+### 第一次使用？按照这个顺序：
+
+1. **了解核心概念**（2分钟）
+   - 阅读 [guideline-normalization.md](guidelines/guideline-normalization.md) 的"核心概念"部分
+   - 理解功能需求 vs 非功能需求的区别
+   - 理解业务组件 vs 引擎组件的区别
+
+2. **查看完整示例**（2分钟）
+   - 阅读 [normalization-example.md](examples/normalization-example.md)
+   - 理解规范化的完整过程
+   - 学习如何处理重复和冲突需求
+
+3. **准备开始工作**（1分钟）
+   - 查看 [sr-template.md](templates/sr-template.md) 和 [sr-nfr-template.md](templates/sr-nfr-template.md)
+   - 准备输入文件（原始需求）
+   - 准备输出文件（规范化需求）
+
+### 工作过程中：
+
+- **遇到问题？** 查看 [common-errors-and-best-practices.md](guidelines/common-errors-and-best-practices.md)
+- **需要检查质量？** 使用 [normalization-checklist.md](checklists/normalization-checklist.md)
+- **需要 AI 辅助？** 使用 [skills/](skills/) 目录中的 Skill 定义
 
 ## 关键活动
 
