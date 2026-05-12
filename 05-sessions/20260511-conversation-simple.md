@@ -4120,7 +4120,7 @@ PA（产品架构）
 
 ## 📄 会话文档已生成
 
-**文件位置**：`/e/mywork/AOS/sessions/20260512-guideline-refactor-two-track-model.md`
+**文件位置**：`/e/mywork/AOS/05-sessions/20260512-guideline-refactor-two-track-model.md`
 
 **文档规模**：
 - 525 行
