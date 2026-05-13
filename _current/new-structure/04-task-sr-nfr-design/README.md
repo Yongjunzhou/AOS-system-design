@@ -16,10 +16,28 @@
 
 ## 快速开始（5分钟）
 
-1. **阅读指南**：[guideline-sr-nfr-to-sysreq-nfr.md](guidelines/guideline-sr-nfr-to-sysreq-nfr.md)
-2. **查看模板**：[sysreq-nfr-template.md](templates/sysreq-nfr-template.md)
-3. **查看示例**：[sr-nfr-design-example.md](examples/sr-nfr-design-example.md)
-4. **使用检查清单**：[sr-nfr-design-checklist.md](checklists/sr-nfr-design-checklist.md)
+### 第一次使用？按照这个顺序：
+
+1. **了解核心概念**（2分钟）
+   - 阅读 [guideline-sr-nfr-to-sysreq-nfr.md](guidelines/guideline-sr-nfr-to-sysreq-nfr.md) 的"核心概念"部分
+   - 理解非功能需求三大类（质量特性、环境适应性、可实现性）
+   - 理解 SysReq-NFR 5 级层级结构
+
+2. **查看完整示例**（2分钟）
+   - 阅读 [sr-nfr-design-example.md](examples/sr-nfr-design-example.md)
+   - 理解 SR-NFR → SysReq-NFR 的映射过程
+   - 学习如何定义量化指标和验证方法
+
+3. **准备开始工作**（1分钟）
+   - 查看 [sysreq-nfr-template.md](templates/sysreq-nfr-template.md)
+   - 准备输入文件（sr-nfr.md）
+   - 准备输出文件（sysreq-nfr.md）
+
+### 工作过程中：
+
+- **遇到问题？** 查看 [nfr-best-practices.md](guidelines/nfr-best-practices.md)
+- **需要检查质量？** 使用 [sr-nfr-design-checklist.md](checklists/sr-nfr-design-checklist.md)
+- **需要 AI 辅助？** 使用 [skills/](skills/) 目录中的 Skill 定义
 
 ## 关键活动
 
