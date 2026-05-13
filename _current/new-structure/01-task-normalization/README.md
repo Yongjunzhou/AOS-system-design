@@ -44,31 +44,37 @@
 ### 1. 需求规范化
 - 统一需求格式
 - 明确需求描述
-- 补充缺失信息
+- **补充性能指标**（关键改进）
+  - 功能需求：添加响应时间、吞吐量、并发数等指标
+  - 非功能需求：添加验证条件、测试方法、具体数值等指标
 
 **Skill**：[requirement-normalization.md](skills/requirement-normalization.md)
 
 ### 2. 需求分解
 - 将复杂需求分解为原子需求
 - 识别需求之间的依赖关系
+- **为每个分解后的需求补充性能指标**
 
 **Skill**：[requirement-decomposition.md](skills/requirement-decomposition.md)
 
 ### 3. 冲突检测
 - 识别相互矛盾的需求
 - 标记需要人工确认的冲突
+- **检查性能指标是否冲突**（如响应时间 < 100ms 和 < 500ms）
 
 **Skill**：[conflict-detection.md](skills/conflict-detection.md)
 
 ### 4. 重复检测
 - 识别重复的需求
 - 合并相同的需求
+- **检查性能指标是否一致**
 
 **Skill**：[duplicate-detection.md](skills/duplicate-detection.md)
 
 ### 5. 分类和确认
 - 将需求分为功能需求（SR）和非功能需求（SR-NFR）
 - 人工确认规范化结果
+- **确认每个需求都包含需求描述和性能指标**
 
 ## 工作流
 

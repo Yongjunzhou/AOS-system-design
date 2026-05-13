@@ -44,12 +44,14 @@
 ### 1. SR-NFR → SysReq-NFR映射
 - 将非功能相关方需求映射到系统非功能需求
 - 建立N:1映射关系（多条SR-NFR可映射到一个SysReq-NFR 5级节点）
+- **关键改进**：每条 SR-NFR 都包含需求描述和性能指标
 
 **Skill**：[sr-nfr-to-sysreq-nfr-mapping.md](skills/sr-nfr-to-sysreq-nfr-mapping.md)
 
 ### 2. SysReq-NFR 5级节点定义
 - 定义非功能需求承接层（SysReq-NFR 5级）
-- 明确每个非功能需求的量化指标和验证方法
+- 明确每个非功能需求的需求描述和性能指标
+- **关键改进**：SysReq-NFR 5级包含需求描述和性能指标，而不仅仅是指标值
 
 ### 3. 非功能需求分类
 - 质量特性需求（Performance, Reliability, Security, Availability, Maintainability）
