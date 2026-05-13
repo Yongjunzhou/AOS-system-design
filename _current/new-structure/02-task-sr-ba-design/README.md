@@ -16,10 +16,28 @@
 
 ## 快速开始（5分钟）
 
-1. **阅读指南**：[guideline-sr-to-ba-mapping.md](guidelines/guideline-sr-to-ba-mapping.md)
-2. **查看模板**：[ba-template.md](templates/ba-template.md)
-3. **查看示例**：[sr-to-ba-example.md](examples/sr-to-ba-example.md)
-4. **使用检查清单**：[sr-to-ba-checklist.md](checklists/sr-to-ba-checklist.md)
+### 第一次使用？按照这个顺序：
+
+1. **了解核心概念**（2分钟）
+   - 阅读 [guideline-sr-to-ba-mapping.md](guidelines/guideline-sr-to-ba-mapping.md) 的"核心概念"部分
+   - 理解 BA 层级结构（0-5 级）
+   - 理解业务组件的两大类（配置方式、开发方式）
+
+2. **查看完整示例**（2分钟）
+   - 阅读 [sr-to-ba-example.md](examples/sr-to-ba-example.md)
+   - 理解 SR → BA 的映射过程
+   - 学习如何定义业务组件
+
+3. **准备开始工作**（1分钟）
+   - 查看 [ba-template.md](templates/ba-template.md)
+   - 准备输入文件（sr-functional.md）
+   - 准备输出文件（ba-design.md）
+
+### 工作过程中：
+
+- **遇到问题？** 查看 [ba-best-practices.md](guidelines/ba-best-practices.md)
+- **需要检查质量？** 使用 [sr-to-ba-checklist.md](checklists/sr-to-ba-checklist.md)
+- **需要 AI 辅助？** 使用 [skills/](skills/) 目录中的 Skill 定义
 
 ## 关键活动
 
