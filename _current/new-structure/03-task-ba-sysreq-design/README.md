@@ -16,10 +16,28 @@
 
 ## 快速开始（5分钟）
 
-1. **阅读指南**：[guideline-ba-to-sysreq-mapping.md](guidelines/guideline-ba-to-sysreq-mapping.md)
-2. **查看模板**：[sysreq-template.md](templates/sysreq-template.md)
-3. **查看示例**：[ba-to-sysreq-example.md](examples/ba-to-sysreq-example.md)
-4. **使用检查清单**：[ba-to-sysreq-checklist.md](checklists/ba-to-sysreq-checklist.md)
+### 第一次使用？按照这个顺序：
+
+1. **了解核心概念**（2分钟）
+   - 阅读 [guideline-ba-to-sysreq-mapping.md](guidelines/guideline-ba-to-sysreq-mapping.md) 的"核心概念"部分
+   - 理解 SysReq 层级结构（0-9 级）
+   - 理解 BA → SysReq 的映射关系
+
+2. **查看完整示例**（2分钟）
+   - 阅读 [ba-to-sysreq-example.md](examples/ba-to-sysreq-example.md)
+   - 理解 BA → SysReq 的映射过程
+   - 学习如何分解到 SysReq 9 级
+
+3. **准备开始工作**（1分钟）
+   - 查看 [sysreq-template.md](templates/sysreq-template.md)
+   - 准备输入文件（ba-design.md）
+   - 准备输出文件（sysreq-functional.md）
+
+### 工作过程中：
+
+- **遇到问题？** 查看 [sysreq-best-practices.md](guidelines/sysreq-best-practices.md)
+- **需要检查质量？** 使用 [ba-to-sysreq-checklist.md](checklists/ba-to-sysreq-checklist.md)
+- **需要 AI 辅助？** 使用 [skills/](skills/) 目录中的 Skill 定义
 
 ## 关键活动
 
