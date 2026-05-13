@@ -16,10 +16,28 @@
 
 ## 快速开始（5分钟）
 
-1. **阅读指南**：[guideline-traceability-analysis.md](guidelines/guideline-traceability-analysis.md)
-2. **查看模板**：[traceability-matrix-template.md](templates/traceability-matrix-template.md) 和 [compliance-report-template.md](templates/compliance-report-template.md)
-3. **查看示例**：[traceability-example.md](examples/traceability-example.md)
-4. **使用检查清单**：[traceability-checklist.md](checklists/traceability-checklist.md)
+### 第一次使用？按照这个顺序：
+
+1. **了解核心概念**（2分钟）
+   - 阅读 [traceability-best-practices.md](guidelines/traceability-best-practices.md) 的"追溯分析的六大缺陷类型"部分
+   - 理解 6 种缺陷类型：追溯缺陷、一致性缺陷、完整性缺陷、定义一致性缺陷、性能缺陷、可维护性缺陷
+   - 理解追溯矩阵的结构和符合性检查的维度
+
+2. **查看完整示例**（2分钟）
+   - 阅读 [traceability-example.md](examples/traceability-example.md)
+   - 理解完整的追溯分析过程（从 SR 到 PA 的端到端链路）
+   - 学习如何生成追溯矩阵和符合性报告
+
+3. **准备开始工作**（1分钟）
+   - 查看 [traceability-matrix-template.md](templates/traceability-matrix-template.md) 和 [compliance-report-template.md](templates/compliance-report-template.md)
+   - 准备输入文件（所有 Task 1-5 的输出）
+   - 准备输出文件（traceability-matrix.md、compliance-report.md、defect-list.md）
+
+### 工作过程中：
+
+- **遇到问题？** 查看 [traceability-best-practices.md](guidelines/traceability-best-practices.md)
+- **需要检查质量？** 使用 [traceability-checklist.md](checklists/traceability-checklist.md)
+- **需要 AI 辅助？** 使用 [skills/](skills/) 目录中的 Skill 定义
 
 ## 关键活动
 
