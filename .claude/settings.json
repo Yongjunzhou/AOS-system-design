@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /e/mywork/AOS/_current/new-structure && find . -type f -name \"*.md\" | head -30)",
+      "Read(//e/e/mywork/AOS/_current/**)",
+      "Bash(awk '{print $NF}')"
+    ]
+  }
+}
