@@ -16,10 +16,28 @@
 
 ## 快速开始（5分钟）
 
-1. **阅读指南**：[guideline-sysreq-to-pa-mapping.md](guidelines/guideline-sysreq-to-pa-mapping.md)
-2. **查看模板**：[pa-template.md](templates/pa-template.md)
-3. **查看示例**：[sysreq-to-pa-example.md](examples/sysreq-to-pa-example.md)
-4. **使用检查清单**：[sysreq-to-pa-checklist.md](checklists/sysreq-to-pa-checklist.md) 和 [nfr-tradeoff-checklist.md](checklists/nfr-tradeoff-checklist.md)
+### 第一次使用？按照这个顺序：
+
+1. **了解核心概念**（2分钟）
+   - 阅读 [guideline-sysreq-to-pa-mapping.md](guidelines/guideline-sysreq-to-pa-mapping.md) 的"核心概念"部分
+   - 理解 PA 末级节点的分类（前端、后端、数据库、其他）
+   - 理解非功能权衡决策
+
+2. **查看完整示例**（2分钟）
+   - 阅读 [sysreq-to-pa-example.md](examples/sysreq-to-pa-example.md)
+   - 理解 SysReq → PA 的映射过程
+   - 学习如何进行非功能权衡
+
+3. **准备开始工作**（1分钟）
+   - 查看 [pa-template.md](templates/pa-template.md)
+   - 准备输入文件（sysreq-functional.md、sysreq-nfr.md）
+   - 准备输出文件（pa-design.md、nfr-tradeoff-decisions.md）
+
+### 工作过程中：
+
+- **遇到问题？** 查看 [pa-best-practices.md](guidelines/pa-best-practices.md)
+- **需要检查质量？** 使用 [sysreq-to-pa-checklist.md](checklists/sysreq-to-pa-checklist.md) 和 [nfr-tradeoff-checklist.md](checklists/nfr-tradeoff-checklist.md)
+- **需要 AI 辅助？** 使用 [skills/](skills/) 目录中的 Skill 定义
 
 ## 关键活动
 
