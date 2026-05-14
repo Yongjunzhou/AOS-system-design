@@ -1,12 +1,19 @@
 # 系统设计指南：英文术语对照表
 
-**文档版本**：v1.0  
-**创建日期**：2026-05-13  
+**文档版本**：v1.1  
+**创建日期**：2026-05-14  
 **用途**：统一英文术语，便于国际化和技术交流
 
 ---
 
 ## 📋 核心术语对照
+
+### 基本定义
+
+| 中文 | 英文 | 说明 |
+|------|------|------|
+| 企业运营体系 | Enterprise Operation System (AOS) | 企业运营体系的简称，涵盖机载设备的市场、研发、生产、售后及经营管理 |
+| 运营体系开发之系统设计流水线 | System Design Pipeline for AOS Development | 从原始需求到产品架构的完整系统设计工具，AOS开发者在使用该流水线进行运营体系开发 |
 
 ### 文档类型
 
@@ -21,12 +28,27 @@
 
 | 中文 | 英文 | 文件名 |
 |------|------|--------|
-| 产品开发系统设计准则 | System Design Standards for Product Development | 07-system-design-standards.md |
-| 系统设计实践指南：三种场景的操作流程 | System Design Guidelines: Operational Procedures for Three Scenarios | 08-system-design-guidelines-scenarios.md |
-| 系统设计实践指南：快速参考卡 | System Design Guidelines: Quick Reference Card | 09-system-design-guidelines-quick-reference.md |
-| 系统设计指南文档体系 | System Design Documentation System | 10-documentation-system.md |
-| 系统设计指南文档集总结 | System Design Documentation Summary | 11-documentation-summary.md |
-| 系统设计指南文档索引 | System Design Documentation Index | 12-documentation-index.md |
+| 运营体系开发之系统设计准则 | System Design Standards for AOS Development | 01-system-design-standards.md |
+| 瀑布式系统设计指南 | Waterfall System Design Guide | 01-waterfall-design-guide.md |
+| 敏捷式系统设计指南 | Agile System Design Guide | 02-agile-design-guide.md |
+| 逆向工程指南 | Reverse Engineering Guide | 03-reverse-engineering-guide.md |
+| DevOps系统设计指南 | DevOps System Design Guide | 04-devops-design-guide.md |
+| 系统设计实践指南：快速参考卡 | System Design Handbook: Quick Reference Card | 05-quick-reference-card.md |
+| 设计准则变更追溯指南 | Standards Change Traceability Guide | 06-standards-change-traceability.md |
+
+### 基本术语（v2.2新增）
+
+| 中文 | 英文 | 说明 |
+|------|------|------|
+| 需求文档 | Requirements Document | 描述系统应该做什么 |
+| 方案文档 | Solution Document | 描述如何满足需求，由架构定义和详细定义组成 |
+| 需求—方案配对 | Requirement-Solution Pair | 需求与方案成对出现 |
+| 文档的双重属性 | Dual Role of Document | 一个文档可同时是方案和需求 |
+| 架构定义 | Architecture Definition | 构建方案的层级结构，建立对上层需求的映射 |
+| 详细定义 | Detailed Definition | 对架构末级节点进行详细设计分解 |
+| 架构末级节点 | Architecture Leaf Node | 方案分类和组织的最大条目，需求映射的关键层级 |
+| 详细定义末级节点 | Detailed Definition Leaf Node | 分配到后续方案架构末级节点的源头 |
+| 详细定义的双重身份 | Dual Identity of Detailed Definition | 既是当前方案的细化，又是后续方案的需求 |
 
 ---
 
@@ -67,13 +89,14 @@
 
 ## 📊 操作流程术语
 
-### 三种场景
+### 四种场景
 
 | 中文 | 英文 | 说明 |
 |------|------|------|
-| 反向工程 | Reverse Engineering | 从代码和图纸反向推导系统设计 |
-| 新研产品 | New Product Development | 从原始需求开始进行系统设计 |
-| 增量需求 | Incremental Requirements | 在现有系统设计基础上处理新需求 |
+| 瀑布式 | Waterfall | 从原始需求开始的完整系统设计 |
+| 敏捷式 | Agile | 在现有设计基础上处理增量需求 |
+| 逆向工程 | Reverse Engineering | 从代码和图纸反向推导系统设计 |
+| DevOps | DevOps | 快速响应生产环境的问题和紧急需求 |
 
 ### 操作步骤
 
@@ -87,17 +110,6 @@
 
 ---
 
-## ✅ 质量保证术语
-
-| 中文 | 英文 | 说明 |
-|------|------|------|
-| 检查清单 | Checklist | 质量检查的项目清单 |
-| 质量指标 | Quality Metrics | 衡量质量的量化指标 |
-| 映射覆盖率 | Mapping Coverage Rate | 被映射的需求占总需求的比例 |
-| 符合性分析完整率 | Compliance Analysis Completeness Rate | 包含符合性分析的方案条目比例 |
-| 超链接有效率 | Hyperlink Validity Rate | 有效超链接占总超链接的比例 |
-
----
 
 ## 🎓 最佳实践术语
 
@@ -143,8 +155,8 @@
 
 **标题中**：
 ```
-# 产品开发系统设计准则
-System Design Standards for Product Development
+# 运营体系开发之系统设计准则
+System Design Standards for AOS Development
 ```
 
 **术语中**：
@@ -154,9 +166,9 @@ System Design Standards for Product Development
 
 **文件名中**：
 ```
-07-system-design-guidelines.md
-08-system-design-guide-scenarios.md
-09-quick-reference-card.md
+01-system-design-standards.md
+01-waterfall-design-guide.md
+05-quick-reference-card.md
 ```
 
 ### 在交流中使用英文
@@ -184,8 +196,8 @@ Attendees: Product Manager, Architect, Requirements Analyst
 - "System Design Standards define the 5-layer structure"
 
 **指南（Handbook）**：
-- "系统设计指南提供了三种场景的操作步骤"
-- "System Design Handbook provides operational procedures for three scenarios"
+- "系统设计指南提供了四种场景的操作步骤"
+- "System Design Handbook provides operational procedures for four scenarios"
 
 ### 需求 vs 方案
 
@@ -223,9 +235,9 @@ Attendees: Product Manager, Architect, Requirements Analyst
 
 建议的文件命名方式：
 ```
-07-system-design-guidelines.md (中文)
-07-system-design-guidelines-en.md (英文)
-07-system-design-guidelines-zh.md (中文)
+01-system-design-standards.md (中文)
+01-system-design-standards-en.md (英文)
+01-system-design-standards-zh.md (中文)
 ```
 
 ---
@@ -235,11 +247,12 @@ Attendees: Product Manager, Architect, Requirements Analyst
 | 日期 | 更新内容 | 版本 |
 |------|---------|------|
 | 2026-05-13 | 初版发布，包含核心术语对照 | v1.0 |
+| 2026-05-14 | 更新术语表以匹配设计准则 v2.2：移除质量指标术语，补充基本术语，更新场景分类和文件引用 | v1.1 |
 
 ---
 
-**文档生成时间**：2026-05-13  
-**文档版本**：v1.0  
+**文档生成时间**：2026-05-14  
+**文档版本**：v1.1  
 **状态**：✅ 完成
 
 **下一步**：

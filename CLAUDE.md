@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-AOS（Architecture & Orchestration System）是一个系统设计治理项目，核心目标是将企业系统设计流程标准化、资产化、自动化。它定义了从「相关方需求」到「产品架构」的完整四层设计链路，并通过 AI Skill 实现流程自动化。
+AOS 是企业运营体系（Enterprise Operation System）的简称。本仓库定义并开发其关键组件——「运营体系开发之系统设计流水线」，目标是将企业系统设计流程标准化、资产化、自动化。它定义了从「相关方需求」到「产品架构」的完整四层设计链路，并通过 AI Skill 实现流程自动化。
 
 ## 四层映射模型
 

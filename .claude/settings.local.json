@@ -1,10 +1,21 @@
 {
   "permissions": {
     "allow": [
-      "Bash(mkdir -p 01-standards/templates 01-standards/patterns 02-pipeline/skills 02-pipeline/tools 03-products/projects .claude/memory)"
+      "Bash(mkdir -p 01-standards/templates 01-standards/patterns 02-pipeline/skills 02-pipeline/tools 03-products/projects .claude/memory)",
+      "Bash(grep -n '架构定义[^文]\\\\|架构定义$' '/Users/iproyongjunzhou/claude/AOS-system-design/_current/new-structure/00-platform-docs/01-design-standards/01-system-design-standards.md')",
+      "Bash(xxd)",
+      "Bash(sed -i '' '464s/<deleted>//' \"/Users/iproyongjunzhou/claude/AOS-system-design/_current/new-structure/00-platform-docs/02-design-guidelines/02-agile-design-guide.md\")",
+      "Bash(sed -i '' '311s/<deleted>//' \"/Users/iproyongjunzhou/claude/AOS-system-design/_current/new-structure/00-platform-docs/02-design-guidelines/03-reverse-engineering-guide.md\")",
+      "Bash(python3 -c ' *)",
+      "Bash(grep -n '^---$' \"/Users/iproyongjunzhou/claude/AOS-system-design/_current/new-structure/00-platform-docs/02-design-guidelines/02-agile-design-guide.md\")",
+      "Bash(grep -n '---' \"/Users/iproyongjunzhou/claude/AOS-system-design/_current/new-structure/00-platform-docs/02-design-guidelines/03-reverse-engineering-guide.md\")",
+      "Bash(grep -n '^---$' \"/Users/iproyongjunzhou/claude/AOS-system-design/_current/new-structure/00-platform-docs/02-design-guidelines/03-reverse-engineering-guide.md\")",
+      "Bash(rm /Users/iproyongjunzhou/claude/AOS-system-design/_current/new-structure/00-platform-docs/03-ai-support/*.md)",
+      "Bash(grep -E \"^-.*md$\")"
     ],
     "additionalDirectories": [
-      "e:\\mywork\\AOS\\.claude"
+      "e:\\mywork\\AOS\\.claude",
+      "/Users/iproyongjunzhou/claude/AOS-system-design/_current/new-structure/00-platform-docs/03-ai-support"
     ]
   }
 }
