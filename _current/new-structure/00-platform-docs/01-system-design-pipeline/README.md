@@ -97,8 +97,8 @@
 
 - [工作要求定义](01-work-requirements.md)
 - [需求映射矩阵](06-requirements-mapping-matrix.md)
-- [系统设计准则](../03-design-standards/01-system-design-standards.md)
-- [系统设计实践指南](../04-design-guidelines/01-design-guidelines-scenarios.md)
+- [系统设计准则](../02-design-standards/01-system-design-standards.md)
+- [系统设计实践指南](../03-design-guidelines/01-waterfall-design-guide.md)
 
 ---
 

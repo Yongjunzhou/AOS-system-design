@@ -142,9 +142,9 @@
 
 ## 🔗 相关文档
 
-- [系统设计准则](../03-design-standards/01-system-design-standards.md)
-- [系统设计流水线](../02-system-design-pipeline/README.md)
-- [术语表](../03-design-standards/02-terminology-glossary.md)
+- [系统设计准则](../02-design-standards/01-system-design-standards.md)
+- [系统设计流水线](../01-system-design-pipeline/README.md)
+- [术语表](../02-design-standards/02-terminology-glossary.md)
 
 ---
 

@@ -74,9 +74,9 @@
 
 ## 🔗 相关文档
 
-- [系统设计实践指南](../04-design-guidelines/01-design-guidelines-scenarios.md)
-- [快速参考卡](../04-design-guidelines/02-quick-reference-card.md)
-- [系统设计流水线](../02-system-design-pipeline/01-work-requirements.md)
+- [系统设计实践指南](../03-design-guidelines/01-waterfall-design-guide.md)
+- [快速参考卡](../03-design-guidelines/05-quick-reference-card.md)
+- [系统设计流水线](../01-system-design-pipeline/01-work-requirements.md)
 
 ---
 
