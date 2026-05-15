@@ -13,7 +13,7 @@
 ✅ **映射完整性**：100% 覆盖（76/76 末级需求已映射）  
 ✅ **映射一致性**：100% 一对一（每个末级需求只映射到唯一的相关方需求）  
 ✅ **超链接有效性**：100% 有效（所有 76 个超链接都指向正确的锚点）  
-✅ **文档同步性**：100% 同步（03-original-requirements.md 与 04-pipeline-stakeholder-requirements.md 完全对应）
+✅ **文档同步性**：100% 同步（03-original-requirements.md 与 ../04-pipeline-specifications/03-pipeline-stakeholder-requirements.md 完全对应）
 
 **结论**：需求映射工作已完成，质量达到预期标准。
 
@@ -138,7 +138,7 @@
 
 #### 3.1 超链接格式检查
 
-**规则**：所有超链接应遵循格式 `[文本](04-pipeline-stakeholder-requirements.md#sr-f-xxx)` 或 `[文本](04-pipeline-stakeholder-requirements.md#sr-nf-xxx)`
+**规则**：所有超链接应遵循格式 `[文本](../04-pipeline-specifications/03-pipeline-stakeholder-requirements.md#sr-f-xxx)` 或 `[文本](../04-pipeline-specifications/03-pipeline-stakeholder-requirements.md#sr-nf-xxx)`
 
 **验证结果**：
 
@@ -151,7 +151,7 @@
 
 **规则**：每个超链接指向的锚点必须在目标文档中存在
 
-**验证方法**：检查 04-pipeline-stakeholder-requirements.md 中是否定义了所有被引用的锚点
+**验证方法**：检查 ../04-pipeline-specifications/03-pipeline-stakeholder-requirements.md 中是否定义了所有被引用的锚点
 
 **验证结果**：
 
@@ -185,7 +185,7 @@
 
 ### 4. 文档同步性验证
 
-#### 4.1 03-original-requirements.md 与 04-pipeline-stakeholder-requirements.md 同步性
+#### 4.1 03-original-requirements.md 与 ../04-pipeline-specifications/03-pipeline-stakeholder-requirements.md 同步性
 
 **验证方法**：检查两个文档中的末级需求映射是否一致
 
@@ -194,7 +194,7 @@
 | 检查项 | 结果 | 状态 |
 |--------|------|------|
 | 03-original-requirements.md 中的末级需求数 | 76 | ✅ |
-| 04-pipeline-stakeholder-requirements.md 中的末级需求映射数 | 76 | ✅ |
+| ../04-pipeline-specifications/03-pipeline-stakeholder-requirements.md 中的末级需求映射数 | 76 | ✅ |
 | 两个文档中的末级需求映射是否一致 | 是 | ✅ |
 | 两个文档中的相关方需求映射是否一致 | 是 | ✅ |
 
@@ -333,7 +333,7 @@
 ### 2. 中期建议（1-2 周内）
 
 1. **启动 Phase 3：文档更新**
-   - 更新 04-pipeline-stakeholder-requirements.md，添加末级原始需求字段
+   - 更新 ../04-pipeline-specifications/03-pipeline-stakeholder-requirements.md，添加末级原始需求字段
    - 版本升级：v1.2 → v1.3
 
 2. **启动 Phase 4：流程优化**

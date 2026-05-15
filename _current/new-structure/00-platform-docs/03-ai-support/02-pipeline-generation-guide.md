@@ -34,6 +34,8 @@
 - `03-ai-support/01-pipeline-ai-development-overview.md` — 了解协作模式
 - `01-design-standards/01-system-design-standards.md` 中"第 1 层：原始需求及分析"和"第 2 层：相关方需求"章节
 - `01-design-standards/01-system-design-standards.md` 中"开发六步法"第 1 步说明
+- `01-design-standards/02-original-requirements-specification.md` — 原始需求规范（通用指南）
+- `../04-pipeline-specifications/02-pipeline-original-requirements-specification.md` — 系统设计流水线原始需求规范（产品指南）
 - `02-design-guidelines/01-waterfall-design-guide.md` 第 1 步操作
 - `03-ai-support/03-requirement-normalization.md` — 规范化规则
 - `03-ai-support/04-requirement-decomposition.md` — 分解规则
@@ -141,6 +143,8 @@
 - `01-design-standards/01-system-design-standards.md` 中开发六步法第 2 步说明
 - `01-design-standards/01-system-design-standards.md` 中"第 2 层：相关方需求"详细定义部分
 - `01-design-standards/01-system-design-standards.md` 中"第 3 层：业务架构"章节
+- `01-design-standards/04-business-architecture-specification.md` — 业务架构设计规范（通用指南）
+- `../04-pipeline-specifications/04-pipeline-business-architecture-specification.md` — 系统设计流水线业务架构规范（产品指南）
 - `02-design-guidelines/01-waterfall-design-guide.md` 第 2 步操作
 - `03-ai-support/07-sr-to-ba-mapping.md` — SR 到 BA 映射规则
 - `03-ai-support/06-business-pattern-matching.md` — 业务模式匹配（暂不启用，依赖模式库）
@@ -345,6 +349,8 @@ SysReq-NFR-001：[系统非功能需求名称]
 读取以下文档的对应章节：
 - `01-design-standards/01-system-design-standards.md` 中开发六步法第 5 步说明
 - `01-design-standards/01-system-design-standards.md` 中"第 4 层：系统需求"和"第 5 层：产品架构"章节
+- `01-design-standards/06-product-architecture-specification.md` — 产品架构设计规范（通用指南）
+- `../04-pipeline-specifications/06-pipeline-product-architecture-specification.md` — 系统设计流水线产品架构规范（产品指南）
 - `02-design-guidelines/01-waterfall-design-guide.md` 第 5 步操作
 - `03-ai-support/11-sysreq-to-pa-mapping.md` — SysReq 详细分解及 PA 映射规则
 

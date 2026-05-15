@@ -15,7 +15,7 @@
 ## 输入
 
 - 原始需求文本（未经规范化的表述）
-- 术语表（01-design-standards/02-terminology-glossary.md）
+- 术语表（01-design-standards/07-terminology-glossary.md）
 
 ## 处理规则
 

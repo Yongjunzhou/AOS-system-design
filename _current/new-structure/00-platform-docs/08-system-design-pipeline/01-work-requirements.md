@@ -251,7 +251,7 @@
 **具体要求**：
 
 1. **超链接格式**：
-   - 格式：`[末级需求名称](04-pipeline-stakeholder-requirements.md#sr-f-xxx)`
+   - 格式：`[末级需求名称](../04-pipeline-specifications/03-pipeline-stakeholder-requirements.md#sr-f-xxx)`
    - 确保锚点与相关方需求文档中的条目对应
 
 2. **跳转验证**：
@@ -296,7 +296,7 @@
    - ✅ 保留：需求定义、末级需求分解、需求优先级等
 
 2. **超链接标识**：对于原始需求的末级需求，以超链接的方式标识其分配到相关方需求条目
-   - 格式：`[末级需求描述](04-pipeline-stakeholder-requirements.md#sr-f-xxx)`
+   - 格式：`[末级需求描述](../04-pipeline-specifications/03-pipeline-stakeholder-requirements.md#sr-f-xxx)`
    - 目标：支持用户快速导航到对应的相关方需求
    - 验证：所有超链接都应指向有效的锚点
 
@@ -568,7 +568,7 @@
    - [03-original-requirements.md](03-original-requirements.md) - 原始需求文档（v3.0）
 
 2. **相关方需求**（原始需求的方案）
-   - [04-pipeline-stakeholder-requirements.md](04-pipeline-stakeholder-requirements.md) - 相关方需求文档（v1.2）
+   - [../04-pipeline-specifications/03-pipeline-stakeholder-requirements.md](../04-pipeline-specifications/03-pipeline-stakeholder-requirements.md) - 相关方需求文档（v1.2）
 
 3. **业务架构**（相关方需求功能部分的方案）
    - 待设计

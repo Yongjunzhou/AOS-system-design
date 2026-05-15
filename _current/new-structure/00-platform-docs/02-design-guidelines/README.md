@@ -144,7 +144,7 @@
 
 - [系统设计准则](../01-design-standards/01-system-design-standards.md)
 - [系统设计流水线](../08-system-design-pipeline/README.md)
-- [术语表](../01-design-standards/02-terminology-glossary.md)
+- [术语表](../01-design-standards/07-terminology-glossary.md)
 
 ---
 
