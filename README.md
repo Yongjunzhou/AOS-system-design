@@ -1,245 +1,179 @@
-# AOS 系统设计治理项目
+# AOS 系统设计项目
 
-## 📋 项目概述
+## 项目概述
 
-AOS 是企业运营体系（Enterprise Operation System）的简称。本仓库的核心组件是「运营体系开发之系统设计流水线」，目标是将企业系统设计流程标准化、资产化、自动化。
+AOS 是企业运营体系（Enterprise Operation System）的简称。本仓库包含两个系统设计项目，共用同一套设计准则和方法论，通过 AI 辅助实现流程自动化。
 
-**项目目标**：
-1. 从企业各业务部门对信息系统的相关方需求开始分析、分解和分配，设计开发业务架构、信息系统需求规格、信息系统产品架构
-2. 开发并持续优化相关方需求、业务架构、系统需求和产品架构的模板或范例、设计准则，形成组织资产
-3. 开发并持续优化系统设计流水线，形成 Skill 化的组织资产，作为后续开发的 AI 资产
-4. 将已有相关方需求、业务架构、系统需求和产品架构按照范例和准则转化为项目的产品数据
-5. 后续新增相关方需求，则按照设计准则、模板或范例，综合已有产品数据，补充完善相关方需求、业务架构、系统需求、产品架构
+**两层产品关系**：
+- **产品B — `00-pipeline-design/`**：运营体系系统设计流水线（"设计工具"）
+- **产品A — `50-aos-design/`**：AOS 企业运营体系（"用工具设计的目标系统"）
 
----
-
-## 📁 目录结构
-
-本项目采用**分离式目录结构**，将重构前后的架构清晰地分开：
-
-```
-AOS/
-├── _archive/                      # 📦 重构前的旧结构（存档）
-│   └── legacy-structure/
-│       ├── 01-standards/          # 旧的组织资产
-│       ├── 02-pipeline/           # 旧的自动化资产
-│       ├── 03-products/           # 旧的产品数据
-│       └── 05-sessions/           # 会话记录
-│
-├── _current/                      # 🚀 重构后的新结构（当前使用）
-│   └── new-structure/
-│       ├── 01-task-normalization/           # Task 1：需求规范化
-│       ├── 02-task-sr-ba-design/            # Task 2：SR → BA 映射
-│       ├── 03-task-ba-sysreq-design/        # Task 3：BA → SysReq 映射
-│       ├── 04-task-sr-nfr-design/           # Task 4：SR-NFR → SysReq-NFR 映射
-│       ├── 05-task-sysreq-pa-design/        # Task 5：SysReq → PA 映射
-│       ├── 06-task-traceability-analysis/   # Task 6：端到端追溯分析
-│       ├── 07-shared-assets/                # 共享资产
-│       ├── 08-products/                     # 产品数据
-│       └── 04-platform-docs/                # 平台文档
-│
-├── .claude/                       # Claude Code 配置
-├── .git/                          # Git 版本控制
-│
-├── CLAUDE.md                      # 项目指导（根目录）
-├── RESTRUCTURE-COMPLETION-SUMMARY.md  # 重构完成总结
-├── PHASE-1-COMPLETION-REPORT.md   # 第一阶段报告
-├── PHASE-2-COMPLETION-REPORT.md   # 第二阶段报告
-├── PHASE-3-COMPLETION-REPORT.md   # 第三阶段报告
-├── PHASE-4-COMPLETION-REPORT.md   # 第四阶段报告
-└── PHASE-5-COMPLETION-REPORT.md   # 第五阶段报告
-```
+本准则所关注的企业，业务范围涵盖机载设备的市场、研发、生产、售后及经营管理。
 
 ---
 
-## 🚀 快速开始
+## 目录结构
 
-### 使用新架构（推荐）
-```bash
-cd _current/new-structure/
-cat 04-platform-docs/quick-start-guide.md
 ```
+00-pipeline-design/                                 # 产品B的完整开发空间
+├── 10-pipeline-system-design/                      # 阶段1：系统设计
+│   ├── 01-system-design-standards/                 # ★ 通用设计准则（两个项目共享）
+│   │   ├── 01-system-design-standards.md           #   核心：5层结构、映射规则
+│   │   ├── 02 ~ 06                                 #   各层通用规范（OR/SR/BA/SysReq/PA）
+│   │   └── 07-terminology-glossary.md              #   术语表
+│   ├── 02-system-design-guidelines/                # ★ 四种场景的设计指南（共享）
+│   │   ├── 01-waterfall-design-guide.md
+│   │   ├── 02-agile-design-guide.md
+│   │   ├── 03-reverse-engineering-guide.md
+│   │   ├── 04-devops-design-guide.md
+│   │   └── 05-quick-reference-card.md
+│   ├── 03-system-design-ai-support/                # 流水线产品的 AI 辅助文档
+│   │   ├── 00-ai-document-requirements-understanding.md
+│   │   ├── 01-waterfall/                           #   按场景组织：README + prompts + example + checklist
+│   │   ├── 02-agile/
+│   │   ├── 03-reverse-engineering/
+│   │   └── 04-devops/
+│   └── 10-system-product-data/                     # ★ 流水线产品的标准产品数据（9 份文档）
+├── 20-pipeline-component-dev/                      # 阶段2：构件开发（待扩展）
+└── 30-pipeline-integration-delivery/               # 阶段3：集成交付（待扩展）
 
-### 查看旧架构（参考）
-```bash
-cd _archive/legacy-structure/
-# 查看旧的结构和资源
+50-aos-design/                                      # 产品A的完整开发空间
+├── 10-aos-system-design/                           # 阶段1：系统设计（当前工作范围）
+│   ├── 01-aos-system-design-standards/             # 引用通用准则（产品B构件）
+│   ├── 02-aos-system-design-guidelines/            # 引用通用指南（产品B构件）
+│   ├── 03-aos-system-design-ai-support/            # AOS 专用 AI 辅助文档（产品B构件）
+│   │   ├── 00-overview.md
+│   │   ├── 01-greenfield/
+│   │   ├── 02-optimization/
+│   │   ├── 03-domain-analysis/
+│   │   └── 04-integration-design/
+│   ├── 06-aos-system-design-tasks/                 # AOS 的 6 个核心任务（产品B构件）
+│   │   ├── 01-aos-normalization/
+│   │   ├── 02-aos-sr-ba-design/
+│   │   ├── 03-aos-ba-sysreq-design/
+│   │   ├── 04-aos-nfr-design/
+│   │   ├── 05-aos-sysreq-pa-design/
+│   │   └── 06-aos-traceability/
+│   └── 10-aos-system-product-data/                 # AOS 的产品数据（产品A设计输出）
+├── 20-aos-component-dev/                           # 阶段2：构件开发（待扩展）
+└── 30-aos-integration-delivery/                    # 阶段3：集成交付（待扩展）
+
+200-put-on-hold/                                    # 归档的历史文件
+99-sessions/                                        # 历史会话记录
 ```
 
 ---
 
-## 📊 重构对比
+## 五层结构与核心规则
 
-### 旧架构（Resource Type Driven）
+### 五层设计链路
+
 ```
-01-standards/          # 按资源类型组织
-├── guidelines/
-├── templates/
-├── patterns/
-└── checklists/
-
-02-pipeline/           # 按资源类型组织
-├── workflows/
-├── skills/
-└── tools/
-
-03-products/           # 产品数据
-└── projects/
-    └── project-a/
-```
-
-**特点**：
-- ❌ 资源分散，难以查找
-- ❌ 新手需要 1-2 天才能上手
-- ❌ 任务流程不清晰
-- ❌ 难以支持并行工作
-
-### 新架构（Task Driven）
-```
-01-task-normalization/         # 按任务组织
-├── README.md
-├── guidelines/
-├── templates/
-├── checklists/
-├── skills/
-├── workflows/
-└── examples/
-
-02-task-sr-ba-design/          # 按任务组织
-├── README.md
-├── guidelines/
-├── templates/
-├── checklists/
-├── skills/
-├── workflows/
-└── examples/
-
-... 其他 4 个任务 ...
-
-07-shared-assets/              # 共享资产
-├── patterns/
-├── quality-standards/
-└── tools/
-
-08-products/                   # 产品数据
-└── projects/
-    └── project-a/
-        ├── 01-normalization/
-        ├── 02-sr-ba-design/
-        ├── 03-ba-sysreq-design/
-        ├── 04-sr-nfr-design/
-        ├── 05-sysreq-pa-design/
-        ├── 06-traceability-analysis/
-        └── changelog.md
+第1层：原始需求 (OR)
+    ↓ N:1 分配
+第2层：相关方需求 (SR)
+    ├─ 架构末级节点 ↔ 详细定义末级节点
+    │
+    ├─ 功能部分 ↓ N:1 分配
+    │   第3层：业务架构 (BA)（独立存在，仅架构定义，无详细定义）
+    │   └─ 架构末级节点（IPO）
+    │        ↓ IPO 直接映射（去重后）
+    │   第4层：系统需求 (SysReq)
+    │   ├─ 架构末级节点 ↔ 详细定义末级节点
+    │   └─ ↓ N:1 分配
+    │       第5层：产品架构 (PA)
+    │       └─ 架构末级节点 ↔ 详细定义末级节点
+    │
+    └─ 非功能部分 ↓ N:1 分配（不经过 BA）
+        第4层：系统需求-NFR (SysReq-NFR)
+        └─ ↓ N:1 分配
+            第5层：产品架构 (PA)
 ```
 
-**特点**：
-- ✅ 资源集中，易于查找
-- ✅ 新手只需 30 分钟就能上手
-- ✅ 任务流程清晰
-- ✅ 支持多个团队并行工作
+### 三条核心规则
+
+| 规则 | 名称 | 定义 |
+|------|------|------|
+| 规则1 | **1:1 分配约束** | 每条详细定义末级节点只能分配到下层方案中唯一一个架构末级节点 |
+| 规则2 | **N:1 承接支持** | 一个架构末级节点可以承接多个上层详细定义末级节点 |
+| 规则3 | **双向追溯** | 支持从上层需求追溯到下层方案，也支持从下层方案反向追溯到上层需求 |
 
 ---
 
-## 💡 重构的核心优势
+## 6 个核心任务
 
-| 方面 | 旧架构 | 新架构 | 改进 |
-|------|--------|--------|------|
-| **新用户上手时间** | 1-2天 | 30分钟 | ⬇️ 75% |
-| **任务查找时间** | 10-20分钟 | 2-3分钟 | ⬇️ 80% |
-| **并行工作能力** | 困难 | 容易 | ⬆️ 显著 |
-| **知识积累** | 分散 | 集中 | ⬆️ 显著 |
-| **维护成本** | 高 | 低 | ⬇️ 显著 |
-| **扩展性** | 差 | 好 | ⬆️ 显著 |
+| 任务 | 名称 | 目标 |
+|------|------|------|
+| Task 1 | 需求规范化 | 收集、规范化、分解原始需求，检测冲突和重复 |
+| Task 2 | SR → BA 映射 | 将相关方需求映射到业务架构末级节点 |
+| Task 3 | BA → SysReq 映射 | 将业务架构映射到系统需求末级节点 |
+| Task 4 | SR-NFR → SysReq-NFR 映射 | 非功能需求的平行映射 |
+| Task 5 | SysReq → PA 映射 | 将系统需求映射到产品架构末级节点 |
+| Task 6 | 端到端追溯分析 | 验证完整追溯链路，生成符合性报告 |
 
----
-
-## 🎯 6 个核心任务
-
-新架构采用**任务驱动架构**，将整个设计流程分解为 6 个独立的工作单元：
-
-| 任务 | 名称 | 目标 | 对应目录 |
-|------|------|------|----------|
-| **Task 1** | 需求规范化 | 收集、规范化、分解原始需求，检测冲突和重复 | `_current/new-structure/01-task-normalization/` |
-| **Task 2** | SR → BA 映射 | 将相关方需求映射到业务架构 5 级节点 | `_current/new-structure/02-task-sr-ba-design/` |
-| **Task 3** | BA → SysReq 映射 | 将业务架构映射到系统需求 5 级节点 | `_current/new-structure/03-task-ba-sysreq-design/` |
-| **Task 4** | SR-NFR → SysReq-NFR 映射 | 将相关方非功能需求映射到系统非功能需求 | `_current/new-structure/04-task-sr-nfr-design/` |
-| **Task 5** | SysReq → PA 映射 | 将系统需求映射到产品架构末级节点 | `_current/new-structure/05-task-sysreq-pa-design/` |
-| **Task 6** | 端到端追溯分析 | 验证完整的追溯链路，生成符合性报告 | `_current/new-structure/06-task-traceability-analysis/` |
+流水线产品的任务定义在 `00-pipeline-design/10-pipeline-system-design/03-system-design-ai-support/` 各场景目录下；AOS 项目的任务定义在 `50-aos-design/10-aos-system-design/06-aos-system-design-tasks/` 下。
 
 ---
 
-## 📚 关键文件
+## 四种设计场景
 
-### 根目录文件
-- **CLAUDE.md**：项目总体指导
-- **RESTRUCTURE-COMPLETION-SUMMARY.md**：重构完成总结
-- **PHASE-1-COMPLETION-REPORT.md** 到 **PHASE-5-COMPLETION-REPORT.md**：各阶段完成报告
-
-### 新架构文件
-- **_current/new-structure/04-platform-docs/quick-start-guide.md**：快速开始指南
-- **_current/new-structure/01-task-normalization/README.md**：Task 1 快速开始
-- **_current/new-structure/02-task-sr-ba-design/README.md**：Task 2 快速开始
-- ... 其他任务 README ...
-
-### 旧架构文件（参考）
-- **_archive/legacy-structure/01-standards/guidelines/README.md**：旧的准则总览
-- **_archive/legacy-structure/02-pipeline/workflows.md**：旧的工作流程
+| 场景 | 适用情况 | 周期 | 指南 |
+|------|---------|------|------|
+| 瀑布式 | 全新系统，需求明确 | 30-48天 | `02-system-design-guidelines/01-waterfall-design-guide.md` |
+| 敏捷式 | 迭代开发，需求渐进 | 13-21天 | `02-system-design-guidelines/02-agile-design-guide.md` |
+| 逆向工程 | 已有系统补文档 | 16-26天 | `02-system-design-guidelines/03-reverse-engineering-guide.md` |
+| DevOps | 小变更快速交付 | 几小时-3天 | `02-system-design-guidelines/04-devops-design-guide.md` |
 
 ---
 
-## 🔄 核心设计准则
+## 三个关键角色
 
-### 四层映射模型
-
-```
-相关方需求 (SR) ──N:1──→ 业务架构 5级 (BA) ──N:1──→ 系统需求 5级 (SysReq) ──N:1──→ 产品架构末级 (PA)
-                                                                    ↓
-                                                            SysReq 9级（场景活动）
-```
-
-**功能需求流**：
-- **SR → BA 5级**：N:1 多对一映射
-- **BA 5级 → SysReq 5级**：N:1 多对一映射
-- **SysReq 9级 → PA末级**：N:1 多对一映射
-- **1:1 约束**：每条需求只能分配到唯一的承接点
-
-**非功能需求流**（平行体系）：
-```
-相关方非功能需求 (SR-NFR) ──N:1──→ 系统非功能需求 (SysReq-NFR)
-```
+| 角色 | 职责 |
+|------|------|
+| **流水线开发者** | 开发、维护和优化系统设计流水线本身 |
+| **AI** | 按流水线开发者指令执行自动化任务 |
+| **AOS 开发者** | 使用流水线进行企业运营体系的系统设计（含需求提出者、业务流程开发者、信息系统开发者） |
 
 ---
 
-## 💡 建议
+## 产品数据文件结构
 
-### 日常工作
-- 使用 `_current/new-structure/` 中的新架构
-- 按照 6 个任务的流程进行工作
-- 参考各任务的指南、模板、示例
+两个项目的产品数据（`10-system-product-data/` 和 `10-aos-system-product-data/`）都遵循相同的 9 份文档结构：
 
-### 参考学习
-- 查看 `_archive/legacy-structure/` 中的旧架构
-- 对比新旧架构的差异
-- 理解重构的原因和优势
-
-### 扩展应用
-- 在 `_current/new-structure/08-products/projects/` 中创建新项目
-- 按照新架构的结构组织产品数据
-- 使用各任务的工具和资源
-
----
-
-## 📞 获取帮助
-
-1. **快速开始**：阅读 `_current/new-structure/04-platform-docs/quick-start-guide.md`
-2. **查看示例**：参考 `_current/new-structure/08-products/projects/project-a/`
-3. **查看指南**：阅读各任务目录下的 `guidelines/` 文件
-4. **查看模板**：参考各任务目录下的 `templates/` 文件
-5. **查看完成报告**：阅读根目录下的 `PHASE-*-COMPLETION-REPORT.md` 文件
+| 文件 | 内容 |
+|------|------|
+| `01-original-requirements.md` | 原始需求 |
+| `02-stakeholder-requirements-architecture.md` | 相关方需求架构定义 |
+| `03-stakeholder-requirements-detailed.md` | 相关方需求详细定义 |
+| `04-business-architecture.md` | 业务架构 |
+| `05-system-requirements-architecture.md` | 系统需求架构定义 |
+| `06-system-requirements-detailed.md` | 系统需求详细定义 |
+| `07-product-architecture.md` | 产品架构 |
+| `08-traceability-matrix.md` | 追溯矩阵 |
+| `09-verification-report.md` | 验证报告 |
 
 ---
 
-**最后更新**：2026-05-12
-**版本**：v2.0（任务驱动架构 + 分离式目录结构）
-**状态**：✅ 可投入使用
+## 关键文件
+
+| 文件 | 说明 |
+|------|------|
+| `00-pipeline-design/10-pipeline-system-design/01-system-design-standards/01-system-design-standards.md` | 核心设计准则（5层结构、映射规则、术语定义） |
+| `00-pipeline-design/10-pipeline-system-design/02-system-design-guidelines/05-quick-reference-card.md` | 快速参考卡 |
+| `00-pipeline-design/10-pipeline-system-design/03-system-design-ai-support/00-ai-document-requirements-understanding.md` | AI 文档理解要求 |
+| `00-pipeline-design/10-pipeline-system-design/10-system-product-data/README.md` | 流水线产品数据概览 |
+| `50-aos-design/10-aos-system-design/03-aos-system-design-ai-support/00-overview.md` | AOS AI 辅助概览 |
+| `CLAUDE.md` | Claude Code 项目指导 |
+
+---
+
+## 文档规范
+
+- 所有文档使用 Markdown + Mermaid 格式
+- 版本号格式：`v[主版本].[次版本]`
+- 中文为主体语言，术语附英文对照
+
+---
+
+**最后更新**：2026-05-17  
+**版本**：v4.0
