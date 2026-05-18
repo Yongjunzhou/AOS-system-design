@@ -7,9 +7,9 @@
 | 文件 | 内容 | 说明 |
 |------|------|------|
 | `01-general-design-standards.md` | 通用设计准则 | 五层结构方法论核心（OR → SR → BA → SysReq → PA）、基本术语、核心规则、验收标准、检查清单 |
-| `02-general-design-guide-overview.md` | 通用设计指南概述 | 四种设计方法的框架描述及选择决策 |
+| `02-general-design-4modes-guide-overview.md` | 通用设计指南概述 | 四种设计方法的框架描述及选择决策 |
 | `03-specification-template.md` | 规范文档通用模板 | 各层产品数据规范的标准结构和编写规范 |
-| `04-general-terminology-glossary.md` | 通用术语对照 | 核心术语英中对照（文档类型、5层结构、基本术语、需求类型、核心约束、设计方法、操作流程） |
+| `04-general-terminology-glossary.md` | 通用术语对照（v2.0） | 核心术语英中对照（11个分类：文档类型、产品开发阶段、5层结构、基本术语、需求类型及NFR三级分类、核心约束、设计方法、操作流程、节点编号规范、设计制品参考策略、质量与验证） |
 
 ## 与产品目录的关系
 
