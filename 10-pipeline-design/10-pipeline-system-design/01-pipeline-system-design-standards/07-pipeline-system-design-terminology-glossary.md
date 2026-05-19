@@ -48,7 +48,7 @@
 | 系统需求规范 | System Requirements Specification | 05-pipeline-system-requirements-specification.md |
 | 产品架构规范 | Product Architecture Specification | 06-pipeline-product-architecture-specification.md |
 | 术语对照表 | Terminology Glossary | 07-pipeline-system-design-terminology-glossary.md |
-| 规范模板 | Specification Template | 00-general-standards/03-specification-template.md |
+| 规范模板 | Specification Template | 00-general/10-general-design-standards/03-specification-template.md |
 | 瀑布式设计指南 | Waterfall System Design Guide | 01-pipeline-system-waterfall-design-guide.md |
 | 敏捷式设计指南 | Agile System Design Guide | 02-pipeline-system-agile-design-guide.md |
 | 逆向工程指南 | Reverse Engineering Guide | 03-pipeline-system-reverse-engineering-guide.md |

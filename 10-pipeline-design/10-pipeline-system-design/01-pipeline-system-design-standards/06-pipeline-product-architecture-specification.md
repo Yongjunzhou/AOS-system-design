@@ -9,7 +9,7 @@
 
 **版本**：v1.5（修正——架构树 AI辅助和任务定义分支中 AOS 专有内容替换为流水线自身场景分类）
 **最后更新**：2026-05-18
-**位置**：10-pipeline-design/10-pipeline-system-design/01-system-design-standards/
+**位置**：10-pipeline-design/10-pipeline-system-design/01-pipeline-system-design-standards/
 
 ---
 
@@ -120,7 +120,7 @@
 
 | 类别 | 子类型 | 说明 | 构件示例 |
 |------|--------|------|---------|
-| **规范与准则** | 核心准则 | 定义系统设计方法论框架 | `01-system-design-standards.md` |
+| **规范与准则** | 核心准则 | 定义系统设计方法论框架 | `01-pipeline-system-design-standards.md` |
 | | 层规范 | 定义各层的设计规范和标准 | `02-` 至 `06-` 层规范文档 |
 | **操作指南** | 场景指南 | 指导不同场景下的设计流程 | 瀑布式/敏捷式/逆向工程/DevOps 指南 |
 | | 快速参考 | 提供快速查阅的摘要卡片 | `05-quick-reference-card.md` |
@@ -137,9 +137,9 @@
 ├─ 设计规范与准则（1级）
 │  └─ 系统设计准则体系（2级）
 │     ├─ 系统设计准则总纲（3级·构件/末级）
-│     │   └─ 对应文件：01-system-design-standards.md
+│     │   └─ 对应文件：01-pipeline-system-design-standards.md
 │     ├─ 原始需求规范（3级·构件/末级）
-│     │   └─ 对应文件：02-original-requirements-specification.md
+│     │   └─ 对应文件：02-pipeline-original-requirements-specification.md
 │     ├─ 相关方需求规范（3级·构件/末级）
 │     ├─ 业务架构规范（3级·构件/末级）
 │     ├─ 系统需求规范（3级·构件/末级）
@@ -176,9 +176,9 @@
 ```
 | SysReq 节点（来自产品B的系统需求） | 承接的PA构件 | 对应交付文件 |
 |----------------------------------|-------------|-------------|
-| SysReq-F-001（定义设计方法论框架） | PA-001 系统设计准则总纲 | 01-system-design-standards.md |
-| SysReq-F-002（定义原始需求规范） | PA-002 原始需求规范 | 02-original-requirements-specification.md |
-| SysReq-F-003（定义相关方需求规范） | PA-003 相关方需求规范 | 03-stakeholder-requirements-specification.md |
+| SysReq-F-001（定义设计方法论框架） | PA-001 系统设计准则总纲 | 01-pipeline-system-design-standards.md |
+| SysReq-F-002（定义原始需求规范） | PA-002 原始需求规范 | 02-pipeline-original-requirements-specification.md |
+| SysReq-F-003（定义相关方需求规范） | PA-003 相关方需求规范 | 03-pipeline-stakeholder-requirements-specification.md |
 | SysReq-F-010（支持瀑布式场景） | PA-010 瀑布式设计指南 | 01-waterfall-design-guide.md |
 ```
 
@@ -534,7 +534,7 @@ PA构件定义中包含明确的质量指标
 
 ### 9.1 与系统需求规范的关系
 
-**关联文件**：[05-system-requirements-specification.md](05-system-requirements-specification.md)（第4层）
+**关联文件**：[05-pipeline-system-requirements-specification.md](05-pipeline-system-requirements-specification.md)（第4层）
 
 | 方面 | 系统需求规范 | 本规范 |
 |------|------------|-------|
@@ -544,7 +544,7 @@ PA构件定义中包含明确的质量指标
 
 ### 9.2 与业务架构规范的关系
 
-**关联文件**：[04-business-architecture-specification.md](04-business-architecture-specification.md)（第3层）
+**关联文件**：[04-pipeline-business-architecture-specification.md](04-pipeline-business-architecture-specification.md)（第3层）
 
 | 方面 | 业务架构规范 | 本规范 |
 |------|------------|-------|
@@ -553,7 +553,7 @@ PA构件定义中包含明确的质量指标
 
 ### 9.3 与相关方需求规范的关系
 
-**关联文件**：[03-stakeholder-requirements-specification.md](03-stakeholder-requirements-specification.md)（第2层）
+**关联文件**：[03-pipeline-stakeholder-requirements-specification.md](03-pipeline-stakeholder-requirements-specification.md)（第2层）
 
 | 方面 | 相关方需求规范 | 本规范 |
 |------|------------|-------|
@@ -562,7 +562,7 @@ PA构件定义中包含明确的质量指标
 
 ### 9.4 与设计准则总纲的关系
 
-**关联文件**：[01-system-design-standards.md](01-system-design-standards.md)
+**关联文件**：[01-pipeline-system-design-standards.md](01-pipeline-system-design-standards.md)
 
 本规范是系统设计准则第5层（产品架构）的具体化。设计准则定义了产品架构在5层结构中的位置和角色，本规范定义了具体的设计方法和标准。
 

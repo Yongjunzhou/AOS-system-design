@@ -4,7 +4,7 @@
 
 本目录包含AOS专用的系统设计指南，由以下内容经示例替换后生成（将流水线领域示例替换为AOS绩效考核领域示例）：
 
-- 通用设计方法框架参考 [`00-general-standards/02-general-design-guide-overview.md`](../../../../00-general-standards/02-general-design-guide-overview.md)
+- 通用设计方法框架参考 [`00-general/10-general-design-standards/02-general-design-4modes-guide-overview.md`](../../../../00-general/10-general-design-standards/02-general-design-4modes-guide-overview.md)
 - 流水线领域参考示例来自 `10-pipeline-design/10-pipeline-system-design/02-pipeline-system-design-guidelines/`
 
 ## 文档列表

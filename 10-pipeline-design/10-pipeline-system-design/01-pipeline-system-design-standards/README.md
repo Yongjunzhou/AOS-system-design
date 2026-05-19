@@ -4,7 +4,7 @@
 
 ## 📚 本目录文档
 
-> **通用方法论**：本目录中的通用方法论核心（五层结构、基本术语、核心规则、验收标准、检查清单）已提取至 [`00-general-standards/01-general-design-standards.md`](../../../../00-general-standards/01-general-design-standards.md)。本文档是流水线产品的完整准则，包含通用方法论 + 流水线专有内容。
+> **通用方法论**：本目录中的通用方法论核心（五层结构、基本术语、核心规则、验收标准、检查清单）已提取至 [`00-general/10-general-design-standards/01-general-design-standards.md`](../../../../00-general/10-general-design-standards/01-general-design-standards.md)。本文档是流水线产品的完整准则，包含通用方法论 + 流水线专有内容。
 
 ### 01-pipeline-system-design-standards.md
 **产品开发系统设计准则**

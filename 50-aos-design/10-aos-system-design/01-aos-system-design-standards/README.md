@@ -6,7 +6,7 @@
 
 | 文件 | 说明 | 版本 | 来源 |
 |------|------|------|------|
-| [00-aos-system-design-specification-template.md](00-aos-system-design-specification-template.md) | 规范文档通用模板 | v 参考通用 | 基于通用模板适配，通用模板见 [`00-general-standards/03-specification-template.md`](../../../../00-general-standards/03-specification-template.md) |
+| [00-aos-system-design-specification-template.md](00-aos-system-design-specification-template.md) | 规范文档通用模板 | v 参考通用 | 基于通用模板适配，通用模板见 [`00-general/10-general-design-standards/03-specification-template.md`](../../../../00-general/10-general-design-standards/03-specification-template.md) |
 | [01-aos-system-design-standards.md](01-aos-system-design-standards.md) | AOS 系统设计准则总纲 | v1.0 | 基于流水线 v3.3 独立适配 |
 | [02-aos-original-requirements-specification.md](02-aos-original-requirements-specification.md) | AOS 原始需求规范 | v1.0 | 基于流水线 v1.2 独立适配 |
 | [03-aos-stakeholder-requirements-specification.md](03-aos-stakeholder-requirements-specification.md) | AOS 相关方需求规范 | v1.0 | 基于流水线 v2.2 独立适配 |
@@ -16,7 +16,7 @@
 | [07-aos-system-design-terminology-glossary.md](07-aos-system-design-terminology-glossary.md) | AOS 术语对照表 | v1.0 | 基于流水线 v1.2 独立适配（含绩效考核业务领域术语） |
 
 **版本策略**：
-- 通用方法论核心（五层结构、三条核心规则、基本术语、验收标准）基于 [`00-general-standards/01-general-design-standards.md`](../../../../00-general-standards/01-general-design-standards.md) 通用准则
+- 通用方法论核心（五层结构、三条核心规则、基本术语、验收标准）基于 [`00-general/10-general-design-standards/01-general-design-standards.md`](../../../../00-general/10-general-design-standards/01-general-design-standards.md) 通用准则
 - 流水线领域的参考示例基于产品B（`10-pipeline-design/.../01-pipeline-system-design-standards/`）的对应文档，通过"依据B分离模式"进行独立适配
 - **适配原则**：核心方法论保持不变，所有示例从流水线领域替换为 AOS 绩效考核领域
 - 规范内容随通用标准和流水线版本迭代同步更新
