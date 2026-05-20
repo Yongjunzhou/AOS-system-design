@@ -4,7 +4,7 @@
 **文档版本**：v2.0  
 **创建日期**：2026-05-15  
 **最后更新**：2026-05-17  
-**来源文档**：`01-pipeline-system-design-standards/01-pipeline-system-design-standards.md`、`08-system-design-pipeline/04-system-requirements.md` (v2.0，已归档至 `200-put-on-hold/`)
+**来源文档**：`01-pipeline-system-design-standards/01-pipeline-design-standards.md`、`08-system-design-pipeline/04-system-requirements.md` (v2.0，已归档至 `200-put-on-hold/`)
 
 ---
 

@@ -31,9 +31,9 @@
 
 | 文档 | 说明 |
 |------|------|
-| 01-pipeline-system-design-standards.md | 核心准则：5层结构、3条规则、质量指标 |
+| 01-pipeline-design-standards.md | 核心准则：5层结构、3条规则、质量指标 |
 | 02 ~ 06 | 各层通用规范（OR/SR/BA/SysReq/PA） |
-| 07-pipeline-system-design-terminology-glossary.md | 术语英文对照表 |
+| 07-pipeline-terminology-glossary.md | 术语英文对照表 |
 
 ### [02-pipeline-system-design-guidelines/](02-pipeline-system-design-guidelines/README.md)
 **四种场景的设计指南 — 两个项目参考**

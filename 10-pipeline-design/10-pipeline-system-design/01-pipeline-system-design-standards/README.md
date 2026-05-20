@@ -6,7 +6,7 @@
 
 > **通用方法论**：本目录中的通用方法论核心（五层结构、基本术语、核心规则、验收标准、检查清单）已提取至 [`00-general/10-general-design-standards/01-general-design-standards.md`](../../../../00-general/10-general-design-standards/01-general-design-standards.md)。本文档是流水线产品的完整准则，包含通用方法论 + 流水线专有内容。
 
-### 01-pipeline-system-design-standards.md
+### 01-pipeline-design-standards.md
 **产品开发系统设计准则**
 
 - 系统设计流水线方法论的完整定义
@@ -95,7 +95,7 @@
 
 **用途**：为任何系统的产品架构设计提供系统、完整、权威的规范指导
 
-### 07-pipeline-system-design-terminology-glossary.md
+### 07-pipeline-terminology-glossary.md
 **系统设计指南：英文术语对照表**
 
 - 核心术语对照（文档类型、5层结构、需求类型等）
