@@ -154,7 +154,7 @@
 
 ## 🔗 相关文档
 
-- [系统设计实践指南](../02-pipeline-system-design-guidelines/01-pipeline-system-waterfall-design-guide.md)
+- [系统设计实践指南](../02-pipeline-system-design-guidelines/01-waterfall-pipeline-system-design-guide.md)
 - [快速参考卡](../02-pipeline-system-design-guidelines/05-pipeline-system-quick-reference-card.md)
 - [流水线产品数据](../10-pipeline-system-product-data/README.md)
 

@@ -111,7 +111,7 @@ AI 按 4 步流程依次产出以下内容：
 - [业务架构规范](../../01-pipeline-system-design-standards/04-pipeline-business-architecture-specification.md)
 - [系统需求规范](../../01-pipeline-system-design-standards/05-pipeline-system-requirements-specification.md)
 - [产品架构规范](../../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md)
-- [DevOps 系统设计指南](../../02-pipeline-system-design-guidelines/04-pipeline-system-devops-design-guide.md)
+- [DevOps 系统设计指南](../../02-pipeline-system-design-guidelines/04-devops-pipeline-system-design-guide.md)
 
 ---
 

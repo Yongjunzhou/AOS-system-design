@@ -103,7 +103,7 @@ AI 按 6 步流程依次生成以下文档集：
 - [业务架构规范](../../01-pipeline-system-design-standards/04-pipeline-business-architecture-specification.md)
 - [系统需求规范](../../01-pipeline-system-design-standards/05-pipeline-system-requirements-specification.md)
 - [产品架构规范](../../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md)
-- [瀑布式系统设计指南](../../02-pipeline-system-design-guidelines/01-pipeline-system-waterfall-design-guide.md)
+- [瀑布式系统设计指南](../../02-pipeline-system-design-guidelines/01-waterfall-pipeline-system-design-guide.md)
 
 ---
 

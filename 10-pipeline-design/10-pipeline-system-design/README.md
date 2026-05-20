@@ -40,10 +40,10 @@
 
 | 文档 | 适用场景 | 周期 |
 |------|---------|------|
-| 01-pipeline-system-waterfall-design-guide.md | 全新系统，需求明确 | 30-48天 |
-| 02-pipeline-system-agile-design-guide.md | 迭代开发，需求渐进 | 13-21天 |
-| 03-pipeline-system-reverse-engineering-guide.md | 已有系统补文档 | 16-26天 |
-| 04-pipeline-system-devops-design-guide.md | 小变更快速交付 | 几小时-3天 |
+| 01-waterfall-pipeline-system-design-guide.md | 全新系统，需求明确 | 30-48天 |
+| 03-agile-pipeline-system-design-guide.md | 迭代开发，需求渐进 | 13-21天 |
+| 02-reverse-engineering-pipeline-system-design-guide.md | 已有系统补文档 | 16-26天 |
+| 04-devops-pipeline-system-design-guide.md | 小变更快速交付 | 几小时-3天 |
 | 05-pipeline-system-quick-reference-card.md | 快速参考 | — |
 
 ### [03-pipeline-system-design-ai-support/](03-pipeline-system-design-ai-support/)

@@ -8,7 +8,7 @@ if [ -z "$TARGET" ] || [ ! -f "$TARGET" ]; then
     exit 1
 fi
 
-LINKS=$(grep -oP '\[.*?\]\([^)]+\.md\)' "$TARGET" | grep -oP '\([^)]+\.md\)' | tr -d '()' | sort -u)
+LINKS=$(grep -oE '\[[^]]*\]\([^)]+\.md\)' "$TARGET" | grep -oE '\([^)]+\.md\)' | tr -d '()' | sort -u)
 
 if [ -z "$LINKS" ]; then
     echo "✅ 文档中无 .md 链接"

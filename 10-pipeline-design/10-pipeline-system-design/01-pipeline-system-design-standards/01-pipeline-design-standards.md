@@ -382,10 +382,10 @@ OR-001.03    | SR-F-002          | [跳转到第一部分]
 | **设计准则** | `50-aos-design/10-aos-system-design/01-aos-system-design-standards/` | 产品B交付给团队A使用的设计规范 |
 | **设计指南** | `50-aos-design/10-aos-system-design/02-aos-system-design-guidelines/` | 产品B交付给团队A使用的操作指南 |
 | **AI辅助文档** | `50-aos-design/10-aos-system-design/03-aos-system-design-ai-support/` | 产品B交付给团队A使用的设计辅助工具 |
-| **任务定义** | `50-aos-design/10-aos-system-design/06-aos-system-design-tasks/` | 产品B交付给团队A使用的操作规程 |
+| **任务定义** | `50-aos-design/10-aos-system-design/04-aos-system-design-tasks/` | 产品B交付给团队A使用的操作规程 |
 | **（非构件）** | `50-aos-design/10-aos-system-design/10-aos-system-product-data/` | **输出物**——团队A使用产品B的工具后产出的设计内容，不是产品B的构件 |
 
-**一句话理解**：产品B建造了"设计工具箱"交付给团队A（目录 01/02/03/06），团队A用这些工具去设计产品A，产出的设计文档放入 10-product-data。**工具箱是产品B的构件，箱子里产出的图纸是产品A的成果。**
+**一句话理解**：产品B建造了"设计工具箱"交付给团队A（目录 01/02/03/04），团队A用这些工具去设计产品A，产出的设计文档放入 10-product-data。**工具箱是产品B的构件，箱子里产出的图纸是产品A的成果。**
 
 ---
 
@@ -454,10 +454,10 @@ OR-001.03    | SR-F-002          | [跳转到第一部分]
 | `01-aos-system-design-standards/` | `01-pipeline-system-design-standards/` | 参考 | 参考 Pipeline 准则独立适配，内容分离 |
 | `02-aos-system-design-guidelines/` | `02-pipeline-system-design-guidelines/` | 参考 | 参考 Pipeline 指南独立适配，内容分离 |
 | `03-aos-system-design-ai-support/` | `03-pipeline-system-design-ai-support/` | 结构参考 | 参考 Pipeline 结构，内容按 AOS 定制 |
-| `06-aos-system-design-tasks/` | 流水线的 6 个核心任务定义 | 结构参考 | 参考 Pipeline 任务结构，内容按 AOS 定制 |
+| `04-aos-system-design-tasks/` | 流水线的 4 场景任务定义 | 结构参考 | 参考 Pipeline 任务结构，内容按 AOS 定制 |
 | `10-aos-system-product-data/` | `10-pipeline-system-product-data/` | 模板参考 | 文件命名和模板结构参考，内容由 AOS 团队填入 |
 
-> **注**：产品A的产品数据（`10-aos-system-product-data/`）是产品A团队使用产品B后的**输出物**，不是产品B的构件。产品B的构件对应 01/02/03/06 四个目录。
+> **注**：产品A的产品数据（`10-aos-system-product-data/`）是产品A团队使用产品B后的**输出物**，不是产品B的构件。产品B的构件对应 01/02/03/04 四个目录。
 
 ---
 

@@ -34,12 +34,12 @@ AI 工作文档的编写基于两份既有的输入文档：
 │   ├── workflow-prompts.md
 │   ├── product-example.md
 │   └── checklist.md
-├── 02-agile/                  # 场景2：敏捷式 / 增量需求
+├── 03-agile/                  # 场景2：敏捷式 / 增量需求
 │   ├── README.md
 │   ├── workflow-prompts.md
 │   ├── product-example.md
 │   └── checklist.md
-├── 03-reverse-engineering/    # 场景3：逆向工程
+├── 02-reverse-engineering/    # 场景3：逆向工程
 │   ├── README.md
 │   ├── workflow-prompts.md
 │   ├── product-example.md
@@ -69,8 +69,8 @@ AI 工作文档的编写基于两份既有的输入文档：
 | 编号 | 场景 | 对应指南 | 核心特征 |
 |------|------|---------|---------|
 | **01** | **瀑布式 / 新研产品** | 01-waterfall-design-guide.md | 原始需求全部齐备，从零开始完整设计（6 步） |
-| **02** | **敏捷式 / 增量需求** | 02-agile-design-guide.md | 已有完整系统设计文档，增加新需求或修订（8 步） |
-| **03** | **逆向工程** | 03-reverse-engineering-guide.md | 产品已开发完成但文档缺失，从代码重建文档（8 步） |
+| **02** | **敏捷式 / 增量需求** | 03-agile-design-guide.md | 已有完整系统设计文档，增加新需求或修订（8 步） |
+| **03** | **逆向工程** | 02-reverse-engineering-guide.md | 产品已开发完成但文档缺失，从代码重建文档（8 步） |
 | **04** | **DevOps / 快速修复** | 04-devops-design-guide.md | 产品已上线，快速修复 bug 或实现紧急需求（3 种模式） |
 
 ## 六、AI 文档的编写原则

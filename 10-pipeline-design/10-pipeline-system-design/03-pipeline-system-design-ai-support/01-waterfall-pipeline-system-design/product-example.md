@@ -1065,7 +1065,7 @@ SysReq-F-004: 任务规程定义模块（5级·架构末级）
 │     │  ├─ 构件类型：设计指南
 │     │  ├─ 承接SysReq：SysReq-F-002.2 相关9级活动（敏捷式指南编写）
 │     │  ├─ 符合性分析：通过迭代流程设计满足敏捷式场景设计指导需求
-│     │  ├─ 对应文件：02-agile-design-guide.md
+│     │  ├─ 对应文件：03-agile-design-guide.md
 │     │  └─ 质量指标：迭代流程完整
 │     │
 │     ├─ PA-009: 逆向工程设计指南（3级·构件/末级）
@@ -1073,7 +1073,7 @@ SysReq-F-004: 任务规程定义模块（5级·架构末级）
 │     │  ├─ 构件类型：设计指南
 │     │  ├─ 承接SysReq：SysReq-F-002.2 相关9级活动（逆向工程指南编写）
 │     │  ├─ 符合性分析：通过逆向流程设计满足逆向工程场景设计指导需求
-│     │  ├─ 对应文件：03-reverse-engineering-design-guide.md
+│     │  ├─ 对应文件：02-reverse-engineering-design-guide.md
 │     │  └─ 质量指标：逆向推导步骤完整
 │     │
 │     ├─ PA-010: DevOps设计指南（3级·构件/末级）
@@ -1107,7 +1107,7 @@ SysReq-F-004: 任务规程定义模块（5级·架构末级）
 │     │  ├─ 构件类型：AI辅助文档
 │     │  ├─ 承接SysReq：SysReq-F-003.2 相关9级活动（敏捷式AI辅助设计）
 │     │  ├─ 符合性分析：通过四份AI辅助文档的关联设计满足敏捷式场景AI自动化需求
-│     │  ├─ 对应目录：03-system-design-ai-support/02-agile/
+│     │  ├─ 对应目录：03-system-design-ai-support/03-agile/
 │     │  └─ 质量指标：AI按workflow-prompts可完成敏捷式设计全过程
 │     │
 │     ├─ PA-014: 逆向工程AI辅助（3级·构件/末级）
@@ -1115,7 +1115,7 @@ SysReq-F-004: 任务规程定义模块（5级·架构末级）
 │     │  ├─ 构件类型：AI辅助文档
 │     │  ├─ 承接SysReq：SysReq-F-003.2 相关9级活动（逆向工程AI辅助设计）
 │     │  ├─ 符合性分析：通过四份AI辅助文档的关联设计满足逆向工程场景AI自动化需求
-│     │  ├─ 对应目录：03-system-design-ai-support/03-reverse-engineering/
+│     │  ├─ 对应目录：03-system-design-ai-support/02-reverse-engineering/
 │     │  └─ 质量指标：AI按workflow-prompts可完成逆向工程设计全过程
 │     │
 │     └─ PA-015: DevOpsAI辅助（3级·构件/末级）
@@ -1133,7 +1133,7 @@ SysReq-F-004: 任务规程定义模块（5级·架构末级）
       │  ├─ 构件类型：任务定义
       │  ├─ 承接SysReq：SysReq-F-004.1.1.1.1（第1步任务定义撰写）
       │  ├─ 符合性分析：通过标准化任务定义满足第1步操作规程需求
-      │  ├─ 对应目录：06-aos-system-design-tasks/01-aos-normalization/
+      │  ├─ 对应目录：04-aos-system-design-tasks/01-waterfall-aos-system-design/
       │  └─ 质量指标：输入/输出/步骤/检查清单完整
       │
       ├─ PA-017: SR详细定义及BA定义（3级·构件/末级）
@@ -1141,7 +1141,7 @@ SysReq-F-004: 任务规程定义模块（5级·架构末级）
       │  ├─ 构件类型：任务定义
       │  ├─ 承接SysReq：SysReq-F-004.1.1.1.2（第2步任务定义撰写）
       │  ├─ 符合性分析：通过标准化任务定义满足第2步操作规程需求
-      │  ├─ 对应目录：06-aos-system-design-tasks/02-aos-sr-ba-design/
+      │  ├─ 对应目录：04-aos-system-design-tasks/01-waterfall-aos-system-design/
       │  └─ 质量指标：输入/输出/步骤/检查清单完整
       │
       ├─ PA-018: SysReq功能部分架构定义（3级·构件/末级）
@@ -1149,7 +1149,7 @@ SysReq-F-004: 任务规程定义模块（5级·架构末级）
       │  ├─ 构件类型：任务定义
       │  ├─ 承接SysReq：SysReq-F-004.1.1.1.3（第3步任务定义撰写）
       │  ├─ 符合性分析：通过标准化任务定义满足第3步操作规程需求
-      │  ├─ 对应目录：06-aos-system-design-tasks/03-aos-ba-sysreq-design/
+      │  ├─ 对应目录：04-aos-system-design-tasks/01-waterfall-aos-system-design/
       │  └─ 质量指标：输入/输出/步骤/检查清单完整
       │
       ├─ PA-019: SR-NFR详细定义及SysReq-NFR架构定义（3级·构件/末级）
@@ -1157,7 +1157,7 @@ SysReq-F-004: 任务规程定义模块（5级·架构末级）
       │  ├─ 构件类型：任务定义
       │  ├─ 承接SysReq：SysReq-F-004.1.1.1.4（第4步任务定义撰写）
       │  ├─ 符合性分析：通过标准化任务定义满足第4步操作规程需求
-      │  ├─ 对应目录：06-aos-system-design-tasks/04-aos-nfr-design/
+      │  ├─ 对应目录：04-aos-system-design-tasks/01-waterfall-aos-system-design/
       │  └─ 质量指标：输入/输出/步骤/检查清单完整
       │
       ├─ PA-020: SysReq详细定义及PA定义（3级·构件/末级）
@@ -1165,7 +1165,7 @@ SysReq-F-004: 任务规程定义模块（5级·架构末级）
       │  ├─ 构件类型：任务定义
       │  ├─ 承接SysReq：SysReq-F-004.1.1.1.5（第5步任务定义撰写）
       │  ├─ 符合性分析：通过标准化任务定义满足第5步操作规程需求
-      │  ├─ 对应目录：06-aos-system-design-tasks/05-aos-sysreq-pa-design/
+      │  ├─ 对应目录：04-aos-system-design-tasks/01-waterfall-aos-system-design/
       │  └─ 质量指标：输入/输出/步骤/检查清单完整
       │
       └─ PA-021: 双向追溯验证（3级·构件/末级）
@@ -1173,7 +1173,7 @@ SysReq-F-004: 任务规程定义模块（5级·架构末级）
          ├─ 构件类型：任务定义
          ├─ 承接SysReq：SysReq-F-004.1.1.1.6（第6步任务定义撰写）
          ├─ 符合性分析：通过标准化任务定义满足第6步操作规程需求
-         ├─ 对应目录：06-aos-system-design-tasks/06-aos-traceability/
+         ├─ 对应目录：04-aos-system-design-tasks/01-waterfall-aos-system-design/
          └─ 质量指标：输入/输出/步骤/检查清单完整
 ```
 
@@ -1208,8 +1208,8 @@ SysReq-F-004: 任务规程定义模块（5级·架构末级）
 | SysReq-F-002.1.1.1.1 | PA-007 瀑布式指南 | 设计指南 | 01-waterfall-design-guide.md |
 | SysReq-F-002.1.1.1.2 | PA-007 瀑布式指南 | 设计指南 | 01-waterfall-design-guide.md |
 | SysReq-F-002.1.1.1.3 | PA-007 瀑布式指南 | 设计指南 | 01-waterfall-design-guide.md |
-| SysReq-F-002.2.1.1.1 | PA-008 敏捷式指南 | 设计指南 | 02-agile-design-guide.md |
-| SysReq-F-002.2.1.1.2 | PA-009 逆向工程指南 | 设计指南 | 03-reverse-engineering-design-guide.md |
+| SysReq-F-002.2.1.1.1 | PA-008 敏捷式指南 | 设计指南 | 03-agile-design-guide.md |
+| SysReq-F-002.2.1.1.2 | PA-009 逆向工程指南 | 设计指南 | 02-reverse-engineering-design-guide.md |
 | SysReq-F-002.2.1.1.3 | PA-010 DevOps指南 | 设计指南 | 04-devops-design-guide.md |
 | SysReq-F-002.3.1.1.1 | PA-011 快速参考卡 | 设计指南 | 05-quick-reference-card.md |
 | SysReq-F-002.3.1.1.2 | PA-011 快速参考卡 | 设计指南 | 05-quick-reference-card.md |
@@ -1217,8 +1217,8 @@ SysReq-F-004: 任务规程定义模块（5级·架构末级）
 | SysReq-F-003.1.1.1.2 | PA-012 瀑布式AI辅助 | AI辅助文档 | 03-ai-support/01-waterfall/ |
 | SysReq-F-003.1.1.1.3 | PA-012 瀑布式AI辅助 | AI辅助文档 | 03-ai-support/01-waterfall/ |
 | SysReq-F-003.1.1.1.4 | PA-012 瀑布式AI辅助 | AI辅助文档 | 03-ai-support/01-waterfall/ |
-| SysReq-F-003.2.1.1.1 | PA-013 敏捷式AI辅助 | AI辅助文档 | 03-ai-support/02-agile/ |
-| SysReq-F-003.2.1.1.2 | PA-014 逆向工程AI辅助 | AI辅助文档 | 03-ai-support/03-reverse-engineering/ |
+| SysReq-F-003.2.1.1.1 | PA-013 敏捷式AI辅助 | AI辅助文档 | 03-ai-support/03-agile/ |
+| SysReq-F-003.2.1.1.2 | PA-014 逆向工程AI辅助 | AI辅助文档 | 03-ai-support/02-reverse-engineering/ |
 | SysReq-F-003.2.1.1.3 | PA-015 DevOpsAI辅助 | AI辅助文档 | 03-ai-support/04-devops/ |
 | SysReq-F-003.3.1.1.1 | PA-012~PA-015 | AI辅助文档 | 各场景AI辅助目录 |
 | SysReq-F-003.3.1.1.2 | PA-012~PA-015 | AI辅助文档 | 各场景AI辅助目录 |
