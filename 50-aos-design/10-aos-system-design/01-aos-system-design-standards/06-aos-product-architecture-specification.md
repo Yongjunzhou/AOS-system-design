@@ -1,7 +1,5 @@
-# 产品架构规范
+# AOS 产品架构规范
 **Product Architecture Specification**
-
-**文档标题**：产品架构规范（Product Architecture Specification）
 
 **目的**：为产品架构的架构定义和详细定义设计提供完整的规范和标准，建立从系统需求到产品架构的清晰设计链路，确保产品架构的完整性、清晰性和可实现性
 
@@ -597,7 +595,7 @@ PA构件定义中包含明确的质量指标
 
 ### 9.1 与系统需求规范的关系
 
-**关联文件**：[05-system-requirements-specification.md](05-system-requirements-specification.md)（第4层）
+**关联文件**：[05-aos-system-requirements-specification.md](05-aos-system-requirements-specification.md)（第4层）
 
 | 方面 | 系统需求规范 | 本规范 |
 |------|------------|-------|
@@ -607,7 +605,7 @@ PA构件定义中包含明确的质量指标
 
 ### 9.2 与业务架构规范的关系
 
-**关联文件**：[04-business-architecture-specification.md](04-business-architecture-specification.md)（第3层）
+**关联文件**：[04-aos-business-architecture-specification.md](04-aos-business-architecture-specification.md)（第3层）
 
 | 方面 | 业务架构规范 | 本规范 |
 |------|------------|-------|
@@ -616,7 +614,7 @@ PA构件定义中包含明确的质量指标
 
 ### 9.3 与相关方需求规范的关系
 
-**关联文件**：[03-stakeholder-requirements-specification.md](03-stakeholder-requirements-specification.md)（第2层）
+**关联文件**：[03-aos-stakeholder-requirements-specification.md](03-aos-stakeholder-requirements-specification.md)（第2层）
 
 | 方面 | 相关方需求规范 | 本规范 |
 |------|------------|-------|
@@ -625,7 +623,7 @@ PA构件定义中包含明确的质量指标
 
 ### 9.4 与设计准则总纲的关系
 
-**关联文件**：[01-system-design-standards.md](01-system-design-standards.md)
+**关联文件**：[01-aos-system-design-standards.md](01-aos-system-design-standards.md)
 
 本规范是系统设计准则第5层（产品架构）的具体化。设计准则定义了产品架构在5层结构中的位置和角色，本规范定义了具体的设计方法和标准。
 

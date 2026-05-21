@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-AOS 是企业运营体系（Enterprise Operation System）的简称。本仓库包含两个系统设计项目，共用同一套设计准则和方法论，通过 AI Skill 实现流程自动化。
+AOS 是企业运营体系（Enterprise Operation System）的简称。本仓库包含两个系统设计项目，它们的设计准则和方法论是类似的，通过 AI Skill 实现流程自动化。
 
 ### 两层产品关系
 

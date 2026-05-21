@@ -2,13 +2,13 @@
 
 **对应场景**：02-reverse-engineering · 第1步
 **对应 AI 模板**：`03-pipeline-system-design-ai-support/02-reverse-engineering-pipeline-system-design/workflow-prompts.md` 第1步
-**对应设计指南**：[逆向工程系统设计指南 第1步](../../02-pipeline-system-design-guidelines/02-reverse-engineering-pipeline-system-design-guide.md#第1步代码和图纸分析)
+**对应设计指南**：[逆向工程系统设计指南 第1步](../../02-pipeline-system-design-guidelines/02-reverse-engineering-pipeline-system-design-guide.md#第1步现有产物梳理与架构分析)
 
 ---
 
 ## 目标
 
-全面梳理产品B（系统设计流水线）现有的所有产物，理解当前的目录结构和文件组织方式，建立"架构图纸"级别的全局视图，为后续逆向推导提供基础。
+全面梳理产品B（系统设计流水线）现有的所有产物，理解当前的目录结构和文件组织方式，建立完整的产物全局视图，为后续逆向推导提供基础。
 
 ## 上下文继承
 
@@ -40,7 +40,7 @@
 | 现有 AI 辅助文档 | `03-pipeline-system-design-ai-support/` |
 | 现有产品数据模板 | `10-pipeline-system-product-data/` |
 | 通用方法论 | `00-general/` |
-| Skill 定义 | `.claude/skills/conformance-review/` |
+| Skill 定义 | `.claude/skills/rule-conformance-review/` |
 
 ## 操作流程
 
@@ -49,7 +49,7 @@
 | 1 | 生成完整目录树 | AI | 列出仓库全部目录和文件（排除 .git、node_modules 等无关目录） |
 | 2 | 按架构层级分类现有产物 | AI | 将每个文件归类到 OR/SR/BA/SysReq/PA 中对应该层结构的类型。注意：现有产物并非按五层结构组织，分类是推导起点，并非最终归属 |
 | 3 | 识别产物类型 | AI | 标注每份产物的类型：规范定义 / 设计指南 / 操作模板 / 产品数据模板 / 工具脚本 / 其他 |
-| 4 | 分析活动：初版架构评估 | AI | 需求说明符合性分析（产物覆盖度、盲区识别：哪些产物已在但未正式化）+ 需求性能符合性分析（从代码特征反推性能指标范围） |
+| 4 | 分析活动：初版架构评估 | AI | 需求说明符合性分析（产物覆盖度、盲区识别：哪些产物已在但未正式化）+ 需求性能符合性分析（从产物特征反推性能指标范围） |
 | 5 | 汇总输出 | AI | 按模板生成产物总览清单 |
 
 ## 人类审核要点
@@ -62,7 +62,7 @@
 
 ## AI 模板
 
-详见 `03-pipeline-system-design-ai-support/02-reverse-engineering/workflow-prompts.md` 第1步"代码和图纸分析"。
+详见 `03-pipeline-system-design-ai-support/02-reverse-engineering-pipeline-system-design/workflow-prompts.md` 第1步"现有产物梳理与架构分析"。
 
 ## 质量门禁
 

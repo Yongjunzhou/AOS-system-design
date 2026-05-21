@@ -62,7 +62,7 @@
 - [ ] SysReq → PA 映射关系建立
 - [ ] 业务架构骨架已同步建立
 - [ ] 推导有效性评级已标注
-- [ ] 运行 conformance-review 进行符合性审查
+- [ ] 运行 rule-conformance-review 进行符合性审查
 - [ ] 按审查修复流程处理问题
 
 ## 产出

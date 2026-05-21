@@ -3,6 +3,8 @@
 **对应场景**：04-devops · 第3步 · 模式2
 **对应 AI 模板**：`03-aos-system-design-ai-support/04-devops-aos-system-design/workflow-prompts.md` 第3步（模式2部分）
 **对应设计指南**：[DevOps 系统设计指南 第3步](../../02-aos-system-design-guidelines/04-devops-aos-system-design-guide.md#第3步局部设计模式21天)
+**版本**：v1.0
+**创建日期**：2026-05-21
 
 ---
 
@@ -51,10 +53,11 @@
 ## 质量门禁
 
 - [ ] 分析活动：影响范围分析已执行
-- [ ] SysReq + PA 增量定义已更新
+- [ ] SysReq + PA 增量定义已更新（含符合性分析更新）
 - [ ] 映射关系已更新
 - [ ] 回归验证通过
-- [ ] 运行 conformance-review 进行符合性审查
+- [ ] 发布前更新所有修改过的文档版本号
+- [ ] 运行 rule-conformance-review 进行符合性审查
 - [ ] 按审查修复流程处理问题
 
 ## 产出

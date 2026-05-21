@@ -55,7 +55,7 @@
 - [ ] SysReq + PA 增量定义已更新
 - [ ] 映射关系已更新
 - [ ] 回归验证通过
-- [ ] 运行 conformance-review 进行符合性审查
+- [ ] 运行 rule-conformance-review 进行符合性审查
 - [ ] 按审查修复流程处理问题
 
 ## 产出

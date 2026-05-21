@@ -1,5 +1,9 @@
 # task-03：系统需求功能部分架构定义
 
+**文档版本**：v1.0
+**创建日期**：2026-05-21
+**最近修订**：2026-05-21
+
 **对应场景**：01-waterfall · 第3步
 **对应 AI 模板**：`03-aos-system-design-ai-support/01-waterfall-aos-system-design/workflow-prompts.md` 第3步
 **对应设计指南**：[AOS 瀑布式系统设计指南 第3步](../../02-aos-system-design-guidelines/01-waterfall-aos-system-design-guide.md#第3步系统需求功能部分架构定义)
@@ -61,10 +65,14 @@
 - [ ] 每个 5 级节点包含符合性分析和设计指导
 - [ ] PA 骨架已同步建立
 - [ ] 映射关系表已建立（BA→SysReq）
-- [ ] 运行 conformance-review 进行符合性审查，按审查修复流程处理问题
+- [ ] 编号在架构定义阶段确定后保持稳定，变更需经评审
+- [ ] 运行 rule-conformance-review 进行符合性审查，按审查修复流程处理问题
 
 ## 产出
 
 | 文件 | 说明 |
 |------|------|
 | 系统需求功能部分架构定义 | `10-aos-system-product-data/05-system-requirements-architecture.md` |
+
+---
+**文档版本**：v1.0 | **创建日期**：2026-05-21 | **最近修订**：2026-05-21

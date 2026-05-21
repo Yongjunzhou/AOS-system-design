@@ -1,5 +1,9 @@
 # task-06：双向追溯验证
 
+**文档版本**：v1.0
+**创建日期**：2026-05-21
+**最近修订**：2026-05-21
+
 **对应场景**：01-waterfall · 第6步
 **对应 AI 模板**：`03-aos-system-design-ai-support/01-waterfall-aos-system-design/workflow-prompts.md` 第6步
 **对应设计指南**：[AOS 瀑布式系统设计指南 第6步](../../02-aos-system-design-guidelines/01-waterfall-aos-system-design-guide.md#第6步双向追溯验证)
@@ -64,7 +68,8 @@
 - [ ] 映射覆盖率 100%（无遗漏、无冗余）
 - [ ] 性能指标跨层一致
 - [ ] 超链接有效率 100%
-- [ ] 运行 conformance-review 进行符合性审查，按审查修复流程处理问题
+- [ ] 编号稳定性已确认（各层编号在架构冻结后未发生未经评审的变更）
+- [ ] 运行 rule-conformance-review 进行符合性审查，按审查修复流程处理问题
 
 ## 产出
 
@@ -72,3 +77,6 @@
 |------|------|
 | 追溯矩阵 | `10-aos-system-product-data/08-traceability-matrix.md` |
 | 验证报告 | `10-aos-system-product-data/09-verification-report.md` |
+
+---
+**文档版本**：v1.0 | **创建日期**：2026-05-21 | **最近修订**：2026-05-21

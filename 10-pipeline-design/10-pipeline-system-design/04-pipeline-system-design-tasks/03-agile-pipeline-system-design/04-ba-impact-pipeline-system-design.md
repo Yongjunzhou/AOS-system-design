@@ -54,7 +54,7 @@
 - [ ] BA 增量定义完成
 - [ ] IPO 去重完成
 - [ ] BA → SysReq 骨架映射已更新
-- [ ] 运行 conformance-review 进行符合性审查
+- [ ] 运行 rule-conformance-review 进行符合性审查
 - [ ] 按审查修复流程处理问题
 
 ## 产出

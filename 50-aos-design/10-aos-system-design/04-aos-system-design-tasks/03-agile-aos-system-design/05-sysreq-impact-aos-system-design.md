@@ -3,6 +3,8 @@
 **对应场景**：03-agile · 第5步
 **对应 AI 模板**：`03-aos-system-design-ai-support/03-agile-aos-system-design/workflow-prompts.md` 第5步
 **对应设计指南**：[敏捷式系统设计指南 第5步](../../02-aos-system-design-guidelines/03-agile-aos-system-design-guide.md#第5步系统需求影响分析)
+**版本**：v1.0
+**创建日期**：2026-05-21
 
 ---
 
@@ -37,7 +39,7 @@
 | # | 操作 | 执行者 | 说明 |
 |---|------|--------|------|
 | 1 | 分析活动：SysReq 影响分析 | AI | 需求说明符合性分析（功能和非功能分支分别分析，BA 增量是否能映射到 SysReq）+ 需求性能符合性分析（性能指标是否从 BA 正确继承） |
-| 2 | SysReq 增量定义 | AI | 更新 0-9 级层级结构 |
+| 2 | SysReq 增量定义（功能/非功能分流） | AI | 功能需求分支：更新 0-9 级层级结构（5 级承接 BA，9 级分配到 PA）；非功能需求分支：更新 0-6 级平行架构（5 级承接 SR-NFR，6 级验证标准） |
 | 3 | 更新映射关系表 | AI | BA → SysReq 映射 |
 | 4 | 结果审核 | 人类 | 确认 SysReq 更新 |
 
@@ -55,7 +57,7 @@
 - [ ] 功能架构 0-9 级增量完成
 - [ ] 非功能架构 0-6 级增量完成
 - [ ] SysReq → PA 骨架映射已更新
-- [ ] 运行 conformance-review 进行符合性审查
+- [ ] 运行 rule-conformance-review 进行符合性审查
 - [ ] 按审查修复流程处理问题
 
 ## 产出

@@ -1,5 +1,9 @@
 # task-04：相关方需求非功能部分详细定义及系统需求非功能部分架构定义
 
+**文档版本**：v1.0
+**创建日期**：2026-05-21
+**最近修订**：2026-05-21
+
 **对应场景**：01-waterfall · 第4步
 **对应 AI 模板**：`03-aos-system-design-ai-support/01-waterfall-aos-system-design/workflow-prompts.md` 第4步
 **对应设计指南**：[AOS 瀑布式系统设计指南 第4步](../../02-aos-system-design-guidelines/01-waterfall-aos-system-design-guide.md#第4步相关方需求非功能部分详细定义及系统需求非功能部分架构定义)
@@ -55,7 +59,8 @@
 - [ ] 非功能需求按三大类分类组织
 - [ ] 系统需求非功能部分架构定义完整（0-6 级平行架构 + 映射关系表）
 - [ ] 与功能分支无冲突
-- [ ] 运行 conformance-review 进行符合性审查，按审查修复流程处理问题
+- [ ] 编号在架构定义阶段确定后保持稳定，变更需经评审
+- [ ] 运行 rule-conformance-review 进行符合性审查，按审查修复流程处理问题
 
 ## 产出
 
@@ -63,4 +68,7 @@
 |------|------|
 | SR 非功能部分详细定义 + SysReq-NFR 架构定义 | `10-aos-system-product-data/05-system-requirements-architecture.md` |
 
-> **注意**：本步可与非功能分支（task-02 + task-03）**并行执行**。
+> **注意**：本步（非功能分支）可与功能分支（task-02 + task-03）**并行执行**。
+
+---
+**文档版本**：v1.0 | **创建日期**：2026-05-21 | **最近修订**：2026-05-21

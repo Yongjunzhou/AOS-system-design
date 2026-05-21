@@ -60,7 +60,7 @@
 - [ ] 功能部分和非功能部分分离完成
 - [ ] SR-F 和 SR-NFR 各架构末级节点编号已分配
 - [ ] SR → BA 映射关系建立
-- [ ] 运行 conformance-review 进行符合性审查
+- [ ] 运行 rule-conformance-review 进行符合性审查
 - [ ] 按审查修复流程处理问题
 
 ## 产出

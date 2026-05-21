@@ -66,7 +66,7 @@
 - [ ] 每个 PA 构件标注受哪些 NFR 约束，无遗漏
 - [ ] NFR 冲突有权衡决策记录
 - [ ] 映射关系表已建立（SysReq 9 级→PA）
-- [ ] 运行 conformance-review 进行符合性审查，按审查修复流程处理问题
+- [ ] 运行 rule-conformance-review 进行符合性审查，按审查修复流程处理问题
 
 ## 产出
 

@@ -3,6 +3,8 @@
 **对应场景**：04-devops · 第2步 · 模式1
 **对应 AI 模板**：`03-aos-system-design-ai-support/04-devops-aos-system-design/workflow-prompts.md` 第2步（模式1部分）
 **对应设计指南**：[DevOps 系统设计指南 第2步](../../02-aos-system-design-guidelines/04-devops-aos-system-design-guide.md#第2步快速修复模式1几小时)
+**版本**：v1.0
+**创建日期**：2026-05-21
 
 ---
 
@@ -52,7 +54,8 @@
 - [ ] 分析活动：影响验证已执行
 - [ ] PA 增量定义已更新
 - [ ] 回归验证通过
-- [ ] 运行 conformance-review 进行符合性审查
+- [ ] 发布前更新所有修改过的文档版本号
+- [ ] 运行 rule-conformance-review 进行符合性审查
 - [ ] 按审查修复流程处理问题
 
 ## 产出

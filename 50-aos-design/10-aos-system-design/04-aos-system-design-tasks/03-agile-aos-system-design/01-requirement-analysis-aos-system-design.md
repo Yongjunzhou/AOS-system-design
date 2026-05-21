@@ -3,6 +3,8 @@
 **对应场景**：03-agile · 第1步
 **对应 AI 模板**：`03-aos-system-design-ai-support/03-agile-aos-system-design/workflow-prompts.md` 第1步
 **对应设计指南**：[敏捷式系统设计指南 第1步](../../02-aos-system-design-guidelines/03-agile-aos-system-design-guide.md#第1步新需求分析和分类)
+**版本**：v1.0
+**创建日期**：2026-05-21
 
 ---
 
@@ -56,7 +58,8 @@
 - [ ] 分析活动：影响范围评估已执行
 - [ ] 新需求分析报告完整
 - [ ] 影响范围评估完成
-- [ ] 运行 conformance-review 进行符合性审查
+- [ ] 功能/非功能需求分流正确（功能走 BA 链路、非功能走 NFR 平行链路）
+- [ ] 运行 rule-conformance-review 进行符合性审查
 - [ ] 按审查修复流程处理问题
 
 ## 产出

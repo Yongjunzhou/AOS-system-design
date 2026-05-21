@@ -58,7 +58,7 @@
 - [ ] 功能架构 0-9 级增量完成
 - [ ] 非功能架构 0-6 级增量完成
 - [ ] SysReq → PA 骨架映射已更新
-- [ ] 运行 conformance-review 进行符合性审查
+- [ ] 运行 rule-conformance-review 进行符合性审查
 - [ ] 按审查修复流程处理问题
 
 ## 产出

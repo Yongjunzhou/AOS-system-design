@@ -41,12 +41,12 @@
 | 中文 | 英文 | 文件名 |
 |------|------|--------|
 | AOS 系统设计准则总纲 | AOS System Design Standards | 01-aos-system-design-standards.md |
-| AOS 原始需求规范 | AOS Original Requirements Specification | 02-original-requirements-specification.md |
-| AOS 相关方需求规范 | AOS Stakeholder Requirements Specification | 03-stakeholder-requirements-specification.md |
-| AOS 业务架构规范 | AOS Business Architecture Specification | 04-business-architecture-specification.md |
-| AOS 系统需求规范 | AOS System Requirements Specification | 05-system-requirements-specification.md |
-| AOS 产品架构规范 | AOS Product Architecture Specification | 06-product-architecture-specification.md |
-| AOS 术语对照表 | AOS Terminology Glossary | 07-terminology-glossary.md |
+| AOS 原始需求规范 | AOS Original Requirements Specification | 02-aos-original-requirements-specification.md |
+| AOS 相关方需求规范 | AOS Stakeholder Requirements Specification | 03-aos-stakeholder-requirements-specification.md |
+| AOS 业务架构规范 | AOS Business Architecture Specification | 04-aos-business-architecture-specification.md |
+| AOS 系统需求规范 | AOS System Requirements Specification | 05-aos-system-requirements-specification.md |
+| AOS 产品架构规范 | AOS Product Architecture Specification | 06-aos-product-architecture-specification.md |
+| AOS 术语对照表 | AOS Terminology Glossary | 07-aos-system-design-terminology-glossary.md |
 | AOS AI辅助概览 | AOS AI Assistance Overview | 03-aos-system-design-ai-support/00-overview.md |
 | AOS 产品数据 | AOS Product Data | 10-aos-system-product-data/ |
 
@@ -196,7 +196,7 @@ AOS System Design Standards
 **文件名中**：
 ```
 01-aos-system-design-standards.md
-02-original-requirements-specification.md
+02-aos-original-requirements-specification.md
 ```
 
 ### 在交流中使用英文

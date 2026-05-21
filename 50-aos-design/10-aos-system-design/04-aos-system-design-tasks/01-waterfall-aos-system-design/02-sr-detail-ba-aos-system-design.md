@@ -1,5 +1,9 @@
 # task-02：相关方需求功能部分详细定义及业务架构定义
 
+**文档版本**：v1.0
+**创建日期**：2026-05-21
+**最近修订**：2026-05-21
+
 **对应场景**：01-waterfall · 第2步
 **对应 AI 模板**：`03-aos-system-design-ai-support/01-waterfall-aos-system-design/workflow-prompts.md` 第2步
 **对应设计指南**：[AOS 瀑布式系统设计指南 第2步](../../02-aos-system-design-guidelines/01-waterfall-aos-system-design-guide.md#第2步相关方需求功能部分详细定义及业务架构定义)
@@ -39,7 +43,7 @@
 | # | 操作 | 执行者 | 说明 |
 |---|------|--------|------|
 | 1 | 分析活动：架构定义验证 | AI | 需求说明符合性分析（映射完整性、一致性）+ 需求性能符合性分析（指标量化/可测量性） |
-| 2 | SR 功能部分详细定义 | AI | 分解到每条末级只需映射到一个 BA IPO，标注分配目标 |
+| 2 | SR 功能部分详细定义 | AI | 分解到每条末级只需映射到一个 BA IPO，标注分配目标（参考 AI 决策框架 §2.2 SR→BA 分解策略） |
 | 3 | 业务架构 IPO 定义 | AI | 为每个 IPO 定义 I/P/O，执行三级去重（复用→改进→新增） |
 | 4 | 同步建立 SysReq 架构骨架 | AI | 边分解边映射：每完成一个 IPO 立即建立从 BA 到 SysReq 的映射 |
 | 5 | 结果审核 | 人类 | 审核 IPO 的业务语义正确性，确认骨架映射关系 |
@@ -60,7 +64,8 @@
 - [ ] 每个业务组件包含符合性分析和设计指导
 - [ ] SysReq 架构骨架已同步建立，与 IPO 清单匹配
 - [ ] 映射关系表已建立（SR→BA）
-- [ ] 运行 conformance-review 进行符合性审查，按审查修复流程处理问题
+- [ ] 编号在架构定义阶段确定后保持稳定，变更需经评审
+- [ ] 运行 rule-conformance-review 进行符合性审查，按审查修复流程处理问题
 
 ## 产出
 
@@ -68,3 +73,6 @@
 |------|------|
 | 相关方需求详细定义文档 | `10-aos-system-product-data/03-stakeholder-requirements-detailed.md` |
 | 业务架构定义文档 | `10-aos-system-product-data/04-business-architecture.md` |
+
+---
+**文档版本**：v1.0 | **创建日期**：2026-05-21 | **最近修订**：2026-05-21
