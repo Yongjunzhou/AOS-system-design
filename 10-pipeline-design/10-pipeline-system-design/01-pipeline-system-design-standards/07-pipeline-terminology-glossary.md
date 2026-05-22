@@ -103,6 +103,7 @@
 | 双向追溯 | Bidirectional Traceability | 需求和方案之间的双向导航 |
 | 符合性分析 | Compliance Analysis | 方案如何满足需求的分析 |
 | 映射关系 | Mapping Relationship | 需求和方案之间的对应关系 |
+| 组织资产优先 | Organizational Asset Priority | 新增需求时优先复用/改进现有架构节点，最后新增的原则，遵循"复用→改进→新增"的优先级顺序 |
 
 ---
 

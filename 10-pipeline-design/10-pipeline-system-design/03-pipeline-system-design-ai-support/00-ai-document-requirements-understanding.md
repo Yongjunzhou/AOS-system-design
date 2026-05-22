@@ -29,22 +29,22 @@ AI 工作文档的编写基于两份既有的输入文档：
 ```
 03-ai-support/
 ├── 00-ai-document-requirements-understanding.md  ← 本文档
-├── 01-waterfall/              # 场景1：瀑布式 / 新研产品
+├── 01-waterfall-pipeline-system-design/       # 场景1：瀑布式 / 新研产品
 │   ├── README.md
 │   ├── workflow-prompts.md
 │   ├── product-example.md
 │   └── checklist.md
-├── 03-agile/                  # 场景2：敏捷式 / 增量需求
+├── 03-agile-pipeline-system-design/           # 场景2：敏捷式 / 增量需求
 │   ├── README.md
 │   ├── workflow-prompts.md
 │   ├── product-example.md
 │   └── checklist.md
-├── 02-reverse-engineering/    # 场景3：逆向工程
+├── 02-reverse-engineering-pipeline-system-design/ # 场景3：逆向工程
 │   ├── README.md
 │   ├── workflow-prompts.md
 │   ├── product-example.md
 │   └── checklist.md
-└── 04-devops/                 # 场景4：DevOps / 快速修复
+└── 04-devops-pipeline-system-design/          # 场景4：DevOps / 快速修复
     ├── README.md
     ├── workflow-prompts.md
     ├── product-example.md
@@ -72,6 +72,8 @@ AI 工作文档的编写基于两份既有的输入文档：
 | **02** | **敏捷式 / 增量需求** | 03-agile-design-guide.md | 已有完整系统设计文档，增加新需求或修订（8 步） |
 | **03** | **逆向工程** | 02-reverse-engineering-guide.md | 产品已开发完成但文档缺失，从代码重建文档（8 步） |
 | **04** | **DevOps / 快速修复** | 04-devops-design-guide.md | 产品已上线，快速修复 bug 或实现紧急需求（3 种模式） |
+
+> **端到端业务框架**：以上四种设计场景都是为运营体系中的端到端项目服务的。理解端到端项目的业务分解方法——从系统架构节点类型推导价值业务——有助于 AI 在系统设计过程中准确把握每个项目（BA 2级）的业务边界。详见流水线设计准则 [§1.9 运营体系中的端到端业务框架](../01-pipeline-system-design-standards/01-pipeline-design-standards.md#19-运营体系中的端到端业务框架)。
 
 ## 六、AI 文档的编写原则
 
@@ -103,6 +105,9 @@ AI 工作文档的编写基于两份既有的输入文档：
 | **两阶段工作流程** | 先快速约定结构骨架并建立映射关系，再并行填充详细内容 |
 | **IPO 模型** | Input-Process-Output，业务架构的基本设计单位 |
 | **详细定义的双重身份** | 既是本层架构定义的细化（向内），又是下层方案的需求（向下传递） |
+| **端到端业务** | 从需求提出到需求满足的完整业务链路 |
+| **三层工作层面** | 第1层自指设计（产品B设计自身）、第2层交付物构建（产品B的构件适配）、第3层使用工具设计产品A |
+| **业务维度** | 企业业务的三个视角——主价值链、管理监管、支持服务，对应三类客户的需求 |
 
 ---
 

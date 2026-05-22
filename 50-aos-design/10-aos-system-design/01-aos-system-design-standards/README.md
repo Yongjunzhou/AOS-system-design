@@ -6,7 +6,7 @@
 
 | 文件 | 说明 | 版本 | 来源 |
 |------|------|------|------|
-| [01-aos-system-design-standards.md](01-aos-system-design-standards.md) | AOS 系统设计准则总纲 | v2.0 | 基于流水线 v3.6 全面修订 |
+| [01-aos-system-design-standards.md](01-aos-system-design-standards.md) | AOS 系统设计准则总纲（含 §3.3 组织资产优先原则） | v2.0 | 基于流水线 v3.6 全面修订 |
 | [02-aos-original-requirements-specification.md](02-aos-original-requirements-specification.md) | AOS 原始需求规范 | v1.1 | 基于流水线 v1.2 独立适配 |
 | [03-aos-stakeholder-requirements-specification.md](03-aos-stakeholder-requirements-specification.md) | AOS 相关方需求规范 | v1.0 | 基于流水线 v2.2 独立适配 |
 | [04-aos-business-architecture-specification.md](04-aos-business-architecture-specification.md) | AOS 业务架构规范 | v1.1 | 基于流水线 v2.1 独立适配 |

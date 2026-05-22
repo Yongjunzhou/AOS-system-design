@@ -19,16 +19,20 @@
 - ✅ 设计周期相对固定，需求变更较少
 - ✅ 适合大型项目或关键系统的首次设计
 
-## 依据B：两层产品关系说明
+## 依据B：三层工作层面说明
 
-本目录下的四份文档（README.md、checklist.md、workflow-prompts.md、product-example.md）是产品B（运营体系系统设计流水线）的**AI辅助文档模板构件**，是产品B产品架构（PA）的末级节点。
+本目录下的四份文档（README.md、checklist.md、workflow-prompts.md、product-example.md）属于**第2层工作（交付物构建）**——产品B（运营体系系统设计流水线）的**AI辅助文档模板构件**，是产品B产品架构（PA）的末级节点。
 
-核心认知：
-- **产品B的内容**：本目录下的文档属于产品B的"AI辅助文档"构件，由团队B（流水线开发者 + AI）开发、维护和优化，作为工具交付给团队A使用
-- **产品A的对应内容**：产品A的同类AI辅助文档（位于 `50-aos-design/10-aos-system-design/03-aos-system-design-ai-support/01-greenfield/`）基于本目录模板定制，是**产品B的产品架构末级节点**
-- **复用策略**：结构复用，内容需定制。产品A的greenfield场景复用本目录的文档结构（README + checklist + workflow-prompts + product-example），但内容需根据产品A的场景特点定制
+三层工作层面：
+- **第1层（自指设计）**：产品B用方法论设计自身，产出产品B的产品数据
+- **第2层（交付物构建）**：本目录下的文档属于此层——产品B的"AI辅助文档"构件，由团队B（流水线开发者 + AI）开发、维护和优化，作为工具交付给团队A使用
+- **第3层（使用工具设计产品A）**：团队A使用第2层工具设计运营体系，产出产品A的产品数据
 
-依据B意味着：当使用本目录下的模板为产品A生成AI辅助文档时，输出的内容实际上是产品B产品架构中"03-aos-system-design-ai-support/01-greenfield/"节点的具体实例。AI在生成过程中应区分模板层（产品B）和实例层（产品A），确保输出的文档内容面向产品A的实际场景。
+产品A的同类AI辅助文档（位于 `50-aos-design/10-aos-system-design/03-aos-system-design-ai-support/01-greenfield/`）基于本目录模板定制，属于第3层的设计工具。
+
+**复用策略**：结构复用，内容需定制。产品A的greenfield场景复用本目录的文档结构（README + checklist + workflow-prompts + product-example），但内容需根据产品A的场景特点定制。
+
+依据B意味着：当使用本目录下的模板为产品A生成AI辅助文档时，输出的内容实际上是产品B产品架构中"03-aos-system-design-ai-support/01-greenfield/"节点的具体实例。AI在生成过程中应区分模板层（产品B，第2层交付物）和实例层（产品A，第3层使用），确保输出的文档内容面向产品A的实际场景。
 
 ## 不适用条件
 

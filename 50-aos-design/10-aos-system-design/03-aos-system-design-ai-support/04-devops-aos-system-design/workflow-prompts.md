@@ -371,6 +371,7 @@ AOS PA 文档相关部分：
 | SysReq 9级→PA 1:1约束 | 每条9级活动只分配到一个PA组件 | [§2.3 分解停止判断](../02-ai-decision-framework-aos.md#23-sysreq-5级9级的分解) |
 | 同步设计 | 修改 SysReq 后同步调整 PA | 按指南执行 |
 | N:1承接合理性 | 每个PA组件承接2-5个SysReq 9级为合理 | [§3.1 N:1 承接数触发的判断](../02-ai-decision-framework-aos.md#31-n1-承接数触发的判断) |
+| 资产优先原则 | 变更执行前先确认：能否仅修改现有节点？其次考虑扩展，最后才新增 | [设计原则：组织资产优先](../02-ai-decision-framework-aos.md#设计原则组织资产优先) |
 
 ### 提示词模板
 

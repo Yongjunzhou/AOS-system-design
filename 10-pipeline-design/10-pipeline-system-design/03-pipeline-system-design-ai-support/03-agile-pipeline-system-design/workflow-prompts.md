@@ -351,9 +351,10 @@ OR-XXX: [需求标题]
 
 | 决策场景 | 处理方法 | 参考章节 |
 |---------|---------|---------|
-| 映射策略选择 | 按映射决策树：复用现有 > 修改现有 > 创建新的 | 按指南执行 |
+| 映射策略选择 | 按映射决策树：复用现有 > 修改现有 > 创建新的 | [设计原则：组织资产优先](../02-ai-decision-framework-pipeline.md#设计原则组织资产优先) |
 | 合并/拆分 | N:1 承接数触发的判断 | [§3.1 N:1 承接数触发的判断](../02-ai-decision-framework-pipeline.md#31-n1-承接数触发的判断) |
 | 详细定义粒度 | 按1:1约束：每条只需分配到一个BA IPO | [§2.2 SR详细定义→BA IPO的分解](../02-ai-decision-framework-pipeline.md#22-sr-详细定义--ba-ipo-的分解) |
+| 资产优先原则 | 分配SR详细定义到BA前，先完成自治分析，再审视下游BA资产 | [设计原则：组织资产优先](../02-ai-decision-framework-pipeline.md#设计原则组织资产优先) |
 
 ### 提示词模板
 
@@ -671,6 +672,7 @@ BA 影响分析报告：[粘贴4a的输出]
 | 功能分支 0-9级 | BA IPO 去重后 → SysReq 5级 → 6-9级分解 | [§2.3 SysReq 5级→9级的分解](../02-ai-decision-framework-pipeline.md#23-sysreq-5级9级的分解) |
 | 非功能分支 0-6级 | SR-NFR → SysReq-NFR，不经BA | 按规范执行 |
 | SysReq 9级停止 | 每条9级只需一个PA组件承接 | [§2.3 分解停止判断](../02-ai-decision-framework-pipeline.md#23-sysreq-5级9级的分解) |
+| 资产优先原则 | 9级活动分配到PA时，优先复用现有PA组件 | [设计原则：组织资产优先](../02-ai-decision-framework-pipeline.md#设计原则组织资产优先) |
 
 ### 提示词模板
 
