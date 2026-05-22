@@ -1,6 +1,8 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Claude Code when working with this repository. It focuses on project-specific context—methodology foundations are defined in the general design standards and referenced here rather than duplicated.
+
+---
 
 ## 项目概览
 
@@ -15,190 +17,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **`10-pipeline-design/`** — 产品L（系统设计流水线）的完整开发工作空间
 - **`50-aos-design/`** — 产品M（AOS 企业运营体系）的完整开发工作空间
 
-**当前范围**：严格限定在产品开发四阶段中的阶段1（系统设计），即从原始需求到产品架构的完整设计链路。
+**当前范围**：
+- 流水线：严格限定在流水线开发四阶段中的阶段1（系统设计），即从原始需求到产品架构的完整设计链路
+- 运营体系：产品开发全过程，即系统设计、组件开发、系统集成与交付、系统运维
 
-## 核心认知
+---
 
-### 系统设计通用原理
+## 两个产品与三层工作层面
 
-#### 业务信息属性
+### 两个产品
 
-企业运营体系中的不同业务活动，其信息处理方式存在本质差异。这些差异决定了它们适合由何种形态的信息系统来实现。按**信息处理模式**可分为以下类型：
-
-前9类为**跨领域通用**的处理模式：
-
-| 模式 | 核心特征 |
-|------|---------|
-| **计划事务** | 基于约束条件生成资源/时间分配方案 |
-| **工单事务** | 创建→派发→执行→反馈→关闭的闭环处理 |
-| **审批流程** | 按规则链路由、汇集决策意见、形成审批结论 |
-| **合规事务** | 对照规则库检查行为/数据、判定合规性、记录证据链 |
-| **规范知识** | 结构化编撰准则/规程/指南，规范人员操作或AI执行 |
-| **指标看板** | 从多源数据聚合指标并以可视化形式呈现 |
-| **进展追踪** | 跟踪状态变更、比对计划与实际、标识偏差 |
-| **信息台账** | 对信息进行登记、维护、检索和状态管理 |
-| **xBOM** | 管理产品结构及配置关系，追踪物料清单的版本和变更 |
-
-后4类为**领域特有**的处理模式——不同领域有各自的分析方法、建模方式、专用算法和设备IO模式：
-
-| 模式 | 核心特征 |
-|------|---------|
-| **设备IO** | 与物理设备进行实时数据交换，采集和控制IO信号 |
-| **领域分析** | 特定领域公式/模型驱动的计算分析 |
-| **领域建模** | 构建领域模型、运行仿真场景、输出预测结果 |
-| **领域算法** | 封装特定领域逻辑的算法执行 |
-
-判断两个业务活动是否共享系统：**不同模式 → 分离；同模式 → 可共享**。但后4类即使模式相同，如果领域不同，仍然需要分离。
-
-> **实践验证**：前9类跨领域通用的处理模式可以统一到同一个信息化平台中。
-
-#### 产品形态类型
-
-同一套五层方法论可应用于不同产品类型，但产物形态不同：
-
-| 产品类型 | 特点 | PA 构件本质 | 阶段2 任务 | 示例 |
-|---------|------|------------|------------|------|
-| **知识/方法类** | 用户阅读遵循 | 知识制品（准则、指南、指令） | 编写、审查、发布 | 系统设计流水线 |
-| **软件类** | 用户操作运行 | 软件模块（前端、后端、数据） | 编码、测试、部署 | 管理信息系统 |
-| **实物类** | 用户物理交互 | 物理组件（零件、装配件） | 制造、组装、质检 | 硬件产品 |
-
-#### 产品形态的决定因素
-
-产品形态不是方法论决定的，而是由以下三个因素共同决定：
-
-1. **信息处理模式** — 规范知识类 → 原生形态为文档；计划事务、工单事务、审批流程等 → 需要交互界面
-2. **消费方式** — 阅读→理解→遵循 vs 运行→交互→执行业务操作
-3. **NFR Profile** — 各业务领域的非功能需求差异（实时性、可用性、数据量等）
-
-> 产品形态是连续谱。同一产品可沿谱演化（如流水线可从文档演化为低代码平台）。
-
-#### 架构增量变更的资产优先原则
-
-新增需求需要分配给下层方案时，对现有架构末级节点的操作遵循以下优先级（从高到低）：
-
-```
-第1优先 ── 复用（Reuse）
-  检查：现有架构末级节点是否已完整覆盖此需求？
-  → 是：无需变更，直接将新增需求映射到该节点
-
-第2优先 ── 改进现有资产（Improve）
-  检查：没有现成节点完整覆盖，但通过调整可使现有节点承接？
-  ├─ Extend（扩展）  — 扩展现有节点的定义和所映射需求列表
-  ├─ Split（拆分）   — 现有节点职责过宽，拆分为多个子节点后分别承接
-  └─ Merge（合并）   — 多个现有节点整合后共同承接
-
-第3优先 ── 新增（Add）
-  检查：复用和改进都不可行
-  → 在适当父节点下创建新末级节点，建立映射
-
-特殊情况 ── 废弃（Deprecate）
-  上层需求取消，且无其他需求映射到此节点
-  → 标记"无上游需求，已废弃"，保留节点（不物理删除）
-```
-
-**原则背后的认知**：每个架构末级节点都是组织资产——它承载了已投入的设计工作（四要素定义）、已建立的下游映射关系（N:1 承接）和已通过的验证记录。新增节点意味着后续的设计、维护和验证成本。因此，**优先尊重和保护已有资产**，只有当复用和改进确实不可实现时，才选择新增。
-
-**配套规则**：
-- 废弃节点不物理删除，保留标注以维护追溯链完整性（规则3：双向追溯）
-- 同一节点经历 3 次以上 Extend 后，应审查是否需要 Split（职责内聚性信号）
-- Merge 后原节点标注"已合并至XX"，不删除
-
-**与信息处理模式的关系**：模式/领域差异是不可逾越的边界——即使资产优先，不同模式或不同领域的需求不能强行塞入同一节点。此时直接走 Add。（参见上文「业务信息属性」）
-
-**工作流嵌入**：资产优先原则在同步设计中的执行顺序是——每分解产生一条新的需求 x，**先在当前需求文档内部**完成三项自治分析（可复用性检查——是否与本层已有需求重复；冲突性检查——是否与已有需求矛盾；规范性检查——格式/粒度/编号是否符合规范），**再审视下游方案架构的所有资产**，按复用→改进→新增的优先级找到承接节点。此顺序确保需求定义的质量不被已有架构结构扭曲。
-
-### 运营体系中的端到端业务框架
-
-#### 端到端的定义
-
-**从需求提出到需求满足**。
-
-#### 三类客户与三个业务维度
-
-企业有三类客户，每类客户的需求构成一个业务维度：
-
-| 客户类型 | 提出的需求 | 对应的业务维度 |
-|---------|-----------|--------------|
-| 产品用户/客户 | 产品订货合同、产品研发需求、售后服务需求 | **主价值链** |
-| 上级/监管方 | 经营管理目标、合规及资质取证、年度审核 | **管理监管** |
-| 内部员工 | 对人、资金、物料、设备、设施、工具、数据、知识资产等需求 | **支持服务** |
-
-三个维度不是层级拆分，而是同一企业业务的三个视角。同一项目同时受三个维度作用——归属于某个维度，被其他维度管理，向其他维度提需求。
-
-#### 项目间接口原则
-
-需求在端到端项目A的具体业务运行中产生，接收方是端到端项目B整体（BA 2级），B接收后自主决定内部如何分解响应，A不需要了解B的内部结构。
-
-三种接口关系：
-
-| 关系 | 本质 | 适用范围 |
-|-----|------|---------|
-| 上下游 | 链式传递 | 主价值链内部 |
-| 管理/被管理 | 下达要求、监督考核 | 管理监管 → 其他维度 |
-| 支持/被支持 | 提出需求、统筹满足 | 支持服务 → 其他维度 |
-
-#### 端到端项目业务分解方法
-
-**核心方法**：项目的系统设计输出系统架构 → 架构节点类型 → 定义每个节点类型的端到端业务 → 构成项目的价值业务 → + 管理业务 = 完整项目业务。
-
-```
-端到端项目（BA 2级）
-│
-├── 价值业务 ← 由项目的"产品"决定
-│     └── 项目产出什么（广义产品/服务）
-│           └── 该产品的系统架构
-│                 └── 架构节点类型
-│                       └── 每个节点类型 → 一个端到端业务
-│                             └── 从需求提出到需求满足的完整链路
-│
-└── 管理业务 ← 项目本身的管控活动
-      └── 目标管理、进度管理、成本管理、质量管理...
-```
-
-**关键洞察**：端到端项目的业务分解不是凭经验拍脑袋，而是从**被实现对象的系统架构**中工程化推导出来的。项目的系统设计（即五层方法论）产出系统架构，架构节点类型定义了价值业务的边界——这就是方法论自身的闭环。
-
-**与 BA 层级的关系**：
-
-```
-0级：架构根节点
-1级：业务域
-2级：端到端项目
-3级：项目业务对象的架构节点类型端到端业务（全称）
-       └── 由产品架构节点类型推导得出
-4级：工作包（WBS）
-5级：业务组件（承接层）
-```
-
-### 本项目的两个产品与三层工作层面
-
-#### 两个产品
-
-- **产品M — AOS 企业运营体系**：企业实际运行所依赖的 IT/AI 化运营系统，涵盖市场、研发、生产、售后等业务，同时也包含"设计运营体系本身"这项业务。**团队M** 负责开发和优化产品M。
 - **产品L — 系统设计流水线**：为运营体系"设计运营体系本身"这项业务提供方法支撑的知识工具型构件。**团队L** 负责开发产品L。
+- **产品M — AOS 企业运营体系**：企业实际运行所依赖的 IT/AI 化运营系统，涵盖市场、研发、生产、售后等业务，同时也包含"设计运营体系本身"这项业务。**团队M** 负责开发和优化产品M。
 
-#### 三个工作层面
+### 三个工作层面
 
 | 层面 | 内容 | 负责方 | 仓库位置 |
 |------|------|--------|---------|
-| **第1层：自指设计** | 运营体系包含"设计运营体系本身"这项业务：产品L用统一方法论对其自身需求进行系统设计，推导出产品L的产品架构 | 团队L | `10-pipeline-design/` |
+| **第1层：自指设计** | 产品L用统一方法论对其自身需求进行系统设计，推导出产品L的产品架构 | 团队L | `10-pipeline-design/` |
 | **第2层：交付物构建** | 将产品L的系统设计产物（准则、指南、AI辅助文档、任务定义）适配到产品M的上下文，形成团队M使用的设计工具 | 团队L | `50-aos-design/.../01~04-*` |
 | **第3层：使用工具设计产品M** | 团队M使用第2层产出的工具，对运营体系进行系统设计，产出产品M的9份产品数据文档 | 团队M | `50-aos-design/.../10-product-data/` |
 
-#### 两个产品的关系
-
-运营体系涵盖市场、研发、生产、售后等业务，同时也包含**"设计运营体系本身"**这项业务——产品L就是支撑这项业务的方法和工具集。
-
-```
-运营体系
-  ├── 市场、研发、生产、售后……
-  └── 设计运营体系本身 ← 产品L提供方法支撑
-        ├── 系统设计方法论
-        └── 设计准则、指南、AI辅助、任务定义
-```
-
-产品L遵循五层方法论进行自指设计，其 PA 构件就是准则、指南、AI辅助文档、任务定义这四类知识组件。详见本文「产品L的产品架构与 AOS 系统设计目录的关系」一节。
-
-#### 产品L的构件在产品M系统设计中的作用
+### 产品L的构件在产品M系统设计中的作用
 
 团队M在设计产品M时，直接使用产品L的 PA 构件作为设计依据和操作规程：
 
@@ -209,52 +49,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | **AI辅助文档**（ai-support） | AI 成员执行自动化任务的依据 |
 | **任务定义**（tasks） | 每一步的具体操作流程 |
 
-这些组件被放置在 `50-aos-design/10-aos-system-design/` 目录下。`10-aos-system-product-data/` 则是团队M使用这些工具后产出的产品M设计输出，不是产品L的构件。
-
 **团队L的构成**：
 - **流水线开发者（用户）**：负责产品L的架构和系统设计决策
 - **AI 成员**：按流水线开发者的指令深度参与产品L的开发
 
-### 产品开发四阶段
+---
 
-产品开发一般分为四个阶段：
-
-| 阶段 | 名称 | 说明 |
-|------|------|------|
-| 阶段1 | **系统设计** | 从原始需求出发，经过五层结构（OR → SR → BA → SysReq → PA），开发出产品架构，定义每个架构末级节点（构件）的需求和实现策略 |
-| 阶段2 | **构件开发** | 对产品架构中所有需要新开发或改进的构件，根据其需求定义，开发出满足需求的制品（artifact） |
-| 阶段3 | **系统集成与交付** | 根据集成方案，沿产品架构的树形层级从叶子节点逐级向上集成至根节点，形成满足系统需求的完整产品，交付用户基于相关方需求测试确认 |
-| 阶段4 | **系统运维** | 暂不关注 |
-
-**产品L的范围**：严格限定在阶段1（系统设计）。原因：系统设计是产品开发中最重要也是难度最大的阶段，且团队时间有限。
-
-### 三个顶层目录
-
-| 概念 | 仓库目录 | 说明 |
-|------|---------|------|
-| 通用方法论 | `00-general/` | 与具体产品无关的通用准则、指南、模板、术语及审查工具（所有产品参考） |
-| 产品L的开发空间 | `10-pipeline-design/` | 产品L（流水线）的完整开发工作空间 |
-| 产品M的开发空间 | `50-aos-design/` | 产品M（AOS）的完整开发工作空间 |
-
-每个项目下按产品开发阶段组织为三个子目录：
-
-| 阶段子目录 | 00（产品L） | 50（产品M） |
-|-----------|------------|------------|
-| 阶段1：系统设计 | `10-pipeline-system-design/` | `10-aos-system-design/` |
-| 阶段2：构件开发 | `20-pipeline-component-dev/` | `20-aos-component-dev/`（待扩展） |
-| 阶段3：集成交付 | `30-pipeline-integration-delivery/` | `30-aos-integration-delivery/`（待扩展） |
-
-`50-aos-design/10-aos-system-design/` 目录中包含两类内容：
-
-| 子目录 | 性质 | 说明 |
-|--------|------|------|
-| `01-aos-system-design-standards/` | 产品L的构件 | 设计准则（引用共享准则） |
-| `02-aos-system-design-guidelines/` | 产品L的构件 | 设计指南（引用共享指南） |
-| `03-aos-system-design-ai-support/` | 产品L的构件 | AI 辅助文档，为团队M提供系统设计支持 |
-| `04-aos-system-design-tasks/` | 产品L的构件 | 任务定义，为团队M提供系统设计操作规程 |
-| `10-aos-system-product-data/` | 产品M的设计输出 | 基于产品同构性定义的标准产品数据模板，由团队M填入产品M的具体设计内容 |
-
-### 产品L的产品架构与 AOS 系统设计目录的关系
+## 产品L的产品架构与 AOS 系统设计目录的关系
 
 **核心认知**：产品L的产品架构末级节点，对应的交付物就是 `50-aos-design/10-aos-system-design/` 下除 `10-aos-system-product-data/` 之外的所有文档（01/02/03/04）。这些文档是产品L交付给团队M使用的工具和规范。`10-aos-system-product-data/` 是团队M使用产品L的工具后产出的产品M设计内容，是产品L的**输出物**，不是产品L的构件。
 
@@ -276,58 +77,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | `04-aos-system-design-tasks/` | 流水线的 4 场景任务定义 | 结构参考，内容需定制（操作对象不同） |
 | `10-aos-system-product-data/` | `10-pipeline-design/.../10-pipeline-system-product-data/` | 文件名和模板结构参考，内容由团队M填入 |
 
-## 五层结构与核心规则
-
-```
-第1层：原始需求及分析 (OR)
-    ↓ N:1 分配
-第2层：相关方需求 (SR)
-    ├─ 架构末级节点 ↔ 详细定义末级节点
-    │
-    ├─ 功能部分 ↓ N:1 分配
-    │   第3层：业务架构 (BA)（独立存在，仅架构定义，无详细定义）
-    │   └─ 架构末级节点（IPO）
-    │        ↓ IPO 直接映射（去重后）
-    │   第4层：系统需求 (SysReq)
-    │   ├─ 架构末级节点 ↔ 详细定义末级节点
-    │   └─ ↓ N:1 分配
-    │       第5层：产品架构 (PA)
-    │       └─ 架构末级节点 ↔ 详细定义末级节点
-    │
-    └─ 非功能部分 ↓ N:1 分配（不经过 BA）
-        第4层：系统需求-NFR (SysReq-NFR)
-        └─ ↓ N:1 分配
-            第5层：产品架构 (PA)
-```
-
-**三条核心规则**（§3.2）：
-- **规则1：1:1 分配约束**：每条详细定义末级节点只能分配到下层方案中唯一一个架构末级节点
-- **规则2：N:1 承接支持**：一个架构末级节点可以承接多个上层详细定义末级节点
-- **规则3：双向追溯**：支持从上层需求追溯到下层方案，也支持从下层方案反向追溯到上层需求
-
-### 核心设计概念
-
-> 来源：准则 §1.5–§1.7
-
-1. **架构定义与详细定义分离**（§1.5.1）：每层文档分为架构定义（树形结构）和详细定义（对架构末级节点的逐条细化），二者分别对应独立的产品数据文件
-2. **详细定义的双重身份**（§1.5.2）：详细定义既是本层架构定义的细化（向内），又是下层方案的需求（向下传递）
-3. **需求—方案配对**（§1.6.1）：文档按需求文档和方案文档成对组织，上层的详细定义 = 下层方案的需求
-4. **同步设计与两阶段工作流程**（§1.5.3）：在开展上层详细定义的同时，同步开展下层方案架构定义；先快速约定结构骨架并建立映射关系（阶段一），再并行填充详细内容（阶段二）
-5. **架构末级节点四要素结构**（§1.7.1）：每个架构末级节点包含四个要素——定义、所映射的上层需求、符合性分析、下游指导
-6. **每层三个活动：分解、分配、分析**（§1.5.1）：每层设计都包含分解（将需求分解为末级节点）、分配（将末级节点映射到下层架构）、分析（符合性验证）三个活动
-
-**补充说明**：
-- 每条需求 = 需求描述 + 性能指标（性能指标随需求一起流转）
-- 非功能需求采用平行体系，SR-NFR → SysReq-NFR → PA，不经过业务架构
-- 业务架构（BA）的特殊性：BA 是唯一只有架构定义、没有详细定义的层级；BA 使用 IPO（Input-Process-Output）模型作为基本设计单位，去重后直接映射到 SysReq
-- 分析活动贯穿全过程：每完成一次分配，都需要进行符合性分析，确认下层方案是否正确承接了上层需求
+---
 
 ## 实际目录结构
 
 ```
 00-general/                                     # 通用方法论基础
 ├── 10-general-design-standards/               # 通用准则、指南、模板、术语
-│   ├── 01-general-design-standards.md          # 通用设计准则
+│   ├── 01-general-design-standards.md          # 通用设计准则（方法论核心，v2.1）
 │   ├── 02-general-design-4modes-guide-overview.md # 通用设计指南
 │   ├── 03-specification-template.md            # 规范文档通用模板
 │   └── 04-general-terminology-glossary.md      # 通用术语对照
@@ -378,9 +135,66 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 99-sessions/                                    # 历史会话记录
 ```
 
+---
+
+## 五层结构与核心规则
+
+> **方法论基础**：详见 [`00-general/10-general-design-standards/01-general-design-standards.md`](00-general/10-general-design-standards/01-general-design-standards.md) §三「5层结构概要」和 §四「设计方法」
+
+### 五层设计链路
+
+```
+第1层：原始需求及分析 (OR)
+    ↓ N:1 分配
+第2层：相关方需求 (SR)
+    ├─ 架构末级节点 ↔ 详细定义末级节点
+    │
+    ├─ 功能部分 ↓ N:1 分配
+    │   第3层：业务架构 (BA)（独立存在，仅架构定义，无详细定义）
+    │   └─ 架构末级节点（IPO）
+    │        ↓ IPO 直接映射（去重后）
+    │   第4层：系统需求 (SysReq)
+    │   ├─ 架构末级节点 ↔ 详细定义末级节点
+    │   └─ ↓ N:1 分配
+    │       第5层：产品架构 (PA)
+    │       └─ 架构末级节点 ↔ 详细定义末级节点
+    │
+    └─ 非功能部分 ↓ N:1 分配（不经过 BA）
+        第4层：系统需求-NFR (SysReq-NFR)
+        └─ ↓ N:1 分配
+            第5层：产品架构 (PA)
+```
+
+### 三条核心规则
+
+- **规则1：1:1 分配约束**：每条详细定义末级节点只能分配到下层方案中唯一一个架构末级节点
+- **规则2：N:1 承接支持**：一个架构末级节点可以承接多个上层详细定义末级节点
+- **规则3：双向追溯**：支持从上层需求追溯到下层方案，也支持从下层方案反向追溯到上层需求
+
+### 核心设计概念
+
+| 概念 | 定义 |
+|------|------|
+| **架构定义与详细定义分离** | 每层方案分为架构定义（树形结构）和详细定义（对架构末级节点的逐条细化） |
+| **详细定义的双重身份** | 既是本层架构定义的细化（向内），又是下层方案的需求（向下传递） |
+| **需求—方案配对** | 文档按需求文档和方案文档成对组织，上层的详细定义 = 下层方案的需求 |
+| **同步设计** | 在开展上层详细定义的同时，同步开展下层方案架构定义（即使只是结构骨架） |
+| **两阶段工作流程** | 先快速约定结构骨架并建立映射关系（阶段一），再并行填充详细内容（阶段二） |
+| **架构末级节点四要素** | 定义、所映射的上层需求、符合性分析、下游指导 |
+| **每层三个核心设计活动** | 需求分解及分析、需求分配及分析、架构承接需求分析 |
+
+### 补充说明
+
+- 每条需求 = 需求描述 + 性能指标（性能指标随需求一起流转）
+- 非功能需求采用平行体系，SR-NFR → SysReq-NFR → PA，不经过业务架构
+- 业务架构（BA）是唯一只有架构定义、没有详细定义的层级；BA 使用 IPO 模型，去重后直接映射到 SysReq
+- 分析活动贯穿全过程：每完成一次分配，都需要进行符合性分析
+
+---
+
 ## 开发六步法（6 个核心任务）
 
-> 名称来源：准则 §3.1「开发六步法」
+> 名称来源：通用设计准则 §4.1「六步工作流程」
 
 | 步骤 | 正式名称 | 目标 |
 |------|---------|------|
@@ -393,6 +207,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 流水线产品的任务定义在 `10-pipeline-design/10-pipeline-system-design/04-pipeline-system-design-tasks/` 各场景目录下；AOS 项目的任务定义在 `50-aos-design/10-aos-system-design/04-aos-system-design-tasks/` 下。
 
+---
+
 ## 四种设计场景
 
 > 通用方法框架参见 [`00-general/10-general-design-standards/02-general-design-4modes-guide-overview.md`](00-general/10-general-design-standards/02-general-design-4modes-guide-overview.md)
@@ -404,6 +220,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | 逆向工程 | 已有系统补文档 | 16-26天 | `10-pipeline-design/.../02-pipeline-system-design-guidelines/02-reverse-engineering-pipeline-system-design-guide.md` |
 | DevOps | 小变更快速交付 | 几小时-3天 | `10-pipeline-design/.../02-pipeline-system-design-guidelines/04-devops-pipeline-system-design-guide.md` |
 
+---
+
 ## 三个关键角色
 
 | 角色 | 职责 | 参与的层面 |
@@ -412,17 +230,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | **AI** | 按流水线开发者指令执行自动化任务（协助第1层和第2层工作） | 第1层、第2层 |
 | **AOS 开发者** | 使用流水线进行企业运营体系的系统设计（主导第3层，含需求提出者、业务流程开发者、信息系统开发者） | 第3层 |
 
-## 关键设计文件
-
-- `00-general/10-general-design-standards/01-general-design-standards.md` — 通用设计准则（方法论核心）
-- `00-general/10-general-design-standards/02-general-design-4modes-guide-overview.md` — 通用设计指南（方法框架）
-- `00-general/10-general-design-standards/03-specification-template.md` — 规范文档通用模板
-- `00-general/10-general-design-standards/04-general-terminology-glossary.md` — 通用术语对照
-- `10-pipeline-design/10-pipeline-system-design/01-pipeline-system-design-standards/01-pipeline-design-standards.md` — 流水线设计准则（通用方法论 + 流水线专有）
-- `10-pipeline-design/10-pipeline-system-design/02-pipeline-system-design-guidelines/05-pipeline-system-quick-reference-card.md` — 快速参考卡
-- `10-pipeline-design/10-pipeline-system-design/03-pipeline-system-design-ai-support/00-ai-document-requirements-understanding.md` — AI 文档理解要求
-- `10-pipeline-design/10-pipeline-system-design/10-pipeline-system-product-data/README.md` — 流水线产品数据概览
-- `50-aos-design/10-aos-system-design/03-aos-system-design-ai-support/00-overview.md` — AOS AI 辅助概览
+---
 
 ## 产品数据文件（每个项目通用结构）
 
@@ -440,8 +248,43 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | `08-traceability-matrix.md` | 追溯矩阵 |
 | `09-verification-report.md` | 验证报告 |
 
+---
+
+## 关键设计文件
+
+- [`00-general/10-general-design-standards/01-general-design-standards.md`](00-general/10-general-design-standards/01-general-design-standards.md) — 通用设计准则 v2.1（方法论核心：五层结构、核心规则、六步法、分解/分配/分析、验收标准）
+- [`00-general/10-general-design-standards/02-general-design-4modes-guide-overview.md`](00-general/10-general-design-standards/02-general-design-4modes-guide-overview.md) — 通用设计指南（四种方法框架）
+- [`00-general/10-general-design-standards/03-specification-template.md`](00-general/10-general-design-standards/03-specification-template.md) — 规范文档通用模板
+- [`00-general/10-general-design-standards/04-general-terminology-glossary.md`](00-general/10-general-design-standards/04-general-terminology-glossary.md) — 通用术语对照
+- [`10-pipeline-design/10-pipeline-system-design/01-pipeline-system-design-standards/01-pipeline-design-standards.md`](10-pipeline-design/10-pipeline-system-design/01-pipeline-system-design-standards/01-pipeline-design-standards.md) — 流水线设计准则（通用方法论 + 流水线专有）
+- [`10-pipeline-design/10-pipeline-system-design/02-pipeline-system-design-guidelines/05-pipeline-system-quick-reference-card.md`](10-pipeline-design/10-pipeline-system-design/02-pipeline-system-design-guidelines/05-pipeline-system-quick-reference-card.md) — 快速参考卡
+- [`10-pipeline-design/10-pipeline-system-design/03-pipeline-system-design-ai-support/00-ai-document-requirements-understanding.md`](10-pipeline-design/10-pipeline-system-design/03-pipeline-system-design-ai-support/00-ai-document-requirements-understanding.md) — AI 文档理解要求
+- [`10-pipeline-design/10-pipeline-system-design/10-pipeline-system-product-data/README.md`](10-pipeline-design/10-pipeline-system-design/10-pipeline-system-product-data/README.md) — 流水线产品数据概览
+- [`50-aos-design/10-aos-system-design/03-aos-system-design-ai-support/00-overview.md`](50-aos-design/10-aos-system-design/03-aos-system-design-ai-support/00-overview.md) — AOS AI 辅助概览
+
+---
+
 ## 文档规范
 
 - 所有文档使用 Markdown + Mermaid 格式
 - 版本号格式：`v[主版本].[次版本]`
 - 中文为主体语言，术语附英文对照
+
+---
+
+## 免重复说明
+
+以下方法论内容已完整定义于 [`00-general/10-general-design-standards/01-general-design-standards.md`](00-general/10-general-design-standards/01-general-design-standards.md)，本文档不再展开：
+
+| 内容 | 准则章节 |
+|------|---------|
+| 信息处理模式十三类（跨领域通用 + 领域特有） | §1.7.4 |
+| 产品类型与产品架构形态（知识/软件/实物） | §1.7.3 |
+| 架构增量变更的资产优先原则（Reuse → Improve → Add） | §4.3 |
+| 端到端业务框架（三类客户、三个维度、项目间接口、业务分解方法） | §1.8 |
+| 需求的分解、分配与分析（语义分解、指标分解、三项分配检查、符合性分析） | §二 |
+| 功能需求与非功能需求分类体系 | §1.10 |
+| 节点编号规则（架构末级/详细定义末级） | §1.9 |
+| 产品同构性与设计制品参考策略 | §1.7.1-§1.7.2 |
+| 验收标准与检查清单 | §五、§六 |
+| 常见错误 | §七 |

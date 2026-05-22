@@ -635,13 +635,16 @@ SysReq-F-00N: [名称]（5级·架构末级）
 - 现有 AOS 产品架构文档（基线）
 
 ### 涉及规范
-- [产品架构规范 §4 设计方法](../01-aos-system-design-standards/06-product-architecture-specification.md#四设计方法)
-- [敏捷式设计指南 §第6步](../02-aos-system-design-guidelines/03-agile-design-guide.md#第6步产品架构影响分析)
+- [系统设计准则 §2.4 产品架构分解原则](../01-aos-system-design-standards/01-aos-system-design-standards.md#24-产品架构分解原则)
+- [产品架构规范 §2 架构定义规范](../01-aos-system-design-standards/06-aos-product-architecture-specification.md#二架构定义规范)
+- [产品架构规范 §3 详细定义规范](../01-aos-system-design-standards/06-aos-product-architecture-specification.md#三详细定义规范)
+> **阅读指引**：先读系统设计准则 §2.4 理解 PA 构件分解的三因素决策方法，再对照产品架构规范 §2-§3 完成构件增量定义。
 
 ### 决策框架参考
 
 | 决策场景 | 处理方法 | 参考章节 |
 |---------|---------|---------|
+| PA 构件分解 | 综合三因素决策：信息模型内聚性、NFR Profile 相容性、信息处理模式一致性 | [§2.4 产品架构分解原则](../02-ai-decision-framework-aos.md#设计原则产品架构分解) |
 | PA构件粒度 | 按产品类型选择分类体系（软件产品：前端/后端/数据/基础设施） | [§3.3 PA构件粒度判断](../02-ai-decision-framework-aos.md#33-pa-构件粒度判断) |
 | N:1承接合理性 | 每个PA组件承接2-5个SysReq 9级为合理 | [§3.1 N:1 承接数触发的判断](../02-ai-decision-framework-aos.md#31-n1-承接数触发的判断) |
 
@@ -925,6 +928,6 @@ SysReq 9 级场景活动：[从5b提取9级活动]
 
 ---
 
-**文档版本**：v1.0
-**创建日期**：2026-05-18
+**文档版本**：v1.1（基于 v1.0 修订，新增 §2.4 产品架构分解原则引用）
+**创建日期**：2026-05-18（v1.0）→ 2026-05-22（v1.1）
 **状态**：✅ 完成

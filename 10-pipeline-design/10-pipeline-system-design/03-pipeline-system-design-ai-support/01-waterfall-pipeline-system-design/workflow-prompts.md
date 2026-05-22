@@ -804,13 +804,14 @@ SR-NFR-XXX: [名称]
 ### 涉及规范
 - [系统需求规范 §3 详细定义规范](../../01-pipeline-system-design-standards/05-pipeline-system-requirements-specification.md#三详细定义规范)
 - [产品架构规范 §2 架构定义规范](../../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md#二架构定义规范)
+- [系统设计准则 §2.4 产品架构分解原则](../../01-pipeline-system-design-standards/01-pipeline-design-standards.md#24-产品架构分解原则)
 
 ### 决策框架参考
 
 | 决策场景 | 处理方法 | 参考章节 |
 |---------|---------|---------|
 | SysReq 5→9级分解 | 逐级分解直到1:1约束 | [SysReq 5级→9级的分解](../02-ai-decision-framework-pipeline.md#23-sysreq-5级9级的分解) |
-| PA 构件划分 | 独立交付+独立审查为标准 | [PA构件粒度判断](../02-ai-decision-framework-pipeline.md#33-pa-构件粒度判断) |
+| PA 构件划分 | 独立交付+独立审查为标准；综合三因素决策（信息模型、NFR Profile、信息模式） | [PA构件粒度判断](../02-ai-decision-framework-pipeline.md#33-pa-构件粒度判断)；系统设计准则 §2.4 |
 | 资产优先原则 | 9级活动分配到PA时，先检查已有PA组件是否可复用 | [设计原则：组织资产优先](../02-ai-decision-framework-pipeline.md#设计原则组织资产优先) |
 | NFR-PA 约束映射 | 每个PA标注受哪些NFR约束 | 按规范执行 |
 

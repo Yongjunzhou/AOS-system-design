@@ -832,6 +832,7 @@ SysReq 影响分析报告：[粘贴5a的输出]
 - 现有产品架构文档（基线）
 
 ### 涉及规范
+- [系统设计准则 §2.4 产品架构分解原则](../../01-pipeline-system-design-standards/01-pipeline-design-standards.md#24-产品架构分解原则)
 - [产品架构规范 §2 架构定义规范](../../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md#二架构定义规范)
 - [产品架构规范 §3 详细定义规范](../../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md#三详细定义规范)
 - [敏捷式设计指南 §第6步](../../02-pipeline-system-design-guidelines/03-agile-pipeline-system-design-guide.md#第6步产品架构影响分析)
@@ -840,7 +841,7 @@ SysReq 影响分析报告：[粘贴5a的输出]
 
 | 决策场景 | 处理方法 | 参考章节 |
 |---------|---------|---------|
-| PA构件粒度 | 按产品类型选择分类体系 | [§3.3 PA构件粒度判断](../02-ai-decision-framework-pipeline.md#33-pa-构件粒度判断) |
+| PA构件粒度 | 按产品类型选择分类体系；综合三因素决策（信息模型、NFR Profile、信息模式） | [§3.3 PA构件粒度判断](../02-ai-decision-framework-pipeline.md#33-pa-构件粒度判断)；系统设计准则 §2.4 |
 | N:1承接合理性 | 每个PA组件承接2-5个SysReq 9级为合理 | [§3.1 N:1 承接数触发的判断](../02-ai-decision-framework-pipeline.md#31-n1-承接数触发的判断) |
 
 ### 提示词模板

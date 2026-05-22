@@ -1,7 +1,7 @@
 # 运营体系（AOS）：英文术语对照表
 **AOS System Design Glossary: English-Chinese Terminology**
 
-**文档版本**：v1.0  
+**文档版本**：v1.1  
 **创建日期**：2026-05-18  
 **用途**：统一英文术语，便于国际化和技术交流。本文档服务于产品M（企业运营体系·AOS）的设计和开发。
 
@@ -101,6 +101,10 @@
 | 符合性分析 | Compliance Analysis | 方案如何满足需求的分析 |
 | 映射关系 | Mapping Relationship | 需求和方案之间的对应关系 |
 | 组织资产优先 | Organizational Asset Priority | 新增需求时优先复用/改进现有架构节点，最后新增的原则，遵循"复用→改进→新增"的优先级顺序 |
+| 信息模型内聚性 | Information Model Cohesion | PA 分解三因素之一，判断构件内部数据/信息模型的紧密程度——强内聚的业务实体应归入同一构件 |
+| NFR Profile 相容性 | NFR Profile Compatibility | PA 分解三因素之一，判断不同功能对非功能需求（性能/安全/可用性等）的要求是否相容——要求差异大的功能应分离到不同构件 |
+| 信息处理模式一致性 | Information Processing Pattern Consistency | PA 分解三因素之一，判断业务活动的信息处理本质是否相同——不同模式（如联机事务处理 vs 批量分析）应分离到不同构件 |
+| 三因素决策矩阵 | Three-Factor Decision Matrix | 综合信息模型内聚性、NFR Profile 相容性、信息处理模式一致性三个因素，判断哪些业务活动应合并为同一构件、哪些应分离的系统化决策方法
 
 ---
 
@@ -290,7 +294,7 @@ Attendees: AOS Developer, Business Analyst, System Architect
 ---
 
 **文档生成时间**：2026-05-18  
-**文档版本**：v1.0  
+**文档版本**：v1.1  
 **状态**：✅ 完成
 
 **下一步**：
