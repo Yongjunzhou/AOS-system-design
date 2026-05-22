@@ -3,7 +3,7 @@
 
 **用途**：展示一个完整的 AOS 敏捷式增量系统设计过程的输入和输出范例，AI 参照此范例生成自己的 AOS 增量设计文档。
 
-**范例项目**：产品A·AOS 企业运营体系（Enterprise Operation System）
+**范例项目**：产品M·AOS 企业运营体系（Enterprise Operation System）
 
 **基线说明**：本范例基于瀑布式场景（`01-waterfall/product-example.md` v1.0）的完整 AOS 设计输出作为基线。基线内容包含：
 - 14 个 PA 组件（前端 5 + 后端 5 + 数据层 2 + 基础设施 2）

@@ -1,9 +1,9 @@
 # AOS 瀑布式系统设计：产品数据范例
 **AOS Waterfall System Design: Product Data Example**
 
-**用途**：展示产品A（AOS 企业运营体系）完整的瀑布式系统设计过程的输入和输出范例，AI 参照此范例生成自己的 AOS 设计文档。
+**用途**：展示产品M（AOS 企业运营体系）完整的瀑布式系统设计过程的输入和输出范例，AI 参照此范例生成自己的 AOS 设计文档。
 
-**范例项目**：产品A·AOS 企业运营体系（Enterprise Operation System）
+**范例项目**：产品M·AOS 企业运营体系（Enterprise Operation System）
 
 ---
 

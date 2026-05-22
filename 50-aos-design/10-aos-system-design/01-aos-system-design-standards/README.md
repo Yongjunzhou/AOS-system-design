@@ -1,6 +1,6 @@
 # AOS 系统设计准则
 
-> 产品B构件：为团队A开展产品A（AOS企业运营体系）的系统设计提供设计准则支持。
+> 产品L构件：为团队M开展产品M（AOS企业运营体系）的系统设计提供设计准则支持。
 
 本目录包含 AOS 视角独立的全部系统设计准则文档（共7份规范）：
 
@@ -16,8 +16,8 @@
 
 **版本策略**：
 - 通用方法论核心（五层结构、三条核心规则、基本术语、验收标准）基于 [`00-general/10-general-design-standards/01-general-design-standards.md`](../../../../00-general/10-general-design-standards/01-general-design-standards.md) 通用准则
-- 流水线领域的参考示例基于产品B（`10-pipeline-design/.../01-pipeline-system-design-standards/`）的对应文档，通过"依据B分离模式"进行独立适配
+- 流水线领域的参考示例基于产品L（`10-pipeline-design/.../01-pipeline-system-design-standards/`）的对应文档，通过"依据B分离模式"进行独立适配
 - **适配原则**：核心方法论保持不变，所有示例从流水线领域替换为 AOS 绩效考核领域
 - 规范内容随通用标准和流水线版本迭代同步更新
 
-适用于产品A系统设计过程（阶段1）。
+适用于产品M系统设计过程（阶段1）。

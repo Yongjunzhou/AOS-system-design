@@ -174,7 +174,7 @@
 **第二部分：需求映射视图（映射关系表）**
 
 ```
-| SysReq 节点（来自产品B的系统需求） | 承接的PA构件 | 对应交付文件 |
+| SysReq 节点（来自产品L的系统需求） | 承接的PA构件 | 对应交付文件 |
 |----------------------------------|-------------|-------------|
 | SysReq-F-001（定义设计方法论框架） | PA-001 系统设计准则总纲 | 01-pipeline-design-standards.md |
 | SysReq-F-002（定义原始需求规范） | PA-002 原始需求规范 | 02-pipeline-original-requirements-specification.md |

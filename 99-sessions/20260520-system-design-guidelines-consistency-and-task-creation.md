@@ -49,12 +49,12 @@
 
 检查发现：
 - `00-ai-document-requirements-understanding.md` 明确写"在开发运营体系开发之系统设计流水线这个产品的过程中"
-- 各场景 README.md 声明"本目录下的文档是产品B的AI辅助文档模板构件"
-- 但瀑布式和敏捷式的 `workflow-prompts.md` 中有误导性表述"AI在使用本模板为产品A生成设计文档时"
+- 各场景 README.md 声明"本目录下的文档是产品L的AI辅助文档模板构件"
+- 但瀑布式和敏捷式的 `workflow-prompts.md` 中有误导性表述"AI在使用本模板为产品M生成设计文档时"
 
 ### 决策
 
-- 这些文档是**产品B的通用模板构件**，支持 AI 开发 Pipeline（产品B）本身
+- 这些文档是**产品L的通用模板构件**，支持 AI 开发 Pipeline（产品L）本身
 - AOS 的 03-ai-support 是这些模板的实例层（定制版）
 - 修正了瀑布式和敏捷式 workflow-prompts.md 中的"依据B说明"话术，改为明确模板定位
 
@@ -63,7 +63,7 @@
 ### 讨论背景
 
 先确定几个前置问题：
-1. **06-tasks 给谁用？** → 人类开发者（团队B）
+1. **06-tasks 给谁用？** → 人类开发者（团队L）
 2. **Pipeline 是否需要？** → 未来多人协作需要
 3. **给 AOS 还是 Pipeline？** → Pipeline 需要，AOS 已有但为空占位
 4. **与场景的关系？** → 决定了 06-tasks 的组织方式

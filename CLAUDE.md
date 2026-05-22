@@ -6,14 +6,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 本项目包含三个目的：
 
-1. **构建运营体系之系统设计流水线（产品B）** —— 使运营体系的系统设计从手工作坊式的文档撰写，转变为结构化、可追溯、AI 辅助的工业化生产过程。
-2. **基于流水线开展运营体系系统设计（产品A）** —— 使用产品B产出的工具，对企业运营体系进行完整的系统设计，产出产品A的产品数据。
-3. **探索产品开发方法论** —— 通过产品B和产品A的实践，验证和提炼可复用的产品开发方法论。
+1. **构建运营体系之系统设计流水线（产品L）** —— 使运营体系的系统设计从手工作坊式的文档撰写，转变为结构化、可追溯、AI 辅助的工业化生产过程。
+2. **基于流水线开展运营体系系统设计（产品M）** —— 使用产品L产出的工具，对企业运营体系进行完整的系统设计，产出产品M的产品数据。
+3. **探索产品开发方法论** —— 通过产品L和产品M的实践，验证和提炼可复用的产品开发方法论。
 
 仓库包含三部分内容：
 - **`00-general/`** — 通用系统设计方法论（与具体产品无关的准则、指南、模板、术语）
-- **`10-pipeline-design/`** — 产品B（系统设计流水线）的完整开发工作空间
-- **`50-aos-design/`** — 产品A（AOS 企业运营体系）的完整开发工作空间
+- **`10-pipeline-design/`** — 产品L（系统设计流水线）的完整开发工作空间
+- **`50-aos-design/`** — 产品M（AOS 企业运营体系）的完整开发工作空间
 
 **当前范围**：严格限定在产品开发四阶段中的阶段1（系统设计），即从原始需求到产品架构的完整设计链路。
 
@@ -173,47 +173,47 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 #### 两个产品
 
-- **产品A — AOS 企业运营体系**：企业实际运行所依赖的 IT/AI 化运营系统，涵盖市场、研发、生产、售后等业务，同时也包含"设计运营体系本身"这项业务。**团队A** 负责开发和优化产品A。
-- **产品B — 系统设计流水线**：为运营体系"设计运营体系本身"这项业务提供方法支撑的知识工具型构件。**团队B** 负责开发产品B。
+- **产品M — AOS 企业运营体系**：企业实际运行所依赖的 IT/AI 化运营系统，涵盖市场、研发、生产、售后等业务，同时也包含"设计运营体系本身"这项业务。**团队M** 负责开发和优化产品M。
+- **产品L — 系统设计流水线**：为运营体系"设计运营体系本身"这项业务提供方法支撑的知识工具型构件。**团队L** 负责开发产品L。
 
 #### 三个工作层面
 
 | 层面 | 内容 | 负责方 | 仓库位置 |
 |------|------|--------|---------|
-| **第1层：自指设计** | 运营体系包含"设计运营体系本身"这项业务：产品B用统一方法论对其自身需求进行系统设计，推导出产品B的产品架构 | 团队B | `10-pipeline-design/` |
-| **第2层：交付物构建** | 将产品B的系统设计产物（准则、指南、AI辅助文档、任务定义）适配到产品A的上下文，形成团队A使用的设计工具 | 团队B | `50-aos-design/.../01~04-*` |
-| **第3层：使用工具设计产品A** | 团队A使用第2层产出的工具，对运营体系进行系统设计，产出产品A的9份产品数据文档 | 团队A | `50-aos-design/.../10-product-data/` |
+| **第1层：自指设计** | 运营体系包含"设计运营体系本身"这项业务：产品L用统一方法论对其自身需求进行系统设计，推导出产品L的产品架构 | 团队L | `10-pipeline-design/` |
+| **第2层：交付物构建** | 将产品L的系统设计产物（准则、指南、AI辅助文档、任务定义）适配到产品M的上下文，形成团队M使用的设计工具 | 团队L | `50-aos-design/.../01~04-*` |
+| **第3层：使用工具设计产品M** | 团队M使用第2层产出的工具，对运营体系进行系统设计，产出产品M的9份产品数据文档 | 团队M | `50-aos-design/.../10-product-data/` |
 
 #### 两个产品的关系
 
-运营体系涵盖市场、研发、生产、售后等业务，同时也包含**"设计运营体系本身"**这项业务——产品B就是支撑这项业务的方法和工具集。
+运营体系涵盖市场、研发、生产、售后等业务，同时也包含**"设计运营体系本身"**这项业务——产品L就是支撑这项业务的方法和工具集。
 
 ```
 运营体系
   ├── 市场、研发、生产、售后……
-  └── 设计运营体系本身 ← 产品B提供方法支撑
+  └── 设计运营体系本身 ← 产品L提供方法支撑
         ├── 系统设计方法论
         └── 设计准则、指南、AI辅助、任务定义
 ```
 
-产品B遵循五层方法论进行自指设计，其 PA 构件就是准则、指南、AI辅助文档、任务定义这四类知识组件。详见本文「产品B的产品架构与 AOS 系统设计目录的关系」一节。
+产品L遵循五层方法论进行自指设计，其 PA 构件就是准则、指南、AI辅助文档、任务定义这四类知识组件。详见本文「产品L的产品架构与 AOS 系统设计目录的关系」一节。
 
-#### 产品B的构件在产品A系统设计中的作用
+#### 产品L的构件在产品M系统设计中的作用
 
-团队A在设计产品A时，直接使用产品B的 PA 构件作为设计依据和操作规程：
+团队M在设计产品M时，直接使用产品L的 PA 构件作为设计依据和操作规程：
 
-| 知识组件（产品B的 PA 构件） | 在产品A的系统设计中充当 |
+| 知识组件（产品L的 PA 构件） | 在产品M的系统设计中充当 |
 |---------|----------------------|
 | **准则**（standards） | 规定五层结构、映射规则等设计规范 |
 | **指南**（guidelines） | 四种场景的设计步骤指导 |
 | **AI辅助文档**（ai-support） | AI 成员执行自动化任务的依据 |
 | **任务定义**（tasks） | 每一步的具体操作流程 |
 
-这些组件被放置在 `50-aos-design/10-aos-system-design/` 目录下。`10-aos-system-product-data/` 则是团队A使用这些工具后产出的产品A设计输出，不是产品B的构件。
+这些组件被放置在 `50-aos-design/10-aos-system-design/` 目录下。`10-aos-system-product-data/` 则是团队M使用这些工具后产出的产品M设计输出，不是产品L的构件。
 
-**团队B的构成**：
-- **流水线开发者（用户）**：负责产品B的架构和系统设计决策
-- **AI 成员**：按流水线开发者的指令深度参与产品B的开发
+**团队L的构成**：
+- **流水线开发者（用户）**：负责产品L的架构和系统设计决策
+- **AI 成员**：按流水线开发者的指令深度参与产品L的开发
 
 ### 产品开发四阶段
 
@@ -226,19 +226,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | 阶段3 | **系统集成与交付** | 根据集成方案，沿产品架构的树形层级从叶子节点逐级向上集成至根节点，形成满足系统需求的完整产品，交付用户基于相关方需求测试确认 |
 | 阶段4 | **系统运维** | 暂不关注 |
 
-**产品B的范围**：严格限定在阶段1（系统设计）。原因：系统设计是产品开发中最重要也是难度最大的阶段，且团队时间有限。
+**产品L的范围**：严格限定在阶段1（系统设计）。原因：系统设计是产品开发中最重要也是难度最大的阶段，且团队时间有限。
 
 ### 三个顶层目录
 
 | 概念 | 仓库目录 | 说明 |
 |------|---------|------|
 | 通用方法论 | `00-general/` | 与具体产品无关的通用准则、指南、模板、术语及审查工具（所有产品参考） |
-| 产品B的开发空间 | `10-pipeline-design/` | 产品B（流水线）的完整开发工作空间 |
-| 产品A的开发空间 | `50-aos-design/` | 产品A（AOS）的完整开发工作空间 |
+| 产品L的开发空间 | `10-pipeline-design/` | 产品L（流水线）的完整开发工作空间 |
+| 产品M的开发空间 | `50-aos-design/` | 产品M（AOS）的完整开发工作空间 |
 
 每个项目下按产品开发阶段组织为三个子目录：
 
-| 阶段子目录 | 00（产品B） | 50（产品A） |
+| 阶段子目录 | 00（产品L） | 50（产品M） |
 |-----------|------------|------------|
 | 阶段1：系统设计 | `10-pipeline-system-design/` | `10-aos-system-design/` |
 | 阶段2：构件开发 | `20-pipeline-component-dev/` | `20-aos-component-dev/`（待扩展） |
@@ -248,25 +248,25 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 | 子目录 | 性质 | 说明 |
 |--------|------|------|
-| `01-aos-system-design-standards/` | 产品B的构件 | 设计准则（引用共享准则） |
-| `02-aos-system-design-guidelines/` | 产品B的构件 | 设计指南（引用共享指南） |
-| `03-aos-system-design-ai-support/` | 产品B的构件 | AI 辅助文档，为团队A提供系统设计支持 |
-| `04-aos-system-design-tasks/` | 产品B的构件 | 任务定义，为团队A提供系统设计操作规程 |
-| `10-aos-system-product-data/` | 产品A的设计输出 | 基于产品同构性定义的标准产品数据模板，由团队A填入产品A的具体设计内容 |
+| `01-aos-system-design-standards/` | 产品L的构件 | 设计准则（引用共享准则） |
+| `02-aos-system-design-guidelines/` | 产品L的构件 | 设计指南（引用共享指南） |
+| `03-aos-system-design-ai-support/` | 产品L的构件 | AI 辅助文档，为团队M提供系统设计支持 |
+| `04-aos-system-design-tasks/` | 产品L的构件 | 任务定义，为团队M提供系统设计操作规程 |
+| `10-aos-system-product-data/` | 产品M的设计输出 | 基于产品同构性定义的标准产品数据模板，由团队M填入产品M的具体设计内容 |
 
-### 产品B的产品架构与 AOS 系统设计目录的关系
+### 产品L的产品架构与 AOS 系统设计目录的关系
 
-**核心认知**：产品B的产品架构末级节点，对应的交付物就是 `50-aos-design/10-aos-system-design/` 下除 `10-aos-system-product-data/` 之外的所有文档（01/02/03/04）。这些文档是产品B交付给团队A使用的工具和规范。`10-aos-system-product-data/` 是团队A使用产品B的工具后产出的产品A设计内容，是产品B的**输出物**，不是产品B的构件。
+**核心认知**：产品L的产品架构末级节点，对应的交付物就是 `50-aos-design/10-aos-system-design/` 下除 `10-aos-system-product-data/` 之外的所有文档（01/02/03/04）。这些文档是产品L交付给团队M使用的工具和规范。`10-aos-system-product-data/` 是团队M使用产品L的工具后产出的产品M设计内容，是产品L的**输出物**，不是产品L的构件。
 
 **三层工作面对应的目录关系**：
 
 | 层面 | 工作内容 | 仓库位置 |
 |------|---------|---------|
-| 第1层：自指设计 | 团队B用五层结构对产品B进行系统设计，产出产品B的产品数据 | `10-pipeline-design/10-pipeline-system-design/10-pipeline-system-product-data/`（9份产品数据） |
-| 第2层：交付物构建 | 团队B基于同构性，将产品B的准则/指南/AI辅助/任务适配为产品A的设计工具 | `50-aos-design/10-aos-system-design/{01,02,03,04}-*`（产品B的构件） |
-| 第3层：使用工具设计产品A | 团队A使用第2层工具，对产品A进行系统设计，产出产品A的产品数据 | `50-aos-design/10-aos-system-design/10-aos-system-product-data/`（产品A的设计输出） |
+| 第1层：自指设计 | 团队L用五层结构对产品L进行系统设计，产出产品L的产品数据 | `10-pipeline-design/10-pipeline-system-design/10-pipeline-system-product-data/`（9份产品数据） |
+| 第2层：交付物构建 | 团队L基于同构性，将产品L的准则/指南/AI辅助/任务适配为产品M的设计工具 | `50-aos-design/10-aos-system-design/{01,02,03,04}-*`（产品L的构件） |
+| 第3层：使用工具设计产品M | 团队M使用第2层工具，对产品M进行系统设计，产出产品M的产品数据 | `50-aos-design/10-aos-system-design/10-aos-system-product-data/`（产品M的设计输出） |
 
-**产品同构性与内容参考**：产品B和产品A共用同一套五层结构和设计方法论。通用方法论核心位于 [`00-general/`](00-general/)，各产品在此基础上参考适配：
+**产品同构性与内容参考**：产品L和产品M共用同一套五层结构和设计方法论。通用方法论核心位于 [`00-general/`](00-general/)，各产品在此基础上参考适配：
 
 | AOS 子目录 | 参考来源 | 策略 |
 |-----------|---------|------|
@@ -274,7 +274,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | `02-aos-system-design-guidelines/` | `00-general/10-general-design-standards/02-general-design-4modes-guide-overview.md` + `10-pipeline-design/.../02-pipeline-system-design-guidelines/` | 通用方法框架参考通用指南，示例参考 Pipeline |
 | `03-aos-system-design-ai-support/` | `10-pipeline-design/.../03-pipeline-system-design-ai-support/` | 结构参考，内容需定制（场景不同） |
 | `04-aos-system-design-tasks/` | 流水线的 4 场景任务定义 | 结构参考，内容需定制（操作对象不同） |
-| `10-aos-system-product-data/` | `10-pipeline-design/.../10-pipeline-system-product-data/` | 文件名和模板结构参考，内容由团队A填入 |
+| `10-aos-system-product-data/` | `10-pipeline-design/.../10-pipeline-system-product-data/` | 文件名和模板结构参考，内容由团队M填入 |
 
 ## 五层结构与核心规则
 
@@ -332,7 +332,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 │   ├── 03-specification-template.md            # 规范文档通用模板
 │   └── 04-general-terminology-glossary.md      # 通用术语对照
 
-10-pipeline-design/                             # 产品B的完整开发空间
+10-pipeline-design/                             # 产品L的完整开发空间
 ├── 10-pipeline-system-design/                  # 阶段1：流水线的系统设计
 │   ├── 01-pipeline-system-design-standards/    # Pipeline准则（通用方法论 + 流水线专有）
 │   │   └── 01-pipeline-design-standards.md
@@ -356,21 +356,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ├── 20-pipeline-component-dev/                  # 阶段2：流水线的构件开发（待扩展）
 └── 30-pipeline-integration-delivery/           # 阶段3：流水线的集成交付（待扩展）
 
-50-aos-design/                                  # 产品A的完整开发空间
+50-aos-design/                                  # 产品M的完整开发空间
 ├── 10-aos-system-design/                       # 阶段1：AOS的系统设计（当前工作范围）
-│   ├── 01-aos-system-design-standards/         # 参考 Pipeline 准则（产品B构件）
-│   ├── 02-aos-system-design-guidelines/        # 参考 Pipeline 指南（产品B构件）
-│   ├── 03-aos-system-design-ai-support/        # AOS 专用 AI 辅助文档（产品B构件）
+│   ├── 01-aos-system-design-standards/         # 参考 Pipeline 准则（产品L构件）
+│   ├── 02-aos-system-design-guidelines/        # 参考 Pipeline 指南（产品L构件）
+│   ├── 03-aos-system-design-ai-support/        # AOS 专用 AI 辅助文档（产品L构件）
 │   │   ├── 01-waterfall-aos-system-design/
 │   │   ├── 03-agile-aos-system-design/
 │   │   ├── 02-reverse-engineering-aos-system-design/
 │   │   └── 04-devops-aos-system-design/
-│   ├── 04-aos-system-design-tasks/             # AOS 的 4 场景任务定义（产品B构件）
+│   ├── 04-aos-system-design-tasks/             # AOS 的 4 场景任务定义（产品L构件）
 │   │   ├── 01-waterfall-aos-system-design/     # 瀑布式 6 个任务
 │   │   ├── 03-agile-aos-system-design/         # 敏捷式 8 个任务
 │   │   ├── 02-reverse-engineering-aos-system-design/ # 逆向工程 8 个任务
 │   │   └── 04-devops-aos-system-design/        # DevOps 4 个任务
-│   └── 10-aos-system-product-data/             # AOS 的产品数据（产品A设计输出）
+│   └── 10-aos-system-product-data/             # AOS 的产品数据（产品M设计输出）
 ├── 20-aos-component-dev/                       # 阶段2：AOS的构件开发（待扩展）
 └── 30-aos-integration-delivery/                # 阶段3：AOS的集成交付（待扩展）
 

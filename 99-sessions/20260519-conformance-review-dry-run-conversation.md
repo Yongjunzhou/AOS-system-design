@@ -2539,7 +2539,7 @@ spec-review.md与Review-methodology.md 的内容一致吗
 我的理解：
 
 **当前**（`10-pipeline-design/.../99-review-tools/`）：
-- 属于产品B的开发空间
+- 属于产品L的开发空间
 - 但里面的内容（审查方法论、check-version/check-links/check-numbering）**不包含任何 pipeline 专有数据**
 - 审查方法论适用于任何文档，格式检查脚本也不依赖领域知识
 
@@ -2911,8 +2911,8 @@ Skill 名称和文件名已对齐：`name: spec-review` → `name: conformance-r
 | 概念 | 仓库目录 | 说明 |
 |------|---------|------|
 | 通用方法论 | `00-general/10-general-design-standards/` | ... |
-| 产品B | `10-pipeline-design/` | ... |
-| 产品A | `50-aos-design/` | ... |
+| 产品L | `10-pipeline-design/` | ... |
+| 产品M | `50-aos-design/` | ... |
 ```
 
 表头说"三个顶层目录"，但第一行的路径指向的 **不是顶层目录** `00-general/`，而是其子目录 `10-general-design-standards/`。这样`20-conformance-review-tools/` 就落在了顶层目录的范畴之外。
