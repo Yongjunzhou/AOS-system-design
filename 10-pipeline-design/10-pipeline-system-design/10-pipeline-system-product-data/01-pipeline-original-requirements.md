@@ -3,7 +3,7 @@
 
 **文档版本**：v4.0  
 **创建日期**：2026-05-15  
-**来源文档**：`01-design-standards/01-system-design-standards.md` (v2.3)、`08-system-design-pipeline/02-original-requirements.md` (v3.0，已归档至 `200-put-on-hold/`)
+**来源文档**：`01-design-standards/01-system-design-specification.md` (v2.3)、`08-system-design-pipeline/02-original-requirements.md` (v3.0，已归档至 `200-put-on-hold/`)
 
 ---
 

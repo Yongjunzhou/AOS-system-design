@@ -191,7 +191,7 @@ R003 [建议] 架构末级节点的命名应反映其承担的职责
 .claude/skills/rule-conformance-review/temp/{源文档文件名前缀}-semantics.md
 ```
 
-例如依据 `01-general-design-standards.md` 则生成 `temp/general-design-standards-semantics.md`。
+例如依据 `01-general-system-design-standards.md` 则生成 `temp/general-design-standards-semantics.md`。
 
 **多规则文档场景**：每份规则文档生成独立的临时语义提取文档，例如：
 
@@ -208,7 +208,7 @@ temp/
 
 ```markdown
 ---
-source: 01-general-design-standards.md
+source: 01-general-system-design-standards.md
 source-version: v3.5
 extracted-at: 2026-05-20
 ---

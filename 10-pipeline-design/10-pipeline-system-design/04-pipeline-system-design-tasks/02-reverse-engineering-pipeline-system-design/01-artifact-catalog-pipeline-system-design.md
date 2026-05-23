@@ -8,7 +8,7 @@
 
 ## 目标
 
-全面梳理产品L（系统设计流水线）现有的所有产物，理解当前的目录结构和文件组织方式，建立完整的产物全局视图，为后续逆向推导提供基础。
+全面梳理设计线（系统设计流水线）现有的所有产物，理解当前的目录结构和文件组织方式，建立完整的产物全局视图，为后续逆向推导提供基础。
 
 ## 上下文继承
 
@@ -35,7 +35,7 @@
 | 输入 | 路径 |
 |------|------|
 | 项目目录结构 | 整个仓库根目录 |
-| 现有设计文档 | `01-pipeline-system-design-standards/` |
+| 现有设计文档 | `01-pipeline-system-design-specification/` |
 | 现有设计指南 | `02-pipeline-system-design-guidelines/` |
 | 现有 AI 辅助文档 | `03-pipeline-system-design-ai-support/` |
 | 现有产品数据模板 | `10-pipeline-system-product-data/` |

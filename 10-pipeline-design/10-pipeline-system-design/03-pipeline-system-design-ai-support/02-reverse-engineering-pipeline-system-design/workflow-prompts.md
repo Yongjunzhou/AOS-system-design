@@ -5,17 +5,17 @@
 
 ## 依据B说明
 
-本提示词模板集适用于产品L（系统设计流水线）的逆向工程场景，默认演示"软件产品"类型的逆向推导过程。
+本提示词模板集适用于设计线（系统设计流水线）的逆向工程场景，默认演示"软件产品"类型的逆向推导过程。
 
 **适用场景**：
-- 对产品L（流水线）自身软件实现的逆向推导
-- 对产品M（AOS运营体系）的逆向推导
+- 对设计线（流水线）自身软件实现的逆向推导
+- 对EOS（企业运营体系）的逆向推导
 - 对其他软件产品的逆向推导
 
 **使用时注意**：
 - 根据目标产品的类型选择 PA 分类体系：软件产品 → `前端/后端/数据/基础设施`；方法论/工具产品 → `规范与准则/设计指南/AI辅助文档/任务定义`
 - 所有提示词模板中的 `[占位符]` 在执行时替换为实际内容
-- 模板中默认使用软件产品分类，适用于对 AOS（产品M）或流水线软件实现的逆向推导
+- 模板中默认使用软件产品分类，适用于对 EOS或流水线软件实现的逆向推导
 
 ---
 
@@ -59,7 +59,7 @@
 ```
 从哪里来：
   - 直接输入：项目目录结构、现有设计文档/指南/AI辅助文档/产品数据
-  - 参考文档：[产品上下文](../01-product-context-pipeline.md)，了解产品L的背景
+  - 参考文档：[产品上下文](../01-product-context-pipeline.md)，了解设计线的背景
   - 涉及规范：产品架构规范 §2
 
 预期产出：
@@ -79,7 +79,7 @@
 - 产品代码和架构图纸（可选，仅在需要从代码重建PA时使用）
 
 ### 涉及规范
-- [产品架构规范 §2 架构定义规范](../../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md#二架构定义规范)
+- [产品架构规范 §2 架构定义规范](../../01-pipeline-system-design-specification/06-pipeline-product-architecture-specification.md#二架构定义规范)
 
 ### 决策框架参考
 
@@ -240,8 +240,8 @@
 - 第1步产出的产物总览清单
 
 ### 涉及规范
-- [产品架构规范 §2 架构定义规范](../../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md#二架构定义规范)
-- [产品架构规范 §3 详细定义规范](../../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md#三详细定义规范)
+- [产品架构规范 §2 架构定义规范](../../01-pipeline-system-design-specification/06-pipeline-product-architecture-specification.md#二架构定义规范)
+- [产品架构规范 §3 详细定义规范](../../01-pipeline-system-design-specification/06-pipeline-product-architecture-specification.md#三详细定义规范)
 
 ### 决策框架参考
 
@@ -405,8 +405,8 @@ PA-XXX 详细定义:
 - 第2步产出的产品架构文档
 
 ### 涉及规范
-- [系统需求规范 §2 架构定义规范](../../01-pipeline-system-design-standards/05-pipeline-system-requirements-specification.md#二架构定义规范)
-- [系统需求规范 §3 详细定义规范](../../01-pipeline-system-design-standards/05-pipeline-system-requirements-specification.md#三详细定义规范)
+- [系统需求规范 §2 架构定义规范](../../01-pipeline-system-design-specification/05-pipeline-system-requirements-specification.md#二架构定义规范)
+- [系统需求规范 §3 详细定义规范](../../01-pipeline-system-design-specification/05-pipeline-system-requirements-specification.md#三详细定义规范)
 
 ### 决策框架参考
 
@@ -629,9 +629,9 @@ SysReq 5 级节点清单：
 - 第3步同步建立的业务架构骨架
 
 ### 涉及规范
-- [业务架构规范 §2 架构定义规范](../../01-pipeline-system-design-standards/04-pipeline-business-architecture-specification.md#二架构定义规范)
-- [业务架构规范 §3 IPO模型](../../01-pipeline-system-design-standards/04-pipeline-business-architecture-specification.md#三ipo模型)
-- [业务架构规范 §4.3 去重机制](../../01-pipeline-system-design-standards/04-pipeline-business-architecture-specification.md#43-去重机制)
+- [业务架构规范 §2 架构定义规范](../../01-pipeline-system-design-specification/04-pipeline-business-architecture-specification.md#二架构定义规范)
+- [业务架构规范 §3 IPO模型](../../01-pipeline-system-design-specification/04-pipeline-business-architecture-specification.md#三ipo模型)
+- [业务架构规范 §4.3 去重机制](../../01-pipeline-system-design-specification/04-pipeline-business-architecture-specification.md#43-去重机制)
 
 ### 决策框架参考
 
@@ -785,8 +785,8 @@ IPO 去重报告：
 - 第4步同步建立的相关方需求骨架
 
 ### 涉及规范
-- [相关方需求规范 §2 架构定义规范](../../01-pipeline-system-design-standards/03-pipeline-stakeholder-requirements-specification.md#二架构定义规范)
-- [相关方需求规范 §3 详细定义规范](../../01-pipeline-system-design-standards/03-pipeline-stakeholder-requirements-specification.md#三详细定义规范)
+- [相关方需求规范 §2 架构定义规范](../../01-pipeline-system-design-specification/03-pipeline-stakeholder-requirements-specification.md#二架构定义规范)
+- [相关方需求规范 §3 详细定义规范](../../01-pipeline-system-design-specification/03-pipeline-stakeholder-requirements-specification.md#三详细定义规范)
 
 ### 决策框架参考
 
@@ -938,7 +938,7 @@ SR-F-XXX: [名称]（3级·架构末级节点）
 - 第5步产出的相关方需求文档
 
 ### 涉及规范
-- [原始需求规范 §3 分解规范](../../01-pipeline-system-design-standards/02-pipeline-original-requirements-specification.md#三分解规范)
+- [原始需求规范 §3 分解规范](../../01-pipeline-system-design-specification/02-pipeline-original-requirements-specification.md#三分解规范)
 
 ### 决策框架参考
 
@@ -1094,9 +1094,9 @@ OR-XXX: [原始需求名称]
 - 第1~6步产出的全部设计文档
 
 ### 涉及规范
-- [系统设计准则 §5 验收标准](../../01-pipeline-system-design-standards/01-pipeline-design-standards.md#五验收标准)
-- [系统设计准则 §6 检查清单](../../01-pipeline-system-design-standards/01-pipeline-design-standards.md#六检查清单)
-- [系统设计准则 §3.2 三条核心规则](../../01-pipeline-system-design-standards/01-pipeline-design-standards.md#32-三条核心规则)
+- [系统设计准则 §5 验收标准](../../01-pipeline-system-design-specification/01-pipeline-system-design-standards.md#五验收标准)
+- [系统设计准则 §6 检查清单](../../01-pipeline-system-design-specification/01-pipeline-system-design-standards.md#六检查清单)
+- [系统设计准则 §3.2 三条核心规则](../../01-pipeline-system-design-specification/01-pipeline-system-design-standards.md#32-三条核心规则)
 
 ### 决策框架参考
 

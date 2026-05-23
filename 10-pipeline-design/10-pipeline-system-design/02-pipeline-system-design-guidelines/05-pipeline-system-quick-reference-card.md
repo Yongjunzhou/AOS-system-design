@@ -233,7 +233,7 @@
 第8步：文档完善和发布
 ```
 
-**涉及规范**：[总纲](../01-pipeline-system-design-standards/01-pipeline-design-standards.md) | [原始需求](../01-pipeline-system-design-standards/02-pipeline-original-requirements-specification.md) | [相关方需求](../01-pipeline-system-design-standards/03-pipeline-stakeholder-requirements-specification.md) | [业务架构](../01-pipeline-system-design-standards/04-pipeline-business-architecture-specification.md) | [系统需求](../01-pipeline-system-design-standards/05-pipeline-system-requirements-specification.md) | [产品架构](../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md)
+**涉及规范**：[总纲](../01-pipeline-system-design-specification/01-pipeline-system-design-standards.md) | [原始需求](../01-pipeline-system-design-specification/02-pipeline-original-requirements-specification.md) | [相关方需求](../01-pipeline-system-design-specification/03-pipeline-stakeholder-requirements-specification.md) | [业务架构](../01-pipeline-system-design-specification/04-pipeline-business-architecture-specification.md) | [系统需求](../01-pipeline-system-design-specification/05-pipeline-system-requirements-specification.md) | [产品架构](../01-pipeline-system-design-specification/06-pipeline-product-architecture-specification.md)
 
 ---
 
@@ -271,7 +271,7 @@
   └─ 符合性分析完整率验证
 ```
 
-**涉及规范**：[总纲](../01-pipeline-system-design-standards/01-pipeline-design-standards.md) | [原始需求](../01-pipeline-system-design-standards/02-pipeline-original-requirements-specification.md) | [相关方需求](../01-pipeline-system-design-standards/03-pipeline-stakeholder-requirements-specification.md) | [业务架构](../01-pipeline-system-design-standards/04-pipeline-business-architecture-specification.md) | [系统需求](../01-pipeline-system-design-standards/05-pipeline-system-requirements-specification.md) | [产品架构](../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md)
+**涉及规范**：[总纲](../01-pipeline-system-design-specification/01-pipeline-system-design-standards.md) | [原始需求](../01-pipeline-system-design-specification/02-pipeline-original-requirements-specification.md) | [相关方需求](../01-pipeline-system-design-specification/03-pipeline-stakeholder-requirements-specification.md) | [业务架构](../01-pipeline-system-design-specification/04-pipeline-business-architecture-specification.md) | [系统需求](../01-pipeline-system-design-specification/05-pipeline-system-requirements-specification.md) | [产品架构](../01-pipeline-system-design-specification/06-pipeline-product-architecture-specification.md)
 
 ---
 
@@ -318,7 +318,7 @@
   └─ 发布更新
 ```
 
-**涉及规范**：[总纲](../01-pipeline-system-design-standards/01-pipeline-design-standards.md) | [原始需求](../01-pipeline-system-design-standards/02-pipeline-original-requirements-specification.md) | [相关方需求](../01-pipeline-system-design-standards/03-pipeline-stakeholder-requirements-specification.md) | [业务架构](../01-pipeline-system-design-standards/04-pipeline-business-architecture-specification.md) | [系统需求](../01-pipeline-system-design-standards/05-pipeline-system-requirements-specification.md) | [产品架构](../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md)
+**涉及规范**：[总纲](../01-pipeline-system-design-specification/01-pipeline-system-design-standards.md) | [原始需求](../01-pipeline-system-design-specification/02-pipeline-original-requirements-specification.md) | [相关方需求](../01-pipeline-system-design-specification/03-pipeline-stakeholder-requirements-specification.md) | [业务架构](../01-pipeline-system-design-specification/04-pipeline-business-architecture-specification.md) | [系统需求](../01-pipeline-system-design-specification/05-pipeline-system-requirements-specification.md) | [产品架构](../01-pipeline-system-design-specification/06-pipeline-product-architecture-specification.md)
 
 ---
 
@@ -353,7 +353,7 @@
 核心原则：快速响应、最小化变更、保持一致性、充分验证
 ```
 
-**涉及规范**：[总纲](../01-pipeline-system-design-standards/01-pipeline-design-standards.md) | [系统需求](../01-pipeline-system-design-standards/05-pipeline-system-requirements-specification.md) | [产品架构](../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md)
+**涉及规范**：[总纲](../01-pipeline-system-design-specification/01-pipeline-system-design-standards.md) | [系统需求](../01-pipeline-system-design-specification/05-pipeline-system-requirements-specification.md) | [产品架构](../01-pipeline-system-design-specification/06-pipeline-product-architecture-specification.md)
 
 ---
 
@@ -436,7 +436,7 @@
 ## 📞 需要帮助？
 
 - 📖 **详细指南**：查看设计指南目录下的各场景详细指南（01-04）
-- 📋 **设计准则**：查看《系统设计准则 v3.9》（01-pipeline-design-standards.md）
+- 📋 **设计准则**：查看《系统设计准则 v3.9》（01-pipeline-system-design-standards.md）
 - 📚 **各层规范**：02-Pipeline原始需求规范、03-Pipeline相关方需求规范、04-Pipeline业务架构规范、05-Pipeline系统需求规范、06-Pipeline产品架构规范
 - 📖 **术语对照**：07-pipeline-terminology-glossary.md
 

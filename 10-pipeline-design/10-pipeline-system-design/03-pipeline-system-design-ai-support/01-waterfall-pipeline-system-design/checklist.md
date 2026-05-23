@@ -30,10 +30,10 @@
 - [ ] 同一节点是否经历 3 次以上 Extend 却未审查 Split？
 
 ### 依据B对齐
-- [ ] 输出的设计文档是面向产品M（AOS运营体系）还是产品L（流水线自身）？→ 瀑布式场景面向**产品M**的greenfield（新研产品）场景
-- [ ] 如果输出是产品M的AI辅助文档，检查其结构是否与 `50-aos-design/10-aos-system-design/03-aos-system-design-ai-support/01-greenfield/` 的模板结构一致
-- [ ] AI辅助文档中的示例引用是否引用了产品M的领域内容，而非产品L的流水线内容？
-- [ ] 是否已区分"模板层"（产品L的工具）和"实例层"（产品M的设计内容）？
+- [ ] 输出的设计文档是面向EOS（企业运营体系）还是设计线（流水线自身）？→ 瀑布式场景面向**EOS**的greenfield（新研产品）场景
+- [ ] 如果输出是EOS的AI辅助文档，检查其结构是否与 `20-eos-design/10-eos-system-design/03-eos-system-design-ai-support/01-greenfield/` 的模板结构一致
+- [ ] AI辅助文档中的示例引用是否引用了EOS的领域内容，而非设计线的流水线内容？
+- [ ] 是否已区分"模板层"（设计线的工具）和"实例层"（EOS的设计内容）？
 
 ---
 

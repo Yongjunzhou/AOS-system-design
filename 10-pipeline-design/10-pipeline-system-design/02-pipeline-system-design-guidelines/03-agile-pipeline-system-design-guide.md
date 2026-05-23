@@ -9,12 +9,12 @@
 **适用场景**：在已有产品技术文档的基础上，增加新需求或修订已有需求，开展增量系统设计
 
 **涉及规范**：
-- [系统设计准则（总纲）](../01-pipeline-system-design-standards/01-pipeline-design-standards.md)
-- [原始需求规范](../01-pipeline-system-design-standards/02-pipeline-original-requirements-specification.md)（第1层）
-- [相关方需求规范](../01-pipeline-system-design-standards/03-pipeline-stakeholder-requirements-specification.md)（第2层）
-- [业务架构规范](../01-pipeline-system-design-standards/04-pipeline-business-architecture-specification.md)（第3层）
-- [系统需求规范](../01-pipeline-system-design-standards/05-pipeline-system-requirements-specification.md)（第4层）
-- [产品架构规范](../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md)（第5层）
+- [系统设计准则（总纲）](../01-pipeline-system-design-specification/01-pipeline-system-design-standards.md)
+- [原始需求规范](../01-pipeline-system-design-specification/02-pipeline-original-requirements-specification.md)（第1层）
+- [相关方需求规范](../01-pipeline-system-design-specification/03-pipeline-stakeholder-requirements-specification.md)（第2层）
+- [业务架构规范](../01-pipeline-system-design-specification/04-pipeline-business-architecture-specification.md)（第3层）
+- [系统需求规范](../01-pipeline-system-design-specification/05-pipeline-system-requirements-specification.md)（第4层）
+- [产品架构规范](../01-pipeline-system-design-specification/06-pipeline-product-architecture-specification.md)（第5层）
 
 ---
 
@@ -42,7 +42,7 @@
 |------|------|---------|
 | **流水线开发者** | 定义设计准则和指南，配置 AI 辅助工具，审核 AI 输出 | 所有步骤的审核确认 |
 | **AI** | 按指令执行规范化、分解、映射、验证等自动化任务 | 所有步骤的自动生成和检查 |
-| **AOS开发者** | 提出需求、确认设计、审核方案（含需求提出者、业务流程开发者、信息系统开发者三类） | 需求提出、增量映射、更新验证 |
+| **EOS开发者** | 提出需求、确认设计、审核方案（含需求提出者、业务流程开发者、信息系统开发者三类） | 需求提出、增量映射、更新验证 |
 
 ---
 
@@ -118,7 +118,7 @@
 
 **目标**：分析新需求的性质和影响范围
 
-**涉及规范**：[原始需求规范 §1 核心概念](../01-pipeline-system-design-standards/02-pipeline-original-requirements-specification.md#一核心概念)
+**涉及规范**：[原始需求规范 §1 核心概念](../01-pipeline-system-design-specification/02-pipeline-original-requirements-specification.md#一核心概念)
 > **阅读指引**：先理解原始需求规范中的需求分类方法，再对照本步骤的具体操作执行。
 
 **具体操作**：
@@ -154,7 +154,7 @@
 
 **目标**：对新需求进行规范化处理和分解，得到末级需求
 
-**涉及规范**：[原始需求规范 §3 分解规范](../01-pipeline-system-design-standards/02-pipeline-original-requirements-specification.md#三分解规范)
+**涉及规范**：[原始需求规范 §3 分解规范](../01-pipeline-system-design-specification/02-pipeline-original-requirements-specification.md#三分解规范)
 > **阅读指引**：先读原始需求规范 §3 的分解原则和停止准则，再按本步骤的操作执行规范化与分解。
 
 **具体操作**：
@@ -195,8 +195,8 @@
 **目标**：将新末级需求映射或更新到相关方需求，分析影响范围
 
 **涉及规范**：
-- [相关方需求规范 §2 架构定义规范](../01-pipeline-system-design-standards/03-pipeline-stakeholder-requirements-specification.md#二架构定义规范)
-- [相关方需求规范 §3 详细定义规范](../01-pipeline-system-design-standards/03-pipeline-stakeholder-requirements-specification.md#三详细定义规范)
+- [相关方需求规范 §2 架构定义规范](../01-pipeline-system-design-specification/03-pipeline-stakeholder-requirements-specification.md#二架构定义规范)
+- [相关方需求规范 §3 详细定义规范](../01-pipeline-system-design-specification/03-pipeline-stakeholder-requirements-specification.md#三详细定义规范)
 > **阅读指引**：先读相关方需求规范 §2 理解架构末级节点定义和分类体系，再对照 §3 的详细定义格式执行增量操作。
 
 **具体操作**：
@@ -258,7 +258,7 @@
    又是下层业务架构的需求（向下传递）。
    在开展详细定义时，应同步评估对业务架构的影响（详见第4步）。
 
-   详细定义末级格式（含分配目标和符合性说明，详见[相关方需求规范 §3.1](../01-pipeline-system-design-standards/03-pipeline-stakeholder-requirements-specification.md#31-功能需求详细定义)）：
+   详细定义末级格式（含分配目标和符合性说明，详见[相关方需求规范 §3.1](../01-pipeline-system-design-specification/03-pipeline-stakeholder-requirements-specification.md#31-功能需求详细定义)）：
    ```
    SR-F-001.0N: [标题]
    ├─ 描述：[完整的需求叙述]
@@ -279,9 +279,9 @@
 **目标**：分析新需求对业务架构的影响
 
 **涉及规范**：
-- [业务架构规范 §2 架构定义规范](../01-pipeline-system-design-standards/04-pipeline-business-architecture-specification.md#二架构定义规范)
-- [业务架构规范 §4.1 三阶段工作流程](../01-pipeline-system-design-standards/04-pipeline-business-architecture-specification.md#41-三阶段工作流程)
-- [业务架构规范 §4.3 去重机制](../01-pipeline-system-design-standards/04-pipeline-business-architecture-specification.md#43-去重机制)
+- [业务架构规范 §2 架构定义规范](../01-pipeline-system-design-specification/04-pipeline-business-architecture-specification.md#二架构定义规范)
+- [业务架构规范 §4.1 三阶段工作流程](../01-pipeline-system-design-specification/04-pipeline-business-architecture-specification.md#41-三阶段工作流程)
+- [业务架构规范 §4.3 去重机制](../01-pipeline-system-design-specification/04-pipeline-business-architecture-specification.md#43-去重机制)
 > **阅读指引**：先读业务架构规范 §2 理解架构定义和 IPO 模型，再参照 §4.1 的三阶段工作流程和 §4.3 的去重机制执行增量更新。
 
 **具体操作**：
@@ -291,7 +291,7 @@
    - **性能继承检查**：性能指标是否从 SR 正确继承；**指标追溯**（每个 BA IPO 的性能指标可追溯到 SR 详细定义末级的指标要求）
 
 2. **业务架构更新策略**
-   - 采用**三阶段工作流程**（详见[业务架构规范 §4.1](../01-pipeline-system-design-standards/04-pipeline-business-architecture-specification.md#41-三阶段工作流程)）：先快速评估创建占位符和骨架映射，再填充/更新IPO内容并去重，最后验证和冻结
+   - 采用**三阶段工作流程**（详见[业务架构规范 §4.1](../01-pipeline-system-design-specification/04-pipeline-business-architecture-specification.md#41-三阶段工作流程)）：先快速评估创建占位符和骨架映射，再填充/更新IPO内容并去重，最后验证和冻结
    
    **策略A：映射到现有业务架构**
    - 如果新 SR 详细定义可以由现有业务组件（IPO）承接
@@ -338,8 +338,8 @@
 **目标**：分析新需求对系统需求的影响
 
 **涉及规范**：
-- [系统需求规范 §2 架构定义规范](../01-pipeline-system-design-standards/05-pipeline-system-requirements-specification.md#二架构定义规范)
-- [系统需求规范 §3 详细定义规范](../01-pipeline-system-design-standards/05-pipeline-system-requirements-specification.md#三详细定义规范)
+- [系统需求规范 §2 架构定义规范](../01-pipeline-system-design-specification/05-pipeline-system-requirements-specification.md#二架构定义规范)
+- [系统需求规范 §3 详细定义规范](../01-pipeline-system-design-specification/05-pipeline-system-requirements-specification.md#三详细定义规范)
 > **阅读指引**：先读系统需求规范 §2 理解功能/非功能双架构体系，再对照 §3 的详细定义规范执行增量更新操作。
 
 **具体操作**：
@@ -394,9 +394,9 @@
 **目标**：分析新需求对产品架构的影响
 
 **涉及规范**：
-- [系统设计准则 §2.4 产品架构分解原则](../01-pipeline-system-design-standards/01-pipeline-design-standards.md#24-产品架构分解原则)
-- [产品架构规范 §2 架构定义规范](../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md#二架构定义规范)
-- [产品架构规范 §3 详细定义规范](../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md#三详细定义规范)
+- [系统设计准则 §2.4 产品架构分解原则](../01-pipeline-system-design-specification/01-pipeline-system-design-standards.md#24-产品架构分解原则)
+- [产品架构规范 §2 架构定义规范](../01-pipeline-system-design-specification/06-pipeline-product-architecture-specification.md#二架构定义规范)
+- [产品架构规范 §3 详细定义规范](../01-pipeline-system-design-specification/06-pipeline-product-architecture-specification.md#三详细定义规范)
 > **阅读指引**：先读系统设计准则 §2.4 理解 PA 构件分解的三因素决策方法，再对照产品架构规范 §2-§3 完成构件增量定义。
 
 **具体操作**：
@@ -467,9 +467,9 @@
 **目标**：验证增量更新后的系统设计的完整性和一致性
 
 **涉及规范**：
-- [系统设计准则 §5 验收标准](../01-pipeline-system-design-standards/01-pipeline-design-standards.md#五验收标准)
-- [系统设计准则 §6 检查清单](../01-pipeline-system-design-standards/01-pipeline-design-standards.md#六检查清单)
-- [系统设计准则 §3.2 三条核心规则](../01-pipeline-system-design-standards/01-pipeline-design-standards.md#32-三条核心规则)
+- [系统设计准则 §5 验收标准](../01-pipeline-system-design-specification/01-pipeline-system-design-standards.md#五验收标准)
+- [系统设计准则 §6 检查清单](../01-pipeline-system-design-specification/01-pipeline-system-design-standards.md#六检查清单)
+- [系统设计准则 §3.2 三条核心规则](../01-pipeline-system-design-specification/01-pipeline-system-design-standards.md#32-三条核心规则)
 > **阅读指引**：完整阅读系统设计准则 §3.2（三条核心规则）、§5（验收标准）和 §6（检查清单），以验收标准为准绳执行完整性和一致性验证。
 
 **具体操作**：

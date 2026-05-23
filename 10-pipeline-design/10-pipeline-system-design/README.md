@@ -8,7 +8,7 @@
 
 ## 目录用途
 
-本目录是产品L（系统设计流水线）阶段1（系统设计）的完整工作空间，包含通用设计方法论、AI 辅助文档和流水线自身的产品数据。
+本目录是设计线（系统设计流水线）阶段1（系统设计）的完整工作空间，包含通用设计方法论、AI 辅助文档和流水线自身的产品数据。
 
 ---
 
@@ -16,7 +16,7 @@
 
 ```
 10-pipeline-system-design/
-├── 01-pipeline-system-design-standards/     # 通用设计准则（两个项目参考）
+├── 01-pipeline-system-design-specification/     # 通用设计准则（两个项目参考）
 ├── 02-pipeline-system-design-guidelines/    # 四种场景的设计指南（共享）
 ├── 03-pipeline-system-design-ai-support/    # 流水线产品的 AI 辅助文档
 └── 10-pipeline-system-product-data/         # 流水线的标准产品数据
@@ -26,12 +26,12 @@
 
 ## 各子目录说明
 
-### [01-pipeline-system-design-standards/](01-pipeline-system-design-standards/README.md)
+### [01-pipeline-system-design-specification/](01-pipeline-system-design-specification/README.md)
 **通用设计准则 — 两个项目参考**
 
 | 文档 | 说明 |
 |------|------|
-| 01-pipeline-design-standards.md | 核心准则：5层结构、3条规则、质量指标 |
+| 01-pipeline-system-design-standards.md | 核心准则：5层结构、3条规则、质量指标 |
 | 02 ~ 06 | 各层通用规范（OR/SR/BA/SysReq/PA） |
 | 07-pipeline-terminology-glossary.md | 术语英文对照表 |
 
@@ -68,8 +68,8 @@
 
 | 类型 | 目录 | 说明 |
 |------|------|------|
-| 通用（参考） | 01-standards、02-guidelines | 定义方法论，产品L 和产品M 参考共用 |
-| 产品L 专用 | 03-ai-support、10-product-data | 仅用于流水线产品本身的设计 |
+| 通用（参考） | 01-standards、02-guidelines | 定义方法论，设计线 和EOS 参考共用 |
+| 设计线 专用 | 03-ai-support、10-product-data | 仅用于流水线产品本身的设计 |
 
 ---
 

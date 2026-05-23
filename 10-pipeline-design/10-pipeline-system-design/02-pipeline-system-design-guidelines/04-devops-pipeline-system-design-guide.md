@@ -9,12 +9,12 @@
 **适用场景**：在产品使用过程中发现新的需求或 bug，需要快速响应和最小化变更
 
 **涉及规范**：
-- [系统设计准则（总纲）](../01-pipeline-system-design-standards/01-pipeline-design-standards.md)
-- [原始需求规范](../01-pipeline-system-design-standards/02-pipeline-original-requirements-specification.md)（第1层）
-- [相关方需求规范](../01-pipeline-system-design-standards/03-pipeline-stakeholder-requirements-specification.md)（第2层）
-- [业务架构规范](../01-pipeline-system-design-standards/04-pipeline-business-architecture-specification.md)（第3层）
-- [系统需求规范](../01-pipeline-system-design-standards/05-pipeline-system-requirements-specification.md)（第4层）
-- [产品架构规范](../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md)（第5层）
+- [系统设计准则（总纲）](../01-pipeline-system-design-specification/01-pipeline-system-design-standards.md)
+- [原始需求规范](../01-pipeline-system-design-specification/02-pipeline-original-requirements-specification.md)（第1层）
+- [相关方需求规范](../01-pipeline-system-design-specification/03-pipeline-stakeholder-requirements-specification.md)（第2层）
+- [业务架构规范](../01-pipeline-system-design-specification/04-pipeline-business-architecture-specification.md)（第3层）
+- [系统需求规范](../01-pipeline-system-design-specification/05-pipeline-system-requirements-specification.md)（第4层）
+- [产品架构规范](../01-pipeline-system-design-specification/06-pipeline-product-architecture-specification.md)（第5层）
 
 ---
 
@@ -42,7 +42,7 @@
 |------|------|---------|
 | **流水线开发者** | 定义设计准则和指南，配置 AI 辅助工具，审核 AI 输出 | 所有步骤的审核确认 |
 | **AI** | 按指令执行影响范围评估、快速修复生成、映射关系更新等自动化任务 | 所有步骤的自动生成和检查 |
-| **AOS开发者** | 提出需求、确认设计、审核方案（含需求提出者、业务流程开发者、信息系统开发者三类） | 问题定位、模式选择、修复验证 |
+| **EOS开发者** | 提出需求、确认设计、审核方案（含需求提出者、业务流程开发者、信息系统开发者三类） | 问题定位、模式选择、修复验证 |
 
 ---
 
@@ -105,7 +105,7 @@
 - ✅ 最快的响应时间
 - ✅ 最小的变更范围
 
-**涉及规范**：[产品架构规范 §2 架构定义规范](../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md#二架构定义规范)
+**涉及规范**：[产品架构规范 §2 架构定义规范](../01-pipeline-system-design-specification/06-pipeline-product-architecture-specification.md#二架构定义规范)
 
 **示例**：
 - 修复 UI 显示 bug
@@ -125,8 +125,8 @@
 - ✅ 相对快速的响应时间
 
 **涉及规范**：
-- [系统需求规范 §2 架构定义规范](../01-pipeline-system-design-standards/05-pipeline-system-requirements-specification.md#二架构定义规范)
-- [产品架构规范 §2 架构定义规范](../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md#二架构定义规范)
+- [系统需求规范 §2 架构定义规范](../01-pipeline-system-design-specification/05-pipeline-system-requirements-specification.md#二架构定义规范)
+- [产品架构规范 §2 架构定义规范](../01-pipeline-system-design-specification/06-pipeline-product-architecture-specification.md#二架构定义规范)
 
 **示例**：
 - 修复系统功能 bug
@@ -216,7 +216,7 @@
 
 **目标**：快速修复仅影响产品架构的问题
 
-**涉及规范**：[产品架构规范 §3 详细定义规范](../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md#三详细定义规范)
+**涉及规范**：[产品架构规范 §3 详细定义规范](../01-pipeline-system-design-specification/06-pipeline-product-architecture-specification.md#三详细定义规范)
 
 **具体操作**：
 
@@ -272,9 +272,9 @@
 **目标**：快速设计和实现影响系统需求和产品架构的问题
 
 **涉及规范**：
-- [系统需求规范 §2 架构定义规范](../01-pipeline-system-design-standards/05-pipeline-system-requirements-specification.md#二架构定义规范)
-- [系统需求规范 §3 详细定义规范](../01-pipeline-system-design-standards/05-pipeline-system-requirements-specification.md#三详细定义规范)
-- [产品架构规范 §2 架构定义规范](../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md#二架构定义规范)
+- [系统需求规范 §2 架构定义规范](../01-pipeline-system-design-specification/05-pipeline-system-requirements-specification.md#二架构定义规范)
+- [系统需求规范 §3 详细定义规范](../01-pipeline-system-design-specification/05-pipeline-system-requirements-specification.md#三详细定义规范)
+- [产品架构规范 §2 架构定义规范](../01-pipeline-system-design-specification/06-pipeline-product-architecture-specification.md#二架构定义规范)
 
 **具体操作**：
 
@@ -392,7 +392,7 @@
    ├─ 符合性分析：[修改后如何满足所承接的需求]
    └─ 设计指导：[对系统需求的指导]
    ```
-   > BA 的修改建议采用**三阶段工作流程**（详见[业务架构规范 §4.1](../01-pipeline-system-design-standards/04-pipeline-business-architecture-specification.md#41-三阶段工作流程)）：先快速评估创建占位符和骨架映射，再填充/更新IPO内容并去重，最后验证和冻结。
+   > BA 的修改建议采用**三阶段工作流程**（详见[业务架构规范 §4.1](../01-pipeline-system-design-specification/04-pipeline-business-architecture-specification.md#41-三阶段工作流程)）：先快速评估创建占位符和骨架映射，再填充/更新IPO内容并去重，最后验证和冻结。
    > 
    > **BA 仅有架构定义（IPO清单），无详细定义**：BA 的架构末级节点（IPO）自身承担"需求"角色，直接映射到 SysReq。修改仅涉及 IPO 定义本身和映射关系。
 

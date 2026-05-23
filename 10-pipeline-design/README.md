@@ -1,4 +1,4 @@
-# 产品L — 运营体系系统设计流水线
+# 设计线 — 运营体系系统设计流水线
 **Product B — System Design Pipeline**
 
 **文档版本**：v2.0  
@@ -8,7 +8,7 @@
 
 ## 产品定位
 
-系统设计流水线（System Design Pipeline）是为 AOS 开发者打造的"设计工具"，帮助他们将原始需求逐层推导至产品架构。产品L 的范围严格限定在产品开发阶段1（系统设计）。
+系统设计流水线（System Design Pipeline）是为 EOS 开发者打造的"设计工具"，帮助他们将原始需求逐层推导至产品架构。设计线 的范围严格限定在产品开发阶段1（系统设计）。
 
 ---
 
@@ -17,7 +17,7 @@
 ```
 10-pipeline-design/
 ├── 10-pipeline-system-design/          # 阶段1：系统设计（当前工作范围）
-│   ├── 01-pipeline-system-design-standards/     # 通用设计准则（两个项目参考）
+│   ├── 01-pipeline-system-design-specification/     # 通用设计准则（两个项目参考）
 │   ├── 02-pipeline-system-design-guidelines/    # 四种场景的设计指南（参考）
 │   ├── 03-pipeline-system-design-ai-support/    # 流水线产品的 AI 辅助文档
 │   └── 10-pipeline-system-product-data/         # 流水线的标准产品数据（9 份文档）
@@ -31,22 +31,22 @@
 
 ### 10-pipeline-system-design/
 
-产品L 阶段1 的完整工作空间，详见 [10-pipeline-system-design/README.md](10-pipeline-system-design/README.md)。
+设计线 阶段1 的完整工作空间，详见 [10-pipeline-system-design/README.md](10-pipeline-system-design/README.md)。
 
 | 子目录 | 性质 | 文档数 | 说明 |
 |--------|------|--------|------|
-| `01-pipeline-system-design-standards/` | 通用（参考） | 8 | 5层结构、映射规则、各层通用规范、术语表 |
+| `01-pipeline-system-design-specification/` | 通用（参考） | 8 | 5层结构、映射规则、各层通用规范、术语表 |
 | `02-pipeline-system-design-guidelines/` | 通用（参考） | 6 | 瀑布/敏捷/逆向工程/DevOps 四种指南 + 快速参考卡 |
-| `03-pipeline-system-design-ai-support/` | 产品L 构件 | 17 | AI 文档理解要求 + 四场景辅助文档（各含 README/checklist/example/prompts） |
-| `10-pipeline-system-product-data/` | 产品L 设计输出 | 10 | 标准产品数据（01-OR ~ 09-验证报告 + README） |
+| `03-pipeline-system-design-ai-support/` | 设计线 构件 | 17 | AI 文档理解要求 + 四场景辅助文档（各含 README/checklist/example/prompts） |
+| `10-pipeline-system-product-data/` | 设计线 设计输出 | 10 | 标准产品数据（01-OR ~ 09-验证报告 + README） |
 
 ### 20-pipeline-component-dev/
 
-产品L 阶段2 的工作空间。当前为空，待系统设计完成后扩展。
+设计线 阶段2 的工作空间。当前为空，待系统设计完成后扩展。
 
 ### 30-pipeline-integration-delivery/
 
-产品L 阶段3 的工作空间。当前为空，待构件开发完成后扩展。
+设计线 阶段3 的工作空间。当前为空，待构件开发完成后扩展。
 
 ---
 

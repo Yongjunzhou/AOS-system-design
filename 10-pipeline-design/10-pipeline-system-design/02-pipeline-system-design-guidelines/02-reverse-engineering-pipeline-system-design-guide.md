@@ -9,12 +9,12 @@
 **适用场景**：已完成产品架构（PA）设计，但上游系统设计文档（SysReq/BA/SR/OR）质量不高或缺失，需要逆向生成整套符合准则的系统设计文档
 
 **涉及规范**：
-- [系统设计准则（总纲）](../01-pipeline-system-design-standards/01-pipeline-design-standards.md)
-- [原始需求规范](../01-pipeline-system-design-standards/02-pipeline-original-requirements-specification.md)（第1层）
-- [相关方需求规范](../01-pipeline-system-design-standards/03-pipeline-stakeholder-requirements-specification.md)（第2层）
-- [业务架构规范](../01-pipeline-system-design-standards/04-pipeline-business-architecture-specification.md)（第3层）
-- [系统需求规范](../01-pipeline-system-design-standards/05-pipeline-system-requirements-specification.md)（第4层）
-- [产品架构规范](../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md)（第5层）
+- [系统设计准则（总纲）](../01-pipeline-system-design-specification/01-pipeline-system-design-standards.md)
+- [原始需求规范](../01-pipeline-system-design-specification/02-pipeline-original-requirements-specification.md)（第1层）
+- [相关方需求规范](../01-pipeline-system-design-specification/03-pipeline-stakeholder-requirements-specification.md)（第2层）
+- [业务架构规范](../01-pipeline-system-design-specification/04-pipeline-business-architecture-specification.md)（第3层）
+- [系统需求规范](../01-pipeline-system-design-specification/05-pipeline-system-requirements-specification.md)（第4层）
+- [产品架构规范](../01-pipeline-system-design-specification/06-pipeline-product-architecture-specification.md)（第5层）
 
 ---
 
@@ -31,31 +31,31 @@ PA（产品架构 + 构件需求定义）→ SysReq → BA → SR → OR
 
 ### 依据B：三层工作层面说明
 
-本指南属于**第2层工作（交付物构建）**——产品L（系统设计流水线）的**设计指南构件**，对应的产品架构节点为 `02-pipeline-system-design-guidelines/02-reverse-engineering/`。
+本指南属于**第2层工作（交付物构建）**——设计线（系统设计流水线）的**设计指南构件**，对应的产品架构节点为 `02-pipeline-system-design-guidelines/02-reverse-engineering/`。
 
 三层工作层面：
-- **第1层（自指设计）**：产品L用方法论设计自身，产出产品L的产品数据
-- **第2层（交付物构建）**：本指南属于此层——产品L的"设计指南"构件，由团队L开发、维护和优化，作为工具交付给团队M使用
-- **第3层（使用工具设计产品M）**：团队M使用第2层工具设计运营体系，产出产品M的产品数据
+- **第1层（自指设计）**：设计线用方法论设计自身，产出设计线的产品数据
+- **第2层（交付物构建）**：本指南属于此层——设计线的"设计指南"构件，由团队L开发、维护和优化，作为工具交付给团队M使用
+- **第3层（使用工具设计EOS）**：团队M使用第2层工具设计运营体系，产出EOS的产品数据
 
-产品L的架构节点对应四个目录——它们是产品L交付给团队M使用的工具：
+设计线的架构节点对应四个目录——它们是设计线交付给团队M使用的工具：
 
-| 产品L的构件目录 | 用途 |
+| 设计线的构件目录 | 用途 |
 |----------------|------|
-| `01-*-system-design-standards/` | 设计准则（规范与标准） |
+| `01-*-system-design-specification/` | 设计准则（规范与标准） |
 | `02-*-system-design-guidelines/` | 设计指南（操作方法） |
 | `03-*-system-design-ai-support/` | AI 辅助文档（自动化支持） |
 | `04-*-system-design-tasks/` | 任务定义（操作规程） |
 
-以上四类构件在 `10-pipeline-design/` 下开发，同时为 `50-aos-design/` 提供相同结构的模板。
+以上四类构件在 `10-pipeline-design/` 下开发，同时为 `20-eos-design/` 提供相同结构的模板。
 
-团队M使用产品L的工具后产出的**产品M（AOS运营体系）设计内容**，存放在 `50-aos-design/10-aos-system-design/10-aos-system-product-data/` 中。这些产品数据是产品L的**输出物**，而非产品L自身的构件。
+团队M使用设计线的工具后产出的**EOS（企业运营体系）设计内容**，存放在 `20-eos-design/10-eos-system-design/10-eos-system-product-data/` 中。这些产品数据是设计线的**输出物**，而非设计线自身的构件。
 
-### 逆向工程在产品L上的自应用
+### 逆向工程在设计线上的自应用
 
-上述关系揭示了一个重要事实：`50-aos-design/10-aos-system-design/` 下的 `01/02/03/04` 目录中已存在的准则、指南、AI辅助文档、任务定义，就是产品L的产品架构（PA）节点。它们已有完整的内容，但从未被系统地反向推导过产品L上游的系统需求（SysReq）、业务架构（BA）、相关方需求（SR）和原始需求（OR）。
+上述关系揭示了一个重要事实：`20-eos-design/10-eos-system-design/` 下的 `01/02/03/04` 目录中已存在的准则、指南、AI辅助文档、任务定义，就是设计线的产品架构（PA）节点。它们已有完整的内容，但从未被系统地反向推导过设计线上游的系统需求（SysReq）、业务架构（BA）、相关方需求（SR）和原始需求（OR）。
 
-因此，本指南描述的逆向工程方法同样适用于**产品L自身**——以产品L的 PA（即 `01/02/03/04` 目录下的文档集）为起点，沿 `PA → SysReq → BA → SR → OR` 反向推导，生成产品L自身完整的系统设计文档链。这不仅能为产品L补齐缺失的上游需求基线，也是对这套方法论有效性的自验证。
+因此，本指南描述的逆向工程方法同样适用于**设计线自身**——以设计线的 PA（即 `01/02/03/04` 目录下的文档集）为起点，沿 `PA → SysReq → BA → SR → OR` 反向推导，生成设计线自身完整的系统设计文档链。这不仅能为设计线补齐缺失的上游需求基线，也是对这套方法论有效性的自验证。
 
 ---
 
@@ -86,7 +86,7 @@ PA（产品架构 + 构件需求定义）→ SysReq → BA → SR → OR
 |------|------|---------|
 | **流水线开发者** | 定义设计准则和指南，配置 AI 辅助工具，审核 AI 输出 | 所有步骤的审核确认 |
 | **AI** | 按指令执行 PA 分析、需求反向推导、映射关系建立等自动化任务 | 核心逆向步骤的自动生成，前置准备中的代码分析 |
-| **AOS开发者** | 提出需求、确认设计、审核方案（含需求提出者、业务流程开发者、信息系统开发者三类） | 文档审核与确认、前置准备中的代码分析 |
+| **EOS开发者** | 提出需求、确认设计、审核方案（含需求提出者、业务流程开发者、信息系统开发者三类） | 文档审核与确认、前置准备中的代码分析 |
 
 ---
 
@@ -173,7 +173,7 @@ PA（产品架构 + 构件需求定义）→ SysReq → BA → SR → OR
 
 > **前置说明**：本步骤仅在 PA 架构及构件需求定义不存在或质量不足以支撑后续步骤时执行。如果 PA 文档已存在且可用，可直接从第3步开始。
 
-**涉及规范**：[产品架构规范 §2 架构定义规范](../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md#二架构定义规范)
+**涉及规范**：[产品架构规范 §2 架构定义规范](../01-pipeline-system-design-specification/06-pipeline-product-architecture-specification.md#二架构定义规范)
 > **阅读指引**：先读产品架构规范 §2 理解架构定义和构件划分原则，再按本步骤操作从现有产物目录中提取架构草图。
 
 **具体操作**：
@@ -213,9 +213,9 @@ PA（产品架构 + 构件需求定义）→ SysReq → BA → SR → OR
 > **前置说明**：本步骤仅在 PA 文档不存在或质量不足时执行。如果 PA 架构及构件需求定义已存在且可用，可直接从第3步开始。
 
 **涉及规范**：
-- [产品架构规范 §2 架构定义规范](../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md#二架构定义规范)
-- [产品架构规范 §3 详细定义规范](../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md#三详细定义规范)
-- [系统设计准则 §1.5 架构定义与详细定义的分离](../01-pipeline-system-design-standards/01-pipeline-design-standards.md#15-架构定义与详细定义的分离)
+- [产品架构规范 §2 架构定义规范](../01-pipeline-system-design-specification/06-pipeline-product-architecture-specification.md#二架构定义规范)
+- [产品架构规范 §3 详细定义规范](../01-pipeline-system-design-specification/06-pipeline-product-architecture-specification.md#三详细定义规范)
+- [系统设计准则 §1.5 架构定义与详细定义的分离](../01-pipeline-system-design-specification/01-pipeline-system-design-standards.md#15-架构定义与详细定义的分离)
 > **阅读指引**：先读产品架构规范 §2-§3 理解架构定义和详细定义格式，再参考系统设计准则 §1.5 理解分离原则。
 
 **具体操作**：
@@ -275,7 +275,7 @@ PA（产品架构 + 构件需求定义）→ SysReq → BA → SR → OR
    **第二部分：需求映射视图（预留）**
    - 映射关系表暂时预留，将在第3步系统需求反向推导完成后填充
    - 显示每个 PA 构件承接了哪些 SysReq 9 级节点
-   - 产品的映射关系表以"对应交付文件"替代"构件类型"，详见[产品架构规范 §2.4](../01-pipeline-system-design-standards/06-pipeline-product-architecture-specification.md#24-架构定义的文档结构)
+   - 产品的映射关系表以"对应交付文件"替代"构件类型"，详见[产品架构规范 §2.4](../01-pipeline-system-design-specification/06-pipeline-product-architecture-specification.md#24-架构定义的文档结构)
 
 3. **详细定义同步编写**
    - 每个产品构件补充**详细定义**（文档格式、内容结构、版本策略、引用关系、质量指标等）
@@ -303,8 +303,8 @@ PA（产品架构 + 构件需求定义）→ SysReq → BA → SR → OR
 **目标**：从产品架构反向推导系统需求
 
 **涉及规范**：
-- [系统需求规范 §2 架构定义规范](../01-pipeline-system-design-standards/05-pipeline-system-requirements-specification.md#二架构定义规范)
-- [系统需求规范 §3 详细定义规范](../01-pipeline-system-design-standards/05-pipeline-system-requirements-specification.md#三详细定义规范)
+- [系统需求规范 §2 架构定义规范](../01-pipeline-system-design-specification/05-pipeline-system-requirements-specification.md#二架构定义规范)
+- [系统需求规范 §3 详细定义规范](../01-pipeline-system-design-specification/05-pipeline-system-requirements-specification.md#三详细定义规范)
 > **阅读指引**：先读系统需求规范 §2 理解功能/非功能双架构体系，再对照 §3 的详细定义规范执行反向推导。
 
 **具体操作**：
@@ -378,9 +378,9 @@ PA（产品架构 + 构件需求定义）→ SysReq → BA → SR → OR
 **目标**：从系统需求反向推导业务架构
 
 **涉及规范**：
-- [业务架构规范 §2 架构定义规范](../01-pipeline-system-design-standards/04-pipeline-business-architecture-specification.md#二架构定义规范)
-- [业务架构规范 §3 IPO模型](../01-pipeline-system-design-standards/04-pipeline-business-architecture-specification.md#三ipo模型)
-- [业务架构规范 §4.3 去重机制](../01-pipeline-system-design-standards/04-pipeline-business-architecture-specification.md#43-去重机制)
+- [业务架构规范 §2 架构定义规范](../01-pipeline-system-design-specification/04-pipeline-business-architecture-specification.md#二架构定义规范)
+- [业务架构规范 §3 IPO模型](../01-pipeline-system-design-specification/04-pipeline-business-architecture-specification.md#三ipo模型)
+- [业务架构规范 §4.3 去重机制](../01-pipeline-system-design-specification/04-pipeline-business-architecture-specification.md#43-去重机制)
 > **阅读指引**：先读业务架构规范 §2 理解架构定义和 IPO 模型，再参照 §4.3 的去重机制执行 IPO 去重。
 
 **具体操作**：
@@ -396,7 +396,7 @@ PA（产品架构 + 构件需求定义）→ SysReq → BA → SR → OR
 
 3. **IPO 去重**
    - 逆向推导时，多个 SysReq 节点可能对应相同的业务操作
-   - 采用**三阶段工作流程**（详见[业务架构规范 §4.1](../01-pipeline-system-design-standards/04-pipeline-business-architecture-specification.md#41-三阶段工作流程)）：先快速评估创建占位符和骨架映射，再填充/更新IPO内容并去重，最后验证和冻结
+   - 采用**三阶段工作流程**（详见[业务架构规范 §4.1](../01-pipeline-system-design-specification/04-pipeline-business-architecture-specification.md#41-三阶段工作流程)）：先快速评估创建占位符和骨架映射，再填充/更新IPO内容并去重，最后验证和冻结
    - **去重三级策略**：复用→改进→新增（优先复用已识别的 IPO）—— 这是**组织资产优先原则**（详见[关键概念](#组织资产优先原则)）在 BA 层的直接应用
    - 去重后的 IPO 清单才是最终的业务架构输出
 
@@ -444,8 +444,8 @@ PA（产品架构 + 构件需求定义）→ SysReq → BA → SR → OR
 **目标**：从业务架构反向推导相关方需求
 
 **涉及规范**：
-- [相关方需求规范 §2 架构定义规范](../01-pipeline-system-design-standards/03-pipeline-stakeholder-requirements-specification.md#二架构定义规范)
-- [相关方需求规范 §3 详细定义规范](../01-pipeline-system-design-standards/03-pipeline-stakeholder-requirements-specification.md#三详细定义规范)
+- [相关方需求规范 §2 架构定义规范](../01-pipeline-system-design-specification/03-pipeline-stakeholder-requirements-specification.md#二架构定义规范)
+- [相关方需求规范 §3 详细定义规范](../01-pipeline-system-design-specification/03-pipeline-stakeholder-requirements-specification.md#三详细定义规范)
 > **阅读指引**：先读相关方需求规范 §2 理解架构末级节点定义和分类体系，再对照 §3 的详细定义格式执行反向推导。
 
 **具体操作**：
@@ -510,7 +510,7 @@ PA（产品架构 + 构件需求定义）→ SysReq → BA → SR → OR
 
 **目标**：从相关方需求反向推导原始需求
 
-**涉及规范**：[原始需求规范 §3 分解规范](../01-pipeline-system-design-standards/02-pipeline-original-requirements-specification.md#三分解规范)
+**涉及规范**：[原始需求规范 §3 分解规范](../01-pipeline-system-design-specification/02-pipeline-original-requirements-specification.md#三分解规范)
 > **阅读指引**：先读原始需求规范 §3 理解分解原则和停止准则，再按本步骤从 SR 反向推导原始需求。
 
 **具体操作**：
@@ -558,9 +558,9 @@ PA（产品架构 + 构件需求定义）→ SysReq → BA → SR → OR
 **目标**：验证逆向工程结果的完整性和一致性
 
 **涉及规范**：
-- [系统设计准则 §5 验收标准](../01-pipeline-system-design-standards/01-pipeline-design-standards.md#五验收标准)
-- [系统设计准则 §6 检查清单](../01-pipeline-system-design-standards/01-pipeline-design-standards.md#六检查清单)
-- [系统设计准则 §3.2 三条核心规则](../01-pipeline-system-design-standards/01-pipeline-design-standards.md#32-三条核心规则)
+- [系统设计准则 §5 验收标准](../01-pipeline-system-design-specification/01-pipeline-system-design-standards.md#五验收标准)
+- [系统设计准则 §6 检查清单](../01-pipeline-system-design-specification/01-pipeline-system-design-standards.md#六检查清单)
+- [系统设计准则 §3.2 三条核心规则](../01-pipeline-system-design-specification/01-pipeline-system-design-standards.md#32-三条核心规则)
 > **阅读指引**：完整阅读系统设计准则 §3.2（三条核心规则）、§5（验收标准）和 §6（检查清单），以验收标准为准绳执行全链路验证。
 
 **具体操作**：

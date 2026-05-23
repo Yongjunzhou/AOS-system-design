@@ -129,10 +129,10 @@
 
 ## 🔗 相关文档
 
-- [系统设计准则](../01-pipeline-system-design-standards/01-pipeline-design-standards.md)
-- [通用设计指南](../../../../00-general/10-general-design-standards/02-general-design-4modes-guide-overview.md)（通用方法论框架）
+- [系统设计准则](../01-pipeline-system-design-specification/01-pipeline-system-design-standards.md)
+- [通用设计指南](../../../../00-general/10-general-system-design-standards/02-general-system-design-4modes-guide.md)（通用方法论框架）
 - [流水线产品数据](../10-pipeline-system-product-data/README.md)
-- [术语表](../01-pipeline-system-design-standards/07-pipeline-terminology-glossary.md)
+- [术语表](../01-pipeline-system-design-specification/07-pipeline-terminology-glossary.md)
 
 ---
 
