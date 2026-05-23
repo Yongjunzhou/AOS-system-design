@@ -65,7 +65,7 @@
 | 两阶段工作流程 | Two-phase Workflow | 先快速约定结构骨架并建立映射关系，再并行填充详细内容的工作模式 |
 | 性能指标 | Performance Metric | 每条需求附带的可测量数值指标（响应时间、吞吐量、可用性等） |
 | 分类和组织节点 | Classification/Organization Node | 架构末级节点之上的节点，用于对架构进行分类和组织 |
-| 设计链路 | Design Chain | 从原始需求到产品架构的完整设计链条（五层结构） |
+| 系统设计链路 | System Design Chain | 系统设计阶段中从原始需求到产品架构的完整设计链条（五层结构） |
 | 三层工作层面 | Three Work Levels | 第1层自指设计（设计线设计自身）、第2层交付物构建（设计线的构件交付给团队M）、第3层使用工具设计EOS |
 | 跨领域通用 | Cross-domain General | 信息处理模式中前9类可在不同业务领域间共享同一信息化平台 |
 | 领域特有 | Domain-specific | 信息处理模式中后4类因领域差异需专用系统实现 |
