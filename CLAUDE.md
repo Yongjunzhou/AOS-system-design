@@ -173,7 +173,7 @@ EOS 流水线由四条子流水线组成，当前仅设计线已完成：
 
 ### 五层结构与核心规则
 
-> **方法论基础**：详见 [`00-general/10-general-system-design-standards/01-general-system-design-standards.md`](00-general/10-general-system-design-standards/01-general-system-design-standards.md) §四「系统设计链路」
+> **方法论基础**：详见 [`00-general/10-general-system-design-standards/01-general-system-design-standards.md`](00-general/10-general-system-design-standards/01-general-system-design-standards.md) §四「系统设计链路」（含 §4.1 产品流水线的开发逻辑——从产品架构识别到流水线交付的完整链路）
 
 ### 五层设计链路
 
