@@ -28,8 +28,8 @@
 
 仓库包含四部分内容：
 - **`00-general/`** — 通用方法论（产品实践中沉淀的经验，独立于三个产品之外）
-- **`10-meta-pipeline/`** — 元流水线的完整开发工作空间
-- **`20-eos-design/`** — EOS 的完整开发工作空间（内含 EOS 流水线构件）
+- **`10-meta-pipeline/`** — 基于元流水线的 EOS 流水线开发空间
+- **`20-eos-design/`** — 基于 EOS 流水线的 EOS 开发空间
 - **`30-eos-operation/`** — EOS 产品本身—各业务线及业务数据
 
 **当前工作重点**：
@@ -118,7 +118,7 @@ EOS 流水线由四条子流水线组成，当前仅设计线已完成：
 │   ├── 03-specification-template.md            # 规范文档通用模板
 │   └── 04-general-terminology-glossary.md      # 通用术语对照
 
-10-meta-pipeline/                             # 元流水线的完整开发工作空间
+10-meta-pipeline/                             # 基于元流水线的 EOS 流水线开发空间
 ├── 10-eos-pipeline-system-design/                  # 元流水线的系统设计
 │   ├── 01-eos-pipeline-system-design-specification/    # 准则（通用方法论 + 元流水线专有）
 │   │   └── 01-eos-pipeline-system-design-standards.md
@@ -142,7 +142,7 @@ EOS 流水线由四条子流水线组成，当前仅设计线已完成：
 ├── 20-eos-pipeline-component-dev/                  # 元流水线的构件开发（待扩展）
 └── 30-eos-pipeline-integration-delivery/           # 元流水线的集成交付（待扩展）
 
-20-eos-design/                                  # EOS 的完整开发空间
+20-eos-design/                                  # 基于 EOS 流水线的 EOS 开发空间
 ├── 10-eos-system-design/                       # EOS 的系统设计（当前工作范围）
 │   ├── 01-eos-system-design-specification/         # 准则（EOS 流水线—设计线构件）
 │   ├── 02-eos-system-design-guidelines/        # 指南（EOS 流水线—设计线构件）
