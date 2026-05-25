@@ -112,7 +112,7 @@ EOS 流水线由四条子流水线组成，当前仅设计线已完成：
 ```
 00-general/                                     # 通用方法论基础
 ├── 10-general-system-design-standards/               # 通用准则、指南、模板、术语
-│   ├── 01-general-system-design-standards.md          # 通用设计准则（方法论核心，v2.1）
+│   ├── 01-general-system-design-standards.md          # 通用设计准则（方法论核心，v2.3）
 │   ├── 02-general-system-design-4modes-guide.md # 通用设计指南
 │   ├── 03-specification-template.md            # 规范文档通用模板
 │   └── 04-general-terminology-glossary.md      # 通用术语对照
@@ -172,7 +172,7 @@ EOS 流水线由四条子流水线组成，当前仅设计线已完成：
 
 ### 五层结构与核心规则
 
-> **方法论基础**：详见 [`00-general/10-general-system-design-standards/01-general-system-design-standards.md`](00-general/10-general-system-design-standards/01-general-system-design-standards.md) §三「5层结构概要」和 §四「设计方法」
+> **方法论基础**：详见 [`00-general/10-general-system-design-standards/01-general-system-design-standards.md`](00-general/10-general-system-design-standards/01-general-system-design-standards.md) §四「系统设计链路」
 
 ### 五层设计链路
 
@@ -267,11 +267,11 @@ EOS 流水线由四条子流水线组成，当前仅设计线已完成：
 分析活动贯穿全过程：每完成一次分配，立即执行符合性分析，而非集中后补。
 ```
 
-> 详见 [`00-general/10-general-system-design-standards/01-general-system-design-standards.md`](00-general/10-general-system-design-standards/01-general-system-design-standards.md) §二「需求的分解、分配与分析」
+> 详见 [`00-general/10-general-system-design-standards/01-general-system-design-standards.md`](00-general/10-general-system-design-standards/01-general-system-design-standards.md) §三「文档结对设计」
 
 ### 开发六步法（6 个核心任务）
 
-> 名称来源：通用设计准则 §4.2「设计链路六步工作」
+> 名称来源：通用设计准则 §五「系统设计过程」
 
 | 步骤 | 正式名称 | 目标 |
 |------|---------|------|
@@ -329,7 +329,7 @@ EOS 流水线由四条子流水线组成，当前仅设计线已完成：
 
 ## 关键设计文件
 
-- [`00-general/10-general-system-design-standards/01-general-system-design-standards.md`](00-general/10-general-system-design-standards/01-general-system-design-standards.md) — 通用设计准则 v2.1（方法论核心：五层结构、核心规则、六步法、分解/分配/分析、验收标准）
+- [`00-general/10-general-system-design-standards/01-general-system-design-standards.md`](00-general/10-general-system-design-standards/01-general-system-design-standards.md) — 通用设计准则 v2.3（方法论核心：五层结构、核心规则、六步法、分解/分配/分析、验收标准）
 - [`00-general/10-general-system-design-standards/02-general-system-design-4modes-guide.md`](00-general/10-general-system-design-standards/02-general-system-design-4modes-guide.md) — 通用设计指南（四种方法框架）
 - [`00-general/10-general-system-design-standards/03-specification-template.md`](00-general/10-general-system-design-standards/03-specification-template.md) — 规范文档通用模板
 - [`00-general/10-general-system-design-standards/04-general-terminology-glossary.md`](00-general/10-general-system-design-standards/04-general-terminology-glossary.md) — 通用术语对照
@@ -356,8 +356,6 @@ EOS 流水线由四条子流水线组成，当前仅设计线已完成：
 | 内容 | 准则章节 |
 |------|---------|
 | 架构增量变更的资产优先原则（Reuse → Improve → Add） | §2.4.3 |
-| 端到端业务框架（三类客户、三个维度、项目间接口、业务分解方法） | §1.8 |
 | 功能需求与非功能需求分类体系 | §1.2 |
 | 节点编号规则（架构末级/详细定义末级） | §3.4 |
-| 设计制品参考策略 | §8.1 |
 | 验收标准与检查清单 | §六、§七 |
