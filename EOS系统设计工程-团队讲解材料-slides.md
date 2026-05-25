@@ -275,7 +275,7 @@ SR 架构（部分）：
 
 **容易这样想**："一样的方法论，两个产品的 PA 却长不一样——说明方法论被人用走样了。"
 
-**但实际上**：方法论是产品无关的（§1.7.3），PA 形态由**消费方式**决定。不一样是**正常且正确的**。
+**但实际上**：方法论是产品无关的，PA 形态由**消费方式**决定。不一样是**正常且正确的**。
 
 ---
 
@@ -727,7 +727,5 @@ SR 架构（部分）：
 | 快速参考（作弊纸） | `10-pipeline-design/.../02-guidelines/05-quick-reference-card.md` |
 | 设计线的设计准则总纲 | `10-pipeline-design/.../01-standards/01-pipeline-system-design-standards.md` |
 | EOS的设计准则总纲 | `20-eos-design/.../01-standards/01-eos-system-design-standards.md` |
-| 产品类型与PA形态 | `00-general/.../01-general-system-design-standards.md` §1.7.3 |
-| 信息处理模式 | `00-general/.../01-general-system-design-standards.md` §1.7.4 |
-| PA分解原则 | `00-general/.../01-general-system-design-standards.md` §3.4 |
+| 产品类型与PA形态 | `00-general/.../01-general-system-design-standards.md` §五「系统设计过程」 |
 | 设计线的产品架构 | `10-pipeline-design/.../10-product-data/07-pipeline-product-architecture.md` |
