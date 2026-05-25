@@ -660,7 +660,7 @@ OR-001.03：评分通知推送 → SR-F-005（通知提醒）
 
 **文档版本**：v1.3（对齐准则 v3.10——需求分解分配与分析节对齐通用准则）
 **版本说明**：
-- 本版从流水线通用规范（`10-pipeline-design/.../01-system-design-specification/02-original-requirements-specification.md` v1.2）中提取通用方法论，按 EOS 运营体系视角独立呈现
+- 本版从流水线通用规范（`10-meta-pipeline/.../01-system-design-specification/02-original-requirements-specification.md` v1.2）中提取通用方法论，按 EOS 运营体系视角独立呈现
 - 主要差异：示例全部替换为 EOS 绩效考核场景，去除流水线产品自身的 SR 节点引用，文档引用路径更新
 - v1.1：新增 5.4 映射验收、符合性分析检查、文档规范化检查清单
 **创建日期**：2026-05-18

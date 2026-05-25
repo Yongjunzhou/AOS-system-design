@@ -15,7 +15,7 @@
 ## 目录结构
 
 ```
-10-pipeline-design/
+10-meta-pipeline/
 ├── 10-pipeline-system-design/          # 阶段1：系统设计（当前工作范围）
 │   ├── 01-pipeline-system-design-specification/     # 通用设计准则（两个项目参考）
 │   ├── 02-pipeline-system-design-guidelines/    # 四种场景的设计指南（参考）

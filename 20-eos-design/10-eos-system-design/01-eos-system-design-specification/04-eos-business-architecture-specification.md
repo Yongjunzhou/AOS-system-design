@@ -636,7 +636,7 @@ BA-001: 考核计划管理
 
 **文档版本**：v1.3（对齐准则 v3.10——需求分解分配与分析节对齐通用准则）
 **版本说明**：
-- 本版从流水线通用规范（`10-pipeline-design/.../01-system-design-specification/04-business-architecture-specification.md` v2.1）中提取通用方法论，按 EOS 运营体系视角独立呈现
+- 本版从流水线通用规范（`10-meta-pipeline/.../01-system-design-specification/04-business-architecture-specification.md` v2.1）中提取通用方法论，按 EOS 运营体系视角独立呈现
 - 主要差异：所有 IPO 示例替换为 EOS 运营考核场景（考核计划创建、评分录入、绩效报告生成），错误示例场景对应更新，文档引用路径更新
 - v1.1：新增 2.4 需求映射视图（映射关系表）
 **创建日期**：2026-05-18

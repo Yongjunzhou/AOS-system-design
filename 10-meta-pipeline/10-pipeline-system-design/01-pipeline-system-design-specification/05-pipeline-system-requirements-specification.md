@@ -9,7 +9,7 @@
 
 **版本**：v1.6（对齐准则 v3.10——独立使用，内嵌通用设计准则 v2.1）
 **最后更新**：2026-05-22
-**位置**：10-pipeline-design/10-pipeline-system-design/01-pipeline-system-design-specification/
+**位置**：10-meta-pipeline/10-pipeline-system-design/01-pipeline-system-design-specification/
 
 ---
 

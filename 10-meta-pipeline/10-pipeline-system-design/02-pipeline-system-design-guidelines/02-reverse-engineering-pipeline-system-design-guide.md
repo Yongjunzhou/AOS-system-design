@@ -47,7 +47,7 @@ PA（产品架构 + 构件需求定义）→ SysReq → BA → SR → OR
 | `03-*-system-design-ai-support/` | AI 辅助文档（自动化支持） |
 | `04-*-system-design-tasks/` | 任务定义（操作规程） |
 
-以上四类构件在 `10-pipeline-design/` 下开发，同时为 `20-eos-design/` 提供相同结构的模板。
+以上四类构件在 `10-meta-pipeline/` 下开发，同时为 `20-eos-design/` 提供相同结构的模板。
 
 团队M使用设计线的工具后产出的**EOS（企业运营体系）设计内容**，存放在 `20-eos-design/10-eos-system-design/10-eos-system-product-data/` 中。这些产品数据是设计线的**输出物**，而非设计线自身的构件。
 

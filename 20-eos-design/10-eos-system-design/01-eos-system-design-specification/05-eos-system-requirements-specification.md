@@ -650,7 +650,7 @@ SysReq-101: "评分提交平均响应时间 < 3s，P99 < 5s"
 
 **文档版本**：v1.2（对齐准则 v3.10——需求分解分配与分析节对齐通用准则）
 **版本说明**：
-- 本版从流水线通用规范（`10-pipeline-design/.../01-system-design-specification/05-system-requirements-specification.md` v1.2）中提取通用方法论，按 EOS 运营体系视角独立呈现
+- 本版从流水线通用规范（`10-meta-pipeline/.../01-system-design-specification/05-system-requirements-specification.md` v1.2）中提取通用方法论，按 EOS 运营体系视角独立呈现
 - 主要差异：所有示例替换为 EOS 绩效考核场景（评分管理、绩效报告管理等），架构树示例从"订单管理系统"改为"绩效考核系统"，文档引用路径更新
 **创建日期**：2026-05-18
 **状态**：✅ 完成

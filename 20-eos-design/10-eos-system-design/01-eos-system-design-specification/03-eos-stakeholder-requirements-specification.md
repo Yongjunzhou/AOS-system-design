@@ -742,7 +742,7 @@ SR-NFR-001: 系统响应时间性能需求
 
 **文档版本**：v1.2（对齐准则 v3.10——需求分解分配与分析节对齐通用准则）
 **版本说明**：
-- 本版从流水线通用规范（`10-pipeline-design/.../01-system-design-specification/03-stakeholder-requirements-specification.md` v2.2）中提取通用方法论，按 EOS 运营体系视角独立呈现
+- 本版从流水线通用规范（`10-meta-pipeline/.../01-system-design-specification/03-stakeholder-requirements-specification.md` v2.2）中提取通用方法论，按 EOS 运营体系视角独立呈现
 - 主要差异：示例全部替换为 EOS 绩效考核场景，功能分类从"流水线核心功能/支撑功能"改为"运营考核核心功能/运营支撑功能"，文档引用路径更新
 **创建日期**：2026-05-18
 **状态**：✅ 完成

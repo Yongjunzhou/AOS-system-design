@@ -69,11 +69,13 @@ Marp 幻灯片版团队讲解材料
 
 ### 三层工作层面
 
+元流水线是用于设计 EOS 流水线的流水线。
+
 ```
 ┌─────────────────────────────────────────────────────────┐
 │  第1层：流水线设计                                        │
 │  团队L → 用五层结构设计设计线自身                        │
-│  产出：设计线的9份产品数据（10-pipeline-design/）        │
+│  产出：设计线的9份产品数据（10-meta-pipeline/）        │
 ├─────────────────────────────────────────────────────────┤
 │  第2层：交付物构建                                      │
 │  团队L → 将设计线构件适配为EOS的设计工具               │
@@ -587,7 +589,7 @@ SR 架构（部分）：
 | 目录 | 装什么 | 对应 |
 |------|--------|------|
 | `00-general/` | 通用方法论 | 产品无关 |
-| `10-pipeline-design/` | 设计线的开发空间 | 第1层：流水线设计 |
+| `10-meta-pipeline/` | 设计线的开发空间 | 第1层：流水线设计 |
 | `20-eos-design/` | EOS的开发空间 | 第2层+第3层 |
 
 ---
@@ -595,7 +597,7 @@ SR 架构（部分）：
 ### 设计线目录结构
 
 ```
-10-pipeline-design/10-pipeline-system-design/
+10-meta-pipeline/10-pipeline-system-design/
 ├── 01-standards/         准则（通用+流水线专有）
 ├── 02-guidelines/        指南（4场景+快速参考卡）
 ├── 03-ai-support/        AI辅助文档
@@ -635,7 +637,7 @@ SR 架构（部分）：
 
 ### 任务定义长什么样？
 
-> 打开 `10-pipeline-design/.../04-tasks/01-waterfall/01-or-sr-arch-task.md`
+> 打开 `10-meta-pipeline/.../04-tasks/01-waterfall/01-or-sr-arch-task.md`
 
 **结构**：
 1. 🎯 目标
@@ -649,7 +651,7 @@ SR 架构（部分）：
 
 ### 快速参考卡
 
-> 打开 `10-pipeline-design/.../02-guidelines/05-quick-reference-card.md`
+> 打开 `10-meta-pipeline/.../02-guidelines/05-quick-reference-card.md`
 
 一张"作弊纸"：
 - 四种场景怎么选择
@@ -660,7 +662,7 @@ SR 架构（部分）：
 
 ### 产品架构长什么样？
 
-> 打开 `10-pipeline-design/.../10-product-data/07-pipeline-product-architecture.md`
+> 打开 `10-meta-pipeline/.../10-product-data/07-pipeline-product-architecture.md`
 
 设计线自身有 **60+ 个构件**，六大层级：
 
@@ -724,8 +726,8 @@ SR 架构（部分）：
 | 想了解什么 | 看哪个文件 |
 |-----------|-----------|
 | 核心设计方法论 | `00-general/.../01-general-system-design-standards.md` |
-| 快速参考（作弊纸） | `10-pipeline-design/.../02-guidelines/05-quick-reference-card.md` |
-| 设计线的设计准则总纲 | `10-pipeline-design/.../01-standards/01-pipeline-system-design-standards.md` |
+| 快速参考（作弊纸） | `10-meta-pipeline/.../02-guidelines/05-quick-reference-card.md` |
+| 设计线的设计准则总纲 | `10-meta-pipeline/.../01-standards/01-pipeline-system-design-standards.md` |
 | EOS的设计准则总纲 | `20-eos-design/.../01-standards/01-eos-system-design-standards.md` |
 | 产品类型与PA形态 | `00-general/.../01-general-system-design-standards.md` §五「系统设计过程」 |
-| 设计线的产品架构 | `10-pipeline-design/.../10-product-data/07-pipeline-product-architecture.md` |
+| 设计线的产品架构 | `10-meta-pipeline/.../10-product-data/07-pipeline-product-architecture.md` |
