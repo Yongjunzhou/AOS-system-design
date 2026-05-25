@@ -30,7 +30,7 @@
 - **第3层（使用工具设计EOS）**：团队M使用第2层工具设计运营体系，产出EOS的产品数据
 
 核心认知：
-- **来源**：本目录文档基于设计线的AI辅助文档模板（位于 `10-meta-pipeline/.../03-pipeline-system-design-ai-support/03-agile-pipeline-system-design/`）定制，属于**结构复用、内容定制**（复用敏捷式8步增量流程的文档结构，内容面向 EOS 领域）
+- **来源**：本目录文档基于设计线的AI辅助文档模板（位于 `10-meta-pipeline/.../03-eos-pipeline-system-design-ai-support/03-agile-eos-pipeline-system-design/`）定制，属于**结构复用、内容定制**（复用敏捷式8步增量流程的文档结构，内容面向 EOS 领域）
 - **设计线的PA节点**：这些文档是设计线产品架构中"03-eos-system-design-ai-support/03-agile/"节点的具体实例
 - **使用者**：团队M（运营体系开发者）使用这些文档进行 EOS 企业运营体系的迭代优化
 - **维护者**：团队L（流水线开发者 + AI）负责维护和更新这些实例文档

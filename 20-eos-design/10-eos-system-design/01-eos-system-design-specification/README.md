@@ -16,7 +16,7 @@
 
 **版本策略**：
 - 通用方法论核心（五层结构、三条核心规则、基本术语、验收标准）基于 [`00-general/10-general-system-design-standards/01-general-system-design-standards.md`](../../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md) 通用准则
-- 流水线领域的参考示例基于设计线（`10-meta-pipeline/.../01-pipeline-system-design-specification/`）的对应文档，通过"依据B分离模式"进行独立适配
+- 流水线领域的参考示例基于设计线（`10-meta-pipeline/.../01-eos-pipeline-system-design-specification/`）的对应文档，通过"依据B分离模式"进行独立适配
 - **适配原则**：核心方法论保持不变，所有示例从流水线领域替换为 EOS 绩效考核领域
 - 规范内容随通用标准和流水线版本迭代同步更新
 

@@ -71,9 +71,9 @@ EOS 流水线由四条子流水线组成，当前仅设计线已完成：
 
 | 开发阶段 | 状态 | 位置 |
 |---------|------|------|
-| 系统设计 | 已完成 | `10-meta-pipeline/10-pipeline-system-design/` |
-| 组件开发 | 待扩展 | `10-meta-pipeline/20-pipeline-component-dev/` |
-| 集成交付 | 待扩展 | `10-meta-pipeline/30-pipeline-integration-delivery/` |
+| 系统设计 | 已完成 | `10-meta-pipeline/10-eos-pipeline-system-design/` |
+| 组件开发 | 待扩展 | `10-meta-pipeline/20-eos-pipeline-component-dev/` |
+| 集成交付 | 待扩展 | `10-meta-pipeline/30-eos-pipeline-integration-delivery/` |
 | 系统运维 | 待扩展 | — |
 
 ### 产品同构性
@@ -84,11 +84,11 @@ EOS 流水线由四条子流水线组成，当前仅设计线已完成：
 
 | 子目录 | 参考来源 | 策略 |
 |--------|---------|------|
-| `01-pipeline-system-design-specification/` | `00-general/` 通用准则 | 方法论核心参考通用准则，专有规则独立开发 |
-| `02-pipeline-system-design-guidelines/` | `00-general/` 通用指南框架 | 框架参考，场景化定制 |
-| `03-pipeline-system-design-ai-support/` | — | 元流水线专有，独立开发 |
-| `04-pipeline-system-design-tasks/` | — | 元流水线专有，独立开发 |
-| `10-pipeline-system-product-data/` | `00-general/03-specification-template.md` | 模板结构参考 |
+| `01-eos-pipeline-system-design-specification/` | `00-general/` 通用准则 | 方法论核心参考通用准则，专有规则独立开发 |
+| `02-eos-pipeline-system-design-guidelines/` | `00-general/` 通用指南框架 | 框架参考，场景化定制 |
+| `03-eos-pipeline-system-design-ai-support/` | — | 元流水线专有，独立开发 |
+| `04-eos-pipeline-system-design-tasks/` | — | 元流水线专有，独立开发 |
+| `10-eos-pipeline-system-product-data/` | `00-general/03-specification-template.md` | 模板结构参考 |
 
 #### EOS 流水线
 
@@ -119,28 +119,28 @@ EOS 流水线由四条子流水线组成，当前仅设计线已完成：
 │   └── 04-general-terminology-glossary.md      # 通用术语对照
 
 10-meta-pipeline/                             # 元流水线的完整开发工作空间
-├── 10-pipeline-system-design/                  # 元流水线的系统设计
-│   ├── 01-pipeline-system-design-specification/    # 准则（通用方法论 + 元流水线专有）
-│   │   └── 01-pipeline-system-design-standards.md
-│   ├── 02-pipeline-system-design-guidelines/   # 四种场景的设计指南
-│   │   ├── 01-waterfall-pipeline-system-design-guide.md
-│   │   ├── 03-agile-pipeline-system-design-guide.md
-│   │   ├── 02-reverse-engineering-pipeline-system-design-guide.md
-│   │   └── 04-devops-pipeline-system-design-guide.md
-│   ├── 03-pipeline-system-design-ai-support/   # 元流水线的 AI 辅助文档
+├── 10-eos-pipeline-system-design/                  # 元流水线的系统设计
+│   ├── 01-eos-pipeline-system-design-specification/    # 准则（通用方法论 + 元流水线专有）
+│   │   └── 01-eos-pipeline-system-design-standards.md
+│   ├── 02-eos-pipeline-system-design-guidelines/   # 四种场景的设计指南
+│   │   ├── 01-waterfall-eos-pipeline-system-design-guide.md
+│   │   ├── 03-agile-eos-pipeline-system-design-guide.md
+│   │   ├── 02-reverse-engineering-eos-pipeline-system-design-guide.md
+│   │   └── 04-devops-eos-pipeline-system-design-guide.md
+│   ├── 03-eos-pipeline-system-design-ai-support/   # 元流水线的 AI 辅助文档
 │   │   ├── 00-ai-document-requirements-understanding.md
-│   │   ├── 01-waterfall-pipeline-system-design/
-│   │   ├── 03-agile-pipeline-system-design/
-│   │   ├── 02-reverse-engineering-pipeline-system-design/
-│   │   └── 04-devops-pipeline-system-design/
-│   ├── 04-pipeline-system-design-tasks/        # 元流水线的操作规程（26 个任务文档）
-│   │   ├── 01-waterfall-pipeline-system-design/
-│   │   ├── 03-agile-pipeline-system-design/
-│   │   ├── 02-reverse-engineering-pipeline-system-design/
-│   │   └── 04-devops-pipeline-system-design/
-│   └── 10-pipeline-system-product-data/        # 元流水线的标准产品数据（9 份文档）
-├── 20-pipeline-component-dev/                  # 元流水线的构件开发（待扩展）
-└── 30-pipeline-integration-delivery/           # 元流水线的集成交付（待扩展）
+│   │   ├── 01-waterfall-eos-pipeline-system-design/
+│   │   ├── 03-agile-eos-pipeline-system-design/
+│   │   ├── 02-reverse-engineering-eos-pipeline-system-design/
+│   │   └── 04-devops-eos-pipeline-system-design/
+│   ├── 04-eos-pipeline-system-design-tasks/        # 元流水线的操作规程（26 个任务文档）
+│   │   ├── 01-waterfall-eos-pipeline-system-design/
+│   │   ├── 03-agile-eos-pipeline-system-design/
+│   │   ├── 02-reverse-engineering-eos-pipeline-system-design/
+│   │   └── 04-devops-eos-pipeline-system-design/
+│   └── 10-eos-pipeline-system-product-data/        # 元流水线的标准产品数据（9 份文档）
+├── 20-eos-pipeline-component-dev/                  # 元流水线的构件开发（待扩展）
+└── 30-eos-pipeline-integration-delivery/           # 元流水线的集成交付（待扩展）
 
 20-eos-design/                                  # EOS 的完整开发空间
 ├── 10-eos-system-design/                       # EOS 的系统设计（当前工作范围）
@@ -283,7 +283,7 @@ EOS 流水线由四条子流水线组成，当前仅设计线已完成：
 | Step 5 | 系统需求详细定义及产品架构定义 | SysReq 详细定义（6-9级分解），同步设计 PA 架构并建立映射 |
 | Step 6 | 双向追溯验证 | 验证完整追溯链路，生成符合性报告 |
 
-元流水线的任务定义在 `10-meta-pipeline/10-pipeline-system-design/04-pipeline-system-design-tasks/` 各场景目录下；EOS 流水线（设计线）的任务定义在 `20-eos-design/10-eos-system-design/04-eos-system-design-tasks/` 下。
+元流水线的任务定义在 `10-meta-pipeline/10-eos-pipeline-system-design/04-eos-pipeline-system-design-tasks/` 各场景目录下；EOS 流水线（设计线）的任务定义在 `20-eos-design/10-eos-system-design/04-eos-system-design-tasks/` 下。
 
 ---
 
@@ -293,10 +293,10 @@ EOS 流水线由四条子流水线组成，当前仅设计线已完成：
 
 | 场景 | 适用情况 | 周期 | Pipeline 指南 |
 |------|---------|------|-------------|
-| 瀑布式 | 全新系统，需求明确 | 30-48天 | `10-meta-pipeline/.../02-pipeline-system-design-guidelines/01-waterfall-pipeline-system-design-guide.md` |
-| 敏捷式 | 迭代开发，需求渐进 | 13-21天 | `10-meta-pipeline/.../02-pipeline-system-design-guidelines/03-agile-pipeline-system-design-guide.md` |
-| 逆向工程 | 已有系统补文档 | 16-26天 | `10-meta-pipeline/.../02-pipeline-system-design-guidelines/02-reverse-engineering-pipeline-system-design-guide.md` |
-| DevOps | 小变更快速交付 | 几小时-3天 | `10-meta-pipeline/.../02-pipeline-system-design-guidelines/04-devops-pipeline-system-design-guide.md` |
+| 瀑布式 | 全新系统，需求明确 | 30-48天 | `10-meta-pipeline/.../02-eos-pipeline-system-design-guidelines/01-waterfall-eos-pipeline-system-design-guide.md` |
+| 敏捷式 | 迭代开发，需求渐进 | 13-21天 | `10-meta-pipeline/.../02-eos-pipeline-system-design-guidelines/03-agile-eos-pipeline-system-design-guide.md` |
+| 逆向工程 | 已有系统补文档 | 16-26天 | `10-meta-pipeline/.../02-eos-pipeline-system-design-guidelines/02-reverse-engineering-eos-pipeline-system-design-guide.md` |
+| DevOps | 小变更快速交付 | 几小时-3天 | `10-meta-pipeline/.../02-eos-pipeline-system-design-guidelines/04-devops-eos-pipeline-system-design-guide.md` |
 
 ---
 
@@ -312,7 +312,7 @@ EOS 流水线由四条子流水线组成，当前仅设计线已完成：
 
 ## 产品数据文件（每个项目通用结构）
 
-元流水线和 EOS 的产品数据（`10-pipeline-system-product-data/` 和 `10-eos-system-product-data/`）都遵循相同结构（模板参考 `00-general/10-general-system-design-standards/03-specification-template.md`）：
+元流水线和 EOS 的产品数据（`10-eos-pipeline-system-product-data/` 和 `10-eos-system-product-data/`）都遵循相同结构（模板参考 `00-general/10-general-system-design-standards/03-specification-template.md`）：
 
 | 文件 | 内容 |
 |------|------|
@@ -334,10 +334,10 @@ EOS 流水线由四条子流水线组成，当前仅设计线已完成：
 - [`00-general/10-general-system-design-standards/02-general-system-design-4modes-guide.md`](00-general/10-general-system-design-standards/02-general-system-design-4modes-guide.md) — 通用设计指南（四种方法框架）
 - [`00-general/10-general-system-design-standards/03-specification-template.md`](00-general/10-general-system-design-standards/03-specification-template.md) — 规范文档通用模板
 - [`00-general/10-general-system-design-standards/04-general-terminology-glossary.md`](00-general/10-general-system-design-standards/04-general-terminology-glossary.md) — 通用术语对照
-- [`10-meta-pipeline/10-pipeline-system-design/01-pipeline-system-design-specification/01-pipeline-system-design-standards.md`](10-meta-pipeline/10-pipeline-system-design/01-pipeline-system-design-specification/01-pipeline-system-design-standards.md) — 元流水线设计准则
-- [`10-meta-pipeline/10-pipeline-system-design/02-pipeline-system-design-guidelines/05-pipeline-system-quick-reference-card.md`](10-meta-pipeline/10-pipeline-system-design/02-pipeline-system-design-guidelines/05-pipeline-system-quick-reference-card.md) — 快速参考卡
-- [`10-meta-pipeline/10-pipeline-system-design/03-pipeline-system-design-ai-support/00-ai-document-requirements-understanding.md`](10-meta-pipeline/10-pipeline-system-design/03-pipeline-system-design-ai-support/00-ai-document-requirements-understanding.md) — AI 文档理解要求
-- [`10-meta-pipeline/10-pipeline-system-design/10-pipeline-system-product-data/README.md`](10-meta-pipeline/10-pipeline-system-design/10-pipeline-system-product-data/README.md) — 元流水线产品数据概览
+- [`10-meta-pipeline/10-eos-pipeline-system-design/01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md`](10-meta-pipeline/10-eos-pipeline-system-design/01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md) — 元流水线设计准则
+- [`10-meta-pipeline/10-eos-pipeline-system-design/02-eos-pipeline-system-design-guidelines/05-eos-pipeline-system-quick-reference-card.md`](10-meta-pipeline/10-eos-pipeline-system-design/02-eos-pipeline-system-design-guidelines/05-eos-pipeline-system-quick-reference-card.md) — 快速参考卡
+- [`10-meta-pipeline/10-eos-pipeline-system-design/03-eos-pipeline-system-design-ai-support/00-ai-document-requirements-understanding.md`](10-meta-pipeline/10-eos-pipeline-system-design/03-eos-pipeline-system-design-ai-support/00-ai-document-requirements-understanding.md) — AI 文档理解要求
+- [`10-meta-pipeline/10-eos-pipeline-system-design/10-eos-pipeline-system-product-data/README.md`](10-meta-pipeline/10-eos-pipeline-system-design/10-eos-pipeline-system-product-data/README.md) — 元流水线产品数据概览
 - [`20-eos-design/10-eos-system-design/03-eos-system-design-ai-support/00-overview.md`](20-eos-design/10-eos-system-design/03-eos-system-design-ai-support/00-overview.md) — EOS AI 辅助概览
 
 ---
