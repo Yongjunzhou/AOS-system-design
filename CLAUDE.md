@@ -113,7 +113,7 @@ EOS 流水线由四条子流水线组成，当前仅设计线已完成：
 ```
 00-general/                                     # 通用方法论基础
 ├── 10-general-system-design-standards/               # 通用准则、指南、模板、术语
-│   ├── 01-general-system-design-standards.md          # 通用设计准则（方法论核心，v2.3）
+│   ├── 01-general-system-design-standards.md          # 通用设计准则（方法论核心，v2.4）
 │   ├── 02-general-system-design-4modes-guide.md # 通用设计指南
 │   ├── 03-specification-template.md            # 规范文档通用模板
 │   └── 04-general-terminology-glossary.md      # 通用术语对照
@@ -209,6 +209,7 @@ EOS 流水线由四条子流水线组成，当前仅设计线已完成：
 
 | 概念 | 定义 |
 |------|------|
+| **需求/方案相对** | "需求"和"方案"不是文档的固有标签，而是文档在设计链中相对于相邻文档扮演的角色——同一文档在不同层位兼具方案（对上）和需求（对下）双重身份 |
 | **架构定义与详细定义分离** | 每层方案分为架构定义（树形结构）和详细定义（对架构末级节点的逐条细化） |
 | **详细定义的双重身份** | 既是本层架构定义的细化（向内），又是下层方案的需求（向下传递） |
 | **需求—方案配对** | 文档按需求文档和方案文档成对组织，上层的详细定义 = 下层方案的需求 |
@@ -330,7 +331,7 @@ EOS 流水线由四条子流水线组成，当前仅设计线已完成：
 
 ## 关键设计文件
 
-- [`00-general/10-general-system-design-standards/01-general-system-design-standards.md`](00-general/10-general-system-design-standards/01-general-system-design-standards.md) — 通用设计准则 v2.3（方法论核心：五层结构、核心规则、六步法、分解/分配/分析、验收标准）
+- [`00-general/10-general-system-design-standards/01-general-system-design-standards.md`](00-general/10-general-system-design-standards/01-general-system-design-standards.md) — 通用设计准则 v2.4（方法论核心：五层结构、核心规则、六步法、分解/分配/分析、验收标准、需求/方案相对）
 - [`00-general/10-general-system-design-standards/02-general-system-design-4modes-guide.md`](00-general/10-general-system-design-standards/02-general-system-design-4modes-guide.md) — 通用设计指南（四种方法框架）
 - [`00-general/10-general-system-design-standards/03-specification-template.md`](00-general/10-general-system-design-standards/03-specification-template.md) — 规范文档通用模板
 - [`00-general/10-general-system-design-standards/04-general-terminology-glossary.md`](00-general/10-general-system-design-standards/04-general-terminology-glossary.md) — 通用术语对照
@@ -357,6 +358,7 @@ EOS 流水线由四条子流水线组成，当前仅设计线已完成：
 | 内容 | 准则章节 |
 |------|---------|
 | 架构增量变更的资产优先原则（Reuse → Improve → Add） | §2.4.3 |
+| 需求/方案相对（完整展开） | §1.1, §2.1 |
 | 功能需求与非功能需求分类体系 | §1.2 |
 | 节点编号规则（架构末级/详细定义末级） | §3.4 |
 | 验收标准与检查清单 | §六、§七 |
