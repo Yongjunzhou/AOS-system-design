@@ -20,7 +20,7 @@
 
 预期产出：
   1. 原始需求文档（含末级需求分解）
-  2. 相关方需求架构定义文档（树形结构 + 映射关系表）
+  2. 相关方需求架构定义子文档（树形结构 + 映射关系表）
   3. 冲突和重复检测报告
 
 本步决策对后续的影响：
@@ -70,4 +70,4 @@
 | 文件 | 说明 |
 |------|------|
 | 原始需求文档（含末级分解） | `10-eos-pipeline-system-product-data/01-original-requirements.md` |
-| 相关方需求架构定义文档 | `10-eos-pipeline-system-product-data/02-stakeholder-requirements-architecture.md` |
+| 相关方需求架构定义子文档 | `10-eos-pipeline-system-product-data/02-stakeholder-requirements-architecture.md` |

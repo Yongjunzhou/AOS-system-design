@@ -65,4 +65,4 @@
 
 | 文件 | 说明 |
 |------|------|
-| 产品架构定义文档 | `10-eos-pipeline-system-product-data/07-product-architecture.md` |
+| 产品架构定义子文档 | `10-eos-pipeline-system-product-data/07-product-architecture.md` |

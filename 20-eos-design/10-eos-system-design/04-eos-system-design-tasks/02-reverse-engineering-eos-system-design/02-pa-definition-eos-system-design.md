@@ -20,7 +20,7 @@
 
 ```
 来源：第1步产出（或已有PA文档）
-产出：PA 架构定义文档（树形结构 + 组件定义 + 需求映射视图）
+产出：PA 架构定义子文档（树形结构 + 组件定义 + 需求映射视图）
 ```
 
 ## 输入
@@ -69,4 +69,4 @@
 
 | 文件 | 说明 |
 |------|------|
-| 产品架构定义文档 | `10-eos-system-product-data/07-product-architecture.md` |
+| 产品架构定义子文档 | `10-eos-system-product-data/07-product-architecture.md` |

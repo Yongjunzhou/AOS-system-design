@@ -344,7 +344,7 @@
 
 ### 非功能部分
 
-非功能需求不进行 6-9 级分解，其详细指标已在架构定义文档（`05-system-requirements-architecture.md`）的 SysReq-NFR 节点中定义，直接约束产品架构组件的非功能属性。
+非功能需求不进行 6-9 级分解，其详细指标已在架构定义子文档（`05-system-requirements-architecture.md`）的 SysReq-NFR 节点中定义，直接约束产品架构组件的非功能属性。
 
 ---
 

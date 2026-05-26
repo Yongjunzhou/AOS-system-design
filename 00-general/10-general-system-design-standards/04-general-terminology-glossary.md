@@ -60,7 +60,7 @@
 | 架构末级节点 | Architecture Leaf Node | 方案分类和组织的最大条目，是需求映射的关键层级 |
 | 详细定义末级节点 | Detailed Definition Leaf Node | 对架构末级节点分解后得到的末级条目，是分配到后续方案架构末级节点的源头 |
 | 详细定义的双重身份 | Dual Identity of Detailed Definition | 既是当前方案架构定义的细化（向内），又是后续方案的需求（向下） |
-| 同步设计 | Synchronous Design | 在开展上层详细定义的同时，同步开展下层方案架构定义 |
+| 同步设计 | Synchronous Design | 在开展上层需求详细定义的同时，同步开展下层方案架构定义 |
 | 架构定义与详细定义分离 | Separation of Architecture & Detailed Definition | 每份方案由架构定义（树形结构+映射）和详细定义（分解细化）两个独立子文档组成 |
 | 两阶段工作流程 | Two-phase Workflow | 先快速约定结构骨架并建立映射关系，再并行填充详细内容的工作模式 |
 | 性能指标 | Performance Metric | 每条需求附带的可测量数值指标（响应时间、吞吐量、可用性等） |

@@ -66,4 +66,4 @@
 
 | 文件 | 说明 |
 |------|------|
-| 业务架构定义文档 | `10-eos-pipeline-system-product-data/04-business-architecture.md` |
+| 业务架构定义子文档 | `10-eos-pipeline-system-product-data/04-business-architecture.md` |

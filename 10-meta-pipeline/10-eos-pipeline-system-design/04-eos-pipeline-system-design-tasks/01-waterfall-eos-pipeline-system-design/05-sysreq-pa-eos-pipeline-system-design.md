@@ -73,5 +73,5 @@
 
 | 文件 | 说明 |
 |------|------|
-| 系统需求详细定义文档 | `10-eos-pipeline-system-product-data/06-system-requirements-detailed.md` |
-| 产品架构定义文档 | `10-eos-pipeline-system-product-data/07-product-architecture.md` |
+| 系统需求详细定义子文档 | `10-eos-pipeline-system-product-data/06-system-requirements-detailed.md` |
+| 产品架构定义子文档 | `10-eos-pipeline-system-product-data/07-product-architecture.md` |

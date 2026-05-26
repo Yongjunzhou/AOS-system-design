@@ -22,8 +22,8 @@
   - 涉及规范：相关方需求规范 §3、业务架构规范 §2、设计准则 §3.1 第2步、§1.5.3 同步设计
 
 预期产出：
-  1. 相关方需求功能部分详细定义文档
-  2. 业务架构定义文档（IPO 清单 + 映射关系表）
+  1. 相关方需求功能部分详细定义子文档
+  2. 业务架构定义子文档（IPO 清单 + 映射关系表）
   3. 系统需求功能部分架构骨架（同步建立）
 
 同步设计感知：
@@ -71,8 +71,8 @@
 
 | 文件 | 说明 |
 |------|------|
-| 相关方需求详细定义文档 | `10-eos-system-product-data/03-stakeholder-requirements-detailed.md` |
-| 业务架构定义文档 | `10-eos-system-product-data/04-business-architecture.md` |
+| 相关方需求详细定义子文档 | `10-eos-system-product-data/03-stakeholder-requirements-detailed.md` |
+| 业务架构定义子文档 | `10-eos-system-product-data/04-business-architecture.md` |
 
 ---
 **文档版本**：v1.0 | **创建日期**：2026-05-21 | **最近修订**：2026-05-21
