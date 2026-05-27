@@ -1,9 +1,9 @@
 # 通用术语对照表
 **General Terminology Glossary**
 
-**文档版本**：v2.1
+**文档版本**：v2.2
 **创建日期**：2026-05-18
-**修订日期**：2026-05-22
+**修订日期**：2026-05-27
 **用途**：统一与具体产品无关的核心设计术语，便于国际化和技术交流。
 
 ---
@@ -53,27 +53,38 @@
 |------|------|------|
 | 需求文档 | Requirements Document | 描述系统应该做什么（What） |
 | 方案文档 | Solution Document | 描述如何满足需求（How），由架构定义和详细定义组成 |
-| 需求—方案配对 | Requirement-Solution Pair | 需求与方案成对出现，需求是对方案的要求，方案是对需求的满足 |
+| 需求/方案相对 | Requirement-Solution Relativity | "需求"和"方案"不是文档的固有标签，而是文档在设计链中相对于相邻文档扮演的角色——同一文档在不同层位上兼具不同身份 |
 | 文档的双重属性 | Dual Role of Document | 一个文档可同时扮演两种角色——对上层的方案和对下层的需求 |
+| 文档结对 / 设计文档结对 | Design Document Pairing | 系统设计的基本组织单元——上层需求详细定义末级条目与下层方案架构定义末级节点之间的配对关系。不同于一般意义的"需求—方案配对"，结对特指详细定义末级与架构末级之间的精确链接 |
 | 架构定义 | Architecture Definition | 以架构末级节点为基本单位，构建方案的层级结构并建立对上层需求的映射 |
 | 详细定义 | Detailed Definition | 对架构末级节点进行详细设计分解，使每条末级条目在后续方案的架构中有唯一的承接点 |
-| 架构末级节点 | Architecture Leaf Node | 方案分类和组织的最大条目，是需求映射的关键层级 |
+| 架构末级节点 | Architecture Leaf Node | 方案分类和组织的最大条目，是需求映射的关键层级。是架构树的末梢节点，承担所承接上层需求的解决方案实体角色 |
+| 架构末级节点四要素 | Four Elements of Architecture Leaf Node | 每个架构末级节点包含四项信息：**节点定义**、**上层需求映射**（承接了上层哪些末级节点）、**符合性分析说明**（如何定性定量满足承接需求）、**下游设计指导**（对下层方案设计的指导） |
+| 纯分类节点 | Pure Classification Node | 架构树中仅用于对架构进行分类和组织的非末级节点，无实体含义，不承载需求映射（如 SR 层"功能需求"分支） |
+| 集成实体节点 | Integrated Entity Node | 架构树中代表由其子节点功能集成的真实实体的非末级节点——节点本身在架构中有意义，但需求映射仍落在其下辖的末级节点上（如 BA 层业务域、PA 层服务组） |
 | 详细定义末级节点 | Detailed Definition Leaf Node | 对架构末级节点分解后得到的末级条目，是分配到后续方案架构末级节点的源头 |
-| 详细定义的双重身份 | Dual Identity of Detailed Definition | 既是当前方案架构定义的细化（向内），又是后续方案的需求（向下） |
+| 详细定义的双重身份 | Dual Identity of Detailed Definition | 既是当前方案架构定义的细化（向内），又是后续方案的需求（向下）——本层设计的输出末端，同时是下层设计的需求源头 |
 | 同步设计 | Synchronous Design | 在开展上层需求详细定义的同时，同步开展下层方案架构定义 |
+| 两阶段工作流程 | Two-phase Workflow | 先快速约定结构骨架并建立映射关系（**骨架阶段**），再并行填充详细内容（**填充阶段**）的工作模式 |
 | 架构定义与详细定义分离 | Separation of Architecture & Detailed Definition | 每份方案由架构定义（树形结构+映射）和详细定义（分解细化）两个独立子文档组成 |
-| 两阶段工作流程 | Two-phase Workflow | 先快速约定结构骨架并建立映射关系，再并行填充详细内容的工作模式 |
-| 性能指标 | Performance Metric | 每条需求附带的可测量数值指标（响应时间、吞吐量、可用性等） |
-| 分类和组织节点 | Classification/Organization Node | 架构末级节点之上的节点，用于对架构进行分类和组织 |
+| 性能指标 | Performance Metric | 每条需求附带的可测量数值指标（响应时间、吞吐量、可用性等），含具体数值、单位和测量条件 |
+| 基于资产 / 资产优先原则 | Asset-Based Principle | 四大工程原则之一。架构节点基于组织已有资产进行识别、选择、改造或新增而生成，遵循**复用→改进→新增**的优先级顺序（§2.4.1）。五种操作手势：Extend（扩展）、Split（拆分）、Merge（合并）、Add（新增）、Deprecate（废弃） |
+| 信息处理模式 | Information Processing Mode | 业务活动处理信息的方式分类：13种模式（9跨领域通用+4领域特有） |
+| 信息处理模式硬边界 | Information Processing Mode Hard Boundary | 不同信息处理模式的需求不能共享同一架构节点。优先级高于资产优先原则——不能因"优先复用"而将不同信息处理模式的需求塞入同一节点 |
 | 系统设计链路 | System Design Chain | 系统设计阶段中从原始需求到产品架构的完整设计链条（五层结构） |
+| IPO（输入→处理→输出） | Input-Process-Output | 业务架构（BA）的基本描述单元，每条 IPO 描述用户使用产品完成的一个原子操作步骤。BA 仅架构定义、无详细定义，IPO 自身承担"详细定义"角色 |
+| 运行概念说明 | Operational Concept (OpsCon) | 业务架构（BA）的本质——用户使用待开发系统开展期望业务的业务过程说明（ISO/IEC/IEEE 29148:2018） |
 | 三层工作层面 | Three Work Levels | 第1层流水线设计（用通用方法论设计设计线自身）、第2层交付物构建（设计线的构件交付给团队M）、第3层使用工具设计EOS |
 | 跨领域通用 | Cross-domain General | 信息处理模式中前9类可在不同业务领域间共享同一信息化平台 |
 | 领域特有 | Domain-specific | 信息处理模式中后4类因领域差异需专用系统实现 |
 | 内嵌关系 | Embedded Relationship | 运营体系包含设计自身的规则和工具——设计线（系统设计流水线）作为工具内嵌于运营体系之中，支撑"设计运营体系本身"这项业务 |
 | 产品形态连续谱 | Product Morphology Spectrum | 产品从纯知识产品到纯软件产品到纯实物产品是连续谱，同一产品可沿谱演化 |
 | 产品类型 | Product Type | 产品的本质分类（知识/方法类、软件类、实物类），决定PA产物形态 |
-| 信息处理模式 | Information Processing Mode | 业务活动处理信息的方式分类：13种模式——计划事务、工单事务、审批流程、合规事务、规范知识、指标看板、进展追踪、信息台账、xBOM（跨领域通用），以及设备IO、领域分析、领域建模、领域算法（领域特有） |
 | 知识组件的双重身份 | Dual Identity of Knowledge Components | EOS的知识组件（准则/指南/AI辅助/任务定义）同时是设计线的PA构件交付物和EOS的设计工具输入 |
+| PACE | Precision, Adaptability, Completeness, Efficiency | 刻画四种设计模式差异的四维度——**Precision**（精度：产出精细化程度）、**Adaptability**（适应性：对需求变化的响应能力）、**Completeness**（完备度：设计文档完整程度）、**Efficiency**（效率：设计执行时效性） |
+| L1/L2/L3 分析深度 | Compliance Analysis Depth Levels | 符合性分析的三个深度层次——**L1**快速自检（分解四检+分配三检）、**L2**语义符合性（覆盖度/映射正确性/分析具体性）、**L3**指标符合性（指标对应完整性/比较正确性/可验证性） |
+| 变更影响分析 | Change Impact Analysis | 敏捷式和 DevOps 模式3中确定变更范围的方法：变更源定位→影响扩散分析→影响范围分级→变更路径确定 |
+| 增量映射三个手势 | Incremental Mapping Gestures | 敏捷式增量分配中基于资产优先原则的三个操作手势——**Extend**（扩展到已有节点）、**Split**（从已有节点拆分出新节点）、**Add**（新增节点），优先级依次递减 |
 
 ---
 

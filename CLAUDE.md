@@ -65,7 +65,9 @@
 ## 二、关键设计文件
 
 - [通用设计准则 v2.4](00-general/10-general-system-design-standards/01-general-system-design-standards.md) — 方法论核心：术语体系（§一）、四条工程化设计原则（§二）、文档结对设计（§三）、业务架构设计（§四）、系统设计过程（§五）、验收标准（§六）、检查清单（§七）
-- [通用设计指南](00-general/10-general-system-design-standards/02-general-system-design-4modes-guide.md) — 四种设计场景的方法框架
+- [通用设计指南 v2.1](00-general/10-general-system-design-standards/02-general-system-design-4modes-guide.md) — 四种设计场景的方法框架
+- [通用术语对照表 v2.2](00-general/10-general-system-design-standards/04-general-terminology-glossary.md) — 核心术语英中对照
+- [EOS系统设计准则 v3.1](20-eos-design/10-eos-system-design/01-eos-system-design-specification/01-eos-system-design-standards.md) — EOS 产品特有设计规则（平台链/业务链、三层工作层面、端到端业务框架）
 - [元流水线设计准则](10-meta-pipeline/10-eos-pipeline-system-design/01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md)
 - [快速参考卡](10-meta-pipeline/10-eos-pipeline-system-design/02-eos-pipeline-system-design-guidelines/05-eos-pipeline-system-quick-reference-card.md)
 - [元流水线 AI 文档理解要求](10-meta-pipeline/10-eos-pipeline-system-design/03-eos-pipeline-system-design-ai-support/00-ai-document-requirements-understanding.md)
