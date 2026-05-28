@@ -121,7 +121,7 @@
 - [通用设计方法框架](../../../../00-general/10-general-system-design-standards/02-general-system-design-4modes-guide.md)
 - [EOS AI 辅助文档](../03-eos-system-design-ai-support/README.md)
 - [EOS 产品数据模板](../10-eos-system-product-data/README.md)
-- [EOS 术语对照表](../01-eos-system-design-specification/07-eos-system-design-terminology-glossary.md)
+- [EOS 术语对照表](../01-eos-system-design-specification/04-eos-system-design-terminology-glossary.md)
 
 ---
 

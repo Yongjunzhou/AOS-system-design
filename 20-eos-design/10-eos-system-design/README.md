@@ -33,8 +33,7 @@
 | 文档 | 说明 |
 |------|------|
 | 01-eos-system-design-standards.md | 核心准则：5层结构、3条规则、多产品设计关系 |
-| 02 ~ 06 | 各层规范（OR/SR/BA/SysReq/PA） |
-| 07-eos-system-design-terminology-glossary.md | 术语对照表 |
+| 04-eos-system-design-terminology-glossary.md | 术语对照表 |
 
 ### [02-eos-system-design-guidelines/](02-eos-system-design-guidelines/README.md)
 **EOS 四种场景设计指南 — 设计线构件**

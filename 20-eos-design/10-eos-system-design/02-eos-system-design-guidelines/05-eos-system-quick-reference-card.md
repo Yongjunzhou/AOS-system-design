@@ -436,8 +436,7 @@
 
 - 📖 **详细指南**：查看设计指南目录下的各场景详细指南（01-04）
 - 📋 **设计准则**：查看《系统设计准则 v2.0》（01-eos-system-design-standards.md）
-- 📚 **各层规范**：02-EOS原始需求规范、03-EOS相关方需求规范、04-EOS业务架构规范、05-EOS系统需求规范、06-EOS产品架构规范
-- 📖 **术语对照**：07-eos-system-design-terminology-glossary.md
+- 📖 **术语对照**：04-eos-system-design-terminology-glossary.md
 
 ---
 

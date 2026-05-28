@@ -1,8 +1,9 @@
 # 运营体系（EOS）：英文术语对照表
 **EOS System Design Glossary: English-Chinese Terminology**
 
-**文档版本**：v1.1  
+**文档版本**：v2.1  
 **创建日期**：2026-05-18  
+**最近修订**：2026-05-28  
 **用途**：统一英文术语，便于国际化和技术交流。本文档服务于EOS（企业运营体系·EOS）的设计和开发。
 
 ---
@@ -14,8 +15,9 @@
 | 中文 | 英文 | 说明 |
 |------|------|------|
 | 企业运营体系 | Enterprise Operation System (EOS) | 企业运营体系的简称，是EOS的名称，涵盖企业核心运营业务的 IT/AI 化系统 |
-| 运营体系开发者 | EOS Developer | 进行 EOS 系统设计的团队成员（EOS设计团队） |
-| 系统设计流水线 | System Design Pipeline | 为 EOS 开发提供系统设计方法论和工具支持的设计工具 |
+| EOS 开发者 | EOS Developer | 使用 EOS 流水线对 EOS 进行系统设计的成员。按职责分为引擎开发者（平台设计链）、业务组件配置者和业务配置者（业务设计链）三类角色 |
+| 目标产品 | Target Product | 正在被系统设计的产品，统一称谓 |
+| 四类构件 | Four Component Types | EOS 流水线 PA 的四类交付物：设计准则、设计指南、AI 辅助文档、任务定义 |
 
 ### 文档类型
 
@@ -24,30 +26,42 @@
 | 准则 | Standards / Principles | 理论基础、规范要求、设计原则 |
 | 指南 | Guide / Handbook | 实践指导、操作步骤、工作手册 |
 | 参考卡 | Quick Reference Card | 快速查阅、速记、便携版 |
-| 规范 | Specification | 针对特定设计层的详细规范和标准 |
+| AI 辅助文档 | AI Support Document | 辅助 AI 参与系统设计的提示词、检查清单和范例 |
+| 任务定义 | Task Definition | 各场景中各步骤的操作规程和输入输出定义 |
 | 产品数据 | Product Data | 系统设计过程中产出的结构化数据 |
 
-### EOS 产品架构构件
+### 平台 PA 构件类型（软件类）
 
 | 中文 | 英文 | 说明 |
 |------|------|------|
-| 前端应用 | Frontend Application | 用户交互界面层 |
-| 后端服务 | Backend Service | 业务逻辑处理层 |
-| 数据存储 | Data Storage | 数据持久化层 |
-| 基础设施 | Infrastructure | 运行环境和支撑层 |
+| 前端组件 | Frontend Component | 用户交互界面层（页面组件、功能组件、交互组件） |
+| 后端组件 | Backend Component | 业务逻辑处理层（API 服务、业务引擎、数据处理、消息处理） |
+| 数据层 | Data Layer | 数据持久化层（关系型 DB、NoSQL、消息队列） |
+| 基础设施 | Infrastructure | 运行环境和支撑层（API 网关、认证授权、监控告警、CI/CD） |
+
+### 业务 PA 构件类型（配置类）
+
+| 中文 | 英文 | 说明 |
+|------|------|------|
+| 表单定义 | Form Definition | 数据录入和展示的界面配置 |
+| 标签页定义 | Tab Page Definition | 多视图切换配置 |
+| 台账定义 | Ledger Definition | 数据列表和查询配置 |
+| 菜单定义 | Menu Definition | 导航结构配置 |
+| 流程定义 | Process Definition | 业务流程步骤和规则配置 |
+| 指标定义 | Indicator Definition | 绩效指标计算配置 |
 
 ### 文档名称（EOS 系统设计）
 
 | 中文 | 英文 | 文件名 |
 |------|------|--------|
-| EOS 系统设计准则总纲 | EOS System Design Standards | 01-eos-system-design-standards.md |
-| EOS 原始需求规范 | EOS Original Requirements Specification | 02-eos-original-requirements-specification.md |
-| EOS 相关方需求规范 | EOS Stakeholder Requirements Specification | 03-eos-stakeholder-requirements-specification.md |
-| EOS 业务架构规范 | EOS Business Architecture Specification | 04-eos-business-architecture-specification.md |
-| EOS 系统需求规范 | EOS System Requirements Specification | 05-eos-system-requirements-specification.md |
-| EOS 产品架构规范 | EOS Product Architecture Specification | 06-eos-product-architecture-specification.md |
-| EOS 术语对照表 | EOS Terminology Glossary | 07-eos-system-design-terminology-glossary.md |
+| EOS 系统设计准则 | EOS System Design Standards | 01-eos-system-design-standards.md |
+| EOS 术语对照表 | EOS Terminology Glossary | 04-eos-system-design-terminology-glossary.md |
 | EOS AI辅助概览 | EOS AI Assistance Overview | 03-eos-system-design-ai-support/00-overview.md |
+| EOS 瀑布式设计指南 | EOS Waterfall System Design Guide | 02-eos-system-design-guidelines/01-waterfall-eos-system-design-guide.md |
+| EOS 逆向工程设计指南 | EOS Reverse Engineering System Design Guide | 02-eos-system-design-guidelines/02-reverse-engineering-eos-system-design-guide.md |
+| EOS 敏捷式设计指南 | EOS Agile System Design Guide | 02-eos-system-design-guidelines/03-agile-eos-system-design-guide.md |
+| EOS DevOps 设计指南 | EOS DevOps System Design Guide | 02-eos-system-design-guidelines/04-devops-eos-system-design-guide.md |
+| EOS 快速参考卡 | EOS Quick Reference Card | 02-eos-system-design-guidelines/05-eos-system-quick-reference-card.md |
 | EOS 产品数据 | EOS Product Data | 10-eos-system-product-data/ |
 
 ---
@@ -65,6 +79,22 @@
 | 架构末级节点 | Architecture Leaf Node | 方案分类和组织的最大条目，需求映射的关键层级 |
 | 详细定义末级节点 | Detailed Definition Leaf Node | 分配到后续方案架构末级节点的源头 |
 | 详细定义的双重身份 | Dual Identity of Detailed Definition | 既是当前方案的细化，又是后续方案的需求 |
+
+---
+
+### EOS 特有框架术语
+
+| 中文 | 英文 | 说明 |
+|------|------|------|
+| 三层工作层面 | Three Working Layers | EOS 系统设计的三个层面：第1层流水线设计、第2层构件开发、第3层使用工具设计 EOS |
+| 平台设计链 | Platform Design Chain | 以引擎为产出目标的五层设计链路（OR→SR→BA→SysReq→PA），适用于引擎开发需求 |
+| 业务设计链 | Business Design Chain | 以配置定义为产出目标的五层设计链路（OR→SR→BA→SysReq→PA），适用于业务配置需求 |
+| 端到端项目业务 | E2E Project Business | BA 第2级，从需求提出到需求满足的完整闭环，是业务分解的核心单位 |
+| 输出产品 | Output Product | 流水线类产品生产出来的产品，其 PA 节点类型作为流水线 BA IPO 的推导锚点 |
+| 需求分流 | Requirement Diversion | 原始需求按引擎开发/业务配置/CAX 工具三种来源分类，分流至对应设计链或外部 |
+| 同步设计 | Synchronous Design | 上层详细定义阶段同步建立下层架构结构骨架，而非串行执行 |
+| 引擎 | Engine | EOS 平台的能力基础单元（表单引擎、流程引擎、工单引擎、台账引擎等），由引擎开发者实现 |
+| 配置定义 | Configuration Definition | 使用引擎配置出的结构化定义（表单定义、台账定义、流程定义等），即业务链 PA 的产出形态 |
 
 ---
 
@@ -110,40 +140,16 @@
 
 ## 📊 EOS业务领域术语
 
-### 绩效考核核心概念
+### 绩效考核（业务示例）
 
 | 中文 | 英文 | 说明 |
 |------|------|------|
-| 绩效考核 | Performance Appraisal | 对员工或组织的工作表现进行系统化评估的过程 |
 | 考核计划 | Appraisal Plan | 一次考核活动的完整计划和配置 |
-| 考核周期 | Appraisal Cycle | 考核的时间跨度（月度/季度/年度） |
-| 考核模板 | Appraisal Template | 定义考核维度和指标的标准化模板 |
 | 评分维度 | Scoring Dimension | 考核的评估方面（如工作质量、完成率等） |
-| 评分指标 | Scoring Indicator / KPI | 量化的考核衡量指标 |
 | 权重 | Weight | 各考核维度的相对重要性系数 |
+| 评分指标 | Key Performance Indicator (KPI) | 量化的考核衡量指标 |
 | 加权评分 | Weighted Score | 按权重计算后的评分结果 |
-
-### 考核流程
-
-| 中文 | 英文 | 说明 |
-|------|------|------|
-| 评分录入 | Score Entry | 考核者录入评分数据的过程 |
-| 评分计算 | Score Calculation | 根据权重和规则计算最终评分 |
-| 评分审核 | Score Review / Verification | 对评分结果进行审核和确认 |
 | 绩效报告 | Performance Report | 包含评分结果和分析的报告 |
-| 绩效面谈 | Performance Review Meeting | 基于绩效结果的面谈和反馈 |
-| 申诉处理 | Appeal Process | 对考核结果提出异议的处理流程 |
-
-### 技术术语
-
-| 中文 | 英文 | 说明 |
-|------|------|------|
-| 前端应用 | Frontend Application | 用户交互界面的软件实现 |
-| 后端服务 | Backend Service | 业务逻辑处理的软件实现 |
-| 微服务 | Microservice | 独立部署和演进的业务服务单元 |
-| RESTful API | RESTful API | 基于 REST 架构的 API 设计风格 |
-| 数据持久化 | Data Persistence | 将数据保存到存储介质的过程 |
-| 容器化 | Containerization | 使用容器技术打包和部署应用 |
 
 ---
 
@@ -170,19 +176,6 @@
 
 ---
 
-## 🎓 最佳实践术语
-
-| 中文 | 英文 | 说明 |
-|------|------|------|
-| 最佳实践 | Best Practices | 经过验证的最优做法 |
-| 关键成功因素 | Critical Success Factors | 成功的关键要素 |
-| 关键风险 | Key Risks | 需要重点关注的风险 |
-| 应对措施 | Mitigation Measures | 应对风险的措施 |
-| 增量处理 | Incremental Processing | 分阶段处理需求 |
-| 影响范围最小化 | Impact Minimization | 最小化变更的影响范围 |
-
----
-
 ## 💡 使用建议
 
 ### 在文档中使用英文
@@ -201,7 +194,7 @@ EOS System Design Standards
 **文件名中**：
 ```
 01-eos-system-design-standards.md
-02-eos-original-requirements-specification.md
+04-eos-system-design-terminology-glossary.md
 ```
 
 ### 在交流中使用英文
@@ -289,15 +282,14 @@ Attendees: EOS Developer, Business Analyst, System Architect
 
 | 日期 | 更新内容 | 版本 |
 |------|---------|------|
-| 2026-05-18 | 初版发布，包含方法论核心术语和EOS绩效考核业务领域术语 | v1.0 |
+| 2026-05-18 | 初版发布，包含方法论核心术语和 EOS 绩效考核业务领域术语 | v1.0 |
+| 2026-05-28 | 更新文档类型和文件名称对照，移除归档的层规范条目 | v2.0 |
+| 2026-05-28 | 补充 EOS 特有框架术语（三层工作层面/两条设计链/端到端项目业务等）；扩展 PA 构件分类；精简绩效考核为业务示例；移除通用技术术语 | v2.1 |
 
 ---
 
-**文档生成时间**：2026-05-18  
-**文档版本**：v1.1  
+**文档生成时间**：2026-05-28  
+**文档版本**：v2.1  
 **状态**：✅ 完成
 
-**下一步**：
-- 根据 EOS 实际设计过程中的术语使用情况补充新术语
-- 与流水线版本术语表保持对照关系
-- 收集团队M反馈，优化术语选择
+**更新说明**：v2.1 重构了术语结构，补充了准则 v3.2 引入的核心框架术语，使术语表与当前准则全面对齐。
