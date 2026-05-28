@@ -10,11 +10,7 @@
 
 **涉及规范**：
 - [系统设计准则（总纲）](../01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md)
-- [原始需求规范](../01-eos-pipeline-system-design-specification/02-eos-pipeline-original-requirements-specification.md)（第1层）
-- [相关方需求规范](../01-eos-pipeline-system-design-specification/03-eos-pipeline-stakeholder-requirements-specification.md)（第2层）
-- [业务架构规范](../01-eos-pipeline-system-design-specification/04-eos-pipeline-business-architecture-specification.md)（第3层）
-- [系统需求规范](../01-eos-pipeline-system-design-specification/05-eos-pipeline-system-requirements-specification.md)（第4层）
-- [产品架构规范](../01-eos-pipeline-system-design-specification/06-eos-pipeline-product-architecture-specification.md)（第5层）
+- [通用设计准则](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md)（系统设计方法论核心，含各层条目格式 §五.3-§五.7、常见错误 §八）
 
 ---
 
@@ -140,10 +136,10 @@
 **目标**：从原始需求产出原始需求详细定义和相关方需求架构定义
 
 **涉及规范**：
-- [原始需求规范 §4.1 完整处理流程](../01-eos-pipeline-system-design-specification/02-eos-pipeline-original-requirements-specification.md#41-完整处理流程)
-- [相关方需求规范 §2 架构定义规范](../01-eos-pipeline-system-design-specification/03-eos-pipeline-stakeholder-requirements-specification.md#二架构定义规范)
+- [通用设计准则 §五.3](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#53-or条目格式)（原始需求条目格式）
+- [通用设计准则 §五.4](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#54-sr详细定义)（相关方需求详细定义）
 - [系统设计准则 §3.1 第1步](../01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md#第1步原始需求分析及相关方需求架构定义)
-> **阅读指引**：先读系统设计准则 §3.1 第1步建立整体理解，再对照原始需求规范 §4.1 执行处理流程，参考相关方需求规范 §2 完成架构定义。
+> **阅读指引**：先读系统设计准则 §3.1 第1步建立整体理解，再对照通用设计准则 §五.3 执行原始需求处理，参考 §五.4 完成相关方需求定义。
 
 **具体操作**：
 
@@ -256,11 +252,11 @@
 **目标**：沿功能分支推进，产出相关方需求功能部分详细定义和业务架构定义
 
 **涉及规范**：
-- [相关方需求规范 §3 详细定义规范](../01-eos-pipeline-system-design-specification/03-eos-pipeline-stakeholder-requirements-specification.md#三详细定义规范)
-- [业务架构规范 §2 架构定义规范](../01-eos-pipeline-system-design-specification/04-eos-pipeline-business-architecture-specification.md#二架构定义规范)
+- [通用设计准则 §五.4](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#54-sr详细定义)（相关方需求详细定义）
+- [通用设计准则 §五.5](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#55-ba业务架构)（业务架构定义）
 - [系统设计准则 §3.1 第2步](../01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md#第2步相关方需求功能部分详细定义及业务架构定义)
 - [系统设计准则 §1.5.3 同步设计](../01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md#153-详细定义与下层架构定义的同步设计)
-> **阅读指引**：先读系统设计准则 §3.1 第2步建立整体理解，再参照相关方需求规范 §3 执行详细定义，对照业务架构规范 §2 完成架构定义和IPO建模。
+> **阅读指引**：先读系统设计准则 §3.1 第2步建立整体理解，再参照通用设计准则 §五.4 执行详细定义，对照 §五.5 完成架构定义和IPO建模。
 
 **具体操作**：
 
@@ -290,7 +286,7 @@
    - 这意味着每条详细定义末级既是SR的"细化"，又是BA的"需求"
 
 3. **业务架构IPO定义**
-   - 采用**三阶段工作流程**（详见[业务架构规范 §4.1](../01-eos-pipeline-system-design-specification/04-eos-pipeline-business-architecture-specification.md#41-三阶段工作流程)）：第一阶段快速创建占位符和骨架映射，第二阶段详细填充IPO内容并去重，第三阶段验证和冻结
+   - 采用**三阶段工作流程**（详见[通用设计准则 §五.5](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#55-ba业务架构)）：第一阶段快速创建占位符和骨架映射，第二阶段详细填充IPO内容并去重，第三阶段验证和冻结
    - 根据详细定义结果识别IPO
    - 为每个IPO定义**I（输入）/ P（处理）/ O（输出）**
    - IPO去重：**复用 → 改进 → 新增**（优先复用已有IPO）—— 资产优先原则在 BA 层的具体应用，详见[关键概念](#组织资产优先原则)
@@ -347,9 +343,9 @@
 **目标**：将业务架构IPO去重并分类组织，形成系统需求功能部分的架构定义
 
 **涉及规范**：
-- [系统需求规范 §2.1 功能需求架构（0-9级）](../01-eos-pipeline-system-design-specification/05-eos-pipeline-system-requirements-specification.md#21-功能需求架构0-9级)
+- [通用设计准则 §五.6](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#56-sysreq条目格式)（系统需求条目格式）
 - [系统设计准则 §3.1 第3步](../01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md#第3步系统需求功能部分架构定义)
-> **阅读指引**：先读系统设计准则 §3.1 第3步，再对照系统需求规范 §2.1 理解0-9级层级结构和功能需求架构定义方法。
+> **阅读指引**：先读系统设计准则 §3.1 第3步，再对照通用设计准则 §五.6 理解系统需求条目格式。
 
 **具体操作**：
 
@@ -437,9 +433,9 @@
 **目标**：沿非功能分支独立推进，产出系统需求非功能部分架构定义
 
 **涉及规范**：
-- [系统需求规范 §2.2 非功能需求架构（0-6级）](../01-eos-pipeline-system-design-specification/05-eos-pipeline-system-requirements-specification.md#22-非功能需求架构0-6级)
+- [通用设计准则 §五.6](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#56-sysreq条目格式)（系统需求条目格式）
 - [系统设计准则 §3.1 第4步](../01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md#第4步相关方需求非功能部分详细定义及系统需求非功能部分架构定义)
-> **阅读指引**：先读系统设计准则 §3.1 第4步，再对照系统需求规范 §2.2 理解0-6级平行架构和非功能需求分类组织方法。
+> **阅读指引**：先读系统设计准则 §3.1 第4步，再对照通用设计准则 §五.6 理解系统需求条目格式。
 
 > **并行说明**：本步（非功能分支）与第2-3步（功能分支）**完全独立并行**。两个分支可同时推进，不受彼此影响。
 
@@ -510,11 +506,11 @@
 **目标**：合并功能和非功能分支，产出系统需求详细定义和产品架构定义
 
 **涉及规范**：
-- [系统需求规范 §3 详细定义规范](../01-eos-pipeline-system-design-specification/05-eos-pipeline-system-requirements-specification.md#三详细定义规范)
-- [产品架构规范 §2 架构定义规范](../01-eos-pipeline-system-design-specification/06-eos-pipeline-product-architecture-specification.md#二架构定义规范)
+- [通用设计准则 §五.6](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#56-sysreq条目格式)（系统需求条目格式）
+- [通用设计准则 §五.7](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#57-pa节点属性)（产品架构节点属性）
 - [系统设计准则 §3.1 第5步](../01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md#第5步系统需求详细定义及产品架构定义)
 - [系统设计准则 §1.5.3 同步设计](../01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md#153-详细定义与下层架构定义的同步设计)
-> **阅读指引**：先读系统设计准则 §3.1 第5步，再对照系统需求规范 §3 执行详细定义，参照产品架构规范 §2 完成架构定义。
+> **阅读指引**：先读系统设计准则 §3.1 第5步，再对照通用设计准则 §五.6 执行详细定义，参照 §五.7 完成架构定义。
 
 **具体操作**：
 
@@ -592,7 +588,7 @@
    | SysReq-F-001.1.1.1.2 | PA-002 需求录入服务 | 后端逻辑 | [→] |
    ```
 
-   > 知识/工具类产品的映射关系表以"对应交付文件"替代"构件类型"，例如`| SysReq节点描述 | PA构件名称 | 对应交付文件 | [→] |`。详见[产品架构规范 §2.4](../01-eos-pipeline-system-design-specification/06-eos-pipeline-product-architecture-specification.md#24-架构定义的文档结构)。
+   > 知识/工具类产品的映射关系表以"对应交付文件"替代"构件类型"，例如`| SysReq节点描述 | PA构件名称 | 对应交付文件 | [→] |`。详见[通用设计准则 §五.7](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#57-pa节点属性)。
 
 4. **非功能约束验证**
    - 以系统需求非功能需求约束产品架构的符合性

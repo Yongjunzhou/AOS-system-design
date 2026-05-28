@@ -10,11 +10,7 @@
 
 **涉及规范**：
 - [系统设计准则（总纲）](../01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md)
-- [原始需求规范](../01-eos-pipeline-system-design-specification/02-eos-pipeline-original-requirements-specification.md)（第1层）
-- [相关方需求规范](../01-eos-pipeline-system-design-specification/03-eos-pipeline-stakeholder-requirements-specification.md)（第2层）
-- [业务架构规范](../01-eos-pipeline-system-design-specification/04-eos-pipeline-business-architecture-specification.md)（第3层）
-- [系统需求规范](../01-eos-pipeline-system-design-specification/05-eos-pipeline-system-requirements-specification.md)（第4层）
-- [产品架构规范](../01-eos-pipeline-system-design-specification/06-eos-pipeline-product-architecture-specification.md)（第5层）
+- [通用设计准则](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md)（系统设计方法论核心，含各层条目格式 §五.3-§五.7、常见错误 §八）
 
 ---
 
@@ -173,7 +169,7 @@ PA（产品架构 + 构件需求定义）→ SysReq → BA → SR → OR
 
 > **前置说明**：本步骤仅在 PA 架构及构件需求定义不存在或质量不足以支撑后续步骤时执行。如果 PA 文档已存在且可用，可直接从第3步开始。
 
-**涉及规范**：[产品架构规范 §2 架构定义规范](../01-eos-pipeline-system-design-specification/06-eos-pipeline-product-architecture-specification.md#二架构定义规范)
+**涉及规范**：[通用设计准则 §五.7](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#57-pa节点属性)
 > **阅读指引**：先读产品架构规范 §2 理解架构定义和构件划分原则，再按本步骤操作从现有产物目录中提取架构草图。
 
 **具体操作**：
@@ -213,10 +209,9 @@ PA（产品架构 + 构件需求定义）→ SysReq → BA → SR → OR
 > **前置说明**：本步骤仅在 PA 文档不存在或质量不足时执行。如果 PA 架构及构件需求定义已存在且可用，可直接从第3步开始。
 
 **涉及规范**：
-- [产品架构规范 §2 架构定义规范](../01-eos-pipeline-system-design-specification/06-eos-pipeline-product-architecture-specification.md#二架构定义规范)
-- [产品架构规范 §3 详细定义规范](../01-eos-pipeline-system-design-specification/06-eos-pipeline-product-architecture-specification.md#三详细定义规范)
+- [通用设计准则 §五.7](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#57-pa节点属性)（产品架构节点属性）
 - [系统设计准则 §1.5 架构定义与详细定义的分离](../01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md#15-架构定义与详细定义的分离)
-> **阅读指引**：先读产品架构规范 §2-§3 理解架构定义和详细定义格式，再参考系统设计准则 §1.5 理解分离原则。
+> **阅读指引**：先读通用设计准则 §五.7 理解产品架构节点属性，再参考系统设计准则 §1.5 理解分离原则。
 
 **具体操作**：
 
@@ -275,7 +270,7 @@ PA（产品架构 + 构件需求定义）→ SysReq → BA → SR → OR
    **第二部分：需求映射视图（预留）**
    - 映射关系表暂时预留，将在第3步系统需求反向推导完成后填充
    - 显示每个 PA 构件承接了哪些 SysReq 9 级节点
-   - 产品的映射关系表以"对应交付文件"替代"构件类型"，详见[产品架构规范 §2.4](../01-eos-pipeline-system-design-specification/06-eos-pipeline-product-architecture-specification.md#24-架构定义的文档结构)
+   - 产品的映射关系表以"对应交付文件"替代"构件类型"，详见[通用设计准则 §五.7](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#57-pa节点属性)
 
 3. **详细定义同步编写**
    - 每个产品构件补充**详细定义**（文档格式、内容结构、版本策略、引用关系、质量指标等）
@@ -303,9 +298,8 @@ PA（产品架构 + 构件需求定义）→ SysReq → BA → SR → OR
 **目标**：从产品架构反向推导系统需求
 
 **涉及规范**：
-- [系统需求规范 §2 架构定义规范](../01-eos-pipeline-system-design-specification/05-eos-pipeline-system-requirements-specification.md#二架构定义规范)
-- [系统需求规范 §3 详细定义规范](../01-eos-pipeline-system-design-specification/05-eos-pipeline-system-requirements-specification.md#三详细定义规范)
-> **阅读指引**：先读系统需求规范 §2 理解功能/非功能双架构体系，再对照 §3 的详细定义规范执行反向推导。
+- [通用设计准则 §五.6](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#56-sysreq条目格式)（系统需求条目格式）
+> **阅读指引**：先读通用设计准则 §五.6 理解系统需求条目格式，再按本步骤执行反向推导。
 
 **具体操作**：
 
@@ -378,10 +372,8 @@ PA（产品架构 + 构件需求定义）→ SysReq → BA → SR → OR
 **目标**：从系统需求反向推导业务架构
 
 **涉及规范**：
-- [业务架构规范 §2 架构定义规范](../01-eos-pipeline-system-design-specification/04-eos-pipeline-business-architecture-specification.md#二架构定义规范)
-- [业务架构规范 §3 IPO模型](../01-eos-pipeline-system-design-specification/04-eos-pipeline-business-architecture-specification.md#三ipo模型)
-- [业务架构规范 §4.3 去重机制](../01-eos-pipeline-system-design-specification/04-eos-pipeline-business-architecture-specification.md#43-去重机制)
-> **阅读指引**：先读业务架构规范 §2 理解架构定义和 IPO 模型，再参照 §4.3 的去重机制执行 IPO 去重。
+- [通用设计准则 §五.5](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#55-ba业务架构)（业务架构定义）
+> **阅读指引**：先读通用设计准则 §五.5 理解业务架构定义，再按本步骤执行反向推导。
 
 **具体操作**：
 
@@ -396,7 +388,7 @@ PA（产品架构 + 构件需求定义）→ SysReq → BA → SR → OR
 
 3. **IPO 去重**
    - 逆向推导时，多个 SysReq 节点可能对应相同的业务操作
-   - 采用**三阶段工作流程**（详见[业务架构规范 §4.1](../01-eos-pipeline-system-design-specification/04-eos-pipeline-business-architecture-specification.md#41-三阶段工作流程)）：先快速评估创建占位符和骨架映射，再填充/更新IPO内容并去重，最后验证和冻结
+   - 采用**三阶段工作流程**（详见[通用设计准则 §五.5](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#55-ba业务架构)）：先快速评估创建占位符和骨架映射，再填充/更新IPO内容并去重，最后验证和冻结
    - **去重三级策略**：复用→改进→新增（优先复用已识别的 IPO）—— 这是**组织资产优先原则**（详见[关键概念](#组织资产优先原则)）在 BA 层的直接应用
    - 去重后的 IPO 清单才是最终的业务架构输出
 
@@ -444,9 +436,8 @@ PA（产品架构 + 构件需求定义）→ SysReq → BA → SR → OR
 **目标**：从业务架构反向推导相关方需求
 
 **涉及规范**：
-- [相关方需求规范 §2 架构定义规范](../01-eos-pipeline-system-design-specification/03-eos-pipeline-stakeholder-requirements-specification.md#二架构定义规范)
-- [相关方需求规范 §3 详细定义规范](../01-eos-pipeline-system-design-specification/03-eos-pipeline-stakeholder-requirements-specification.md#三详细定义规范)
-> **阅读指引**：先读相关方需求规范 §2 理解架构末级节点定义和分类体系，再对照 §3 的详细定义格式执行反向推导。
+- [通用设计准则 §五.4](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#54-sr详细定义)（相关方需求详细定义）
+> **阅读指引**：先读通用设计准则 §五.4 理解相关方需求详细定义，再按本步骤执行反向推导。
 
 **具体操作**：
 
@@ -510,8 +501,8 @@ PA（产品架构 + 构件需求定义）→ SysReq → BA → SR → OR
 
 **目标**：从相关方需求反向推导原始需求
 
-**涉及规范**：[原始需求规范 §3 分解规范](../01-eos-pipeline-system-design-specification/02-eos-pipeline-original-requirements-specification.md#三分解规范)
-> **阅读指引**：先读原始需求规范 §3 理解分解原则和停止准则，再按本步骤从 SR 反向推导原始需求。
+**涉及规范**：[通用设计准则 §五.3](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#53-or条目格式)
+> **阅读指引**：先读通用设计准则 §五.3 理解原始需求条目格式，再按本步骤从 SR 反向推导原始需求。
 
 **具体操作**：
 

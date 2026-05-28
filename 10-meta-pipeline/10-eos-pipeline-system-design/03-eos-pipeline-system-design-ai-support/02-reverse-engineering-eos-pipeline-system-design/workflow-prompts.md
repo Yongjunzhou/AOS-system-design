@@ -79,7 +79,7 @@
 - 产品代码和架构图纸（可选，仅在需要从代码重建PA时使用）
 
 ### 涉及规范
-- [产品架构规范 §2 架构定义规范](../../01-eos-pipeline-system-design-specification/06-eos-pipeline-product-architecture-specification.md#二架构定义规范)
+- [通用设计准则 §五.7 PA节点属性](../../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#57-pa节点属性)
 
 ### 决策框架参考
 
@@ -240,8 +240,7 @@
 - 第1步产出的产物总览清单
 
 ### 涉及规范
-- [产品架构规范 §2 架构定义规范](../../01-eos-pipeline-system-design-specification/06-eos-pipeline-product-architecture-specification.md#二架构定义规范)
-- [产品架构规范 §3 详细定义规范](../../01-eos-pipeline-system-design-specification/06-eos-pipeline-product-architecture-specification.md#三详细定义规范)
+- [通用设计准则 §五.7 PA节点属性](../../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#57-pa节点属性)
 
 ### 决策框架参考
 
@@ -405,8 +404,7 @@ PA-XXX 详细定义:
 - 第2步产出的产品架构文档
 
 ### 涉及规范
-- [系统需求规范 §2 架构定义规范](../../01-eos-pipeline-system-design-specification/05-eos-pipeline-system-requirements-specification.md#二架构定义规范)
-- [系统需求规范 §3 详细定义规范](../../01-eos-pipeline-system-design-specification/05-eos-pipeline-system-requirements-specification.md#三详细定义规范)
+- [通用设计准则 §五.6 SysReq条目格式](../../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#56-sysreq条目格式)
 
 ### 决策框架参考
 
@@ -629,9 +627,7 @@ SysReq 5 级节点清单：
 - 第3步同步建立的业务架构骨架
 
 ### 涉及规范
-- [业务架构规范 §2 架构定义规范](../../01-eos-pipeline-system-design-specification/04-eos-pipeline-business-architecture-specification.md#二架构定义规范)
-- [业务架构规范 §3 IPO模型](../../01-eos-pipeline-system-design-specification/04-eos-pipeline-business-architecture-specification.md#三ipo模型)
-- [业务架构规范 §4.3 去重机制](../../01-eos-pipeline-system-design-specification/04-eos-pipeline-business-architecture-specification.md#43-去重机制)
+- [通用设计准则 §五.5 BA业务架构](../../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#55-ba业务架构)
 
 ### 决策框架参考
 
@@ -785,8 +781,7 @@ IPO 去重报告：
 - 第4步同步建立的相关方需求骨架
 
 ### 涉及规范
-- [相关方需求规范 §2 架构定义规范](../../01-eos-pipeline-system-design-specification/03-eos-pipeline-stakeholder-requirements-specification.md#二架构定义规范)
-- [相关方需求规范 §3 详细定义规范](../../01-eos-pipeline-system-design-specification/03-eos-pipeline-stakeholder-requirements-specification.md#三详细定义规范)
+- [通用设计准则 §五.4 SR详细定义](../../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#54-sr详细定义)
 
 ### 决策框架参考
 
@@ -938,7 +933,7 @@ SR-F-XXX: [名称]（3级·架构末级节点）
 - 第5步产出的相关方需求文档
 
 ### 涉及规范
-- [原始需求规范 §3 分解规范](../../01-eos-pipeline-system-design-specification/02-eos-pipeline-original-requirements-specification.md#三分解规范)
+- [通用设计准则 §五.3 OR条目格式](../../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#53-or条目格式)
 
 ### 决策框架参考
 

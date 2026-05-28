@@ -10,11 +10,7 @@
 
 **涉及规范**：
 - [系统设计准则（总纲）](../01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md)
-- [原始需求规范](../01-eos-pipeline-system-design-specification/02-eos-pipeline-original-requirements-specification.md)（第1层）
-- [相关方需求规范](../01-eos-pipeline-system-design-specification/03-eos-pipeline-stakeholder-requirements-specification.md)（第2层）
-- [业务架构规范](../01-eos-pipeline-system-design-specification/04-eos-pipeline-business-architecture-specification.md)（第3层）
-- [系统需求规范](../01-eos-pipeline-system-design-specification/05-eos-pipeline-system-requirements-specification.md)（第4层）
-- [产品架构规范](../01-eos-pipeline-system-design-specification/06-eos-pipeline-product-architecture-specification.md)（第5层）
+- [通用设计准则](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md)（系统设计方法论核心，含各层条目格式 §五.3-§五.7、常见错误 §八）
 
 ---
 
@@ -105,7 +101,7 @@
 - ✅ 最快的响应时间
 - ✅ 最小的变更范围
 
-**涉及规范**：[产品架构规范 §2 架构定义规范](../01-eos-pipeline-system-design-specification/06-eos-pipeline-product-architecture-specification.md#二架构定义规范)
+**涉及规范**：[通用设计准则](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md)（§五 系统设计过程、§八 常见错误与FAQ）
 
 **示例**：
 - 修复 UI 显示 bug
@@ -124,9 +120,7 @@
 - ✅ 不影响业务架构
 - ✅ 相对快速的响应时间
 
-**涉及规范**：
-- [系统需求规范 §2 架构定义规范](../01-eos-pipeline-system-design-specification/05-eos-pipeline-system-requirements-specification.md#二架构定义规范)
-- [产品架构规范 §2 架构定义规范](../01-eos-pipeline-system-design-specification/06-eos-pipeline-product-architecture-specification.md#二架构定义规范)
+**涉及规范**：[通用设计准则](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md)（§五 系统设计过程、§八 常见错误与FAQ）
 
 **示例**：
 - 修复系统功能 bug
@@ -145,7 +139,7 @@
 - ✅ 可能影响业务架构
 - ✅ 需要完整的系统设计流程
 
-**涉及规范**：全部 02-06 层规范（依影响层级选择）
+**涉及规范**：[通用设计准则](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md)（§五 系统设计过程、§八 常见错误与FAQ）
 
 **示例**：
 - 修复业务流程 bug
@@ -216,7 +210,7 @@
 
 **目标**：快速修复仅影响产品架构的问题
 
-**涉及规范**：[产品架构规范 §3 详细定义规范](../01-eos-pipeline-system-design-specification/06-eos-pipeline-product-architecture-specification.md#三详细定义规范)
+**涉及规范**：[通用设计准则](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md)（§五 系统设计过程、§八 常见错误与FAQ）
 
 **具体操作**：
 
@@ -271,10 +265,7 @@
 
 **目标**：快速设计和实现影响系统需求和产品架构的问题
 
-**涉及规范**：
-- [系统需求规范 §2 架构定义规范](../01-eos-pipeline-system-design-specification/05-eos-pipeline-system-requirements-specification.md#二架构定义规范)
-- [系统需求规范 §3 详细定义规范](../01-eos-pipeline-system-design-specification/05-eos-pipeline-system-requirements-specification.md#三详细定义规范)
-- [产品架构规范 §2 架构定义规范](../01-eos-pipeline-system-design-specification/06-eos-pipeline-product-architecture-specification.md#二架构定义规范)
+**涉及规范**：[通用设计准则](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md)（§五 系统设计过程、§八 常见错误与FAQ）
 
 **具体操作**：
 
@@ -392,7 +383,7 @@
    ├─ 符合性分析：[修改后如何满足所承接的需求]
    └─ 设计指导：[对系统需求的指导]
    ```
-   > BA 的修改建议采用**三阶段工作流程**（详见[业务架构规范 §4.1](../01-eos-pipeline-system-design-specification/04-eos-pipeline-business-architecture-specification.md#41-三阶段工作流程)）：先快速评估创建占位符和骨架映射，再填充/更新IPO内容并去重，最后验证和冻结。
+   > BA 的修改建议采用**三阶段工作流程**（详见[通用设计准则 §五.5](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#55-ba业务架构)）：先快速评估创建占位符和骨架映射，再填充/更新IPO内容并去重，最后验证和冻结。
    > 
    > **BA 仅有架构定义（IPO清单），无详细定义**：BA 的架构末级节点（IPO）自身承担"需求"角色，直接映射到 SysReq。修改仅涉及 IPO 定义本身和映射关系。
 

@@ -42,11 +42,6 @@
 | 中文 | 英文 | 文件名 |
 |------|------|--------|
 | 系统设计准则总纲 | System Design Standards | 01-eos-pipeline-system-design-standards.md |
-| 原始需求规范 | Original Requirements Specification | 02-eos-pipeline-original-requirements-specification.md |
-| 相关方需求规范 | Stakeholder Requirements Specification | 03-eos-pipeline-stakeholder-requirements-specification.md |
-| 业务架构规范 | Business Architecture Specification | 04-eos-pipeline-business-architecture-specification.md |
-| 系统需求规范 | System Requirements Specification | 05-eos-pipeline-system-requirements-specification.md |
-| 产品架构规范 | Product Architecture Specification | 06-eos-pipeline-product-architecture-specification.md |
 | 术语对照表 | Terminology Glossary | 07-eos-pipeline-terminology-glossary.md |
 | 规范模板 | Specification Template | 00-general/10-general-system-design-standards/03-specification-template.md |
 | 瀑布式设计指南 | Waterfall System Design Guide | 01-waterfall-eos-pipeline-system-design-guide.md |

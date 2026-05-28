@@ -233,7 +233,7 @@
 第8步：文档完善和发布
 ```
 
-**涉及规范**：[总纲](../01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md) | [原始需求](../01-eos-pipeline-system-design-specification/02-eos-pipeline-original-requirements-specification.md) | [相关方需求](../01-eos-pipeline-system-design-specification/03-eos-pipeline-stakeholder-requirements-specification.md) | [业务架构](../01-eos-pipeline-system-design-specification/04-eos-pipeline-business-architecture-specification.md) | [系统需求](../01-eos-pipeline-system-design-specification/05-eos-pipeline-system-requirements-specification.md) | [产品架构](../01-eos-pipeline-system-design-specification/06-eos-pipeline-product-architecture-specification.md)
+**涉及规范**：[通用设计准则](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md)
 
 ---
 
@@ -271,7 +271,7 @@
   └─ 符合性分析完整率验证
 ```
 
-**涉及规范**：[总纲](../01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md) | [原始需求](../01-eos-pipeline-system-design-specification/02-eos-pipeline-original-requirements-specification.md) | [相关方需求](../01-eos-pipeline-system-design-specification/03-eos-pipeline-stakeholder-requirements-specification.md) | [业务架构](../01-eos-pipeline-system-design-specification/04-eos-pipeline-business-architecture-specification.md) | [系统需求](../01-eos-pipeline-system-design-specification/05-eos-pipeline-system-requirements-specification.md) | [产品架构](../01-eos-pipeline-system-design-specification/06-eos-pipeline-product-architecture-specification.md)
+**涉及规范**：[通用设计准则](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md)
 
 ---
 
@@ -318,7 +318,7 @@
   └─ 发布更新
 ```
 
-**涉及规范**：[总纲](../01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md) | [原始需求](../01-eos-pipeline-system-design-specification/02-eos-pipeline-original-requirements-specification.md) | [相关方需求](../01-eos-pipeline-system-design-specification/03-eos-pipeline-stakeholder-requirements-specification.md) | [业务架构](../01-eos-pipeline-system-design-specification/04-eos-pipeline-business-architecture-specification.md) | [系统需求](../01-eos-pipeline-system-design-specification/05-eos-pipeline-system-requirements-specification.md) | [产品架构](../01-eos-pipeline-system-design-specification/06-eos-pipeline-product-architecture-specification.md)
+**涉及规范**：[通用设计准则](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md)
 
 ---
 
@@ -353,7 +353,7 @@
 核心原则：快速响应、最小化变更、保持一致性、充分验证
 ```
 
-**涉及规范**：[总纲](../01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md) | [系统需求](../01-eos-pipeline-system-design-specification/05-eos-pipeline-system-requirements-specification.md) | [产品架构](../01-eos-pipeline-system-design-specification/06-eos-pipeline-product-architecture-specification.md)
+**涉及规范**：[通用设计准则](../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md)（§五 系统设计过程、§八 常见错误与FAQ） | [元流水线设计准则](../01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md)
 
 ---
 
