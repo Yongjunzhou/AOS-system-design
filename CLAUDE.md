@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-为 Claude Code 提供本仓库的项目上下文和关键文件导航。系统设计方法论完整定义见[通用设计准则 v2.4](00-general/10-general-system-design-standards/01-general-system-design-standards.md)。
+为 Claude Code 提供本仓库的项目上下文和关键文件导航。系统设计方法论完整定义见[通用设计准则 v2.5](00-general/10-general-system-design-standards/01-general-system-design-standards.md)。
 
 ---
 
@@ -10,7 +10,7 @@
 
 | 产品 | 说明 | 开发空间 |
 |------|------|---------|
-| **企业运营体系（EOS）** | 被构建和运维的目标系统——IT/AI 化的企业运营系统，覆盖市场、研发、生产、售后和管理等业务 | `20-eos-design/`（设计），`30-eos-operation/`（产品本体） |
+| **企业运营体系（EOS）** | 被构建和运维的目标系统——企业运营体系的**信息化形态**（流水线类产品），覆盖市场、研发、生产、售后和管理等业务。当前实现形态为可配置平台 | `20-eos-design/`（设计），`30-eos-operation/`（产品本体） |
 | **EOS 流水线** | 服务于 EOS 全生命周期的流水线，由**设计线**（系统设计）、**开发线**（组件开发）、**集成线**（集成交付）、**运维线**（系统运维）四子线组成。当前仅设计线已完成 | 构件位于 `20-eos-design/.../01~04-*` |
 | **元流水线** | 用于设计 EOS 流水线的流水线。按四阶段开发：系统设计（已完成）、构件开发/集成交付/系统运维（待扩展） | `10-meta-pipeline/` |
 
@@ -32,7 +32,7 @@
 ```
 00-general/                                         # 通用方法论（独立于三个产品）
 └── 10-general-system-design-standards/
-    ├── 01-general-system-design-standards.md        # 通用设计准则 v2.4（方法论核心）
+    ├── 01-general-system-design-standards.md        # 通用设计准则 v2.5（方法论核心）
     ├── 02-general-system-design-4modes-guide.md     # 通用设计指南（四种方法框架）
     ├── 03-specification-template.md                 # 规范文档通用模板
     └── 04-general-terminology-glossary.md           # 通用术语对照
@@ -64,7 +64,7 @@
 
 ## 二、关键设计文件
 
-- [通用设计准则 v2.4](00-general/10-general-system-design-standards/01-general-system-design-standards.md) — 方法论核心：术语体系（§一）、四条工程化设计原则（§二）、文档结对设计（§三）、业务架构设计（§四）、系统设计过程（§五）、验收标准（§六）、检查清单（§七）
+- [通用设计准则 v2.5](00-general/10-general-system-design-standards/01-general-system-design-standards.md) — 方法论核心：术语体系（§一）、四条工程化设计原则（§二）、文档结对设计（§三）、业务架构设计（§四，含两种 BA 开发方法：用户角色架构锚定法 §4.2.1 + 输出产品架构锚定法 §4.2.2）、系统设计过程（§五）、验收标准（§六）、检查清单（§七）
 - [通用设计指南 v2.1](00-general/10-general-system-design-standards/02-general-system-design-4modes-guide.md) — 四种设计场景的方法框架
 - [通用术语对照表 v2.2](00-general/10-general-system-design-standards/04-general-terminology-glossary.md) — 核心术语英中对照
 - [EOS系统设计准则 v3.1](20-eos-design/10-eos-system-design/01-eos-system-design-specification/01-eos-system-design-standards.md) — EOS 产品特有设计规则（平台链/业务链、三层工作层面、端到端业务框架）
@@ -77,7 +77,19 @@
 
 ---
 
-## 三、产品数据文件
+## 三、关键术语
+
+| 术语 | 指代 | 说明 |
+|------|------|------|
+| **目标产品** | 产品 A | 正在被系统设计的产品，统一称谓 |
+| **输出产品** | 产品 B | 流水线生产出来的产品，仅流水线类有此概念 |
+| **用户角色** | — | 与目标产品交互的所有外部实体（操作用户、外部系统、保障者、自然环境等） |
+| **用户角色架构锚定法** | — | BA 开发的通用方法，以全量用户角色集为推导锚点 |
+| **输出产品架构锚定法** | — | 流水线类产品的 BA 特化路径，以输出产品 PA 节点类型为推导锚点 |
+
+---
+
+## 四、产品数据文件
 
 元流水线和 EOS 的产品数据遵循相同结构（模板见 `03-specification-template.md`）：
 
@@ -95,7 +107,7 @@
 
 ---
 
-## 四、四种设计场景
+## 五、四种设计场景
 
 | 场景 | 适用情况 | 周期 | 指南 |
 |------|---------|------|------|
@@ -106,7 +118,7 @@
 
 ---
 
-## 五、三个关键角色
+## 六、三个关键角色
 
 | 角色 | 职责 | 参与层 |
 |------|------|--------|
@@ -116,7 +128,7 @@
 
 ---
 
-## 六、文档规范
+## 七、文档规范
 
 - 所有文档使用 Markdown + Mermaid 格式
 - 版本号格式：`v[主版本].[次版本]`
