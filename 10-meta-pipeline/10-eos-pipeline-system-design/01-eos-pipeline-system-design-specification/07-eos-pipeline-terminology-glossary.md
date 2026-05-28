@@ -1,288 +1,138 @@
-# 系统设计流水线：英文术语对照表
+# EOS 流水线系统设计术语对照表
+**EOS Pipeline System Design — Terminology Glossary**
 
-**文档版本**：v1.2  
-**创建日期**：2026-05-18  
-**用途**：统一英文术语，便于国际化和技术交流。本文档服务于设计线（系统设计流水线）的开发和使用。
+**文档版本**：v2.0
+**创建日期**：2026-05-28
+**用途**：统一 EOS 流水线系统设计领域的英中术语对照，便于文档写作和国际交流。
 
 ---
 
-## 📋 核心术语对照
-
-### 基本定义
+## 核心概念
 
 | 中文 | 英文 | 说明 |
 |------|------|------|
-| 运营体系系统设计流水线 | System Design Pipeline for Enterprise Operation System | 从原始需求到产品架构的完整系统设计工具，简称"流水线"，是本产品的名称 |
-| 流水线开发者 | Pipeline Developer | 开发和维护系统设计流水线的团队成员（设计线开发团队） |
-| 运营体系开发者 | EOS Developer | 使用流水线进行企业运营体系系统设计的开发者（EOS设计团队） |
-| 企业运营体系 | Enterprise Operation System (EOS) | 流水线的目标设计对象——企业的 IT/AI 化运营系统 |
+| EOS 流水线 | EOS Pipeline | 服务于 EOS 全生命周期的流水线，由设计线/开发线/集成线/运维线四子线组成 |
+| 元流水线 | Meta-Pipeline | 用于设计 EOS 流水线的流水线，当前处于系统设计阶段 |
+| 输出产品架构锚定法 | Output Product Architecture Anchoring Method | 流水线类产品的 BA 开发特化方法：以输出产品的 PA 节点类型为推导锚点 |
+| 用户角色架构锚定法 | User Role Architecture Anchoring Method | BA 开发的通用方法：以全量用户角色集为推导锚点 |
+| 四类构件 | Four Component Types | EOS 流水线 PA 的四类交付物：设计准则、设计指南、AI 辅助文档、任务定义 |
 
-### 文档类型
-
-| 中文 | 英文 | 说明 |
-|------|------|------|
-| 准则 | Standards / Principles | 理论基础、规范要求、设计原则 |
-| 指南 | Guide / Handbook | 实践指导、操作步骤、工作手册 |
-| 参考卡 | Quick Reference Card | 快速查阅、速记、便携版 |
-| 索引 | Index | 导航、查找工具 |
-| 规范 | Specification | 针对特定设计层的详细规范和标准 |
-
-### 流水线产品架构构件
+## 三层工作层面
 
 | 中文 | 英文 | 说明 |
 |------|------|------|
-| 规范与准则 | Standards & Principles | 定义设计标准和方法的理论基础文件 |
-| 操作指南 | Operation Guide / Handbook | 指导不同场景下操作流程的实践文档 |
-| AI辅助文档 | AI Assistance Documents | 支持AI成员参与系统设计的辅助文档 |
-| 任务定义 | Task Definitions | 规范化操作规程和步骤的定义文件 |
-| 产品数据 | Product Data | 系统设计过程中产出的结构化数据文件 |
+| 第1层：流水线设计 | Layer 1: Pipeline Design | 用元流水线对 EOS 流水线进行系统设计，产出其产品架构 |
+| 第2层：构件开发 | Layer 2: Component Development | 根据 PA 构件定义开发各构件的完整内容（准则/指南/AI辅助/任务定义） |
+| 第3层：使用工具设计 EOS | Layer 3: EOS Design Using Tools | EOS 开发者使用第2层产出的工具对 EOS 进行系统设计 |
 
-### 文档名称
+## 三个参与者
+
+| 中文 | 英文 | 说明 |
+|------|------|------|
+| 流水线开发者 | Pipeline Developer | 开发、维护和优化 EOS 流水线本身 |
+| AI | AI | 按流水线开发者指令执行自动化设计操作 |
+| EOS 构建与运维者 | EOS Builder & Operator | 使用 EOS 流水线对 EOS 进行系统设计、开发、集成和运维 |
+
+## 五层设计结构
+
+| 层级 | 中文 | 英文 | 角色 |
+|------|------|------|------|
+| 第1层 | 原始需求 | Original Requirements (OR) | 仅需求 |
+| 第2层 | 相关方需求 | Stakeholder Requirements (SR) | 需求/方案 |
+| 第3层 | 业务架构 | Business Architecture (BA) | 仅方案 |
+| 第4层 | 系统需求 | System Requirements (SysReq) | 需求/方案 |
+| 第5层 | 产品架构 | Product Architecture (PA) | 仅方案 |
+
+## 需求类型
+
+| 中文 | 英文 | 说明 |
+|------|------|------|
+| 功能需求 | Functional Requirement (FR) | 系统必须执行的功能或服务，经 BA 路径分配 |
+| 非功能需求 | Non-Functional Requirement (NFR) | 系统必须满足的质量属性，经平行路径分配 |
+| 末级需求 | Leaf-level Requirement | 不可再分的原子粒度需求条目 |
+| 架构末级节点 | Architecture Leaf Node | 方案文档树形结构的末级节点，承接上层需求 |
+| 详细定义末级节点 | Detailed Definition Leaf Node | 对架构末级节点的细化分解，分配到下层方案 |
+
+## 文档结构
+
+| 中文 | 英文 | 说明 |
+|------|------|------|
+| 架构定义子文档 | Architecture Definition Sub-document | 树形结构组织内容，建立对上层需求的映射 |
+| 详细定义子文档 | Detailed Definition Sub-document | 平铺列表对架构末级节点进行细化分解 |
+| 需求/方案相对 | Requirement-Solution Relativity | 同一文档在不同层位兼具需求与方案双重身份 |
+| 文档结对 | Document Pairing | 上层需求文档与下层方案文档成对设计 |
+
+## 三个核心设计活动
+
+| 中文 | 英文 | 说明 |
+|------|------|------|
+| 需求分解 | Requirements Decomposition | 将需求分解到原子粒度（语义分解四项自检 + 指标分解三场景） |
+| 需求分配 | Requirements Allocation | 将末级条目按 1:1 约束映射到下层架构末级节点 |
+| 符合性分析 | Compliance Analysis | 验证方案节点充分满足所承接的上层需求（语义 + 指标） |
+
+## 设计约束
+
+| 中文 | 英文 | 说明 |
+|------|------|------|
+| 1:1 分配约束 | One-to-One Allocation Constraint | 每条详细定义末级分配到下层唯一的架构末级节点 |
+| N:1 承接 | Many-to-One Acceptance | 每个架构末级节点可承接多条上层末级条目 |
+| 双向追溯 | Bidirectional Traceability | OR→PA 正向和 PA→OR 反向均可追踪 |
+| 资产优先 | Organizational Asset Priority | 按复用→改进→新增优先级处理架构变更 |
+
+## PA 节点定义三因素
+
+| 中文 | 英文 | 说明 |
+|------|------|------|
+| 知识领域内聚性 | Knowledge Domain Cohesion | 操作同一知识领域的 SysReq 倾向合并为同一构件 |
+| 质量要求相容性 | Quality Requirement Compatibility | 质量属性冲突的需求不应共享同一构件 |
+| 交付形态相似性 | Delivery Form Similarity | 信息处理模式相同的需求倾向合并（同模式可共享，不同模式应分离） |
+| 三因素决策矩阵 | Three-Factor Decision Matrix | 综合三因素判断 PA 构件合并/分离的决策工具 |
+
+## 信息处理模式
+
+| 中文 | 英文 | 说明 |
+|------|------|------|
+| 规范规则 | Standards & Rules | 条文式约束，人查阅/对照/引用 |
+| 操作指南 | Operational Guide | 场景化指导，人阅读/理解/应用 |
+| AI 指令 | AI Instructions | 结构化 Prompt，AI 直接解析执行 |
+| 操作规程 | Operational Procedure | 分步骤任务，人+AI 协作执行 |
+| 数据模板 | Data Template | 结构化数据框架，人+工具填写 |
+
+## 四种设计场景
+
+| 中文 | 英文 | 说明 |
+|------|------|------|
+| 瀑布式 | Waterfall | 从零开始的正向完整设计（OR→SR→BA→SysReq→PA） |
+| 敏捷式 | Agile | 在现有设计基础上的增量迭代 |
+| 逆向工程 | Reverse Engineering | 从已有构件反向推导至 OR |
+| DevOps | DevOps | 最小化正向变更的快速修复 |
+
+## 文档名称对照
 
 | 中文 | 英文 | 文件名 |
 |------|------|--------|
-| 系统设计准则总纲 | System Design Standards | 01-eos-pipeline-system-design-standards.md |
+| EOS 流水线系统设计准则 | EOS Pipeline System Design Standards | 01-eos-pipeline-system-design-standards.md |
 | 术语对照表 | Terminology Glossary | 07-eos-pipeline-terminology-glossary.md |
-| 规范模板 | Specification Template | 00-general/10-general-system-design-standards/03-specification-template.md |
 | 瀑布式设计指南 | Waterfall System Design Guide | 01-waterfall-eos-pipeline-system-design-guide.md |
+| 逆向工程设计指南 | Reverse Engineering System Design Guide | 02-reverse-engineering-eos-pipeline-system-design-guide.md |
 | 敏捷式设计指南 | Agile System Design Guide | 03-agile-eos-pipeline-system-design-guide.md |
-| 逆向工程指南 | Reverse Engineering Guide | 02-reverse-engineering-eos-pipeline-system-design-guide.md |
-| DevOps设计指南 | DevOps System Design Guide | 04-devops-eos-pipeline-system-design-guide.md |
+| DevOps 设计指南 | DevOps System Design Guide | 04-devops-eos-pipeline-system-design-guide.md |
 | 快速参考卡 | Quick Reference Card | 05-eos-pipeline-system-quick-reference-card.md |
 
-### 基本术语（v2.2新增）
-
-| 中文 | 英文 | 说明 |
-|------|------|------|
-| 需求文档 | Requirements Document | 描述系统应该做什么 |
-| 方案文档 | Solution Document | 描述如何满足需求，由架构定义和详细定义组成 |
-| 需求—方案配对 | Requirement-Solution Pair | 需求与方案成对出现 |
-| 文档的双重属性 | Dual Role of Document | 一个文档可同时是方案和需求 |
-| 架构定义 | Architecture Definition | 构建方案的层级结构，建立对上层需求的映射 |
-| 详细定义 | Detailed Definition | 对架构末级节点进行详细设计分解 |
-| 架构末级节点 | Architecture Leaf Node | 方案分类和组织的最大条目，需求映射的关键层级 |
-| 详细定义末级节点 | Detailed Definition Leaf Node | 分配到后续方案架构末级节点的源头 |
-| 详细定义的双重身份 | Dual Identity of Detailed Definition | 既是当前方案的细化，又是后续方案的需求 |
-
 ---
 
-## 🏗️ 系统设计流水线术语
-
-### 5层结构
-
-| 中文 | 英文 | 说明 |
-|------|------|------|
-| 原始需求 | Original Requirements | 第1层，用户或相关方的原始需求 |
-| 相关方需求 | Stakeholder Requirements | 第2层，原始需求的方案和后续需求 |
-| 业务架构 | Business Architecture | 第3层，相关方需求功能部分的方案 |
-| 系统需求 | System Requirements | 第4层，业务架构和非功能需求的方案 |
-| 产品架构 | Product Architecture | 第5层，系统需求的方案和实现 |
-
-### 需求类型
-
-| 中文 | 英文 | 说明 |
-|------|------|------|
-| 功能需求 | Functional Requirements | 系统应该提供什么功能 |
-| 非功能需求 | Non-Functional Requirements | 系统应该满足什么质量特性 |
-| 末级需求 | Leaf-level Requirements | 不可再分的原子性需求 |
-| 相关方需求 | Stakeholder Requirements | 从相关方角度定义的需求 |
-
----
-
-## 🎯 核心约束术语
-
-| 中文 | 英文 | 说明 |
-|------|------|------|
-| 1:1分配约束 | One-to-One Allocation Constraint | 每条需求分配到唯一的方案条目 |
-| N:1承接支持 | Many-to-One Acceptance Support | 每个方案条目可承接多条需求 |
-| 双向追溯 | Bidirectional Traceability | 需求和方案之间的双向导航 |
-| 符合性分析 | Compliance Analysis | 方案如何满足需求的分析 |
-| 映射关系 | Mapping Relationship | 需求和方案之间的对应关系 |
-| 组织资产优先 | Organizational Asset Priority | 新增需求时优先复用/改进现有架构节点，最后新增的原则，遵循"复用→改进→新增"的优先级顺序 |
-
-### 产品架构分解原则（v1.4新增）
-
-| 中文 | 英文 | 说明 |
-|------|------|------|
-| 信息模型内聚性 | Information Model Cohesion | 判断多个业务活动是否操作同一组核心实体，决定 PA 构件合并或分离的因素 |
-| NFR Profile 相容性 | NFR Profile Compatibility | 判断不同业务活动的非功能需求是否相互冲突，NFR 冲突时不应共享同一构件 |
-| 信息处理模式一致性 | Information Processing Pattern Consistency | 判断业务活动消费和生产信息的方式是否一致，不同模式倾向分离为不同构件 |
-| 三因素决策矩阵 | Three-Factor Decision Matrix | 综合信息模型、NFR Profile、信息模式三个因素判断 PA 构件合并/分离的决策工具 |
-
----
-
-## 📊 操作流程术语
-
-### 四种场景
-
-| 中文 | 英文 | 说明 |
-|------|------|------|
-| 瀑布式 | Waterfall | 从原始需求开始的完整系统设计 |
-| 敏捷式 | Agile | 在现有设计基础上处理增量需求 |
-| 逆向工程 | Reverse Engineering | 从代码和图纸反向推导系统设计 |
-| DevOps | DevOps | 快速响应生产环境的问题和紧急需求 |
-
-### 操作步骤
-
-| 中文 | 英文 | 说明 |
-|------|------|------|
-| 需求分解 | Requirements Decomposition | 将需求分解到末级 |
-| 需求映射 | Requirements Mapping | 将需求映射到方案 |
-| 影响分析 | Impact Analysis | 分析变更的影响范围 |
-| 完整性验证 | Completeness Verification | 验证所有需求都被映射 |
-| 一致性验证 | Consistency Verification | 验证映射关系的一致性 |
-
----
-
-
-## 🎓 最佳实践术语
-
-| 中文 | 英文 | 说明 |
-|------|------|------|
-| 最佳实践 | Best Practices | 经过验证的最优做法 |
-| 关键成功因素 | Critical Success Factors | 成功的关键要素 |
-| 关键风险 | Key Risks | 需要重点关注的风险 |
-| 应对措施 | Mitigation Measures | 应对风险的措施 |
-| 增量处理 | Incremental Processing | 分阶段处理需求 |
-| 影响范围最小化 | Impact Minimization | 最小化变更的影响范围 |
-
----
-
-## 📚 相关术语
-
-| 中文 | 英文 | 说明 |
-|------|------|------|
-| 系统设计流水线 | System Design Pipeline | 从需求到架构的完整设计流程 |
-| 方法论 | Methodology | 系统的工作方法和原理 |
-| 架构设计 | Architecture Design | 系统的整体结构设计 |
-| 需求管理 | Requirements Management | 需求的收集、分析、追溯 |
-| 追溯矩阵 | Traceability Matrix | 需求和方案的映射矩阵 |
-| 符合性报告 | Compliance Report | 符合性验证的报告 |
-
----
-
-## 🔄 文档体系术语
-
-| 中文 | 英文 | 说明 |
-|------|------|------|
-| 文档体系 | Documentation System | 多份文档的组织体系 |
-| 文档集 | Documentation Set | 相关文档的集合 |
-| 快速参考 | Quick Reference | 快速查阅的资源 |
-| 学习路径 | Learning Path | 循序渐进的学习计划 |
-| 角色指南 | Role-based Guide | 针对特定角色的指南 |
-
----
-
-## 💡 使用建议
-
-### 在文档中使用英文
-
-**标题中**：
-```
-# 系统设计流水线准则
-System Design Pipeline Standards
-```
-
-**术语中**：
-```
-1:1分配约束（One-to-One Allocation Constraint）
-```
-
-**文件名中**：
-```
-01-eos-pipeline-system-design-standards.md
-01-waterfall-eos-pipeline-system-design-guide.md
-05-eos-pipeline-system-quick-reference-card.md
-```
-
-### 在交流中使用英文
-
-**邮件主题**：
-```
-System Design Standards Review
-System Design Handbook - Scenario 1 Implementation
-```
-
-**会议记录**：
-```
-Topic: System Design Pipeline Methodology
-Attendees: Pipeline Developer, AI Member
-```
-
----
-
-## 📖 术语使用示例
-
-### 准则 vs 指南
-
-**准则（Standards）**：
-- "系统设计准则定义了5层结构"
-- "System Design Standards define the 5-layer structure"
-
-**指南（Handbook）**：
-- "系统设计指南提供了四种场景的操作步骤"
-- "System Design Handbook provides operational procedures for four scenarios"
+## 术语使用示例
 
 ### 需求 vs 方案
+- "原始需求、相关方需求、系统需求" — Original Requirements, Stakeholder Requirements, System Requirements
+- "相关方需求是原始需求的方案" — Stakeholder Requirements are the solution to Original Requirements
 
-**需求（Requirements）**：
-- "原始需求、相关方需求、系统需求"
-- "Original Requirements, Stakeholder Requirements, System Requirements"
-
-**方案（Solution）**：
-- "相关方需求是原始需求的方案"
-- "Stakeholder Requirements are the solution to Original Requirements"
-
-### 映射 vs 追溯
-
-**映射（Mapping）**：
-- "将需求映射到方案"
-- "Map requirements to solutions"
-
-**追溯（Traceability）**：
-- "建立双向追溯"
-- "Establish bidirectional traceability"
+### 分解 vs 分配 vs 符合性
+- "将需求分解到末级" — Decompose requirements to leaf level
+- "将末级条目分配到下层架构节点" — Allocate leaf items to lower-level architecture nodes
+- "验证方案满足需求" — Verify solution satisfies requirements
 
 ---
 
-## 🌐 国际化建议
-
-### 文档翻译
-
-如果需要将文档翻译成英文，建议：
-1. 使用本对照表中的标准术语
-2. 保持中英文对照的格式
-3. 在首次出现时标注英文
-4. 建立术语表供参考
-
-### 多语言支持
-
-建议的文件命名方式：
-```
-01-system-design-specification.md (中文)
-01-system-design-specification-en.md (英文)
-01-system-design-specification-zh.md (中文)
-```
-
----
-
-## 📝 术语更新记录
-
-| 日期 | 更新内容 | 版本 |
-|------|---------|------|
-| 2026-05-13 | 初版发布，包含核心术语对照 | v1.0 |
-| 2026-05-14 | 更新术语表以匹配设计准则 v2.2：移除质量指标术语，补充基本术语，更新场景分类和文件引用 | v1.1 |
-| 2026-05-18 | 纯化为流水线产品专属术语表：更新基本定义和文档名称，新增流水线产品架构构件分类 | v1.2 |
-| 2026-05-18 | 修正使用建议中的 EOS 标题和角色示例 | v1.3 |
-| 2026-05-22 | 新增产品架构分解原则术语（信息模型内聚性、NFR Profile相容性、信息处理模式一致性、三因素决策矩阵），对齐准则 v3.10 | v1.4 |
-
----
-
-**文档生成时间**：2026-05-22  
-**文档版本**：v1.4  
+**文档版本**：v2.0
 **状态**：✅ 完成
-
-**下一步**：
-- 根据流水线实际使用情况补充新术语
-- 定期审查和更新术语表（与准则和规范文档保持同步）
-- 收集团队L反馈，优化术语选择
