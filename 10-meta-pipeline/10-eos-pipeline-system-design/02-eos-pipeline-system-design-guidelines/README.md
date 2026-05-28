@@ -132,7 +132,7 @@
 - [系统设计准则](../01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md)
 - [通用设计指南](../../../../00-general/10-general-system-design-standards/02-general-system-design-4modes-guide.md)（通用方法论框架）
 - [流水线产品数据](../10-eos-pipeline-system-product-data/README.md)
-- [术语表](../01-eos-pipeline-system-design-specification/07-eos-pipeline-terminology-glossary.md)
+- [术语表](../01-eos-pipeline-system-design-specification/04-eos-pipeline-terminology-glossary.md)
 
 ---
 

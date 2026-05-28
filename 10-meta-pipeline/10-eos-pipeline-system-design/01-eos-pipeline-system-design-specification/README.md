@@ -14,7 +14,7 @@
 
 **用途**：EOS 流水线的系统设计规范——阅读前建议先了解通用准则的基本概念
 
-### 07-eos-pipeline-terminology-glossary.md
+### 04-eos-pipeline-terminology-glossary.md
 **系统设计英文术语对照表**
 
 - 核心术语对照（文档类型、5层结构、需求类型等）
@@ -34,7 +34,7 @@
 - 各层条目格式和编号规则 → 通用准则 §五（系统设计过程）对应步骤
 - 常见错误和 FAQ → 通用准则 §八
 - 检查清单 → 通用准则 §七
-- 术语对照 → 07-eos-pipeline-terminology-glossary.md
+- 术语对照 → 04-eos-pipeline-terminology-glossary.md
 
 ## 🔗 相关文档
 

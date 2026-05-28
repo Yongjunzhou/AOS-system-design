@@ -436,9 +436,8 @@
 ## 📞 需要帮助？
 
 - 📖 **详细指南**：查看设计指南目录下的各场景详细指南（01-04）
-- 📋 **设计准则**：查看《系统设计准则 v3.9》（01-eos-pipeline-system-design-standards.md）
-- 📚 **各层规范**：02-Pipeline原始需求规范、03-Pipeline相关方需求规范、04-Pipeline业务架构规范、05-Pipeline系统需求规范、06-Pipeline产品架构规范
-- 📖 **术语对照**：07-eos-pipeline-terminology-glossary.md
+- 📋 **设计准则**：01-eos-pipeline-system-design-standards.md
+- 📖 **术语对照**：04-eos-pipeline-terminology-glossary.md
 
 ---
 

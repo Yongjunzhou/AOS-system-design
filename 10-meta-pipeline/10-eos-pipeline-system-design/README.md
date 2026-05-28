@@ -32,8 +32,7 @@
 | 文档 | 说明 |
 |------|------|
 | 01-eos-pipeline-system-design-standards.md | 核心准则：5层结构、3条规则、质量指标 |
-| 02 ~ 06 | 各层通用规范（OR/SR/BA/SysReq/PA） |
-| 07-eos-pipeline-terminology-glossary.md | 术语英文对照表 |
+| 04-eos-pipeline-terminology-glossary.md | 术语英文对照表 |
 
 ### [02-eos-pipeline-system-design-guidelines/](02-eos-pipeline-system-design-guidelines/README.md)
 **四种场景的设计指南 — 两个项目参考**

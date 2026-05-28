@@ -112,7 +112,7 @@
 | 中文 | 英文 | 文件名 |
 |------|------|--------|
 | EOS 流水线系统设计准则 | EOS Pipeline System Design Standards | 01-eos-pipeline-system-design-standards.md |
-| 术语对照表 | Terminology Glossary | 07-eos-pipeline-terminology-glossary.md |
+| 术语对照表 | Terminology Glossary | 04-eos-pipeline-terminology-glossary.md |
 | 瀑布式设计指南 | Waterfall System Design Guide | 01-waterfall-eos-pipeline-system-design-guide.md |
 | 逆向工程设计指南 | Reverse Engineering System Design Guide | 02-reverse-engineering-eos-pipeline-system-design-guide.md |
 | 敏捷式设计指南 | Agile System Design Guide | 03-agile-eos-pipeline-system-design-guide.md |
