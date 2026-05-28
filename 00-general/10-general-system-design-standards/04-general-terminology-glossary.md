@@ -1,7 +1,7 @@
 # 通用术语对照表
 **General Terminology Glossary**
 
-**文档版本**：v2.2
+**文档版本**：v2.3
 **创建日期**：2026-05-18
 **修订日期**：2026-05-27
 **用途**：统一与具体产品无关的核心设计术语，便于国际化和技术交流。
@@ -74,12 +74,17 @@
 | 系统设计链路 | System Design Chain | 系统设计阶段中从原始需求到产品架构的完整设计链条（五层结构） |
 | IPO（输入→处理→输出） | Input-Process-Output | 业务架构（BA）的基本描述单元，每条 IPO 描述用户使用产品完成的一个原子操作步骤。BA 仅架构定义、无详细定义，IPO 自身承担"详细定义"角色 |
 | 运行概念说明 | Operational Concept (OpsCon) | 业务架构（BA）的本质——用户使用待开发系统开展期望业务的业务过程说明（ISO/IEC/IEEE 29148:2018） |
+| 目标产品 | Target Product (Product A) | 正在被系统设计的产品，统一称谓 |
+| 输出产品 | Output Product (Product B) | 流水线生产出来的产品，仅流水线类产品有此概念 |
+| 用户角色 | User Role | 与目标产品交互的所有外部实体（操作用户、外部系统、保障者、自然环境等） |
+| 用户角色架构锚定法 | User Role Architecture Anchoring Method | BA 开发的通用方法——以目标产品的全量用户角色集为推导锚点 |
+| 输出产品架构锚定法 | Output Product Architecture Anchoring Method | 流水线类产品的 BA 特化路径——以输出产品的 PA 节点类型为推导锚点,省略通用方法的角色遍历 |
 | 三层工作层面 | Three Work Levels | 第1层流水线设计（用通用方法论设计设计线自身）、第2层交付物构建（设计线的构件交付给团队M）、第3层使用工具设计EOS |
 | 跨领域通用 | Cross-domain General | 信息处理模式中前9类可在不同业务领域间共享同一信息化平台 |
 | 领域特有 | Domain-specific | 信息处理模式中后4类因领域差异需专用系统实现 |
 | 内嵌关系 | Embedded Relationship | 运营体系包含设计自身的规则和工具——设计线（系统设计流水线）作为工具内嵌于运营体系之中，支撑"设计运营体系本身"这项业务 |
 | 产品形态连续谱 | Product Morphology Spectrum | 产品从纯知识产品到纯软件产品到纯实物产品是连续谱，同一产品可沿谱演化 |
-| 产品类型 | Product Type | 产品的本质分类（知识/方法类、软件类、实物类），决定PA产物形态 |
+| 产品类型 | Product Type | 按实现形态分类（知识/方法类、软件类、实物类），决定PA产物形态。区别于本质分类（流水线类 vs 非流水线类） |
 | 知识组件的双重身份 | Dual Identity of Knowledge Components | EOS的知识组件（准则/指南/AI辅助/任务定义）同时是设计线的PA构件交付物和EOS的设计工具输入 |
 | PACE | Precision, Adaptability, Completeness, Efficiency | 刻画四种设计模式差异的四维度——**Precision**（精度：产出精细化程度）、**Adaptability**（适应性：对需求变化的响应能力）、**Completeness**（完备度：设计文档完整程度）、**Efficiency**（效率：设计执行时效性） |
 | L1/L2/L3 分析深度 | Compliance Analysis Depth Levels | 符合性分析的三个深度层次——**L1**快速自检（分解四检+分配三检）、**L2**语义符合性（覆盖度/映射正确性/分析具体性）、**L3**指标符合性（指标对应完整性/比较正确性/可验证性） |
