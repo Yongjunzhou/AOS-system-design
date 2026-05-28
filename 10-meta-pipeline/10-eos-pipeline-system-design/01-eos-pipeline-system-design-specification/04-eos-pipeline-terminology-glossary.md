@@ -1,7 +1,7 @@
 # EOS 流水线系统设计术语对照表
 **EOS Pipeline System Design — Terminology Glossary**
 
-**文档版本**：v2.0
+**文档版本**：v2.1
 **创建日期**：2026-05-28
 **用途**：统一 EOS 流水线系统设计领域的英中术语对照，便于文档写作和国际交流。
 
@@ -112,6 +112,7 @@
 | 中文 | 英文 | 文件名 |
 |------|------|--------|
 | EOS 流水线系统设计准则 | EOS Pipeline System Design Standards | 01-eos-pipeline-system-design-standards.md |
+| EOS 流水线系统设计 4 模式指南 | EOS Pipeline System Design 4-Modes Guide | 02-eos-pipeline-system-design-4modes-guide.md |
 | 术语对照表 | Terminology Glossary | 04-eos-pipeline-terminology-glossary.md |
 | 瀑布式设计指南 | Waterfall System Design Guide | 01-waterfall-eos-pipeline-system-design-guide.md |
 | 逆向工程设计指南 | Reverse Engineering System Design Guide | 02-reverse-engineering-eos-pipeline-system-design-guide.md |
@@ -134,5 +135,6 @@
 
 ---
 
-**文档版本**：v2.0
+**文档版本**：v2.1
+**最近修订**：2026-05-28
 **状态**：✅ 完成
