@@ -17,9 +17,9 @@
 
 | 继承内容 | 说明 | 保存位置 |
 |---------|------|---------|
-| 原始材料 | `../../90-eos-pipeline-system-product-data/_inputs/10-source-materials/` 中的原始材料文件 | `_inputs/10-source-materials/` 目录 |
-| 处理状态 | `../../90-eos-pipeline-system-product-data/_inputs/00-registry-log.md` 中的建议状态 | `00-registry-log.md` |
-| 现有 OR 基线 | `../../90-eos-pipeline-system-product-data/01-eos-pipeline-original-requirements.md` 已有的 OR 条目结构 | 产品数据文件 |
+| 原始材料 | `../../90-eos-system-product-data/_inputs/10-source-materials/` 中的原始材料文件 | `_inputs/10-source-materials/` 目录 |
+| 处理状态 | `../../90-eos-system-product-data/_inputs/00-registry-log.md` 中的建议状态 | `00-registry-log.md` |
+| 现有 OR 基线 | `../../90-eos-system-product-data/01-eos-original-requirements.md` 已有的 OR 条目结构 | 产品数据文件 |
 
 ### 1.2 决策记录机制
 
@@ -57,13 +57,13 @@
 ```
 请加载输入源并扫描待处理的原始材料。
 
-现有 OR 基线：[粘贴 ../../90-eos-pipeline-system-product-data/01-eos-pipeline-original-requirements.md 现有内容]
-输入源材料：[粘贴 ../../90-eos-pipeline-system-product-data/_inputs/10-source-materials/ 目录下的原始材料文件列表]
-处理状态记录：[粘贴 ../../90-eos-pipeline-system-product-data/_inputs/00-registry-log.md 中"建议状态=待处理"的记录]
+现有 OR 基线：[粘贴 ../../90-eos-system-product-data/01-eos-original-requirements.md 现有内容]
+输入源材料：[粘贴 ../../90-eos-system-product-data/_inputs/10-source-materials/ 目录下的原始材料文件列表]
+处理状态记录：[粘贴 ../../90-eos-system-product-data/_inputs/00-registry-log.md 中"建议状态=待处理"的记录]
 
 请执行：
 1. 确认当前工作模式：
-   ├─ 首次使用（v1 基线区为空 → 批量处理 `../../90-eos-pipeline-system-product-data/_inputs/10-source-materials/` 全部材料）
+   ├─ 首次使用（v1 基线区为空 → 批量处理 `../../90-eos-system-product-data/_inputs/10-source-materials/` 全部材料）
    └─ 增量追加（v1 基线区已有内容 → 处理"待处理"记录的新增材料）
 2. 列出所有待处理的原始材料片段清单（含提出方、日期）
 3. 输出：输入源摘要
@@ -72,7 +72,7 @@
    ├─ 涉及的相关方：[清单]
    └─ 时间范围：[最早日期 ~ 最晚日期]
 
-> **路径说明**：提示词中所有 `../../90-eos-pipeline-system-product-data/` 均相对于本提示词所在目录 `00-or-preprocessing/`。AI 在执行时解析为实际路径。
+> **路径说明**：提示词中所有 `../../90-eos-system-product-data/` 均相对于本提示词所在目录 `00-or-preprocessing/`。AI 在执行时解析为实际路径。
 ```
 
 ### 3.2 预处理（碎片整理 + 规范化 + 冲突检测）
@@ -148,7 +148,7 @@
 2. 写入位置决定：
    ├─ 首次使用 → 写入 v1 基线区，创建完整 OR 条目清单
    └─ 增量追加 → 写入 v2 新增区，保留与基线的关联标记
-3. 更新 `../../90-eos-pipeline-system-product-data/_inputs/00-registry-log.md`：
+3. 更新 `../../90-eos-system-product-data/_inputs/00-registry-log.md`：
    ├─ 将"建议状态=待处理"改为"处理状态=已完成"
    ├─ 标注对应的 OR 条目编号区间
    └─ 添加处理日期和说明
