@@ -24,11 +24,11 @@
 10-eos-pipeline-design/    元流水线的完整开发工作空间
 20-eos-design/             EOS 的完整开发工作空间（含 EOS 流水线构件）
 30-eos/                    EOS 产品本体（四条流水线的运行结果）
-30-eos/01-product-specification/  产品规格（设计线产出）
-30-eos/02-engines/                引擎实现（开发线产出）
-30-eos/03-configurations/         配置定义（开发线产出）
-30-eos/04-deployment/             部署交付（集成线产出）
-30-eos/05-operation/              运维数据（运维线产出）
+30-eos/10-product-specification/  产品规格（设计线产出）
+30-eos/20-engines/                引擎实现（开发线产出）
+30-eos/30-configurations/         配置定义（开发线产出）
+30-eos/40-deployment/             部署交付（集成线产出）
+30-eos/50-operation/              运维数据（运维线产出）
 200-put-on-hold/           归档的历史文件
 99-sessions/               历史会话记录
 ```

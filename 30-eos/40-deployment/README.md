@@ -11,7 +11,7 @@
 | `kubernetes/` | K8s 编排清单 | 待填充 |
 | `scripts/` | 部署/迁移脚本 | 待填充 |
 
-部署架构总览见 `01-product-specification/05-deployment-arch.md`。
+部署架构总览见 `10-product-specification/05-deployment-arch.md`。
 
 ## 说明
 

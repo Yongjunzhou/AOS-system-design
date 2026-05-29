@@ -18,5 +18,5 @@
 
 ## 说明
 
-- 配置类型清单与 `01-product-specification/03-configuration-catalog.md` 一致
+- 配置类型清单与 `10-product-specification/03-configuration-catalog.md` 一致
 - 本目录阶段1（系统设计）为空，阶段2（构件开发）启动后逐步填充

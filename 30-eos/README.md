@@ -6,24 +6,24 @@
 
 | 流水线 | 产出 | 30-eos/ 对应目录 |
 |--------|------|----------------|
-| 系统设计线 | 定义产品规格（架构、引擎清单、配置类型） | `01-product-specification/` |
-| 组件开发线 | 实现引擎代码、配置定义文件 | `02-engines/` + `03-configurations/` |
-| 集成交付线 | 打包部署、测试验证 | `04-deployment/` |
-| 系统运维线 | 监控、事件、容量 | `05-operation/` |
+| 系统设计线 | 定义产品规格（架构、引擎清单、配置类型） | `10-product-specification/` |
+| 组件开发线 | 实现引擎代码、配置定义文件 | `20-engines/` + `30-configurations/` |
+| 集成交付线 | 打包部署、测试验证 | `40-deployment/` |
+| 系统运维线 | 监控、事件、容量 | `50-operation/` |
 
 ## 当前阶段
 
-EOS 开发处于**阶段1（系统设计）**，本目录仅有 `01-product-specification/` 的内容。其余目录为框架占位，待对应流水线启动后逐步填充。
+EOS 开发处于**阶段1（系统设计）**，本目录仅有 `10-product-specification/` 的内容。其余目录为框架占位，待对应流水线启动后逐步填充。
 
 ## 目录结构
 
 ```
 30-eos/
-├── 01-product-specification/    ← 产品规格说明（设计线产出）
-├── 02-engines/                  ← 引擎实现（开发线产出）
-├── 03-configurations/           ← 配置定义（开发线产出）
-├── 04-deployment/               ← 部署交付（集成线产出）
-└── 05-operation/                ← 运维数据（运维线产出）
+├── 10-product-specification/    ← 产品规格说明（设计线产出）
+├── 20-engines/                  ← 引擎实现（开发线产出）
+├── 30-configurations/           ← 配置定义（开发线产出）
+├── 40-deployment/               ← 部署交付（集成线产出）
+└── 50-operation/                ← 运维数据（运维线产出）
 ```
 
 详见各目录内的 README。

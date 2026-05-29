@@ -41,6 +41,6 @@ form-engine/
 
 ## 说明
 
-- 引擎清单与 `01-product-specification/02-engine-catalog.md` 一致
+- 引擎清单与 `10-product-specification/02-engine-catalog.md` 一致
 - 各引擎的规格定义见产品规格说明，实现在此目录按构件展开
 - 本目录阶段1（系统设计）为空，阶段2（构件开发）启动后逐步填充
