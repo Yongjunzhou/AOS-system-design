@@ -79,7 +79,7 @@
 - 产品代码和架构图纸（可选，仅在需要从代码重建PA时使用）
 
 ### 涉及规范
-- [通用设计准则 §五.7 PA节点属性](../../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#57-pa节点属性)
+- [通用设计准则 §五.7 PA节点属性](../../../../00-general/10-general-system-design-standards/01-general-system-design-specification.md#57-pa节点属性)
 
 ### 决策框架参考
 
@@ -240,7 +240,7 @@
 - 第1步产出的产物总览清单
 
 ### 涉及规范
-- [通用设计准则 §五.7 PA节点属性](../../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#57-pa节点属性)
+- [通用设计准则 §五.7 PA节点属性](../../../../00-general/10-general-system-design-standards/01-general-system-design-specification.md#57-pa节点属性)
 
 ### 决策框架参考
 
@@ -404,7 +404,7 @@ PA-XXX 详细定义:
 - 第2步产出的产品架构文档
 
 ### 涉及规范
-- [通用设计准则 §五.6 SysReq条目格式](../../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#56-sysreq条目格式)
+- [通用设计准则 §五.6 SysReq条目格式](../../../../00-general/10-general-system-design-standards/01-general-system-design-specification.md#56-sysreq条目格式)
 
 ### 决策框架参考
 
@@ -627,7 +627,7 @@ SysReq 5 级节点清单：
 - 第3步同步建立的业务架构骨架
 
 ### 涉及规范
-- [通用设计准则 §五.5 BA业务架构](../../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#55-ba业务架构)
+- [通用设计准则 §五.5 BA业务架构](../../../../00-general/10-general-system-design-standards/01-general-system-design-specification.md#55-ba业务架构)
 
 ### 决策框架参考
 
@@ -781,7 +781,7 @@ IPO 去重报告：
 - 第4步同步建立的相关方需求骨架
 
 ### 涉及规范
-- [通用设计准则 §五.4 SR详细定义](../../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#54-sr详细定义)
+- [通用设计准则 §五.4 SR详细定义](../../../../00-general/10-general-system-design-standards/01-general-system-design-specification.md#54-sr详细定义)
 
 ### 决策框架参考
 
@@ -933,7 +933,7 @@ SR-F-XXX: [名称]（3级·架构末级节点）
 - 第5步产出的相关方需求文档
 
 ### 涉及规范
-- [通用设计准则 §五.3 OR条目格式](../../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md#53-or条目格式)
+- [通用设计准则 §五.3 OR条目格式](../../../../00-general/10-general-system-design-standards/01-general-system-design-specification.md#53-or条目格式)
 
 ### 决策框架参考
 
@@ -1089,9 +1089,9 @@ OR-XXX: [原始需求名称]
 - 第1~6步产出的全部设计文档
 
 ### 涉及规范
-- [系统设计准则 §5 验收标准](../../10-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md#五验收标准)
-- [系统设计准则 §6 检查清单](../../10-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md#六检查清单)
-- [系统设计准则 §3.2 三条核心规则](../../10-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md#32-三条核心规则)
+- [系统设计准则 §5 验收标准](../../10-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-specification.md#五验收标准)
+- [系统设计准则 §6 检查清单](../../10-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-specification.md#六检查清单)
+- [系统设计准则 §3.2 三条核心规则](../../10-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-specification.md#32-三条核心规则)
 
 ### 决策框架参考
 

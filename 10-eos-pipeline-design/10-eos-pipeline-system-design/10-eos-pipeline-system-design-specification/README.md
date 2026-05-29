@@ -1,18 +1,26 @@
-# 系统设计准则
+# 系统设计规范
 
-**目录用途**：包含 EOS 流水线的系统设计准则和术语对照。各层通用方法条目格式已并入 [通用准则](../../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md) §五（系统设计过程）。
+**目录用途**：包含 EOS 流水线的系统设计规范和术语对照。各层通用方法条目格式已并入 [通用设计规范](../../../../00-general/10-general-system-design-standards/01-general-system-design-specification.md) §五（系统设计过程）。
 
 ## 📚 本目录文档
 
-### 01-eos-pipeline-system-design-standards.md
-**EOS 流水线系统设计准则**
+### 01-eos-pipeline-system-design-specification.md
+**EOS 流水线系统设计规范**（合并版）
 
+**第一部分（§零~§六）**：继承原设计准则
 - EOS 流水线的产品语境和特有设计框架（三层工作层面、PA 节点定义原则、信息处理模式）
-- 通用方法论精要（摘要引用自通用准则）
+- 通用方法论精要（摘要引用自通用设计规范）
 - **§四 各层设计指引**：流水线特有场景化指导（OR/SR/BA/SysReq/PA 各层实例）
 - EOS 流水线验收标准和常见错误
 
-**用途**：EOS 流水线的系统设计规范——阅读前建议先了解通用准则的基本概念
+**第二部分（§七~§十四）**：继承原 4 模式指南
+- 四种设计模式的操作框架、角色职责、操作流程骨架
+- 独立指南的生成框架（统一模板、编号规则、填充规则）
+- 质量门禁、交付物全景、检查清单模板
+
+**用途**：EOS 流水线的系统设计规范——阅读前建议先了解通用设计规范的基本概念
+
+> **合并说明**：原 `01-eos-pipeline-system-design-standards.md`（设计准则）和 `02-eos-pipeline-system-design-4modes-guide.md`（4模式指南）已合并为本文件。旧文档已归档至 `200-put-on-hold/00-archived-spec-docs/eos-pipeline/`。
 
 ### 04-eos-pipeline-terminology-glossary.md
 **系统设计英文术语对照表**
@@ -26,24 +34,23 @@
 ## 📖 使用建议
 
 ### 第一次阅读
-1. 先读[通用准则](../../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md) §一~§二 建立方法论基础
-2. 再读准则 01 的 §一~§二（EOS 流水线的产品语境和特有框架）
-3. 继续读准则 01 的 §四（各层设计指引），结合通用准则 §五 对照阅读
+1. 先读[通用设计规范](../../../../00-general/10-general-system-design-standards/01-general-system-design-specification.md) §一~§二 建立方法论基础
+2. 再读本文 §一~§二（EOS 流水线的产品语境和特有框架）
+3. 继续读本文 §四（各层设计指引），结合通用设计规范 §五 对照阅读
 
 ### 日常参考
-- 各层条目格式和编号规则 → 通用准则 §五（系统设计过程）对应步骤
-- 常见错误和 FAQ → 通用准则 §八
-- 检查清单 → 通用准则 §七
+- 各层条目格式和编号规则 → 通用设计规范 §五（系统设计过程）对应步骤
+- 常见错误和 FAQ → §六
+- 检查清单 → 通用设计规范 §七 + 本文 §十四
 - 术语对照 → 04-eos-pipeline-terminology-glossary.md
 
 ## 🔗 相关文档
 
-- [通用设计准则](../../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md)
-- [通用4模式指南](../../../../00-general/10-general-system-design-standards/02-general-system-design-4modes-guide.md)
+- [通用设计规范](../../../../00-general/10-general-system-design-standards/01-general-system-design-specification.md)
 - [EOS 流水线 AI 辅助文档](../30-eos-pipeline-system-design-ai-support/README.md)
 - [流水线产品数据](../90-eos-pipeline-system-product-data/README.md)
 
 ---
 
 **版本**：v2.0
-**最后更新**：2026-05-28
+**最后更新**：2026-05-29

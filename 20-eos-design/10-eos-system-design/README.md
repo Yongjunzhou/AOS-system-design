@@ -31,7 +31,7 @@
 
 | 文档 | 说明 |
 |------|------|
-| 01-eos-system-design-standards.md | 核心准则：5层结构、3条规则、多产品设计关系 |
+| 01-eos-system-design-specification.md | 核心规范：5层结构、3条规则、多产品设计关系（含四种设计模式） |
 | 04-eos-system-design-terminology-glossary.md | 术语对照表 |
 
 ### [20-eos-system-design-tasks/](20-eos-system-design-tasks/README.md)

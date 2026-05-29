@@ -6,23 +6,24 @@
 
 | 文件 | 内容 | 说明 |
 |------|------|------|
-| `01-general-system-design-standards.md` | 通用设计准则 | 五层结构方法论核心（OR → SR → BA → SysReq → PA）、基本术语、核心规则、验收标准、检查清单 |
-| `02-general-system-design-4modes-guide.md` | 通用设计指南概述 | 四种设计方法的框架描述及选择决策 |
+| `01-general-system-design-specification.md` | **通用系统设计规范**（合并版） | 第一部分（§一~§八）：五层结构方法论核心、基本术语、核心规则、验收标准、检查清单；第二部分（§九~§十二 + 附录）：四种设计模式的操作框架 |
 | `03-specification-template.md` | 规范文档通用模板 | 各层产品数据规范的标准结构和编写规范 |
-| `04-general-terminology-glossary.md` | 通用术语对照（v2.0） | 核心术语英中对照（11个分类：文档类型、产品开发阶段、5层结构、基本术语、需求类型及NFR三级分类、核心约束、设计方法、操作流程、节点编号规范、设计制品参考策略、质量与验证） |
+| `04-general-terminology-glossary.md` | 通用术语对照（v2.0） | 核心术语英中对照（11个分类） |
+
+> **合并说明**：原 `01-general-system-design-standards.md`（设计准则）和 `02-general-system-design-4modes-guide.md`（4模式指南）已合并为 `01-general-system-design-specification.md`。旧文档已归档至 `200-put-on-hold/00-archived-spec-docs/general/`。
 
 ## 与产品目录的关系
 
 ```
 00-general/                     # 通用方法论基础（产品无关）
-    01/02/03/04 文件
+    01/03/04 文件
 
-10-eos-pipeline-design/             # 元流水线：参考通用标准，按流水线场景适配
-    └── 准则/指南/AI辅助/产品数据
+10-eos-pipeline-design/             # 元流水线：参考通用规范，按流水线场景适配
+    └── 规范/指南/AI辅助/产品数据
 
-20-eos-design/                  # EOS 开发空间（含 EOS 流水线构件）：参考通用标准，按 EOS 领域适配
-    └── 准则/指南/AI辅助/产品数据
+20-eos-design/                  # EOS 开发空间（含 EOS 流水线构件）：参考通用规范，按 EOS 领域适配
+    └── 规范/指南/AI辅助/产品数据
 ```
 
 > **原则**：通用内容下沉到 `00-general/`，产品内容在各产品目录中独立维护。
-> 各产品目录通过「参考」（reference）的方式使用通用标准，而非直接共享文件。
+> 各产品目录通过「参考」（reference）的方式使用通用规范，而非直接共享文件。

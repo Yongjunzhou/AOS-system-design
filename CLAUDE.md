@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-为 Claude Code 提供本仓库的项目上下文和关键文件导航。系统设计方法论完整定义见[通用设计准则 v2.5](00-general/10-general-system-design-standards/01-general-system-design-standards.md)。
+为 Claude Code 提供本仓库的项目上下文和关键文件导航。系统设计方法论完整定义见[通用设计规范 v1.0](00-general/10-general-system-design-standards/01-general-system-design-specification.md)。
 
 ---
 
@@ -32,8 +32,7 @@
 ```
 00-general/                                         # 通用方法论（独立于三个产品）
 └── 10-general-system-design-standards/
-    ├── 01-general-system-design-standards.md        # 通用设计准则 v2.5（方法论核心）
-    ├── 02-general-system-design-4modes-guide.md     # 通用设计指南（四种方法框架）
+    ├── 01-general-system-design-specification.md    # 通用设计规范 v1.0（方法论核心 + 四种设计模式，合并版）
     ├── 03-specification-template.md                 # 规范文档通用模板
     └── 04-general-terminology-glossary.md           # 通用术语对照 v2.3
 
@@ -69,11 +68,10 @@
 
 ## 二、关键设计文件
 
-- [通用设计准则 v2.5](00-general/10-general-system-design-standards/01-general-system-design-standards.md) — 方法论核心：术语体系（§一）、四条工程化设计原则（§二）、文档结对设计（§三）、业务架构设计（§四，含两种 BA 开发方法：用户角色架构锚定法 §4.2.1 + 输出产品架构锚定法 §4.2.2）、系统设计过程（§五）、验收标准（§六）、检查清单（§七）
-- [通用设计指南 v2.1](00-general/10-general-system-design-standards/02-general-system-design-4modes-guide.md) — 四种设计场景的方法框架
+- [通用设计规范 v1.0](00-general/10-general-system-design-standards/01-general-system-design-specification.md) — 第一部分（§一~§八）：术语体系、四条工程化设计原则、文档结对设计、业务架构设计（两种 BA 开发方法）、系统设计过程、验收标准、检查清单；第二部分（§九~§十二 + 附录）：四种设计场景的方法框架
 - [通用术语对照表 v2.3](00-general/10-general-system-design-standards/04-general-terminology-glossary.md) — 核心术语英中对照
-- [EOS系统设计准则 v3.1](20-eos-design/10-eos-system-design/10-eos-system-design-specification/01-eos-system-design-standards.md) — EOS 产品特有设计规则（平台链/业务链、三层工作层面、端到端业务框架）
-- [元流水线设计准则](10-eos-pipeline-design/10-eos-pipeline-system-design/10-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md)
+- [EOS系统设计规范 v1.0](20-eos-design/10-eos-system-design/10-eos-system-design-specification/01-eos-system-design-specification.md) — EOS 产品特有设计规则（平台链/业务链、三层工作层面、端到端业务框架）+ 四种设计模式
+- [元流水线设计规范 v1.0](10-eos-pipeline-design/10-eos-pipeline-system-design/10-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-specification.md)
 - [元流水线 AI 文档理解要求](10-eos-pipeline-design/10-eos-pipeline-system-design/30-eos-pipeline-system-design-ai-support/00-ai-document-requirements-understanding.md)
 - [EOS AI 辅助概览](20-eos-design/10-eos-system-design/30-eos-system-design-ai-support/00-overview.md)
 

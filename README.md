@@ -43,7 +43,7 @@
 
 | 如果你想 | 请阅读 |
 |---------|--------|
-| 理解方法论核心（五层结构、核心规则、六步法） | [`00-general/10-general-system-design-standards/01-general-system-design-standards.md`](00-general/10-general-system-design-standards/01-general-system-design-standards.md) |
+| 理解方法论核心（五层结构、核心规则、六步法 + 四种设计模式） | [`00-general/10-general-system-design-standards/01-general-system-design-specification.md`](00-general/10-general-system-design-standards/01-general-system-design-specification.md) |
 | 理解三个产品的关系和构造链 | [`CLAUDE.md`](CLAUDE.md) §「三层产品构造链」 |
 | 了解仓库完整目录结构 | [`CLAUDE.md`](CLAUDE.md) §「实际目录结构」 |
 | 获得项目全貌（AI 工作指引） | [`CLAUDE.md`](CLAUDE.md) |
@@ -58,7 +58,7 @@
 OR（原始需求）→ SR（相关方需求）→ BA（业务架构）→ SysReq（系统需求）→ PA（产品架构）
 ```
 
-三条核心规则：**1:1 分配约束**、**N:1 承接支持**、**双向追溯**。详见[通用设计准则](00-general/10-general-system-design-standards/01-general-system-design-standards.md)。
+三条核心规则：**1:1 分配约束**、**N:1 承接支持**、**双向追溯**。详见[通用设计规范](00-general/10-general-system-design-standards/01-general-system-design-specification.md)。
 
 本项目包含三个产品，构成一条三层产品构造链：元流水线 → EOS 流水线 → EOS。详见 [`CLAUDE.md`](CLAUDE.md) §「三层产品构造链」。
 
