@@ -598,7 +598,6 @@ EOS 的产品数据：    01-OR → 02/03-SR → 04-BA → 05/06-SysReq → 07-P
 20-eos-design/10-eos-system-design/
 ├── 10-eos-system-design-specification/     ← EOS 流水线构件：准则
 ├── 20-eos-system-design-tasks/             ← EOS 流水线构件：任务定义
-├── 30-eos-system-design-ai-support/        ← EOS 流水线构件：AI 辅助
 └── 90-eos-system-product-data/            ← EOS 的设计输出
         ↑                                    ↑
   设计线的工具                          EOS 的成果
@@ -613,9 +612,8 @@ EOS 的产品数据：    01-OR → 02/03-SR → 04-BA → 05/06-SysReq → 07-P
 | 核心方法论 | `00-general/.../01-general-system-design-standards.md` |
 | 两种 BA 方法 | 同上 §4.2 |
 | 术语对照 | `00-general/.../04-general-terminology-glossary.md` |
-| 快速参考卡 | `10-eos-pipeline-design/.../05-quick-reference-card.md` |
-| 任务定义样例 | 任一 `04-tasks/` 下的文档 |
-| 设计线产品架构 | `.../10-product-data/07-product-architecture.md` |
+| 任务定义样例 | 任一 `20-eos-pipeline-system-design-tasks/` 下的文档 |
+| 设计线产品架构 | `90-eos-pipeline-system-product-data/07-eos-pipeline-product-architecture.md` |
 
 ---
 
@@ -669,5 +667,4 @@ EOS 的产品数据：    01-OR → 02/03-SR → 04-BA → 05/06-SysReq → 07-P
 | 两种 BA 方法 | 同上 §4.2 |
 | 术语英中对照 | `00-general/.../04-general-terminology-glossary.md` |
 | 四种场景决策 | `00-general/.../02-general-system-design-4modes-guide.md` |
-| 快速参考卡 | `10-eos-pipeline-design/.../05-quick-reference-card.md` |
 | EOS 设计准则 | `20-eos-design/.../01-eos-system-design-standards.md` |
