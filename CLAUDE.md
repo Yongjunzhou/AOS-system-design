@@ -12,7 +12,7 @@
 |------|------|---------|
 | **企业运营体系（EOS）** | 被构建和运维的目标系统——企业运营体系的**信息化形态**（流水线类产品），覆盖市场、研发、生产、售后和管理等业务。当前实现形态为可配置平台 | `20-eos-design/`（设计），`30-eos-operation/`（产品本体） |
 | **EOS 流水线** | 服务于 EOS 全生命周期的流水线，由**设计线**（系统设计）、**开发线**（组件开发）、**集成线**（集成交付）、**运维线**（系统运维）四子线组成。当前仅设计线已完成 | 构件位于 `20-eos-design/.../01~04-*` |
-| **元流水线** | 用于设计 EOS 流水线的流水线。按四阶段开发：系统设计（已完成）、构件开发/集成交付/系统运维（待扩展） | `10-meta-pipeline/` |
+| **元流水线** | 用于设计 EOS 流水线的流水线。按四阶段开发：系统设计（已完成）、构件开发/集成交付/系统运维（待扩展） | `10-eos-pipeline-design/` |
 
 ### 三层构造链
 
@@ -23,7 +23,7 @@
 
 | 层 | 内容 | 产出位置 |
 |----|------|---------|
-| **第1层** | 元流水线构建：构建元流水线自身 + 用其设计 EOS 流水线 | `10-meta-pipeline/` |
+| **第1层** | 元流水线构建：构建元流水线自身 + 用其设计 EOS 流水线 | `10-eos-pipeline-design/` |
 | **第2层** | EOS 流水线构建：展开为各子线的操作规程（准则/指南/AI 辅助/任务定义） | `20-eos-design/.../01~04-*` |
 | **第3层** | EOS 构建与运维：使用 EOS 流水线做系统设计（当前）、开发、集成、运维 | `20-eos-design/` |
 
@@ -37,7 +37,7 @@
     ├── 03-specification-template.md                 # 规范文档通用模板
     └── 04-general-terminology-glossary.md           # 通用术语对照 v2.3
 
-10-meta-pipeline/                                   # 元流水线——EOS 流水线开发空间
+10-eos-pipeline-design/                                   # 元流水线——EOS 流水线开发空间
 └── 10-eos-pipeline-system-design/                  # 元流水线的系统设计（当前范围）
     ├── 01-*specification/                              # 准则（通用方法论 + 元流水线专有）
     ├── 02-*guidelines/                                 # 四种场景的设计指南
@@ -68,11 +68,11 @@
 - [通用设计指南 v2.1](00-general/10-general-system-design-standards/02-general-system-design-4modes-guide.md) — 四种设计场景的方法框架
 - [通用术语对照表 v2.3](00-general/10-general-system-design-standards/04-general-terminology-glossary.md) — 核心术语英中对照
 - [EOS系统设计准则 v3.1](20-eos-design/10-eos-system-design/10-eos-system-design-specification/01-eos-system-design-standards.md) — EOS 产品特有设计规则（平台链/业务链、三层工作层面、端到端业务框架）
-- [元流水线设计准则](10-meta-pipeline/10-eos-pipeline-system-design/10-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md)
-- [元流水线 AI 文档理解要求](10-meta-pipeline/10-eos-pipeline-system-design/30-eos-pipeline-system-design-ai-support/00-ai-document-requirements-understanding.md)
+- [元流水线设计准则](10-eos-pipeline-design/10-eos-pipeline-system-design/10-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md)
+- [元流水线 AI 文档理解要求](10-eos-pipeline-design/10-eos-pipeline-system-design/30-eos-pipeline-system-design-ai-support/00-ai-document-requirements-understanding.md)
 - [EOS AI 辅助概览](20-eos-design/10-eos-system-design/30-eos-system-design-ai-support/00-overview.md)
 
-元流水线的操作规程（任务定义）位于 `10-meta-pipeline/10-eos-pipeline-system-design/20-eos-pipeline-system-design-tasks/` 各场景目录下；EOS 流水线的任务定义位于 `20-eos-design/10-eos-system-design/20-eos-system-design-tasks/` 下。
+元流水线的操作规程（任务定义）位于 `10-eos-pipeline-design/10-eos-pipeline-system-design/20-eos-pipeline-system-design-tasks/` 各场景目录下；EOS 流水线的任务定义位于 `20-eos-design/10-eos-system-design/20-eos-system-design-tasks/` 下。
 
 ---
 
@@ -110,10 +110,10 @@
 
 | 场景 | 适用情况 | 周期 | 操作指引 |
 |------|---------|------|---------|
-| 瀑布式 | 全新系统，需求明确 | 30-48天 | [瀑布式工作流](10-meta-pipeline/10-eos-pipeline-system-design/30-eos-pipeline-system-design-ai-support/01-waterfall-eos-pipeline-system-design/workflow-prompts.md) |
-| 敏捷式 | 迭代开发，需求渐进 | 13-21天 | [敏捷式工作流](10-meta-pipeline/10-eos-pipeline-system-design/30-eos-pipeline-system-design-ai-support/03-agile-eos-pipeline-system-design/workflow-prompts.md) |
-| 逆向工程 | 已有系统补文档 | 16-26天 | [逆向工程工作流](10-meta-pipeline/10-eos-pipeline-system-design/30-eos-pipeline-system-design-ai-support/02-reverse-engineering-eos-pipeline-system-design/workflow-prompts.md) |
-| DevOps | 小变更快速交付 | 几小时-3天 | [DevOps 工作流](10-meta-pipeline/10-eos-pipeline-system-design/30-eos-pipeline-system-design-ai-support/04-devops-eos-pipeline-system-design/workflow-prompts.md) |
+| 瀑布式 | 全新系统，需求明确 | 30-48天 | [瀑布式工作流](10-eos-pipeline-design/10-eos-pipeline-system-design/30-eos-pipeline-system-design-ai-support/01-waterfall-eos-pipeline-system-design/workflow-prompts.md) |
+| 敏捷式 | 迭代开发，需求渐进 | 13-21天 | [敏捷式工作流](10-eos-pipeline-design/10-eos-pipeline-system-design/30-eos-pipeline-system-design-ai-support/03-agile-eos-pipeline-system-design/workflow-prompts.md) |
+| 逆向工程 | 已有系统补文档 | 16-26天 | [逆向工程工作流](10-eos-pipeline-design/10-eos-pipeline-system-design/30-eos-pipeline-system-design-ai-support/02-reverse-engineering-eos-pipeline-system-design/workflow-prompts.md) |
+| DevOps | 小变更快速交付 | 几小时-3天 | [DevOps 工作流](10-eos-pipeline-design/10-eos-pipeline-system-design/30-eos-pipeline-system-design-ai-support/04-devops-eos-pipeline-system-design/workflow-prompts.md) |
 
 ---
 

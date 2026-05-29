@@ -100,7 +100,7 @@ Marp 幻灯片版团队讲解材料
 ```
 第1层：元流水线构建
   团队L → 用五层结构设计元流水线自身
-  → 产出：元流水线的9份产品数据（10-meta-pipeline/）
+  → 产出：元流水线的9份产品数据（10-eos-pipeline-design/）
 
 第2层：EOS 流水线交付物构建
   团队L → 将 EOS 流水线构件适配为设计工具
@@ -575,7 +575,7 @@ EOS 的产品数据：    01-OR → 02/03-SR → 04-BA → 05/06-SysReq → 07-P
 | 目录 | 对应产品 | 对应层面 |
 |------|---------|---------|
 | `00-general/` | 通用方法论 | 产品无关 |
-| `10-meta-pipeline/` | 元流水线 | 第1层 |
+| `10-eos-pipeline-design/` | 元流水线 | 第1层 |
 | `20-eos-design/` | EOS 流水线 + EOS | 第2层 + 第3层 |
 
 ---
@@ -583,7 +583,7 @@ EOS 的产品数据：    01-OR → 02/03-SR → 04-BA → 05/06-SysReq → 07-P
 ### 元流水线目录
 
 ```
-10-meta-pipeline/10-eos-pipeline-system-design/
+10-eos-pipeline-design/10-eos-pipeline-system-design/
 ├── 10-eos-pipeline-system-design-specification/  准则
 ├── 20-eos-pipeline-system-design-tasks/          任务定义
 ├── 30-eos-pipeline-system-design-ai-support/     AI 辅助
@@ -613,7 +613,7 @@ EOS 的产品数据：    01-OR → 02/03-SR → 04-BA → 05/06-SysReq → 07-P
 | 核心方法论 | `00-general/.../01-general-system-design-standards.md` |
 | 两种 BA 方法 | 同上 §4.2 |
 | 术语对照 | `00-general/.../04-general-terminology-glossary.md` |
-| 快速参考卡 | `10-meta-pipeline/.../05-quick-reference-card.md` |
+| 快速参考卡 | `10-eos-pipeline-design/.../05-quick-reference-card.md` |
 | 任务定义样例 | 任一 `04-tasks/` 下的文档 |
 | 设计线产品架构 | `.../10-product-data/07-product-architecture.md` |
 
@@ -669,5 +669,5 @@ EOS 的产品数据：    01-OR → 02/03-SR → 04-BA → 05/06-SysReq → 07-P
 | 两种 BA 方法 | 同上 §4.2 |
 | 术语英中对照 | `00-general/.../04-general-terminology-glossary.md` |
 | 四种场景决策 | `00-general/.../02-general-system-design-4modes-guide.md` |
-| 快速参考卡 | `10-meta-pipeline/.../05-quick-reference-card.md` |
+| 快速参考卡 | `10-eos-pipeline-design/.../05-quick-reference-card.md` |
 | EOS 设计准则 | `20-eos-design/.../01-eos-system-design-standards.md` |
