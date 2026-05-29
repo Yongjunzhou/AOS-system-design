@@ -21,15 +21,19 @@
 
 ```
 00-general/                 通用系统设计方法论（产品无关）
-10-eos-pipeline-design/        元流水线的完整开发工作空间
+10-eos-pipeline-design/    元流水线的完整开发工作空间
 20-eos-design/             EOS 的完整开发工作空间（含 EOS 流水线构件）
-30-eos/          EOS 产品本身——各业务线及业务数据
-
+30-eos/                    EOS 产品本体（四条流水线的运行结果）
+30-eos/01-product-specification/  产品规格（设计线产出）
+30-eos/02-engines/                引擎实现（开发线产出）
+30-eos/03-configurations/         配置定义（开发线产出）
+30-eos/04-deployment/             部署交付（集成线产出）
+30-eos/05-operation/              运维数据（运维线产出）
 200-put-on-hold/           归档的历史文件
 99-sessions/               历史会话记录
 ```
 
-每个产品的工作空间按产品开发三阶段组织：`10-*-system-design/`（阶段1：系统设计）、`20-*-component-dev/`（阶段2：构件开发，待扩展）、`30-*-integration-delivery/`（阶段3：集成交付，待扩展）。此外，`30-eos/` 为 EOS 产品本体。
+每个产品的工作空间按产品开发三阶段组织：`10-*-system-design/`（阶段1：系统设计）、`20-*-component-dev/`（阶段2：构件开发，待扩展）、`30-*-integration-delivery/`（阶段3：集成交付，待扩展）。此外，`30-eos/` 为 EOS 产品本体，按四条流水线的产出组织为五个子目录。
 
 详见 [`CLAUDE.md`](CLAUDE.md) 中的完整目录结构和三层产品构造链说明。
 

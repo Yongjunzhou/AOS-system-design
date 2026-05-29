@@ -55,7 +55,12 @@
 ├── 20-eos-component-dev/                           # 构件开发（待扩展）
 └── 30-eos-integration-delivery/                    # 集成交付（待扩展）
 
-30-eos/                   # EOS 产品本体（待填充）
+30-eos/                   # EOS 产品本体（四条流水线的运行结果）
+│   ├── 01-product-specification/            # 产品规格（设计线产出）
+│   ├── 02-engines/                          # 引擎实现（开发线产出）
+│   ├── 03-configurations/                   # 配置定义（开发线产出）
+│   ├── 04-deployment/                       # 部署交付（集成线产出）
+│   └── 05-operation/                        # 运维数据（运维线产出）
 200-put-on-hold/                    # 归档
 99-sessions/                        # 历史会话记录
 ```
