@@ -3,7 +3,7 @@
 > **前置说明**：本步骤仅在 PA 文档不存在或质量严重不足时执行。若 PA 文档已存在且质量满足要求，请跳过本步骤，直接进入第3步。
 
 **对应场景**：02-reverse-engineering · 第2步（前置准备）
-**对应 AI 模板**：`03-eos-system-design-ai-support/02-reverse-engineering-eos-system-design/workflow-prompts.md` 第2步
+**对应 AI 模板**：`30-eos-system-design-ai-support/02-reverse-engineering-eos-system-design/workflow-prompts.md` 第2步
 **版本**：v1.2
 **创建日期**：2026-05-21
 **最近修订**：2026-05-22
@@ -68,4 +68,4 @@
 
 | 文件 | 说明 |
 |------|------|
-| 产品架构定义子文档 | `10-eos-system-product-data/07-product-architecture.md` |
+| 产品架构定义子文档 | `90-eos-system-product-data/07-product-architecture.md` |

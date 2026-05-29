@@ -584,11 +584,10 @@ EOS 的产品数据：    01-OR → 02/03-SR → 04-BA → 05/06-SysReq → 07-P
 
 ```
 10-meta-pipeline/10-eos-pipeline-system-design/
-├── 01-eos-pipeline-system-design-specification/  准则
-├── 02-eos-pipeline-system-design-guidelines/     指南
-├── 03-eos-pipeline-system-design-ai-support/     AI 辅助
-├── 04-eos-pipeline-system-design-tasks/          任务定义
-└── 10-eos-pipeline-system-product-data/          产品数据
+├── 10-eos-pipeline-system-design-specification/  准则
+├── 20-eos-pipeline-system-design-tasks/          任务定义
+├── 30-eos-pipeline-system-design-ai-support/     AI 辅助
+└── 90-eos-pipeline-system-product-data/          产品数据
 ```
 
 ---
@@ -597,11 +596,10 @@ EOS 的产品数据：    01-OR → 02/03-SR → 04-BA → 05/06-SysReq → 07-P
 
 ```
 20-eos-design/10-eos-system-design/
-├── 01-eos-system-design-specification/     ← EOS 流水线构件：准则
-├── 02-eos-system-design-guidelines/        ← EOS 流水线构件：指南
-├── 03-eos-system-design-ai-support/        ← EOS 流水线构件：AI 辅助
-├── 04-eos-system-design-tasks/            ← EOS 流水线构件：任务定义
-└── 10-eos-system-product-data/            ← EOS 的设计输出
+├── 10-eos-system-design-specification/     ← EOS 流水线构件：准则
+├── 20-eos-system-design-tasks/             ← EOS 流水线构件：任务定义
+├── 30-eos-system-design-ai-support/        ← EOS 流水线构件：AI 辅助
+└── 90-eos-system-product-data/            ← EOS 的设计输出
         ↑                                    ↑
   设计线的工具                          EOS 的成果
 ```

@@ -62,8 +62,7 @@
 - 现有 EOS 完整系统设计文档集（基线）
 
 ### 涉及规范
-- [敏捷式设计指南 §第1步](../02-eos-system-design-guidelines/03-agile-design-guide.md#第1步新需求分析和分类)
-- [原始需求规范 §1 核心概念](../01-eos-system-design-specification/02-original-requirements-specification.md#一核心概念)
+- [原始需求规范 §1 核心概念](../10-eos-system-design-specification/02-original-requirements-specification.md#一核心概念)
 
 ### 决策框架参考
 
@@ -190,8 +189,7 @@ EOS 新需求 [OR-XXX]
 - 第1步产出的新需求分析报告
 
 ### 涉及规范
-- [原始需求规范 §3 分解规范](../01-eos-system-design-specification/02-original-requirements-specification.md#三分解规范)
-- [敏捷式设计指南 §第2步](../02-eos-system-design-guidelines/03-agile-design-guide.md#第2步新需求分解)
+- [原始需求规范 §3 分解规范](../10-eos-system-design-specification/02-original-requirements-specification.md#三分解规范)
 
 ### 决策框架参考
 
@@ -305,9 +303,8 @@ OR-XXX: [需求标题]
 - 现有 EOS 相关方需求文档（基线）
 
 ### 涉及规范
-- [相关方需求规范 §2 架构定义规范](../01-eos-system-design-specification/03-stakeholder-requirements-specification.md#二架构定义规范)
-- [相关方需求规范 §3 详细定义规范](../01-eos-system-design-specification/03-stakeholder-requirements-specification.md#三详细定义规范)
-- [敏捷式设计指南 §第3步](../02-eos-system-design-guidelines/03-agile-design-guide.md#第3步相关方需求影响分析)
+- [相关方需求规范 §2 架构定义规范](../10-eos-system-design-specification/03-stakeholder-requirements-specification.md#二架构定义规范)
+- [相关方需求规范 §3 详细定义规范](../10-eos-system-design-specification/03-stakeholder-requirements-specification.md#三详细定义规范)
 
 ### 决策框架参考
 
@@ -419,9 +416,8 @@ OR-XXX: [需求标题]
 - 现有 EOS 业务架构文档（基线）
 
 ### 涉及规范
-- [业务架构规范 §2 架构定义规范](../01-eos-system-design-specification/04-business-architecture-specification.md#二架构定义规范)
-- [业务架构规范 §4.3 去重机制](../01-eos-system-design-specification/04-business-architecture-specification.md#43-去重机制)
-- [敏捷式设计指南 §第4步](../02-eos-system-design-guidelines/03-agile-design-guide.md#第4步业务架构影响分析)
+- [业务架构规范 §2 架构定义规范](../10-eos-system-design-specification/04-business-architecture-specification.md#二架构定义规范)
+- [业务架构规范 §4.3 去重机制](../10-eos-system-design-specification/04-business-architecture-specification.md#43-去重机制)
 
 ### 决策框架参考
 
@@ -530,8 +526,7 @@ BA 影响分析报告：[粘贴4a的输出]
 - 现有 EOS 系统需求文档（基线）
 
 ### 涉及规范
-- [系统需求规范 §2 架构定义规范](../01-eos-system-design-specification/05-system-requirements-specification.md#二架构定义规范)
-- [敏捷式设计指南 §第5步](../02-eos-system-design-guidelines/03-agile-design-guide.md#第5步系统需求影响分析)
+- [系统需求规范 §2 架构定义规范](../10-eos-system-design-specification/05-system-requirements-specification.md#二架构定义规范)
 
 ### 决策框架参考
 
@@ -635,9 +630,9 @@ SysReq-F-00N: [名称]（5级·架构末级）
 - 现有 EOS 产品架构文档（基线）
 
 ### 涉及规范
-- [系统设计准则 §2.4 产品架构分解原则](../01-eos-system-design-specification/01-eos-system-design-standards.md#24-产品架构分解原则)
-- [产品架构规范 §2 架构定义规范](../01-eos-system-design-specification/06-eos-product-architecture-specification.md#二架构定义规范)
-- [产品架构规范 §3 详细定义规范](../01-eos-system-design-specification/06-eos-product-architecture-specification.md#三详细定义规范)
+- [系统设计准则 §2.4 产品架构分解原则](../10-eos-system-design-specification/01-eos-system-design-standards.md#24-产品架构分解原则)
+- [产品架构规范 §2 架构定义规范](../10-eos-system-design-specification/06-eos-product-architecture-specification.md#二架构定义规范)
+- [产品架构规范 §3 详细定义规范](../10-eos-system-design-specification/06-eos-product-architecture-specification.md#三详细定义规范)
 > **阅读指引**：先读系统设计准则 §2.4 理解 PA 构件分解的三因素决策方法，再对照产品架构规范 §2-§3 完成构件增量定义。
 
 ### 决策框架参考
@@ -761,8 +756,7 @@ SysReq 9 级场景活动：[从5b提取9级活动]
 - 现有 EOS 基线文档
 
 ### 涉及规范
-- [系统设计准则 §3.2 三条核心规则](../01-eos-system-design-specification/01-system-design-specification.md#32-三条核心规则)
-- [敏捷式设计指南 §第7步](../02-eos-system-design-guidelines/03-agile-design-guide.md#第7步完整性和一致性验证)
+- [系统设计准则 §3.2 三条核心规则](../10-eos-system-design-specification/01-system-design-specification.md#32-三条核心规则)
 
 ### 决策框架参考
 
@@ -851,7 +845,6 @@ SysReq 9 级场景活动：[从5b提取9级活动]
 - 所有增量更新内容
 
 ### 涉及规范
-- [敏捷式设计指南 §第8步](../02-eos-system-design-guidelines/03-agile-design-guide.md#第8步变更日志与版本发布)
 
 ### 决策框架参考
 

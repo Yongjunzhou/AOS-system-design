@@ -17,10 +17,10 @@
 ```
 10-meta-pipeline/
 ├── 10-eos-pipeline-system-design/          # 阶段1：系统设计（当前工作范围）
-│   ├── 01-eos-pipeline-system-design-specification/     # 通用设计准则（两个项目参考）
-│   ├── 02-eos-pipeline-system-design-guidelines/    # 四种场景的设计指南（参考）
-│   ├── 03-eos-pipeline-system-design-ai-support/    # 流水线产品的 AI 辅助文档
-│   └── 10-eos-pipeline-system-product-data/         # 流水线的标准产品数据（9 份文档）
+│   ├── 10-eos-pipeline-system-design-specification/     # 通用设计准则（两个项目参考）
+│   ├── 20-eos-pipeline-system-design-tasks/    # 四种场景的操作规程（任务定义）
+│   ├── 30-eos-pipeline-system-design-ai-support/    # 流水线产品的 AI 辅助文档
+│   └── 90-eos-pipeline-system-product-data/         # 流水线的标准产品数据（9 份文档）
 ├── 20-eos-pipeline-component-dev/          # 阶段2：构件开发（待扩展）
 └── 30-eos-pipeline-integration-delivery/   # 阶段3：集成交付（待扩展）
 ```
@@ -35,10 +35,10 @@
 
 | 子目录 | 性质 | 文档数 | 说明 |
 |--------|------|--------|------|
-| `01-eos-pipeline-system-design-specification/` | 通用（参考） | 8 | 5层结构、映射规则、各层通用规范、术语表 |
-| `02-eos-pipeline-system-design-guidelines/` | 通用（参考） | 6 | 瀑布/敏捷/逆向工程/DevOps 四种指南 + 快速参考卡 |
-| `03-eos-pipeline-system-design-ai-support/` | 设计线 构件 | 17 | AI 文档理解要求 + 四场景辅助文档（各含 README/checklist/example/prompts） |
-| `10-eos-pipeline-system-product-data/` | 设计线 设计输出 | 10 | 标准产品数据（01-OR ~ 09-验证报告 + README） |
+| `10-eos-pipeline-system-design-specification/` | 通用（参考） | 8 | 5层结构、映射规则、各层通用规范、术语表 |
+| `20-eos-pipeline-system-design-tasks/` | 设计线 构件 | 26 | 瀑布/敏捷/逆向工程/DevOps 四种场景的操作规程 |
+| `30-eos-pipeline-system-design-ai-support/` | 设计线 构件 | 17 | AI 文档理解要求 + 四场景辅助文档（各含 README/checklist/example/prompts） |
+| `90-eos-pipeline-system-product-data/` | 设计线 设计输出 | 10 | 标准产品数据（01-OR ~ 09-验证报告 + README） |
 
 ### 20-eos-pipeline-component-dev/
 
@@ -52,7 +52,7 @@
 
 ## 产品数据概览
 
-产品数据位于 `10-eos-pipeline-system-design/10-eos-pipeline-system-product-data/`，按五层结构组织：
+产品数据位于 `10-eos-pipeline-system-design/90-eos-pipeline-system-product-data/`，按五层结构组织：
 
 | 编号 | 文档 | 层级 | 版本 | 状态 |
 |------|------|------|------|------|

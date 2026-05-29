@@ -1,7 +1,7 @@
 # task-06：产品架构影响分析
 
 **对应场景**：03-agile · 第6步
-**对应 AI 模板**：`03-eos-system-design-ai-support/03-agile-eos-system-design/workflow-prompts.md` 第6步
+**对应 AI 模板**：`30-eos-system-design-ai-support/03-agile-eos-system-design/workflow-prompts.md` 第6步
 **版本**：v1.1
 **创建日期**：2026-05-21
 **最近修订**：2026-05-22
@@ -62,4 +62,4 @@
 
 | 文件 | 说明 |
 |------|------|
-| 更新后的 PA 文档 | `10-eos-system-product-data/07-product-architecture.md` |
+| 更新后的 PA 文档 | `90-eos-system-product-data/07-product-architecture.md` |

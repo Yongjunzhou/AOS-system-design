@@ -5,7 +5,7 @@
 **最近修订**：2026-05-21
 
 **对应场景**：01-waterfall · 第4步
-**对应 AI 模板**：`03-eos-system-design-ai-support/01-waterfall-eos-system-design/workflow-prompts.md` 第4步
+**对应 AI 模板**：`30-eos-system-design-ai-support/01-waterfall-eos-system-design/workflow-prompts.md` 第4步
 
 ---
 
@@ -65,7 +65,7 @@
 
 | 文件 | 说明 |
 |------|------|
-| SR 非功能部分详细定义 + SysReq-NFR 架构定义 | `10-eos-system-product-data/05-system-requirements-architecture.md` |
+| SR 非功能部分详细定义 + SysReq-NFR 架构定义 | `90-eos-system-product-data/05-system-requirements-architecture.md` |
 
 > **注意**：本步（非功能分支）可与功能分支（task-02 + task-03）**并行执行**。
 

@@ -5,7 +5,7 @@
 **最近修订**：2026-05-21
 
 **对应场景**：01-waterfall · 第3步
-**对应 AI 模板**：`03-eos-system-design-ai-support/01-waterfall-eos-system-design/workflow-prompts.md` 第3步
+**对应 AI 模板**：`30-eos-system-design-ai-support/01-waterfall-eos-system-design/workflow-prompts.md` 第3步
 
 ---
 
@@ -71,7 +71,7 @@
 
 | 文件 | 说明 |
 |------|------|
-| 系统需求功能部分架构定义 | `10-eos-system-product-data/05-system-requirements-architecture.md` |
+| 系统需求功能部分架构定义 | `90-eos-system-product-data/05-system-requirements-architecture.md` |
 
 ---
 **文档版本**：v1.0 | **创建日期**：2026-05-21 | **最近修订**：2026-05-21

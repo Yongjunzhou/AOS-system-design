@@ -1,7 +1,7 @@
 # task-04：模式3·完整设计
 
 **对应场景**：04-devops · 第4步 · 模式3
-**对应 AI 模板**：`03-eos-system-design-ai-support/04-devops-eos-system-design/workflow-prompts.md` 第4步（模式3部分）
+**对应 AI 模板**：`30-eos-system-design-ai-support/04-devops-eos-system-design/workflow-prompts.md` 第4步（模式3部分）
 **版本**：v1.0
 **创建日期**：2026-05-21
 
@@ -67,4 +67,4 @@
 
 | 文件 | 说明 |
 |------|------|
-| 更新后的多层文档 | `10-eos-system-product-data/02`~`07` |
+| 更新后的多层文档 | `90-eos-system-product-data/02`~`07` |

@@ -40,8 +40,8 @@
 
 - [通用设计准则](../../../../00-general/10-general-system-design-standards/01-general-system-design-standards.md)
 - [通用4模式指南](../../../../00-general/10-general-system-design-standards/02-general-system-design-4modes-guide.md)
-- [系统设计实践指南](../02-eos-pipeline-system-design-guidelines/README.md)
-- [流水线产品数据](../10-eos-pipeline-system-product-data/README.md)
+- [EOS 流水线 AI 辅助文档](../30-eos-pipeline-system-design-ai-support/README.md)
+- [流水线产品数据](../90-eos-pipeline-system-product-data/README.md)
 
 ---
 

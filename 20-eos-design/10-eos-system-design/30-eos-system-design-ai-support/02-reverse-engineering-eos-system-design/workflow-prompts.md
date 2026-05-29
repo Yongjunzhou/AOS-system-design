@@ -5,7 +5,7 @@
 
 ## 依据B说明
 
-本提示词模板集是设计线（系统设计流水线）的 **AI辅助文档构件**，其上层产品架构节点为 `03-eos-system-design-ai-support/02-reverse-engineering/`。模板默认演示"软件产品"类型的系统设计逆向推导过程（从 PA 到上游文档），适用范围包括对EOS、设计线（流水线）自身或其他软件产品的逆向推导。
+本提示词模板集是设计线（系统设计流水线）的 **AI辅助文档构件**，其上层产品架构节点为 `30-eos-system-design-ai-support/02-reverse-engineering/`。模板默认演示"软件产品"类型的系统设计逆向推导过程（从 PA 到上游文档），适用范围包括对EOS、设计线（流水线）自身或其他软件产品的逆向推导。
 
 **适用场景**：
 - 产品架构（PA）已完成，需从 PA 沿五层结构反向追溯生成 SysReq/BA/SR/OR
@@ -72,7 +72,7 @@
 - 系统设计准则和规范
 
 ### 涉及规范
-- [产品架构规范 §2 架构定义规范](../01-eos-system-design-specification/06-eos-product-architecture-specification.md#二架构定义规范)
+- [产品架构规范 §2 架构定义规范](../10-eos-system-design-specification/06-eos-product-architecture-specification.md#二架构定义规范)
 
 ### 决策框架参考
 
@@ -222,8 +222,8 @@
 - 第1步产出的 EOS 产品架构草图和组件识别清单
 
 ### 涉及规范
-- [产品架构规范 §2 架构定义规范](../01-eos-system-design-specification/06-product-architecture-specification.md#二架构定义规范)
-- [产品架构规范 §3 详细定义规范](../01-eos-system-design-specification/06-product-architecture-specification.md#三详细定义规范)
+- [产品架构规范 §2 架构定义规范](../10-eos-system-design-specification/06-product-architecture-specification.md#二架构定义规范)
+- [产品架构规范 §3 详细定义规范](../10-eos-system-design-specification/06-product-architecture-specification.md#三详细定义规范)
 
 ### 决策框架参考
 
@@ -356,8 +356,8 @@ PA-XXX 详细定义:
 - 第2步产出的 EOS 产品架构文档
 
 ### 涉及规范
-- [系统需求规范 §2 架构定义规范](../01-eos-system-design-specification/05-system-requirements-specification.md#二架构定义规范)
-- [系统需求规范 §3 详细定义规范](../01-eos-system-design-specification/05-system-requirements-specification.md#三详细定义规范)
+- [系统需求规范 §2 架构定义规范](../10-eos-system-design-specification/05-system-requirements-specification.md#二架构定义规范)
+- [系统需求规范 §3 详细定义规范](../10-eos-system-design-specification/05-system-requirements-specification.md#三详细定义规范)
 
 ### 决策框架参考
 
@@ -567,9 +567,9 @@ EOS 业务架构骨架：
 - 第3步同步建立的 EOS 业务架构骨架
 
 ### 涉及规范
-- [业务架构规范 §2 架构定义规范](../01-eos-system-design-specification/04-business-architecture-specification.md#二架构定义规范)
-- [业务架构规范 §3 IPO模型](../01-eos-system-design-specification/04-business-architecture-specification.md#三ipo模型)
-- [业务架构规范 §4.3 去重机制](../01-eos-system-design-specification/04-business-architecture-specification.md#43-去重机制)
+- [业务架构规范 §2 架构定义规范](../10-eos-system-design-specification/04-business-architecture-specification.md#二架构定义规范)
+- [业务架构规范 §3 IPO模型](../10-eos-system-design-specification/04-business-architecture-specification.md#三ipo模型)
+- [业务架构规范 §4.3 去重机制](../10-eos-system-design-specification/04-business-architecture-specification.md#43-去重机制)
 
 ### 决策框架参考
 
@@ -715,8 +715,8 @@ EOS 相关方需求骨架：
 - 第4步同步建立的 EOS 相关方需求骨架
 
 ### 涉及规范
-- [相关方需求规范 §2 架构定义规范](../01-eos-system-design-specification/03-stakeholder-requirements-specification.md#二架构定义规范)
-- [相关方需求规范 §3 详细定义规范](../01-eos-system-design-specification/03-stakeholder-requirements-specification.md#三详细定义规范)
+- [相关方需求规范 §2 架构定义规范](../10-eos-system-design-specification/03-stakeholder-requirements-specification.md#二架构定义规范)
+- [相关方需求规范 §3 详细定义规范](../10-eos-system-design-specification/03-stakeholder-requirements-specification.md#三详细定义规范)
 
 ### 决策框架参考
 
@@ -856,7 +856,7 @@ EOS 系统非功能需求架构： [粘贴3c的输出]
 - 第5步产出的 EOS 相关方需求文档
 
 ### 涉及规范
-- [原始需求规范 §3 分解规范](../01-eos-system-design-specification/02-original-requirements-specification.md#三分解规范)
+- [原始需求规范 §3 分解规范](../10-eos-system-design-specification/02-original-requirements-specification.md#三分解规范)
 
 ### 决策框架参考
 
@@ -997,9 +997,9 @@ OR-XXX: [原始需求名称]
 - 第1~6步产出的全部 EOS 设计文档
 
 ### 涉及规范
-- [系统设计准则 §5 验收标准](../01-eos-system-design-specification/01-system-design-specification.md#五验收标准)
-- [系统设计准则 §6 检查清单](../01-eos-system-design-specification/01-system-design-specification.md#六检查清单)
-- [系统设计准则 §3.2 三条核心规则](../01-eos-system-design-specification/01-system-design-specification.md#32-三条核心规则)
+- [系统设计准则 §5 验收标准](../10-eos-system-design-specification/01-system-design-specification.md#五验收标准)
+- [系统设计准则 §6 检查清单](../10-eos-system-design-specification/01-system-design-specification.md#六检查清单)
+- [系统设计准则 §3.2 三条核心规则](../10-eos-system-design-specification/01-system-design-specification.md#32-三条核心规则)
 
 ### 决策框架参考
 

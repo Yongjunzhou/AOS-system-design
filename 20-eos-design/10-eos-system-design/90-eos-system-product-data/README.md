@@ -57,9 +57,9 @@
 ## 使用指引
 
 1. **使用场景**：选择适合当前任务的开发场景（瀑布式/敏捷式/逆向工程/DevOps）
-2. **参考规范**：各层规范参见 [01-eos-system-design-specification/](../01-eos-system-design-specification/README.md)
+2. **参考规范**：各层规范参见 [10-eos-system-design-specification/](../10-eos-system-design-specification/README.md)
 3. **操作步骤**：按对应场景指南的步骤填充产品数据文档
-4. **AI 辅助**：使用 [03-eos-system-design-ai-support/](../03-eos-system-design-ai-support/README.md) 的提示词模板自动生成
+4. **AI 辅助**：使用 [30-eos-system-design-ai-support/](../30-eos-system-design-ai-support/README.md) 的提示词模板自动生成
 
 ---
 

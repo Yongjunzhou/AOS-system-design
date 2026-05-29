@@ -1,7 +1,7 @@
 # task-08：文档基线建立
 
 **对应场景**：02-reverse-engineering · 第8步
-**对应 AI 模板**：`03-eos-system-design-ai-support/02-reverse-engineering-eos-system-design/workflow-prompts.md` 第8步
+**对应 AI 模板**：`30-eos-system-design-ai-support/02-reverse-engineering-eos-system-design/workflow-prompts.md` 第8步
 **版本**：v1.1
 **创建日期**：2026-05-21
 

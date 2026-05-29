@@ -1133,7 +1133,7 @@ SysReq-F-004: 任务规程定义模块（5级·架构末级）
       │  ├─ 构件类型：任务定义
       │  ├─ 承接SysReq：SysReq-F-004.1.1.1.1（第1步任务定义撰写）
       │  ├─ 符合性分析：通过标准化任务定义满足第1步操作规程需求
-      │  ├─ 对应目录：04-eos-system-design-tasks/01-waterfall-eos-system-design/
+      │  ├─ 对应目录：20-eos-system-design-tasks/01-waterfall-eos-system-design/
       │  └─ 质量指标：输入/输出/步骤/检查清单完整
       │
       ├─ PA-017: SR详细定义及BA定义（3级·构件/末级）
@@ -1141,7 +1141,7 @@ SysReq-F-004: 任务规程定义模块（5级·架构末级）
       │  ├─ 构件类型：任务定义
       │  ├─ 承接SysReq：SysReq-F-004.1.1.1.2（第2步任务定义撰写）
       │  ├─ 符合性分析：通过标准化任务定义满足第2步操作规程需求
-      │  ├─ 对应目录：04-eos-system-design-tasks/01-waterfall-eos-system-design/
+      │  ├─ 对应目录：20-eos-system-design-tasks/01-waterfall-eos-system-design/
       │  └─ 质量指标：输入/输出/步骤/检查清单完整
       │
       ├─ PA-018: SysReq功能部分架构定义（3级·构件/末级）
@@ -1149,7 +1149,7 @@ SysReq-F-004: 任务规程定义模块（5级·架构末级）
       │  ├─ 构件类型：任务定义
       │  ├─ 承接SysReq：SysReq-F-004.1.1.1.3（第3步任务定义撰写）
       │  ├─ 符合性分析：通过标准化任务定义满足第3步操作规程需求
-      │  ├─ 对应目录：04-eos-system-design-tasks/01-waterfall-eos-system-design/
+      │  ├─ 对应目录：20-eos-system-design-tasks/01-waterfall-eos-system-design/
       │  └─ 质量指标：输入/输出/步骤/检查清单完整
       │
       ├─ PA-019: SR-NFR详细定义及SysReq-NFR架构定义（3级·构件/末级）
@@ -1157,7 +1157,7 @@ SysReq-F-004: 任务规程定义模块（5级·架构末级）
       │  ├─ 构件类型：任务定义
       │  ├─ 承接SysReq：SysReq-F-004.1.1.1.4（第4步任务定义撰写）
       │  ├─ 符合性分析：通过标准化任务定义满足第4步操作规程需求
-      │  ├─ 对应目录：04-eos-system-design-tasks/01-waterfall-eos-system-design/
+      │  ├─ 对应目录：20-eos-system-design-tasks/01-waterfall-eos-system-design/
       │  └─ 质量指标：输入/输出/步骤/检查清单完整
       │
       ├─ PA-020: SysReq详细定义及PA定义（3级·构件/末级）
@@ -1165,7 +1165,7 @@ SysReq-F-004: 任务规程定义模块（5级·架构末级）
       │  ├─ 构件类型：任务定义
       │  ├─ 承接SysReq：SysReq-F-004.1.1.1.5（第5步任务定义撰写）
       │  ├─ 符合性分析：通过标准化任务定义满足第5步操作规程需求
-      │  ├─ 对应目录：04-eos-system-design-tasks/01-waterfall-eos-system-design/
+      │  ├─ 对应目录：20-eos-system-design-tasks/01-waterfall-eos-system-design/
       │  └─ 质量指标：输入/输出/步骤/检查清单完整
       │
       └─ PA-021: 双向追溯验证（3级·构件/末级）
@@ -1173,7 +1173,7 @@ SysReq-F-004: 任务规程定义模块（5级·架构末级）
          ├─ 构件类型：任务定义
          ├─ 承接SysReq：SysReq-F-004.1.1.1.6（第6步任务定义撰写）
          ├─ 符合性分析：通过标准化任务定义满足第6步操作规程需求
-         ├─ 对应目录：04-eos-system-design-tasks/01-waterfall-eos-system-design/
+         ├─ 对应目录：20-eos-system-design-tasks/01-waterfall-eos-system-design/
          └─ 质量指标：输入/输出/步骤/检查清单完整
 ```
 

@@ -1,7 +1,7 @@
 # task-07：完整性和一致性验证
 
 **对应场景**：03-agile · 第7步
-**对应 AI 模板**：`03-eos-system-design-ai-support/03-agile-eos-system-design/workflow-prompts.md` 第7步
+**对应 AI 模板**：`30-eos-system-design-ai-support/03-agile-eos-system-design/workflow-prompts.md` 第7步
 **版本**：v1.0
 **创建日期**：2026-05-21
 

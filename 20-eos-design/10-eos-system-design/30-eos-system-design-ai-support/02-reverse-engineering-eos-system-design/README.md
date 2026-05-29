@@ -33,7 +33,7 @@
 
 ## 依据B：三层工作层面说明
 
-本目录下的文档属于**第2层工作（交付物构建）**——设计线（系统设计流水线）的**AI辅助文档构件**，其上层产品架构节点为 `03-eos-system-design-ai-support/02-reverse-engineering/`。
+本目录下的文档属于**第2层工作（交付物构建）**——设计线（系统设计流水线）的**AI辅助文档构件**，其上层产品架构节点为 `30-eos-system-design-ai-support/02-reverse-engineering/`。
 
 三层工作层面：
 - **第1层（流水线设计）**：设计线用方法论设计自身，产出设计线的产品数据
@@ -66,9 +66,8 @@
 | 产品架构（PA）及构件需求定义 | 产品架构树形结构、组件定义、构件需求（可为草稿级） | 项目设计库 |
 | 现有技术文档（如有） | 已有但不完整的各类设计文档（SysReq/BA/SR/OR） | 项目文档库 |
 | 产品代码和架构图纸（可选） | 仅当 PA 不存在或质量不足时作为重建依据 | 项目代码库、文档库 |
-| 系统设计准则 v2.4 | 总纲，定义 5 层结构、三条核心规则 | `01-eos-system-design-specification/01-eos-system-design-standards.md` |
-| 各层设计规范 | 各层的架构定义、详细定义、映射规则 | `01-eos-system-design-specification/` 下各层规范 |
-| EOS 系统设计逆向工程指南 v1.4 | 8 步操作流程和质量要求（含前置准备说明） | `02-eos-system-design-guidelines/02-reverse-engineering-eos-system-design-guide.md` |
+| 系统设计准则 v2.4 | 总纲，定义 5 层结构、三条核心规则 | `10-eos-system-design-specification/01-eos-system-design-standards.md` |
+| 各层设计规范 | 各层的架构定义、详细定义、映射规则 | `10-eos-system-design-specification/` 下各层规范 |
 
 ## 输出
 
@@ -120,13 +119,12 @@ AI 按 8 步流程依次产出以下文档集：
 
 ## 涉及的规范文档
 
-- [系统设计准则（总纲）](../01-eos-system-design-specification/01-eos-system-design-standards.md)
-- [原始需求规范](../01-eos-system-design-specification/02-eos-original-requirements-specification.md)
-- [相关方需求规范](../01-eos-system-design-specification/03-eos-stakeholder-requirements-specification.md)
-- [业务架构规范](../01-eos-system-design-specification/04-eos-business-architecture-specification.md)
-- [系统需求规范](../01-eos-system-design-specification/05-eos-system-requirements-specification.md)
-- [产品架构规范](../01-eos-system-design-specification/06-eos-product-architecture-specification.md)
-- [EOS 系统设计逆向工程指南](../02-eos-system-design-guidelines/02-reverse-engineering-eos-system-design-guide.md)
+- [系统设计准则（总纲）](../10-eos-system-design-specification/01-eos-system-design-standards.md)
+- [原始需求规范](../10-eos-system-design-specification/02-eos-original-requirements-specification.md)
+- [相关方需求规范](../10-eos-system-design-specification/03-eos-stakeholder-requirements-specification.md)
+- [业务架构规范](../10-eos-system-design-specification/04-eos-business-architecture-specification.md)
+- [系统需求规范](../10-eos-system-design-specification/05-eos-system-requirements-specification.md)
+- [产品架构规范](../10-eos-system-design-specification/06-eos-product-architecture-specification.md)
 
 ## 参考文档
 

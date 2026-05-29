@@ -127,10 +127,9 @@ EOS设计线的系统设计产出物包含以下四类PA构件，它们是独立
 
 | 构件类型（PA节点类型） | 交付物形态 | 在独立指南中的角色 | 交付目的地 |
 |--------------------|-----------|-----------------|----------|
-| **设计准则**（Specification） | 规范文档（.md） | **被创建/更新的目标之一**——各模式产出或修改设计准则 | `20-eos-design/.../01-eos-system-design-specification/` |
-| **设计指南**（Guideline） | 指南文档（.md） | **被创建/更新的目标之一**——各模式产出或修改设计指南 | `20-eos-design/.../02-eos-system-design-guidelines/` |
-| **AI辅助文档**（AI Support） | 工作流/提示词/检查清单 | **被创建/更新的目标之一**——各模式产出或修改AI辅助文档 | `20-eos-design/.../03-eos-system-design-ai-support/` |
-| **任务定义**（Task） | 操作规程文档（.md） | **被创建/更新的目标之一**——各模式产出或修改任务定义 | `20-eos-design/.../04-eos-system-design-tasks/` |
+| **设计准则**（Specification） | 规范文档（.md） | **被创建/更新的目标之一**——各模式产出或修改设计准则 | `20-eos-design/.../10-eos-system-design-specification/` |
+| **任务定义**（Task） | 操作规程文档（.md） | **被创建/更新的目标之一**——各模式产出或修改任务定义 | `20-eos-design/.../20-eos-system-design-tasks/` |
+| **AI辅助文档**（AI Support） | 工作流/提示词/检查清单 | **被创建/更新的目标之一**——各模式产出或修改AI辅助文档 | `20-eos-design/.../30-eos-system-design-ai-support/` |
 
 ### 2.3 三个参与角色（设计线版）
 
@@ -326,11 +325,10 @@ EOS设计线的系统设计产出物包含以下四类PA构件，它们是独立
 
 ```
 20-eos-design/10-eos-system-design/
-├── 01-eos-system-design-specification/    ← 设计准则
-├── 02-eos-system-design-guidelines/       ← 设计指南
-├── 03-eos-system-design-ai-support/       ← AI辅助文档
-├── 04-eos-system-design-tasks/            ← 任务定义
-└── 10-eos-system-product-data/            ← 追溯矩阵/验证报告
+├── 10-eos-system-design-specification/    ← 设计准则
+├── 20-eos-system-design-tasks/            ← 任务定义
+├── 30-eos-system-design-ai-support/       ← AI辅助文档
+└── 90-eos-system-product-data/            ← 追溯矩阵/验证报告
 ```
 
 ---
@@ -387,10 +385,9 @@ EOS设计线的系统设计产出物包含以下四类PA构件，它们是独立
     └── 02-general-system-design-4modes-guide.md    ← 被继承（via 本文）
 
 交付目标（20-eos-design/10-eos-system-design/）：
-    ├── 01-eos-system-design-specification/
-    ├── 02-eos-system-design-guidelines/
-    ├── 03-eos-system-design-ai-support/
-    └── 04-eos-system-design-tasks/
+    ├── 10-eos-system-design-specification/
+    ├── 20-eos-system-design-tasks/
+    ├── 30-eos-system-design-ai-support/
 ```
 
 ---

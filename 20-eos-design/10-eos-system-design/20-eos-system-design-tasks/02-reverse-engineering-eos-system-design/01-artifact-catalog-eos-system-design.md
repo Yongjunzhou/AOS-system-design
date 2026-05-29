@@ -1,7 +1,7 @@
 # task-01：现有产物梳理与架构分析
 
 **对应场景**：02-reverse-engineering · 第1步（前置准备，仅当PA不存在或质量不足时执行）
-**对应 AI 模板**：`03-eos-system-design-ai-support/02-reverse-engineering-eos-system-design/workflow-prompts.md` 第1步
+**对应 AI 模板**：`30-eos-system-design-ai-support/02-reverse-engineering-eos-system-design/workflow-prompts.md` 第1步
 **版本**：v1.1
 **创建日期**：2026-05-21
 **变更说明**：v1.1：重构为以PA及现有产物为起点的系统设计逆向工程，代码仅作为辅助来源
@@ -24,10 +24,10 @@
 | 输入 | 路径 |
 |------|------|
 | 项目产物目录和代码库 | 整个 EOS 仓库根目录 |
-| 现有设计文档 | `01-eos-system-design-specification/` |
-| 现有设计指南 | `03-eos-system-design-ai-support/`（原指南已整合至此） |
-| 现有 AI 辅助文档 | `03-eos-system-design-ai-support/` |
-| 现有产品数据模板 | `10-eos-system-product-data/` |
+| 现有设计文档 | `10-eos-system-design-specification/` |
+| 现有设计指南 | `30-eos-system-design-ai-support/`（原指南已整合至此） |
+| 现有 AI 辅助文档 | `30-eos-system-design-ai-support/` |
+| 现有产品数据模板 | `90-eos-system-product-data/` |
 | 通用方法论 | `00-general/` |
 
 ## 操作流程

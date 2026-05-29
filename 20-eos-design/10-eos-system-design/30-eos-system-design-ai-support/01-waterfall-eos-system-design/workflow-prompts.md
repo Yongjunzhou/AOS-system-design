@@ -57,9 +57,9 @@
 - EOS原始需求原始表述（作为本步骤的输入提供）
 
 ### 涉及规范
-- [原始需求规范 §4.1 完整处理流程](../01-eos-system-design-specification/02-original-requirements-specification.md#41-完整处理流程)
-- [相关方需求规范 §2 架构定义规范](../01-eos-system-design-specification/03-stakeholder-requirements-specification.md#二架构定义规范)
-- [系统设计准则 §3.1 第1步](../01-eos-system-design-specification/01-system-design-specification.md#第1步原始需求分析及相关方需求架构定义)
+- [原始需求规范 §4.1 完整处理流程](../10-eos-system-design-specification/02-original-requirements-specification.md#41-完整处理流程)
+- [相关方需求规范 §2 架构定义规范](../10-eos-system-design-specification/03-stakeholder-requirements-specification.md#二架构定义规范)
+- [系统设计准则 §3.1 第1步](../10-eos-system-design-specification/01-system-design-specification.md#第1步原始需求分析及相关方需求架构定义)
 
 ### 决策框架参考
 
@@ -277,8 +277,8 @@ OR-XXX: [需求标题]
 - 第1步产出的EOS相关方需求架构定义（功能部分 SR-F）
 
 ### 涉及规范
-- [相关方需求规范 §3 详细定义规范](../01-eos-system-design-specification/03-stakeholder-requirements-specification.md#三详细定义规范)
-- [业务架构规范 §2 架构定义规范](../01-eos-system-design-specification/04-business-architecture-specification.md#二架构定义规范)
+- [相关方需求规范 §3 详细定义规范](../10-eos-system-design-specification/03-stakeholder-requirements-specification.md#三详细定义规范)
+- [业务架构规范 §2 架构定义规范](../10-eos-system-design-specification/04-business-architecture-specification.md#二架构定义规范)
 
 ### 决策框架参考
 
@@ -453,7 +453,7 @@ BA-XXX: [IPO名称]（5级·架构末级节点）
 - 第2步同步建立的EOS系统需求架构骨架
 
 ### 涉及规范
-- [系统需求规范 §2.1 功能需求架构（0-9级）](../01-eos-system-design-specification/05-system-requirements-specification.md#21-功能需求架构0-9级)
+- [系统需求规范 §2.1 功能需求架构（0-9级）](../10-eos-system-design-specification/05-system-requirements-specification.md#21-功能需求架构0-9级)
 
 ### 决策框架参考
 
@@ -602,7 +602,7 @@ SysReq 5级节点清单：
 - 第1步产出的EOS相关方需求架构定义（非功能部分 SR-NFR）
 
 ### 涉及规范
-- [系统需求规范 §2.2 非功能需求架构（0-6级）](../01-eos-system-design-specification/05-system-requirements-specification.md#22-非功能需求架构0-6级)
+- [系统需求规范 §2.2 非功能需求架构（0-6级）](../10-eos-system-design-specification/05-system-requirements-specification.md#22-非功能需求架构0-6级)
 
 ### 决策框架参考
 
@@ -739,9 +739,9 @@ SR-NFR-XXX: [名称]
 - 第3步同步建立的EOS产品架构骨架
 
 ### 涉及规范
-- [系统需求规范 §3 详细定义规范](../01-eos-system-design-specification/05-system-requirements-specification.md#三详细定义规范)
-- [产品架构规范 §2 架构定义规范](../01-eos-system-design-specification/06-product-architecture-specification.md#二架构定义规范)
-- [系统设计准则 §2.4 产品架构分解原则](../01-eos-system-design-specification/01-eos-system-design-standards.md#24-产品架构分解原则)
+- [系统需求规范 §3 详细定义规范](../10-eos-system-design-specification/05-system-requirements-specification.md#三详细定义规范)
+- [产品架构规范 §2 架构定义规范](../10-eos-system-design-specification/06-product-architecture-specification.md#二架构定义规范)
+- [系统设计准则 §2.4 产品架构分解原则](../10-eos-system-design-specification/01-eos-system-design-standards.md#24-产品架构分解原则)
 
 ### 决策框架参考
 
@@ -912,8 +912,8 @@ PA-XXX: [组件名称]
 - 第1~5步产出的全部EOS设计文档
 
 ### 涉及规范
-- [系统设计准则 §5 验收标准](../01-eos-system-design-specification/01-system-design-specification.md#五验收标准)
-- [系统设计准则 §6 检查清单](../01-eos-system-design-specification/01-system-design-specification.md#六检查清单)
+- [系统设计准则 §5 验收标准](../10-eos-system-design-specification/01-system-design-specification.md#五验收标准)
+- [系统设计准则 §6 检查清单](../10-eos-system-design-specification/01-system-design-specification.md#六检查清单)
 
 ### 决策框架参考
 

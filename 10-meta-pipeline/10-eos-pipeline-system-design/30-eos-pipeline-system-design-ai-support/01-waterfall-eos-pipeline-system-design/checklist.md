@@ -31,7 +31,7 @@
 
 ### 依据B对齐
 - [ ] 输出的设计文档是面向EOS（企业运营体系）还是设计线（流水线自身）？→ 瀑布式场景面向**EOS**的greenfield（新研产品）场景
-- [ ] 如果输出是EOS的AI辅助文档，检查其结构是否与 `20-eos-design/10-eos-system-design/03-eos-system-design-ai-support/01-greenfield/` 的模板结构一致
+- [ ] 如果输出是EOS的AI辅助文档，检查其结构是否与 `20-eos-design/10-eos-system-design/30-eos-system-design-ai-support/01-greenfield/` 的模板结构一致
 - [ ] AI辅助文档中的示例引用是否引用了EOS的领域内容，而非设计线的流水线内容？
 - [ ] 是否已区分"模板层"（设计线的工具）和"实例层"（EOS的设计内容）？
 

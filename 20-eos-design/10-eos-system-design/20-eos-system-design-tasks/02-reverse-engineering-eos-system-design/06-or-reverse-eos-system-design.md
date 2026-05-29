@@ -1,7 +1,7 @@
 # task-06：原始需求反向推导
 
 **对应场景**：02-reverse-engineering · 第6步
-**对应 AI 模板**：`03-eos-system-design-ai-support/02-reverse-engineering-eos-system-design/workflow-prompts.md` 第6步
+**对应 AI 模板**：`30-eos-system-design-ai-support/02-reverse-engineering-eos-system-design/workflow-prompts.md` 第6步
 **版本**：v1.0
 **创建日期**：2026-05-21
 
@@ -62,4 +62,4 @@
 
 | 文件 | 说明 |
 |------|------|
-| 原始需求详细定义 | `10-eos-system-product-data/01-original-requirements.md` |
+| 原始需求详细定义 | `90-eos-system-product-data/01-original-requirements.md` |

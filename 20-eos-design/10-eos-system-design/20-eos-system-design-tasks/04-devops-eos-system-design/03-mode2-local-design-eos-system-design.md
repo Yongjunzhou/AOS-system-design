@@ -1,7 +1,7 @@
 # task-03：模式2·局部设计
 
 **对应场景**：04-devops · 第3步 · 模式2
-**对应 AI 模板**：`03-eos-system-design-ai-support/04-devops-eos-system-design/workflow-prompts.md` 第3步（模式2部分）
+**对应 AI 模板**：`30-eos-system-design-ai-support/04-devops-eos-system-design/workflow-prompts.md` 第3步（模式2部分）
 **版本**：v1.0
 **创建日期**：2026-05-21
 
@@ -63,4 +63,4 @@
 
 | 文件 | 说明 |
 |------|------|
-| 更新后的 SysReq + PA 文档 | `10-eos-system-product-data/05`~`07` |
+| 更新后的 SysReq + PA 文档 | `90-eos-system-product-data/05`~`07` |

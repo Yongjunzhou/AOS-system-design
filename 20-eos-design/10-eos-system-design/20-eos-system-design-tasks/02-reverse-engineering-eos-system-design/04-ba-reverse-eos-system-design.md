@@ -1,7 +1,7 @@
 # task-04：业务架构反向推导
 
 **对应场景**：02-reverse-engineering · 第4步
-**对应 AI 模板**：`03-eos-system-design-ai-support/02-reverse-engineering-eos-system-design/workflow-prompts.md` 第4步
+**对应 AI 模板**：`30-eos-system-design-ai-support/02-reverse-engineering-eos-system-design/workflow-prompts.md` 第4步
 **版本**：v1.0
 **创建日期**：2026-05-21
 
@@ -62,4 +62,4 @@
 
 | 文件 | 说明 |
 |------|------|
-| 业务架构定义子文档 | `10-eos-system-product-data/04-business-architecture.md` |
+| 业务架构定义子文档 | `90-eos-system-product-data/04-business-architecture.md` |

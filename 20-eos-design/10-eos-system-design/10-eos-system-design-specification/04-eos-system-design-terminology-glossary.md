@@ -56,13 +56,12 @@
 |------|------|--------|
 | EOS 系统设计准则 | EOS System Design Standards | 01-eos-system-design-standards.md |
 | EOS 术语对照表 | EOS Terminology Glossary | 04-eos-system-design-terminology-glossary.md |
-| EOS AI辅助概览 | EOS AI Assistance Overview | 03-eos-system-design-ai-support/00-overview.md |
-| EOS 瀑布式设计指南 | EOS Waterfall System Design Guide | 02-eos-system-design-guidelines/01-waterfall-eos-system-design-guide.md |
-| EOS 逆向工程设计指南 | EOS Reverse Engineering System Design Guide | 02-eos-system-design-guidelines/02-reverse-engineering-eos-system-design-guide.md |
-| EOS 敏捷式设计指南 | EOS Agile System Design Guide | 02-eos-system-design-guidelines/03-agile-eos-system-design-guide.md |
-| EOS DevOps 设计指南 | EOS DevOps System Design Guide | 02-eos-system-design-guidelines/04-devops-eos-system-design-guide.md |
-| EOS 快速参考卡 | EOS Quick Reference Card | 02-eos-system-design-guidelines/05-eos-system-quick-reference-card.md |
-| EOS 产品数据 | EOS Product Data | 10-eos-system-product-data/ |
+| EOS AI辅助概览 | EOS AI Assistance Overview | 30-eos-system-design-ai-support/00-overview.md |
+| EOS 瀑布式工作流模板 | EOS Waterfall Workflow Prompts | 30-eos-system-design-ai-support/01-waterfall-eos-system-design/workflow-prompts.md |
+| EOS 逆向工程工作流模板 | EOS Reverse Engineering Workflow Prompts | 30-eos-system-design-ai-support/02-reverse-engineering-eos-system-design/workflow-prompts.md |
+| EOS 敏捷式工作流模板 | EOS Agile Workflow Prompts | 30-eos-system-design-ai-support/03-agile-eos-system-design/workflow-prompts.md |
+| EOS DevOps 工作流模板 | EOS DevOps Workflow Prompts | 30-eos-system-design-ai-support/04-devops-eos-system-design/workflow-prompts.md |
+| EOS 产品数据 | EOS Product Data | 90-eos-system-product-data/ |
 
 ---
 
@@ -272,8 +271,8 @@ Attendees: EOS Developer, Business Analyst, System Architect
 建议的文件命名方式：
 ```
 01-eos-system-design-standards.md (中文)
-01-eos-system-design-specification-en.md (英文)
-01-eos-system-design-specification-zh.md (中文)
+10-eos-system-design-specification-en.md (英文)
+10-eos-system-design-specification-zh.md (中文)
 ```
 
 ---

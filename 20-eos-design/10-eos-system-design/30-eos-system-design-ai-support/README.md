@@ -7,7 +7,7 @@
 ## 目录结构
 
 ```
-03-eos-system-design-ai-support/
+30-eos-system-design-ai-support/
 ├── 00-overview.md                          # AI 工作文档需求理解确认书
 ├── 01-product-context-eos.md              # EOS 产品上下文
 ├── 02-ai-decision-framework-eos.md        # AI 决策框架

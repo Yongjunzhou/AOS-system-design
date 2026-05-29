@@ -11,7 +11,7 @@
 
 在开发"企业运营体系（EOS）系统设计"这个产品的过程中，**AI 深度参与**每个设计环节。流水线开发者定义 AI 的工作方式和产出标准（通过产品 B 的构件交付），AI 按定义自动执行任务。
 
-本目录（`03-eos-system-design-ai-support/`）是产品 B 的构件，交付给**团队 A（EOS 开发者）**使用，帮助他们高质量、高效率地完成产品 A 的系统设计。
+本目录（`30-eos-system-design-ai-support/`）是产品 B 的构件，交付给**团队 A（EOS 开发者）**使用，帮助他们高质量、高效率地完成产品 A 的系统设计。
 
 ## 二、文档依据
 
@@ -19,17 +19,16 @@ AI 工作文档的编写基于两份既有的输入文档：
 
 | 来源 | 用途 |
 |------|------|
-| **`01-eos-system-design-specification/` 的规范文档** | **定义规则**——每层的架构定义、详细定义、1:1 约束、N:1 承接、符合性分析、性能指标等设计规范 |
-| **`02-eos-system-design-guidelines/` 的设计指南** | **定义场景**——四种开发场景的划分和每个场景的操作步骤、质量要求 |
+| **`10-eos-system-design-specification/` 的规范文档** | **定义规则**——每层的架构定义、详细定义、1:1 约束、N:1 承接、符合性分析、性能指标等设计规范 |
 
 本目录下已有的旧文档**全部忽略**，不作为参考。
 
 ## 三、目录结构设计
 
-`03-eos-system-design-ai-support/` 是产品 B 的构件目录，按四种开发场景组织子目录：
+`30-eos-system-design-ai-support/` 是产品 B 的构件目录，按四种开发场景组织子目录：
 
 ```
-03-eos-system-design-ai-support/
+30-eos-system-design-ai-support/
 ├── 00-overview.md                          ← 本文档
 ├── 01-product-context-eos.md              ← EOS 产品上下文
 ├── 02-ai-decision-framework-eos.md        ← AI 决策框架
@@ -68,7 +67,6 @@ AI 工作文档的编写基于两份既有的输入文档：
 
 ## 五、四种开发场景的定义
 
-四种场景来源于 `02-eos-system-design-guidelines/` 的四份指南文档：
 
 | 编号 | 场景 | 对应指南 | 核心特征 |
 |------|------|---------|---------|
@@ -77,12 +75,11 @@ AI 工作文档的编写基于两份既有的输入文档：
 | **03** | **逆向工程** | 02-reverse-engineering-eos-system-design-guide.md | 产品已开发完成但文档缺失，从代码重建文档（8 步） |
 | **04** | **DevOps / 快速修复** | 04-devops-eos-system-design-guide.md | 产品已上线，快速修复 bug 或实现紧急需求（3 种模式） |
 
-> **端到端业务框架**：以上四种设计场景都是为运营体系中的端到端项目服务的。理解端到端项目的业务分解方法——从系统架构节点类型推导价值业务——有助于 AI 在系统设计过程中准确把握每个项目（BA 2级）的业务边界。详见 EOS 设计准则 [§1.9 运营体系中的端到端业务框架](../01-eos-system-design-specification/01-eos-system-design-standards.md#19-运营体系中的端到端业务框架)。
+> **端到端业务框架**：以上四种设计场景都是为运营体系中的端到端项目服务的。理解端到端项目的业务分解方法——从系统架构节点类型推导价值业务——有助于 AI 在系统设计过程中准确把握每个项目（BA 2级）的业务边界。详见 EOS 设计准则 [§1.9 运营体系中的端到端业务框架](../10-eos-system-design-specification/01-eos-system-design-standards.md#19-运营体系中的端到端业务框架)。
 
 ## 六、AI 文档的编写原则
 
-1. **基于规范**：所有 AI 文档的内容必须基于 `01-eos-system-design-specification/` 中定义的规则，不得偏离
-2. **对齐场景**：步骤划分和操作内容必须与 `02-eos-system-design-guidelines/` 中对应场景指南一致
+1. **基于规范**：所有 AI 文档的内容必须基于 `10-eos-system-design-specification/` 中定义的规则，不得偏离
 3. **最小可用**：每个场景 4 个文件，够用不冗余
 4. **AI 可执行**：每个提示词模板包含清晰的输入说明、处理步骤、输出格式，AI 拿到后可直接执行
 5. **有样可依**：Product data 范例提供完整的、符合规范的示例产出，AI 可参照生成

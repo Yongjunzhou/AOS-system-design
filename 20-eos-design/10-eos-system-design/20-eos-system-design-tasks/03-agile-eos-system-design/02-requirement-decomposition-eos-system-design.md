@@ -1,7 +1,7 @@
 # task-02：新需求分解和末级定义
 
 **对应场景**：03-agile · 第2步
-**对应 AI 模板**：`03-eos-system-design-ai-support/03-agile-eos-system-design/workflow-prompts.md` 第2步
+**对应 AI 模板**：`30-eos-system-design-ai-support/03-agile-eos-system-design/workflow-prompts.md` 第2步
 **版本**：v1.0
 **创建日期**：2026-05-21
 
@@ -60,4 +60,4 @@
 
 | 文件 | 说明 |
 |------|------|
-| 更新后的 OR 文档（增量） | `10-eos-system-product-data/01-original-requirements.md` |
+| 更新后的 OR 文档（增量） | `90-eos-system-product-data/01-original-requirements.md` |

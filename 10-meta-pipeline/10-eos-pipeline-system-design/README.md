@@ -16,17 +16,17 @@
 
 ```
 10-eos-pipeline-system-design/
-├── 01-eos-pipeline-system-design-specification/     # 通用设计准则（两个项目参考）
-├── 02-eos-pipeline-system-design-guidelines/    # 四种场景的设计指南（共享）
-├── 03-eos-pipeline-system-design-ai-support/    # 流水线产品的 AI 辅助文档
-└── 10-eos-pipeline-system-product-data/         # 流水线的标准产品数据
+├── 10-eos-pipeline-system-design-specification/     # 通用设计准则（两个项目参考）
+├── 20-eos-pipeline-system-design-tasks/             # 四种场景的操作规程（任务定义）
+├── 30-eos-pipeline-system-design-ai-support/    # 流水线产品的 AI 辅助文档
+└── 90-eos-pipeline-system-product-data/         # 流水线的标准产品数据
 ```
 
 ---
 
 ## 各子目录说明
 
-### [01-eos-pipeline-system-design-specification/](01-eos-pipeline-system-design-specification/README.md)
+### [10-eos-pipeline-system-design-specification/](10-eos-pipeline-system-design-specification/README.md)
 **通用设计准则 — 两个项目参考**
 
 | 文档 | 说明 |
@@ -34,18 +34,12 @@
 | 01-eos-pipeline-system-design-standards.md | 核心准则：5层结构、3条规则、质量指标 |
 | 04-eos-pipeline-terminology-glossary.md | 术语英文对照表 |
 
-### [02-eos-pipeline-system-design-guidelines/](02-eos-pipeline-system-design-guidelines/README.md)
-**四种场景的设计指南 — 两个项目参考**
+### [20-eos-pipeline-system-design-tasks/](20-eos-pipeline-system-design-tasks/README.md)
+**四种场景的操作规程 — 两个项目参考**
 
-| 文档 | 适用场景 | 周期 |
-|------|---------|------|
-| 01-waterfall-eos-pipeline-system-design-guide.md | 全新系统，需求明确 | 30-48天 |
-| 03-agile-eos-pipeline-system-design-guide.md | 迭代开发，需求渐进 | 13-21天 |
-| 02-reverse-engineering-eos-pipeline-system-design-guide.md | 已有系统补文档 | 16-26天 |
-| 04-devops-eos-pipeline-system-design-guide.md | 小变更快速交付 | 几小时-3天 |
-| 05-eos-pipeline-system-quick-reference-card.md | 快速参考 | — |
+按四种场景组织的操作规程文档（共 26 个任务文档），AI 按任务定义执行系统设计操作。
 
-### [03-eos-pipeline-system-design-ai-support/](03-eos-pipeline-system-design-ai-support/)
+### [30-eos-pipeline-system-design-ai-support/](30-eos-pipeline-system-design-ai-support/)
 **流水线产品的 AI 辅助文档**
 
 | 子目录/文件 | 说明 |
@@ -56,7 +50,7 @@
 | 03-eos-pipeline-system-design-reverse-engineering/ | 逆向工程场景：同上 |
 | 04-eos-pipeline-system-design-devops/ | DevOps 场景：同上 |
 
-### [10-eos-pipeline-system-product-data/](10-eos-pipeline-system-product-data/README.md)
+### [90-eos-pipeline-system-product-data/](90-eos-pipeline-system-product-data/README.md)
 **流水线的标准产品数据 — 9 份文档**
 
 按五层结构组织的完整产品数据，详见该目录的 README。

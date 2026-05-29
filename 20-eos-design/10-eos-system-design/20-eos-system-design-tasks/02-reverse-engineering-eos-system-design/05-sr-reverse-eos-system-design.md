@@ -1,7 +1,7 @@
 # task-05：相关方需求反向推导
 
 **对应场景**：02-reverse-engineering · 第5步
-**对应 AI 模板**：`03-eos-system-design-ai-support/02-reverse-engineering-eos-system-design/workflow-prompts.md` 第5步
+**对应 AI 模板**：`30-eos-system-design-ai-support/02-reverse-engineering-eos-system-design/workflow-prompts.md` 第5步
 **版本**：v1.0
 **创建日期**：2026-05-21
 
@@ -63,4 +63,4 @@
 
 | 文件 | 说明 |
 |------|------|
-| 相关方需求文档 | `10-eos-system-product-data/02-*.md` + `03-*.md` |
+| 相关方需求文档 | `90-eos-system-product-data/02-*.md` + `03-*.md` |

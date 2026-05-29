@@ -1089,9 +1089,9 @@ OR-XXX: [原始需求名称]
 - 第1~6步产出的全部设计文档
 
 ### 涉及规范
-- [系统设计准则 §5 验收标准](../../01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md#五验收标准)
-- [系统设计准则 §6 检查清单](../../01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md#六检查清单)
-- [系统设计准则 §3.2 三条核心规则](../../01-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md#32-三条核心规则)
+- [系统设计准则 §5 验收标准](../../10-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md#五验收标准)
+- [系统设计准则 §6 检查清单](../../10-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md#六检查清单)
+- [系统设计准则 §3.2 三条核心规则](../../10-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-standards.md#32-三条核心规则)
 
 ### 决策框架参考
 

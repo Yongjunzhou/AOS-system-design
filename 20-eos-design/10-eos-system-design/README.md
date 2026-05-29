@@ -16,18 +16,17 @@
 
 ```
 10-eos-system-design/
-├── 01-eos-system-design-specification/           # EOS 系统设计准则（设计线构件）
-├── 02-eos-system-design-guidelines/          # EOS 设计指南（设计线构件）
-├── 03-eos-system-design-ai-support/          # EOS AI 辅助文档（设计线构件）
-├── 04-eos-system-design-tasks/               # EOS 任务定义（设计线构件）
-└── 10-eos-system-product-data/               # EOS 产品数据（EOS设计输出）
+├── 10-eos-system-design-specification/           # EOS 系统设计准则（设计线构件）
+├── 20-eos-system-design-tasks/               # EOS 任务定义（设计线构件）
+├── 30-eos-system-design-ai-support/          # EOS AI 辅助文档（设计线构件）
+└── 90-eos-system-product-data/               # EOS 产品数据（EOS设计输出）
 ```
 
 ---
 
 ## 各子目录说明
 
-### [01-eos-system-design-specification/](01-eos-system-design-specification/README.md)
+### [10-eos-system-design-specification/](10-eos-system-design-specification/README.md)
 **EOS 系统设计准则 — 设计线构件**
 
 | 文档 | 说明 |
@@ -35,28 +34,17 @@
 | 01-eos-system-design-standards.md | 核心准则：5层结构、3条规则、多产品设计关系 |
 | 04-eos-system-design-terminology-glossary.md | 术语对照表 |
 
-### [02-eos-system-design-guidelines/](02-eos-system-design-guidelines/README.md)
-**EOS 四种场景设计指南 — 设计线构件**
-
-| 文档 | 适用场景 | 周期 |
-|------|---------|------|
-| 01-waterfall-eos-system-design-guide.md | 全新 EOS 系统，需求明确 | 30-48天 |
-| 03-agile-eos-system-design-guide.md | EOS 迭代开发，需求渐进 | 13-21天 |
-| 02-reverse-engineering-eos-system-design-guide.md | 已有 EOS 系统补文档 | 16-26天 |
-| 04-devops-eos-system-design-guide.md | EOS 小变更快速交付 | 几小时-3天 |
-| 05-eos-system-quick-reference-card.md | 快速参考 | — |
-
-### [03-eos-system-design-ai-support/](03-eos-system-design-ai-support/README.md)
-**EOS AI 辅助文档 — 设计线构件**
-
-为团队M开展 EOS 系统设计提供 AI 辅助支持，包含决策框架、产品上下文、各场景提示词模板和检查清单。
-
-### [04-eos-system-design-tasks/](04-eos-system-design-tasks/README.md)
+### [20-eos-system-design-tasks/](20-eos-system-design-tasks/README.md)
 **EOS 任务定义 — 设计线构件**
 
 按四种场景组织的操作规程文档（共 26 个任务文档），AI 和 EOS 设计人员按任务定义执行系统设计操作。
 
-### [10-eos-system-product-data/](10-eos-system-product-data/README.md)
+### [30-eos-system-design-ai-support/](30-eos-system-design-ai-support/README.md)
+**EOS AI 辅助文档 — 设计线构件**
+
+为团队M开展 EOS 系统设计提供 AI 辅助支持，包含决策框架、产品上下文、各场景提示词模板和检查清单。
+
+### [90-eos-system-product-data/](90-eos-system-product-data/README.md)
 **EOS 产品数据 — EOS设计输出**
 
 团队M使用设计线工具产出的 EOS 设计内容，按五层结构组织，包含从原始需求到产品架构的完整产品数据。

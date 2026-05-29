@@ -1,7 +1,7 @@
 # task-01：快速影响范围评估
 
 **对应场景**：04-devops · 第1步
-**对应 AI 模板**：`03-eos-system-design-ai-support/04-devops-eos-system-design/workflow-prompts.md` 第1步
+**对应 AI 模板**：`30-eos-system-design-ai-support/04-devops-eos-system-design/workflow-prompts.md` 第1步
 **版本**：v1.0
 **创建日期**：2026-05-21
 

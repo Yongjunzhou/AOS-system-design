@@ -45,7 +45,7 @@
 - 准则2：SR→BA映射
 - 准则3：BA→SysReq映射
 - 准则4：SysReq→PA映射
-- 位置：`01-eos-pipeline-system-design-specification/` 和各 Task 中的 guidelines
+- 位置：`10-eos-pipeline-system-design-specification/` 和各 Task 中的 guidelines
 
 ---
 

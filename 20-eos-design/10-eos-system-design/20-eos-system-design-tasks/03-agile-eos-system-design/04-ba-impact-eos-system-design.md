@@ -1,7 +1,7 @@
 # task-04：业务架构影响分析
 
 **对应场景**：03-agile · 第4步
-**对应 AI 模板**：`03-eos-system-design-ai-support/03-agile-eos-system-design/workflow-prompts.md` 第4步
+**对应 AI 模板**：`30-eos-system-design-ai-support/03-agile-eos-system-design/workflow-prompts.md` 第4步
 **版本**：v1.0
 **创建日期**：2026-05-21
 
@@ -60,4 +60,4 @@
 
 | 文件 | 说明 |
 |------|------|
-| 更新后的 BA 文档 | `10-eos-system-product-data/04-business-architecture.md` |
+| 更新后的 BA 文档 | `90-eos-system-product-data/04-business-architecture.md` |
