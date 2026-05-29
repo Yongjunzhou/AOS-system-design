@@ -16,6 +16,16 @@
 | 8 | `indicator-definitions/` | 指标定义 | 指标引擎 | 待填充 |
 | 9 | `project-definitions/` | 项目定义 | 项目引擎 | 待填充 |
 
+## 当前文档
+
+| # | 文档 | 说明 |
+|---|------|------|
+| 01 | `01-config-form-definition.md` | 表单定义配置规范（模板） |
+| 02 | `02-config-ledger-definition.md` | 台账定义配置规范（模板） |
+| 03 | `03-config-process-definition.md` | 流程定义配置规范（模板） |
+| 04 | `04-config-indicator-definition.md` | 指标定义配置规范（模板） |
+| 05 | `05-config-template-definition.md` | 模板定义配置规范（模板） |
+
 ## 说明
 
 - 配置类型清单与 `10-product-specification/03-configuration-catalog.md` 一致

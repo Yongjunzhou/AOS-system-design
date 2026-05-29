@@ -11,6 +11,14 @@
 | `kubernetes/` | K8s 编排清单 | 待填充 |
 | `scripts/` | 部署/迁移脚本 | 待填充 |
 
+## 当前文档
+
+| # | 文档 | 说明 |
+|---|------|------|
+| 01 | `01-deployment-topology.md` | 部署拓扑（模板） |
+| 02 | `02-environment-matrix.md` | 环境配置矩阵（模板） |
+| 03 | `03-release-process.md` | 发布流程（模板） |
+
 部署架构总览见 `10-product-specification/05-deployment-arch.md`。
 
 ## 说明

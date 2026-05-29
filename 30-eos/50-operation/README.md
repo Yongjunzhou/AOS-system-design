@@ -11,6 +11,14 @@
 | `sla-reports/` | 服务等级报告 | 待填充 |
 | `capacity-planning/` | 容量规划 | 待填充 |
 
+## 当前文档
+
+| # | 文档 | 说明 |
+|---|------|------|
+| 01 | `01-monitoring-architecture.md` | 监控架构（模板） |
+| 02 | `02-incident-response.md` | 应急响应（模板） |
+| 03 | `03-sla-definition.md` | SLA 定义（模板） |
+
 ## 说明
 
 - 本目录阶段1（系统设计）为空，阶段4（系统运维）启动后逐步填充
