@@ -43,7 +43,7 @@
 1. **执行顺序不可逆**：OR 资产加载 → OR 分解与 SR 承接（同步）→ SR 节点完善 → 闭环检查
    核心驱动力：需求从源头（OR）出发，逐条向 SR 架构找宿主。SR 架构的调整（扩展/新增）由 OR 需求驱动，不是预设的
 2. **基于资产优先**：SR 架构调整决策应先检查已有资产（复用），确实需要修改时再改进，最后才新增
-3. **资产路径已知**：本步的资产是 `90-eos-pipeline-system-product-data/02-eos-pipeline-stakeholder-requirements-architecture.md`，其中已存在 v1 基线内容（只读状态），是 SR 架构决策的首要资产来源。`01-eos-pipeline-original-requirements.md` 是本步的输入数据（00-or-preprocessing 产出的 OR 条目），不是"资产"
+3. **资产路径已知**：本步的资产是 `90-eos-system-product-data/02-eos-stakeholder-requirements-architecture.md`，其中已存在 v1 基线内容（只读状态），是 SR 架构决策的首要资产来源。`01-eos-original-requirements.md` 是本步的输入数据（00-or-preprocessing 产出的 OR 条目），不是"资产"
 
 ## 三、本步提示词模板
 
@@ -74,7 +74,7 @@ OR 条目清单：[粘贴3.1的输出]
 
 —— 第一步：加载并理解 SR 架构资产（先做到心中有数）——
 
-资产文件：90-eos-pipeline-system-product-data/02-eos-pipeline-stakeholder-requirements-architecture.md
+资产文件：90-eos-system-product-data/02-eos-stakeholder-requirements-architecture.md
 
 加载所有架构末级节点，对每个节点理解：
 ├─ 节点名称和定义 — 这个节点"管什么"？
@@ -276,7 +276,7 @@ OR→SR映射结果：[粘贴3.2的输出（OR→SR映射清单）]
 │  ├─ OR 资产加载：[已完成] — [加载 OR 条目数]
 │  └─ OR分解到末级：[已完成] — [OR条目数→末级条目数]
 ├─ 资产使用记录：
-│  ├─ 资产来源：[02-eos-pipeline-stakeholder-requirements-architecture.md（v1基线）]
+│  ├─ 资产来源：[02-eos-stakeholder-requirements-architecture.md（v1基线）]
 │  ├─ 复用节点：[N个]
 │  ├─ 改进（扩展）节点：[N个，记录每个的扩展内容]
 │  └─ 新增节点：[N个，记录新增原因和父节点]

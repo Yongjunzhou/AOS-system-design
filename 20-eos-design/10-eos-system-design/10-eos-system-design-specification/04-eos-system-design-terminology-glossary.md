@@ -55,6 +55,7 @@
 | 中文 | 英文 | 文件名 |
 |------|------|--------|
 | EOS 系统设计准则 | EOS System Design Standards | 01-eos-system-design-standards.md |
+| EOS 系统设计 4 模式指南 | EOS System Design 4-Modes Guide | 02-eos-system-design-4modes-guide.md |
 | EOS 术语对照表 | EOS Terminology Glossary | 04-eos-system-design-terminology-glossary.md |
 | EOS AI辅助概览 | EOS AI Assistance Overview | 30-eos-system-design-ai-support/00-overview.md |
 | EOS 瀑布式工作流模板 | EOS Waterfall Workflow Prompts | 30-eos-system-design-ai-support/01-waterfall-eos-system-design/workflow-prompts.md |

@@ -43,7 +43,7 @@
 1. **执行顺序不可逆**：分析活动 → SR-NFR 详细定义 → 加载 SysReq-NFR 资产 → NFR 架构组织（同步找宿主）→ 约束标注 + 闭环检查
    核心驱动力：NFR 不经过 BA 层（这是与功能分支的关键区别），SR-NFR 直接向 SysReq-NFR 转移
 2. **基于资产优先**：SysReq-NFR 架构调整决策应先检查已有资产（现有 SysReq-NFR 分类体系），确实需要修改时再改进，最后才新增
-3. **资产路径已知**：本步的资产是 `90-eos-pipeline-system-product-data/05-eos-pipeline-system-requirements-architecture.md` 中的非功能部分（v1 基线区）。`02-eos-pipeline-stakeholder-requirements-architecture.md` 中的 SR-NFR 是本步的输入数据（待处理的 NFR），不是"资产"
+3. **资产路径已知**：本步的资产是 `90-eos-system-product-data/05-eos-system-requirements-architecture.md` 中的非功能部分（v1 基线区）。`02-eos-stakeholder-requirements-architecture.md` 中的 SR-NFR 是本步的输入数据（待处理的 NFR），不是"资产"
 4. **NFR 路径与功能路径的区别**：NFR 不经过 BA 层，从 SR-NFR 经 SysReq-NFR 直接分配到 PA 构件（N:1 映射）。量化指标应精确可验证，模糊术语按 L1 补齐规则处理
 
 ---
@@ -116,7 +116,7 @@ SR-NFR-XXX: [名称]
 
 —— 第一步：加载并理解 SysReq-NFR 架构资产（先做到心中有数）——
 
-资产文件：90-eos-pipeline-system-product-data/05-eos-pipeline-system-requirements-architecture.md（非功能部分 v1 基线·只读）
+资产文件：90-eos-system-product-data/05-eos-system-requirements-architecture.md（非功能部分 v1 基线·只读）
 
 加载所有现有 SysReq-NFR 5 级节点，对每个节点理解：
 ├─ 节点名称和定义 — 这个节点"约束什么非功能属性"？
@@ -288,7 +288,7 @@ SR-NFR → SysReq-NFR 映射结果：[粘贴3.3的输出]
 │  ├─ SR-NFR 量化：[已完成] — [N 条量化完成]
 │  └─ NFR 架构组织：[已完成] — [三大类覆盖情况]
 ├─ 资产使用记录：
-│  ├─ 资产来源：[05-eos-pipeline-system-requirements-architecture.md 非功能部分（v1基线）]
+│  ├─ 资产来源：[05-eos-system-requirements-architecture.md 非功能部分（v1基线）]
 │  ├─ 复用节点：[N个]
 │  ├─ 改进（扩展）节点：[N个，记录每个的扩展内容]
 │  └─ 新增节点：[N个，记录新增原因和所属大类]

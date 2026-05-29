@@ -7,6 +7,7 @@
 | 文件 | 说明 | 版本 |
 |------|------|------|
 | [01-eos-system-design-standards.md](01-eos-system-design-standards.md) | EOS 系统设计准则（产品语境、特有框架、各层设计指引、验收标准） | v3.1 |
+| [02-eos-system-design-4modes-guide.md](02-eos-system-design-4modes-guide.md) | EOS 系统设计 4 模式指南（继承通用4模式指南，对齐EOS设计准则，作为四份独立模式指南的生成母本） | v1.0 |
 | [04-eos-system-design-terminology-glossary.md](04-eos-system-design-terminology-glossary.md) | EOS 术语对照表 | v2.0 |
 
 **版本策略**：

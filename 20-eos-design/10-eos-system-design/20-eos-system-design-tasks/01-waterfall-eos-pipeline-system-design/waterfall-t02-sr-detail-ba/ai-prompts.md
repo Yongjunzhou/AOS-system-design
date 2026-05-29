@@ -43,7 +43,7 @@
 1. **执行顺序不可逆**：分析活动 → 加载 BA 资产 → SR 分解与 BA 承接（同步）→ BA 节点完善 → 闭环检查 → 同步建骨架
    核心驱动力：需求从 SR 架构出发，逐条向 BA 找宿主。BA 架构的调整（扩展/新增）由 SR 需求驱动，不是预设的
 2. **基于资产优先**：BA 架构调整决策应先检查已有资产（现有 BA IPO），确实需要修改时再改进，最后才新增
-3. **资产路径已知**：本步的 BA 资产是 `90-eos-pipeline-system-product-data/04-eos-pipeline-business-architecture.md`，其中可能存在已有 BA IPO（v1 基线区），是 BA 架构决策的首要资产来源。`02-eos-pipeline-stakeholder-requirements-architecture.md` 是本步的输入数据（待分解的 SR 架构），不是"资产"
+3. **资产路径已知**：本步的 BA 资产是 `90-eos-system-product-data/04-eos-business-architecture.md`，其中可能存在已有 BA IPO（v1 基线区），是 BA 架构决策的首要资产来源。`02-eos-stakeholder-requirements-architecture.md` 是本步的输入数据（待分解的 SR 架构），不是"资产"
 
 ---
 
@@ -83,7 +83,7 @@ SR架构末级节点清单：[粘贴上一步SR-F部分的架构末级节点]
 
 —— 第一步：加载并理解 BA 架构资产（先做到心中有数）——
 
-资产文件：90-eos-pipeline-system-product-data/04-eos-pipeline-business-architecture.md
+资产文件：90-eos-system-product-data/04-eos-business-architecture.md
 
 加载所有现有BA IPO节点（v1 基线区·只读），对每个节点理解：
 ├─ 节点名称和定义 — 这个IPO"管什么业务活动"？
@@ -310,7 +310,7 @@ SR→BA映射结果：[粘贴3.2的输出（SR→BA映射清单）]
 │  ├─ SR分解到详细末级：[已完成] — [SR架构末级数→详细末级数]
 │  └─ 冲突/重复：[N项冲突，N项重复]（如有）
 ├─ 资产使用记录：
-│  ├─ 资产来源：[04-eos-pipeline-business-architecture.md（v1基线）]
+│  ├─ 资产来源：[04-eos-business-architecture.md（v1基线）]
 │  ├─ 复用节点：[N个]
 │  ├─ 改进（扩展）节点：[N个，记录每个的扩展内容]
 │  └─ 新增节点：[N个，记录新增原因]

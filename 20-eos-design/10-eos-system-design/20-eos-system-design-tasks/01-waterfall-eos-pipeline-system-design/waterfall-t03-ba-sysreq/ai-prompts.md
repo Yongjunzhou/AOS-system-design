@@ -43,7 +43,7 @@
 1. **执行顺序不可逆**：分析活动 → IPO 去重 → BA→SysReq 映射（同步）→ 架构组织 + 闭环检查 → PA 骨架
    核心驱动力：BA IPO 去重后直接映射到 SysReq 架构。SysReq 架构的调整（扩展/新增）由 BA IPO 驱动，不是预设的
 2. **基于资产优先**：SysReq 架构调整决策应先检查已有资产（t02 骨架 + 现有 SysReq 架构），确实需要修改时再改进，最后才新增
-3. **资产路径已知**：本步的资产是 `90-eos-pipeline-system-product-data/05-eos-pipeline-system-requirements-architecture.md`（含 v1 基线区）+ t02 同步建立的 SysReq 骨架映射。`04-eos-pipeline-business-architecture.md` 是本步的输入数据（待处理的 BA IPO），不是"资产"
+3. **资产路径已知**：本步的资产是 `90-eos-system-product-data/05-eos-system-requirements-architecture.md`（含 v1 基线区）+ t02 同步建立的 SysReq 骨架映射。`04-eos-business-architecture.md` 是本步的输入数据（待处理的 BA IPO），不是"资产"
 4. **BA→SysReq 的特性**：与 t01（OR→SR N:1 分解）和 t02（SR→BA N:1 分配）不同，BA→SysReq 是**去重后的直接映射**（通用准则 §5.5），而非 N:1 分配。但"找宿主"的决策逻辑仍然适用——判断去重后 IPO 应分配到现有 SysReq 节点还是需新建节点
 
 ---
@@ -117,7 +117,7 @@
 ├─ 已有 BA → SysReq 的骨架映射关系
 └─ 骨架节点的分类归属（属于哪个功能模块）
 
-资产来源二：05-eos-pipeline-system-requirements-architecture.md（v1 基线·只读）
+资产来源二：05-eos-system-requirements-architecture.md（v1 基线·只读）
 ├─ 加载所有现有 SysReq 5 级节点
 ├─ 理解每个节点的职责边界和覆盖范围
 └─ 评估现有节点与 BA IPO 的匹配程度
@@ -322,7 +322,7 @@ SysReq 5 级节点清单：[粘贴3.4输出的5级节点]
 │  ├─ IPO 去重：[已完成] — [去重前 N 个 → 去重后 M 个]
 │  └─ BA→SysReq 映射：[已完成] — [M 个 IPO → N 个 SysReq 5级]
 ├─ 资产使用记录：
-│  ├─ 资产来源：[05-eos-pipeline-system-requirements-architecture.md（v1基线）] + [t02骨架]
+│  ├─ 资产来源：[05-eos-system-requirements-architecture.md（v1基线）] + [t02骨架]
 │  ├─ 复用骨架/现有节点：[N个]
 │  ├─ 改进（扩展）节点：[N个，记录每个的扩展内容]
 │  └─ 新增节点：[N个，记录新增原因和分类归属]

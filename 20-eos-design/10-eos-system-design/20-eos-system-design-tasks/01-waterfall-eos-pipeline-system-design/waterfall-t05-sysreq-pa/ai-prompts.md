@@ -43,7 +43,7 @@
 1. **执行顺序不可逆**：分支合并 → 分析活动 → SysReq 5→9 级分解 → PA 架构定义（资产优先+同步）→ NFR 约束映射 → 闭环检查
    核心驱动力：SysReq 9 级场景活动逐条在现有 PA 架构中找宿主。PA 架构的调整（扩展/新增）由 SysReq 驱动，不是预设的
 2. **基于资产优先**：PA 架构调整决策应先检查已有资产（t03 骨架 + 现有 PA 架构），确实需要修改时再改进，最后才新增
-3. **资产路径已知**：本步的资产是 `90-eos-pipeline-system-product-data/07-eos-pipeline-product-architecture.md`（v1 基线区）+ t03 同步建立的 PA 骨架。`05-eos-pipeline-system-requirements-architecture.md` 是本步的输入数据（待分解的 SysReq），不是"资产"
+3. **资产路径已知**：本步的资产是 `90-eos-system-product-data/07-eos-product-architecture.md`（v1 基线区）+ t03 同步建立的 PA 骨架。`05-eos-system-requirements-architecture.md` 是本步的输入数据（待分解的 SysReq），不是"资产"
 4. **分支合并前提**：开始执行前必须确认功能分支和非功能分支均已完成。如有冲突，先记录后处理
 
 ---
@@ -130,7 +130,7 @@ SysReq 9 级场景活动清单：[粘贴3.2的9级活动输出]
 ├─ 已有 SysReq 5 级 → PA 骨架映射关系
 └─ PA 骨架的分类体系（知识/方法类：规范与准则/设计指南/AI辅助文档/任务定义）
 
-资产来源二：07-eos-pipeline-product-architecture.md（v1 基线·只读）
+资产来源二：07-eos-product-architecture.md（v1 基线·只读）
 ├─ 加载所有现有 PA 组件
 ├─ 理解每个组件的职责边界、技术栈、部署方式
 └─ 评估与 SysReq 9 级活动的匹配程度
@@ -325,7 +325,7 @@ NFR 约束映射：[粘贴3.4的NFR映射表]
 │  ├─ SysReq 5→9级分解：[已完成] — [5级节点数→9级活动数]
 │  └─ PA 定义：[已完成] — [PA组件数]
 ├─ 资产使用记录：
-│  ├─ 资产来源：[07-eos-pipeline-product-architecture.md（v1基线）] + [t03 PA骨架]
+│  ├─ 资产来源：[07-eos-product-architecture.md（v1基线）] + [t03 PA骨架]
 │  ├─ 复用骨架/现有组件：[N个]
 │  ├─ 改进（扩展）组件：[N个，记录每个的扩展内容]
 │  └─ 新增组件：[N个，记录新增原因和所属分类]

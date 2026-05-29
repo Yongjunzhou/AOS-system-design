@@ -207,7 +207,7 @@ EOS 产品处于什么阶段？
 | **逆向工程** | 反向推导中对原始意图的理解偏差 | 多方确认推导结果，保留推导依据 |
 | **DevOps** | 快速修复引入副作用 | 最小化变更范围，变更前后做回归验证 |
 
-> 通用方法框架详见[通用设计指南](../../../00-general/10-general-system-design-standards/02-general-system-design-4modes-guide.md)。
+> 通用方法框架详见[通用设计指南](../../../00-general/10-general-system-design-standards/02-general-system-design-4modes-guide.md)。EOS 产品特有实例化见 [EOS 系统设计 4 模式指南](02-eos-system-design-4modes-guide.md)。
 
 ---
 

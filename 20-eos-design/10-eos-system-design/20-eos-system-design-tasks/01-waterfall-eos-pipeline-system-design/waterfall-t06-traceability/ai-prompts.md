@@ -43,7 +43,7 @@
 1. **执行顺序不可逆**：分析活动 → 加载资产 → 1:1 验证 → N:1 验证 → 双向追溯验证（含 Q1/Q2/Q3）→ 符合性分析验证 → 产出矩阵+报告 → 闭环检查
    核心驱动力：先理解有哪些资产再验证（先加载后检查），先验证单个约束（1:1）再验证整体链路（双向追溯）
 2. **基于资产优先**：验证前必须先加载全部 9 份产品数据文件和 5 份决策记录，理解各层节点和映射关系后再开始逐项验证
-3. **资产路径已知**：本步的资产是 `90-eos-pipeline-system-product-data/` 下 01~09 号文件和 `04-eos-pipeline-system-design-tasks/` 下的决策记录。全部为输入数据，无论 v1 基线还是 v2 新增区
+3. **资产路径已知**：本步的资产是 `90-eos-system-product-data/` 下 01~09 号文件和 `01-waterfall-eos-pipeline-system-design/` 下的决策记录。全部为输入数据，无论 v1 基线还是 v2 新增区
 4. **t06 与 t01~t05 的本质区别**：t01~t05 是"创建/定义"步骤，t06 是"验证"步骤。t06 不产生新的架构节点或映射，而是检查已有映射的正确性和完整性。发现的断点不在此步修复，而是记录到验证报告中供回溯修正
 
 ---
@@ -57,18 +57,18 @@
 
 —— 第一步：加载全部资产（先做到心中有数）——
 
-产品数据文件（90-eos-pipeline-system-product-data/）：
-├─ 01-eos-pipeline-original-requirements.md — 原始需求架构+详细定义
-├─ 02-eos-pipeline-stakeholder-requirements-architecture.md — 相关方需求架构定义
-├─ 03-eos-pipeline-stakeholder-requirements-detailed.md — 相关方需求详细定义
-├─ 04-eos-pipeline-business-architecture.md — 业务架构
-├─ 05-eos-pipeline-system-requirements-architecture.md — 系统需求架构定义（功能+NFR）
-├─ 06-eos-pipeline-system-requirements-detailed.md — 系统需求详细定义（9级活动）
-├─ 07-eos-pipeline-product-architecture.md — 产品架构
-├─ 08-eos-pipeline-system-design-traceability-matrix.md — 追溯矩阵（如有）
-└─ 09-eos-pipeline-system-design-verification-report.md — 验证报告（如有）
+产品数据文件（90-eos-system-product-data/）：
+├─ 01-eos-original-requirements.md — 原始需求架构+详细定义
+├─ 02-eos-stakeholder-requirements-architecture.md — 相关方需求架构定义
+├─ 03-eos-stakeholder-requirements-detailed.md — 相关方需求详细定义
+├─ 04-eos-business-architecture.md — 业务架构
+├─ 05-eos-system-requirements-architecture.md — 系统需求架构定义（功能+NFR）
+├─ 06-eos-system-requirements-detailed.md — 系统需求详细定义（9级活动）
+├─ 07-eos-product-architecture.md — 产品架构
+├─ 08-eos-system-design-traceability-matrix.md — 追溯矩阵（如有）
+└─ 09-eos-system-design-verification-report.md — 验证报告（如有）
 
-决策记录（04-eos-pipeline-system-design-tasks/ 下各步）：
+决策记录（01-waterfall-eos-pipeline-system-design/ 下各步）：
 ├─ t01 决策记录 — 资产使用记录、⚠️待确认项、AI推断
 ├─ t02 决策记录 — 同上
 ├─ t03 决策记录 — 同上
