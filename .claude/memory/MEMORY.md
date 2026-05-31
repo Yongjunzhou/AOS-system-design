@@ -1,0 +1,8 @@
+- [User Role](user-role.md) — 流水线开发者/团队B架构师，中文工作，重视文档一致性
+- [Project State](project-current-state.md) — 2026-05-31：第四章结构统一（4+1子节模式）+ BA IPO泛化完成 + 第五章重构完成（精简为理论+方法总览+双示例，§5.3取消）
+- [Design Guide Revisions v3.2](project-revisions-complete.md) — 四个设计指南+快速参考卡修订完成，对齐依据A v3.3，加入两类产品示例。补充瀑布式关键概念/常见风险/跨步骤检查，补充敏捷式跨步骤检查/指标追溯
+- [Work Style: 先发现后修改](feedback-work-style.md) — 先审查列发现，等确认后再执行修改
+- [Conformance Review Workflow](feedback-conformance-review-workflow.md) — 符合性审查严格分两段：审查阶段仅发现不修改 → 修复阶段先清单确认后执行
+- [Methodology Core Principles](methodology-core-principles.md) — 方法论五条内核：相对角色、文档构成、结对设计、持续分解分配分析、基于资产定义架构
+- [CLAUDE.md 定位](feedback-claude-role.md) — 只做项目导航和文件引用，不包含方法论摘要，避免一致性风险
+- [BA IPO 泛化](ba-ipo-generalization.md) — I/O 从"文档"泛化为"完整表意单元"，覆盖非人类角色；涉及第四章 §4.4 + 第五章 §5.2.1 第3步联动修改
