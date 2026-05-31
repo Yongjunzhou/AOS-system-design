@@ -134,6 +134,27 @@
 
 ## 八、项目记忆
 
-本仓库的记忆文件位于项目根目录下的 `.claude/memory/`，纳入 Git 版本管理。记忆内容跨设备共享——每台设备的 Claude Code 都读写同一份 `.claude/memory/` 下的文件。
+### 记忆存储位置
 
-记忆文件格式：Markdown 文件，每条记忆一个文件，带 YAML frontmatter（name / description / metadata.type）。`MEMORY.md` 为索引文件，列出所有记忆文件的一行摘要。
+本仓库的记忆文件位于项目根目录下的 `.claude/memory/`，纳入 Git 版本管理。这是记忆的**权威存储**，跨设备共享。
+
+每台设备上还存在一个本机 auto-memory 路径（`C:\Users\<用户名>\.claude\projects\e--mywork-AOS\memory\`），由 Claude Code 系统自动加载。该路径是 `.claude/memory/` 的**运行时镜像**，不纳入版本管理。
+
+### 共享工作流程
+
+```
+设备A ──→ .claude/memory/ 修改 ──→ git commit ──→ git push
+                                                      ↓
+设备B ──→ git pull ──→ .claude/memory/ 同步 ──→ 复制到本机 auto-memory 路径
+```
+
+1. **写入记忆**：Claude Code 将记忆文件写入 `.claude/memory/`（写入时会同步到本机 auto-memory 路径以供系统加载）
+2. **共享记忆**：修改后提交 git 并推送，另一台设备 pull 后即获得全部记忆
+3. **同步机制**：每台设备 pull 后，需将 `.claude/memory/` 中新文件复制到本机 auto-memory 路径（或让 Claude Code 在会话中自动完成同步）
+4. **在同一台设备上追加记忆后**：提交 git → 推送到远程 → 另一台设备 pull 即可获得
+
+### 文件规范
+
+- 格式：Markdown 文件，每条记忆一个文件，带 YAML frontmatter（name / description / metadata.type）
+- `MEMORY.md` 为索引文件，列出所有记忆文件的一行摘要
+- 文件名可保持自然风格（kebab-case 或 snake_case），`MEMORY.md` 中正确引用即可
