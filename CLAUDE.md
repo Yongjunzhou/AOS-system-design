@@ -129,3 +129,11 @@
 - 所有文档使用 Markdown + Mermaid 格式
 - 版本号格式：`v[主版本].[次版本]`
 - 中文为主体语言，术语附英文对照
+
+---
+
+## 八、项目记忆
+
+本仓库的记忆文件位于项目根目录下的 `.claude/memory/`，纳入 Git 版本管理。记忆内容跨设备共享——每台设备的 Claude Code 都读写同一份 `.claude/memory/` 下的文件。
+
+记忆文件格式：Markdown 文件，每条记忆一个文件，带 YAML frontmatter（name / description / metadata.type）。`MEMORY.md` 为索引文件，列出所有记忆文件的一行摘要。
