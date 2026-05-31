@@ -58,4 +58,4 @@ metadata:
 
 ### 待处理
 - BA IPO 泛化的完整方案记录在 ba-ipo-generalization.md
-- 第三章及后续章节的优化
+- 第三章 §三 文档结对设计的优化（下一会话目标）
