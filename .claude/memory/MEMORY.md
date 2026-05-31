@@ -1,8 +1,40 @@
-- [User Role](user-role.md) — 流水线开发者/团队B架构师，中文工作，重视文档一致性
-- [Project State](project-current-state.md) — 2026-05-31：第二章全面优化完成 + 记忆文件迁移至 .claude/memory/（Git 管理，跨设备共享）
-- [Design Guide Revisions v3.2](project-revisions-complete.md) — 四个设计指南+快速参考卡修订完成，对齐依据A v3.3，加入两类产品示例。补充瀑布式关键概念/常见风险/跨步骤检查，补充敏捷式跨步骤检查/指标追溯
-- [Work Style: 先发现后修改](feedback-work-style.md) — 先审查列发现，等确认后再执行修改
-- [Conformance Review Workflow](feedback-conformance-review-workflow.md) — 符合性审查严格分两段：审查阶段仅发现不修改 → 修复阶段先清单确认后执行
-- [Methodology Core Principles](methodology-core-principles.md) — 方法论五条内核：相对角色、文档构成、结对设计、持续分解分配分析、基于资产定义架构
-- [CLAUDE.md 定位](feedback-claude-role.md) — 只做项目导航和文件引用，不包含方法论摘要，避免一致性风险
+- [架构增量变更的资产优先原则](architecture_asset_priority.md) — Reuse > Improve(Extend/Split/Merge) > Add，架构节点是组织资产
 - [BA IPO 泛化](ba-ipo-generalization.md) — I/O 从"文档"泛化为"完整表意单元"，覆盖非人类角色；涉及第四章 §4.4 + 第五章 §5.2.1 第3步联动修改
+- [BA存在的本质原因](ba_existence_reason.md) — BA是相关方可验证的业务操作界面，确保功能需求捕获的完备性；SysReq-F是系统语言，相关方无法直接验证其完整性
+- [输出产品架构锚定法与术语体系](ba_method_naming_output_product_anchoring.md) — BA方法正式命名 + 目标产品/输出产品术语区分
+- [系统设计准则优化说明](design_standards_optimization.md) — v2.1优化版，从概念到应用，实用指导型风格
+- [系统设计准则v2.0修订完成](design_standards_v2_complete.md) — 架构与详细设计分离，5层结构，完整映射规则
+- [DevOps缺陷即知识资产](devops_bug_as_knowledge_asset.md) — EOS流水线DevOps场景中，bug/问题的本质是知识资产缺陷而非代码缺陷
+- [文档风格规则确立](doc-style-rules-established.md) — 2026-06-01 通用设计规范风格统一 + 规范模板 v2.0 重写完成，确立了 H5/H6 编号规则、引用格式、注记分层等风格标准
+- [AOS文档审查完成](documentation_review_complete.md) — 所有6个任务文档完善完成，包括示例、最佳实践、跨任务指南
+- [端到端业务分解框架](end_to_end_business_framework.md) — 从产品架构节点类型推导价值业务，加项目管理业务构成完整项目业务
+- [端到端业务与跨域接口原则](end_to_end_cross_domain_principle.md) — 端到端流程不吞并其他域，通过域间需求-响应契约实现协作
+- [EOS引擎平台架构](eos_architecture_engines_platform.md) — 四层平台架构（引擎→组件→模块→使用），两类需求（引擎开发 vs 业务配置），引擎清单
+- [产品分类表待更新](eos_product_classification_table_update.md) — EOS产品分类表需更新以反映流水线本质
+- [CLAUDE.md 不加章节号](feedback_claude_no_section_numbers.md) — 保持层级标题格式，不添加数字章节号
+- [CLAUDE.md 定位](feedback-claude-role.md) — 只做项目导航和文件引用，不包含方法论摘要，避免一致性风险
+- [反馈：主动规划](feedback-proactive-planning.md) — 用户要求更主动地理解完整意图，避免逐条指示的反复修改
+- [符合性审查工作流](feedback-review-workflow.md) — 符合性审查严格分两段：审查阶段仅发现不修改 → 修复阶段先清单确认后执行
+- [工作风格：先发现后修改](feedback-work-style.md) — 先审查列发现，等确认后再执行修改
+- [信息处理模式十三类](info_processing_classification_10_types.md) — 替代五分类，13种信息处理模式决定PA分解边界
+- [方法论核心内核（5条）](methodology-core-principles.md) — 方法论五条内核：相对角色、文档构成、结对设计、持续分解分配分析、基于资产定义架构
+- [OR规范规则符合性审查通过](or_spec_rule_conformance_pass.md) — 02-pipeline-original-requirements-specification.md v1.4 审查零发现，完全符合准则 v3.8
+- [父子指标符合性审查方法](parent_child_indicator_conformance.md) — 架构末级到详细定义的指标分解运算关系（响应时间/可用性/吞吐量/准确率）及AI自动化审查方法
+- [流水线类系统需求推导](pipeline_class_derivation.md) — 推导锚点偏移到输出产品（原目标产品），输出产品可是实物/软件/方法工具集等任何形态
+- [Pipeline文档重新生成计划](pipeline_regeneration_plan.md) — 使用v2.0准则重新生成相关方需求、业务架构、系统需求、产品架构
+- [流水线准则修订 v3.5](pipeline-standards-revision-v35.md) — 流水线系统设计准则 v3.4→v3.5 修订完成，对齐通用准则 v1.0
+- [产品关系重构完成](product_relationship_reframe_complete.md) — 两层产品关系→三层工作层面，Pipeline v3.7 + AOS v2.1
+- [业务架构层级结构](project_ba_hierarchy.md) — 0-6级层级定义，5级组件是需求承接关键层级
+- [项目状态](project-current-state.md) — 2026-05-31：§四/§五全文档对齐改造 + §三全面优化完成
+- [设计指南修订 v3.2](project-revisions-complete.md) — 四个设计指南+快速参考卡修订完成，对齐依据A v3.3，加入两类产品示例
+- [需求符合性审查三层二维框架](requirements_conformance_3layer_2dim.md) — 需求符合性审查的核心结构：第1层分解质量→第2层承接验证→第3层满足度，两维贯穿（语义+指标）
+- [原始需求分解与映射完成](requirements_mapping_complete.md) — 76个末级需求100%映射到29个相关方需求，验证报告已生成
+- [AOS流水线重构方案批准](restructure_approval.md) — 用户已批准重构方案，实施已启动（2026-05-12）
+- [AOS流水线重构计划](restructure_plan.md) — 详细的重构计划，包括每个任务的完整定义和迁移步骤
+- [AOS流水线重构方案总结](restructure_summary.md) — 完整的重构方案，包括6个任务、新目录结构、迁移计划
+- [规则提取颗粒度方法论](rule_granularity_methodology.md) — 规则提取的颗粒度确定方法
+- [语义段落聚类三标准](rule_paragraph_clustering_criteria.md) — 通读路径优先 > 判断焦点 > 原文位置，独立编号补偿同一路径内不同焦点的规则
+- [以可验证性驱动的规则提取](rule_verifiability_driven_extraction.md) — 从"阅读理解"转向"可验证性分析"，提取单位是约束判断单元
+- [SR-F架构末级节点识别方法](sr_f_architecture_identification.md) — 三步分析法：角色类型→触发定义端到端→分解分配分析验证，触发抽象级别与多角色共享节点
+- [系统设计流水线完整规则](system_design_pipeline_rules.md) — BA→SysReq→PA完整映射规则，SysReq 0-9级层级定义
+- [用户角色](user-role.md) — 流水线开发者/团队B架构师，中文工作，重视文档一致性
