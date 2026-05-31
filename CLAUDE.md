@@ -33,7 +33,7 @@
 00-general/                                         # 通用方法论（独立于三个产品）
 └── 10-general-system-design-standards/
     ├── 01-general-system-design-specification.md    # 通用设计规范 v1.0（方法论核心 + 四种设计模式，合并版）
-    ├── 03-specification-template.md                 # 规范文档通用模板
+    ├── 03-document-authoring-conventions.md          # 文档编写约定
     └── 04-general-terminology-glossary.md           # 通用术语对照 v2.3
 
 10-eos-pipeline-design/                                   # 元流水线——EOS 流水线开发空间
@@ -87,7 +87,7 @@
 
 ## 四、产品数据文件
 
-元流水线和 EOS 的产品数据遵循相同结构（模板见 `03-specification-template.md`）：
+元流水线和 EOS 的产品数据遵循相同结构（模板见 `03-document-authoring-conventions.md`）：
 
 | 文件 | 内容 |
 |------|------|

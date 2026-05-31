@@ -7,7 +7,7 @@
 | 文件 | 内容 | 说明 |
 |------|------|------|
 | `01-general-system-design-specification.md` | **通用系统设计规范**（合并版） | 第一部分（§一~§八）：五层结构方法论核心、基本术语、核心规则、验收标准、检查清单；第二部分（§九~§十二 + 附录）：四种设计模式的操作框架 |
-| `03-specification-template.md` | 规范文档通用模板 | 各层产品数据规范的标准结构和编写规范 |
+| `03-document-authoring-conventions.md` | 文档编写约定 | 规范文档的统一风格、结构和格式约定 |
 | `04-general-terminology-glossary.md` | 通用术语对照（v2.0） | 核心术语英中对照（11个分类） |
 
 > **合并说明**：原 `01-general-system-design-standards.md`（设计准则）和 `02-general-system-design-4modes-guide.md`（4模式指南）已合并为 `01-general-system-design-specification.md`。旧文档已归档至 `200-put-on-hold/00-archived-spec-docs/general/`。
