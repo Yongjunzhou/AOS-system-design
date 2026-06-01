@@ -26,7 +26,9 @@
 - [流水线准则修订 v3.5](pipeline-standards-revision-v35.md) — 流水线系统设计准则 v3.4→v3.5 修订完成，对齐通用准则 v1.0
 - [产品关系重构完成](product_relationship_reframe_complete.md) — 两层产品关系→三层工作层面，Pipeline v3.7 + AOS v2.1
 - [业务架构层级结构](project_ba_hierarchy.md) — 0-6级层级定义，5级组件是需求承接关键层级
-- [项目状态](project-current-state.md) — 2026-06-01：§五 全量优化完成（结构重组+领域中立+术语统一），下一阶段 §六
+- [项目状态](project-current-state.md) — 2026-06-01：§七 全量优化完成，残留 PA 组件 术语待统一
+- [反馈：层级表联动审查](feedback-layer-table-as-authority.md) — 层级表变更后须逐节联动审查同章所有相关描述
+- [待处理：PA 组件术语残留](pending-pa-component-terminology.md) — §六 统一未完全执行，全文残留 10 处
 - [设计指南修订 v3.2](project-revisions-complete.md) — 四个设计指南+快速参考卡修订完成，对齐依据A v3.3，加入两类产品示例
 - [需求符合性审查三层二维框架](requirements_conformance_3layer_2dim.md) — 需求符合性审查的核心结构：第1层分解质量→第2层承接验证→第3层满足度，两维贯穿（语义+指标）
 - [原始需求分解与映射完成](requirements_mapping_complete.md) — 76个末级需求100%映射到29个相关方需求，验证报告已生成
