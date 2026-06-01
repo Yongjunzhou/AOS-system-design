@@ -64,8 +64,8 @@
 
 ## 二、关键设计文件
 
-- [通用设计规范 v1.0](00-general/10-general-system-design-standards/01-general-system-design-specification.md) — 第一部分（§一~§八）：术语体系、四条工程化设计原则、文档结对设计、业务架构设计（两种 BA 开发方法）、系统设计过程、验收标准、检查清单；第二部分（§九~§十二 + 附录）：四种设计场景的方法框架
-- [通用术语对照表 v2.3](00-general/10-general-system-design-standards/04-general-terminology-glossary.md) — 核心术语英中对照
+- [通用设计规范 v1.0](00-general/10-general-system-design-standards/01-general-system-design-specification.md) — 第一部分（§一~§十 + 附录A~B）：术语体系、四条工程化设计原则、文档结对设计（两阶段工作法）、各层架构末级节点识别方法、业务架构设计（两种 BA 开发方法）、产品架构设计（三独立原则）、系统设计过程（六步工作法）、验收标准、设计检查清单、常见错误与FAQ；第二部分（§十一~§十四 + 附录C~D）：四种设计模式（PACE 维度、选择框架、切换规则）、三种核心设计活动的跨模式差异、质量门禁矩阵、通用指南与产品指南的关系
+- [通用术语对照表 v2.4](00-general/10-general-system-design-standards/04-general-terminology-glossary.md) — 核心术语英中对照
 - [EOS系统设计规范 v1.0](20-eos-design/10-eos-system-design/10-eos-system-design-specification/01-eos-system-design-specification.md) — EOS 产品特有设计规则（平台链/业务链、三层工作层面、端到端业务框架）+ 四种设计模式
 - [元流水线设计规范 v1.0](10-eos-pipeline-design/10-eos-pipeline-system-design/10-eos-pipeline-system-design-specification/01-eos-pipeline-system-design-specification.md)
 
