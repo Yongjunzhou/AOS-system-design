@@ -43,3 +43,4 @@
 - [SR-F架构末级节点识别方法](sr_f_architecture_identification.md) — 三步分析法：角色类型→触发定义端到端→分解分配分析验证，触发抽象级别与多角色共享节点
 - [系统设计流水线完整规则](system_design_pipeline_rules.md) — BA→SysReq→PA完整映射规则，SysReq 0-9级层级定义
 - [用户角色](user-role.md) — 流水线开发者/团队B架构师，中文工作，重视文档一致性
+- [AI SKILL 术语统一](eos-pipeline-ai-skill-standardization.md) — 2026-06-01 EOS 流水线规范：AI 辅助文档 → AI 技能文档（AI SKILL），全文约15处
