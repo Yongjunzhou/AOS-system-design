@@ -33,6 +33,7 @@
 - [AOS流水线重构方案批准](restructure_approval.md) — 用户已批准重构方案，实施已启动（2026-05-12）
 - [AOS流水线重构计划](restructure_plan.md) — 详细的重构计划，包括每个任务的完整定义和迁移步骤
 - [AOS流水线重构方案总结](restructure_summary.md) — 完整的重构方案，包括6个任务、新目录结构、迁移计划
+- [BA IPO 指代定义当前状态](ba-ipo-definition-current.md) — §4.4 优化后的 BA IPO 定义、领域中立原则、I/O 泛化定义，第五章优化以此为前置上下文
 - [规则提取颗粒度方法论](rule_granularity_methodology.md) — 规则提取的颗粒度确定方法
 - [语义段落聚类三标准](rule_paragraph_clustering_criteria.md) — 通读路径优先 > 判断焦点 > 原文位置，独立编号补偿同一路径内不同焦点的规则
 - [以可验证性驱动的规则提取](rule_verifiability_driven_extraction.md) — 从"阅读理解"转向"可验证性分析"，提取单位是约束判断单元
