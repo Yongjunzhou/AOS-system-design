@@ -3,6 +3,7 @@
 - [BA存在的本质原因](ba_existence_reason.md) — BA是相关方可验证的业务操作界面，确保功能需求捕获的完备性；SysReq-F是系统语言，相关方无法直接验证其完整性
 - [输出产品架构锚定法与术语体系](ba_method_naming_output_product_anchoring.md) — BA方法正式命名 + 目标产品/输出产品术语区分
 - [系统设计准则优化说明](design_standards_optimization.md) — v2.1优化版，从概念到应用，实用指导型风格
+- [术语统一：解决方案实体](terminology_solution_entity.md) — 通用设计规范全文档用"解决方案实体"替代"设计实现节点/实体"描述架构末级节点
 - [系统设计准则v2.0修订完成](design_standards_v2_complete.md) — 架构与详细设计分离，5层结构，完整映射规则
 - [DevOps缺陷即知识资产](devops_bug_as_knowledge_asset.md) — EOS流水线DevOps场景中，bug/问题的本质是知识资产缺陷而非代码缺陷
 - [文档风格规则确立](doc-style-rules-established.md) — 2026-06-01 通用设计规范风格统一 + 规范模板 v2.0 重写完成，确立了 H5/H6 编号规则、引用格式、注记分层等风格标准
