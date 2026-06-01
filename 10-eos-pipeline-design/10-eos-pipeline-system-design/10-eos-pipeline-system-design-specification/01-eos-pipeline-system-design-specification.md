@@ -530,7 +530,7 @@ BA-001: EOS 系统设计准则开发（IPO名称）
 1. 功能部分从 BA IPO 去重清单出发，每项 IPO 编写一条 SysReq，描述该 IPO 在元流水线上的"接收→转换→生成"功能
 2. 每条 SysReq 对应于一个 PA 架构节点类型（构件类型），功能需求的完整定义即决定了该构件应包含的内容
 3. 非功能部分直接从 SR-NFR 承接，不经过 BA 层
-4. NFR 在 SysReq 层的处理关注：可用性、可维护性、版本兼容性对知识/方法类产品的影响
+4. NFR 在 SysReq 层的处理关注：服务可用性、可维护性、版本兼容性对知识/方法类产品的影响
 
 > 通用方法：SysReq 的分解过程和功能/非功能分配路径见[通用设计规范 §5.5~§5.6](../../../00-general/10-general-system-design-standards/01-general-system-design-specification.md#55-第3步ba--sysreq功能架构)。
 
