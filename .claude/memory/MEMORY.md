@@ -46,3 +46,4 @@
 - [系统设计流水线完整规则](system_design_pipeline_rules.md) — BA→SysReq→PA完整映射规则，SysReq 0-9级层级定义
 - [用户角色](user-role.md) — 流水线开发者/团队B架构师，中文工作，重视文档一致性
 - [AI SKILL 术语统一](eos-pipeline-ai-skill-standardization.md) — 2026-06-01 EOS 流水线规范：AI 辅助文档 → AI 技能文档（AI SKILL），全文约15处
+- ["类"后缀使用规则](product_form_classification_rule.md) — 产品类型用"类"（流水线类/非流水线类），产品形态不用"类"（软件产品/AI Skill 产品等）
