@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-为 Claude Code 提供本仓库的项目上下文和关键文件导航。系统设计方法论完整定义见[通用设计规范 v1.0](00-generalspec/01-general-sysdev-spec.md)。
+为 Claude Code 提供本仓库的项目上下文和关键文件导航。系统设计方法论完整定义见[通用设计规范 v1.0](00-generalspec/01-generalspec-sysdev.md)。
 
 ---
 
@@ -32,7 +32,7 @@
 ```
 00-generalspec/                                     # 通用方法论（独立于三个产品）
 ├── 00-doc-conventions.md          # 文档编写约定
-├── 01-general-sysdev-spec.md    # 通用设计规范 v1.0（方法论核心 + 四种设计模式，合并版）
+├── 01-generalspec-sysdev.md    # 通用设计规范 v1.0（方法论核心 + 四种设计模式，合并版）
 ├── 02-generalspec-comdev.md    # 构件开发通用规范（待编写）
 ├── 03-generalspec-sysint.md     # 集成交付通用规范（待编写）
 ├── 04-generalspec-sysops.md     # 系统运维通用规范（待编写）
@@ -67,7 +67,7 @@
 
 ## 二、关键设计文件
 
-- [通用设计规范 v1.0](00-generalspec/01-general-sysdev-spec.md) — 第一部分（§一~§十 + 附录A~B）：术语体系、四条工程化设计原则、文档结对设计（两阶段工作法）、各层架构末级节点识别方法、业务架构设计（两种 BA 开发方法）、产品架构设计（三独立原则）、系统设计过程（六步工作法）、验收标准、设计检查清单、常见错误与FAQ；第二部分（§十一~§十四 + 附录C~D）：四种设计模式（PACE 维度、选择框架、切换规则）、三种核心设计活动的跨模式差异、质量门禁矩阵、通用指南与产品指南的关系
+- [通用设计规范 v1.0](00-generalspec/01-generalspec-sysdev.md) — 第一部分（§一~§十 + 附录A~B）：术语体系、四条工程化设计原则、文档结对设计（两阶段工作法）、各层架构末级节点识别方法、业务架构设计（两种 BA 开发方法）、产品架构设计（三独立原则）、系统设计过程（六步工作法）、验收标准、设计检查清单、常见错误与FAQ；第二部分（§十一~§十四 + 附录C~D）：四种设计模式（PACE 维度、选择框架、切换规则）、三种核心设计活动的跨模式差异、质量门禁矩阵、通用指南与产品指南的关系
 - [通用术语对照表 v2.4](00-generalspec/06-generalspec-glossary.md) — 核心术语英中对照
 - [EOS系统设计规范 v1.0](20-pl4eos/10-eos-sysdev/10-eos-sysdev-spec/01-eos-sysdev-spec.md) — EOS 产品特有设计规则（平台链/业务链、三层工作层面、端到端业务框架）+ 四种设计模式
 - [元流水线设计规范 v1.0](10-pl4pleos/10-pl4eos-sysdev/10-pl4eos-sysdev-spec/01-pl4eos-sysdev-spec.md)

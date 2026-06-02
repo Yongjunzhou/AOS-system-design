@@ -1,6 +1,6 @@
 # 系统设计规范
 
-**目录用途**：包含元流水线的系统设计规范和术语对照。各层通用方法条目格式已并入 [通用设计规范](../../../00-generalspec/01-general-sysdev-spec.md) §五（系统设计过程）。
+**目录用途**：包含元流水线的系统设计规范和术语对照。各层通用方法条目格式已并入 [通用设计规范](../../../00-generalspec/01-generalspec-sysdev.md) §五（系统设计过程）。
 
 ## 📚 本目录文档
 
@@ -34,7 +34,7 @@
 ## 📖 使用建议
 
 ### 第一次阅读
-1. 先读[通用设计规范](../../../00-generalspec/01-general-sysdev-spec.md) §一~§二 建立方法论基础
+1. 先读[通用设计规范](../../../00-generalspec/01-generalspec-sysdev.md) §一~§二 建立方法论基础
 2. 再读本文 §一~§二（EOS 流水线的产品语境和特有框架）
 3. 继续读本文 §四（各层设计指引），结合通用设计规范 §五 对照阅读
 
@@ -46,7 +46,7 @@
 
 ## 🔗 相关文档
 
-- [通用设计规范](../../../00-generalspec/01-general-sysdev-spec.md)
+- [通用设计规范](../../../00-generalspec/01-generalspec-sysdev.md)
 - [流水线产品数据](../90-pl4eos-system-product-data/README.md)
 
 ---
