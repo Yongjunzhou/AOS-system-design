@@ -18,7 +18,7 @@
 
 ## 配置产出类型
 
-- 表单定义（`30-configurations/01-config-form-definition.md`）
+- 表单定义（`20-eos-configs/00-eos-config-form.md`）
 
 ## 接口概要
 

@@ -24,11 +24,11 @@
 10-pl4pleos/                元流水线的完整开发工作空间
 20-pl4eos/                  EOS 流水线的完整开发工作空间
 30-eos/                     EOS 产品本体（四条流水线的运行结果）
-30-eos/10-product-spec/  产品规格（设计线产出）
-30-eos/20-engines/                引擎实现（开发线产出）
-30-eos/30-configurations/         配置定义（开发线产出）
-30-eos/40-deployment/             部署交付（集成线产出）
-30-eos/50-operation/              运维数据（运维线产出）
+30-eos/00-eos-product-spec/  产品规格（设计线产出）
+30-eos/10-eos-engines/               引擎实现（开发线产出）
+30-eos/20-eos-configs/               配置定义（开发线产出）
+30-eos/30-eos-deployment/           部署交付（集成线产出）
+30-eos/40-eos-operation/            运维数据（运维线产出）
 80-sessions/               历史会话记录
 90-hold/                   暂存归档
 ```

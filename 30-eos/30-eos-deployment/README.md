@@ -19,7 +19,7 @@
 | 02 | `02-environment-matrix.md` | 环境配置矩阵（模板） |
 | 03 | `03-release-process.md` | 发布流程（模板） |
 
-部署架构总览见 `10-product-specification/05-deployment-arch.md`。
+部署架构总览见 `00-eos-product-spec/04-eos-deployment-arch.md`。
 
 ## 说明
 

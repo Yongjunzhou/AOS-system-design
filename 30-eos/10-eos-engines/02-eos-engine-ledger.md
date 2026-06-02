@@ -18,7 +18,7 @@
 
 ## 配置产出类型
 
-- 台账定义（`30-configurations/02-config-ledger-definition.md`）
+- 台账定义（`20-eos-configs/01-eos-config-ledger.md`）
 - 视图定义
 
 ## 接口概要
