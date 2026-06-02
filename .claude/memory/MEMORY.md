@@ -49,3 +49,4 @@
 - ["类"后缀使用规则](product_form_classification_rule.md) — 产品类型用"类"（流水线类/非流水线类），产品形态不用"类"（软件产品/AI Skill 产品等）
 - [流水线产品形态决定规则](pipeline_product_form_determination.md) — 流水线类产品的形态由用户与开发者共同确定，非方法论强制，取决于执行主体
 - [目录结构调整方向](directory-restructure-direction.md) — 一级目录方案：00-generalspec/10-meta-pipeline/20-pipeline4eos/30-eos，产品数据随流水线走
+- [EOS Pipeline Spec 2026-06-01](2026-06-01-eos-pipeline-spec-optimization.md) — §一重构、§二对齐、§2.3重写、设计准则→设计规范、AI SKILL 术语统一
