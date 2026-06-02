@@ -1,18 +1,70 @@
-# EOS 系统设计规范
+# 系统设计规范
 
-> 设计线构件：为团队 M 开展 EOS（企业运营体系）的系统设计提供设计规范支持。
+**目录用途**：包含元流水线的各阶段设计规范和术语对照。各层通用方法条目格式已并入 [通用设计规范](../../00-generalspec/01-generalspec-sysdev.md) §五（系统设计过程）。
 
-本目录包含 EOS 的系统设计规范和术语对照：
+## 📚 本目录文档
 
-| 文件 | 说明 | 版本 |
-|------|------|------|
-| [01-eos-system-design-specification.md](01-eos-system-design-specification.md) | **EOS 系统设计规范**（合并版）：第一部分（§零~§六）产品语境、特有框架、各层设计指引、验收标准；第二部分（§七~§十四）四种设计模式的操作框架与独立指南生成规则 | v1.0 |
-| [04-eos-system-design-terminology-glossary.md](04-eos-system-design-terminology-glossary.md) | EOS 术语对照表 | v2.0 |
+### 01-pl4pleos-spec-sysdev.md
+**元流水线系统设计规范**（合并版）
 
-> **合并说明**：原 `01-eos-system-design-standards.md`（设计准则）和 `02-eos-system-design-4modes-guide.md`（4模式指南）已合并为 `01-eos-system-design-specification.md`。旧文档已归档至 `200-put-on-hold/00-archived-spec-docs/eos/`。
+**第一部分（§零~§六）**：继承原设计准则
+- EOS 流水线的产品语境和特有设计框架（三层工作层面、PA 节点定义原则、信息处理模式）
+- 通用方法论精要（摘要引用自通用设计规范）
+- **§四 各层设计指引**：流水线特有场景化指导（OR/SR/BA/SysReq/PA 各层实例）
+- EOS 流水线验收标准和常见错误
 
-**版本策略**：
-- 通用方法论核心（五层结构、三条核心规则、基本术语、验收标准）基于 [`00-general/10-general-system-design-standards/01-general-system-design-specification.md`](../../../00-general/10-general-system-design-standards/01-general-system-design-specification.md) 通用设计规范
-- 本规范定义 EOS 产品特有设计规则（产品语境、平台架构、两条设计链、端到端业务框架、PA 分解原则、信息处理模式等）
+**第二部分（§七~§十四）**：继承原 4 模式指南
+- 四种设计模式的操作框架、角色职责、操作流程骨架
+- 独立指南的生成框架（统一模板、编号规则、填充规则）
+- 质量门禁、交付物全景、检查清单模板
 
-适用于EOS系统设计过程（阶段1）。
+**用途**：EOS 流水线的系统设计规范——阅读前建议先了解通用设计规范的基本概念
+
+> **合并说明**：原 `01-eos-pipeline-sysdev-standards.md`（设计准则）和 `02-eos-pipeline-sysdev-4modes-guide.md`（4模式指南）已合并为本文件。旧文档已归档至 `90-hold/00-archived-spec-docs/pl4eos/`。
+
+### 02-pl4pleos-spec-comdev.md
+**构件开发规范**
+
+待编写。
+
+### 03-pl4pleos-spec-sysint.md
+**集成交付规范**
+
+待编写。
+
+### 04-pl4pleos-spec-sysops.md
+**系统运维规范**
+
+待编写。
+
+### 06-pl4pleos-glossary.md
+**系统设计英文术语对照表**
+
+- 核心术语对照（文档类型、5层结构、需求类型等）
+- 系统设计流水线术语
+- 操作流程术语和质量保证术语
+
+**用途**：统一英文术语，便于国际化和技术交流
+
+## 📖 使用建议
+
+### 第一次阅读
+1. 先读[通用设计规范](../../00-generalspec/01-generalspec-sysdev.md) §一~§二 建立方法论基础
+2. 再读本文 §一~§二（EOS 流水线的产品语境和特有框架）
+3. 继续读本文 §四（各层设计指引），结合通用设计规范 §五 对照阅读
+
+### 日常参考
+- 各层条目格式和编号规则 → 通用设计规范 §五（系统设计过程）对应步骤
+- 常见错误和 FAQ → §六
+- 检查清单 → 通用设计规范 §七 + 本文 §十四
+- 术语对照 → 06-pl4pleos-glossary.md
+
+## 🔗 相关文档
+
+- [通用设计规范](../../00-generalspec/01-generalspec-sysdev.md)
+- [流水线运行数据](../30-pl4pleos-opsdata/README.md)
+
+---
+
+**版本**：v2.0
+**最后更新**：2026-05-29
