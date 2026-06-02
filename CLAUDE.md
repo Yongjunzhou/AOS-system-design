@@ -32,7 +32,7 @@
 ```
 00-generalspec/                                     # 通用方法论（独立于三个产品）
 ├── 01-general-sysdev-spec.md    # 通用设计规范 v1.0（方法论核心 + 四种设计模式，合并版）
-├── 03-document-authoring-conventions.md          # 文档编写约定
+├── 00-document-authoring-conventions.md          # 文档编写约定
 ├── 04-general-terminology-glossary.md           # 通用术语对照 v2.3
 └── README.md                                    # 目录说明
 
@@ -87,7 +87,7 @@
 
 ## 四、产品数据文件
 
-元流水线和 EOS 的产品数据遵循相同结构（模板见 `03-document-authoring-conventions.md`）：
+元流水线和 EOS 的产品数据遵循相同结构（模板见 `00-document-authoring-conventions.md`）：
 
 | 文件 | 内容 |
 |------|------|
