@@ -21,7 +21,7 @@
 │   ├── 20-pl4eos-sysdev-tasks/          # 四种场景的操作规程（任务定义）
 │   └── 90-pl4eos-system-product-data/   # 流水线的标准产品数据（9 份文档）
 ├── 20-pl4eos-comdev/             # 阶段2：构件开发（待扩展）
-└── 30-pl4eos-integration-delivery/      # 阶段3：集成交付（待扩展）
+└── 30-pl4eos-sysint/      # 阶段3：集成交付（待扩展）
 ```
 
 ---
@@ -42,7 +42,7 @@
 
 设计线 阶段2 的工作空间。当前为空，待系统设计完成后扩展。
 
-### 30-pl4eos-integration-delivery/
+### 30-pl4eos-sysint/
 
 设计线 阶段3 的工作空间。当前为空，待构件开发完成后扩展。
 
