@@ -31,8 +31,11 @@
 
 ```
 00-generalspec/                                     # 通用方法论（独立于三个产品）
-├── 01-general-sysdev-spec.md    # 通用设计规范 v1.0（方法论核心 + 四种设计模式，合并版）
 ├── 00-doc-conventions.md          # 文档编写约定
+├── 01-general-sysdev-spec.md    # 通用设计规范 v1.0（方法论核心 + 四种设计模式，合并版）
+├── 02-generalspec-comdev.md    # 构件开发通用规范（待编写）
+├── 03-generalspec-sysint.md     # 集成交付通用规范（待编写）
+├── 04-generalspec-sysops.md     # 系统运维通用规范（待编写）
 ├── 06-generalspec-glossary.md           # 通用术语对照 v2.3
 └── README.md                                    # 目录说明
 
