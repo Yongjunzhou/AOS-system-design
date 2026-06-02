@@ -5,7 +5,7 @@
 本项目包含三个产品，遵循统一的五层系统设计方法论：
 
 - **元流水线**：用于设计 EOS 流水线的流水线。采用通用方法论对自身进行系统设计，产出 EOS 流水线的完整架构定义。自身按四阶段开发：系统设计（已完成）、构件开发（待扩展）、集成交付（待扩展）、系统运维（待扩展）。开发空间 `10-pl4pleos/`。
-- **EOS 流水线**：服务于 EOS 全生命周期的流水线，由设计线（系统设计）、开发线（组件开发）、集成线（集成交付）、运维线（系统运维）四个子流水线组成。当前设计线已完成，其余待开发。构件位于 `20-pl4eos/10-eos-system-design/`。
+- **EOS 流水线**：服务于 EOS 全生命周期的流水线，由设计线（系统设计）、开发线（组件开发）、集成线（集成交付）、运维线（系统运维）四个子流水线组成。当前设计线已完成，其余待开发。构件位于 `20-pl4eos/10-eos-sysdev/`。
 - **EOS（企业运营体系）**：被构建和运维的目标系统——IT/AI 化的企业运营系统，覆盖市场、研发、生产、售后和管理等业务。开发空间 `20-pl4eos/`，产品本体 `30-eos/`。
 
 第四个并行目标是：通过三个产品的实践，探索和验证复杂产品开发方法论，沉淀通用经验至 `00-generalspec/`，含准则、模板、术语和实例。
@@ -33,7 +33,7 @@
 90-hold/                   暂存归档
 ```
 
-每个产品的工作空间按产品开发三阶段组织：`10-*-system-design/`（阶段1：系统设计）、`20-*-component-dev/`（阶段2：构件开发，待扩展）、`30-*-integration-delivery/`（阶段3：集成交付，待扩展）。此外，`30-eos/` 为 EOS 产品本体，按四条流水线的产出组织为五个子目录。
+每个产品的工作空间按产品开发三阶段组织：`10-*-sysdev/`（阶段1：系统设计）、`20-*-component-dev/`（阶段2：构件开发，待扩展）、`30-*-integration-delivery/`（阶段3：集成交付，待扩展）。此外，`30-eos/` 为 EOS 产品本体，按四条流水线的产出组织为五个子目录。
 
 详见 [`CLAUDE.md`](CLAUDE.md) 中的完整目录结构和三层产品构造链说明。
 
@@ -43,7 +43,7 @@
 
 | 如果你想 | 请阅读 |
 |---------|--------|
-| 理解方法论核心（五层结构、核心规则、六步法 + 四种设计模式） | [`00-generalspec/10-general-system-design-standards/01-general-system-design-specification.md`](00-generalspec/10-general-system-design-standards/01-general-system-design-specification.md) |
+| 理解方法论核心（五层结构、核心规则、六步法 + 四种设计模式） | [`00-generalspec/10-general-sysdev-standards/01-general-sysdev-specification.md`](00-generalspec/10-general-sysdev-standards/01-general-sysdev-specification.md) |
 | 理解三个产品的关系和构造链 | [`CLAUDE.md`](CLAUDE.md) §「三层产品构造链」 |
 | 了解仓库完整目录结构 | [`CLAUDE.md`](CLAUDE.md) §「实际目录结构」 |
 | 获得项目全貌（AI 工作指引） | [`CLAUDE.md`](CLAUDE.md) |
@@ -58,7 +58,7 @@
 OR（原始需求）→ SR（相关方需求）→ BA（业务架构）→ SysReq（系统需求）→ PA（产品架构）
 ```
 
-三条核心规则：**1:1 分配约束**、**N:1 承接支持**、**双向追溯**。详见[通用设计规范](00-generalspec/10-general-system-design-standards/01-general-system-design-specification.md)。
+三条核心规则：**1:1 分配约束**、**N:1 承接支持**、**双向追溯**。详见[通用设计规范](00-generalspec/10-general-sysdev-standards/01-general-sysdev-specification.md)。
 
 本项目包含三个产品，构成一条三层产品构造链：元流水线 → EOS 流水线 → EOS。详见 [`CLAUDE.md`](CLAUDE.md) §「三层产品构造链」。
 
