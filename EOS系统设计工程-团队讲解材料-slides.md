@@ -611,7 +611,7 @@ EOS 的产品数据：    01-OR → 02/03-SR → 04-BA → 05/06-SysReq → 07-P
 |-----|------|
 | 核心方法论 | `00-general/.../01-general-system-design-standards.md` |
 | 两种 BA 方法 | 同上 §4.2 |
-| 术语对照 | `00-generalspec/06-glossary.md` |
+| 术语对照 | `00-generalspec/06-generalspec-glossary.md` |
 | 任务定义样例 | 任一 `20-eos-pipeline-system-design-tasks/` 下的文档 |
 | 设计线产品架构 | `90-eos-pipeline-system-product-data/07-eos-pipeline-product-architecture.md` |
 
@@ -665,6 +665,6 @@ EOS 的产品数据：    01-OR → 02/03-SR → 04-BA → 05/06-SysReq → 07-P
 |-----------|-----------|
 | 核心设计方法论 | `00-general/.../01-general-system-design-standards.md` |
 | 两种 BA 方法 | 同上 §4.2 |
-| 术语英中对照 | `00-generalspec/06-glossary.md` |
+| 术语英中对照 | `00-generalspec/06-generalspec-glossary.md` |
 | 四种场景决策 | `00-general/.../02-general-system-design-4modes-guide.md` |
 | EOS 设计准则 | `20-eos-design/.../01-eos-system-design-standards.md` |

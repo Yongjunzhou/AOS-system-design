@@ -2565,7 +2565,7 @@ spec-review.md与Review-methodology.md 的内容一致吗
 - `01-general-system-design-standards.md` — 通用**准则**
 - `02-general-system-design-4modes-guide.md` — 通用**指南**
 - `03-specification-template.md` — **模板**
-- `06-glossary.md` — **术语**
+- `06-generalspec-glossary.md` — **术语**
 
 再加上即将移入的审查工具，已经不限于"准则"了。
 
@@ -2605,7 +2605,7 @@ spec-review.md与Review-methodology.md 的内容一致吗
 ├── 01-general-system-design-standards.md    ← 准则
 ├── 02-general-system-design-4modes-guide.md ← 指南
 ├── 03-specification-template.md      ← 模板
-└── 06-glossary.md ← 术语
+└── 06-generalspec-glossary.md ← 术语
 ```
 
 加了子目录反而多一层导航：
@@ -2619,7 +2619,7 @@ spec-review.md与Review-methodology.md 的内容一致吗
 ├── 03-template/
 │   └── 03-specification-template.md
 └── 04-glossary/
-    └── 06-glossary.md
+    └── 06-generalspec-glossary.md
 ```
 
 引用路径从 `00-general/01-general-system-design-standards.md` 变成 `00-general/01-standards/01-general-system-design-standards.md`，反而不便。
@@ -2651,7 +2651,7 @@ spec-review.md与Review-methodology.md 的内容一致吗
 │   ├── 01-general-system-design-standards.md
 │   ├── 02-general-system-design-4modes-guide.md
 │   ├── 03-specification-template.md
-│   └── 06-glossary.md
+│   └── 06-generalspec-glossary.md
 └── 99-review-tools/               ← 审查工具
     ├── check-version.sh
     ├── check-links.sh
