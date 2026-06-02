@@ -1,11 +1,11 @@
 # 系统设计规范
 
-**目录用途**：包含 EOS 流水线的系统设计规范和术语对照。各层通用方法条目格式已并入 [通用设计规范](../../../../00-general/10-general-system-design-standards/01-general-system-design-specification.md) §五（系统设计过程）。
+**目录用途**：包含元流水线的系统设计规范和术语对照。各层通用方法条目格式已并入 [通用设计规范](../../../00-generalspec/01-general-sysdev-spec.md) §五（系统设计过程）。
 
 ## 📚 本目录文档
 
-### 01-eos-pipeline-system-design-specification.md
-**EOS 流水线系统设计规范**（合并版）
+### 01-pl4eos-sysdev-spec.md
+**元流水线系统设计规范**（合并版）
 
 **第一部分（§零~§六）**：继承原设计准则
 - EOS 流水线的产品语境和特有设计框架（三层工作层面、PA 节点定义原则、信息处理模式）
@@ -20,9 +20,9 @@
 
 **用途**：EOS 流水线的系统设计规范——阅读前建议先了解通用设计规范的基本概念
 
-> **合并说明**：原 `01-eos-pipeline-system-design-standards.md`（设计准则）和 `02-eos-pipeline-system-design-4modes-guide.md`（4模式指南）已合并为本文件。旧文档已归档至 `200-put-on-hold/00-archived-spec-docs/eos-pipeline/`。
+> **合并说明**：原 `01-eos-pipeline-sysdev-standards.md`（设计准则）和 `02-eos-pipeline-sysdev-4modes-guide.md`（4模式指南）已合并为本文件。旧文档已归档至 `90-hold/00-archived-spec-docs/pl4eos/`。
 
-### 04-eos-pipeline-terminology-glossary.md
+### 04-pl4eos-terminology-glossary.md
 **系统设计英文术语对照表**
 
 - 核心术语对照（文档类型、5层结构、需求类型等）
@@ -34,7 +34,7 @@
 ## 📖 使用建议
 
 ### 第一次阅读
-1. 先读[通用设计规范](../../../../00-general/10-general-system-design-standards/01-general-system-design-specification.md) §一~§二 建立方法论基础
+1. 先读[通用设计规范](../../../00-generalspec/01-general-sysdev-spec.md) §一~§二 建立方法论基础
 2. 再读本文 §一~§二（EOS 流水线的产品语境和特有框架）
 3. 继续读本文 §四（各层设计指引），结合通用设计规范 §五 对照阅读
 
@@ -42,13 +42,12 @@
 - 各层条目格式和编号规则 → 通用设计规范 §五（系统设计过程）对应步骤
 - 常见错误和 FAQ → §六
 - 检查清单 → 通用设计规范 §七 + 本文 §十四
-- 术语对照 → 04-eos-pipeline-terminology-glossary.md
+- 术语对照 → 04-pl4eos-terminology-glossary.md
 
 ## 🔗 相关文档
 
-- [通用设计规范](../../../../00-general/10-general-system-design-standards/01-general-system-design-specification.md)
-- [EOS 流水线 AI 辅助文档](../30-eos-pipeline-system-design-ai-support/README.md)
-- [流水线产品数据](../90-eos-pipeline-system-product-data/README.md)
+- [通用设计规范](../../../00-generalspec/01-general-sysdev-spec.md)
+- [流水线产品数据](../90-pl4eos-system-product-data/README.md)
 
 ---
 

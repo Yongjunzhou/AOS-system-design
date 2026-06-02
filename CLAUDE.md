@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-为 Claude Code 提供本仓库的项目上下文和关键文件导航。系统设计方法论完整定义见[通用设计规范 v1.0](00-generalspec/10-general-sysdev-standards/01-general-sysdev-spec.md)。
+为 Claude Code 提供本仓库的项目上下文和关键文件导航。系统设计方法论完整定义见[通用设计规范 v1.0](00-generalspec/01-general-sysdev-spec.md)。
 
 ---
 
@@ -31,16 +31,16 @@
 
 ```
 00-generalspec/                                     # 通用方法论（独立于三个产品）
-└── 10-general-sysdev-standards/
-    ├── 01-general-sysdev-spec.md    # 通用设计规范 v1.0（方法论核心 + 四种设计模式，合并版）
-    ├── 03-document-authoring-conventions.md          # 文档编写约定
-    └── 04-general-terminology-glossary.md           # 通用术语对照 v2.3
+├── 01-general-sysdev-spec.md    # 通用设计规范 v1.0（方法论核心 + 四种设计模式，合并版）
+├── 03-document-authoring-conventions.md          # 文档编写约定
+├── 04-general-terminology-glossary.md           # 通用术语对照 v2.3
+└── README.md                                    # 目录说明
 
 10-pl4pleos/                                        # 元流水线——产出 EOS 流水线的流水线
-└── 10-eos-pipeline-sysdev/                  # 元流水线的系统设计（当前范围）
-    ├── 10-eos-pipeline-sysdev-spec/     # 设计准则（通用方法论 + 元流水线专有）
-    ├── 20-eos-pipeline-sysdev-tasks/             # 任务定义 + AI 提示词（26 个操作规程任务）
-    └── 90-eos-pipeline-system-product-data/             # 9 份标准产品数据文档
+└── 10-pl4eos-sysdev/                  # 元流水线的系统设计（当前范围）
+    ├── 10-pl4eos-sysdev-spec/     # 设计准则（通用方法论 + 元流水线专有）
+    ├── 20-pl4eos-sysdev-tasks/             # 任务定义 + AI 提示词（26 个操作规程任务）
+    └── 90-pl4eos-system-product-data/             # 9 份标准产品数据文档
 
 20-pl4eos/                                          # EOS 流水线
 ├── 10-eos-sysdev/                           # EOS 系统设计（当前工作范围）
@@ -64,12 +64,12 @@
 
 ## 二、关键设计文件
 
-- [通用设计规范 v1.0](00-generalspec/10-general-sysdev-standards/01-general-sysdev-spec.md) — 第一部分（§一~§十 + 附录A~B）：术语体系、四条工程化设计原则、文档结对设计（两阶段工作法）、各层架构末级节点识别方法、业务架构设计（两种 BA 开发方法）、产品架构设计（三独立原则）、系统设计过程（六步工作法）、验收标准、设计检查清单、常见错误与FAQ；第二部分（§十一~§十四 + 附录C~D）：四种设计模式（PACE 维度、选择框架、切换规则）、三种核心设计活动的跨模式差异、质量门禁矩阵、通用指南与产品指南的关系
-- [通用术语对照表 v2.4](00-generalspec/10-general-sysdev-standards/04-general-terminology-glossary.md) — 核心术语英中对照
+- [通用设计规范 v1.0](00-generalspec/01-general-sysdev-spec.md) — 第一部分（§一~§十 + 附录A~B）：术语体系、四条工程化设计原则、文档结对设计（两阶段工作法）、各层架构末级节点识别方法、业务架构设计（两种 BA 开发方法）、产品架构设计（三独立原则）、系统设计过程（六步工作法）、验收标准、设计检查清单、常见错误与FAQ；第二部分（§十一~§十四 + 附录C~D）：四种设计模式（PACE 维度、选择框架、切换规则）、三种核心设计活动的跨模式差异、质量门禁矩阵、通用指南与产品指南的关系
+- [通用术语对照表 v2.4](00-generalspec/04-general-terminology-glossary.md) — 核心术语英中对照
 - [EOS系统设计规范 v1.0](20-pl4eos/10-eos-sysdev/10-eos-sysdev-spec/01-eos-sysdev-spec.md) — EOS 产品特有设计规则（平台链/业务链、三层工作层面、端到端业务框架）+ 四种设计模式
-- [元流水线设计规范 v1.0](10-pl4pleos/10-eos-pipeline-sysdev/10-eos-pipeline-sysdev-spec/01-eos-pipeline-sysdev-spec.md)
+- [元流水线设计规范 v1.0](10-pl4pleos/10-pl4eos-sysdev/10-pl4eos-sysdev-spec/01-pl4eos-sysdev-spec.md)
 
-元流水线的操作规程（任务定义）位于 `10-pl4pleos/10-eos-pipeline-sysdev/20-eos-pipeline-sysdev-tasks/` 各场景目录下；EOS 流水线的任务定义位于 `20-pl4eos/10-eos-sysdev/20-eos-sysdev-tasks/` 下。
+元流水线的操作规程（任务定义）位于 `10-pl4pleos/10-pl4eos-sysdev/20-pl4eos-sysdev-tasks/` 各场景目录下；EOS 流水线的任务定义位于 `20-pl4eos/10-eos-sysdev/20-eos-sysdev-tasks/` 下。
 
 ---
 
