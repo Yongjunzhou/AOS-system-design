@@ -52,3 +52,4 @@
 - [EOS Pipeline Spec 2026-06-01](2026-06-01-eos-pipeline-spec-optimization.md) — §一重构、§二对齐、§2.3重写、设计准则→设计规范、AI SKILL 术语统一
 - [两层目录同构化](two-tier-isomorphic-structure.md) — 10-pl4pleos/ 和 20-pl4eos/ 同构，各含 00-spec/10-product-sysdev/20-comdev/30-sysint/40-sysops/80-opsdata
 - [交付物框架缩减为两类](delivery-framework-two-types.md) — A1/A2 从"四类构件"改为"两类交付物"（设计规范 + AI SKILL）
+- [元流水线规范降级计划](meta-pipeline-spec-downgrade-plan.md) — 计划将 01-pl4pleos-spec-sysdev.md 从完整规范降级为方法论说明+工程导航
