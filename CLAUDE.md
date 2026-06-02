@@ -47,7 +47,7 @@
 │   ├── 10-eos-sysdev-spec/               # 设计准则（EOS 流水线—设计线构件）
 │   ├── 20-eos-sysdev-tasks/                       # 任务定义 + AI 提示词（4 场景任务定义）
 │   └── 90-eos-system-product-data/                       # EOS 产品数据
-├── 20-eos-component-dev/                            # 构件开发（待扩展）
+├── 20-eos-comdev/                            # 构件开发（待扩展）
 └── 30-eos-integration-delivery/                     # 集成交付（待扩展）
 
 30-eos/                   # EOS 产品本体（四条流水线的运行结果）

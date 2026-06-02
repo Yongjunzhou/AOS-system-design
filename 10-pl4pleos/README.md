@@ -20,7 +20,7 @@
 │   ├── 10-pl4eos-sysdev-spec/           # 设计准则（通用方法论 + 元流水线专有）
 │   ├── 20-pl4eos-sysdev-tasks/          # 四种场景的操作规程（任务定义）
 │   └── 90-pl4eos-system-product-data/   # 流水线的标准产品数据（9 份文档）
-├── 20-pl4eos-component-dev/             # 阶段2：构件开发（待扩展）
+├── 20-pl4eos-comdev/             # 阶段2：构件开发（待扩展）
 └── 30-pl4eos-integration-delivery/      # 阶段3：集成交付（待扩展）
 ```
 
@@ -38,7 +38,7 @@
 | `20-pl4eos-sysdev-tasks/` | 设计线 构件 | 26 | 瀑布/敏捷/逆向工程/DevOps 四种场景的操作规程 |
 | `90-pl4eos-system-product-data/` | 设计线 设计输出 | 10 | 标准产品数据（01-OR ~ 09-验证报告 + README） |
 
-### 20-pl4eos-component-dev/
+### 20-pl4eos-comdev/
 
 设计线 阶段2 的工作空间。当前为空，待系统设计完成后扩展。
 
