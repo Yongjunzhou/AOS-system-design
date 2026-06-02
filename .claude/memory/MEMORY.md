@@ -25,6 +25,8 @@
 - [流水线类系统需求推导](pipeline_class_derivation.md) — 推导锚点偏移到输出产品（原目标产品），输出产品可是实物/软件/方法工具集等任何形态
 - [Pipeline文档重新生成计划](pipeline_regeneration_plan.md) — 使用v2.0准则重新生成相关方需求、业务架构、系统需求、产品架构
 - [流水线准则修订 v3.5](pipeline-standards-revision-v35.md) — 流水线系统设计准则 v3.4→v3.5 修订完成，对齐通用准则 v1.0
+- [产品形态分类框架](product_classification_framework.md) — 四种形态：实物/软件/AI Skill/服务（知识/方法），正交产品类型维度，修正§6.5。设计描述≠构件
+- [AI Skill 产品架构模式](pipeline_architecture_skill_leaf_node.md) — AI Skill 产品形态（A1/A2）的架构末级节点=Skill。已限定为四种形态之一，非通用模式
 - [产品关系重构完成](product_relationship_reframe_complete.md) — 两层产品关系→三层工作层面，Pipeline v3.7 + AOS v2.1
 - [业务架构层级结构](project_ba_hierarchy.md) — 0-6级层级定义，5级组件是需求承接关键层级
 - [项目状态](project-current-state.md) — 2026-06-01：EOS 流水线规范 A→B→C 三步对齐完成；通用规范 Part 1+Part 2 全量优化完成
