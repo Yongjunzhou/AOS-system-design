@@ -48,11 +48,11 @@
 │   ├── 06-pl4pleos-glossary.md        #   术语对照
 │   └── README.md                      #   目录说明
 ├── 10-pl4pleos-subpl-sysdev/           # 系统设计子线
-│   ├── 00-presysdev-4-pl4eos/         #   OR 预处理
-│   ├── 10-wfsysdev-4-pl4eos/          #   瀑布（6 任务）
-│   ├── 20-resysdev-4-pl4eos/          #   逆向工程（8 任务）
-│   ├── 30-agsysdev-4-pl4eos/          #   敏捷（8 任务）
-│   ├── 40-opsysdev-4-pl4eos/          #   DevOps（4 任务）
+│   ├── 00-presysdev-4-pl4eos/         #   对 EOS 流水线的 OR 预处理
+│   ├── 10-wfsysdev-4-pl4eos/          #   对 EOS 流水线的瀑布式系统设计（6 任务）
+│   ├── 20-resysdev-4-pl4eos/          #   对 EOS 流水线的逆向工程（8 任务）
+│   ├── 30-agsysdev-4-pl4eos/          #   对 EOS 流水线的敏捷系统设计（8 任务）
+│   ├── 40-opsysdev-4-pl4eos/          #   对 EOS 流水线的 DevOps（4 任务）
 │   └── README.md
 ├── 20-pl4pleos-subpl-comdev/           # 构件开发子线（待扩展）
 ├── 30-pl4pleos-subpl-sysint/           # 集成交付子线（待扩展）
@@ -68,11 +68,11 @@
 │   ├── 06-pl4eos-glossary.md          #   术语对照
 │   └── README.md                      #   目录说明
 ├── 10-pl4eos-subpl-sysdev/             # 系统设计子线
-│   ├── 00-presysdev-4-eos.md          #   OR 预处理
-│   ├── 10-wfsysdev-4-eos/             #   瀑布（6 任务）
-│   ├── 20-resysdev-4-eos/             #   逆向工程（8 任务）
-│   ├── 30-agsysdev-4-eos/             #   敏捷（8 任务）
-│   ├── 40-opsysdev-4-eos/             #   DevOps（4 任务）
+│   ├── 00-presysdev-4-eos.md          #   对 EOS 的 OR 预处理
+│   ├── 10-wfsysdev-4-eos/             #   对 EOS 的瀑布式系统设计（6 任务）
+│   ├── 20-resysdev-4-eos/             #   对 EOS 的逆向工程（8 任务）
+│   ├── 30-agsysdev-4-eos/             #   对 EOS 的敏捷系统设计（8 任务）
+│   ├── 40-opsysdev-4-eos/             #   对 EOS 的 DevOps（4 任务）
 │   └── README.md
 ├── 20-pl4eos-subpl-comdev/             # 构件开发子线（待扩展）
 ├── 30-pl4eos-subpl-sysint/             # 集成交付子线（待扩展）
@@ -115,9 +115,9 @@
 
 ---
 
-## 四、产品数据文件
+## 四、输出产品的数据文件
 
-元流水线和 EOS 的产品数据遵循相同结构（模板见 `00-doc-conventions.md`）：
+数据文件描述流水线**输出产品**的规格——即流水线上承载/跑的数据。元流水线的输出产品是 EOS 流水线（pl4eos），EOS 流水线的输出产品是 EOS 本体。两者遵循相同结构（模板见 `00-doc-conventions.md`）：
 
 | 文件 | 内容 |
 |------|------|
