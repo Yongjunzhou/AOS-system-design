@@ -30,7 +30,7 @@
 | 条件 | 说明 |
 |------|------|
 | 输入 | `../../90-eos-system-product-data/_inputs/10-source-materials/` 目录中的原始材料文件 + `../../90-eos-system-product-data/_inputs/00-registry-log.md` 中"建议状态=待处理"的记录 |
-| 参考 | 通用设计准则 §五.3 OR→SR 中 OR 部分 |
+| 参考 | 通用设计准则 §七.3（原始需求分析） |
 
 ## 三、操作流程
 
