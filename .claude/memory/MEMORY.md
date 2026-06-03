@@ -53,3 +53,4 @@
 - [两层目录同构化](two-tier-isomorphic-structure.md) — 10-pl4pleos/ 和 20-pl4eos/ 同构，各含 00-spec/10-product-sysdev/20-comdev/30-sysint/40-sysops/80-opsdata
 - [交付物框架缩减为两类](delivery-framework-two-types.md) — A1/A2 从"四类构件"改为"两类交付物"（设计规范 + AI SKILL）
 - [元流水线规范降级计划](meta-pipeline-spec-downgrade-plan.md) — 计划将 01-pl4pleos-spec-sysdev.md 从完整规范降级为方法论说明+工程导航
+- [pl4eos 规范使命定义](pl4eos-spec-mission.md) — pl4eos 的系统设计规范是产品的设计描述，服务于设计线开发人员；A1 使命对称但需精简
