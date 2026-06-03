@@ -22,16 +22,17 @@
 │   ├── 03-pl4pleos-spec-sysint.md     #   集成交付规范（待编写）
 │   ├── 04-pl4pleos-spec-sysops.md     #   系统运维规范（待编写）
 │   └── 06-pl4pleos-glossary.md        #   术语对照
-├── 10-pl4pleos-product-sysdev/         # 可运行产品—系统设计
-│   ├── 00-pl4pleos-presysdev-skill/   #   OR 预处理
-│   ├── 10-pl4pleos-wfsysdev-skill/    #   瀑布（6 任务）
-│   ├── 20-pl4pleos-resysdev-skill/    #   逆向工程（8 任务）
-│   ├── 30-pl4pleos-agsysdev-skill/    #   敏捷（8 任务）
-│   └── 40-pl4pleos-opsysdev-skill/    #   DevOps（4 任务）
-├── 20-pl4pleos-product-comdev/         # 可运行产品—构件开发（待扩展）
-├── 30-pl4pleos-product-sysint/         # 可运行产品—集成交付（待扩展）
-├── 40-pl4pleos-product-sysops/         # 可运行产品—系统运维（待扩展）
-└── 80-pl4pleos-opsdata/                # 运行数据
+├── 10-pl4pleos-subpl-sysdev/           # 系统设计子线
+│   ├── 00-presysdev-4-pl4eos/         #   OR 预处理
+│   ├── 10-wfsysdev-4-pl4eos/          #   瀑布（6 任务）
+│   ├── 20-resysdev-4-pl4eos/          #   逆向工程（8 任务）
+│   ├── 30-agsysdev-4-pl4eos/          #   敏捷（8 任务）
+│   ├── 40-opsysdev-4-pl4eos/          #   DevOps（4 任务）
+│   └── README.md
+├── 20-pl4pleos-subpl-comdev/           # 构件开发子线（待扩展）
+├── 30-pl4pleos-subpl-sysint/           # 集成交付子线（待扩展）
+├── 40-pl4pleos-subpl-sysops/           # 系统运维子线（待扩展）
+└── 80-pl4pleos-2-pl4eosdata/           # 运行数据—元流水线到 pl4eos 的产品数据
 ```
 
 ---

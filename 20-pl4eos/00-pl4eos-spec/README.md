@@ -62,7 +62,7 @@
 ## 🔗 相关文档
 
 - [通用设计规范](../../00-generalspec/01-generalspec-sysdev.md)
-- [流水线运行数据](../30-pl4pleos-opsdata/README.md)
+- [流水线运行数据](../../10-pl4pleos/80-pl4pleos-2-pl4eosdata/README.md)
 
 ---
 

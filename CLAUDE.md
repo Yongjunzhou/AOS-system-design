@@ -24,7 +24,7 @@
 | 层 | 内容 | 产出位置 |
 |----|------|---------|
 | **第1层** | 元流水线构建：构建元流水线自身 + 用其设计 EOS 流水线 | `10-pl4pleos/` |
-| **第2层** | EOS 流水线构建：展开为各子线的操作规程（准则/指南/AI 辅助/任务定义） | `20-pl4eos/10-pl4eos-product-sysdev/` |
+| **第2层** | EOS 流水线构建：展开为各子线的操作规程（准则/指南/AI 辅助/任务定义） | `20-pl4eos/10-pl4eos-subpl-sysdev/` |
 | **第3层** | EOS 构建与运维：使用 EOS 流水线做系统设计（当前）、开发、集成、运维 | `20-pl4eos/` |
 
 ### 目录结构
@@ -47,17 +47,17 @@
 │   ├── 04-pl4pleos-spec-sysops.md     #   系统运维规范（待编写）
 │   ├── 06-pl4pleos-glossary.md        #   术语对照
 │   └── README.md                      #   目录说明
-├── 10-pl4pleos-product-sysdev/         # 可运行产品—系统设计
-│   ├── 00-pl4pleos-presysdev-skill/   #   OR 预处理
-│   ├── 10-pl4pleos-wfsysdev-skill/    #   瀑布（6 任务）
-│   ├── 20-pl4pleos-resysdev-skill/    #   逆向工程（8 任务）
-│   ├── 30-pl4pleos-agsysdev-skill/    #   敏捷（8 任务）
-│   ├── 40-pl4pleos-opsysdev-skill/    #   DevOps（4 任务）
+├── 10-pl4pleos-subpl-sysdev/           # 系统设计子线
+│   ├── 00-presysdev-4-pl4eos/         #   OR 预处理
+│   ├── 10-wfsysdev-4-pl4eos/          #   瀑布（6 任务）
+│   ├── 20-resysdev-4-pl4eos/          #   逆向工程（8 任务）
+│   ├── 30-agsysdev-4-pl4eos/          #   敏捷（8 任务）
+│   ├── 40-opsysdev-4-pl4eos/          #   DevOps（4 任务）
 │   └── README.md
-├── 20-pl4pleos-product-comdev/         # 可运行产品—构件开发（待扩展）
-├── 30-pl4pleos-product-sysint/         # 可运行产品—集成交付（待扩展）
-├── 40-pl4pleos-product-sysops/         # 可运行产品—系统运维（待扩展）
-└── 80-pl4pleos-opsdata/                # 运行数据
+├── 20-pl4pleos-subpl-comdev/           # 构件开发子线（待扩展）
+├── 30-pl4pleos-subpl-sysint/           # 集成交付子线（待扩展）
+├── 40-pl4pleos-subpl-sysops/           # 系统运维子线（待扩展）
+└── 80-pl4pleos-2-pl4eosdata/           # 运行数据—元流水线到 pl4eos 的产品数据
 
 20-pl4eos/                                          # EOS 流水线——产出 EOS 的流水线
 ├── 00-pl4eos-spec/                     # 设计描述文档
@@ -67,17 +67,18 @@
 │   ├── 04-pl4eos-spec-sysops.md       #   系统运维规范（待编写）
 │   ├── 06-pl4eos-glossary.md          #   术语对照
 │   └── README.md                      #   目录说明
-├── 10-pl4eos-product-sysdev/           # 可运行产品—系统设计
-│   ├── 00-pl4eos-presysdev.md          #   OR 预处理
-│   ├── 10-pl4eos-wfsysdev-skill/      #   瀑布（6 任务）
-│   ├── 20-pl4eos-resysdev-skill/      #   逆向工程（8 任务）
-│   ├── 30-pl4eos-agsysdev-skill/      #   敏捷（8 任务）
-│   ├── 40-pl4eos-opsysdev-skill/      #   DevOps（4 任务）
+├── 10-pl4eos-subpl-sysdev/             # 系统设计子线
+│   ├── 00-presysdev-4-eos.md          #   OR 预处理
+│   ├── 10-wfsysdev-4-eos/             #   瀑布（6 任务）
+│   ├── 20-resysdev-4-eos/             #   逆向工程（8 任务）
+│   ├── 30-agsysdev-4-eos/             #   敏捷（8 任务）
+│   ├── 40-opsysdev-4-eos/             #   DevOps（4 任务）
 │   └── README.md
-├── 20-pl4eos-product-comdev/           # 可运行产品—构件开发（待扩展）
-├── 30-pl4eos-product-sysint/           # 可运行产品—集成交付（待扩展）
-├── 40-pl4eos-product-sysops/           # 可运行产品—系统运维（待扩展）
-└── 80-pl4eos-opsdata/                  # 运行数据
+├── 20-pl4eos-subpl-comdev/             # 构件开发子线（待扩展）
+├── 30-pl4eos-subpl-sysint/             # 集成交付子线（待扩展）
+├── 40-pl4eos-subpl-sysops/             # 系统运维子线（待扩展）
+├── 50-pl4eos-subpl-bizcfg/             # 业务配置子线（待扩展）
+└── 80-pl4eos-2-eosdata/                # 运行数据—EOS 流水线到 EOS 的产品数据
 
 30-eos/                   # EOS 产品本体（四条流水线的运行结果）
 │   ├── 00-eos-product-spec/        # 产品规格（设计线产出）
@@ -98,7 +99,7 @@
 - [EOS系统设计规范 v1.0](20-pl4eos/00-pl4eos-spec/01-pl4eos-spec-sysdev.md) — EOS 产品特有设计规则（平台链/业务链、三层工作层面、端到端业务框架）+ 四种设计模式
 - [元流水线设计规范 v1.0](10-pl4pleos/00-pl4pleos-spec/01-pl4pleos-spec-sysdev.md)
 
-元流水线的操作规程（任务定义）位于 `10-pl4pleos/10-pl4pleos-product-sysdev/` 各 Skill 目录下；EOS 流水线的任务定义位于 `20-pl4eos/10-pl4eos-product-sysdev/` 各 Skill 目录下。
+元流水线的操作规程（任务定义）位于 `10-pl4pleos/10-pl4pleos-subpl-sysdev/` 各 Skill 目录下；EOS 流水线的任务定义位于 `20-pl4eos/10-pl4eos-subpl-sysdev/` 各 Skill 目录下。
 
 ---
 
