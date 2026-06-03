@@ -100,15 +100,15 @@ Marp 幻灯片版团队讲解材料
 ```
 第1层：元流水线构建
   团队L → 用五层结构设计元流水线自身
-  → 产出：元流水线的9份产品数据（10-eos-pipeline-design/）
+  → 产出：元流水线的9份产品数据（10-pl4pleos/80-pl4pleos-2-pl4eosdata/）
 
 第2层：EOS 流水线交付物构建
   团队L → 将 EOS 流水线构件适配为设计工具
-  → 存放：20-eos-design/ 下 01/02/03/04 目录
+  → 存放：20-pl4eos/ 下各子线目录
 
 第3层：使用工具设计 EOS
   团队M → 用第2层的准则、指南、任务定义设计运营体系
-  → 产出：EOS 的9份产品数据
+  → 产出：EOS 的9份产品数据（20-pl4eos/80-pl4eos-2-eosdata/）
 ```
 
 ---
@@ -574,20 +574,24 @@ EOS 的产品数据：    01-OR → 02/03-SR → 04-BA → 05/06-SysReq → 07-P
 
 | 目录 | 对应产品 | 对应层面 |
 |------|---------|---------|
-| `00-general/` | 通用方法论 | 产品无关 |
-| `10-eos-pipeline-design/` | 元流水线 | 第1层 |
-| `20-eos-design/` | EOS 流水线 + EOS | 第2层 + 第3层 |
+| `00-generalspec/` | 通用方法论 | 产品无关 |
+| `10-pl4pleos/` | 元流水线 | 第1层 |
+| `20-pl4eos/` | EOS 流水线 + EOS | 第2层 + 第3层 |
 
 ---
 
 ### 元流水线目录
 
 ```
-10-eos-pipeline-design/10-eos-pipeline-system-design/
-├── 10-eos-pipeline-system-design-specification/  准则
-├── 20-eos-pipeline-system-design-tasks/          任务定义
-├── 30-eos-pipeline-system-design-ai-support/     AI 辅助
-└── 90-eos-pipeline-system-product-data/          产品数据
+10-pl4pleos/
+├── 00-pl4pleos-spec/                  设计描述文档
+├── 10-pl4pleos-subpl-sysdev/          系统设计子线
+│   ├── 00-presysdev-4-pl4eos/        OR 预处理
+│   ├── 10-wfsysdev-4-pl4eos/         瀑布（6 任务）
+│   ├── 20-resysdev-4-pl4eos/         逆向（8 任务）
+│   ├── 30-agsysdev-4-pl4eos/         敏捷（8 任务）
+│   └── 40-opsysdev-4-pl4eos/         DevOps（4 任务）
+└── 80-pl4pleos-2-pl4eosdata/          产品数据
 ```
 
 ---
@@ -595,12 +599,17 @@ EOS 的产品数据：    01-OR → 02/03-SR → 04-BA → 05/06-SysReq → 07-P
 ### EOS 目录双重身份
 
 ```
-20-eos-design/10-eos-system-design/
-├── 10-eos-system-design-specification/     ← EOS 流水线构件：准则
-├── 20-eos-system-design-tasks/             ← EOS 流水线构件：任务定义
-└── 90-eos-system-product-data/            ← EOS 的设计输出
-        ↑                                    ↑
-  设计线的工具                          EOS 的成果
+20-pl4eos/
+├── 00-pl4eos-spec/                   设计描述文档
+├── 10-pl4eos-subpl-sysdev/           系统设计子线
+│   ├── 00-presysdev-4-eos.md        OR 预处理
+│   ├── 10-wfsysdev-4-eos/           瀑布（6 任务）
+│   ├── 20-resysdev-4-eos/           逆向（8 任务）
+│   ├── 30-agsysdev-4-eos/           敏捷（8 任务）
+│   └── 40-opsysdev-4-eos/           DevOps（4 任务）
+└── 80-pl4eos-2-eosdata/               EOS 产品数据
+        ↑                                ↑
+  设计线的工具                     EOS 的成果
 ```
 
 ---
@@ -609,11 +618,11 @@ EOS 的产品数据：    01-OR → 02/03-SR → 04-BA → 05/06-SysReq → 07-P
 
 | 内容 | 路径 |
 |-----|------|
-| 核心方法论 | `00-general/.../01-general-system-design-standards.md` |
-| 两种 BA 方法 | 同上 §4.2 |
+| 核心方法论 | `00-generalspec/01-generalspec-sysdev.md` |
+| 两种 BA 方法 | 同上 §6.2 |
 | 术语对照 | `00-generalspec/06-generalspec-glossary.md` |
-| 任务定义样例 | 任一 `20-eos-pipeline-system-design-tasks/` 下的文档 |
-| 设计线产品架构 | `90-eos-pipeline-system-product-data/07-eos-pipeline-product-architecture.md` |
+| 任务定义样例 | 任一 `10-pl4eos-subpl-sysdev/` 下的技能文档 |
+| 设计线产品架构 | `10-pl4pleos/80-pl4pleos-2-pl4eosdata/07-pl4eos-product-architecture.md` |
 
 ---
 
@@ -663,8 +672,8 @@ EOS 的产品数据：    01-OR → 02/03-SR → 04-BA → 05/06-SysReq → 07-P
 
 | 想了解什么 | 看哪个文件 |
 |-----------|-----------|
-| 核心设计方法论 | `00-general/.../01-general-system-design-standards.md` |
-| 两种 BA 方法 | 同上 §4.2 |
+| 核心设计方法论 | `00-generalspec/01-generalspec-sysdev.md` |
+| 两种 BA 方法 | 同上 §6.2 |
 | 术语英中对照 | `00-generalspec/06-generalspec-glossary.md` |
-| 四种场景决策 | `00-general/.../02-general-system-design-4modes-guide.md` |
-| EOS 设计准则 | `20-eos-design/.../01-eos-system-design-standards.md` |
+| 四种场景决策 | `00-generalspec/01-generalspec-sysdev.md` §十一 |
+| EOS 设计准则 | `20-pl4eos/00-pl4eos-spec/01-pl4eos-spec-sysdev.md` |
