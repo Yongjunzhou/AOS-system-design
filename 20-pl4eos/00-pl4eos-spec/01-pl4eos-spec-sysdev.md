@@ -1142,23 +1142,39 @@ Skill 文档与项目中其他文档类型的关系：
 
 **Skill ID 格式**：`{场景缩写}-t{NN}`（如 `t00`、`waterfall-t01`、`reverse-t03`）
 
-**文件命名规则**：
+**Skill 目录命名规则**：
 
 ```
-{NN}-{pipeline}-{skill-name}.md
+{seq}-{variant}{domain}-4-{target}/
 ```
-
-例如：`00-presysdev-4-eos.md`（EOS 流水线原始需求预处理 Skill）
 
 | 段 | 说明 | 示例 |
 |----|------|------|
-| NN | 两位序号，保持目录排序 | `00` |
-| pipeline | 流水线缩写 | `pl4eos`（EOS）、`pl4pleos`（元流水线） |
-| skill-name | 短横线分隔的 Skill 英文名 | `presysdev`、`wfsysdev` |
+| seq | 两位序号，保持目录排序 | `10`、`20` |
+| variant | 设计场景缩写 | `wf`（瀑布）、`re`（逆向）、`ag`（敏捷）、`op`（DevOps） |
+| domain | 领域缩写 | `sysdev`（系统设计） |
+| target | 服务目标产品 | `pl4eos`、`eos` |
+
+例如：`10-wfsysdev-4-pl4eos/`（用瀑布式为 pl4eos 做系统设计）
+
+**Skill 文件命名规则**（在多步骤 Skill 目录内）：
+
+```
+{variant}{domain}-t{NN}-4-{target}-{activity}.md
+```
+
+| 段 | 说明 | 示例 |
+|----|------|------|
+| variant+domain | 场景缩写+领域 | `wfsysdev`、`reverse` |
+| t{NN} | 任务序号 | `t01`、`t06` |
+| target | 服务目标产品 | `pl4eos`、`eos` |
+| activity | 活动简述 | `or-sr-arch`、`traceability` |
+
+例如：`wfsysdev-t01-4-pl4eos-or-sr-arch.md`
 
 **目录结构规则**：
-- 单一文件（无子步骤的 Skill）→ 直接放在 `10-{pipeline}-subpl-sysdev/` 根目录
-- 复合 Skill（含子步骤）→ 使用目录 `XX-{pipeline}-{skill-name}/`，内含多个步骤子目录
+- 单一文件（无子步骤的 Skill）→ 直接放在 `00-presysdev-4-{target}/` 目录中
+- 复合 Skill（含多个步骤）→ 使用 `{seq}-{variant}{domain}-4-{target}/` 目录，内含多个步骤文件
 
 ---
 
@@ -1171,11 +1187,11 @@ Skill 文档与项目中其他文档类型的关系：
 │   └── 01-pl4pleos-spec-sysdev.md          ← 元流水线系统设计规范（阅读导航）
 │
 └── 10-pl4pleos-subpl-sysdev/             ← 元流水线的可运行技能定义
-    ├── 00-presysdev-4-pl4eos/        ← OR 预处理
-    ├── 10-pl4pleos-wfsysdev-skill/         ← 瀑布式（6 任务）
-    ├── 20-pl4pleos-resysdev-skill/         ← 逆向工程（8 任务）
-    ├── 30-pl4pleos-agsysdev-skill/         ← 敏捷（8 任务）
-    └── 40-pl4pleos-opsysdev-skill/         ← DevOps（4 任务）
+    ├── 00-presysdev-4-pl4eos/             ← OR 预处理
+    ├── 10-wfsysdev-4-pl4eos/              ← 瀑布式（6 任务）
+    ├── 20-resysdev-4-pl4eos/              ← 逆向工程（8 任务）
+    ├── 30-agsysdev-4-pl4eos/              ← 敏捷（8 任务）
+    └── 40-opsysdev-4-pl4eos/              ← DevOps（4 任务）
 
 通用层（00-generalspec/）：
     └── 01-generalspec-sysdev.md            ← 被继承（通用设计规范）
