@@ -16,12 +16,22 @@
 
 ```
 10-pl4pleos/
-├── 10-pl4eos-sysdev/                    # 阶段1：系统设计（当前工作范围）
-│   ├── 10-pl4eos-sysdev-spec/           # 设计准则（通用方法论 + 元流水线专有）
-│   ├── 20-pl4eos-sysdev-tasks/          # 四种场景的操作规程（任务定义）
-│   └── 90-pl4eos-system-product-data/   # 流水线的标准产品数据（9 份文档）
-├── 20-pl4eos-comdev/             # 阶段2：构件开发（待扩展）
-└── 30-pl4eos-sysint/      # 阶段3：集成交付（待扩展）
+├── 00-pl4pleos-spec/                   # 设计描述文档
+│   ├── 01-pl4pleos-spec-sysdev.md     #   系统设计规范
+│   ├── 02-pl4pleos-spec-comdev.md     #   构件开发规范（待编写）
+│   ├── 03-pl4pleos-spec-sysint.md     #   集成交付规范（待编写）
+│   ├── 04-pl4pleos-spec-sysops.md     #   系统运维规范（待编写）
+│   └── 06-pl4pleos-glossary.md        #   术语对照
+├── 10-pl4pleos-product-sysdev/         # 可运行产品—系统设计
+│   ├── 00-pl4pleos-presysdev-skill/   #   OR 预处理
+│   ├── 10-pl4pleos-wfsysdev-skill/    #   瀑布（6 任务）
+│   ├── 20-pl4pleos-resysdev-skill/    #   逆向工程（8 任务）
+│   ├── 30-pl4pleos-agsysdev-skill/    #   敏捷（8 任务）
+│   └── 40-pl4pleos-opsysdev-skill/    #   DevOps（4 任务）
+├── 20-pl4pleos-product-comdev/         # 可运行产品—构件开发（待扩展）
+├── 30-pl4pleos-product-sysint/         # 可运行产品—集成交付（待扩展）
+├── 40-pl4pleos-product-sysops/         # 可运行产品—系统运维（待扩展）
+└── 80-pl4pleos-opsdata/                # 运行数据
 ```
 
 ---
