@@ -68,7 +68,7 @@
 │   ├── 06-pl4eos-glossary.md          #   术语对照
 │   └── README.md                      #   目录说明
 ├── 10-pl4eos-product-sysdev/           # 可运行产品—系统设计
-│   ├── 00-pl4eos-presysdev-skill/     #   OR 预处理
+│   ├── 00-pl4eos-presysdev.md          #   OR 预处理
 │   ├── 10-pl4eos-wfsysdev-skill/      #   瀑布（6 任务）
 │   ├── 20-pl4eos-resysdev-skill/      #   逆向工程（8 任务）
 │   ├── 30-pl4eos-agsysdev-skill/      #   敏捷（8 任务）
