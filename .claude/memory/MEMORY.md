@@ -55,4 +55,5 @@
 - [元流水线规范降级计划](meta-pipeline-spec-downgrade-plan.md) — 计划将 01-pl4pleos-spec-sysdev.md 从完整规范降级为方法论说明+工程导航
 - [pl4eos 规范使命定义](pl4eos-spec-mission.md) — pl4eos 的系统设计规范是产品的设计描述，服务于设计线开发人员；A1 使命对称但需精简
 - [A1/A2 AI SKILL 分离决策](a1-a2-ai-skill-separation.md) — 两套 AI SKILL 显性化，分别承载各自产品形态知识，不共用
-- [三字段正交状态模型](three-field-orthogonal-status-model.md) — 生命周期状态 + AI 建议 + 待处理状态，替代旧"澄清状态+AI处理标记+人类决策"
+- [三字段正交状态模型（v2简化版）](three-field-orthogonal-status-model.md) — 生命周期状态 + AI 建议（需澄清/可确认/建议终止）+ 人类决策（已确认/已终止）+ 文档选项交互机制
+- [三字段简化推导过程](three-field-simplification.md) — 从 建议待处理/建议暂搁置 → 需澄清/可确认 的精简路径 + 文档选项交互设计推演
