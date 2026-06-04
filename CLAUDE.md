@@ -68,7 +68,7 @@
 │   ├── 06-pl4eos-glossary.md          #   术语对照
 │   └── README.md                      #   目录说明
 ├── 10-pl4eos-subpl-sysdev/             # 系统设计子线
-│   ├── 00-presysdev-4-eos.md          #   对 EOS 的 OR 预处理
+│   ├── 00-presysdev-4-eos/         #   对 EOS 的 OR 预处理（两子步骤）
 │   ├── 10-wfsysdev-4-eos/             #   对 EOS 的瀑布式系统设计（6 任务）
 │   ├── 20-resysdev-4-eos/             #   对 EOS 的逆向工程（8 任务）
 │   ├── 30-agsysdev-4-eos/             #   对 EOS 的敏捷系统设计（8 任务）

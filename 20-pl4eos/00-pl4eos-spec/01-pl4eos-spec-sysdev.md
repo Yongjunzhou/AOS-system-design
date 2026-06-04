@@ -1140,7 +1140,7 @@ Skill 文档与项目中其他文档类型的关系：
 
 #### 15.3 命名规则
 
-**Skill ID 格式**：`{场景缩写}-t{NN}`（如 `t00`、`waterfall-t01`、`reverse-t03`）
+**Skill ID 格式**：`{场景缩写}-t{NN}`（如 `waterfall-t01`、`reverse-t03`）；前处理拆分多子步骤时在 `t{NN}` 后追加活动名（如 `t00a-clarify`）
 
 **Skill 目录命名规则**：
 
@@ -1174,7 +1174,8 @@ Skill 文档与项目中其他文档类型的关系：
 
 **目录结构规则**：
 - 单一文件（无子步骤的 Skill）→ 直接放在 `00-presysdev-4-{target}/` 目录中
-- 复合 Skill（含多个步骤）→ 使用 `{seq}-{variant}{domain}-4-{target}/` 目录，内含多个步骤文件
+- 复合前处理（OR 预处理拆分多个子步骤）→ `00-presysdev-4-{target}/` 目录内放多个步骤文件（如 `01-or-clarify.md`、`02-or-norm.md`）
+- 复合 Skill（含多个任务）→ 使用 `{seq}-{variant}{domain}-4-{target}/` 目录，内含多个任务文件
 
 ---
 
