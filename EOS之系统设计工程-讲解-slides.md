@@ -644,7 +644,7 @@ Q：什么时候共享系统？什么时候必须分开？
 20-pl4eos/
 ├── 00-pl4eos-spec/                   设计描述文档
 ├── 10-pl4eos-subpl-sysdev/           系统设计子线
-│   ├── 00-presysdev-4-eos.md        OR 预处理
+│   ├── 00-presysdev-4-eos/        OR 预处理（两子步骤）
 │   ├── 10-wfsysdev-4-eos/           瀑布（6 任务）
 │   ├── 20-resysdev-4-eos/           逆向（8 任务）
 │   ├── 30-agsysdev-4-eos/           敏捷（8 任务）

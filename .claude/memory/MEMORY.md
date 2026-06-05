@@ -59,3 +59,5 @@
 - [三字段简化推导过程](three-field-simplification.md) — 从 建议待处理/建议暂搁置 → 需澄清/可确认 的精简路径 + 文档选项交互设计推演
 - [t01-or-clarify 单次通过模型](t01-or-clarify-single-pass-model.md) — 三个可复用设计模式：单次通过模型（last_size 驱动重入）、行动清单模式（动态行动项+静态指南）、Skill 间接口契约（生命周期+人类决策两字段门禁）
 - [Skill 终结必荐后续原则](skill-action-output-principle.md) — Skill 终结时须向人类输出结构化后续行动建议（做什么+为什么），按行动类型分组，使 Skill 执行终点成为清晰的人机交接点
+- [pre-t03 全自动执行模式](pre-t03-full-automatic-mode.md) — 预处理链 Skill 的无决策门/无对话交互模式，AI 完成后输出线下行动指南作为人机交接点
+- [文档一致性三类问题](doc-consistency-three-issue-types.md) — 时序矛盾/语义聚类错位/记录完整性缺失的三类检出方法

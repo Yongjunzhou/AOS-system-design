@@ -3,10 +3,11 @@
 
 | 步骤 | 文档 | 职责 |
 |------|------|------|
-| **t00a** | [`t01-or-clarify.md`](t01-or-clarify.md) | 原始需求澄清——文本化、模糊标注、多轮澄清迭代 |
-| **t00b** | [`t01-or-norm.md`](t01-or-norm.md) | 原始需求规范化——碎片整理、规范化、冲突检测、基线管理 |
+| **pre-t01-init** | [`pre-t01-init-or.md`](pre-t01-init-or.md) | 原始需求初处理——文本化、首轮模糊标注 |
+| **pre-t02-clarify** | [`pre-t02-clarify-or.md`](pre-t02-clarify-or.md) | 原始需求澄清迭代——迭代管理、生命周期转迁、批次选材 |
+| **pre-t03-norm** | [`pre-t03-norm-or.md`](pre-t03-norm-or.md) | 原始需求规范化——碎片整理、规范化、冲突检测、基线管理 |
 
-**本文档不再更新**。所有新修改请直接操作 `t01-or-clarify.md` 和 `t01-or-norm.md`。
+**本文档不再更新**。所有新修改请直接操作 `pre-t01-init-or.md`、`pre-t02-clarify-or.md` 和 `pre-t03-norm-or.md`。
 
 ---
 
