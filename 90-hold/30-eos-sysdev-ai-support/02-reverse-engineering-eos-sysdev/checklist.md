@@ -15,7 +15,7 @@
 - [ ] Source 2（PA 文档）路径正确：`10-eos-pipeline-design/90-*/07-*`
 
 ### 变化管理
-- [ ] 工作区变更已登记到 `_inputs/00-registry-log.md`（如有变更）
+- [ ] 工作区变更已登记到 `_inputs/01-pl4eos-or-lifecycle.md`（如有变更）
 - [ ] 变更登记表中每一项都有"建议状态"的人类决策标记
 - [ ] 已处理的变更项已移入 `_inputs/30-archived/`
 

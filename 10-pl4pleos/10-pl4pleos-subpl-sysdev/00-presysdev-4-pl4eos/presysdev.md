@@ -14,7 +14,7 @@
 ## 一、设计角色
 
 本步在设计链中承担的角色：
-- **输入**：`80-pl4pleos-2-pl4eosdata/_inputs/10-source-materials/` 目录中的原始材料文件 + `00-registry-log.md` 中"建议状态=待处理"的记录
+- **输入**：`80-pl4pleos-2-pl4eosdata/_inputs/10-source-materials/` 目录中的原始材料文件 + `01-pl4eos-or-lifecycle.md` 中"建议状态=待处理"的记录
 - **产出**：`01-pl4eos-original-requirements.md` 中的 OR 条目级需求
 
 ### 与三条工程化设计原则的关系
@@ -31,7 +31,7 @@
 
 | 条件 | 说明 |
 |------|------|
-| 输入 | `80-pl4pleos-2-pl4eosdata/_inputs/10-source-materials/` 目录中的原始材料文件 + `00-registry-log.md` 中"建议状态=待处理"的记录 |
+| 输入 | `80-pl4pleos-2-pl4eosdata/_inputs/10-source-materials/` 目录中的原始材料文件 + `01-pl4eos-or-lifecycle.md` 中"建议状态=待处理"的记录 |
 | 参考 | 通用系统设计规范 §七.3（原始需求分析） |
 
 ---
@@ -48,7 +48,7 @@
 [阶段一] 加载与扫描            [阶段二] 条目解析           [阶段三] 规范化          [阶段四] 冲突检测与输出
  加载现有01-*.md基线            ├─ 条目拆分（四单一）       术语统一                    冲突检测
  加载_inputs/原始材料           │  单一角色/语义/路径/映射   格式标准化                  重复检测
- 查阅00-registry-log.md        └─ 碎片整理（碎片输入时）   质量检查                    输出 OR 条目
+ 查阅01-pl4eos-or-lifecycle.md        └─ 碎片整理（碎片输入时）   质量检查                    输出 OR 条目
                                                             （完整/清晰/可测/独立）     更新 input log
 ```
 
@@ -57,7 +57,7 @@
 | # | 操作 | 执行者 | 说明 |
 |---|------|--------|------|
 | 1 | 加载现有 OR 基线 | AI | 读取 `01-pl4eos-original-requirements.md` 现有 v1/v2 基线 |
-| 2 | 扫描输入源 | AI | 读取 `_inputs/` 目录下的所有原始材料文件及 `00-registry-log.md` 记录 |
+| 2 | 扫描输入源 | AI | 读取 `_inputs/` 目录下的所有原始材料文件及 `01-pl4eos-or-lifecycle.md` 记录 |
 
 ### 阶段二：条目解析
 
@@ -79,7 +79,7 @@
 | # | 操作 | 执行者 | 说明 |
 |---|------|--------|------|
 | 5 | OR 冲突与重复检测 | AI | 检测 OR 条目间的冲突和重复，标记待确认项 |
-| 6 | 输出 OR 条目 + 更新日志 | AI | 首次使用→写入 v1 基线区；增量追加→写入 v2 新增区。更新 `00-registry-log.md` |
+| 6 | 输出 OR 条目 + 更新日志 | AI | 首次使用→写入 v1 基线区；增量追加→写入 v2 新增区。更新 `01-pl4eos-or-lifecycle.md` |
 
 ### 阶段五：审查准备
 
@@ -92,7 +92,7 @@
 
 > 开始原始需求预处理（或 t00-or-preprocessing）
 
-AI 动作序列：读取本文件 → 读取 `80-pl4pleos-2-pl4eosdata/_inputs/10-source-materials/` 原始材料 → 查阅 `00-registry-log.md` → 加载现有 OR 基线 → 按流程执行 → 生成审查摘要 → 等待人类确认。
+AI 动作序列：读取本文件 → 读取 `80-pl4pleos-2-pl4eosdata/_inputs/10-source-materials/` 原始材料 → 查阅 `01-pl4eos-or-lifecycle.md` → 加载现有 OR 基线 → 按流程执行 → 生成审查摘要 → 等待人类确认。
 
 ---
 
@@ -167,7 +167,7 @@ AI 动作序列：读取本文件 → 读取 `80-pl4pleos-2-pl4eosdata/_inputs/1
 
 ## 八、质量门禁
 
-- [ ] 原始材料已全部加载（`_inputs/` + `00-registry-log.md`）
+- [ ] 原始材料已全部加载（`_inputs/` + `01-pl4eos-or-lifecycle.md`）
 - [ ] 条目拆分完成：四单一原则
 - [ ] 碎片整理完成（仅碎片输入时执行）
 - [ ] 术语统一完成
@@ -177,7 +177,7 @@ AI 动作序列：读取本文件 → 读取 `80-pl4pleos-2-pl4eosdata/_inputs/1
 - [ ] 冲突与重复检测完成
 - [ ] 原始出处保留
 - [ ] OR 条目已写入正确区域
-- [ ] `00-registry-log.md` 已更新
+- [ ] `01-pl4eos-or-lifecycle.md` 已更新
 - [ ] 运行 rule-conformance-review
 
 ---

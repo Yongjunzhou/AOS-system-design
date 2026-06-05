@@ -50,7 +50,7 @@
 | 系统设计准则 v2.4 | 总纲，定义5层结构、六步法、三条核心规则 | `10-eos-system-design-specification/01-eos-system-design-standards.md` |
 | 各层设计规范 | 各层的架构定义、详细定义、映射规则 | `10-eos-system-design-specification/` 下各层规范 |
 
-> **登记入口**：外来原始需求统一在 `10-eos-pipeline-design/10-eos-pipeline-system-design/90-eos-pipeline-system-product-data/_inputs/00-registry-log.md` 登记，类型=`原始需求`，走 AI登记→人类决策→AI处理 流程。
+> **登记入口**：外来原始需求统一在 `10-eos-pipeline-design/10-eos-pipeline-system-design/90-eos-pipeline-system-product-data/_inputs/01-pl4eos-or-lifecycle.md` 登记，类型=`原始需求`，走 AI登记→人类决策→AI处理 流程。
 
 ## 输出
 

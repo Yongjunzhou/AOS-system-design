@@ -134,7 +134,7 @@ AI 按 8 步流程依次产出以下文档集：
 10-eos-pipeline-design/10-eos-pipeline-system-design/
 └── 90-eos-pipeline-system-product-data/
     └── _inputs/                         ← 与元流水线的输入登记共用
-        ├── 00-registry-log.md          # 登记表（含架构变更类型）
+        ├── 01-pl4eos-or-lifecycle.md          # 登记表（含架构变更类型）
         ├── 10-source-materials/        # 原始材料
         ├── 20-issues/                  # 变更/缺陷详情文件
         └── 30-archived/                # 已处理/已归档
