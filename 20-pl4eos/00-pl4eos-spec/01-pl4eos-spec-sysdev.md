@@ -1176,7 +1176,7 @@ Skill 文档与项目中其他文档类型的关系：
 
 **目录结构规则**：
 - 单一文件（无子步骤的 Skill）→ 直接放在 `00-presysdev-4-{target}/` 目录中
-- 复合前处理（OR 预处理拆分多个子步骤）→ `00-presysdev-4-{target}/` 目录内放多个步骤文件（如 `01-or-clarify.md`、`02-or-norm.md`）
+- 复合前处理（OR 预处理拆分多个子步骤）→ `00-presysdev-4-{target}/` 目录内放多个步骤文件（如 `t01-or-clarify.md`、`t01-or-norm.md`）
 - 复合 Skill（含多个任务）→ 使用 `{seq}-{variant}{domain}-4-{target}/` 目录，内含多个任务文件
 
 ---
