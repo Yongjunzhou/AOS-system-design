@@ -1,3 +1,4 @@
+- [预处理链前置校验设计](preprocessing-prerequisite-check.md) — 每个skill启动时先检查前置依赖是否就绪，未就绪时输出指引，逐级报错首次即停。2026-06-06 实施 + 泛化写入通用设计规范 §3.6 + §3.7
 - [对齐标注约定](alignment-annotation-convention.md) — ◆ 四种标注类型（对应/差异/定位/继承关系）+ 阅读路径格式
 - [架构增量变更的资产优先原则](architecture_asset_priority.md) — Reuse > Improve(Extend/Split/Merge) > Add，架构节点是组织资产
 - [BA IPO 泛化](ba-ipo-generalization.md) — I/O 从"文档"泛化为"完整表意单元"，覆盖非人类角色；涉及第四章 §4.4 + 第五章 §5.2.1 第3步联动修改
@@ -63,4 +64,4 @@
 - [Skill 终结必荐后续原则](skill-action-output-principle.md) — Skill 终结时须向人类输出结构化后续行动建议（做什么+为什么），按行动类型分组，使 Skill 执行终点成为清晰的人机交接点
 - [pre-t04 全自动执行模式](pre-t04-norm-full-automatic-mode.md) — 预处理链 Skill 的无决策门/无对话交互模式，AI 完成后输出线下行动指南作为人机交接点（原 pre-t03-norm 继承）
 - [文档一致性三类问题](doc-consistency-three-issue-types.md) — 时序矛盾/语义聚类错位/记录完整性缺失的三类检出方法
-- [文档状态嵌入 → 通用设计规范 §3.5](embedded-state-tracking-general-spec.md) — 预处理链变更二提炼的模式已泛化写入通用设计规范 §3.5
+- [文档状态嵌入 + 变更记录表 → 通用设计规范 §3.5](embedded-state-tracking-general-spec.md) — 文档状态嵌入原则 + 变更记录表交互协议（四情形分流）已纳入通用设计规范 §3.5
