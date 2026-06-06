@@ -1,9 +1,9 @@
 # 增量变更分析与分类
 **Skill ID**: agile-t01 · **Step 1: Incremental Change Analysis and Classification**
 
-> **概述**：将 00-presysdev-4-eos/（ort02-annotate + ort03-clarify + ort04-norm OR 预处理） 产出的 OR 条目按变更类型分类（新增/修改/废弃），分别执行映射、变更影响分析或废弃标注。涉及 EOS 双设计链的变更请求，需按影响范围分类和优先级排序。
+> **概述**：将 00-presysdev-4-eos/（ort02-clarify-propose → ort03-clarify-execute → ort04-norm-propose → ort05-norm-execute OR 预处理） 产出的 OR 条目按变更类型分类（新增/修改/废弃），分别执行映射、变更影响分析或废弃标注。涉及 EOS 双设计链的变更请求，需按影响范围分类和优先级排序。
 >
-> **输入 → 输出**：00-presysdev-4-eos/（ort02-annotate + ort03-clarify + ort04-norm OR 预处理） 产出 → 变更分析报告（变更类型分类 + 影响范围评估 + 优先级排序 + 废弃标注）
+> **输入 → 输出**：00-presysdev-4-eos/（ort02-clarify-propose → ort03-clarify-execute → ort04-norm-propose → ort05-norm-execute OR 预处理） 产出 → 变更分析报告（变更类型分类 + 影响范围评估 + 优先级排序 + 废弃标注）
 >
 > **适用场景**：敏捷式第1步。基于现有系统设计文档集基线，判断增量变更的类型、影响范围和优先级。
 >
@@ -14,7 +14,7 @@
 ## 一、设计角色
 
 本步在设计链中承担的角色：
-- **输入**：00-presysdev-4-eos/（ort02-annotate + ort03-clarify + ort04-norm OR 预处理） 产出：`01-*.md` v2 区增量 OR 条目，参考基线——现有完整系统设计文档集（5 层 + 映射矩阵）
+- **输入**：00-presysdev-4-eos/（ort02-clarify-propose → ort03-clarify-execute → ort04-norm-propose → ort05-norm-execute OR 预处理） 产出：`01-*.md` v2 区增量 OR 条目，参考基线——现有完整系统设计文档集（5 层 + 映射矩阵）
 - **产出**：变更分析报告（变更类型分类 + 影响范围评估 + 优先级排序 + 废弃标注）
 
 本步决策对后续的影响：变更类型分类决定后续处理路径（新增→OR→SR 映射，修改→影响分析，废弃→断点标注）。影响范围评估结果决定后续增量操作的覆盖层，优先级排序决定处理顺序。
@@ -41,7 +41,7 @@
 
 | 条件 | 说明 |
 |------|------|
-| 输入 | 00-presysdev-4-eos/（ort02-annotate + ort03-clarify + ort04-norm OR 预处理） 产出：`01-*.md` v2 区增量 OR 条目（含变更类型标注），现有完整系统设计文档集（5 层 + 映射矩阵） |
+| 输入 | 00-presysdev-4-eos/（ort02-clarify-propose → ort03-clarify-execute → ort04-norm-propose → ort05-norm-execute OR 预处理） 产出：`01-*.md` v2 区增量 OR 条目（含变更类型标注），现有完整系统设计文档集（5 层 + 映射矩阵） |
 | 参考 | 通用系统设计规范 §7.3（第1步：原始需求分析）；§11.1（敏捷式—增量变更管理）；§12.2.5（变更影响分析）；EOS 流水线系统设计规范 §4.1（第1层 OR） |
 
 ### 文档结对关系
@@ -143,7 +143,7 @@ P0~P3 分类标准引用通用规范 §7.3 冲突检测优先级规则：
 
 > 开始敏捷式 t01（或 agile-t01-change-analysis）
 
-AI 动作序列：读取本文件 → 如果 `_inputs/` 目录有未处理的原始材料，先运行 t00-presysdev-4-eos/（ort02-annotate + ort03-clarify + ort04-norm OR 预处理） → 读取 `01-eos-original-requirements.md` v2 区增量 OR 条目（含变更类型标注）→ 加载现有系统设计文档集基线 → 按四阶段流程执行（变更分类→变更路径执行→优先级排序→审查）→ 完成后通知人类审核。
+AI 动作序列：读取本文件 → 如果 `_inputs/` 目录有未处理的原始材料，先运行 t00-presysdev-4-eos/（ort02-clarify-propose → ort03-clarify-execute → ort04-norm-propose → ort05-norm-execute OR 预处理） → 读取 `01-eos-original-requirements.md` v2 区增量 OR 条目（含变更类型标注）→ 加载现有系统设计文档集基线 → 按四阶段流程执行（变更分类→变更路径执行→优先级排序→审查）→ 完成后通知人类审核。
 
 ---
 
@@ -167,9 +167,9 @@ AI 动作序列：读取本文件 → 如果 `_inputs/` 目录有未处理的原
 ### 5.1 阶段一：加载 OR 资产 + 变更分类
 
 ```
-请加载 00-presysdev-4-eos/（ort02-annotate + ort03-clarify + ort04-norm OR 预处理） 产出的 v2 区增量 OR 条目，按变更类型分类。
+请加载 00-presysdev-4-eos/（ort02-clarify-propose → ort03-clarify-execute → ort04-norm-propose → ort05-norm-execute OR 预处理） 产出的 v2 区增量 OR 条目，按变更类型分类。
 
-OR 条目清单：[粘贴 00-presysdev-4-eos/（ort02-annotate + ort03-clarify + ort04-norm OR 预处理） 产出的 v2 区增量 OR 条目]
+OR 条目清单：[粘贴 00-presysdev-4-eos/（ort02-clarify-propose → ort03-clarify-execute → ort04-norm-propose → ort05-norm-execute OR 预处理） 产出的 v2 区增量 OR 条目]
 
 分类标准：
 ├─ 新增 — 全新的功能或非功能需求，现有基线中无对应
@@ -377,5 +377,5 @@ OR→SR映射清单：
 | 日期 | 版本 | 说明 |
 |------|------|------|
 | 2026-05-28 | v1.0 | 首次构建 |
-| 2026-05-29 | v1.1 | OR 预处理职责移至 t00-presysdev-4-eos/（ort02-annotate + ort03-clarify + ort04-norm OR 预处理） |
+| 2026-05-29 | v1.1 | OR 预处理职责移至 t00-presysdev-4-eos/（ort02-clarify-propose → ort03-clarify-execute → ort04-norm-propose → ort05-norm-execute OR 预处理） |
 | 2026-06-04 | v2.0 | 扩展为增量变更管理：新增变更分类（新增/修改/废弃）、三条变更路径（OR→SR 映射/影响分析/断点标注）、优先级排序 |

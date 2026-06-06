@@ -131,7 +131,7 @@
 
 > 开始瀑布式 t01（或 waterfall-t01-or-sr-arch）
 
-AI 动作序列：读取本文件 → 如果 `_inputs/` 目录有未处理的原始材料，先运行 ort02-annotate（原始需求首轮标注）→ 再运行 ort03-clarify（原始需求澄清迭代）→ 再运行 ort04-norm（原始需求规范化）→ 读取 `90-eos-system-product-data/01-eos-original-requirements.md` 获取 OR 条目清单 → 按 EOS 三条来源分流至两链 → 两链独立执行 OR → SR 架构定义 → 全部完成后通知人类审核。
+AI 动作序列：读取本文件 → 如果 `_inputs/` 目录有未处理的原始材料，先运行 ort02-clarify-propose（原始需求澄清建议）→ 再运行 ort03-clarify-execute（原始需求澄清迭代）→ 再运行 ort04-norm-propose（原始需求规范化建议）→ 再运行 ort05-norm-execute（原始需求规范化迭代）→ 读取 `90-eos-system-product-data/01-eos-original-requirements.md` 获取 OR 条目清单 → 按 EOS 三条来源分流至两链 → 两链独立执行 OR → SR 架构定义 → 全部完成后通知人类审核。
 
 ---
 
