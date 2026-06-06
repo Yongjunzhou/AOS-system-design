@@ -56,6 +56,7 @@
 - [pl4eos 规范使命定义](pl4eos-spec-mission.md) — pl4eos 的系统设计规范是产品的设计描述，服务于设计线开发人员；A1 使命对称但需精简
 - [A1/A2 AI SKILL 分离决策](a1-a2-ai-skill-separation.md) — 两套 AI SKILL 显性化，分别承载各自产品形态知识，不共用
 - [三字段正交状态模型（v2简化版）](three-field-orthogonal-status-model.md) — 生命周期状态 + AI 建议（需澄清/可确认/建议终止）+ 人类决策（已确认/已终止）+ 文档选项交互机制
+- [切片确认标记机制](chunk-confirmation-marker.md) — 预处理链"待确认→已确认"转迁：AI 在文档末尾写操作选项 → 人类删行确认 → AI 自动同步状态表（三字段"文档即状态"的具体实现）
 - [三字段简化推导过程](three-field-simplification.md) — 从 建议待处理/建议暂搁置 → 需澄清/可确认 的精简路径 + 文档选项交互设计推演
 - [t01-or-clarify 单次通过模型](t01-or-clarify-single-pass-model.md) — 三个可复用设计模式：单次通过模型（last_size 驱动重入）、行动清单模式（动态行动项+静态指南）、Skill 间接口契约（生命周期+人类决策两字段门禁）
 - [Skill 终结必荐后续原则](skill-action-output-principle.md) — Skill 终结时须向人类输出结构化后续行动建议（做什么+为什么），按行动类型分组，使 Skill 执行终点成为清晰的人机交接点
