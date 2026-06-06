@@ -56,9 +56,11 @@
 - [pl4eos 规范使命定义](pl4eos-spec-mission.md) — pl4eos 的系统设计规范是产品的设计描述，服务于设计线开发人员；A1 使命对称但需精简
 - [A1/A2 AI SKILL 分离决策](a1-a2-ai-skill-separation.md) — 两套 AI SKILL 显性化，分别承载各自产品形态知识，不共用
 - [三字段正交状态模型（v2简化版）](three-field-orthogonal-status-model.md) — 生命周期状态 + AI 建议（需澄清/可确认/建议终止）+ 人类决策（已确认/已终止）+ 文档选项交互机制
+- [预处理链统一模型](preprocessing-chain-unified-model.md) — chunk→sub 重命名 + clarify 合并入 sub 文件 + "已切分"生命周期
 - [切片确认标记机制](chunk-confirmation-marker.md) — 预处理链"待确认→已确认"转迁：AI 在文档末尾写操作选项 → 人类删行确认 → AI 自动同步状态表（三字段"文档即状态"的具体实现）
 - [三字段简化推导过程](three-field-simplification.md) — 从 建议待处理/建议暂搁置 → 需澄清/可确认 的精简路径 + 文档选项交互设计推演
 - [t01-or-clarify 单次通过模型](t01-or-clarify-single-pass-model.md) — 三个可复用设计模式：单次通过模型（last_size 驱动重入）、行动清单模式（动态行动项+静态指南）、Skill 间接口契约（生命周期+人类决策两字段门禁）
 - [Skill 终结必荐后续原则](skill-action-output-principle.md) — Skill 终结时须向人类输出结构化后续行动建议（做什么+为什么），按行动类型分组，使 Skill 执行终点成为清晰的人机交接点
 - [pre-t04 全自动执行模式](pre-t04-norm-full-automatic-mode.md) — 预处理链 Skill 的无决策门/无对话交互模式，AI 完成后输出线下行动指南作为人机交接点（原 pre-t03-norm 继承）
 - [文档一致性三类问题](doc-consistency-three-issue-types.md) — 时序矛盾/语义聚类错位/记录完整性缺失的三类检出方法
+- [文档状态嵌入 → 通用设计规范 §3.5](embedded-state-tracking-general-spec.md) — 预处理链变更二提炼的模式已泛化写入通用设计规范 §3.5
