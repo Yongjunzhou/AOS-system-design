@@ -15,7 +15,7 @@
 ## 一、设计角色
 
 本步在设计链中承担的角色：
-- **输入**：`../../80-pl4eos-2-eosdata/_inputs/10-source-materials/` 目录中的已澄清切分文件（`-sub-{seq}.md`，status=clarified）+ `../../80-pl4eos-2-eosdata/_inputs/01-eos-design-chain-registry.md`（生命周期=已澄清 + 人类决策=已确认）
+- **输入**：`../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/` 目录中的已澄清切分文件（`-sub-{seq}.md`，status=clarified）+ `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/01-eos-sysdev-status.md`（生命周期=已澄清 + 人类决策=已确认）
 - **产出**：`../../80-pl4eos-2-eosdata/01-eos-original-requirements.md`（结构化 OR 基线，全局编号）+ 切分文件正文区更新 + 登记表更新（OR基线进展一览表 + 生命周期→已规范化）
 
 ### 与三条工程化设计原则的关系
@@ -63,7 +63,7 @@ OR 条目生命周期（7 状态，由本步和下游步骤协同管理）：
 
 | 条件 | 说明 |
 |------|------|
-| 输入 | `10-source-materials/` 目录中存在已澄清切分文件（status=clarified）；登记表中对应记录的生命周期=已澄清 + 人类决策=已确认 |
+| 输入 | `10-raw-files/` 目录中存在已澄清切分文件（status=clarified）；登记表中对应记录的生命周期=已澄清 + 人类决策=已确认 |
 | 参考 | 通用系统设计规范 §7.3（原始需求分析——两阶段粒度约定、清晰性五标准、优先级分类 P0~P3）|
 | 前提 | 输入材料必须已通过 eos-ort02-clarify 完成澄清且人类已在 登记表中设 人类决策=已确认 |
 
@@ -81,8 +81,8 @@ OR 条目生命周期（7 状态，由本步和下游步骤协同管理）：
 
 ```
 [前置校验] 检查上游前置条件
-  ├─ 01-eos-design-chain-registry.md 不存在 → 输出"请先运行上游步骤" → 结束
-  ├─ 10-source-materials/ 中无切分文件 → 输出"请先运行 eos-ort01-chunk" → 结束
+  ├─ 01-eos-sysdev-status.md 不存在 → 输出"请先运行上游步骤" → 结束
+  ├─ 10-raw-files/ 中无切分文件 → 输出"请先运行 eos-ort01-chunk" → 结束
   ├─ 无 status=clarified 的切分文件 → 输出"请先运行 eos-ort02-clarify" → 结束
   ├─ 登记表中无"已澄清+已确认"记录 → 输出"请先在 登记表中设人类决策=已确认" → 结束
   └─ 全部就绪 → [扫描分流] ↓
@@ -369,7 +369,7 @@ OR基线进展一览表和登记表已更新。
 人类回答"是"后，AI 直接提供可打开的文件路径：
 
 ```
-登记表路径：../../80-pl4eos-2-eosdata/_inputs/01-eos-design-chain-registry.md
+登记表路径：../../80-pl4eos-2-eosdata/00-origin-requirement-materials/01-eos-sysdev-status.md
 
 建议关注行：
 ├─ 记录ID 行 → 生命周期状态、规范化状态
@@ -421,8 +421,8 @@ OR基线进展一览表和登记表已更新。
 #### AI 动作序列
 
 0. **前置校验**：检查上游前置条件。**逐级报错，首次即停**：
-   - `../../80-pl4eos-2-eosdata/_inputs/01-eos-design-chain-registry.md` 不存在 → 输出"请先运行上游步骤" → **结束**
-   - `10-source-materials/` 中无切分文件 → 输出"请先运行 **eos-ort01-chunk**" → **结束**
+   - `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/01-eos-sysdev-status.md` 不存在 → 输出"请先运行上游步骤" → **结束**
+   - `10-raw-files/` 中无切分文件 → 输出"请先运行 **eos-ort01-chunk**" → **结束**
    - 无 status=clarified 的切分文件 → 输出"请先运行 **eos-ort02-clarify**" → **结束**
    - 登记表中无"生命周期=已澄清 + 人类决策=已确认"的记录 → 输出"请先在 登记表中设人类决策=已确认" → **结束**
    - 全部就绪 → 进入步骤 1
@@ -454,7 +454,7 @@ OR基线进展一览表和登记表已更新。
 
 ### 5.2 OR基线进展一览表
 
-OR基线进展一览表是 `01-eos-design-chain-registry.md` 文件中的二级子表（完整文件结构见 eos-ort00-textualize §5.2）。本表是规范化状态的权威源，各文件头部的 OR切分文档状态表（§5.1）由本表派生。
+OR基线进展一览表是 `01-eos-sysdev-status.md` 文件中的二级子表（完整文件结构见 eos-ort00-textualize §5.2）。本表是规范化状态的权威源，各文件头部的 OR切分文档状态表（§5.1）由本表派生。
 
 **同步契约**：AI 每次执行写入时，必须**先更新本表（权威源），再推导写入各文件头部的 OR切分文档状态表**。若检测到两者不一致，以本表为准重建 OR切分文档状态表。
 
@@ -504,8 +504,8 @@ OR基线进展一览表：
 | 文件 | 说明 | 路径 |
 |------|------|------|
 | OR 基线文档（创建/更新） | 结构化 OR 条目（全局编号） | `../../80-pl4eos-2-eosdata/01-eos-original-requirements.md` |
-| 切分文件（更新） | 生成分支→正文区分析建议块；执行分支→正文区纯原文 | `../../80-pl4eos-2-eosdata/_inputs/10-source-materials/{原始文件名}-sub-{seq}.md` |
-| 登记表更新 | OR基线进展一览表 + 生命周期→已规范化 | `../../80-pl4eos-2-eosdata/_inputs/01-eos-design-chain-registry.md` |
+| 切分文件（更新） | 生成分支→正文区分析建议块；执行分支→正文区纯原文 | `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/{原始文件名}-sub-{seq}.md` |
+| 登记表更新 | OR基线进展一览表 + 生命周期→已规范化 | `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/01-eos-sysdev-status.md` |
 
 ---
 

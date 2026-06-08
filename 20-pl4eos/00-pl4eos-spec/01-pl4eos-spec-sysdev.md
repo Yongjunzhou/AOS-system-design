@@ -484,7 +484,7 @@ EOS 流水线的系统设计遵循通用设计规范定义的**六步法**，按
 >
 > **◆ 本节差异**：OR 收集阶段需覆盖四条子线（设计线/开发线/集成线/运维线），区分"新建子线"和"改进现有构件"两类需求——前者走完整五层设计，后者走敏捷或 DevOps 路径。通用规范 §7.3 不涉及此类流水线特有的需求分类。
 >
-> **◆ 技能间协调**：EOS 预处理链（ort02-annotate → ort03-clarify → ort04-norm → t01 ...）中，各顺序 Skill 通过 `80-pl4eos-2-eosdata/_inputs/01-eos-design-chain-registry.md`（设计链登记表）协调工作。体量大的原始需求材料可先经 ort00-chunk-propose → ort01-chunk-execute 切片后再进入标注流程。每个 Skill 从登记表读取符合生命周期状态条件的记录，处理后将状态回写，下游 Skill 通过状态变化感知上游产出。登记表是 Skill 之间的唯一接口，不直接共享文件或会话状态。
+> **◆ 技能间协调**：EOS 预处理链（ort02-annotate → ort03-clarify → ort04-norm → t01 ...）中，各顺序 Skill 通过 `80-pl4eos-2-eosdata/00-origin-requirement-materials/01-eos-sysdev-status.md`（设计链登记表）协调工作。体量大的原始需求材料可先经 ort00-chunk-propose → ort01-chunk-execute 切片后再进入标注流程。每个 Skill 从登记表读取符合生命周期状态条件的记录，处理后将状态回写，下游 Skill 通过状态变化感知上游产出。登记表是 Skill 之间的唯一接口，不直接共享文件或会话状态。
 
 #### 4.2 第2层 SR：相关方需求
 
@@ -1224,7 +1224,7 @@ Skill 文档与项目中其他文档类型的关系：
 
 #### 15.6 预处理链批处理与选材机制
 
-预处理链四步（ort00~ort03）通过共享的设计链登记表（01-eos-design-chain-registry.md）实现分批处理和批次间衔接。本机制是通用规范 §3.8（Pipeline Skill 进出控制规范）在 EOS 预处理链中的具体实现。
+预处理链四步（ort00~ort03）通过共享的设计链登记表（01-eos-sysdev-status.md）实现分批处理和批次间衔接。本机制是通用规范 §3.8（Pipeline Skill 进出控制规范）在 EOS 预处理链中的具体实现。
 
 **生命周期流转路径**：
 

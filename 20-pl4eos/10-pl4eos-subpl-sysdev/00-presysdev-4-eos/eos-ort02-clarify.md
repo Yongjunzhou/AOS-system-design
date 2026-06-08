@@ -15,7 +15,7 @@
 ## 一、设计角色
 
 本步在设计链中承担的角色：
-- **输入**：`../../80-pl4eos-2-eosdata/_inputs/10-source-materials/` 目录中的切分文件（`-sub-{seq}.md`）+ `../../80-pl4eos-2-eosdata/_inputs/01-eos-design-chain-registry.md`
+- **输入**：`../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/` 目录中的切分文件（`-sub-{seq}.md`）+ `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/01-eos-sysdev-status.md`
 - **产出**：已澄清的切分文件（同文件，正文区为最新纯净版本，status=clarified）+ 登记表（生命周期→已澄清 / 保持澄清中 / 已废弃）
 
 ### 与三条工程化设计原则的关系
@@ -42,7 +42,7 @@
 
 | 条件 | 说明 |
 |------|------|
-| 输入 | `10-source-materials/` 目录中存在切分文件（`-sub-{seq}.md`）；登记表已就绪 |
+| 输入 | `10-raw-files/` 目录中存在切分文件（`-sub-{seq}.md`）；登记表已就绪 |
 | 参考 | 通用系统设计规范 §7.3 阶段一（原始需求澄清——模糊子类型分类、已澄清判定标准）|
 | 前提 | 输入材料必须已通过 eos-ort01-chunk 完成切分（切分文件 status=raw 或已标记的文件）。新材料应先运行 eos-ort01-chunk 处理 |
 
@@ -60,8 +60,8 @@
 
 ```
 [前置校验] 检查上游前置条件
-  ├─ 01-eos-design-chain-registry.md 不存在 → 输出"请先运行 eos-ort00-textualize" → 结束
-  ├─ 10-source-materials/ 中无 `-sub-*.md` 切分文件 → 输出"请先运行 eos-ort01-chunk" → 结束
+  ├─ 01-eos-sysdev-status.md 不存在 → 输出"请先运行 eos-ort00-textualize" → 结束
+  ├─ 10-raw-files/ 中无 `-sub-*.md` 切分文件 → 输出"请先运行 eos-ort01-chunk" → 结束
   └─ 全部就绪 → [扫描分流] ↓
 
 [扫描分流] 读取 登记表 + 切分文件
@@ -298,7 +298,7 @@ AI 随后发起对话交互：
 人类回答"是"后，AI 直接提供可打开的文件路径：
 
 ```
-登记表路径：../../80-pl4eos-2-eosdata/_inputs/01-eos-design-chain-registry.md
+登记表路径：../../80-pl4eos-2-eosdata/00-origin-requirement-materials/01-eos-sysdev-status.md
 
 建议关注行：
 ├─ 记录ID 行 → 生命周期状态、AI 建议、迭代轮次
@@ -346,8 +346,8 @@ AI 在入口分流中检测正文区状态：
 #### AI 动作序列
 
 0. **前置校验**：检查上游前置条件。**逐级报错，首次即停**：
-   - `../../80-pl4eos-2-eosdata/_inputs/01-eos-design-chain-registry.md` 不存在 → 输出"请先运行 **eos-ort00-textualize**" → **结束**
-   - `10-source-materials/` 中无 `-sub-*.md` 切分文件 → 输出"请先运行 **eos-ort01-chunk**" → **结束**
+   - `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/01-eos-sysdev-status.md` 不存在 → 输出"请先运行 **eos-ort00-textualize**" → **结束**
+   - `10-raw-files/` 中无 `-sub-*.md` 切分文件 → 输出"请先运行 **eos-ort01-chunk**" → **结束**
    - 全部就绪 → 进入步骤 1
 1. **扫描分流**：读取 登记表，按生命周期分流
    - **人类决策=已终止** → 废弃处理（更新生命周期=已废弃，追加废弃说明）
@@ -451,8 +451,8 @@ AI 在入口分流中检测正文区状态：
 
 | 文件 | 说明 | 路径 |
 |------|------|------|
-| 已澄清切分文件（原地更新） | 正文区最新纯净版本，status=clarified | `../../80-pl4eos-2-eosdata/_inputs/10-source-materials/{原始文件名}-sub-{seq}.md` |
-| 登记表更新 | 生命周期转迁 + 批次选材标记 | `../../80-pl4eos-2-eosdata/_inputs/01-eos-design-chain-registry.md` |
+| 已澄清切分文件（原地更新） | 正文区最新纯净版本，status=clarified | `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/{原始文件名}-sub-{seq}.md` |
+| 登记表更新 | 生命周期转迁 + 批次选材标记 | `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/01-eos-sysdev-status.md` |
 
 ---
 
