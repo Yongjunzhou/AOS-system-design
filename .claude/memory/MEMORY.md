@@ -64,4 +64,5 @@
 - [Skill 终结必荐后续原则](skill-action-output-principle.md) — Skill 终结时须向人类输出结构化后续行动建议（做什么+为什么），按行动类型分组，使 Skill 执行终点成为清晰的人机交接点
 - [pre-t04 全自动执行模式](pre-t04-norm-full-automatic-mode.md) — 预处理链 Skill 的无决策门/无对话交互模式，AI 完成后输出线下行动指南作为人机交接点（原 pre-t03-norm 继承）
 - [文档一致性三类问题](doc-consistency-three-issue-types.md) — 时序矛盾/语义聚类错位/记录完整性缺失的三类检出方法
-- [文档状态嵌入 + 变更记录表 → 通用设计规范 §3.5](embedded-state-tracking-general-spec.md) — 文档状态嵌入原则 + 变更记录表交互协议（四情形分流）已纳入通用设计规范 §3.5
+- [文档状态嵌入 + 变更记录表 → 通用设计规范 §3.5](embedded-state-tracking-general-spec.md)
+- [OR 基线单区+逐条状态机设计](or-baseline-single-zone-state-machine.md) — v1/v2 双区→单区+6状态状态机，t06 为唯一聚合点 — 文档状态嵌入原则 + 变更记录表交互协议（四情形分流）已纳入通用设计规范 §3.5
