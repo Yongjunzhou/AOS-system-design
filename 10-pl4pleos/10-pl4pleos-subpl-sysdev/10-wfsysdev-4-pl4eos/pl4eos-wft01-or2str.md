@@ -1,5 +1,5 @@
 # 原始需求分析及相关方需求架构定义
-**Skill ID**: waterfall-t01 · **Step 1: Original Requirements → Stakeholder Requirements Architecture**
+**Skill ID**: wft01 · **Step 1: Original Requirements → Stakeholder Requirements Architecture**
 
 > **概述**：将 00-or-preprocessing 产出的 OR 条目级需求分解后，建立相关方需求架构定义（SR 架构定义）。
 >
@@ -100,7 +100,7 @@ SR 架构末级节点四要素中的"设计指导"替代了通用规范 §2.2.1 
 
 ### 启动方式
 
-> 开始瀑布式 t01（或 waterfall-t01-or-sr-arch）
+> 开始瀑布式 t01（或 wft01）
 
 AI 动作序列：读取本文件 → 如 `_inputs/` 有未处理原始材料，先运行 t00-or-preprocessing → 读取 `01-pl4eos-original-requirements.md` → 按四阶段流程执行 → 完成后通知人类审核。
 

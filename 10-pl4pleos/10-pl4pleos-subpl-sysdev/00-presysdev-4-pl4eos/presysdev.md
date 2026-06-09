@@ -161,7 +161,7 @@ AI 动作序列：读取本文件 → 读取 `80-pl4pleos-2-pl4eosdata/_inputs/1
 
 ### 7.2 审查修复流程
 
-同 waterfall-t01。
+同 wft01。
 
 ---
 

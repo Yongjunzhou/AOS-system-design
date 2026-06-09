@@ -1,5 +1,5 @@
 # 系统需求到产品架构分析
-**Skill ID**: waterfall-t05 · **Step 5: System Requirements → Product Architecture**
+**Skill ID**: wft05 · **Step 5: System Requirements → Product Architecture**
 
 > **概述**：合并功能和非功能分支，建立 SysReq 9→PA 级映射并定义 PA 组件。
 >
@@ -93,13 +93,13 @@
 
 ### 启动方式
 
-> 开始瀑布式 t05（或 waterfall-t05-sysreq-pa）
+> 开始瀑布式 t05（或 wft05）
 
 ---
 
 ## 四、AI 执行指南
 
-同 waterfall-t01。
+同 wft01。
 
 ### AI 经济原则
 
@@ -145,7 +145,7 @@
 
 ### 7.2 审查修复流程
 
-同 waterfall-t01。
+同 wft01。
 
 ---
 

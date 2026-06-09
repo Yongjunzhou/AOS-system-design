@@ -1,5 +1,5 @@
 # 相关方需求详细定义及业务架构定义
-**Skill ID**: waterfall-t02 · **Step 2: Stakeholder Requirements Detail → Business Architecture**
+**Skill ID**: wft02 · **Step 2: Stakeholder Requirements Detail → Business Architecture**
 
 > **概述**：对 SR 架构末级节点进行详细分解，建立业务架构（BA IPO 清单）。
 >
@@ -75,13 +75,13 @@
 
 ### 启动方式
 
-> 开始瀑布式 t02（或 waterfall-t02-sr-detail-ba）
+> 开始瀑布式 t02（或 wft02）
 
 ---
 
 ## 四、AI 执行指南
 
-同 waterfall-t01（继承上下文、决策记录、回溯修正）。
+同 wft01（继承上下文、决策记录、回溯修正）。
 
 ### AI 经济原则
 
@@ -127,7 +127,7 @@
 
 ### 7.2 审查修复流程
 
-同 waterfall-t01。
+同 wft01。
 
 ---
 

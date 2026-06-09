@@ -1,5 +1,5 @@
 # SR 详细定义 → BA 架构
-**Skill ID**: waterfall-t02 · **Step 2: SR Detailed Definition → Business Architecture**
+**Skill ID**: wft02 · **Step 2: SR Detailed Definition → Business Architecture**
 
 > **概述**：对 t01 产出的 SR 架构末级节点进行详细定义分解，同步在现有 BA 架构资产中为每一条详细定义末级找承接的 BA IPO 节点，完成 SR 详细定义和 BA 架构定义。
 >
@@ -110,7 +110,7 @@
 
 人类向 AI 发出以下指令即可启动：
 
-> 开始瀑布式 t02（或 waterfall-t02-sr-detail-ba）
+> 开始瀑布式 t02（或 wft02）
 
 AI 动作序列：读取本文件 → 读取 t01 产出的 SR 架构定义和决策记录（两链各自）→ 读取 `90-eos-system-product-data/04-eos-business-architecture.md` 现有 BA 资产（两链各自加载链内部分）→ 按上述六阶段流程执行（两链并行）→ 全部完成后通知人类审核。
 

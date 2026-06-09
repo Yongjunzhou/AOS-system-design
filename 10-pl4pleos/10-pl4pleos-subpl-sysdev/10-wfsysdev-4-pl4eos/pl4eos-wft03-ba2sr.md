@@ -1,5 +1,5 @@
 # 业务架构到系统需求分析
-**Skill ID**: waterfall-t03 · **Step 3: Business Architecture → System Requirements**
+**Skill ID**: wft03 · **Step 3: Business Architecture → System Requirements**
 
 > **概述**：将 BA IPO 清单映射到 SysReq 功能架构，建立 SysReq 功能 0-9 级层级。
 >
@@ -76,13 +76,13 @@
 
 ### 启动方式
 
-> 开始瀑布式 t03（或 waterfall-t03-ba-sysreq）
+> 开始瀑布式 t03（或 wft03）
 
 ---
 
 ## 四、AI 执行指南
 
-同 waterfall-t01。
+同 wft01。
 
 ### AI 经济原则
 
@@ -125,7 +125,7 @@
 
 ### 7.2 审查修复流程
 
-同 waterfall-t01。
+同 wft01。
 
 ---
 

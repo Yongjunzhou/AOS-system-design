@@ -1,5 +1,5 @@
 # 双向追溯验证
-**Skill ID**: waterfall-t06 · **Step 6: Bidirectional Traceability Verification**
+**Skill ID**: wft06 · **Step 6: Bidirectional Traceability Verification**
 
 > **概述**：验证从 OR 到 PA 的完整追溯链路（含各层文档结对完整性），输出追溯矩阵和验证报告。本步对两条设计链分别执行追溯验证，并额外验证跨链接口映射的正确性。
 >
@@ -162,7 +162,7 @@
 
 ### 启动方式
 
-> 开始瀑布式 t06（或 waterfall-t06-traceability）
+> 开始瀑布式 t06（或 wft06）
 
 AI 动作序列：读取本文件 → 读取第1~5步产出的全部设计文档和决策记录（两链各自）→ 按九阶段流程执行（两链并行 + 跨链接口验证）→ 晋升通过验证的 OR 条目（"验证中"→"已验证冻结"）→ 全部完成后通知人类审核。
 

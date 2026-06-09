@@ -1142,7 +1142,7 @@ Skill 文档与项目中其他文档类型的关系：
 
 #### 15.3 命名规则
 
-**Skill ID 格式**：`{场景缩写}-t{NN}`（如 `waterfall-t01`、`reverse-t03`）；前处理拆分多子步骤时在 `t{NN}` 后追加活动名（如 `ort02-annotate`、`ort03-clarify`）
+**Skill ID 格式**：`{场景缩写}t{NN}`（如 `wft01`、`ret03`）；前处理拆分多子步骤时在 `t{NN}` 后追加活动名（如 `ort02-annotate`、`ort03-clarify`）
 
 **Skill 目录命名规则**：
 
@@ -1162,17 +1162,17 @@ Skill 文档与项目中其他文档类型的关系：
 **Skill 文件命名规则**（在多步骤 Skill 目录内）：
 
 ```
-{variant}{domain}-t{NN}-4-{target}-{activity}.md
+{target}-{variant}t{NN}-{activity}.md
 ```
 
 | 段 | 说明 | 示例 |
 |----|------|------|
-| variant+domain | 场景缩写+领域 | `wfsysdev`、`reverse` |
+| target | 服务目标产品 | `eos`、`pl4eos` |
+| variant | 设计场景缩写 | `wf`、`re`、`ag`、`op` |
 | t{NN} | 任务序号 | `t01`、`t06` |
-| target | 服务目标产品 | `pl4eos`、`eos` |
-| activity | 活动简述 | `or-sr-arch`、`traceability` |
+| activity | 活动简述 | `or2str`、`trace` |
 
-例如：`wfsysdev-t01-4-pl4eos-or-sr-arch.md`
+例如：`pl4eos-wft01-or2str.md`
 
 **目录结构规则**：
 - 单一文件（无子步骤的 Skill）→ 直接放在 `00-presysdev-4-{target}/` 目录中

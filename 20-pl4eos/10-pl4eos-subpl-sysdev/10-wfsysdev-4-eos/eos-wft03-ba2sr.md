@@ -1,5 +1,5 @@
 # BA → SysReq 功能架构
-**Skill ID**: waterfall-t03 · **Step 3: Business Architecture → SysReq Functional Architecture**
+**Skill ID**: wft03 · **Step 3: Business Architecture → SysReq Functional Architecture**
 
 > **概述**：将两条设计链的 BA IPO 去重后，在现有 SysReq 架构资产中为每一条去重后 IPO 找承接的 SysReq 5 级节点，按 0-9 级层级结构组织为系统需求功能架构，同步建立产品架构骨架。
 >
@@ -107,7 +107,7 @@
 
 人类向 AI 发出以下指令即可启动：
 
-> 开始瀑布式 t03（或 waterfall-t03-ba-sysreq）
+> 开始瀑布式 t03（或 wft03）
 
 AI 动作序列：读取本文件 → 读取 t02 产出的业务架构定义和决策记录 → 读取现有 SysReq 资产 → 按六阶段流程执行（两链并行）→ 完成后通知人类审核。
 

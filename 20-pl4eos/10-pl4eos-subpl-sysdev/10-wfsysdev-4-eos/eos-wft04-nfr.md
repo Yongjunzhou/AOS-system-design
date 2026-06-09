@@ -1,5 +1,5 @@
 # SR-NFR → SysReq 非功能架构
-**Skill ID**: waterfall-t04 · **Step 4: SR Non-functional → SysReq Non-functional Architecture**
+**Skill ID**: wft04 · **Step 4: SR Non-functional → SysReq Non-functional Architecture**
 
 > **概述**：沿非功能分支独立推进，将两条设计链的 SR-NFR 分别详细定义并量化，在现有 SysReq-NFR 架构资产中找承接宿主，建立系统需求非功能部分架构。
 >
@@ -79,7 +79,7 @@
 
 ### 启动方式
 
-> 开始瀑布式 t04（或 waterfall-t04-nfr）
+> 开始瀑布式 t04（或 wft04）
 
 AI 动作序列：读取本文件 → 读取 t01 产出的 SR-NFR 和决策记录 → 读取 SysReq-NFR v1 基线 → 按五阶段执行（两链并行）→ 完成后通知人类审核。
 

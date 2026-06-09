@@ -1,5 +1,5 @@
 # SysReq 详细定义 → PA 架构
-**Skill ID**: waterfall-t05 · **Step 5: SysReq Detailed Definition → Product Architecture**
+**Skill ID**: wft05 · **Step 5: SysReq Detailed Definition → Product Architecture**
 
 > **概述**：合并功能和非功能分支，将两条设计链第3步产出的 SysReq 5 级架构节点分别分解到 9 级场景活动（完成 SysReq 层结对中的详细定义部分），在现有 PA 架构资产中为每条 9 级活动找承接的 PA 组件，完成两条设计链的产品架构定义。
 >
@@ -125,7 +125,7 @@
 
 ### 启动方式
 
-> 开始瀑布式 t05（或 waterfall-t05-sysreq-pa）
+> 开始瀑布式 t05（或 wft05）
 
 AI 动作序列：读取本文件 → 读取 t03 和 t04 产出的架构定义、PA 骨架、决策记录（两链各自）→ 读取 `90-eos-system-product-data/07-eos-product-architecture.md` 现有 PA 资产（两链各自加载链内部分）→ 按七阶段流程执行（两链并行）→ 完成后通知人类审核。
 

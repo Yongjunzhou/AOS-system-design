@@ -1,5 +1,5 @@
 # 追溯矩阵与验证报告
-**Skill ID**: waterfall-t06 · **Step 6: Traceability Matrix and Verification Report**
+**Skill ID**: wft06 · **Step 6: Traceability Matrix and Verification Report**
 
 > **概述**：建立全链路追溯矩阵（OR→SR→BA→SysReq→PA），生成验证报告，确认设计完整性。
 >
@@ -107,13 +107,13 @@
 
 ### 启动方式
 
-> 开始瀑布式 t06（或 waterfall-t06-traceability）
+> 开始瀑布式 t06（或 wft06）
 
 ---
 
 ## 四、AI 执行指南
 
-同 waterfall-t01。
+同 wft01。
 
 ### AI 经济原则
 
@@ -158,7 +158,7 @@
 
 ### 7.2 审查修复流程
 
-同 waterfall-t01。
+同 wft01。
 
 ---
 

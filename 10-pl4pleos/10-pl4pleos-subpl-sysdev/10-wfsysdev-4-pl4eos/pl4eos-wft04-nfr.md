@@ -1,5 +1,5 @@
 # 非功能需求分析
-**Skill ID**: waterfall-t04 · **Step 4: Non-Functional Requirements Analysis**
+**Skill ID**: wft04 · **Step 4: Non-Functional Requirements Analysis**
 
 > **概述**：单独处理非功能分支，将 SR-NFR 向 SysReq-NFR 层展开，建立 SysReq 非功能 0-6 级架构。
 >
@@ -73,13 +73,13 @@
 
 ### 启动方式
 
-> 开始瀑布式 t04（或 waterfall-t04-nfr）
+> 开始瀑布式 t04（或 wft04）
 
 ---
 
 ## 四、AI 执行指南
 
-同 waterfall-t01。
+同 wft01。
 
 ### AI 经济原则
 
@@ -120,7 +120,7 @@
 
 ### 7.2 审查修复流程
 
-同 waterfall-t01。
+同 wft01。
 
 ---
 
