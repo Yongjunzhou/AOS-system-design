@@ -1,3 +1,5 @@
+- [ORT关注行三类结构](ort01-three-category-focus-rows.md) — ort01 Step 5 关注行分三类：待选入切分/待选入澄清/待反馈方案
+- [ORT Skill设计模式](ort-skill-design-patterns.md) — 前视AI建议、步骤特异人类决策、1.1/1.2表职责分离
 - [预处理链前置校验设计](preprocessing-prerequisite-check.md) — 每个skill启动时先检查前置依赖是否就绪，未就绪时输出指引，逐级报错首次即停。2026-06-06 实施 + 泛化写入通用设计规范 §3.6 + §3.7
 - [对齐标注约定](alignment-annotation-convention.md) — ◆ 四种标注类型（对应/差异/定位/继承关系）+ 阅读路径格式
 - [架构增量变更的资产优先原则](architecture_asset_priority.md) — Reuse > Improve(Extend/Split/Merge) > Add，架构节点是组织资产
