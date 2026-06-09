@@ -1,6 +1,6 @@
 ---
 name: status-document-subtable-references
-description: 所有 Skill 尾部行动清单已统一指向状态文档子表（编号+表名）
+description: 所有 Skill 尾部行动清单已统一指向状态文档子表（编号+表名），全链明确为"EOS系统设计状态文档"
 metadata:
   type: project
 ---
@@ -14,4 +14,4 @@ metadata:
 
 **Why:** 人类在一览表中可以看到对象的摘要内容，快速了解所处理对象的情况，无需打开源文件。
 
-**How to apply:** 后续若新增子表或修改现有子表结构，需同步更新所有引用该表的 Skill 尾部行动清单。
+**How to apply:** 后续若新增子表或修改现有子表结构，需同步更新所有引用该表的 Skill 尾部行动清单。全链引用时使用"EOS系统设计状态文档"全称，避免仅简称"状态文档"。
