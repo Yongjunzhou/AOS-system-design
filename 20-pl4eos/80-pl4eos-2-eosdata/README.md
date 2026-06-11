@@ -25,6 +25,7 @@
 | 07 | [产品架构定义](07-eos-product-architecture.md) | 第 5 层 | 第 5 步 | 待填充 |
 | 08 | [追溯矩阵](08-eos-system-design-traceability-matrix.md) | 全层 | 第 6 步 | 待填充 |
 | 09 | [验证报告](09-eos-system-design-verification-report.md) | 全层 | 第 6 步 | 待填充 |
+| 21 | [输出产品架构目录](21-eos-output-architecture.md) | 全层（跨层资产） | ort03/wft01/wft02 | 活跃 |
 
 > **说明**：当前所有文档为**空模板占位符**，等待团队M根据 EOS 实际业务需求填充设计内容。
 
