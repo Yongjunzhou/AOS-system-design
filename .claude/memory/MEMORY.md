@@ -72,3 +72,4 @@
 - [OR 基线管理区精简](or-baseline-management-zone-simplification.md) — 管理区仅保留元信息+状态表，移除详细条目区和需求统计区。t01 分解结果归 SR 架构文档 — v1/v2 双区→单区+6状态状态机，t06 为唯一聚合点 — 文档状态嵌入原则 + 变更记录表交互协议（四情形分流）已纳入通用设计规范 §3.5
 - [wft01 STR 树按角色类型组织](wft01-str-organization.md) — v4.1 STR 树按角色类型组织、FR/NFR 双路径、非末级节点规则。后续 v4.2 将迭代粒度从 OR 级改为 STR 节点级
 - [wft01 v4.2 → 通用规范 v1.7 三条模式提取](wft01-feedback-cascade-to-generalspec.md) — 节点级迭代（§2.3.4）、架构节点自包含需求原文（§2.2.1）、映射变更级联更新（§3.2.4）
+- [资产管理步骤设计模式](asset-management-step-pattern.md) — 方案反馈与资产反馈分离，资产反馈放在资产自身，独立为资产管理步骤
