@@ -73,3 +73,5 @@
 - [wft01 STR 树按角色类型组织](wft01-str-organization.md) — v4.1 STR 树按角色类型组织、FR/NFR 双路径、非末级节点规则。后续 v4.2 将迭代粒度从 OR 级改为 STR 节点级
 - [wft01 v4.2 → 通用规范 v1.7 三条模式提取](wft01-feedback-cascade-to-generalspec.md) — 节点级迭代（§2.3.4）、架构节点自包含需求原文（§2.2.1）、映射变更级联更新（§3.2.4）
 - [资产管理步骤设计模式](asset-management-step-pattern.md) — 方案反馈与资产反馈分离，资产反馈放在资产自身，独立为资产管理步骤
+- [EOS BA 五级层级与 23 号资产对应关系](ba-five-level-hierarchy.md) — EOS 为流水线类软件产品→输出产品架构锚定法；BA 五级（业务域/项目类型/端到端业务/WBS/IPO）；23-*.md 提供 2~3级锚点+5级 I/O 参考；WBS 归属 04-*.md 不放 23
+- [wft02 v3.0 修订方案](wft02-revision-plan.md) — BA 五级层级改造 + 24/25 资产联动 + Step 命名对齐。Step 3 为核心（层级导航五步法→Q1/Q2/Q3 在路径内→写入 24/25），Step Start~Step End 全流程修订
