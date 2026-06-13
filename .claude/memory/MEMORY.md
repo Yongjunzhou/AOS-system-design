@@ -15,6 +15,7 @@
 - [AOS文档审查完成](documentation_review_complete.md) — 所有6个任务文档完善完成，包括示例、最佳实践、跨任务指南
 - [端到端业务分解框架](end_to_end_business_framework.md) — 从产品架构节点类型推导价值业务，加项目管理业务构成完整项目业务
 - [端到端业务与跨域接口原则](end_to_end_cross_domain_principle.md) — 端到端流程不吞并其他域，通过域间需求-响应契约实现协作
+- [E2E 项目三类相关方驱动](e2e-project-stakeholder-definition.md) — 上级/监管方→经营类、客户→产品类、内部员工→资源类，三类 E2E 项目驱动
 - [EOS引擎平台架构](eos_architecture_engines_platform.md) — 四层平台架构（引擎→组件→模块→使用），两类需求（引擎开发 vs 业务配置），引擎清单
 - [产品分类表待更新](eos_product_classification_table_update.md) — EOS产品分类表需更新以反映流水线本质
 - [CLAUDE.md 不加章节号](feedback_claude_no_section_numbers.md) — 保持层级标题格式，不添加数字章节号
