@@ -1,3 +1,5 @@
+> **⚠️ 已废弃**：本文档内容已于 2026-06-13 合并入 [23-eos-output-architecture.md](23-eos-output-architecture.md)。引擎节点的身份信息（定义、采办策略、依赖关系）作为"EOS 平台"产品类型下的架构节点字段管理；BA 承接信息归 04-*.md，PA 追溯信息归 07-*.md。本文档保留仅作历史参考，不再维护。
+
 # EOS 引擎组件目录
 **EOS Engine Components Catalog**
 
