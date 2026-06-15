@@ -3,11 +3,9 @@
 
 **文档版本**：v0.1
 **创建日期**：2026-06-13
-**状态**：⚠️ 已废弃（内容并入 23-eos-output-architecture.md）
+**状态**：活跃
 
-> ⚠️ **废弃声明**：自 wft02 v4.0 起，24/25 号独立资产文件已废弃，其内容并入 [23-eos-output-architecture.md](23-eos-output-architecture.md) 的 13 列字段中统一管理。本文件保留供历史引用参考，不再更新。
-
-> **文档定位**：[已废弃] 原为 EOS 可复用业务定义（BA IPO）的资产清单。现已废弃，请直接参考 [23-eos-output-architecture.md](23-eos-output-architecture.md) 的对应字段。
+> **文档定位**：EOS 可复用业务定义（BA IPO）的资产清单——wft02 将 A2 业务定义 BA IPO 提炼为可复用定义条目写入本清单，各构件类型在 [23-eos-output-architecture.md](23-eos-output-architecture.md) 中通过"业务定义复用"列引用。与 25 号引擎模型清单并列，供 wft05 和产品本体开发引用。
 
 ---
 
