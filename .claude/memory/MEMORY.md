@@ -5,7 +5,7 @@
 - [对齐标注约定](alignment-annotation-convention.md) — ◆ 四种标注类型（对应/差异/定位/继承关系）+ 阅读路径格式
 - [架构增量变更的资产优先原则](architecture_asset_priority.md) — Reuse > Improve(Extend/Split/Merge) > Add，架构节点是组织资产
 - [BA IPO 泛化](ba-ipo-generalization.md) — I/O 从"文档"泛化为"完整表意单元"，覆盖非人类角色；涉及第四章 §4.4 + 第五章 §5.2.1 第3步联动修改
-- [BA存在的本质原因](ba_existence_reason.md) — BA是相关方可验证的业务操作界面，确保功能需求捕获的完备性；SysReq-F是系统语言，相关方无法直接验证其完整性
+- [BA两类产品类型](ba-two-product-types-output-product-role-scenario.md) — 输出产品+角色场景两类产品类型，角色场景走履职流程分解到编排定义（A2）
 - [输出产品架构锚定法与术语体系](ba_method_naming_output_product_anchoring.md) — BA方法正式命名 + 目标产品/输出产品术语区分
 - [系统设计准则优化说明](design_standards_optimization.md) — v2.1优化版，从概念到应用，实用指导型风格
 - [术语统一：解决方案实体](terminology_solution_entity.md) — 通用设计规范全文档用"解决方案实体"替代"设计实现节点/实体"描述架构末级节点
