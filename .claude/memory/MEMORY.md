@@ -77,3 +77,4 @@
 - [EOS BA 五级层级与 23 号资产对应关系](ba-five-level-hierarchy.md) — EOS 为流水线类软件产品→输出产品架构锚定法；BA 五级（业务域/项目类型/端到端业务/WBS/IPO）；23-*.md 提供 2~3级锚点+5级 I/O 参考；WBS 归属 04-*.md 不放 23
 - [wft02 v3.0 修订方案](wft02-revision-plan.md) — BA 五级层级改造 + 24/25 资产联动 + Step 命名对齐。Step 3 为核心（层级导航五步法→Q1/Q2/Q3 在路径内→写入 24/25），Step Start~Step End 全流程修订
 - [wft02 并行模型与派生需求全对称](wft02-parallel-model-derived-requirements.md) — 两条路径并行从 STR 分配，派生 STR 也走两条分支，全对称处理，靠多轮迭代收敛
+- [wft03 SR-F 三分支分类模式](wft03-srf-three-branch-classification.md) — SR-F 分类重组采用"业务功能+平台服务+工作空间"三分支，对应三类 BA IPO 产品类型自动分流
