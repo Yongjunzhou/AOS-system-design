@@ -9,7 +9,7 @@
 >
 > **适用场景**：瀑布式系统设计第5步。本步合并功能分支（`wft03`）与非功能分支（`wft04`），完成 SysReq→PA 的桥接重组与组件生成。
 >
-> **设计模式参考**：[90-design-split-pattern.md](90-design-split-pattern.md)（两阶段分离模式 v0.4）
+> **设计模式参考**：[91-skill-split-spec.md](91-skill-split-spec.md)（Skill 拆分规范 v1.0）
 >
 > **版本**：v4.0 | **修订**：2026-06-17
 
