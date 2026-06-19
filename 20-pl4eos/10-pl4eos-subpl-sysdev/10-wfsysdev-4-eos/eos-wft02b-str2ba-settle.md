@@ -7,7 +7,7 @@
 >
 > **适用场景**：瀑布式系统设计第2步 · Phase 2。
 >
-> **设计模式参考**：[91-skill-split-spec.md](91-skill-split-spec.md)
+> **设计模式参考**：[91-doc-paired-skill-spec.md](91-doc-paired-skill-spec.md)
 >
 > **版本**：v1.0 | **修订**：2026-06-17
 

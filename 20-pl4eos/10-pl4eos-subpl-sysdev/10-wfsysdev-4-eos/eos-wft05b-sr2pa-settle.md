@@ -7,7 +7,7 @@
 >
 > **适用场景**：瀑布式系统设计第5步 · Phase 2。Skill A（`eos-wft05a-sr2pa-design.md`）方案通过门禁 1 后运行本 Skill。
 >
-> **设计模式参考**：[91-skill-split-spec.md](91-skill-split-spec.md)
+> **设计模式参考**：[91-doc-paired-skill-spec.md](91-doc-paired-skill-spec.md)
 >
 > **版本**：v4.1 | **修订**：2026-06-17
 
