@@ -831,7 +831,7 @@ Skill B 至少应覆盖：
 2. `wft05b` 以上半完成主资产写回、以下半完成 `SR` 详细定义与 `PA` 组件规格。
 3. `wft05` 体现了本规范的完整边界：阶段性方案/可确认方案、冻结输入、结构问题回退、规格问题留在 B。
 
-若需具体实例细节，应以 [eos-wft05a-sr2pa-design.md](/Users/iproyongjunzhou/claude/AOS-system-design/20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft05a-sr2pa-design.md) 与 [eos-wft05b-sr2pa-settle.md](/Users/iproyongjunzhou/claude/AOS-system-design/20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft05b-sr2pa-settle.md) 为准。
+若需具体实例细节，应以 [eos-wft05a-sr2pa-design.md](eos-wft05a-sr2pa-design.md) 与 [eos-wft05b-sr2pa-settle.md](eos-wft05b-sr2pa-settle.md) 为准。
 
 ---
 

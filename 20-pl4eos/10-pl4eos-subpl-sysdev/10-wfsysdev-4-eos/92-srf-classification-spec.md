@@ -4,7 +4,7 @@
 >
 > **定位**：先行规范。待规则稳定后，核心内容应合入 `01-pl4eos-spec-sysdev.md` §4.4；本文件在合入后降级为历史参考。
 >
-> **设计模式参考**：[91-doc-paired-skill-spec.md](91-doc-paired-skill-spec.md)、[eos-wft03-ba2sr.md](eos-wft03-ba2sr.md)
+> **设计模式参考**：[91-doc-paired-skill-spec.md](91-doc-paired-skill-spec.md)、[eos-wft03a-ba2sr-design.md](eos-wft03a-ba2sr-design.md)
 >
 > **版本**：v1.0 | **修订**：2026-06-21
 
