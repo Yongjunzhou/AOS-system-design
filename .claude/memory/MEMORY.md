@@ -79,3 +79,5 @@
 - [wft02 并行模型与派生需求全对称](wft02-parallel-model-derived-requirements.md) — 两条路径并行从 STR 分配，派生 STR 也走两条分支，全对称处理，靠多轮迭代收敛
 - [wft03 SR-F 三分支分类模式](wft03-srf-three-branch-classification.md) — SR-F 分类重组采用"业务功能+平台服务+工作空间"三分支，对应三类 BA IPO 产品类型自动分流
 - [设计开发+资产维护两阶段分离模式](design-split-pattern.md) — 所有 wft skill 拆分 Phase 1(设计开发)/Phase 2(资产维护)，同构六步骤，人类审阅为门禁，试点建议 wft05
+- [wft01a脑补信息与后续OR关系](wft01a-brainfill-vs-subsequent-or.md) — AI在wft01a中一轮"脑补"的信息载体在新OR进入时如何升级/确认/补充/矛盾的规则缺口
+- [wft01a重新设计：多OR收敛+业务确认](wft01a-redesign-multi-or-convergence.md) — 需重新设计wft01a以支持多OR积累收敛+业务人员确认机制，替代当前单OR完整脑补模型
