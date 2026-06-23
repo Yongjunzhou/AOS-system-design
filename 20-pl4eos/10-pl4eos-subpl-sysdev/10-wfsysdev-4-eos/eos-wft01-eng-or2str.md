@@ -58,7 +58,7 @@
 
 ## 三、文档加载规则
 
-读取遵守 [文档编写约定 §十四](../../../../00-generalspec/00-doc-conventions.md)，写回遵守 §十五。
+读取遵守 [文档编写约定 §十四](../../../../00-generalspec/00-doc-conventions.md)：读全景层→读索引层→读目标正文块+追溯→按需扩大。写回遵守 §十五。
 
 全景加载：`01` + `02` + `25-eos-engine-models.md` + `23-eos-output-architecture.md` + `24-eos-business-definitions.md`（资产全貌层）。
 
