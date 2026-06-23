@@ -1,3 +1,4 @@
+- [wft01 三路径自闭环模型](wft01-self-closed-model.md) — 2026-06-23：biz/eng/nfr 三路径自闭环完成 + 5+1 生命周期 + 资产-BA 解耦 + 变更传播协议 + 91 规范 v2.0 修订
 - [ORT00精确查重设计决策](ort00-dedup-design-decisions.md) — 流程内联/逐字精确比对/独立生命周期"已废弃（重复）"/软链接定向引用/语义查重边界暂不实现
 - [ORT关注行三类结构](ort01-three-category-focus-rows.md) — ort01 Step 5 关注行分三类：待选入切分/待选入澄清/待反馈方案
 - [ORT Skill设计模式](ort-skill-design-patterns.md) — 前视AI建议、步骤特异人类决策、1.1/1.2表职责分离
