@@ -41,7 +41,7 @@
 
 ### 0.1 资产统计
 
-| 引擎模型数 | 配置 IPO 类型数 | 自研 | 外购 | 自研+外购 | 待确认 | 废弃 | 最近更新 |
+| 引擎模型数 | 配置单元类型数 | 自研 | 外购 | 自研+外购 | 待确认 | 废弃 | 最近更新 |
 |------------|------------------|------|------|-----------|--------|------|----------|
 | 1 | 7 | 1 | 0 | 0 | 0 | 0 | 2026-06-21 |
 
@@ -82,18 +82,18 @@
 | @engine-template | 引擎模型模板 | 业务对象引擎 | 自研 / 外购 / 自研+外购 | 模板 | — | — | — | ENGINE-TEMPLATE | 2026-06-21 |
 | @engine-form | 表单引擎 | 业务对象引擎 | 自研 | 已确认 | — | 待实例化 | @node-form | ENGINE-FORM | 2026-06-21 |
 
-### 2.3 引擎配置 IPO 类型索引
+### 2.3 引擎配置单元类型索引
 
-| IPO类型ID | 名称 | 所属模型 | 对应系统实体 | 依赖 IPO | 生命周期状态 | 块ID | 最后更新 |
+| 配置单元类型ID | 名称 | 所属模型 | 对应系统实体 | 依赖配置单元 | 生命周期状态 | 块ID | 最后更新 |
 |-----------|------|----------|--------------|----------|--------------|------|----------|
-| @engine-ipo-template | 引擎配置 IPO 类型模板 | @engine-template | 模板 | — | 模板 | ENGINE-IPO-TEMPLATE | 2026-06-21 |
-| @form-ipo-structure | 表单结构配置 IPO | @engine-form | FormDefinition | — | 已确认 | ENGINE-FORM | 2026-06-21 |
-| @form-ipo-field | 字段定义配置 IPO | @engine-form | FieldDefinition | @form-ipo-structure | 已确认 | ENGINE-FORM | 2026-06-21 |
-| @form-ipo-layout | 布局配置 IPO | @engine-form | LayoutDefinition | @form-ipo-field | 已确认 | ENGINE-FORM | 2026-06-21 |
-| @form-ipo-validation | 校验规则配置 IPO | @engine-form | ValidationRule | @form-ipo-field | 已确认 | ENGINE-FORM | 2026-06-21 |
-| @form-ipo-behavior | 表单行为配置 IPO | @engine-form | BehaviorRule | @form-ipo-field | 已确认 | ENGINE-FORM | 2026-06-21 |
-| @form-ipo-permission | 表单权限配置 IPO | @engine-form | FormPermission | @form-ipo-field | 已确认 | ENGINE-FORM | 2026-06-21 |
-| @form-ipo-release | 表单发布配置 IPO | @engine-form | FormVersion / ReleaseRecord | @form-ipo-structure / @form-ipo-field / @form-ipo-layout | 已确认 | ENGINE-FORM | 2026-06-21 |
+| @engine-cu-template | 引擎配置单元类型模板 | @engine-template | 模板 | — | 模板 | ENGINE-CU-TEMPLATE | 2026-06-21 |
+| @form-cu-structure | 表单结构配置单元 | @engine-form | FormDefinition | — | 已确认 | ENGINE-FORM | 2026-06-21 |
+| @form-cu-field | 字段定义配置单元 | @engine-form | FieldDefinition | @form-cu-structure | 已确认 | ENGINE-FORM | 2026-06-21 |
+| @form-cu-layout | 布局配置单元 | @engine-form | LayoutDefinition | @form-cu-field | 已确认 | ENGINE-FORM | 2026-06-21 |
+| @form-cu-validation | 校验规则配置单元 | @engine-form | ValidationRule | @form-cu-field | 已确认 | ENGINE-FORM | 2026-06-21 |
+| @form-cu-behavior | 表单行为配置单元 | @engine-form | BehaviorRule | @form-cu-field | 已确认 | ENGINE-FORM | 2026-06-21 |
+| @form-cu-permission | 表单权限配置单元 | @engine-form | FormPermission | @form-cu-field | 已确认 | ENGINE-FORM | 2026-06-21 |
+| @form-cu-release | 表单发布配置单元 | @engine-form | FormVersion / ReleaseRecord | @form-cu-structure / @form-cu-field / @form-cu-layout | 已确认 | ENGINE-FORM | 2026-06-21 |
 
 ---
 
@@ -104,15 +104,15 @@
 3. 同一引擎模型可被多个业务定义复用；复用关系记录在索引和追溯区。
 4. 外购、自研、自研+外购是架构级实现策略，不代表采购或开发已经完成。
 5. 对外接口只记录架构级能力和输入输出摘要，详细 API 规格应在后续产品本体或开发文档中定义。
-6. 引擎配置 IPO 类型描述某个引擎可独立配置、校验、发布、复用或版本管理的元数据对象类型；具体业务定义的配置 IPO 实例不写入本文档，应由 `04-eos-business-architecture.md` 的 A1 BA 方案或后续 PA / 配置定义资产承载。
-7. `wft02a` 生成 A1 引擎配置 IPO 建议时，应优先查询本文档的配置 IPO 类型库，再按当前 Bn 业务定义、A2 场景定义或公共业务定义实例化；若本文档不存在可承接的 IPO 类型，应形成 25 资产新增 / 扩展建议或业务引擎能力缺口反馈。
-8. **术语映射**：本文档的"引擎配置 IPO 类型"在 wft01a 的 STR-E 设计阶段称为"配置单元"，三个核心字段对应关系为 Input→配置要素 / Process→处理说明 / Output→业务说明。wft02a 的 BA 设计阶段沿用"配置 IPO"术语。三个术语指向同一组概念实体，仅在各自设计过程中以不同视角命名。
+6. 引擎配置单元类型描述某个引擎可独立配置、校验、发布、复用或版本管理的元数据对象类型；具体业务定义的配置单元实例不写入本文档，应由 `04-eos-business-architecture.md` 的 A1 BA 方案或后续 PA / 配置定义资产承载。
+7. `wft02a` 生成 A1 引擎配置单元建议时，应优先查询本文档的配置单元类型库，再按当前 Bn 业务定义、A2 场景定义或公共业务定义实例化；若本文档不存在可承接的配置单元类型，应形成 25 资产新增 / 扩展建议或业务引擎能力缺口反馈。
+8. **术语统一**：本文档与 wft01a 统一使用"配置单元"术语。配置单元的三个核心字段为 Input（配置要素）/ Process（处理说明）/ Output（业务说明）。wft02a 等下游 Skill 将在后续修订中同步此术语。
 
 ### 3.1 Skill 读写契约
 
 | Skill | 操作 | 说明 |
 |-------|------|------|
-| `wft01a` | 读 | 读取引擎模型的配置 IPO 类型清单，映射为 STR-E 节点的**配置单元**（Input→配置要素 / Process→处理说明 / Output→业务说明） |
+| `wft01a` | 读 | 读取引擎模型的配置单元类型清单，作为 STR-E 节点的**配置单元**候选集（配置要素 / 处理说明 / 业务说明） |
 | `wft02` | 读 + 写 | 读取 A1 业务引擎能力，新增或扩展引擎模型 |
 | `wft05` | 读 | 作为 PA 架构引用的平台组件来源 |
 | 引擎开发者 | 填充 | 在 EOS 开发过程中实例化每个引擎模型的技术定义 |
@@ -136,29 +136,29 @@
 | 定义 | 功能职责和技术边界的一句话说明 |
 | 依赖模型 | `@engine-*` 依赖模型 ID |
 | 对外接口简述 | 接口名、输入、输出和能力摘要 |
-| 配置 IPO 类型 | 该引擎支持的配置 IPO 类型 ID 清单 |
+| 配置单元类型 | 该引擎支持的配置单元类型 ID 清单 |
 | 支持的业务定义 | 引用 `24-eos-business-definitions.md` 的 `@def-*` |
 | 来源节点 | `23` 构件类型或 `04` BA A1 节点 |
 | 实现约束 | 架构级技术依赖、采购约束或替代关系 |
 
-##### 引擎配置 IPO 类型模板
+##### 引擎配置单元类型模板
 
-<!-- BLOCK: ENGINE-IPO-TEMPLATE -->
+<!-- BLOCK: ENGINE-CU-TEMPLATE -->
 | 要素 | 内容 |
 |------|------|
-| IPO类型ID | `@engine-ipo-*` |
-| IPO类型名称 | `{配置对象类型}配置 IPO` |
+| 配置单元类型ID | `@engine-cu-*` |
+| 配置单元类型名称 | `{配置对象类型}配置单元` |
 | 所属引擎模型 | `@engine-*` |
 | 对应系统实体 | 引擎内部元数据实体，如 `FieldDefinition` |
 | 配置页面 | 人类配置该元数据实体的页面 / 设计器 / 配置面板 |
 | Input | 配置页面及关键配置信息 |
 | Process | 系统对配置信息执行校验、解析、存储、编译、发布、版本管理和运行期装载等处理 |
 | Output | 引擎运行期基于该元数据生成的业务能力、操作页面、规则、流程、视图或指标能力 |
-| 依赖 IPO | 前置配置 IPO 类型 ID |
-| 适用业务定义类型 | 可实例化该 IPO 类型的业务定义或场景定义类型 |
-| 实例化规则 | `wft02a` 如何从 Bn / A2 / 公共业务定义派生具体配置 IPO 实例 |
+| 依赖配置单元 | 前置配置单元类型 ID |
+| 适用业务定义类型 | 可实例化该 配置单元类型的业务定义或场景定义类型 |
+| 实例化规则 | `wft02a` 如何从 Bn / A2 / 公共业务定义派生具体配置单元 实例 |
 | 生命周期状态 | 模板 / 已确认 / 待确认 / 废弃 |
-<!-- /BLOCK: ENGINE-IPO-TEMPLATE -->
+<!-- /BLOCK: ENGINE-CU-TEMPLATE -->
 
 ##### 反馈区
 
@@ -181,22 +181,22 @@
 | 定义 | 通过配置表单结构、字段、布局、校验、行为、权限和发布信息，生成业务对象录入、展示和提交页面能力的业务对象引擎 |
 | 依赖模型 | 字典引擎、主数据引擎、关系引擎、权限能力 |
 | 对外接口简述 | 配置保存 / 校验 / 发布接口；运行期表单渲染、数据读取、数据提交和校验接口 |
-| 配置 IPO 类型 | @form-ipo-structure, @form-ipo-field, @form-ipo-layout, @form-ipo-validation, @form-ipo-behavior, @form-ipo-permission, @form-ipo-release |
+| 配置单元类型 | @form-cu-structure, @form-cu-field, @form-cu-layout, @form-cu-validation, @form-cu-behavior, @form-cu-permission, @form-cu-release |
 | 支持的业务定义 | 需要数据录入、展示、编辑、提交或附件采集的业务定义 |
 | 来源节点 | @node-form |
 | 实现约束 | 运行期表单能力依赖业务对象数据模型、字段权限、字典 / 主数据引用和版本发布机制 |
 
-##### 配置 IPO 类型清单
+##### 配置单元类型清单
 
-| IPO类型ID | 名称 | 对应系统实体 | 配置页面 | Input | Process | Output | 依赖 IPO | 实例化规则 |
+| 配置单元类型ID | 名称 | 对应系统实体 | 配置页面 | Input | Process | Output | 依赖配置单元 | 实例化规则 |
 |-----------|------|--------------|----------|-------|---------|--------|----------|------------|
-| @form-ipo-structure | 表单结构配置 IPO | FormDefinition | 表单设计器 / 表单基本信息页 | 表单名称、业务对象、数据源、表单类型、版本策略 | 校验表单唯一性和业务对象绑定关系，保存表单定义元数据 | 业务定义获得可被渲染的表单页面骨架 | — | 当业务定义需要录入、展示或提交业务对象时实例化 |
-| @form-ipo-field | 字段定义配置 IPO | FieldDefinition | 表单设计器字段面板 | 字段名、字段类型、标签、默认值、必填、引用对象、业务字段映射 | 校验字段定义并绑定表单、业务对象字段和数据源 | 运行期表单字段渲染、录入、展示和业务实体字段映射能力 | @form-ipo-structure | 当业务定义包含可录入、展示、计算或引用的字段时实例化 |
-| @form-ipo-layout | 布局配置 IPO | LayoutDefinition | 表单设计器布局面板 | 分组、列数、标签页、显示顺序、折叠区、明细表布局 | 校验布局引用的字段，保存布局元数据并绑定表单版本 | 运行期页面分组、标签页、明细区和显示顺序能力 | @form-ipo-field | 当业务定义需要人类友好的录入 / 查看页面时实例化 |
-| @form-ipo-validation | 校验规则配置 IPO | ValidationRule | 字段 / 表单校验配置页 | 必填、范围、格式、唯一性、跨字段表达式、提交校验规则 | 解析并保存校验规则，绑定字段、表单和触发点 | 用户录入、保存、提交时的校验和提示能力 | @form-ipo-field | 当业务定义存在数据质量、规则或合规校验要求时实例化 |
-| @form-ipo-behavior | 表单行为配置 IPO | BehaviorRule | 表单行为 / 联动配置页 | 字段联动、自动带出、提交前后动作、按钮动作、附件动作 | 解析行为规则，绑定触发事件和执行动作 | 页面联动、自动填充、按钮操作和提交处理能力 | @form-ipo-field | 当业务定义需要页面交互、自动处理或提交动作时实例化 |
-| @form-ipo-permission | 表单权限配置 IPO | FormPermission | 表单权限配置页 | 角色、组织范围、字段可见性、字段可编辑性、按钮权限 | 保存权限规则并绑定表单、字段、角色和状态 | 不同角色 / 状态下的字段可见、可编辑和操作按钮控制能力 | @form-ipo-field | 当业务定义涉及角色分工、状态控制或敏感字段时实例化 |
-| @form-ipo-release | 表单发布配置 IPO | FormVersion / ReleaseRecord | 表单发布页 | 版本号、生效范围、生效时间、灰度范围、回滚策略 | 校验配置完整性，生成版本记录并发布到运行期 | 正式可用、可回滚、可审计的表单运行能力 | @form-ipo-structure / @form-ipo-field / @form-ipo-layout | 当表单配置需要上线运行时实例化 |
+| @form-cu-structure | 表单结构配置单元 | FormDefinition | 表单设计器 / 表单基本信息页 | 表单名称、业务对象、数据源、表单类型、版本策略 | 校验表单唯一性和业务对象绑定关系，保存表单定义元数据 | 业务定义获得可被渲染的表单页面骨架 | — | 当业务定义需要录入、展示或提交业务对象时实例化 |
+| @form-cu-field | 字段定义配置单元 | FieldDefinition | 表单设计器字段面板 | 字段名、字段类型、标签、默认值、必填、引用对象、业务字段映射 | 校验字段定义并绑定表单、业务对象字段和数据源 | 运行期表单字段渲染、录入、展示和业务实体字段映射能力 | @form-cu-structure | 当业务定义包含可录入、展示、计算或引用的字段时实例化 |
+| @form-cu-layout | 布局配置单元 | LayoutDefinition | 表单设计器布局面板 | 分组、列数、标签页、显示顺序、折叠区、明细表布局 | 校验布局引用的字段，保存布局元数据并绑定表单版本 | 运行期页面分组、标签页、明细区和显示顺序能力 | @form-cu-field | 当业务定义需要人类友好的录入 / 查看页面时实例化 |
+| @form-cu-validation | 校验规则配置单元 | ValidationRule | 字段 / 表单校验配置页 | 必填、范围、格式、唯一性、跨字段表达式、提交校验规则 | 解析并保存校验规则，绑定字段、表单和触发点 | 用户录入、保存、提交时的校验和提示能力 | @form-cu-field | 当业务定义存在数据质量、规则或合规校验要求时实例化 |
+| @form-cu-behavior | 表单行为配置单元 | BehaviorRule | 表单行为 / 联动配置页 | 字段联动、自动带出、提交前后动作、按钮动作、附件动作 | 解析行为规则，绑定触发事件和执行动作 | 页面联动、自动填充、按钮操作和提交处理能力 | @form-cu-field | 当业务定义需要页面交互、自动处理或提交动作时实例化 |
+| @form-cu-permission | 表单权限配置单元 | FormPermission | 表单权限配置页 | 角色、组织范围、字段可见性、字段可编辑性、按钮权限 | 保存权限规则并绑定表单、字段、角色和状态 | 不同角色 / 状态下的字段可见、可编辑和操作按钮控制能力 | @form-cu-field | 当业务定义涉及角色分工、状态控制或敏感字段时实例化 |
+| @form-cu-release | 表单发布配置单元 | FormVersion / ReleaseRecord | 表单发布页 | 版本号、生效范围、生效时间、灰度范围、回滚策略 | 校验配置完整性，生成版本记录并发布到运行期 | 正式可用、可回滚、可审计的表单运行能力 | @form-cu-structure / @form-cu-field / @form-cu-layout | 当表单配置需要上线运行时实例化 |
 
 ##### 反馈区
 
@@ -227,8 +227,8 @@
 | @def-* | uses_asset | @engine-template | 本文档 | 模板 | 业务定义依赖引擎模型 |
 | @node-* | implemented_by | @engine-template | 本文档 | 模板 | `23` 构件类型由引擎模型承接 |
 | @engine-template | depends_on | @engine-* | 本文档 | 模板 | 引擎模型之间的依赖 |
-| @engine-form | has_config_ipo_type | @form-ipo-* | 本文档 | 已确认 | 表单引擎支持的配置 IPO 类型 |
-| BA-A1-* | instantiates | @form-ipo-* | `04-eos-business-architecture.md` | 模板 | 具体 A1 BA IPO 实例化表单引擎配置 IPO 类型 |
+| @engine-form | has_config_ipo_type | @form-cu-* | 本文档 | 已确认 | 表单引擎支持的配置单元类型 |
+| BA-A1-* | instantiates | @form-cu-* | `04-eos-business-architecture.md` | 模板 | 具体 A1 BA 配置单元实例化表单引擎配置单元类型 |
 
 ---
 
@@ -244,7 +244,8 @@
 
 | 日期 | 版本 | 变更类型 | 变更摘要 | 操作 Skill |
 |------|------|----------|----------|-----------|
-| 2026-06-22 | v1.2 | 关系补充 | 新增规则 8 明确术语映射（配置 IPO 类型 → wft01a 配置单元／wft02a 配置 IPO）；Skill 读写契约补充 wft01a 读角色 | wft01a 修订 |
-| 2026-06-21 | v1.1 | 结构扩展 | 增加引擎配置 IPO 类型库口径、索引和模板；新增表单引擎配置 IPO 类型样板 | Codex |
+| 2026-06-23 | v1.3 | 术语统一 | "配置 IPO"全量→"配置单元"（配置单元类型/配置单元类型ID/配置单元类型名称/依赖配置单元，ID @form-ipo-*→@form-cu-*）；规则 8 从术语映射→术语统一声明；Skill 读写契约同步 | wft01a Step 4 讨论 |
+| 2026-06-22 | v1.2 | 关系补充 | 新增规则 8 明确术语映射（配置单元类型 → wft01a 配置单元／wft02a 配置单元）；Skill 读写契约补充 wft01a 读角色 | wft01a 修订 |
+| 2026-06-21 | v1.1 | 结构扩展 | 增加引擎配置单元类型库口径、索引和模板；新增表单引擎配置单元类型样板 | Codex |
 | 2026-06-21 | v1.0 | 结构改造 | 改为树形资产文档结构，新增 AI 读取说明、状态队列、索引、正文块和追溯关系区 | Codex |
 | 2026-06-13 | v0.1 | 初始化 | 初始创建骨架模板 | — |
