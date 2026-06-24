@@ -1,3 +1,4 @@
+- [wft02 自闭环重构完成](wft02-self-closed-refactor.md) — 2026-06-24：wft02a/b→wft02-biz（STR-F→A2+Bn）+ wft02-eng（STR-E→A1），纵向合并(A+B→自闭环)+横向拆分(按路径)，91 规范 v2.1 同步更新
 - [wft01 三路径自闭环模型](wft01-self-closed-model.md) — 2026-06-23：biz/eng/nfr 三路径自闭环完成 + 5+1 生命周期 + 资产-BA 解耦 + 变更传播协议 + 91 规范 v2.0 修订
 - [ORT00精确查重设计决策](ort00-dedup-design-decisions.md) — 流程内联/逐字精确比对/独立生命周期"已废弃（重复）"/软链接定向引用/语义查重边界暂不实现
 - [ORT关注行三类结构](ort01-three-category-focus-rows.md) — ort01 Step 5 关注行分三类：待选入切分/待选入澄清/待反馈方案
