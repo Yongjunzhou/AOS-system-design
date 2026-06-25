@@ -81,7 +81,7 @@
 - [wft02 v3.0 修订方案](wft02-revision-plan.md) — BA 五级层级改造 + 24/25 资产联动 + Step 命名对齐。Step 3 为核心（层级导航五步法→Q1/Q2/Q3 在路径内→写入 24/25），Step Start~Step End 全流程修订
 - [wft02 并行模型与派生需求全对称](wft02-parallel-model-derived-requirements.md) — 两条路径并行从 STR 分配，派生 STR 也走两条分支，全对称处理，靠多轮迭代收敛
 - [wft02 Step 3 标注简化完成](wft02-step3-annotation-simplification.md) — eng v2.3 + biz v2.11：三字段→单字段；标题人话化；概述段自然语言化。已完成
-- [wft02-eng §3.2 深入讨论](wft02-eng-3.2-deep-discussion.md) — 6个核心问题待决策（设计颗粒度/方法论/25-Q判定/A→C传递/依赖回引/占位生命周期），问题1+2为首要
+- [wft02-eng §3.2 深入讨论](wft02-eng-3.2-deep-discussion.md) — 6个核心问题已决策，v2.4 已实施（设计心法+颗粒度准则+25-Q判定参考表+依赖回引+占位生命周期+Q3完整示例）
 - [wft03 SR-F 三分支分类模式](wft03-srf-three-branch-classification.md) — SR-F 分类重组采用"业务功能+平台服务+工作空间"三分支，对应三类 BA IPO 产品类型自动分流
 - [设计开发+资产维护两阶段分离模式](design-split-pattern.md) — 所有 wft skill 拆分 Phase 1(设计开发)/Phase 2(资产维护)，同构六步骤，人类审阅为门禁，试点建议 wft05
 - [wft01a脑补信息与后续OR关系](wft01a-brainfill-vs-subsequent-or.md) — AI在wft01a中一轮"脑补"的信息载体在新OR进入时如何升级/确认/补充/矛盾的规则缺口
