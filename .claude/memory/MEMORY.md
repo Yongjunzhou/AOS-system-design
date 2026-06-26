@@ -87,3 +87,4 @@
 - [设计开发+资产维护两阶段分离模式](design-split-pattern.md) — 所有 wft skill 拆分 Phase 1(设计开发)/Phase 2(资产维护)，同构六步骤，人类审阅为门禁，试点建议 wft05
 - [wft01a脑补信息与后续OR关系](wft01a-brainfill-vs-subsequent-or.md) — AI在wft01a中一轮"脑补"的信息载体在新OR进入时如何升级/确认/补充/矛盾的规则缺口
 - [wft01a重新设计：多OR收敛+业务确认](wft01a-redesign-multi-or-convergence.md) — 需重新设计wft01a以支持多OR积累收敛+业务人员确认机制，替代当前单OR完整脑补模型
+- [术语重构：引擎与业务](terminology-refactor-engine-business.md) — 2026-06-26：三术语→两术语重构完成；引擎四级五引擎；业务四级编排；术语表+规范§2.5+25/24/26/27资产文件已更新；23.md待讨论
