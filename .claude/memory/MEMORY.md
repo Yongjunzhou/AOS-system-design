@@ -1,5 +1,6 @@
-- [wft01-biz v1.36 模型重构完成](wft01-biz-v136-model-refactor-complete.md) — 2026-06-27：输出文档识别模型重构+15项通览修复，QTC→场景部件，架构图方案A，场景引擎+菜单引擎待专题
-- [wft01-biz Step 3 审计完成](wft01-biz-step3-audit-complete.md) — 2026-06-27：7项问题6项落账，v1.29→v1.35（关系检测锚点/来源类型定义/端到端闭合验证/先提取后检查说明/业务域映射/措辞微调），场景引擎+菜单引擎后续专题
+- [wft01-biz 场景引擎+菜单引擎角色澄清](wft01-biz-scene-menu-engine-clarification.md) — 2026-06-27：场景引擎L4标签（无条件无需判定）+菜单引擎wft01-biz边界外 + 菜单权限设计链贯穿（STR-F属性→BA权限推导→SR→引擎配置方案）；wft01-biz v1.37 + wft02-biz v2.16
+- [wft01-biz v1.36 模型重构完成](wft01-biz-v136-model-refactor-complete.md) — 2026-06-27：输出文档识别模型重构+15项通览修复，QTC→场景部件，架构图方案A，遗留#5+#3→2026-06-27专题讨论已关闭
+- [wft01-biz Step 3 审计完成](wft01-biz-step3-audit-complete.md) — 2026-06-27：7项问题6项落账，v1.29→v1.35（关系检测锚点/来源类型定义/端到端闭合验证/先提取后检查说明/业务域映射/措辞微调），#3+场景引擎→2026-06-27专题讨论已关闭
 - [wft01-biz Step 3 11项共识完成](wft01-biz-step3-11-consensus-complete.md) — 2026-06-27：Step 3 11项讨论共识全部落地，v1.29 已提交，架构图方案B、四关系→关系、退回规范化机制、Phase C 顺序修正
 - [wft01-biz Step 3 重构+L4待讨论](wft01-biz-menu-l4-discussion.md) — 2026-06-26：v1.24 Step 3 重构完成（§3.1 架构 + §3.2 提取规则 + 三 Phase A/B/C），三层引擎映射 + 三级 QTC 就位。待继续讨论 Step 3 细节
 - [wft02 v2.3 重构完成](wft02-v23-restructure-complete.md) — 2026-06-24：Step 3 四 Phase 同构(A/B/C/D) + Step 4 引擎校验独立 + Step 5 资产对准 + Step 6 覆盖自查 + Step 7 写回落账，全文 D·→E·→Step 引用链更新
