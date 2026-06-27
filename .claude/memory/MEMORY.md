@@ -1,3 +1,4 @@
+- [wft02-biz 后续修订清单](wft02-biz-terminology-next.md) — 2026-06-27 收工移交：wft02-biz 6项待修订（Phase C旧术语 @engine-菜单引擎 残留/全文术语标准化/Step 4引擎判定表/设计示例），另一台电脑继续
 - [wft01-biz 场景引擎+菜单引擎角色澄清](wft01-biz-scene-menu-engine-clarification.md) — 2026-06-27：场景引擎L4标签（无条件无需判定）+菜单引擎wft01-biz边界外 + 菜单权限设计链贯穿（STR-F属性→BA权限推导→SR→引擎配置方案）；wft01-biz v1.37 + wft02-biz v2.16
 - [wft01-biz v1.36 模型重构完成](wft01-biz-v136-model-refactor-complete.md) — 2026-06-27：输出文档识别模型重构+15项通览修复，QTC→场景部件，架构图方案A，遗留#5+#3→2026-06-27专题讨论已关闭
 - [wft01-biz Step 3 审计完成](wft01-biz-step3-audit-complete.md) — 2026-06-27：7项问题6项落账，v1.29→v1.35（关系检测锚点/来源类型定义/端到端闭合验证/先提取后检查说明/业务域映射/措辞微调），#3+场景引擎→2026-06-27专题讨论已关闭
