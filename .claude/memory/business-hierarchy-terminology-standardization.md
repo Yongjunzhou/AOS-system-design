@@ -67,27 +67,34 @@ metadata:
 
 ---
 
-## 后续工作状态（2026-06-27 收工时）
+## 后续工作状态（2026-06-27 第二次讨论收工时）
 
 ### 已完成
 - 全量术语标准化（17 文件）
 - wft01-biz-or2str v1.27 Step 3 场景部件架构锚点修正——去菜单引擎残留
+- **业务层级与引擎关系澄清**（2026-06-27 讨论）：
+  - EOS UI 交互模型确认（单窗→双窗分屏→无限下钻+面包屑导航）
+  - 场景部件 : 输出文档 = 1 : 1 定性
+  - 场景部件两种产生方式（引擎直产 / 人工外设）
+  - 实体引擎约束子业务 TAB——实体关系图谱是表单引擎配置子业务 TAB 的约束范围
+  - 引擎分工总图确立（实体引擎→部件级引擎→场景引擎→菜单引擎）
+  - 产出文件：`.claude/memory/eos-ui-model-business-engine-mapping.md`（完整记忆）、`30-eos/00-eos-product-spec/10-eos-architecture.md` v2.0（产品架构重写）
 
 ### 下一步
-- 继续讨论 wft01-biz，重点是 Step 3 在新术语模型下的方法论合理性
-  - 场景部件识别规则是否完备
-  - STR-F 三层结构（场景→场景部件→输出文档）与 25 引擎资产的支撑关系
-  - Phase B/C 流程在新术语下的适应性
+- 基于本次澄清重写 wft01-biz §3.1/§3.2
+  - STR-F 三层嵌套结构（场景→场景部件→输出文档）→ 两层（场景业务→场景部件），场景部件与输出文档 1:1
+  - 场景部件识别规则重写（当前四条基于"场景部件包含多个文档"的旧假设）
+  - "场景部件级"与"文档级"标注字段合并
+  - 输出文档"产生方式"字段取值规范（引擎直产 / 人工外设）
+- wft02-biz 也需要联动修订
 
 ### 仓库状态
-- 本次会话新增 6 个 commit（4 拆分 + 2 wft01-biz 修正）
-- GitHub 已推送，Gitee 网络不通需补推
-  ```
-  git push gitee master
-  ```
+- 本次会话：`.claude/memory/eos-ui-model-business-engine-mapping.md`（新增）、`30-eos/00-eos-product-spec/10-eos-architecture.md` v2.0（重写）
+- 尚未 commit
 
 ### 关键文件版本
 - 25-eos-engine-models: v1.3
 - 24-eos-business-assets: v1.2
 - 06-eos-glossary: v2.3
-- eos-wft01-biz-or2str: v1.27
+- 10-eos-architecture: v2.0
+- eos-wft01-biz-or2str: v1.27（待改 §3.1/§3.2）

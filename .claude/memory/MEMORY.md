@@ -89,4 +89,5 @@
 - [wft01a脑补信息与后续OR关系](wft01a-brainfill-vs-subsequent-or.md) — AI在wft01a中一轮"脑补"的信息载体在新OR进入时如何升级/确认/补充/矛盾的规则缺口
 - [wft01a重新设计：多OR收敛+业务确认](wft01a-redesign-multi-or-convergence.md) — 需重新设计wft01a以支持多OR积累收敛+业务人员确认机制，替代当前单OR完整脑补模型
 - [业务层级术语标准化](business-hierarchy-terminology-standardization.md) — 2026-06-27：L0~L6 七级业务层级 + 引擎三级生成+横切；废弃功能菜单/功能业务/场景定义/功能单元/对象及其功能；25/24/06/01-pl4eos-spec + wft Skill×8 + 02/03 产品数据全部更新
+- [EOS UI 模型与业务-引擎映射](eos-ui-model-business-engine-mapping.md) — 2026-06-27：UI 交互模型（单窗分屏无限下钻+面包屑导航）、场景部件:输出文档=1:1、两种产生方式（引擎直产/人工外设）、实体引擎约束子业务TAB、引擎分工总图；10-eos-architecture.md v2.0 同步重写
 - [术语重构：引擎与业务](terminology-refactor-engine-business.md) — 2026-06-26：三术语→两术语重构完成；引擎四级五引擎；业务四级编排；术语表+规范§2.5+25/24/26/27资产文件已更新；23.md待讨论
