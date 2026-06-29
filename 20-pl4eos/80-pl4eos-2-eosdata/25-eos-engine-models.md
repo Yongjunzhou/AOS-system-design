@@ -1,10 +1,10 @@
 # EOS 引擎资产
 **EOS Engine Assets**
 
-**文档版本**：v1.4
+**文档版本**：v1.5
 **创建日期**：2026-06-13
-**修订日期**：2026-06-27
-**状态**：骨架已改造，待填充
+**修订日期**：2026-06-30
+**状态**：引擎配置单元类型清单已填充
 **资产类型**：平台引擎资产
 **权威状态源**：本文档 `1. 引擎状态与处理队列`
 
@@ -43,7 +43,7 @@
 
 | 引擎数 | 配置单元类型数 | 自研 | 外购 | 自研+外购 | 待确认 | 废弃 | 最近更新 |
 |--------|------------------|------|------|-----------|--------|------|----------|
-| 7 | 7 | 7 | 0 | 0 | 6 | 0 | 2026-06-26 |
+| 8 | 26 | 8 | 0 | 0 | 7 | 0 | 2026-06-30 |
 
 ### 0.2 业务层级（L0~L6）与引擎对应
 
@@ -196,9 +196,10 @@ EOS 平台的运行时 UI 遵循以下交互模型，所有场景引擎、部件
 | 分片ID | 分片名称 | 范围 | 默认读取场景 | 条目数 | 入口 |
 |--------|----------|------|--------------|--------|------|
 | ENGINE-SHARD-L1 | 组件级引擎 | 场景引擎 | 场景业务承接 | — | `4.1 组件级引擎块` |
-| ENGINE-SHARD-L2 | 部件级引擎 | 表单引擎、流程引擎、指标引擎、工单引擎 | 场景部件承接 | — | `4.2 部件级引擎块` |
-| ENGINE-SHARD-L3 | 元件级引擎 | 实体引擎 | 功能元件承接 | — | `4.3 元件级引擎块` |
-| ENGINE-SHARD-X | 横切引擎 | 菜单引擎 | 菜单树 CRUD + 权限 | — | `4.4 横切引擎块` |
+| ENGINE-SHARD-L2 | 部件级引擎 | 表单引擎、流程引擎、指标引擎、工单引擎 | 场景部件承接 | — | `4.3 部件级引擎块` |
+| ENGINE-SHARD-L3 | 元件级引擎 | 实体引擎 | 功能元件承接 | — | `4.4 元件级引擎块` |
+| ENGINE-SHARD-X | 横切引擎 | 菜单引擎 | 菜单树 CRUD + 权限 | — | `4.2 横切引擎块` |
+| ENGINE-SHARD-P | 待定级引擎 | 权限引擎 | 权限配置 | — | `4.5 待定级引擎块` |
 
 ### 2.2 引擎索引
 
@@ -212,6 +213,7 @@ EOS 平台的运行时 UI 遵循以下交互模型，所有场景引擎、部件
 | @engine-indicator | 指标引擎 | 部件级 | 自研 | 待确认 | @engine-form, @engine-flow, @engine-entity | — | — | ENGINE-INDICATOR | 2026-06-27 |
 | @engine-workorder | 工单引擎 | 部件级 | 自研 | 待确认 | @engine-form, @engine-flow, @engine-entity | — | — | ENGINE-WORKORDER | 2026-06-27 |
 | @engine-entity | 实体引擎 | 元件级 | 自研 | 待确认 | — | — | @node-entity | ENGINE-ENTITY | 2026-06-27 |
+| @engine-permission | 权限引擎 | 待定 | 自研 | 待确认 | — | — | — | ENGINE-PERMISSION | 2026-06-30 |
 
 ### 2.3 引擎配置单元类型索引
 
@@ -225,6 +227,25 @@ EOS 平台的运行时 UI 遵循以下交互模型，所有场景引擎、部件
 | @form-cu-behavior | 表单行为配置单元 | @engine-form | BehaviorRule | @form-cu-field | 已确认 | ENGINE-FORM | 2026-06-26 |
 | @form-cu-permission | 表单权限配置单元 | @engine-form | FormPermission | @form-cu-field | 已确认 | ENGINE-FORM | 2026-06-26 |
 | @form-cu-release | 表单发布配置单元 | @engine-form | FormVersion / ReleaseRecord | @form-cu-structure / @form-cu-field / @form-cu-layout | 已确认 | ENGINE-FORM | 2026-06-26 |
+| @entity-cu-basic | 实体基本信息配置单元 | @engine-entity | EntityDefinition | — | 待确认 | ENGINE-ENTITY | 2026-06-30 |
+| @entity-cu-field | 实体字段配置单元 | @engine-entity | FieldDefinition | @entity-cu-basic | 待确认 | ENGINE-ENTITY | 2026-06-30 |
+| @entity-cu-action | 功能操作项配置单元 | @engine-entity | ActionDefinition | @entity-cu-basic | 待确认 | ENGINE-ENTITY | 2026-06-30 |
+| @entity-cu-builtin-subbiz | 内置子业务配置单元 | @engine-entity | BuiltinSubBusiness | @entity-cu-basic | 待确认 | ENGINE-ENTITY | 2026-06-30 |
+| @entity-cu-subbiz | 子业务配置单元 | @engine-entity | SubBusiness | @entity-cu-basic | 待确认 | ENGINE-ENTITY | 2026-06-30 |
+| @entity-cu-derive | 派生配置单元 | @engine-entity | DeriveDefinition | @entity-cu-basic | 待确认 | ENGINE-ENTITY | 2026-06-30 |
+| @entity-cu-lifecycle | 生命周期状态配置单元 | @engine-entity | LifecycleState | @entity-cu-basic | 待确认 | ENGINE-ENTITY | 2026-06-30 |
+| @entity-cu-notification | 提示信息配置单元 | @engine-entity | NotificationRule | @entity-cu-basic | 待确认 | ENGINE-ENTITY | 2026-06-30 |
+| @flow-cu-definition | 流程定义配置单元 | @engine-flow | FlowDefinition | — | 待确认 | ENGINE-FLOW | 2026-06-30 |
+| @flow-cu-version | 流程版本配置单元 | @engine-flow | FlowVersion | @flow-cu-definition | 待确认 | ENGINE-FLOW | 2026-06-30 |
+| @flow-cu-node-config | 流程节点配置单元 | @engine-flow | FlowNodeConfig | @flow-cu-definition | 待确认 | ENGINE-FLOW | 2026-06-30 |
+| @indicator-cu-metric | 指标定义配置单元 | @engine-indicator | MetricDefinition | — | 待确认 | ENGINE-INDICATOR | 2026-06-30 |
+| @indicator-cu-component | 看板组件配置单元 | @engine-indicator | DashboardComponent | @indicator-cu-metric | 待确认 | ENGINE-INDICATOR | 2026-06-30 |
+| @indicator-cu-view | 看板视图配置单元 | @engine-indicator | DashboardView | @indicator-cu-component | 待确认 | ENGINE-INDICATOR | 2026-06-30 |
+| @menu-cu-basic | 菜单标签配置单元 | @engine-menu | MenuLabel | — | 待确认 | ENGINE-MENU | 2026-06-30 |
+| @perm-cu-role | 角色定义配置单元 | @engine-permission | RoleDefinition | — | 待确认 | ENGINE-PERMISSION | 2026-06-30 |
+| @perm-cu-attr-group | 属性组定义配置单元 | @engine-permission | AttributeGroup | — | 待确认 | ENGINE-PERMISSION | 2026-06-30 |
+| @perm-cu-role-perm | 角色权限配置单元 | @engine-permission | RolePermission | @perm-cu-role | 待确认 | ENGINE-PERMISSION | 2026-06-30 |
+| @perm-cu-attr-group-perm | 属性组权限配置单元 | @engine-permission | AttrGroupPermission | @perm-cu-attr-group | 待确认 | ENGINE-PERMISSION | 2026-06-30 |
 
 ---
 
@@ -299,14 +320,16 @@ EOS 平台的运行时 UI 遵循以下交互模型，所有场景引擎、部件
 | 定义 | EOS 平台菜单树的维护引擎，职责为：① L1~L4 四级菜单树节点的增删改查；② 菜单权限管理；③ 将末级菜单节点（L4）映射到场景引擎生成的场景业务。菜单引擎不生成业务内容，只提供导航路径 |
 | 依赖引擎 | —（不依赖场景引擎；菜单引擎仅做末级映射，场景业务由场景引擎独立生成。若菜单引擎未将场景业务映射到末级菜单，场景业务在平台上只是不可达的哑资产） |
 | 对外接口简述 | 菜单树 CRUD 接口 / 菜单权限配置接口 / 末级节点→场景业务映射接口；运行期菜单树加载、权限校验和场景导航接口 |
-| 配置单元类型 | 待填充 |
+| 配置单元类型 | @menu-cu-basic |
 | 支持的业务 | L1~L4 菜单树（L1 业务系统、L2 项目业务、L3 构件业务、L4 场景业务） |
 | 来源节点 | @node-menu |
 | 实现约束 | 菜单树固定四级，末级为 L4 场景业务；新增场景业务时需要通过菜单引擎建立菜单映射方可被用户访问 |
 
 ##### 配置单元类型清单
 
-> 待填充
+| 配置单元类型ID | 名称 | 对应系统实体 | 配置页面 | Input | Process | Output | 依赖配置单元 | 实例化规则 |
+|-----------|------|--------------|----------|-------|---------|--------|----------|------------|
+| @menu-cu-basic | 菜单标签配置单元 | MenuLabel | 菜单管理页 | 菜单名称、层级（L1~L4）、父级节点、访问权限、末级映射场景业务 | 校验菜单层级和权限配置，保存菜单节点元数据 | 运行期菜单树渲染、导航和权限校验能力 | — | 当业务需要构建菜单导航或新增场景业务入口时实例化 |
 
 ##### 反馈区
 
@@ -414,14 +437,18 @@ EOS 平台的运行时 UI 遵循以下交互模型，所有场景引擎、部件
 | 定义 | 通过配置流程节点、流转规则、审批行为和状态迁移，生成场景部件（L5 窗口）中业务流程运行能力的引擎 |
 | 依赖引擎 | @engine-form, @engine-entity |
 | 对外接口简述 | 流程设计 / 保存 / 发布接口；运行期流程驱动、状态迁移、审批执行和流程监控接口 |
-| 配置单元类型 | 待填充 |
+| 配置单元类型 | @flow-cu-definition, @flow-cu-version, @flow-cu-node-config |
 | 支持的业务 | 需要审批流转、状态迁移或步骤驱动的场景部件 |
 | 来源节点 | @node-flow |
 | 实现约束 | 流程运行依赖表单引擎提供的操作页面和实体引擎提供的业务对象 |
 
 ##### 配置单元类型清单
 
-> 待填充
+| 配置单元类型ID | 名称 | 对应系统实体 | 配置页面 | Input | Process | Output | 依赖配置单元 | 实例化规则 |
+|-----------|------|--------------|----------|-------|---------|--------|----------|------------|
+| @flow-cu-definition | 流程定义配置单元 | FlowDefinition | 流程设计器 / 流程定义页 | 流程名称、业务对象、流程分类、启动方式 | 校验流程定义唯一性和业务对象绑定，保存流程定义元数据 | 业务获得可被编排的流程定义骨架 | — | 当业务需要审批流转或步骤驱动时实例化 |
+| @flow-cu-version | 流程版本配置单元 | FlowVersion | 流程设计器版本管理页 | 版本号、版本说明、生效策略、升版规则 | 校验版本定义，保存版本记录，管理版本生命周期 | 业务获得可发布、可回滚、可审计的流程版本能力 | @flow-cu-definition | 当流程定义需要管理版本时实例化 |
+| @flow-cu-node-config | 流程节点配置单元 | FlowNodeConfig | 流程设计器节点配置面板 | 流程图绘制、全局变量定义、节点基本信息、节点关联表单、节点办理人/传阅人配置、节点操作项、子业务校验规则、节点事件配置、超时流转规则 | 校验并保存节点配置，绑定流转关系、表单和组织数据 | 运行期流程按配置执行节点流转、审批、事件触发和超时处理能力 | @flow-cu-definition | 当流程定义需要配置具体节点和流转路径时实例化 |
 
 ##### 反馈区
 
@@ -444,14 +471,18 @@ EOS 平台的运行时 UI 遵循以下交互模型，所有场景引擎、部件
 | 定义 | 通过配置指标维度、度量口径、聚合规则和展示方式，采集各引擎运行数据，生成指标看板和报表能力的引擎 |
 | 依赖引擎 | @engine-form, @engine-flow, @engine-entity（从各引擎运行数据中采集指标源数据） |
 | 对外接口简述 | 指标维度配置 / 聚合规则配置 / 保存 / 发布接口；运行期指标数据采集、计算、看板渲染和报表导出接口 |
-| 配置单元类型 | 待填充 |
+| 配置单元类型 | @indicator-cu-metric, @indicator-cu-component, @indicator-cu-view |
 | 支持的业务 | 需要度量、监控、分析和持续改进的各层业务定义（L0 平台级/L1 业务系统级/L2 项目业务级/L3 构件业务级/L4 场景业务级/L5 场景部件级/L6 功能元件级七层指标） |
 | 来源节点 | — |
 | 实现约束 | 指标引擎不直接生成业务操作，而是对各引擎运行数据进行聚合计算和可视化呈现；聚合口径需与业务定义的类型和层级对齐 |
 
 ##### 配置单元类型清单
 
-> 待填充
+| 配置单元类型ID | 名称 | 对应系统实体 | 配置页面 | Input | Process | Output | 依赖配置单元 | 实例化规则 |
+|-----------|------|--------------|----------|-------|---------|--------|----------|------------|
+| @indicator-cu-metric | 指标定义配置单元 | MetricDefinition | 指标定义设计器 | 指标名称、维度、度量口径、聚合规则、数据源 | 校验指标定义，绑定数据源，保存指标元数据 | 运行期指标数据采集、汇总计算和统计分析能力 | — | 当业务需要度量、监控或分析业务数据时实例化 |
+| @indicator-cu-component | 看板组件配置单元 | DashboardComponent | 看板组件设计器 | 组件类型、图表配置、关联指标、展示方式 | 校验组件配置，绑定指标定义，保存组件元数据 | 运行期看板组件渲染的可视化图表能力 | @indicator-cu-metric | 当业务需要以图表形式展示指标数据时实例化 |
+| @indicator-cu-view | 看板视图配置单元 | DashboardView | 看板视图设计器 | 视图布局、组件引入、展示范围、过滤条件 | 校验视图配置，编排组件布局，保存视图元数据 | 运行期完整的看板页面展示和报表导出能力 | @indicator-cu-component | 当业务需要将多个看板组件编排为完整看板页面时实例化 |
 
 ##### 反馈区
 
@@ -506,14 +537,23 @@ EOS 平台的运行时 UI 遵循以下交互模型，所有场景引擎、部件
 | 定义 | 通过配置业务对象的属性、关系、约束和生命周期，生成功能元件（L6）的能力引擎。实体引擎是其他引擎的基础——表单引擎、流程引擎和工单引擎均依赖实体引擎提供的业务对象定义 |
 | 依赖引擎 | — |
 | 对外接口简述 | 实体定义配置 / 保存 / 发布接口；运行期实体查询、创建、更新、删除和关系管理接口 |
-| 配置单元类型 | 待填充 |
+| 配置单元类型 | @entity-cu-basic, @entity-cu-field, @entity-cu-action, @entity-cu-builtin-subbiz, @entity-cu-subbiz, @entity-cu-derive, @entity-cu-lifecycle, @entity-cu-notification |
 | 支持的业务 | L6 功能元件（实体对象、事件、定时任务等） |
 | 来源节点 | @node-entity |
 | 实现约束 | 实体引擎是底层引擎，不依赖其他 EOS 引擎；实体定义是所有上层业务的元数据基础 |
 
 ##### 配置单元类型清单
 
-> 待填充
+| 配置单元类型ID | 名称 | 对应系统实体 | 配置页面 | Input | Process | Output | 依赖配置单元 | 实例化规则 |
+|-----------|------|--------------|----------|-------|---------|--------|----------|------------|
+| @entity-cu-basic | 实体基本信息配置单元 | EntityDefinition | 实体设计器 / 实体基本信息页 | 实体名称、数据表名、显示规则、指示灯配置 | 校验实体唯一性和业务对象绑定关系，保存实体定义元数据 | 业务获得可被引用的实体定义骨架 | — | 当业务需要定义业务对象时实例化 |
+| @entity-cu-field | 实体字段配置单元 | FieldDefinition | 实体设计器字段面板 | 字段名、字段类型、数据类型、引用对象、业务字段映射 | 校验字段定义并绑定实体，保存字段元数据 | 运行期实体字段存储、数据类型校验和关联查询能力 | @entity-cu-basic | 当业务实体包含需要存储或引用的属性时实例化 |
+| @entity-cu-action | 功能操作项配置单元 | ActionDefinition | 实体设计器操作项面板 | 操作项名称、操作类型、前后置事件配置 | 校验并保存操作项定义，绑定实体和触发事件 | 运行期实体操作按钮和前后置业务逻辑执行能力 | @entity-cu-basic | 当业务需要自定义实体操作时实例化 |
+| @entity-cu-builtin-subbiz | 内置子业务配置单元 | BuiltinSubBusiness | 实体设计器内置子业务配置页 | 内置子业务类型（进展填报/模板/变更记录/文档版本/节点分支版本/变更） | 校验并激活内置子业务模板，绑定实体关系 | 实体自动获得标准子业务功能能力 | @entity-cu-basic | 当业务需要标准子业务功能时实例化 |
+| @entity-cu-subbiz | 子业务配置单元 | SubBusiness | 实体设计器子业务配置页 | 关联实体、子业务配置、联动规则 | 保存子业务定义和规则 | 运行期实体关联业务的数据访问和联动能力 | @entity-cu-basic | 当业务需要关联其他实体的数据时实例化 |
+| @entity-cu-derive | 派生配置单元 | DeriveDefinition | 实体设计器派生配置页 | 派生类型（派生主台账/派生主流程/派生子台账/派生子流程）、派生规则 | 校验派生规则，保存派生定义 | 实体自动生成派生的数据视图或流程实例能力 | @entity-cu-basic | 当业务需要从当前实体派生出新业务对象或流程时实例化 |
+| @entity-cu-lifecycle | 生命周期状态配置单元 | LifecycleState | 实体设计器生命周期配置页 | 状态定义、状态切换规则、初始状态 | 校验并保存状态定义和切换关系 | 实体运行期按预定义状态机进行状态迁移和约束能力 | @entity-cu-basic | 当业务实体需要状态管理和状态驱动行为时实例化 |
+| @entity-cu-notification | 提示信息配置单元 | NotificationRule | 实体设计器提示信息配置页 | 提示信息内容、触发条件、展示方式 | 校验并保存提示规则，绑定实体事件 | 实体运行期按条件触发提示信息展示能力 | @entity-cu-basic | 当业务需要实体操作时的提示反馈时实例化 |
 
 ##### 反馈区
 
@@ -523,7 +563,68 @@ EOS 平台的运行时 UI 遵循以下交互模型，所有场景引擎、部件
 
 <!-- /BLOCK: ENGINE-ENTITY -->
 
----
+### 4.5 待定级引擎块
+
+<!-- BLOCK: ENGINE-PERMISSION -->
+#### @engine-permission 权限引擎
+
+**当前状态**：待确认
+**引擎层级**：待定
+**实现策略**：自研
+**块ID**：ENGINE-PERMISSION
+
+| 要素 | 内容 |
+|------|------|
+| 定义 | EOS 平台权限管理的引擎，职责为：① 角定义（CRUD+发布）；② 属性组定义（CRUD+发布）；③ 角色与属性组的菜单权限配置；④ 角色与属性组的操作项权限配置 |
+| 依赖引擎 | —（不依赖其他引擎，但其他引擎运行期需调用权限引擎校验用户权限） |
+| 对外接口简述 | 角色/属性组 CRUD 和发布接口；菜单权限和操作项权限配置接口；运行期用户权限校验接口 |
+| 配置单元类型 | @perm-cu-role, @perm-cu-attr-group, @perm-cu-role-perm, @perm-cu-attr-group-perm |
+| 支持的业务 | L1~L6 各层业务的权限管控（角色分离、属性维度控制、菜单级和操作项级权限） |
+| 来源节点 | — |
+| 实现约束 | 权限引擎的运行期校验需各引擎和前端统一集成权限 SDK；菜单权限依赖菜单引擎的菜单树定义 |
+
+##### 配置单元类型清单
+
+| 配置单元类型ID | 名称 | 对应系统实体 | 配置页面 | Input | Process | Output | 依赖配置单元 | 实例化规则 |
+|-----------|------|--------------|----------|-------|---------|--------|----------|------------|
+| @perm-cu-role | 角色定义配置单元 | RoleDefinition | 角色管理页 | 角色名称、角色标识、所属范围、启用状态 | 校验角色定义唯一性，保存角色元数据 | 业务获得可被授权的角色定义 | — | 当业务需要角色分工和权限隔离时实例化 |
+| @perm-cu-attr-group | 属性组定义配置单元 | AttributeGroup | 属性组管理页 | 属性组名称、属性维度、成员规则 | 校验属性组定义，保存属性组元数据 | 业务获得属性维度的权限分组能力 | — | 当业务需要按属性维度（如组织/区域/分类）控制权限时实例化 |
+| @perm-cu-role-perm | 角色权限配置单元 | RolePermission | 角色权限配置页 | 角色、可访问菜单、可操作操作项、数据范围 | 校验并保存角色权限规则，绑定菜单和操作项 | 运行期角色菜单导航和操作按钮的可见/可操作控制能力 | @perm-cu-role | 当角色需要分配菜单和操作权限时实例化 |
+| @perm-cu-attr-group-perm | 属性组权限配置单元 | AttrGroupPermission | 属性组权限配置页 | 属性组、可访问菜单、可操作操作项 | 校验并保存属性组权限规则，绑定菜单和操作项 | 运行期属性组维度的菜单和操作权限控制能力 | @perm-cu-attr-group | 当属性组需要分配菜单和操作权限时实例化 |
+
+##### 反馈区
+
+| 日期 | 来源 | 反馈内容 | 处理状态 |
+|------|------|----------|----------|
+| — | — | — | — |
+
+<!-- /BLOCK: ENGINE-PERMISSION -->
+
+### 4.6 平台基础资源
+
+以下资源是 EOS 平台提供的基础设施能力，非独立引擎，但可为各引擎的配置单元实例化提供支撑数据。
+
+#### 定时任务
+
+| 配置单元 | 对应系统实体 | 配置页面 | 说明 |
+|---------|--------------|----------|------|
+| 新建定时任务 | ScheduledTask | 定时任务管理页 | 定义定时触发任务 |
+| 编辑定时任务 | ScheduledTask | 定时任务管理页 | 修改任务定义 |
+| 删除定时任务 | ScheduledTask | 定时任务管理页 | 移除任务定义 |
+| 发布定时任务 | ScheduledTask | 定时任务管理页 | 激活定时任务 |
+| 关闭定时任务 | ScheduledTask | 定时任务管理页 | 停用定时任务 |
+| 设置任务事件 | TaskEvent | 定时任务事件配置页 | 配置任务触发的前置/后置事件 |
+
+#### 基础资源库
+
+| 资源类型 | 包含配置单元 | 说明 |
+|---------|-------------|------|
+| 数据字典库 | 新建/编辑/删除/发布/关闭数据字典定义，设置数据字典项 | 提供全局字典值集，供各引擎字段引用 |
+| 事件库 | 新建/编辑/删除/发布/关闭事件定义 | 提供全局事件定义，供操作项和流程节点引用 |
+| 编码规则库 | 新建/编辑/删除/发布/关闭编码规则 | 提供统一编码生成规则 |
+| 版本规则库 | 新建/编辑/删除/发布/关闭版本规则 | 提供业务对象的版本管理规则 |
+| 状态库 | 新建/编辑/删除/发布/关闭状态 | 提供全局状态定义，供实体生命周期引用 |
+| 弹窗标签库 | 新建/编辑/删除/发布/关闭弹窗标签 | 提供弹窗提示标签定义 |
 
 ## 5. 追溯关系
 
@@ -533,6 +634,11 @@ EOS 平台的运行时 UI 遵循以下交互模型，所有场景引擎、部件
 | @node-* | implemented_by | @engine-* | 本文档 | 模板 | `23` 构件类型由引擎承接 |
 | @engine-* | depends_on | @engine-* | 本文档 | 模板 | 引擎之间的依赖 |
 | @engine-form | has_config_unit | @form-cu-* | 本文档 | 已确认 | 表单引擎支持的配置单元类型 |
+| @engine-entity | has_config_unit | @entity-cu-* | 本文档 | 待确认 | 实体引擎支持的配置单元类型 |
+| @engine-flow | has_config_unit | @flow-cu-* | 本文档 | 待确认 | 流程引擎支持的配置单元类型 |
+| @engine-indicator | has_config_unit | @indicator-cu-* | 本文档 | 待确认 | 指标引擎支持的配置单元类型 |
+| @engine-menu | has_config_unit | @menu-cu-* | 本文档 | 待确认 | 菜单引擎支持的配置单元类型 |
+| @engine-permission | has_config_unit | @perm-cu-* | 本文档 | 待确认 | 权限引擎支持的配置单元类型 |
 | BA-A1-* | instantiates | @form-cu-* | `04-eos-business-architecture.md` | 模板 | 具体 A1 BA 配置单元实例化表单引擎配置单元类型 |
 
 ---
@@ -549,7 +655,7 @@ EOS 平台的运行时 UI 遵循以下交互模型，所有场景引擎、部件
 
 | 日期 | 版本 | 变更类型 | 变更摘要 | 操作 Skill |
 |------|------|----------|----------|-----------|
-| 2026-06-27 | v1.4 | 架构澄清 | 新增 §0.4 EOS 平台 UI 交互模型（单窗→分屏→无限下钻+面包屑导航，含 ASCII 图示）；新增场景部件两种产生方式（引擎直产/人工外设）；编排关系重写：移除"功能模块"中间层，"场景部件=多个功能模块编排"→"场景部件=主表单+子业务TAB群"，场景部件:输出文档=1:1 定性，实体引擎约束子业务TAB；§0.3 新增三项关键关系声明 | 讨论澄清 |
+| 2026-06-30 | v1.5 | 配置单元填充 | 基于Excel引擎及配置单元清单填充各引擎配置单元类型清单：@engine-entity(8个CU)、@engine-flow(3个CU)、@engine-indicator(3个CU)、@engine-menu(1个CU)；新增@engine-permission权限引擎(4个CU)；新增§4.6平台基础资源(定时任务+基础资源库)；引擎数8/配置单元类型数26 | Excel导入 |
 | 2026-06-27 | v1.3 | 术语重构 | 业务层级标准化：新增 L0~L6 七级业务层级（L0平台/L1业务系统/L2项目业务/L3构件业务/L4场景业务/L5场景部件/L6功能元件）；引擎层次从四级→三级+横切（组件级/部件级/元件级 + 横切菜单引擎）；原L3单元级并入部件级；@engine-menu 职责从"编排功能模块生成功能业务"→"菜单树CRUD+权限+末级映射"；废弃"功能菜单"概念；"场景定义"→"场景业务"；分片索引/引擎索引/正文块/规则区全量同步 | 术语重构 |
 | 2026-06-26 | v1.2 | 术语重构 | 三术语→两术语重构："引擎模型"→"引擎"；引擎分类从四能力类型→四级层次（L1组件级/L2部件级/L3单元级/L4元件级）×五引擎（场景/菜单/表单/流程/实体）；@engine-form 从§4.1移至§4.3（单元级）；新增@engine-scene/@engine-menu/@engine-flow/@engine-entity骨架；分片索引/引擎索引/规则区/追溯关系全量同步 | 术语重构 |
 | 2026-06-23 | v1.3 | 术语统一 | "配置 IPO"全量→"配置单元"（配置单元类型/配置单元类型ID/配置单元类型名称/依赖配置单元，ID @form-ipo-*→@form-cu-*）；规则 8 从术语映射→术语统一声明；Skill 读写契约同步 | wft01a Step 4 讨论 |
