@@ -1,3 +1,5 @@
+- [wft01-biz §3.1 讨论进度](wft01-biz-section31-discussion.md) — 2026-06-29：议题1~3已落账（架构图平级化+废除1:1等式+引入「业务产出物」伞概念）+两独立段吸收为字段填写指引；STR-F节点完整要素结构待新对话继续
+- [wft01-biz v1.54 审视完成](wft01-biz-v154-review-complete.md) — 2026-06-29：17项修改落账——术语体系重建（三类重命名+主实体删除+名称/用途/开发方式）+ 要素结构化（通用/三类特异）+ 去硬编码（三选一）+ 流程修复（5项）+ 冗余精简。下一轮从 §3.1 架构说明继续
 - [wft02-biz 双视角重构 v2.25](wft02-biz-dual-perspective-restructure-v2-25.md) — 2026-06-28 A2/Bn 双视角独立行走重构：Phase A 角色场景视角前置 + Phase C 双视角映射校验新设 + Phase D 治理能力缺口识别 + Step 4 引擎缺口降级 + 治理角色引入
 - [wft02-biz 后续修订清单](wft02-biz-terminology-next.md) — 2026-06-27 收工移交：wft02-biz 6项待修订（Phase C旧术语 @engine-菜单引擎 残留/全文术语标准化/Step 4引擎判定表/设计示例），另一台电脑继续
 - [wft01-biz 场景引擎+菜单引擎角色澄清](wft01-biz-scene-menu-engine-clarification.md) — 2026-06-27：场景引擎L4标签（无条件无需判定）+菜单引擎wft01-biz边界外 + 菜单权限设计链贯穿（STR-F属性→BA权限推导→SR→引擎配置方案）；wft01-biz v1.37 + wft02-biz v2.16
