@@ -1,4 +1,6 @@
+- [wft01-biz 缺少 Bn 侧 23-Q 判定](wft01-biz-bn-23q-gap.md) — 2026-06-30：STR-F 只带 A2 侧产品类型/构件类型，wft02-biz Phase B 缺少 PL2/PL3 现成信息，需在 wft01-biz 补 Bn 侧 23-Q
 - [wft02-biz v2.41 一致性审查修复](wft02-biz-v241-conformance-review.md) — 2026-06-29：两轮审查（§3.1/§3.2）修正7项，已提交推送
+- [wft02-eng 未来对标 biz 结构](wft02-eng-align-to-biz-structure.md) — 2026-06-30：wft02-eng 将参照 wft02-biz §3.1 共享上下文 + Phase 拆分模式做结构对齐，下次审视 eng 时以此记忆为基线
 - [wft02-biz v2.40 三连修订收工](wft02-biz-v240-review-session.md) — 2026-06-29：v2.38 冗余精简(-74行)+v2.39 双视角术语重命名(A2/Bn)+v2.40 BA层级体系图重建(23资产骨架/L3分叉L5交汇L6分归)，待另一台终端Phase级联更新
 - [wft01-biz §3.1 讨论进度](wft01-biz-section31-discussion.md) — 2026-06-29：议题1~3已落账（架构图平级化+废除1:1等式+引入「业务产出物」伞概念）+两独立段吸收为字段填写指引；STR-F节点完整要素结构已解决
 - [wft01-biz v1.54 审视完成](wft01-biz-v154-review-complete.md) — 2026-06-29：17项修改落账——术语体系重建（三类重命名+主实体删除+名称/用途/开发方式）+ 要素结构化（通用/三类特异）+ 去硬编码（三选一）+ 流程修复（5项）+ 冗余精简
