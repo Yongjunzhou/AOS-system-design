@@ -176,7 +176,7 @@ AI处理
 
 | 配置单元类型ID | 名称 | 对应系统实体 | 依赖配置单元 |
 |-----------|------|--------------|----------|
-| @menu-cu-basic | 菜单标签配置单元 | MenuLabel | — |
+| @menu-cu-basic | [菜单标签配置单元](#cu-menu-cu-basic) | MenuLabel | — |
 
 ##### 反馈交互区
 
@@ -192,6 +192,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-menu-cu-basic"></a>
 #### 2.2.3 @menu-cu-basic — 菜单标签配置单元
 
 | 要素 | 内容 |
@@ -259,13 +260,13 @@ AI处理
 
 | 配置单元类型ID | 名称 | 对应系统实体 | 依赖配置单元 |
 |-----------|------|--------------|----------|
-| @form-cu-structure | 表单结构配置单元 | FormDefinition | — |
-| @form-cu-field | 字段定义配置单元 | FieldDefinition | @form-cu-structure |
-| @form-cu-layout | 布局配置单元 | LayoutDefinition | @form-cu-field |
-| @form-cu-validation | 校验规则配置单元 | ValidationRule | @form-cu-field |
-| @form-cu-behavior | 表单行为配置单元 | BehaviorRule | @form-cu-field |
-| @form-cu-permission | 表单权限配置单元 | FormPermission | @form-cu-field |
-| @form-cu-release | 表单发布配置单元 | FormVersion / ReleaseRecord | @form-cu-structure / @form-cu-field / @form-cu-layout |
+| @form-cu-structure | [表单结构配置单元](#cu-form-cu-structure) | FormDefinition | — |
+| @form-cu-field | [字段定义配置单元](#cu-form-cu-field) | FieldDefinition | @form-cu-structure |
+| @form-cu-layout | [布局配置单元](#cu-form-cu-layout) | LayoutDefinition | @form-cu-field |
+| @form-cu-validation | [校验规则配置单元](#cu-form-cu-validation) | ValidationRule | @form-cu-field |
+| @form-cu-behavior | [表单行为配置单元](#cu-form-cu-behavior) | BehaviorRule | @form-cu-field |
+| @form-cu-permission | [表单权限配置单元](#cu-form-cu-permission) | FormPermission | @form-cu-field |
+| @form-cu-release | [表单发布配置单元](#cu-form-cu-release) | FormVersion / ReleaseRecord | @form-cu-structure / @form-cu-field / @form-cu-layout |
 
 ##### 反馈交互区
 
@@ -281,6 +282,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-form-cu-structure"></a>
 #### 2.3.3 @form-cu-structure — 表单结构配置单元
 
 | 要素 | 内容 |
@@ -307,6 +309,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-form-cu-field"></a>
 #### 2.3.4 @form-cu-field — 字段定义配置单元
 
 | 要素 | 内容 |
@@ -333,6 +336,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-form-cu-layout"></a>
 #### 2.3.5 @form-cu-layout — 布局配置单元
 
 | 要素 | 内容 |
@@ -359,6 +363,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-form-cu-validation"></a>
 #### 2.3.6 @form-cu-validation — 校验规则配置单元
 
 | 要素 | 内容 |
@@ -385,6 +390,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-form-cu-behavior"></a>
 #### 2.3.7 @form-cu-behavior — 表单行为配置单元
 
 | 要素 | 内容 |
@@ -411,6 +417,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-form-cu-permission"></a>
 #### 2.3.8 @form-cu-permission — 表单权限配置单元
 
 | 要素 | 内容 |
@@ -437,6 +444,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-form-cu-release"></a>
 #### 2.3.9 @form-cu-release — 表单发布配置单元
 
 | 要素 | 内容 |
@@ -504,9 +512,9 @@ AI处理
 
 | 配置单元类型ID | 名称 | 对应系统实体 | 依赖配置单元 |
 |-----------|------|--------------|----------|
-| @flow-cu-definition | 流程定义配置单元 | FlowDefinition | — |
-| @flow-cu-version | 流程版本配置单元 | FlowVersion | @flow-cu-definition |
-| @flow-cu-node-config | 流程节点配置单元 | FlowNodeConfig | @flow-cu-definition |
+| @flow-cu-definition | [流程定义配置单元](#cu-flow-cu-definition) | FlowDefinition | — |
+| @flow-cu-version | [流程版本配置单元](#cu-flow-cu-version) | FlowVersion | @flow-cu-definition |
+| @flow-cu-node-config | [流程节点配置单元](#cu-flow-cu-node-config) | FlowNodeConfig | @flow-cu-definition |
 
 ##### 反馈交互区
 
@@ -522,6 +530,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-flow-cu-definition"></a>
 #### 2.4.3 @flow-cu-definition — 流程定义配置单元
 
 | 要素 | 内容 |
@@ -548,6 +557,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-flow-cu-version"></a>
 #### 2.4.4 @flow-cu-version — 流程版本配置单元
 
 | 要素 | 内容 |
@@ -574,6 +584,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-flow-cu-node-config"></a>
 #### 2.4.5 @flow-cu-node-config — 流程节点配置单元
 
 | 要素 | 内容 |
@@ -641,9 +652,9 @@ AI处理
 
 | 配置单元类型ID | 名称 | 对应系统实体 | 依赖配置单元 |
 |-----------|------|--------------|----------|
-| @indicator-cu-metric | 指标定义配置单元 | MetricDefinition | — |
-| @indicator-cu-component | 看板组件配置单元 | DashboardComponent | @indicator-cu-metric |
-| @indicator-cu-view | 看板视图配置单元 | DashboardView | @indicator-cu-component |
+| @indicator-cu-metric | [指标定义配置单元](#cu-indicator-cu-metric) | MetricDefinition | — |
+| @indicator-cu-component | [看板组件配置单元](#cu-indicator-cu-component) | DashboardComponent | @indicator-cu-metric |
+| @indicator-cu-view | [看板视图配置单元](#cu-indicator-cu-view) | DashboardView | @indicator-cu-component |
 
 ##### 反馈交互区
 
@@ -659,6 +670,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-indicator-cu-metric"></a>
 #### 2.5.3 @indicator-cu-metric — 指标定义配置单元
 
 | 要素 | 内容 |
@@ -685,6 +697,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-indicator-cu-component"></a>
 #### 2.5.4 @indicator-cu-component — 看板组件配置单元
 
 | 要素 | 内容 |
@@ -711,6 +724,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-indicator-cu-view"></a>
 #### 2.5.5 @indicator-cu-view — 看板视图配置单元
 
 | 要素 | 内容 |
@@ -833,14 +847,14 @@ AI处理
 
 | 配置单元类型ID | 名称 | 对应系统实体 | 依赖配置单元 |
 |-----------|------|--------------|----------|
-| @entity-cu-basic | 实体基本信息配置单元 | EntityDefinition | — |
-| @entity-cu-field | 实体字段配置单元 | FieldDefinition | @entity-cu-basic |
-| @entity-cu-action | 功能操作项配置单元 | ActionDefinition | @entity-cu-basic |
-| @entity-cu-builtin-subbiz | 内置子业务配置单元 | BuiltinSubBusiness | @entity-cu-basic |
-| @entity-cu-subbiz | 子业务配置单元 | SubBusiness | @entity-cu-basic |
-| @entity-cu-derive | 派生配置单元 | DeriveDefinition | @entity-cu-basic |
-| @entity-cu-lifecycle | 生命周期状态配置单元 | LifecycleState | @entity-cu-basic |
-| @entity-cu-notification | 提示信息配置单元 | NotificationRule | @entity-cu-basic |
+| @entity-cu-basic | [实体基本信息配置单元](#cu-entity-cu-basic) | EntityDefinition | — |
+| @entity-cu-field | [实体字段配置单元](#cu-entity-cu-field) | FieldDefinition | @entity-cu-basic |
+| @entity-cu-action | [功能操作项配置单元](#cu-entity-cu-action) | ActionDefinition | @entity-cu-basic |
+| @entity-cu-builtin-subbiz | [内置子业务配置单元](#cu-entity-cu-builtin-subbiz) | BuiltinSubBusiness | @entity-cu-basic |
+| @entity-cu-subbiz | [子业务配置单元](#cu-entity-cu-subbiz) | SubBusiness | @entity-cu-basic |
+| @entity-cu-derive | [派生配置单元](#cu-entity-cu-derive) | DeriveDefinition | @entity-cu-basic |
+| @entity-cu-lifecycle | [生命周期状态配置单元](#cu-entity-cu-lifecycle) | LifecycleState | @entity-cu-basic |
+| @entity-cu-notification | [提示信息配置单元](#cu-entity-cu-notification) | NotificationRule | @entity-cu-basic |
 
 ##### 反馈交互区
 
@@ -856,6 +870,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-entity-cu-basic"></a>
 #### 2.7.3 @entity-cu-basic — 实体基本信息配置单元
 
 | 要素 | 内容 |
@@ -882,6 +897,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-entity-cu-field"></a>
 #### 2.7.4 @entity-cu-field — 实体字段配置单元
 
 | 要素 | 内容 |
@@ -908,6 +924,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-entity-cu-action"></a>
 #### 2.7.5 @entity-cu-action — 功能操作项配置单元
 
 | 要素 | 内容 |
@@ -934,6 +951,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-entity-cu-builtin-subbiz"></a>
 #### 2.7.6 @entity-cu-builtin-subbiz — 内置子业务配置单元
 
 | 要素 | 内容 |
@@ -960,6 +978,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-entity-cu-subbiz"></a>
 #### 2.7.7 @entity-cu-subbiz — 子业务配置单元
 
 | 要素 | 内容 |
@@ -986,6 +1005,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-entity-cu-derive"></a>
 #### 2.7.8 @entity-cu-derive — 派生配置单元
 
 | 要素 | 内容 |
@@ -1012,6 +1032,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-entity-cu-lifecycle"></a>
 #### 2.7.9 @entity-cu-lifecycle — 生命周期状态配置单元
 
 | 要素 | 内容 |
@@ -1038,6 +1059,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-entity-cu-notification"></a>
 #### 2.7.10 @entity-cu-notification — 提示信息配置单元
 
 | 要素 | 内容 |
@@ -1105,10 +1127,10 @@ AI处理
 
 | 配置单元类型ID | 名称 | 对应系统实体 | 依赖配置单元 |
 |-----------|------|--------------|----------|
-| @perm-cu-role | 角色定义配置单元 | RoleDefinition | — |
-| @perm-cu-attr-group | 属性组定义配置单元 | AttributeGroup | — |
-| @perm-cu-role-perm | 角色权限配置单元 | RolePermission | @perm-cu-role |
-| @perm-cu-attr-group-perm | 属性组权限配置单元 | AttrGroupPermission | @perm-cu-attr-group |
+| @perm-cu-role | [角色定义配置单元](#cu-perm-cu-role) | RoleDefinition | — |
+| @perm-cu-attr-group | [属性组定义配置单元](#cu-perm-cu-attr-group) | AttributeGroup | — |
+| @perm-cu-role-perm | [角色权限配置单元](#cu-perm-cu-role-perm) | RolePermission | @perm-cu-role |
+| @perm-cu-attr-group-perm | [属性组权限配置单元](#cu-perm-cu-attr-group-perm) | AttrGroupPermission | @perm-cu-attr-group |
 
 ##### 反馈交互区
 
@@ -1124,6 +1146,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-perm-cu-role"></a>
 #### 2.8.3 @perm-cu-role — 角色定义配置单元
 
 | 要素 | 内容 |
@@ -1150,6 +1173,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-perm-cu-attr-group"></a>
 #### 2.8.4 @perm-cu-attr-group — 属性组定义配置单元
 
 | 要素 | 内容 |
@@ -1176,6 +1200,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-perm-cu-role-perm"></a>
 #### 2.8.5 @perm-cu-role-perm — 角色权限配置单元
 
 | 要素 | 内容 |
@@ -1202,6 +1227,7 @@ AI处理
 
 建议（待反馈时填写）：—
 
+<a id="cu-perm-cu-attr-group-perm"></a>
 #### 2.8.6 @perm-cu-attr-group-perm — 属性组权限配置单元
 
 | 要素 | 内容 |
@@ -1264,16 +1290,16 @@ AI处理
 
 | 源节点 | 关系类型 | 目标节点 | 目标文档 | 状态 | 说明 |
 |--------|----------|----------|----------|------|------|
-| @def-* | uses_asset | @engine-* | 本文档 | 模板 | 业务依赖引擎 |
-| @node-* | implemented_by | @engine-* | 本文档 | 模板 | `23` 构件类型由引擎承接 |
-| @engine-* | depends_on | @engine-* | 本文档 | 模板 | 引擎之间的依赖 |
-| @engine-form | has_config_unit | @form-cu-* | 本文档 | 已确认 | 表单引擎支持的配置单元类型 |
-| @engine-entity | has_config_unit | @entity-cu-* | 本文档 | 待确认 | 实体引擎支持的配置单元类型 |
-| @engine-flow | has_config_unit | @flow-cu-* | 本文档 | 待确认 | 流程引擎支持的配置单元类型 |
-| @engine-indicator | has_config_unit | @indicator-cu-* | 本文档 | 待确认 | 指标引擎支持的配置单元类型 |
-| @engine-menu | has_config_unit | @menu-cu-* | 本文档 | 待确认 | 菜单引擎支持的配置单元类型 |
-| @engine-permission | has_config_unit | @perm-cu-* | 本文档 | 待确认 | 权限引擎支持的配置单元类型 |
-| BA-A1-* | instantiates | @form-cu-* | `04-eos-business-architecture.md` | 模板 | 具体 A1 BA 配置单元实例化表单引擎配置单元类型 |
+| @def-* | uses_asset | @engine-* | [本文档](#cu-engine-*) | 模板 | 业务依赖引擎 |
+| @node-* | implemented_by | @engine-* | [本文档](#cu-engine-*) | 模板 | `23` 构件类型由引擎承接 |
+| @engine-* | depends_on | @engine-* | [本文档](#cu-engine-*) | 模板 | 引擎之间的依赖 |
+| @engine-form | has_config_unit | @form-cu-* | [本文档](#cu-form-cu-*) | 已确认 | 表单引擎支持的配置单元类型 |
+| @engine-entity | has_config_unit | @entity-cu-* | [本文档](#cu-entity-cu-*) | 待确认 | 实体引擎支持的配置单元类型 |
+| @engine-flow | has_config_unit | @flow-cu-* | [本文档](#cu-flow-cu-*) | 待确认 | 流程引擎支持的配置单元类型 |
+| @engine-indicator | has_config_unit | @indicator-cu-* | [本文档](#cu-indicator-cu-*) | 待确认 | 指标引擎支持的配置单元类型 |
+| @engine-menu | has_config_unit | @menu-cu-* | [本文档](#cu-menu-cu-*) | 待确认 | 菜单引擎支持的配置单元类型 |
+| @engine-permission | has_config_unit | @perm-cu-* | [本文档](#cu-perm-cu-*) | 待确认 | 权限引擎支持的配置单元类型 |
+| BA-A1-* | instantiates | @form-cu-* | [`04-eos-business-architecture.md`](#cu-form-cu-*) | 模板 | 具体 A1 BA 配置单元实例化表单引擎配置单元类型 |
 
 ---
 
@@ -1354,31 +1380,31 @@ AI处理
 | 配置单元类型ID | 名称 | 所属引擎 | 对应系统实体 | 依赖配置单元 | 生命周期状态 | 块ID | 最后更新 |
 |-----------|------|----------|--------------|----------|--------------|------|----------|
 | @form-cu-structure | 表单结构配置单元 | @engine-form | FormDefinition | — | 已确认 | ENGINE-FORM | 2026-06-26 |
-| @form-cu-field | 字段定义配置单元 | @engine-form | FieldDefinition | @form-cu-structure | 已确认 | ENGINE-FORM | 2026-06-26 |
-| @form-cu-layout | 布局配置单元 | @engine-form | LayoutDefinition | @form-cu-field | 已确认 | ENGINE-FORM | 2026-06-26 |
-| @form-cu-validation | 校验规则配置单元 | @engine-form | ValidationRule | @form-cu-field | 已确认 | ENGINE-FORM | 2026-06-26 |
-| @form-cu-behavior | 表单行为配置单元 | @engine-form | BehaviorRule | @form-cu-field | 已确认 | ENGINE-FORM | 2026-06-26 |
-| @form-cu-permission | 表单权限配置单元 | @engine-form | FormPermission | @form-cu-field | 已确认 | ENGINE-FORM | 2026-06-26 |
+| @form-cu-field | 字段定义配置单元 | @engine-form | FieldDefinition | @form-cu-structure | [已确认](#cu-form-cu-structure) | ENGINE-FORM | 2026-06-26 |
+| @form-cu-layout | 布局配置单元 | @engine-form | LayoutDefinition | @form-cu-field | [已确认](#cu-form-cu-field) | ENGINE-FORM | 2026-06-26 |
+| @form-cu-validation | 校验规则配置单元 | @engine-form | ValidationRule | @form-cu-field | [已确认](#cu-form-cu-field) | ENGINE-FORM | 2026-06-26 |
+| @form-cu-behavior | 表单行为配置单元 | @engine-form | BehaviorRule | @form-cu-field | [已确认](#cu-form-cu-field) | ENGINE-FORM | 2026-06-26 |
+| @form-cu-permission | 表单权限配置单元 | @engine-form | FormPermission | @form-cu-field | [已确认](#cu-form-cu-field) | ENGINE-FORM | 2026-06-26 |
 | @form-cu-release | 表单发布配置单元 | @engine-form | FormVersion / ReleaseRecord | @form-cu-structure / @form-cu-field / @form-cu-layout | 已确认 | ENGINE-FORM | 2026-06-26 |
 | @entity-cu-basic | 实体基本信息配置单元 | @engine-entity | EntityDefinition | — | 待确认 | ENGINE-ENTITY | 2026-06-30 |
-| @entity-cu-field | 实体字段配置单元 | @engine-entity | FieldDefinition | @entity-cu-basic | 待确认 | ENGINE-ENTITY | 2026-06-30 |
-| @entity-cu-action | 功能操作项配置单元 | @engine-entity | ActionDefinition | @entity-cu-basic | 待确认 | ENGINE-ENTITY | 2026-06-30 |
-| @entity-cu-builtin-subbiz | 内置子业务配置单元 | @engine-entity | BuiltinSubBusiness | @entity-cu-basic | 待确认 | ENGINE-ENTITY | 2026-06-30 |
-| @entity-cu-subbiz | 子业务配置单元 | @engine-entity | SubBusiness | @entity-cu-basic | 待确认 | ENGINE-ENTITY | 2026-06-30 |
-| @entity-cu-derive | 派生配置单元 | @engine-entity | DeriveDefinition | @entity-cu-basic | 待确认 | ENGINE-ENTITY | 2026-06-30 |
-| @entity-cu-lifecycle | 生命周期状态配置单元 | @engine-entity | LifecycleState | @entity-cu-basic | 待确认 | ENGINE-ENTITY | 2026-06-30 |
-| @entity-cu-notification | 提示信息配置单元 | @engine-entity | NotificationRule | @entity-cu-basic | 待确认 | ENGINE-ENTITY | 2026-06-30 |
+| @entity-cu-field | 实体字段配置单元 | @engine-entity | FieldDefinition | @entity-cu-basic | [待确认](#cu-entity-cu-basic) | ENGINE-ENTITY | 2026-06-30 |
+| @entity-cu-action | 功能操作项配置单元 | @engine-entity | ActionDefinition | @entity-cu-basic | [待确认](#cu-entity-cu-basic) | ENGINE-ENTITY | 2026-06-30 |
+| @entity-cu-builtin-subbiz | 内置子业务配置单元 | @engine-entity | BuiltinSubBusiness | @entity-cu-basic | [待确认](#cu-entity-cu-basic) | ENGINE-ENTITY | 2026-06-30 |
+| @entity-cu-subbiz | 子业务配置单元 | @engine-entity | SubBusiness | @entity-cu-basic | [待确认](#cu-entity-cu-basic) | ENGINE-ENTITY | 2026-06-30 |
+| @entity-cu-derive | 派生配置单元 | @engine-entity | DeriveDefinition | @entity-cu-basic | [待确认](#cu-entity-cu-basic) | ENGINE-ENTITY | 2026-06-30 |
+| @entity-cu-lifecycle | 生命周期状态配置单元 | @engine-entity | LifecycleState | @entity-cu-basic | [待确认](#cu-entity-cu-basic) | ENGINE-ENTITY | 2026-06-30 |
+| @entity-cu-notification | 提示信息配置单元 | @engine-entity | NotificationRule | @entity-cu-basic | [待确认](#cu-entity-cu-basic) | ENGINE-ENTITY | 2026-06-30 |
 | @flow-cu-definition | 流程定义配置单元 | @engine-flow | FlowDefinition | — | 待确认 | ENGINE-FLOW | 2026-06-30 |
-| @flow-cu-version | 流程版本配置单元 | @engine-flow | FlowVersion | @flow-cu-definition | 待确认 | ENGINE-FLOW | 2026-06-30 |
-| @flow-cu-node-config | 流程节点配置单元 | @engine-flow | FlowNodeConfig | @flow-cu-definition | 待确认 | ENGINE-FLOW | 2026-06-30 |
+| @flow-cu-version | 流程版本配置单元 | @engine-flow | FlowVersion | @flow-cu-definition | [待确认](#cu-flow-cu-definition) | ENGINE-FLOW | 2026-06-30 |
+| @flow-cu-node-config | 流程节点配置单元 | @engine-flow | FlowNodeConfig | @flow-cu-definition | [待确认](#cu-flow-cu-definition) | ENGINE-FLOW | 2026-06-30 |
 | @indicator-cu-metric | 指标定义配置单元 | @engine-indicator | MetricDefinition | — | 待确认 | ENGINE-INDICATOR | 2026-06-30 |
-| @indicator-cu-component | 看板组件配置单元 | @engine-indicator | DashboardComponent | @indicator-cu-metric | 待确认 | ENGINE-INDICATOR | 2026-06-30 |
-| @indicator-cu-view | 看板视图配置单元 | @engine-indicator | DashboardView | @indicator-cu-component | 待确认 | ENGINE-INDICATOR | 2026-06-30 |
+| @indicator-cu-component | 看板组件配置单元 | @engine-indicator | DashboardComponent | @indicator-cu-metric | [待确认](#cu-indicator-cu-metric) | ENGINE-INDICATOR | 2026-06-30 |
+| @indicator-cu-view | 看板视图配置单元 | @engine-indicator | DashboardView | @indicator-cu-component | [待确认](#cu-indicator-cu-component) | ENGINE-INDICATOR | 2026-06-30 |
 | @menu-cu-basic | 菜单标签配置单元 | @engine-menu | MenuLabel | — | 待确认 | ENGINE-MENU | 2026-06-30 |
 | @perm-cu-role | 角色定义配置单元 | @engine-permission | RoleDefinition | — | 待确认 | ENGINE-PERMISSION | 2026-06-30 |
 | @perm-cu-attr-group | 属性组定义配置单元 | @engine-permission | AttributeGroup | — | 待确认 | ENGINE-PERMISSION | 2026-06-30 |
-| @perm-cu-role-perm | 角色权限配置单元 | @engine-permission | RolePermission | @perm-cu-role | 待确认 | ENGINE-PERMISSION | 2026-06-30 |
-| @perm-cu-attr-group-perm | 属性组权限配置单元 | @engine-permission | AttrGroupPermission | @perm-cu-attr-group | 待确认 | ENGINE-PERMISSION | 2026-06-30 |
+| @perm-cu-role-perm | 角色权限配置单元 | @engine-permission | RolePermission | @perm-cu-role | [待确认](#cu-perm-cu-role) | ENGINE-PERMISSION | 2026-06-30 |
+| @perm-cu-attr-group-perm | 属性组权限配置单元 | @engine-permission | AttrGroupPermission | @perm-cu-attr-group | [待确认](#cu-perm-cu-attr-group) | ENGINE-PERMISSION | 2026-06-30 |
 
 ### B.4 引擎模板（供 wft02 新增引擎时参考）
 
