@@ -1,3 +1,5 @@
+- [wft02-biz Step 3 审视→v3.0](wft02-biz-step3-review-v242.md) — 2026-06-30：设计线（3/4/5）与增补线（6/7）分离 + 资产写回（8），5 Step→8 Step，全文~30处交叉引用更新
+- [wft02-biz Phase C 审视 5项发现](wft02-biz-phase-c-review-2026-06-30.md) — 2026-06-30：§3.5 双视角映射与一致性校验审视——P1残留术语/P2未定义概念/P3治理缺口衔接/P4映射表粒度混搭/P5缺前置检查，未执行修改
 - [wft01-biz 缺少 Bn 侧 23-Q 判定](wft01-biz-bn-23q-gap.md) — 2026-06-30：STR-F 只带 A2 侧产品类型/构件类型，wft02-biz Phase B 缺少 PL2/PL3 现成信息，需在 wft01-biz 补 Bn 侧 23-Q
 - [wft02-biz v2.41 一致性审查修复](wft02-biz-v241-conformance-review.md) — 2026-06-29：两轮审查（§3.1/§3.2）修正7项，已提交推送
 - [wft02-eng 未来对标 biz 结构](wft02-eng-align-to-biz-structure.md) — 2026-06-30：wft02-eng 将参照 wft02-biz §3.1 共享上下文 + Phase 拆分模式做结构对齐，下次审视 eng 时以此记忆为基线
