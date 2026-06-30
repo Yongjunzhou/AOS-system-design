@@ -1,0 +1,13 @@
+{
+  "name": "md2pdf",
+  "version": "1.0.0",
+  "description": "将指定的 Markdown 文档转换为 PDF（支持 Mermaid 图表渲染）",
+  "type": "module",
+  "scripts": {
+    "convert": "node md2pdf.js"
+  },
+  "dependencies": {
+    "marked": "^15.0.0",
+    "puppeteer": "^24.0.0"
+  }
+}
