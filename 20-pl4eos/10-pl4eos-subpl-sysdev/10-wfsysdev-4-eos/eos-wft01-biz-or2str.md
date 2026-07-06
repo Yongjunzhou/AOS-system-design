@@ -7,7 +7,7 @@
 >
 > **适用场景**：瀑布式系统设计第1步 · 业务需求路径。
 >
-> **设计模式参考**：[91-doc-paired-skill-spec.md](91-doc-paired-skill-spec.md)
+> **设计模式参考**：[91-eos-biz-eng-spec.md](91-eos-biz-eng-spec.md)
 >
 > **版本**：v1.84 | **修订**：2026-07-03
 

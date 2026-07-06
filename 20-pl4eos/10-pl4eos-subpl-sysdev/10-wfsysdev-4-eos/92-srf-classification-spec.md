@@ -4,7 +4,7 @@
 >
 > **定位**：先行规范。待规则稳定后，核心内容应合入 `01-pl4eos-spec-sysdev.md` §4.4；本文件在合入后降级为历史参考。
 >
-> **设计模式参考**：[91-doc-paired-skill-spec.md](91-doc-paired-skill-spec.md)、[eos-wft03a-ba2sr-design.md](eos-wft03a-ba2sr-design.md)
+> **设计模式参考**：[91-eos-biz-eng-spec.md](91-eos-biz-eng-spec.md)、[eos-wft03a-ba2sr-design.md](eos-wft03a-ba2sr-design.md)
 >
 > **版本**：v1.0 | **修订**：2026-06-21
 
@@ -57,7 +57,7 @@ SR-F
 3. **第3层（SysReq 末级节点）**：视角转换后的具体业务定义或具体引擎能力 IPO，与 BA IPO 同体。
 4. 引擎能力类 IPO 默认只有第1层+第3层，通常不设中间层，因为其分类已经由引擎能力类型足够表达。
 
-分类与 [91-doc-paired-skill-spec.md](91-doc-paired-skill-spec.md) §三 全链路映射表的关系：
+分类与 [91-eos-biz-eng-spec.md](91-eos-biz-eng-spec.md) §三 全链路映射表的关系：
 
 | 91 规范映射 | 本规范补充 |
 |-------------|-----------|
@@ -310,7 +310,7 @@ SR-F 可以**先按业务域大分区**，但**每个分区内仍须按系统职
 | `01-pl4eos-spec-sysdev.md` §4.4 | 本规范是其 SR-F 分类规则的**先行补充**。§4.4 定义输入口径和第一层组织方式，本规范定义第二层（系统职责）分类规则。待规则稳定后合入 §4.4 |
 | `eos-wft03-ba2sr.md` §4.3 | 本规范是对 §4.3 分类规则的**具体化**——§4.3 规定了"先分两大 IPO 类、再按类型挂具体末级"，本规范补充中间层的"系统职责"维度和分类原则 |
 | `eos-wft03a-ba2sr-design.md` | 本规范是 wft03a Step 3（分类映射）的**可执行规则参考** |
-| `91-doc-paired-skill-spec.md` | 本规范是 91 规范在「SR-F 分类宿主匹配」环节的**领域专用规则** |
+| `91-eos-biz-eng-spec.md` | 本规范是 91 规范在「SR-F 分类宿主匹配」环节的**领域专用规则** |
 
 ---
 

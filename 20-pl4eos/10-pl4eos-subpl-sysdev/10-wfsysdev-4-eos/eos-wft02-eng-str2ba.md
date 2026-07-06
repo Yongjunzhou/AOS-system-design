@@ -7,7 +7,7 @@
 >
 > **适用场景**：瀑布式系统设计第2步 · 引擎配置路径。
 >
-> **设计模式参考**：[91-doc-paired-skill-spec.md](91-doc-paired-skill-spec.md)
+> **设计模式参考**：[91-eos-biz-eng-spec.md](91-eos-biz-eng-spec.md)
 >
 > **版本**：v2.13 | **修订**：2026-07-01
 
