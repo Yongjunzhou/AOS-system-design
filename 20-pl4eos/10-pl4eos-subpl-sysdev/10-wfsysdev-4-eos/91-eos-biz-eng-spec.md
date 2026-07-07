@@ -125,54 +125,50 @@ EOS 平台使用四套视角层级描述业务在不同维度上的组织结构�
 EOS 平台通过三层引擎逐级生成：下层引擎生成制品，上层引擎消费该制品后生成自身制品，自底向上逐级递进，从物理表一直生成到用户可见的菜单：
 
 ```mermaid
-flowchart BT
-  %% 实体级
-  ENTITY[实体引擎<br/>物理表]
-  %% 功能级 · 产品数据类
-  REQ[需求引擎]
-  FLOW[流程引擎]
-  WO[工单引擎]
-  %% 功能级 · 业务管理类
-  PROJ[项目引擎]
-  WBS[WBS引擎]
-  TASK[计划引擎]
-  KANBAN[看板引擎]
-  IND[指标引擎]
-  PROG[进展引擎]
-  SCH[定时任务引擎]
-  %% 菜单级
-  MENU[菜单引擎<br/>末级节点=场景业务<br/>高层节点=菜单分组]
-  %% 实体→功能引擎
-  ENTITY -- 提供物理表元数据 --> FLOW
-  ENTITY -- 提供物理表元数据 --> WO
-  ENTITY -- 提供物理表元数据 --> REQ
-  ENTITY -- 提供物理表元数据 --> IND
-  ENTITY -- 提供物理表元数据 --> TASK
-  ENTITY -- 提供物理表元数据 --> PROJ
-  ENTITY -- 提供物理表元数据 --> WBS
-  ENTITY -- 提供物理表元数据 --> KANBAN
-  ENTITY -- 提供物理表元数据 --> PROG
-  ENTITY -- 提供物理表元数据 --> SCH
-  %% 功能引擎→菜单引擎
-  FLOW -- 生成功能表单/主子表单 --> MENU
-  WO -- 生成功能表单/主子表单 --> MENU
-  IND -- 生成功能表单/主子表单 --> MENU
-  REQ -- 生成功能表单/主子表单 --> MENU
-  TASK -- 生成功能表单/主子表单 --> MENU
-  PROJ -- 生成功能表单/主子表单 --> MENU
-  WBS -- 生成功能表单/主子表单 --> MENU
-  KANBAN -- 生成功能表单/主子表单 --> MENU
-  PROG -- 生成功能表单/主子表单 --> MENU
-  SCH -- 生成功能表单/主子表单 --> MENU
-  %% 颜色分组
-  classDef entity fill:#e3f2fd,stroke:#1565c0
-  classDef product fill:#fff3e0,stroke:#ef6c00
-  classDef mgmt fill:#f3e5f5,stroke:#7b1fa2
-  classDef menu fill:#e8f5e9,stroke:#2e7d32
-  class ENTITY entity
-  class REQ,FLOW,WO product
-  class PROJ,WBS,TASK,KANBAN,IND,PROG,SCH mgmt
-  class MENU menu
+%%{init: {'theme': 'default', 'flowchart': {'useMaxWidth': false, 'htmlLabels': true}}}%%
+graph BT
+  subgraph 实体级
+    ENTITY[实体引擎<br/>物理表]
+  end
+  subgraph 功能级
+    subgraph 产品数据类
+      REQ[需求引擎]
+      FLOW[流程引擎]
+      WO[工单引擎]
+    end
+    subgraph 业务管理类
+      PROJ[项目引擎]
+      WBS[WBS引擎]
+      TASK[计划引擎]
+      KANBAN[看板引擎]
+      IND[指标引擎]
+      PROG[进展引擎]
+      SCH[定时任务引擎]
+    end
+  end
+  subgraph 菜单级
+    MENU[菜单引擎<br/>末级节点=场景业务<br/>高层节点=菜单分组]
+  end
+  ENTITY -->|提供物理表元数据| FLOW
+  ENTITY -->|提供物理表元数据| WO
+  ENTITY -->|提供物理表元数据| REQ
+  ENTITY -->|提供物理表元数据| IND
+  ENTITY -->|提供物理表元数据| TASK
+  ENTITY -->|提供物理表元数据| PROJ
+  ENTITY -->|提供物理表元数据| WBS
+  ENTITY -->|提供物理表元数据| KANBAN
+  ENTITY -->|提供物理表元数据| PROG
+  ENTITY -->|提供物理表元数据| SCH
+  FLOW -->|生成功能表单/主子表单| MENU
+  WO -->|生成功能表单/主子表单| MENU
+  IND -->|生成功能表单/主子表单| MENU
+  REQ -->|生成功能表单/主子表单| MENU
+  TASK -->|生成功能表单/主子表单| MENU
+  PROJ -->|生成功能表单/主子表单| MENU
+  WBS -->|生成功能表单/主子表单| MENU
+  KANBAN -->|生成功能表单/主子表单| MENU
+  PROG -->|生成功能表单/主子表单| MENU
+  SCH -->|生成功能表单/主子表单| MENU
 ```
 
 简化版三层引擎生成链：
@@ -185,7 +181,7 @@ flowchart BT
                                  菜单引擎 ──生成──→ 菜单树 + 场景业务
 ```
 
-各引擎为生成器：下级引擎生成制品，上级引擎消费该制品后生成自身制品，逐级递进。
+各引擎为生成器：下级引擎生成制品，上级引擎消费该制品后生成自身制品，逐级递进直至平台可发布的末级菜单。
 
 **引擎全景**：
 
