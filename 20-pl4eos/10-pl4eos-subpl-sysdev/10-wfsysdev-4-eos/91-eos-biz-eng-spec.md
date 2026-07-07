@@ -126,16 +126,19 @@ EOS 平台通过三层引擎逐级生成：下层引擎生成制品，上层引�
 
 ```mermaid
 flowchart BT
-  subgraph 实体级
+  subgraph EL3["实体级"]
     ENTITY[实体引擎<br/>物理表]
   end
-  subgraph 功能级
-    subgraph 产品数据类
+  subgraph EL2["功能级"]
+    direction TB
+    subgraph PROD["产品数据类"]
+      direction LR
       REQ[需求引擎]
       FLOW[流程引擎]
       WO[工单引擎]
     end
-    subgraph 业务管理类
+    subgraph MGT["业务管理类"]
+      direction LR
       PROJ[项目引擎]
       WBS[WBS引擎]
       TASK[计划引擎]
@@ -145,7 +148,7 @@ flowchart BT
       SCH[定时任务引擎]
     end
   end
-  subgraph 菜单级
+  subgraph EL1["菜单级"]
     MENU[菜单引擎<br/>末级节点=场景业务<br/>高层节点=菜单分组]
   end
   ENTITY -->|提供物理表元数据| FLOW
