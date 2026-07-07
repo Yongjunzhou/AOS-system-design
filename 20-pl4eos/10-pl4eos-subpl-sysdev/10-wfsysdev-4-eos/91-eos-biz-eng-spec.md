@@ -126,26 +126,23 @@ EOS 平台通过三层引擎逐级生成：下层引擎生成制品，上层引�
 
 ```mermaid
 flowchart BT
-  subgraph EL3["实体级"]
-    ENTITY[实体引擎<br/>物理表]
-  end
-  subgraph EL2a["功能级 · 产品数据类"]
-    REQ[需求引擎]
-    FLOW[流程引擎]
-    WO[工单引擎]
-  end
-  subgraph EL2b["功能级 · 业务管理类"]
-    PROJ[项目引擎]
-    WBS[WBS引擎]
-    TASK[计划引擎]
-    KANBAN[看板引擎]
-    IND[指标引擎]
-    PROG[进展引擎]
-    SCH[定时任务引擎]
-  end
-  subgraph EL1["菜单级"]
-    MENU[菜单引擎<br/>末级节点=场景业务<br/>高层节点=菜单分组]
-  end
+  %% 实体级
+  ENTITY[实体引擎<br/>物理表]
+  %% 功能级 · 产品数据类
+  REQ[需求引擎]
+  FLOW[流程引擎]
+  WO[工单引擎]
+  %% 功能级 · 业务管理类
+  PROJ[项目引擎]
+  WBS[WBS引擎]
+  TASK[计划引擎]
+  KANBAN[看板引擎]
+  IND[指标引擎]
+  PROG[进展引擎]
+  SCH[定时任务引擎]
+  %% 菜单级
+  MENU[菜单引擎<br/>末级节点=场景业务<br/>高层节点=菜单分组]
+  %% 实体→功能引擎
   ENTITY -->|提供物理表元数据| FLOW
   ENTITY -->|提供物理表元数据| WO
   ENTITY -->|提供物理表元数据| REQ
@@ -156,6 +153,7 @@ flowchart BT
   ENTITY -->|提供物理表元数据| KANBAN
   ENTITY -->|提供物理表元数据| PROG
   ENTITY -->|提供物理表元数据| SCH
+  %% 功能引擎→菜单引擎
   FLOW -->|生成功能表单/主子表单| MENU
   WO -->|生成功能表单/主子表单| MENU
   IND -->|生成功能表单/主子表单| MENU
