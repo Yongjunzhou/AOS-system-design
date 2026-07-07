@@ -143,27 +143,36 @@ flowchart BT
   %% 菜单级
   MENU[菜单引擎<br/>末级节点=场景业务<br/>高层节点=菜单分组]
   %% 实体→功能引擎
-  ENTITY -->|提供物理表元数据| FLOW
-  ENTITY -->|提供物理表元数据| WO
-  ENTITY -->|提供物理表元数据| REQ
-  ENTITY -->|提供物理表元数据| IND
-  ENTITY -->|提供物理表元数据| TASK
-  ENTITY -->|提供物理表元数据| PROJ
-  ENTITY -->|提供物理表元数据| WBS
-  ENTITY -->|提供物理表元数据| KANBAN
-  ENTITY -->|提供物理表元数据| PROG
-  ENTITY -->|提供物理表元数据| SCH
+  ENTITY -- 提供物理表元数据 --> FLOW
+  ENTITY -- 提供物理表元数据 --> WO
+  ENTITY -- 提供物理表元数据 --> REQ
+  ENTITY -- 提供物理表元数据 --> IND
+  ENTITY -- 提供物理表元数据 --> TASK
+  ENTITY -- 提供物理表元数据 --> PROJ
+  ENTITY -- 提供物理表元数据 --> WBS
+  ENTITY -- 提供物理表元数据 --> KANBAN
+  ENTITY -- 提供物理表元数据 --> PROG
+  ENTITY -- 提供物理表元数据 --> SCH
   %% 功能引擎→菜单引擎
-  FLOW -->|生成功能表单/主子表单| MENU
-  WO -->|生成功能表单/主子表单| MENU
-  IND -->|生成功能表单/主子表单| MENU
-  REQ -->|生成功能表单/主子表单| MENU
-  TASK -->|生成功能表单/主子表单| MENU
-  PROJ -->|生成功能表单/主子表单| MENU
-  WBS -->|生成功能表单/主子表单| MENU
-  KANBAN -->|生成功能表单/主子表单| MENU
-  PROG -->|生成功能表单/主子表单| MENU
-  SCH -->|生成功能表单/主子表单| MENU
+  FLOW -- 生成功能表单/主子表单 --> MENU
+  WO -- 生成功能表单/主子表单 --> MENU
+  IND -- 生成功能表单/主子表单 --> MENU
+  REQ -- 生成功能表单/主子表单 --> MENU
+  TASK -- 生成功能表单/主子表单 --> MENU
+  PROJ -- 生成功能表单/主子表单 --> MENU
+  WBS -- 生成功能表单/主子表单 --> MENU
+  KANBAN -- 生成功能表单/主子表单 --> MENU
+  PROG -- 生成功能表单/主子表单 --> MENU
+  SCH -- 生成功能表单/主子表单 --> MENU
+  %% 颜色分组
+  classDef entity fill:#e3f2fd,stroke:#1565c0
+  classDef product fill:#fff3e0,stroke:#ef6c00
+  classDef mgmt fill:#f3e5f5,stroke:#7b1fa2
+  classDef menu fill:#e8f5e9,stroke:#2e7d32
+  class ENTITY entity
+  class REQ,FLOW,WO product
+  class PROJ,WBS,TASK,KANBAN,IND,PROG,SCH mgmt
+  class MENU menu
 ```
 
 简化版三层引擎生成链：
