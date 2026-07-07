@@ -129,24 +129,19 @@ flowchart BT
   subgraph EL3["实体级"]
     ENTITY[实体引擎<br/>物理表]
   end
-  subgraph EL2["功能级"]
-    direction TB
-    subgraph PROD["产品数据类"]
-      direction LR
-      REQ[需求引擎]
-      FLOW[流程引擎]
-      WO[工单引擎]
-    end
-    subgraph MGT["业务管理类"]
-      direction LR
-      PROJ[项目引擎]
-      WBS[WBS引擎]
-      TASK[计划引擎]
-      KANBAN[看板引擎]
-      IND[指标引擎]
-      PROG[进展引擎]
-      SCH[定时任务引擎]
-    end
+  subgraph EL2a["功能级 · 产品数据类"]
+    REQ[需求引擎]
+    FLOW[流程引擎]
+    WO[工单引擎]
+  end
+  subgraph EL2b["功能级 · 业务管理类"]
+    PROJ[项目引擎]
+    WBS[WBS引擎]
+    TASK[计划引擎]
+    KANBAN[看板引擎]
+    IND[指标引擎]
+    PROG[进展引擎]
+    SCH[定时任务引擎]
   end
   subgraph EL1["菜单级"]
     MENU[菜单引擎<br/>末级节点=场景业务<br/>高层节点=菜单分组]
