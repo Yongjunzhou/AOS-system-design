@@ -145,7 +145,7 @@ Step 2（反馈处理）先于 Step 3（新增设计）执行。Step 2 中 `[修
 
 ### 4.1 25 号资产读取原则
 
-读取 25 时按“引擎层级 → 引擎依赖 → CU 类型 → 状态队列”顺序理解，不得只按关键词命中。`@engine-scene` 面向 L4 业务场景组合；`@engine-menu` 只做末级菜单映射和可访问入口，不生成业务内容；`@engine-form` / `@engine-flow` / `@engine-indicator` / `@engine-workorder` 面向 L5 业务功能或部件；`@engine-entity` 面向 L6 业务对象定义；`@engine-permission` 是横切权限能力。
+读取 25 时按“引擎层级 → 引擎依赖 → CU 类型 → 状态队列”顺序理解，不得只按关键词命中。`@engine-scene` 面向 L4 业务场景组合；`@engine-menu` 只做末级菜单映射和可访问入口，不生成业务内容；`@engine-form` / `@engine-flow` / `@engine-kanban` / `@engine-workorder` 面向 L5 业务功能或部件；`@engine-entity` 面向 L6 业务对象定义；`@engine-permission` 是横切权限能力。
 
 ### 4.2 引擎归属判定规则
 

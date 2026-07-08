@@ -19,8 +19,7 @@
 | 11 | `project-engine/` | 项目引擎 | 待开发 |
 | 12 | `wbs-engine/` | WBS 引擎 | 待开发 |
 | 13 | `plan-engine/` | 计划引擎 | 待开发 |
-| 14 | `indicator-engine/` | 指标引擎 | 待开发 |
-| 15 | `kanban-engine/` | 看板引擎 | 待开发 |
+| 14 | `kanban-engine/` | 看板引擎 | 待开发 |
 | 16 | `xbom-engine/` | xBOM 引擎 | 待开发 |
 | 17 | `version-engine/` | 版本管理引擎 | 待开发 |
 | 18 | `mrp-engine/` | MRP 运算引擎 | 待开发 |
