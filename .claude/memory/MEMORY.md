@@ -110,4 +110,4 @@
 - [业务层级术语标准化](business-hierarchy-terminology-standardization.md) — 2026-06-27：L0~L6 七级业务层级 + 引擎三级生成+横切；废弃功能菜单/功能业务/场景定义/功能单元/对象及其功能；25/24/06/01-pl4eos-spec + wft Skill×8 + 02/03 产品数据全部更新
 - [EOS UI 模型与业务-引擎映射](eos-ui-model-business-engine-mapping.md) — 2026-06-27：UI 交互模型（单窗分屏无限下钻+面包屑导航）、场景部件:输出文档=1:1、两种产生方式（引擎直产/人工外设）、实体引擎约束子业务TAB、引擎分工总图；10-eos-architecture.md v2.0 同步重写
 - [术语重构：引擎与业务](terminology-refactor-engine-business.md) — 2026-06-26：三术语→两术语重构完成；引擎四级五引擎；业务四级编排；术语表+规范§2.5+25/24/26/27资产文件已更新；23.md待讨论
-- [91规范v4.0引擎重构](91-spec-v4-engine-restructure.md) — 2026-07-09：引擎体系重构讨论定稿——新增文档引擎(有封面输出文档)/台账引擎(条目化清单)/指标引擎(定义+口径+双模式展示)，移除需求引擎；执行类D子节点=输出文档(PL5→活动节点PL6+支持信息)，管理类PCA子节点=输出文档(PL5→管理子项PL6)；biz三Skill职责重定义(wft01-场景业务/wft02-A2+Bn BA/wft03-配置需求方案)；91规范已写入v4.0-draft，余25资产及各Skill待联动更新
+- [91规范v4.0引擎重构](91-spec-v4-engine-restructure.md) — 2026-07-10：引擎体系重构讨论定稿并全量联动完成——取消 @engine-document/@engine-ledger/@engine-requirement（13→11），@engine-indicator 独立；正式/轻量文档模型（封面+正文1:1+引用+处理配置）；D/PCA 语义分类保留；25/B.1/B.2 附录残留修复；全部 Skill 和资产文件已对齐

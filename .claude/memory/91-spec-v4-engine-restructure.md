@@ -73,13 +73,13 @@ D（执行类）/PCA（管理类）作为场景业务语义分类保留，影响
 
 ## 当前进度
 - [x] 91-eos-biz-eng-spec.md → 已写入 v4.0（全部变更已在正文体现）
-- [ ] 25-eos-engine-models.md → 待联动更新（移除文档/台账引擎，新增指标引擎独立定义）
-- [ ] eos-wft01-biz-or2str.md → 待联动更新
-- [ ] eos-wft02-biz-str2ba.md → 待联动更新
-- [ ] eos-wft03-biz-ba2sr.md → 待联动更新
-- [ ] eos-wft01~05-eng → 待新增指标引擎的 STR-E/CU 展开
-- [ ] 23/24/28 资产文件 → 待联动更新
-- [ ] 92-srf-classification-spec.md → 待检查是否需要调整
+- [x] 25-eos-engine-models.md → v2.0 已联动更新（2026-07-10）；B.1/B.2 附录残留 @engine-requirement 已修复（2026-07-10 审视）
+- [x] eos-wft01-biz-or2str.md → v2.0（2026-07-10）
+- [x] eos-wft02-biz-str2ba.md → v6.0（2026-07-10）
+- [x] eos-wft03-biz-ba2sr.md → v5.0（2026-07-10）
+- [x] eos-wft01~05-eng → 全部 v5.1（2026-07-10）
+- [x] 23/24/28 资产文件 → 全部 2026-07-10
+- [x] 92-srf-classification-spec.md → 已检查，无紧急修改需求（台账定义分类桶建议下次修订时评估）
 
 **Why:** 2026-07-10 讨论深入后确认文档引擎和台账引擎是伪引擎——它们的能力已被实体引擎+功能引擎+各正文转化引擎覆盖。文档是实体组装模式而非独立引擎概念。
 
