@@ -222,14 +222,14 @@ const css = `
     max-width: 100%;
   }
 
-  /* ---- 标题 ---- */
-  h1 { font-size: 20pt; margin: 1.2em 0 0.4em; padding-bottom: 6px; border-bottom: 2px solid #1a1a1a; page-break-before: always; }
+  /* ---- 标题（margin-top 用 rem 统一参考 11pt 基线，不被自身字号放大） ---- */
+  h1 { font-size: 20pt; margin: 0.8rem 0 0.4em; padding-bottom: 6px; border-bottom: 2px solid #1a1a1a; page-break-before: always; }
   h1:first-child { page-break-before: avoid; }
-  h2 { font-size: 15pt; margin: 1.0em 0 0.3em; padding-bottom: 4px; border-bottom: 1px solid #ccc; page-break-before: always; }
-  h3 { font-size: 13pt; margin: 0.8em 0 0.2em; }
-  h4 { font-size: 11.5pt; margin: 0.6em 0 0.2em; }
-  h5 { font-size: 11pt; margin: 0.5em 0 0.2em; color: #555; }
-  h6 { font-size: 11pt; margin: 0.5em 0 0.2em; color: #777; font-weight: normal; }
+  h2 { font-size: 15pt; margin: 0.7rem 0 0.3em; padding-bottom: 4px; border-bottom: 1px solid #ccc; }
+  h3 { font-size: 13pt; margin: 0.6rem 0 0.2em; }
+  h4 { font-size: 11.5pt; margin: 0.5rem 0 0.2em; page-break-after: avoid; }
+  h5 { font-size: 11pt; margin: 0.45rem 0 0.2em; color: #555; page-break-after: avoid; }
+  h6 { font-size: 11pt; margin: 0.4rem 0 0.2em; color: #777; font-weight: normal; }
 
   /* ---- 段落 ---- */
   p { margin: 0.5em 0; text-align: justify; }
@@ -257,16 +257,16 @@ const css = `
 
   /* ---- 代码块 ---- */
   pre {
+    margin: 0.5em 0;
     background: #f8f8f8;
     border: 1px solid #e0e0e0;
     border-radius: 4px;
-    padding: 10px 14px;
-    font-size: 9pt;
+    padding: 8px 10px;
+    font-size: 8pt;
     line-height: 1.5;
     overflow-x: auto;
-    white-space: pre-wrap;
-    word-break: break-all;
-    page-break-inside: avoid;
+    white-space: pre;
+    word-break: normal;
   }
   pre code { background: none; padding: 0; }
 
@@ -276,7 +276,6 @@ const css = `
     border-collapse: collapse;
     margin: 0.8em 0;
     font-size: 10pt;
-    page-break-inside: avoid;
   }
   th, td {
     border: 1px solid #d0d0d0;
@@ -296,7 +295,7 @@ const css = `
   li { margin: 0.2em 0; }
 
   /* ---- 水平线 ---- */
-  hr { border: none; border-top: 1px solid #ccc; margin: 1.5em 0; page-break-after: avoid; }
+  hr { border: none; border-top: 1px solid #ccc; margin: 1.5em 0; }
 
   /* ---- Mermaid 图表 ---- */
   .mermaid {
@@ -306,9 +305,8 @@ const css = `
     border: 1px solid #e0e5ec;
     border-radius: 4px;
     text-align: center;
-    page-break-inside: avoid;
   }
-  .mermaid svg { max-width: 100%; height: auto; }
+  .mermaid svg { max-width: 100%; max-height: 750px; height: auto; width: auto; }
 
   /* ---- 打印优化 ---- */
   @media print {
