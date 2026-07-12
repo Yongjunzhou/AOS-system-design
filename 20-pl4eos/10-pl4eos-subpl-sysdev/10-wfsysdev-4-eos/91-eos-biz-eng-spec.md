@@ -1076,23 +1076,56 @@ STR-NFR 节点                                        SysReq-NFR 架构 + 量化
 > OR 按类型分流至三条路径，每条路径内的 Skill 形成串行接力链——上游 Skill 产出节点，下游 Skill 消费节点后展开为下一层节点。全链路最终产出两套可交付构件开发的成果。各路径 Skill 清单见 §10.3~§10.5，完整参数见 §10.6。
 
 ```
-┌─ OR（按类型分流）──────────────────────────────────────────────┐
-│                                                                  │
-│  FR-BIZ ──→ wft01-biz ──→ wft02-biz ──→ wft03-biz               │
-│  FR-ENG ──→ wft01-eng ──→ wft02-eng ──→ wft03-eng ──→ wft05-eng │
-│  NFR    ──→ wft01-nfr ──→ wft04-nfr                             │
-│                                                                  │
-└──────────────────────────────────────────────────────────────────┘
+原始材料 → ort00文本化 → ort01切分 → ort02澄清
+                                    │
+                                    ▼
+                              ort03规范化
+                                    │
+                            01-eos-original-requirements.md
+                                    │
+                ┌───────────────────┼───────────────────┐
+                │                   │                   │
+                │ FR-BIZ            │ FR-ENG            │ NFR
+                │                   │                   │
+                ▼                   ▼                   ▼
+          wft01-biz-or2str   wft01-eng-or2str   wft01-nfr-or2str
+          (STR-F 场景业务)    (STR-E 引擎场景)   (STR-NFR 分类)
+                │                   │                   │
+                ▼                   ▼                   ▼
+          wft02-biz-str2ba   wft02-eng-str2ba   wft04-nfr-str2sr
+          (BA 双视角)          (CU BA 设计)      (SysReq-NFR 量化)
+                │                   │                   │
+                ▼                   ▼                   │
+          wft03-biz-ba2sr    wft03-eng-ba2sr             │
+          (SR 功能表单需求)   (构件 SR-F)                │
+                │                   │  (等待 NFR 约束包)   │
+                ▼                   ▼                    │
+           业务配置流水线        wft05-eng-sr2pa ◄───────┘
+           (业务配置方案 ①)      (PA 三类组件设计)
+                                        │
+                                        ▼
+                                   wft06-trace
+                                   (双向追溯验证)
+                                        │
+                                        ▼
+                                   构件开发流水线
+                                   (平台 PA 方案 ②)
+
+① 业务配置架构及构件需求定义
+② 平台产品架构及构件需求定义（含 NFR 约束消费）
+③ 每个 Skill 都可以连续多次运行
 ```
 
 **全链路执行顺序**
+
+> wft 编号对应瀑布式流程步骤号，非分支编号。每个分支仅在有对应设计活动的步骤出现——如 biz 不涉及 NFR 量化（wft04），eng 直接从 BA→SR（wft03）跃至 PA（wft05）。
 
 ```
 准备阶段
   OR 归一化（ort/pre Skill）→ OR 条目状态 = 待处理
   NFR OR 同理
 
-第一轮：三路径并行启动（无相互依赖）
+第一轮：三路径并行启动（eng 与 nfr 间有单向依赖）
   biz 线：FR-BIZ OR → wft01-biz → wft02-biz → wft03-biz → 业务配置需求方案
   eng 线：FR-ENG OR → wft01-eng → wft02-eng → wft03-eng →（等待 NFR 约束包）
   nfr 线：NFR OR    → wft01-nfr → wft04-nfr → NFR 约束包
