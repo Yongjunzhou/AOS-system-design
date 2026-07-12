@@ -114,3 +114,4 @@
 - [EOS UI 模型与业务-引擎映射](eos-ui-model-business-engine-mapping.md) — 2026-06-27：UI 交互模型（单窗分屏无限下钻+面包屑导航）、场景部件:输出文档=1:1、两种产生方式（引擎直产/人工外设）、实体引擎约束子业务TAB、引擎分工总图；10-eos-architecture.md v2.0 同步重写
 - [术语重构：引擎与业务](terminology-refactor-engine-business.md) — 2026-06-26：三术语→两术语重构完成；引擎四级五引擎；业务四级编排；术语表+规范§2.5+25/24/26/27资产文件已更新；23.md待讨论
 - [91规范v4.0引擎重构](91-spec-v4-engine-restructure.md) — 2026-07-10：引擎体系重构讨论定稿并全量联动完成——取消 @engine-document/@engine-ledger/@engine-requirement（13→11），@engine-indicator 独立；正式/轻量文档模型（封面+正文1:1+引用+处理配置）；D/PCA 语义分类保留；25/B.1/B.2 附录残留修复；全部 Skill 和资产文件已对齐
+- [wft01-nfr/wft04-nfr v4.1 深度对齐91规范v4.8](wft01-nfr-wft04-nfr-v41-91-v48-deep-revision.md) — 2026-07-12：wft01-nfr §3.1 重构为§A.2.4四子节模式；wft04-nfr §3.1 重构+NFR流向改为仅eng路径（移除wft03-biz消费）；wft01-nfr→v4.1, wft04-nfr→v4.1
