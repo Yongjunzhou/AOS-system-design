@@ -144,7 +144,12 @@ if (isPath && existsSync(input)) {
 // 输出路径
 let outputPath;
 if (positional[1]) {
-  outputPath = resolve(positional[1]);
+  // 如果指定了输出路径，且不含目录分隔符（纯文件名），放到源文件同目录
+  if (!positional[1].includes('/') && !positional[1].includes('\\')) {
+    outputPath = resolve(dirname(inputPath), positional[1]);
+  } else {
+    outputPath = resolve(positional[1]);
+  }
 } else {
   const dir = dirname(inputPath);
   const name = basename(inputPath, extname(inputPath));
