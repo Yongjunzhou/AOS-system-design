@@ -222,7 +222,26 @@ bash ../scripts/update-meta.sh <01-file> move-node "<OR-ID>" "wft01-biz" "done"
 
 ### Step End · 运行结束输出（含反馈等待）
 
-按三区模板（[§A.3.2](../protocols/wft01-runtime-protocols.md#a32-step-end-输出模板三区结构)）输出方案摘要。
+按三区模板输出方案摘要：
+
+```text
+当前状态：<待确认方案 / 可以分解分配>
+  修订 STR-F-XXX（+N OR，v{N-1}→v{N}）/ 新建 STR-F-YYY（聚合 K 条 OR，v1）
+  退回规范化 OR-ZZZ（建议拆为子 OR 后重新提交预处理链）
+  待重新分组 OR-WWW（本轮宿主误匹配，留待下一轮）
+资产落账：<23 Bn引用写回 / 未落账>
+补充原始需求材料：<无 / YYYYMMDD-场景业务名-补充原始需求材料.md>（已登记 OR 原料状态表）
+
+一、方案反馈
+  直接回复修改意见即可，例如：
+    - "第三个文档引擎改为 @engine-workorder"
+    - "整体确认"
+    - "采购申请单的 PL6-B 粒度太粗，拆分一下"
+
+二、下一步
+  本Skill → 选择 FR-BIZ OR（含 `需退回重切` 的 OR 拆分后重新提交）或 `需wft01修订` 的 STR-F 节点重新运行
+  后续    → STR-F-XXX（可以分解分配）、STR-F-ZZZ（待补充分解分配）→ wft02-biz
+```
 
 **输出后不要结束对话。** 等待人类反馈——人类可直接用自然语言回复修改意见：
 
