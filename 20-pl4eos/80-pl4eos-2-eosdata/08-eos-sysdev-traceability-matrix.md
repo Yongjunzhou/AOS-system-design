@@ -3,7 +3,7 @@
 
 **文档版本**：v2.0
 **创建日期**：2026-05-20
-**修订日期**：2026-06-21
+**修订日期**：2026-07-28
 **状态**：骨架已改造，待填充
 **文档类型**：验证类索引文档
 **权威状态源**：本文档 `1. 追溯关系状态与处理队列`
@@ -111,6 +111,8 @@
 | 关系ID | 源节点 | 源文档 | 关系类型 | 目标节点 | 目标文档 | 状态 | 块ID | 最后更新 |
 |--------|--------|--------|----------|----------|----------|------|------|----------|
 | TRACE-TEMPLATE | — | — | derived_from / refines / allocated_to / satisfies / implemented_by / uses_asset | — | — | 模板 | TRACE-TEMPLATE | 2026-06-21 |
+| TRACE-GOV-ARCH | STR-F-GOV-001~007 | 02-eos-stakeholder-requirements-architecture.md | uses_asset | @prod-gov-arch | 23-eos-output-architecture.md | 已确认 | — | 2026-07-28 |
+| TRACE-GOV-DATA | STR-F-GOV-008~009 | 02-eos-stakeholder-requirements-architecture.md | uses_asset | @prod-gov-data | 23-eos-output-architecture.md | 已确认 | — | 2026-07-28 |
 
 ---
 
@@ -223,5 +225,6 @@
 
 | 日期 | 版本 | 变更类型 | 变更摘要 | 操作 Skill |
 |------|------|----------|----------|-----------|
+| 2026-07-28 | v2.1 | 补链 | 资产分片补两条 GOV 追溯链：STR-F-GOV-001~007→@prod-gov-arch、STR-F-GOV-008~009→@prod-gov-data（承接 23 号资产删除 STR引用 字段后的向上追溯，追溯权威源归本文档） | — |
 | 2026-06-21 | v2.0 | 结构改造 | 从静态追溯矩阵改为关系索引型文档，新增 AI 读取说明、状态队列、分片索引、关系块和问题块 | Codex |
 | 2026-05-20 | v1.0 | 初始化 | 初始追溯矩阵模板 | — |
