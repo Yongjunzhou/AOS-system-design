@@ -94,3 +94,4 @@
 
 - [BA存在的本质原因](ba_existence_reason.md) — BA作为相关方可验证的业务操作界面，确保功能需求捕获的完备性
 - [状态文档子表映射](status-document-subtable-references.md) — 所有Skill尾部行动清单统一指向状态文档子表（编号+表名），全链引用协议
+- [23号资产§11符合性修复](23-asset-sec11-conformance-fix.md) — 2026-07-28 反馈区删除(方案A)+归属裁定用[需裁决]+§11.5@srf-与02资产STR-F-格式跨文档不一致待办
