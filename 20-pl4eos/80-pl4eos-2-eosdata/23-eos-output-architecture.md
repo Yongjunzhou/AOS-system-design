@@ -2,7 +2,7 @@
 
 **文档版本**：v2.1
 **修订日期**：2026-07-28
-**HEAD @上次 AI 运行**：eacdf0c
+**HEAD @上次 AI 运行**：351bd4a
 
 > **概述**：EOS 输出产品架构的权威资产文件。按业务域→E2E项目→构件类型三层组织，以 `##### @{id}` 节点块记录各层级节点的基本信息、引擎模型引用、业务定义引用和生命周期状态。[24 可复用业务资产](24-eos-business-assets.md) 和 [25 引擎资产](25-eos-engine-models.md) 并列，共同构成完整的输出产品架构资产体系。通过 ID 引用关联 [26 文档资产](26-eos-document-definitions.md) 和 [28 看板指标资产](28-eos-dashboard-indicator-assets.md)。
 >
