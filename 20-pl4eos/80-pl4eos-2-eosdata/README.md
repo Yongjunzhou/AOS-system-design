@@ -40,7 +40,7 @@
 | 01 | [原始需求详细定义](01-eos-original-requirements.md) | 第 1 层 | 第 1 步 | 结构已改造，现有 OR 已迁入索引 |
 | 02 | [相关方需求架构定义](02-eos-stakeholder-requirements-architecture.md) | 第 2 层（架构定义） | 第 1 步 | 结构已改造，待填充 |
 | 03 | [相关方需求详细定义](03-eos-stakeholder-requirements-detailed.md) | 第 2 层（详细定义） | 第 2 步 | 结构已改造，待填充 |
-| 04 | [业务架构定义](04-eos-business-architecture.md) | 第 3 层 | 第 2 步 | 结构已改造，待填充 |
+| 04 | [业务流程定义](04-eos-business-architecture.md) | 第 3 层 | 第 2 步 | 结构已改造，待填充 |
 | 05 | [系统需求架构定义](05-eos-system-requirements-architecture.md) | 第 4 层（架构定义） | 第 3-4 步 | 结构已改造，待填充 |
 | 06 | [系统需求详细定义](06-eos-system-requirements-detailed.md) | 第 4 层（详细定义） | 第 5 步 | 结构已改造，待填充 |
 | 07 | [产品架构定义](07-eos-product-architecture.md) | 第 5 层 | 第 5 步 | 结构已改造，待填充 |
@@ -74,7 +74,7 @@
     ↓ N:1 分配
 第2层：相关方需求 (SR)       → 02-eos-...-architecture.md + 03-eos-...-detailed.md
     ├─ 功能部分 ↓
-    │   第3层：业务架构 (BA)  → 04-eos-business-architecture.md
+    │   第3层：业务流程 (BP)  → 04-eos-business-architecture.md
     │       ↓
     │   第4层：系统需求 (SysReq) → 05-eos-...-architecture.md + 06-eos-...-detailed.md
     │       ↓

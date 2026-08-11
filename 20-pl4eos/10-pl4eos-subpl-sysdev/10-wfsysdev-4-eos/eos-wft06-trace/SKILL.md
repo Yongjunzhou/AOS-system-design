@@ -32,8 +32,8 @@ description: 三路径双向追溯与跨链验证。验证biz/eng/nfr三条异�
 
 | 路径 | 端到端链路 | 验证重点 |
 |------|------------|---------|
-| biz | FR-BIZ OR → STR-F → BA 输出文档/PL6 → 功能表单/窗口标签页 → FR-BIZ 指标分配 | 需求承接、PA 完整性、`可构件开发` 门禁 |
-| eng | FR-ENG OR → STR-E → CU BA → 配置页面 SR-F → PA 三类组件 | 主责能力域唯一、共享不重复、`待追溯验证` 门禁 |
+| biz | FR-BIZ OR → STR-F → BP 输出文档/PL6 → 功能表单/窗口标签页 → FR-BIZ 指标分配 | 需求承接、PA 完整性、`可构件开发` 门禁 |
+| eng | FR-ENG OR → STR-E → CU BP → 配置页面 SR-F → PA 三类组件 | 主责能力域唯一、共享不重复、`待追溯验证` 门禁 |
 | nfr | NFR OR → STR-NFR → SysReq-NFR → 约束行 → 约束包 → PA 消费结论 | 宿主唯一、约束包完整、PA 承接闭环 |
 
 **跨路径接口**：
@@ -67,7 +67,7 @@ description: 三路径双向追溯与跨链验证。验证biz/eng/nfr三条异�
 
 | 路径 | 加载文件 |
 |------|---------|
-| biz | `01/02/04/05/06` 中与选定 STR-F/BA/需求相关的节点块 |
+| biz | `01/02/04/05/06` 中与选定 STR-F/BP/需求相关的节点块 |
 | eng | `01/02/04/05/06/07` 中与选定 STR-E/CU/SR-F/PA 相关的节点块 |
 | nfr | `01/02/05/06`、分层约束表、约束包及 wft05 消费记录 |
 | 跨链 | 额外加载 25 引擎模型和 FR-ENG 缺口线索 |
@@ -115,8 +115,8 @@ description: 三路径双向追溯与跨链验证。验证biz/eng/nfr三条异�
 
 | 路径 | 矩阵列 |
 |------|--------|
-| biz | `FR-BIZ OR \| STR-F \| BA输出文档/PL6 \| 功能表单/窗口标签页 \| FR-BIZ指标分配 \| 追溯状态` |
-| eng | `FR-ENG OR \| STR-E \| CU BA \| 配置页面SR-F \| PA组件 \| 追溯状态` |
+| biz | `FR-BIZ OR \| STR-F \| BP输出文档/PL6 \| 功能表单/窗口标签页 \| FR-BIZ指标分配 \| 追溯状态` |
+| eng | `FR-ENG OR \| STR-E \| CU BP \| 配置页面SR-F \| PA组件 \| 追溯状态` |
 | nfr | `NFR OR \| STR-NFR \| SysReq-NFR \| 约束行 \| 包版本 \| PA消费结论 \| 追溯状态` |
 | biz→eng | `业务页面 \| 引擎/CU/SR-F \| PA能力 \| FR-ENG缺口处理结论 \| 覆盖状态` |
 | nfr→eng | `约束行 \| 包版本 \| PA组件/平台决策 \| 消费版本 \| 承接状态` |

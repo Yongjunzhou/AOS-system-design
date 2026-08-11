@@ -7,7 +7,7 @@
 >
 > **适用场景**：瀑布式系统设计第6步（最终验证步骤）；支持 biz 单链、eng 单链、nfr 单链、跨链和全链五种验证批次。
 >
-> **版本**：v3.2 | **修订**：2026-07-13 | **说明**：增加 STR-E 主责能力域唯一性、独立验收边界及共享能力不重复验证
+> **版本**：v3.3 | **修订**：2026-07-13 | **说明**：增加 STR-E 主责能力域唯一性、独立验收边界及共享能力不重复验证
 
 ---
 
@@ -39,8 +39,8 @@
 
 | 路径 | 端到端链路 | 本步验证内容 |
 |------|------------|-------------|
-| biz | FR-BIZ OR → STR-F → BA 输出文档/PL6 → 功能表单/业务节点操作页面 | 需求承接、配置业务系统 PA 完整性、FR-BIZ 指标分配、来源追溯和 `可构件开发` 门禁 |
-| eng | FR-ENG OR → STR-E → CU BA → 平台操作页面 SR-F → PA 三类组件 | STR-E 主责能力域唯一、共享依赖不重复、CU 配置能力、页面/构件覆盖、SR-F→PA 承接和 `待追溯验证` 门禁 |
+| biz | FR-BIZ OR → STR-F → BP 输出文档/PL6 → 功能表单/业务节点操作页面 | 需求承接、配置业务系统 PA 完整性、FR-BIZ 指标分配、来源追溯和 `可构件开发` 门禁 |
+| eng | FR-ENG OR → STR-E → CU BP → 平台操作页面 SR-F → PA 三类组件 | STR-E 主责能力域唯一、共享依赖不重复、CU 配置能力、页面/构件覆盖、SR-F→PA 承接和 `待追溯验证` 门禁 |
 | nfr | NFR OR → STR-NFR → SysReq-NFR → 分层约束行 → NFR 约束包 → eng PA | 指标可验证、宿主唯一、约束包完整、消费版本及 PA 承接闭环 |
 
 > 三条路径异构：biz 的业务应用页面同时是配置业务系统 PA，但不写入 07；eng 的软件组件 PA 写入 07；nfr 不产生第二套 PA。wft05-eng 是 FR-BIZ 指标约束包和 NFR 约束包的软件实现消费方。
@@ -73,7 +73,7 @@
 | 8 | 生成产出 + OR 晋升 | 追溯矩阵 + 验证报告 + OR 状态晋升 | 统一 | 产出文件 | 08/09 + OR |
 | End | 输出交互 | 审查指引 + 行动清单 | 人类 | 行动清单 | — |
 
-核心驱动逻辑：先按验证批次确定路径范围，再按各路径真实层级检查唯一分配、聚合合理性和双向追溯，最后执行跨路径接口验证。不得用统一的 `OR→SR→BA→SysReq→PA` 模板套用三条路径。
+核心驱动逻辑：先按验证批次确定路径范围，再按各路径真实层级检查唯一分配、聚合合理性和双向追溯，最后执行跨路径接口验证。不得用统一的 `OR→SR→BP→SysReq→PA` 模板套用三条路径。
 
 ### 3.1 Step Start · 验证批次与前置门禁
 
@@ -101,8 +101,8 @@
 
 | 路径 | 检查链路 |
 |------|---------|
-| biz | FR-BIZ OR→STR-F；STR-F→BA 输出文档/PL6；BA→功能表单/业务节点操作页面；FR-BIZ指标→引擎/CU |
-| eng | FR-ENG OR→STR-E；STR-E→CU BA；CU→平台操作页面 SR-F；SR-F→PA 组件 |
+| biz | FR-BIZ OR→STR-F；STR-F→BP 输出文档/PL6；BP→功能表单/业务节点操作页面；FR-BIZ指标→引擎/CU |
+| eng | FR-ENG OR→STR-E；STR-E→CU BP；CU→平台操作页面 SR-F；SR-F→PA 组件 |
 | nfr | NFR OR→STR-NFR；分类需求项→唯一 SysReq-NFR；约束行→唯一约束包条目→PA 消费结论 |
 
 “1:1”只在该层规则确实要求唯一分配时使用；允许聚合的环节验证唯一宿主和反向来源完整性，不机械要求一对一。
@@ -115,8 +115,8 @@
 
 对每个映射环节执行：Q1 正向目标存在、Q2 反向来源存在、Q3 语义/指标不降级。结果标记：✅完整、⚠️待确认、❌中断、❓证据不足。
 
-- biz 正向：`FR-BIZ OR→STR-F→BA→业务应用页面→FR-BIZ指标分配`；反向相反。
-- eng 正向：`FR-ENG OR→STR-E→CU BA→平台操作页面 SR-F→PA`；反向相反。
+- biz 正向：`FR-BIZ OR→STR-F→BP→业务应用页面→FR-BIZ指标分配`；反向相反。
+- eng 正向：`FR-ENG OR→STR-E→CU BP→平台操作页面 SR-F→PA`；反向相反。
 - nfr 正向：`NFR OR→STR-NFR→SysReq-NFR→约束行→约束包→PA消费结论`；反向相反。
 
 ### 3.6 Step 6 · 跨路径接口验证
@@ -187,7 +187,7 @@ AI 动作序列：读取本文件 → 读取验证批次 → 按路径范围加�
 ├─ 01-eos-original-requirements.md — 原始需求架构+详细定义
 ├─ 02-eos-stakeholder-requirements-architecture.md — 相关方需求架构定义
 ├─ 03-eos-stakeholder-requirements-detailed.md — 相关方需求详细定义
-├─ 04-eos-business-architecture.md — 业务架构
+├─ 04-eos-business-architecture.md — 业务流程
 ├─ 05-eos-system-requirements-architecture.md — 系统需求架构定义（功能+NFR）
 ├─ 06-eos-system-requirements-detailed.md — 系统需求详细定义（9级活动）
 ├─ 07-eos-product-architecture.md — 产品架构
@@ -234,14 +234,14 @@ AI 动作序列：读取本文件 → 读取验证批次 → 按路径范围加�
 加载的资产概览：[引用5.1的分析报告]
 
 验证范围：
-1. biz：FR-BIZ OR→STR-F→BA 输出文档/PL6→业务配置需求。
-2. eng：FR-ENG OR→STR-E→CU BA→平台操作页面 SR-F→PA 组件。
+1. biz：FR-BIZ OR→STR-F→BP 输出文档/PL6→业务配置需求。
+2. eng：FR-ENG OR→STR-E→CU BP→平台操作页面 SR-F→PA 组件。
 3. nfr：NFR OR→STR-NFR→唯一 SysReq-NFR 宿主→约束行→约束包→PA 消费结论。
 
 输出格式：
 | 约束范围 | 总条目数 | 通过数 | 未通过数 | 通过率 |
 |---------|--------|-------|---------|-------|
-| biz：OR→STR-F→BA→配置需求 | N | N | 0 | 100% |
+| biz：OR→STR-F→BP→配置需求 | N | N | 0 | 100% |
 | eng：OR→STR-E→CU→SR-F→PA | N | N | 0 | 100% |
 | nfr：OR→STR-NFR→SysReq-NFR→约束包→PA | N | N | 0 | 100% |
 ```
@@ -251,7 +251,7 @@ AI 动作序列：读取本文件 → 读取验证批次 → 按路径范围加�
 ```
 请验证 N:1 承接的合理性。
 
-分别检查 STR-F、STR-E、BA、CU、SysReq-NFR 和 PA 的聚合是否语义内聚、边界一致。`2~5 条/节点`仅为风险提示；对象级规范规定了其他基数时，以对象级规范为准。
+分别检查 STR-F、STR-E、BP、CU、SysReq-NFR 和 PA 的聚合是否语义内聚、边界一致。`2~5 条/节点`仅为风险提示；对象级规范规定了其他基数时，以对象级规范为准。
 
 输出格式：
 | 节点 | 承接数 | 评价 | 标记 | 建议 |
@@ -270,8 +270,8 @@ N:1 验证结果：[引用5.3的输出]
 —— 执行 ——
 
 1. 【正向追溯】按三条真实路径追踪：
-   biz：FR-BIZ OR → STR-F → BA → 业务配置需求
-   eng：FR-ENG OR → STR-E → CU BA → 平台操作页面 SR-F → PA
+   biz：FR-BIZ OR → STR-F → BP → 业务配置需求
+   eng：FR-ENG OR → STR-E → CU BP → 平台操作页面 SR-F → PA
    nfr：NFR OR → STR-NFR → SysReq-NFR → 约束行 → 约束包 → PA消费结论
 
    对每个映射环节（如 OR→SR），用三个维度判断：
@@ -363,7 +363,7 @@ N:1 验证结果：[引用5.3的输出]
 
 追溯矩阵分节格式：
 - biz：`FR-BIZ OR | STR-F | BA输出文档/PL6 | 功能表单/业务节点操作页面 | FR-BIZ指标分配 | 追溯状态`
-- eng：`FR-ENG OR | STR-E | CU BA | 平台操作页面SR-F | PA组件 | 追溯状态`
+- eng：`FR-ENG OR | STR-E | CU BP | 平台操作页面SR-F | PA组件 | 追溯状态`
 - nfr：`NFR OR | STR-NFR | SysReq-NFR | 约束行 | 包版本 | PA消费结论 | 追溯状态`
 - biz→eng：`业务配置需求 | 引擎/CU/SR-F | PA能力 | FR-ENG缺口处理结论 | 覆盖状态`
 - nfr→eng：`约束行 | 包版本 | PA组件/平台决策 | 消费版本 | 承接状态`

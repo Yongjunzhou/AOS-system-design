@@ -12,7 +12,7 @@
 | `03-generalspec-sysint.md` | 集成交付通用规范 | 待编写 |
 | `04-generalspec-sysops.md` | 系统运维通用规范 | 待编写 |
 | `06-generalspec-glossary.md` | 通用术语对照（v2.4） | 核心术语英中对照（11个分类） |
-| `07-generalspec-architecture-fundamentals.md` | **架构基础概念与方法**（v1.0） | 系统/架构/架构决策/架构视图的定义与原理，消除常见概念混淆 |
+| `07-generalspec-architecture-fundamentals.md` | **架构基础概念与方法**（v3.0） | 八章+两附录：系统/架构/架构决策/架构视图的定义与原理，消除常见概念混淆，含设计链四层决策全景及业务架构实践 |
 
 > **合并说明**：原 `01-general-sysdev-standards.md`（设计准则）和 `02-general-sysdev-4modes-guide.md`（4模式指南）已合并为 `01-generalspec-sysdev.md`。旧文档已归档至 `90-hold/00-archived-spec-docs/general/`。
 

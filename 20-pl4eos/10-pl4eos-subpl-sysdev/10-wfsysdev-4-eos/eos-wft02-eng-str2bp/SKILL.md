@@ -1,13 +1,13 @@
 ---
-name: eos-wft02-eng-str2ba
-description: STR-E→BA·A1配置单元架构设计。接收≥1个STR-E节点（可分解分配/待补充分解分配），
+name: eos-wft02-eng-str2bp
+description: STR-E→BP·A1配置单元架构设计。接收≥1个STR-E节点（可分解分配/待补充分解分配），
              将名称级CU候选展开为A1 BA详细设计（CU收敛→配置能力定义→依赖校验→缺口补需），
              写回23/25资产，形成可进入wft03-eng的BA节点。
 ---
 
-# eos-wft02-eng · STR-E → BA · A1 配置单元架构设计
+# eos-wft02-eng · STR-E → BP · A1 配置单元架构设计
 
-> **设计依据**：[eos-wft02-eng-str2ba.md](../eos-wft02-eng-str2ba.md)（人类方案——权威源）
+> **设计依据**：[eos-wft02-eng-str2bp.md](../eos-wft02-eng-str2bp.md)（人类方案——权威源）
 > **运行时协议**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md) 附录A
 > **领域规范**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md)
 
@@ -20,21 +20,21 @@ description: STR-E→BA·A1配置单元架构设计。接收≥1个STR-E节点�
 | 负责 | 不负责（路由指向） |
 |------|-------------------|
 | 接收≥1个 STR-E 节点（`可以分解分配`/`待补充分解分配`），校验状态/主责能力域/CU候选 | STR-E 场景边界和 CU 候选名称级识别 → `wft01-eng` |
-| 按目标引擎+能力域匹配已有 BA——同域不同场景不强行合并 | A2/Bn 业务架构输出文档设计 → `wft02-biz` |
+| 按目标引擎+能力域匹配已有 BP——同域不同场景不强行合并 | A2/Bn 业务流程输出文档设计 → `wft02-biz` |
 | 收敛 CU 清单——确认既有/扩展既有/新增/拆分/合并/占位/退回上游七种判定 | 配置页面、布局组件、构件设计 → `wft03-eng` |
 | 定义每个 CU 的四类配置能力（配置入口/配置要素/系统处理/运行期能力）+ 引擎状态迁移 | 前后端组件、接口、数据库设计 → `wft05-eng` |
 | A2 上下文装配（产品/场景引用+业务运行对象+触发追溯）+ A1 产品装配 | 将业务实例配置写入 25（25 是模型事实源） |
 | 校验四类依赖（引擎内/跨引擎/布局组件构件/治理） | — |
 | 缺口补需——CU缺口+依赖缺口→补充FR-ENG或25模型建议 | — |
-| 人类确认后推进 BA→`可以SR设计` + STR-E→`已分解分配` | — |
-| 接收 wft03-eng 退回的 `需wft02修订` BA，按人类方案修订 | — |
+| 人类确认后推进 BP→`可以SR设计` + STR-E→`已分解分配` | — |
+| 接收 wft03-eng 退回的 `需wft02修订` BP，按人类方案修订 | — |
 
 ### 上下游衔接
 
 | 方向 | Skill | 交接内容 |
 |------|-------|---------|
 | 上游 | `wft01-eng` | 产出 STR-E（主责能力域、能力链、CU候选、依赖STR-E）。通过 `## AI可以处理节点` 的"待 wft02-eng 处理"分节检测 |
-| 下游 | `wft03-eng` | 消费 `可以SR设计` 的 BA，依据 CU 配置能力推断配置页面。缺陷时退回 `需wft02修订` |
+| 下游 | `wft03-eng` | 消费 `可以SR设计` 的 BP，依据 CU 配置能力推断配置页面。缺陷时退回 `需wft02修订` |
 
 ---
 
@@ -53,7 +53,7 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-archit
 
 | 条件 | 判定 | 动作 |
 |------|------|------|
-| BA 状态=`需wft02修订` 且人类未提供改进方案 | 退回方案缺失 | 输出 wft03-eng 缺失说明 → **退出** |
+| BP 状态=`需wft02修订` 且人类未提供改进方案 | 退回方案缺失 | 输出 wft03-eng 缺失说明 → **退出** |
 | STR 类型不是 STR-E | 类型不匹配 | 输出类型分布 + 路由指引 → **退出** |
 | STR-E 状态≠`可以分解分配`/`待补充分解分配` | 状态不符 | 输出状态分布 → **退出** |
 | STR-E 缺少场景边界/能力链/触发追溯 | 上游待修 | STR-E→`需wft01修订`+缺失说明 → **退出** |
@@ -61,7 +61,7 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-archit
 | 选中 STR-E >5 个 | 软提示 | 输出超限提示 → 人类确认 |
 | 无任何待处理 | — | 输出"无待处理对象"→ **退出** |
 
-**退回优先**：存在 `需wft02修订` BA → 检查人类是否提供改进方案。已提供 → 读取缺失说明，走 Phase B 修订。未提供 → 输出缺失说明 → **退出**。
+**退回优先**：存在 `需wft02修订` BP → 检查人类是否提供改进方案。已提供 → 读取缺失说明，走 Phase B 修订。未提供 → 输出缺失说明 → **退出**。
 
 ---
 
@@ -74,13 +74,13 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-r
 bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md
 ```
 
-**2. 加载本轮 STR-E + 已有 BA**：
+**2. 加载本轮 STR-E + 已有 BP**：
 
 ```bash
 bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md "待 wft02-eng 处理"
 bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md <STR-E-ID>
 bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md "BA树画像"
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md <BA-ID>
+bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md <BP-ID>
 ```
 
 **3. 加载资产全貌**：
@@ -97,7 +97,7 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-architect
 
 ### Step 2 · 方案反馈处理
 
-**触发条件**：Step Start 检出 `需wft02修订` BA，或上一轮反馈等待中人类提出修改意见。
+**触发条件**：Step Start 检出 `需wft02修订` BP，或上一轮反馈等待中人类提出修改意见。
 
 **处理规则**：
 
@@ -105,7 +105,7 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-architect
 2. **逐条处理**——AI 输出后人类直接回复 → 当前轮次继续；wft03 退回 → 下一轮走 Step Start 退回优先
 3. 修改后检查是否仍满足 STR-E 需求
 4. 结构性变更（A1路径/CU清单/配置能力/依赖重组）→ 按需重入 Step 3
-5. 全部条目获认可 → BA → `可以SR设计`
+5. 全部条目获认可 → BP → `可以SR设计`
 
 **特化参数**：
 
@@ -113,7 +113,7 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-architect
 |------|-------------|
 | **锚点需求** | STR-E 节点——以 STR-E 场景业务需求为锚 |
 | **操作条目** | A1 产品路径 + 每个 CU（配置入口/配置要素/系统处理/运行期能力）+ 每条依赖 + 每条缺口补需 |
-| **推进目标** | 全部条目 `[同意]`+`[已处理]` → BA→`可以SR设计` |
+| **推进目标** | 全部条目 `[同意]`+`[已处理]` → BP→`可以SR设计` |
 | **级联触发条件** | A1路径/CU清单变更、依赖变更或引擎归属变更 → 触发需求级联检查 |
 | **资产对齐级联** | CU 定义变更 → 更新 25 引用；A1 路径变更 → 更新 23 引用 |
 
@@ -126,25 +126,25 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 
 ---
 
-### Step 3 · A1/CU BA 设计
+### Step 3 · A1/CU BP 设计
 
 #### Phase A — STR-E 宿主匹配
 
-逐 STR-E 按目标引擎+能力域匹配已有 BA：
+逐 STR-E 按目标引擎+能力域匹配已有 BP：
 
 | 条件 | 路由 |
 |------|------|
-| 同一目标引擎 + 能力域一致或互补，落入已有 BA 的 A1 路径 | 归入该 BA → Phase B |
+| 同一目标引擎 + 能力域一致或互补，落入已有 BP 的 A1 路径 | 归入该 BP → Phase B |
 | 不满足 | 进入待聚合池 → Phase C |
 | 同一 CU 被多个主引擎争用或 A1 路径不一致 | 标记 `[需裁决]` |
-| CU 属于依赖的共享 STR-E | 不进入本 BA（共享能力独立建模，消费方只记录依赖） |
+| CU 属于依赖的共享 STR-E | 不进入本 BP（共享能力独立建模，消费方只记录依赖） |
 
 待聚合池按**同一目标引擎 + 同一能力域**分组。
 
-#### Phase B — 修订已有 BA
+#### Phase B — 修订已有 BP
 
 1. **要素提取**——从本轮 STR-E 增量合并 A2 上下文和 CU 候选。已有上下文仅追加不重建
-2. **宿主匹配检查**——Q1 直接归入→追加来源；Q2 扩展归入→扩展 BA+变更声明；冲突→`[需裁决]`（详见 human spec §2.4.3）
+2. **宿主匹配检查**——Q1 直接归入→追加来源；Q2 扩展归入→扩展 BP+变更声明；冲突→`[需裁决]`（详见 human spec §2.4.3）
 3. **CU 收敛与关系检测**——执行七种收敛判定 + 六种关系检测：
 
 **CU 收敛七判定**：
@@ -170,9 +170,9 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 | 补充 | CU不匹配 | 新增到清单 |
 | 过时 | 基线CU未被本轮覆盖 | `[过时]`+保留不删 |
 
-4. **变更影响声明**——判定变更类型，写入 BA 节点末尾
+4. **变更影响声明**——判定变更类型，写入 BP 节点末尾
 
-#### Phase C — 新建 BA
+#### Phase C — 新建 BP
 
 1. **确定 A1 产品路径**——流程与 IT 域 → 引擎 → CU
 2. **装配 A2 上下文**——业务配置人员→STR-E→配置活动序列→运行期能力可用
@@ -187,13 +187,13 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 | 运行期能力 | 引擎按 CU 定义生成或渲染什么制品/构件/功能 | 物理表、功能表单、菜单入口、按钮构件等 |
 
 5. **定义引擎状态迁移**——配置草稿/已校验/已发布/已装载/已停用/已回滚等状态及触发条件
-6. **校验依赖并组装 BA**——四类依赖（引擎内/跨引擎/布局组件构件/治理），写入 `04-*.md`
+6. **校验依赖并组装 BP**——四类依赖（引擎内/跨引擎/布局组件构件/治理），写入 `04-*.md`
 
 ---
 
 ### Step 4 · 缺口补需与变更声明
 
-按每个 BA 独立执行。新建 → 全量检查；修订 → 仅当 CU 拓扑变化时重验。
+按每个 BP 独立执行。新建 → 全量检查；修订 → 仅当 CU 拓扑变化时重验。
 
 **1. 缺口识别**：
 
@@ -213,10 +213,10 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 
 ### Step 5 · 资产写回与落账
 
-仅写回状态=`可以SR设计` 的 BA 节点。
+仅写回状态=`可以SR设计` 的 BP 节点。
 
 **写回操作**：
-1. 遍历已确认 BA，按引擎判定写回 23 资产——已有引擎追加引用（去重），新引擎候选写入建议
+1. 遍历已确认 BP，按引擎判定写回 23 资产——已有引擎追加引用（去重），新引擎候选写入建议
 2. 遍历 CU 配置能力，写回 25 资产——已确认 CU 写入引用，未确认仅保留候选
 3. `02` STR-E → `已分解分配`（记录 `STR-E 消费版本：v{N}`）
 
@@ -230,7 +230,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md update-head
 
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md add-recent-change "wft02-eng" "资产写回" "<BA-ID>" "23/25 资产写回"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md add-recent-change "wft02-eng" "资产写回" "<BP-ID>" "23/25 资产写回"
 ```
 
 ---
@@ -241,7 +241,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 
 ```text
 当前状态：<待确认方案 / 可以SR设计>
-  本轮 BA：<BA-ID / 新建或修订 / 版本变化 / 来源 STR-E>
+  本轮 BP：<BP-ID / 新建或修订 / 版本变化 / 来源 STR-E>
 资产落账：<未落账 / 已写回 02/04/23/25>
 补充原始需求材料：<无 / YYYYMMDD-wft02-eng-批次ID-引擎需求增补.md>（已登记 OR 原料状态表）
 25 模型建议：<无 / 已输出 N 条，待人类审查后录入>
@@ -252,8 +252,8 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
   C. 驳回重做 → 在确认状态中标注 [驳回]：...
 
 二、下一步
-  本Skill → 选择 STR-E 节点（`可以分解分配` / `待补充分解分配`）或 `需wft02修订` 的 BA 节点重新运行
-  后续    → BA-XXX（可以SR设计）、BA-YYY（待补充SR设计）→ wft03-eng
+  本Skill → 选择 STR-E 节点（`可以分解分配` / `待补充分解分配`）或 `需wft02修订` 的 BP 节点重新运行
+  后续    → BP-XXX（可以SR设计）、BP-YYY（待补充SR设计）→ wft03-eng
 ```
 
 **输出后不要结束对话**，等待人类反馈。
@@ -265,7 +265,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 | 质疑/模糊意见 | 解释或追问 |
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md add-recent-change "wft02-eng" "反馈处理" "<BA-ID>" "<AI总结>"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md add-recent-change "wft02-eng" "反馈处理" "<BP-ID>" "<AI总结>"
 ```
 
 ---
@@ -277,7 +277,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 增量清单示例：
 
 ```text
-=== BA-ENG-FLOW-001 本轮更新清单 ===
+=== BP-ENG-FLOW-001 本轮更新清单 ===
 
 [新增] 承接 STR-E-ENG-FLOW-001 v1
 
@@ -350,7 +350,7 @@ CU 清单
 | 补充 | CU不匹配 | 新增到清单 |
 | 过时 | 基线CU未被本轮覆盖 | `[过时]`+保留不删 |
 
-### A.6 BA 完备性判据
+### A.6 BP 完备性判据
 
 | 检查项 | 判据 | 缺口处理 |
 |--------|------|----------|
@@ -360,7 +360,7 @@ CU 清单
 | 运行期可消费 | 足以让wft03-eng推断配置页面 | 不足则保持待确认方案 |
 | 25关系清晰 | 已有/待确认/缺失的模型关系已标注 | 形成25建议 |
 
-### A.7 BA 节点生命周期
+### A.7 BP 节点生命周期
 
 ```
 待确认方案 ──人类确认──→ 可以SR设计 ──wft03锁定──→ 在SR设计 ──wft03完成──→ 已SR设计

@@ -1,13 +1,13 @@
 ---
-name: eos-wft03-eng-ba2sr
-description: BA(A1)→SR-F·配置页面设计。接收≥1个A1 BA节点（可SR设计/待补充SR设计），
+name: eos-wft03-eng-bp2sr
+description: BP(A1)→SR-F·配置页面设计。接收≥1个A1 BA节点（可SR设计/待补充SR设计），
              推断五类配置页面+识别四类构件+组织页面功能架构+设计操作活动+标注PA收敛项，
-             推进BA→已SR设计，SR-F→待产品架构。
+             推进BP→已SR设计，SR-F→待产品架构。
 ---
 
-# eos-wft03-eng · BA(A1) → SR-F · 配置页面设计
+# eos-wft03-eng · BP(A1) → SR-F · 配置页面设计
 
-> **设计依据**：[eos-wft03-eng-ba2sr.md](../eos-wft03-eng-ba2sr.md)（人类方案——权威源）
+> **设计依据**：[eos-wft03-eng-bp2sr.md](../eos-wft03-eng-bp2sr.md)（人类方案——权威源）
 > **运行时协议**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md) 附录A
 > **领域规范**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md)
 
@@ -19,19 +19,19 @@ description: BA(A1)→SR-F·配置页面设计。接收≥1个A1 BA节点（可S
 
 | 负责 | 不负责（路由指向） |
 |------|-------------------|
-| 接收≥1个 A1 BA 节点（`可以SR设计`/`待补充SR设计`），校验 CU IPO/指标/入口线索完整 | CU IPO 定义、CU 拆分/合并 → `wft02-eng` |
+| 接收≥1个 A1 BP 节点（`可以SR设计`/`待补充SR设计`），校验 CU IPO/指标/入口线索完整 | CU IPO 定义、CU 拆分/合并 → `wft02-eng` |
 | 按 引擎+CU+页面类别+页面职责 匹配已有 SR-F | 功能表单和窗口标签页设计 → `wft03-biz` |
 | 五类配置页面推断 + 布局组件组合判定 + 四类构件识别 | 前端/后端组件划分、接口详细规格 → `wft05-eng` |
 | 页面功能架构（TAB/主子/跳转/上下文/权限依赖） | NFR 量化（本 Skill 仅保留约束引用） |
 | 操作活动设计（五类十字段）+ PA 层收敛项标注 | — |
-| 覆盖自查 + 推进 BA→`已SR设计` + SR-F→`待产品架构` | — |
-| 接收 wft05-eng 退回 `需wft03修订`；根因在 BA → 退回 `wft02-eng` | — |
+| 覆盖自查 + 推进 BP→`已SR设计` + SR-F→`待产品架构` | — |
+| 接收 wft05-eng 退回 `需wft03修订`；根因在 BP → 退回 `wft02-eng` | — |
 
 ### 上下游衔接
 
 | 方向 | Skill | 交接内容 |
 |------|-------|---------|
-| 上游 | `wft02-eng` | 产出 A1 BA（CU 配置入口/配置要素/系统处理/运行期能力/FR-ENG 指标/依赖）。通过 `## AI可以处理节点` 的"待 wft03-eng 处理"分节检测 |
+| 上游 | `wft02-eng` | 产出 A1 BP（CU 配置入口/配置要素/系统处理/运行期能力/FR-ENG 指标/依赖）。通过 `## AI可以处理节点` 的"待 wft03-eng 处理"分节检测 |
 | 下游 | `wft05-eng` | 消费 `待产品架构` 的 SR-F，结合指标约束包推断组件。缺陷时退回 `需wft03修订` |
 
 ---
@@ -52,11 +52,11 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirem
 | 条件 | 判定 | 动作 |
 |------|------|------|
 | SR-F 状态=`需wft03修订` 且人类未提供改进方案 | 退回方案缺失 | 输出 wft05-eng 缺失说明 → **退出** |
-| BA 不是 A1 类型 | 类型不匹配 | 提示走 `wft03-biz` → **退出** |
-| BA 状态≠`可以SR设计`/`待补充SR设计` | 状态不符 | 输出状态分布 → **退出** |
-| CU 配置能力定义缺少任一项（入口/要素/处理/运行期能力） | 上游待修 | BA→`需wft02修订`+缺失说明 → **退出** |
-| CU 依赖不闭合且 AI 无法阶段性说明 | 上游待修 | BA→`需wft02修订`+依赖断点 → **退出** |
-| 选中 BA >5 个 | 软提示 | 输出超限提示 → 人类确认 |
+| BP 不是 A1 类型 | 类型不匹配 | 提示走 `wft03-biz` → **退出** |
+| BP 状态≠`可以SR设计`/`待补充SR设计` | 状态不符 | 输出状态分布 → **退出** |
+| CU 配置能力定义缺少任一项（入口/要素/处理/运行期能力） | 上游待修 | BP→`需wft02修订`+缺失说明 → **退出** |
+| CU 依赖不闭合且 AI 无法阶段性说明 | 上游待修 | BP→`需wft02修订`+依赖断点 → **退出** |
+| 选中 BP >5 个 | 软提示 | 输出超限提示 → 人类确认 |
 | 无任何待处理 | — | 输出"无待处理对象"→ **退出** |
 
 **退回优先**：存在 `需wft03修订` SR-F → 已提供改进方案则走 Phase B 修订，未提供则输出缺失说明退出。
@@ -72,11 +72,11 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-arch
 bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md
 ```
 
-**2. 加载本轮 BA + 已有 SR-F**：
+**2. 加载本轮 BP + 已有 SR-F**：
 
 ```bash
 bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md "待 wft03-eng 处理"
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md <BA-ID>
+bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md <BP-ID>
 bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md "SR-F树画像"
 bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md <SR-F-ID>
 ```
@@ -85,7 +85,7 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement
 
 | 资产 | 用途 | 读写 |
 |------|------|------|
-| `04-*.md` | BA 正文（CU 配置能力定义、依赖、追溯） | 读 |
+| `04-*.md` | BP 正文（CU 配置能力定义、依赖、追溯） | 读 |
 | `05-*.md` | 候选 SR-F 节点 | 读/写 |
 | `23-eos-output-architecture.md` | A1 产品路径筛选 | 读 |
 | `25-eos-engine-models.md` | 引擎/CU 类型（只读） | **只读** |
@@ -99,7 +99,7 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement
 
 | 维度 | wft03-eng 值 |
 |------|-------------|
-| **锚点需求** | BA/CU 配置能力定义 |
+| **锚点需求** | BP/CU 配置能力定义 |
 | **操作条目** | 配置页面 + 页面功能架构 + 操作活动 + PA 收敛项 |
 | **推进目标** | 全部条目 `[同意]`+`[已处理]` → `待产品架构` |
 | **级联触发条件** | 页面清单/类别/布局变更、操作活动增删、PA 收敛项边界变化 |
@@ -134,7 +134,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 
 | 关系 | 判定 | 处理 |
 |------|------|------|
-| 确认 | 页面匹配+类别/布局一致+来源升级 | 追加 BA/CU 来源 |
+| 确认 | 页面匹配+类别/布局一致+来源升级 | 追加 BP/CU 来源 |
 | 无新增 | 页面匹配+全部已确认 | 增量合并细节 |
 | 页面职责扩展 | 类别一致+操作活动/PA收敛项边界扩展 | 全量重写，保留历史 |
 | 布局组合变更 | CU配置能力变化导致布局不同 | 更新布局+重判构件 |
@@ -189,7 +189,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 **写回操作**：
 1. `05` 写入或更新 SR-F 架构节点、状态队列、追溯引用
 2. `25` 写入配置页面能力引用或待办（不固化组件设计）
-3. `04` BA→`已SR设计`，记录 `BA 消费版本：v{N}`
+3. `04` BP→`已SR设计`，记录 `BP 消费版本：v{N}`
 4. SR-F→`待产品架构`
 
 **元信息维护**：
@@ -211,7 +211,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 
 ```text
 当前状态：<待确认方案 / 待产品架构>
-  本轮 SR-F：<SR-F-ID / 新建或修订 / 版本变化 / 来源 BA>
+  本轮 SR-F：<SR-F-ID / 新建或修订 / 版本变化 / 来源 BP>
 资产落账：<未落账 / 已写回 04/05/25>
 
 一、方案反馈
@@ -220,7 +220,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
   C. 驳回重做 → 在确认状态中标注 [驳回]：...
 
 二、下一步
-  本Skill → 选择 BA 节点（`可以SR设计` / `待补充SR设计`）或 `需wft03修订` 的 SR-F 节点重新运行
+  本Skill → 选择 BP 节点（`可以SR设计` / `待补充SR设计`）或 `需wft03修订` 的 SR-F 节点重新运行
   后续    → SR-F-XXX（待产品架构）、SR-F-YYY（待补充PA设计）→ wft05-eng
 ```
 
@@ -247,7 +247,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 ```text
 === SR-F-ENG-FLOW-PAGE-001 本轮更新清单 ===
 
-[新增] 承接 BA-ENG-FLOW-001 / CU-流程节点配置
+[新增] 承接 BP-ENG-FLOW-001 / CU-流程节点配置
 
 配置页面
   [新增] "流程节点配置页"（类型=配置页面；类别=配置维护页；布局=多级横版+列表页面（树表）+辅助栏）
@@ -335,7 +335,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 | 系统处理覆盖 | 校验/保存/发布/装载/回滚有操作活动或写明不适用理由 |
 | 运行期能力覆盖 | 运行期制品/构件/功能有查看/预览/支撑说明 |
 | 构件线索覆盖 | 操作入口能映射到按钮/右键/快捷键/图表/钻取 |
-| 追溯覆盖 | 页面→CU→BA→STR-E 追溯完整 |
+| 追溯覆盖 | 页面→CU→BP→STR-E 追溯完整 |
 | PA 收敛 | 五类收敛项均标注 |
 
 ### A.8 SR-F 节点生命周期

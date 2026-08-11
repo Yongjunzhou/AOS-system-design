@@ -34,7 +34,7 @@
 | 系统设计过程文档 | `01-eos-original-requirements.md` | OR 条目状态队列、节点索引、正文块、反馈区 |
 | 系统设计过程文档 | `02-eos-stakeholder-requirements-architecture.md` | STR 树画像、状态队列、节点索引、场景定义正文块、十链归属状态 |
 | 系统设计过程文档 | `03-eos-stakeholder-requirements-detailed.md` | STR 详细定义索引、正文块、与 02 的追溯 |
-| 系统设计过程文档 | `04-eos-business-architecture.md` | BA 树画像、状态队列、节点索引、A1/A2/Bn 方案块 |
+| 系统设计过程文档 | `04-eos-business-architecture.md` | BP 树画像、状态队列、节点索引、A1/A2/Bn 方案块 |
 | 系统设计过程文档 | `05-eos-system-requirements-architecture.md` | SysReq 节点索引、状态队列、正文块规范化 |
 | 系统设计过程文档 | `06-eos-system-requirements-detailed.md` | SysReq 详细定义索引、正文块、与 05/07 的追溯 |
 | 系统设计过程文档 | `07-eos-product-architecture.md` | PA 组件索引、状态队列、正文块、组件反馈区 |
@@ -141,7 +141,7 @@
 | `01` OR 文档 | 说明先读 OR 状态队列和 OR 节点索引，再读目标 OR 正文块 |
 | `02` STR 架构文档 | 说明先读 STR 状态队列、活动锁、十链归属状态和 STR 节点索引 |
 | `03` STR 详细定义文档 | 说明先读 STR 详细定义状态队列、节点索引和待写回 / 待审阅详细定义块 |
-| `04` BA 架构文档 | 说明先读 BA 状态队列、待资产写回队列和 BA 节点索引 |
+| `04` BP 架构文档 | 说明先读 BP 状态队列、待资产写回队列和 BP 节点索引 |
 | `05` SysReq 架构文档 | 说明先读 SysReq 状态队列、节点索引和目标 SysReq 架构块 |
 | `06` SysReq 详细定义文档 | 说明先读 SysReq 详细定义状态队列、节点索引和待写回 / 待审阅详细定义块 |
 | `07` PA 架构文档 | 说明先读 PA 组件状态队列、组件索引和目标组件块 |
@@ -193,7 +193,7 @@
 
 | 字段 | 说明 |
 |------|------|
-| 节点ID | 稳定节点编号，如 `STR-F-001`、`BA-IPO-001` |
+| 节点ID | 稳定节点编号，如 `STR-F-001`、`BP-IPO-001` |
 | 节点名称 | 当前名称 |
 | 节点类型 | 场景定义 / 业务定义 / 系统需求 / PA组件等 |
 | 父节点ID | 上级节点编号 |
@@ -220,7 +220,7 @@
 | 生命周期状态 | 已确认 / 疑似 / 待确认 / 已废弃 |
 | AI建议 | 当前建议 |
 | 人类决策 | 当前决策 |
-| 引用来源 | STR / BA / SysReq / 人类规则等 |
+| 引用来源 | STR / BP / SysReq / 人类规则等 |
 | 块ID | 正文块定位 ID |
 | 最后更新 | 日期 |
 
@@ -269,10 +269,10 @@
 | `derived_from` | 从上游材料或节点推导而来 | STR 节点 derived_from OR 条目 |
 | `refines` | 对上游架构节点做详细化 | STR 详细条目 refines STR 架构节点 |
 | `allocated_to` | 上游需求分配到下游方案节点 | OR allocated_to STR |
-| `satisfies` | 下游节点满足上游需求 | BA satisfies STR 详细条目 |
+| `satisfies` | 下游节点满足上游需求 | BP satisfies STR 详细条目 |
 | `uses_asset` | 节点引用资产条目 | STR uses_asset @nfr-001 |
-| `produces_doc` | 节点产生文档资产 | BA produces_doc @doc-xxx |
-| `consumes_doc` | 节点消费文档资产 | BA consumes_doc @doc-yyy |
+| `produces_doc` | 节点产生文档资产 | BP produces_doc @doc-xxx |
+| `consumes_doc` | 节点消费文档资产 | BP consumes_doc @doc-yyy |
 | `implemented_by` | 需求或定义由组件承接 | SysReq implemented_by PA |
 
 追溯关系表建议字段：
@@ -324,7 +324,7 @@ L3 节点正文块：具体节点定义
 3. OR 预处理阶段的材料级状态可由 `00-origin-requirement-materials/01-eos-sysdev-status.md` 管理。
 4. OR 条目写入 `01-eos-original-requirements.md` 后，OR 条目级状态应逐步迁入 01 文档状态队列。
 5. STR 节点状态以 `02-eos-stakeholder-requirements-architecture.md` 的状态队列为准。
-6. BA 节点状态以 `04-eos-business-architecture.md` 的状态队列为准。
+6. BP 节点状态以 `04-eos-business-architecture.md` 的状态队列为准。
 7. SysReq 节点状态以 `05-eos-system-requirements-architecture.md` 的状态队列为准。
 8. PA 组件状态以 `07-eos-product-architecture.md` 的状态队列为准。
 9. 资产生命周期状态以各资产文档自身的资产全貌 / 状态字段为准。
@@ -368,7 +368,7 @@ L3 节点正文块：具体节点定义
 2. 为 `02` 增加 STR 节点状态队列、活动锁字段、当前待办 ID、十链归属处理状态入口。
 3. 将 `03-eos-stakeholder-requirements-detailed.md` 改为 STR 详细定义树画像、状态队列、节点索引、正文块和追溯关系结构。
 4. 为 `03` 增加 `wft02b` 写回 STR 详细定义所需的目标块定位、细节审阅状态和反馈入口。
-5. 将 `04-eos-business-architecture.md` 改为 BA 树画像、状态队列、节点索引、BA 正文块结构。
+5. 将 `04-eos-business-architecture.md` 改为 BP 树画像、状态队列、节点索引、BP 正文块结构。
 6. 为 `04` 增加 `wft02a/wft02b` 所需的待资产写回、方案反馈、转交记录字段。
 7. 将 `06-eos-system-requirements-detailed.md` 改为 SysReq 详细定义树画像、状态队列、节点索引、正文块和追溯关系结构。
 8. 为 `06` 增加 `wft05b` 写回 SysReq 详细定义所需的目标块定位、细节审阅状态和反馈入口。
@@ -378,7 +378,7 @@ L3 节点正文块：具体节点定义
 
 - wft01a/b 可从 `02` 读取全貌、状态队列、节点索引和目标 STR 架构块。
 - wft02b 可从 `03` 定位 STR 详细定义写回块和细节反馈入口。
-- wft02a/b 可从 `04` 读取全貌、状态队列、节点索引和目标 BA 块。
+- wft02a/b 可从 `04` 读取全貌、状态队列、节点索引和目标 BP 块。
 - wft05b 可从 `06` 定位 SysReq 详细定义写回块和细节反馈入口。
 - 不需要默认全量读取 `02/03/04/06` 正文。
 

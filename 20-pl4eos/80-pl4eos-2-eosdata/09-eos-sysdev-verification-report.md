@@ -106,8 +106,8 @@
 |--------|----------|----------|----------|
 | VR-ALLOC-1TO1 | 1:1 分配约束 | 上层详细末级只能分配到唯一一个下层架构末级 | 重复分配、未分配 |
 | VR-SUPPORT-NTO1 | N:1 承接支持 | 下游可承接多个上游，但需解释合理性 | 过度聚合、过度分解 |
-| VR-TRACE-FWD | 正向追溯 | OR → STR → BA → SysReq → PA 链路可通达 | 正向断链 |
-| VR-TRACE-BWD | 反向追溯 | PA → SysReq → BA → STR → OR 链路可通达 | 来源缺失 |
+| VR-TRACE-FWD | 正向追溯 | OR → STR → BP → SysReq → PA 链路可通达 | 正向断链 |
+| VR-TRACE-BWD | 反向追溯 | PA → SysReq → BP → STR → OR 链路可通达 | 来源缺失 |
 | VR-DOC-STRUCT | 文档结构规范 | 文档具备 AI 读取说明、索引、正文块、追溯和反馈区 | 结构缺失 |
 | VR-ASSET-REF | 资产引用规范 | 过程文档引用 `21~27` 资产时目标资产存在且状态可用 | 资产引用断裂 |
 
