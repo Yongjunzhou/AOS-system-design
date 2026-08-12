@@ -96,3 +96,5 @@
 - [状态文档子表映射](status-document-subtable-references.md) — 所有Skill尾部行动清单统一指向状态文档子表（编号+表名），全链引用协议
 - [23号资产§11符合性修复](23-asset-sec11-conformance-fix.md) — 2026-07-28 反馈区删除(方案A)+归属裁定用[需裁决]+§11.5@srf-与02资产STR-F-格式跨文档不一致待办
 - [23号资产节点表单化+六级层级](23-asset-node-form-six-level.md) — 2026-07-28 统一13字段横表/六级层级(L5输出文档废IPO)/复用方式吸纳实现策略/追溯归产品数据/定义点判定
+- [待办：92-srf 悬空引用 wft03a](pending-srf-wft03a-dangling-ref.md) — 2026-08-12：92-srf 引用不存在的 eos-wft03a-ba2sr-design.md，且 wft03a/wft03b 概念与实际文件（wft03-biz/eng-bp2sr）不符，待裁决
+- [待办：记忆库 ba-* 术语更新](pending-memory-ba-bp-term.md) — 2026-08-12：记忆库 ba-* 系列仍用旧 BA 术语（设计链已改 BP），需逐条更新（保留角色名/4A 域）
