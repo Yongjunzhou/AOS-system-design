@@ -1,6 +1,6 @@
 ---
 name: eos-wft03-eng-bp2sr
-description: BP(A1)→SR-F·配置页面设计。接收≥1个A1 BA节点（可SR设计/待补充SR设计），
+description: BP(A1)→SR-F·配置页面设计。接收≥1个A1 BP节点（可SR设计/待补充SR设计），
              推断五类配置页面+识别四类构件+组织页面功能架构+设计操作活动+标注PA收敛项，
              推进BP→已SR设计，SR-F→待产品架构。
 ---

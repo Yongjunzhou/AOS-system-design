@@ -1,7 +1,7 @@
 # 追溯矩阵与验证报告
 **Skill ID**: wft06 · **Step 6: Traceability Matrix and Verification Report**
 
-> **概述**：建立全链路追溯矩阵（OR→SR→BA→SysReq→PA），生成验证报告，确认设计完整性。
+> **概述**：建立全链路追溯矩阵（OR→SR→BP→SysReq→PA），生成验证报告，确认设计完整性。
 >
 > **输入 → 输出**：全部 5 层设计文档 → 追溯矩阵（`08-*.md`）+ 验证报告（`09-*.md`）
 >
@@ -39,8 +39,8 @@
 | 结对 | 验证内容 |
 |------|---------|
 | OR ↔ SR | OR 末级到 SR 架构的映射完整性 |
-| SR ↔ BA | SR 详细末级到 BA IPO 的映射完整性 |
-| BA ↔ SysReq | BA IPO 到 SysReq 功能节点的映射完整性 |
+| SR ↔ BP | SR 详细末级到 BP IPO 的映射完整性 |
+| BP ↔ SysReq | BP IPO 到 SysReq 功能节点的映射完整性 |
 | SysReq ↔ PA | SysReq 详细末级到 PA 组件的映射完整性 |
 
 ---

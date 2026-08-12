@@ -86,10 +86,10 @@
 | 中文 | 英文 | 说明 |
 |------|------|------|
 | 三层工作层面 | Three Working Layers | EOS 系统设计的三个层面：第1层流水线设计、第2层构件开发、第3层使用工具设计 EOS |
-| 平台设计链 | Platform Design Chain | 以引擎开发为产出目标的五层设计链路（OR→SR→BA→SysReq→PA），适用于引擎开发需求 |
-| 业务设计链 | Business Design Chain | 以业务配置为产出目标的五层设计链路（OR→SR→BA→SysReq→PA），适用于业务配置需求 |
-| 端到端项目业务 | E2E Project Business | BA 第2级，从需求提出到需求满足的完整闭环，是业务分解的核心单位 |
-| 输出产品 | Output Product | 流水线类产品生产出来的产品，其 PA 节点类型作为流水线 BA IPO 的推导锚点 |
+| 平台设计链 | Platform Design Chain | 以引擎开发为产出目标的五层设计链路（OR→SR→BP→SysReq→PA），适用于引擎开发需求 |
+| 业务设计链 | Business Design Chain | 以业务配置为产出目标的五层设计链路（OR→SR→BP→SysReq→PA），适用于业务配置需求 |
+| 端到端项目业务 | E2E Project Business | BP 第2级，从需求提出到需求满足的完整闭环，是业务分解的核心单位 |
+| 输出产品 | Output Product | 流水线类产品生产出来的产品，其 PA 节点类型作为流水线 BP IPO 的推导锚点 |
 | 需求分流 | Requirement Diversion | 原始需求按引擎开发/业务配置/CAX 工具三种来源分类，分流至对应设计链或外部 |
 | 同步设计 | Synchronous Design | 上层详细定义阶段同步建立下层架构结构骨架，而非串行执行 |
 | 引擎 | Engine | EOS 平台的能力生成器，由 A1（流程与IT域）开发。详见上方"引擎与业务"术语组 |
@@ -126,8 +126,8 @@
 |------|------|------|
 | 原始需求 | Original Requirements | 第1层，用户或相关方的原始需求 |
 | 相关方需求 | Stakeholder Requirements | 第2层，原始需求的方案和后续需求 |
-| 业务架构 | Business Architecture | 第3层，相关方需求功能部分的方案 |
-| 系统需求 | System Requirements | 第4层，业务架构和非功能需求的方案 |
+| 业务流程 | Business Process | 第3层，相关方需求功能部分的方案 |
+| 系统需求 | System Requirements | 第4层，业务流程和非功能需求的方案 |
 | 产品架构 | Product Architecture | 第5层，系统需求的方案和实现 |
 
 ### 需求类型

@@ -1,8 +1,8 @@
 ---
 name: eos-wft02-eng-str2bp
 description: STR-E→BP·A1配置单元架构设计。接收≥1个STR-E节点（可分解分配/待补充分解分配），
-             将名称级CU候选展开为A1 BA详细设计（CU收敛→配置能力定义→依赖校验→缺口补需），
-             写回23/25资产，形成可进入wft03-eng的BA节点。
+             将名称级CU候选展开为A1 BP详细设计（CU收敛→配置能力定义→依赖校验→缺口补需），
+             写回23/25资产，形成可进入wft03-eng的BP节点。
 ---
 
 # eos-wft02-eng · STR-E → BP · A1 配置单元架构设计
@@ -79,7 +79,7 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-arch
 ```bash
 bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md "待 wft02-eng 处理"
 bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md <STR-E-ID>
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md "BA树画像"
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md "BP树画像"
 bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md <BP-ID>
 ```
 
@@ -151,7 +151,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 
 | 判定 | 条件 | 动作 |
 |------|------|------|
-| 确认既有 | BA已有CU与本轮同名同义，边界一致 | 追加来源 |
+| 确认既有 | BP已有CU与本轮同名同义，边界一致 | 追加来源 |
 | 扩展既有 | 主体一致但新增配置要素/系统处理/运行期能力 | 修订CU配置能力 |
 | 新增 CU | 无可复用CU，粒度可展开 | 新建CU |
 | 拆分 CU | 候选同时承接多个不连续能力 | 输出拆分建议 `[需裁决]` |
@@ -207,7 +207,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 
 **2. 要素机械检查**——A2 上下文完整、A1 路径到位、CU 清单非空且逐条标注来源和收敛判定、每个 CU 四类配置能力已定义、依赖已校验、变更影响声明已写入。
 
-**3. 补充 FR-ENG 材料生成**——写入 `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<BA名称>补充原始需求材料.md`，登记到 OR 原料状态表。
+**3. 补充 FR-ENG 材料生成**——写入 `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<BP名称>补充原始需求材料.md`，登记到 OR 原料状态表。
 
 ---
 
@@ -299,7 +299,7 @@ CU 清单
 
 | 判定 | 条件 | 动作 |
 |------|------|------|
-| 确认既有 | BA已有CU与本轮同名同义，边界一致 | 追加来源 |
+| 确认既有 | BP已有CU与本轮同名同义，边界一致 | 追加来源 |
 | 扩展既有 | 主体一致但新增配置能力 | 修订CU |
 | 新增 CU | 无可复用CU，粒度可展开 | 新建CU |
 | 拆分 CU | 候选承接多个不连续能力 | 输出拆分建议 `[需裁决]` |
@@ -334,7 +334,7 @@ CU 清单
 
 | 依赖类型 | 示例 | 处理 |
 |----------|------|------|
-| 引擎内依赖 | 流转规则配置依赖流程节点配置 | BA中写明先后关系 |
+| 引擎内依赖 | 流转规则配置依赖流程节点配置 | BP中写明先后关系 |
 | 跨引擎依赖 | 流程配置依赖实体字段、权限规则 | 引用依赖引擎/CU，不改主归属 |
 | 布局组件/构件依赖 | 流程CU运行期需要按钮构件 | 说明被渲染的构件 |
 | 治理依赖 | 发布、版本、审计、回滚、监控 | 缺失时生成补充FR-ENG或25模型建议 |

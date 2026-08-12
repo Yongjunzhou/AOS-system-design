@@ -602,7 +602,7 @@ Step 4 按每个 BP 实例独立执行。新建 BP → 全量检查；修订已�
 
 ```
 路径：../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/
-文件名：<YYYYMMDD>-<BA名称>补充原始需求材料.md
+文件名：<YYYYMMDD>-<BP名称>补充原始需求材料.md
 ```
 
 每个材料文件包含以下字段：

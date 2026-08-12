@@ -149,7 +149,7 @@ AI 动作序列：读取本目录下 task-definition.md + ai-prompts.md → 如�
 
 - 是否已加载现有系统设计文档集基线（5 层 + 映射矩阵）？
 - 00-or-preprocessing 产出的增量 OR 条目是否完整？
-- 影响范围评估的范围——是否覆盖 OR/SR/BA/SysReq/PA 所有五层？
+- 影响范围评估的范围——是否覆盖 OR/SR/BP/SysReq/PA 所有五层？
 
 具体操作按 §三 四个阶段执行：加载 OR 资产 → 影响评估 → 优先级排序 → 审查。
 

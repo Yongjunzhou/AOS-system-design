@@ -12,7 +12,7 @@
 | 01 | [原始需求详细定义](01-original-requirements.md) | 第 1 层 | 第 1 步 | v4.0 | 已完成 |
 | 02 | [相关方需求架构定义](02-stakeholder-requirements-architecture.md) | 第 2 层（架构定义） | 第 1 步 | v2.0 | 已完成 |
 | 03 | [相关方需求详细定义](03-stakeholder-requirements-detailed.md) | 第 2 层（详细定义） | 第 2 步 | v2.0 | 已完成 |
-| 04 | [业务架构定义](04-business-architecture.md) | 第 3 层 | 第 2 步 | v1.0 | 待设计 |
+| 04 | [业务流程定义](04-business-architecture.md) | 第 3 层 | 第 2 步 | v1.0 | 待设计 |
 | 05 | [系统需求架构定义](05-system-requirements-architecture.md) | 第 4 层（架构定义） | 第 3-4 步 | v2.0 | 已完成 |
 | 06 | [系统需求详细定义](06-system-requirements-detailed.md) | 第 4 层（详细定义） | 第 5 步 | v2.0 | 已完成 |
 | 07 | [产品架构定义](07-product-architecture.md) | 第 5 层 | 第 5 步 | v2.0 | 已完成 |
@@ -31,7 +31,7 @@
     ↓ N:1 分配
 第2层：相关方需求 (SR)       → 02-...-architecture.md + 03-...-detailed.md
     ├─ 功能部分 ↓
-    │   第3层：业务架构 (BA)  → 04-business-architecture.md（待设计）
+    │   第3层：业务流程 (BP)  → 04-business-architecture.md（待设计）
     │       ↓
     │   第4层：系统需求 (SysReq) → 05-...-architecture.md + 06-...-detailed.md
     │       ↓
@@ -52,7 +52,7 @@
 |------|------|----------|----------|
 | 1 | 原始需求 | — | 92 |
 | 2 | 相关方需求 | 29（21F + 8NF） | 91（74F + 17NF） |
-| 3 | 业务架构 | 待设计 | — |
+| 3 | 业务流程 | 待设计 | — |
 | 4 | 系统需求 | 30（13F + 17NFR） | 85（功能 9级活动） |
 | 5 | 产品架构 | 85 | — |
 

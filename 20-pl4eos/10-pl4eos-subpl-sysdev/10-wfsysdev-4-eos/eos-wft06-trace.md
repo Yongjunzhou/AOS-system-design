@@ -362,7 +362,7 @@ N:1 验证结果：[引用5.3的输出]
 —— 第一步：生成追溯矩阵 ——
 
 追溯矩阵分节格式：
-- biz：`FR-BIZ OR | STR-F | BA输出文档/PL6 | 功能表单/业务节点操作页面 | FR-BIZ指标分配 | 追溯状态`
+- biz：`FR-BIZ OR | STR-F | BP输出文档/PL6 | 功能表单/业务节点操作页面 | FR-BIZ指标分配 | 追溯状态`
 - eng：`FR-ENG OR | STR-E | CU BP | 平台操作页面SR-F | PA组件 | 追溯状态`
 - nfr：`NFR OR | STR-NFR | SysReq-NFR | 约束行 | 包版本 | PA消费结论 | 追溯状态`
 - biz→eng：`业务配置需求 | 引擎/CU/SR-F | PA能力 | FR-ENG缺口处理结论 | 覆盖状态`

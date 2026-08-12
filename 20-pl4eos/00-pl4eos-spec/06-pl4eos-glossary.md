@@ -17,8 +17,8 @@
 |------|------|------|
 | EOS 流水线 | EOS Pipeline | 服务于 EOS 全生命周期的流水线，由设计线/开发线/集成线/运维线四子线组成 |
 | 元流水线 | Meta-Pipeline | 用于设计 EOS 流水线的流水线，当前处于系统设计阶段 |
-| 输出产品架构锚定法 | Output Product Architecture Anchoring Method | 流水线类产品的 BA 开发特化方法：以输出产品的 PA 节点类型为推导锚点 |
-| 用户角色架构锚定法 | User Role Architecture Anchoring Method | BA 开发的通用方法：以全量用户角色集为推导锚点 |
+| 输出产品架构锚定法 | Output Product Architecture Anchoring Method | 流水线类产品的 BP 开发特化方法：以输出产品的 PA 节点类型为推导锚点 |
+| 用户角色架构锚定法 | User Role Architecture Anchoring Method | BP 开发的通用方法：以全量用户角色集为推导锚点 |
 | 四类构件 | Four Component Types | EOS 流水线 PA 的四类交付物：设计准则、设计指南、AI 辅助文档、任务定义 |
 
 ## 三层工作层面
@@ -49,7 +49,7 @@
 |------|------|------|------|
 | 第1层 | 原始需求 | Original Requirements (OR) | 仅需求 |
 | 第2层 | 相关方需求 | Stakeholder Requirements (SR) | 需求/方案 |
-| 第3层 | 业务架构 | Business Architecture (BA) | 仅方案 |
+| 第3层 | 业务流程 | Business Process (BP) | 仅方案 |
 | 第4层 | 系统需求 | System Requirements (SysReq) | 需求/方案 |
 | 第5层 | 产品架构 | Product Architecture (PA) | 仅方案 |
 
@@ -59,7 +59,7 @@
 
 | 中文 | 英文 | 说明 |
 |------|------|------|
-| 功能需求 | Functional Requirement (FR) | 系统必须执行的功能或服务，经 BA 路径分配 |
+| 功能需求 | Functional Requirement (FR) | 系统必须执行的功能或服务，经 BP 路径分配 |
 | 非功能需求 | Non-Functional Requirement (NFR) | 系统必须满足的质量属性，经平行路径分配 |
 | 末级需求 | Leaf-level Requirement | 不可再分的原子粒度需求条目 |
 | 架构末级节点 | Architecture Leaf Node | 方案文档树形结构的末级节点，承接上层需求 |
@@ -124,7 +124,7 @@
 
 | 中文 | 英文 | 说明 |
 |------|------|------|
-| 瀑布式 | Waterfall | 从零开始的正向完整设计（OR→SR→BA→SysReq→PA） |
+| 瀑布式 | Waterfall | 从零开始的正向完整设计（OR→SR→BP→SysReq→PA） |
 | 敏捷式 | Agile | 在现有设计基础上的增量迭代 |
 | 逆向工程 | Reverse Engineering | 从已有构件反向推导至 OR |
 | DevOps | DevOps | 最小化正向变更的快速修复 |
