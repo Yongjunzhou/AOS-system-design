@@ -1,5 +1,5 @@
 # 原始需求推导
-**Skill ID**: reverse-t06 · **Step 6: Original Requirements Reverse Engineering**
+**人类方案ID**: reverse-t06 · **Step 6: Original Requirements Reverse Engineering**
 
 > **概述**：从 SR 详细定义末级节点聚合为原始需求条目，建立完整的 OR → SR 追溯关系。OR 聚合应识别 EOS 的三源分类（引擎开发需求、业务配置需求、CAX工具需求）。
 >

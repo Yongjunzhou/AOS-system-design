@@ -1,5 +1,5 @@
 # 相关方需求详细定义及业务流程定义
-**Skill ID**: wft02 · **Step 2: Stakeholder Requirements Detail → Business Process**
+**人类方案ID**: wft02 · **Step 2: Stakeholder Requirements Detail → Business Process**
 
 > **概述**：对 SR 架构末级节点进行详细分解，建立业务流程（BP IPO 清单）。
 >

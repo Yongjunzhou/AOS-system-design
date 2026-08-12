@@ -1,5 +1,5 @@
 # 模式1·快速修复
-**Skill ID**: devops-t02 · **DevOps Step 2: Mode 1 — Quick Fix**
+**人类方案ID**: devops-t02 · **DevOps Step 2: Mode 1 — Quick Fix**
 
 > **概述**：对仅涉及 PA 层的最小化变更进行快速修复，在几小时内完成。
 >

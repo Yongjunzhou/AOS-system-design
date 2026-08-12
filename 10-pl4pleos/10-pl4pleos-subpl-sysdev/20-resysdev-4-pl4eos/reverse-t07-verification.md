@@ -1,5 +1,5 @@
 # 完整性和一致性验证
-**Skill ID**: reverse-t07 · **Step 7: Completeness and Consistency Verification**
+**人类方案ID**: reverse-t07 · **Step 7: Completeness and Consistency Verification**
 
 > **概述**：验证逆向推导的完整设计一致性，生成追溯矩阵和验证报告。
 >

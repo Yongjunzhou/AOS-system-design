@@ -1,5 +1,5 @@
 # 相关方需求影响分析
-**Skill ID**: agile-t03 · **Step 3: Stakeholder Requirements Impact Analysis**
+**人类方案ID**: agile-t03 · **Step 3: Stakeholder Requirements Impact Analysis**
 
 > **概述**：将新末级需求映射或更新到相关方需求，输出 SR 增量定义。
 >

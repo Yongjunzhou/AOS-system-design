@@ -1,5 +1,5 @@
 # 新需求分解
-**Skill ID**: agile-t02 · **Step 2: New Requirement Decomposition**
+**人类方案ID**: agile-t02 · **Step 2: New Requirement Decomposition**
 
 > **概述**：对新需求进行规范化处理和分解，与现有需求进行冲突和重复检查。
 >

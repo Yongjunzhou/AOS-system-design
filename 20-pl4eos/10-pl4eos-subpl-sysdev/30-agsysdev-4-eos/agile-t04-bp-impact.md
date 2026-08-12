@@ -1,5 +1,5 @@
 # 业务流程影响分析
-**Skill ID**: agile-t04 · **Step 4: Business Process Impact Analysis**
+**人类方案ID**: agile-t04 · **Step 4: Business Process Impact Analysis**
 
 > **概述**：分析新需求对业务流程的影响，输出 BP 增量定义。BP 末级节点即组件定义，按 EOS 双设计链分别处理。
 >

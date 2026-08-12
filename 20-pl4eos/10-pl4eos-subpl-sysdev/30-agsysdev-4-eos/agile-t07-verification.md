@@ -1,5 +1,5 @@
 # 完整性和一致性验证
-**Skill ID**: agile-t07 · **Step 7: Completeness and Consistency Verification**
+**人类方案ID**: agile-t07 · **Step 7: Completeness and Consistency Verification**
 
 > **概述**：验证增量更新后的系统设计的完整性和一致性。增量部分与基线部分的验证范围清晰分离。
 >

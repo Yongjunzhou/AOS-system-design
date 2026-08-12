@@ -1,5 +1,5 @@
 # 系统需求逆向推导
-**Skill ID**: reverse-t03 · **Step 3: System Requirements Reverse Derivation**
+**人类方案ID**: reverse-t03 · **Step 3: System Requirements Reverse Derivation**
 
 > **概述**：从 PA 组件逆向反推 SysReq 详细节点，聚合为 5 级架构并推导 NFR。
 >

@@ -1,5 +1,5 @@
 # 文档完善和发布
-**Skill ID**: reverse-t08 · **Step 8: Documentation Completion and Release**
+**人类方案ID**: reverse-t08 · **Step 8: Documentation Completion and Release**
 
 > **概述**：完善所有设计文档、生成变更日志，发布完整基线。双链产出在同一文件中以独立章节组织。
 >

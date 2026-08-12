@@ -1,5 +1,5 @@
 # 原始需求分析及相关方需求架构定义
-**Skill ID**: wft01 · **Step 1: Original Requirements → Stakeholder Requirements Architecture**
+**人类方案ID**: wft01 · **Step 1: Original Requirements → Stakeholder Requirements Architecture**
 
 > **概述**：将 00-or-preprocessing 产出的 OR 条目级需求分解后，建立相关方需求架构定义（SR 架构定义）。
 >

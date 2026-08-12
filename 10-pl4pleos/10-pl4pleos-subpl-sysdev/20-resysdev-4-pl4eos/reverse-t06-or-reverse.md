@@ -1,5 +1,5 @@
 # 原始需求逆向推导
-**Skill ID**: reverse-t06 · **Step 6: Original Requirements Reverse Derivation**
+**人类方案ID**: reverse-t06 · **Step 6: Original Requirements Reverse Derivation**
 
 > **概述**：从 SR 详细末级逆向聚合 OR 条目，完成 OR 层定义。
 >

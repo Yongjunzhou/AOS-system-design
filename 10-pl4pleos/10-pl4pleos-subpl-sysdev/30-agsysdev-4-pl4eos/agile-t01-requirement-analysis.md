@@ -1,5 +1,5 @@
 # 新需求分析和分类
-**Skill ID**: agile-t01 · **Step 1: New Requirement Analysis and Classification**
+**人类方案ID**: agile-t01 · **Step 1: New Requirement Analysis and Classification**
 
 > **概述**：将 00-or-preprocessing 产出的 OR 条目映射到 SR 架构，判断增量需求的影响范围和优先级。
 >

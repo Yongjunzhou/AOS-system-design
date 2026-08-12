@@ -1,5 +1,5 @@
 # 业务流程逆向推导
-**Skill ID**: reverse-t04 · **Step 4: Business Process Reverse Derivation**
+**人类方案ID**: reverse-t04 · **Step 4: Business Process Reverse Derivation**
 
 > **概述**：从 SysReq 功能逆向推导 BP IPO，建立业务流程定义。
 >

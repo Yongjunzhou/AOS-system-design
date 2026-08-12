@@ -1,5 +1,5 @@
 # 现有产物目录与分类
-**Skill ID**: reverse-t01 · **Step 1: Artifact Catalog and Classification**
+**人类方案ID**: reverse-t01 · **Step 1: Artifact Catalog and Classification**
 
 > **概述**：扫描现有产物，建立产物目录树，进行架构层级分类，为逆向工程提供完整的资产清单。
 >

@@ -1,5 +1,5 @@
 # 产品架构定义
-**Skill ID**: reverse-t02 · **Step 2: Product Architecture Definition**
+**人类方案ID**: reverse-t02 · **Step 2: Product Architecture Definition**
 
 > **概述**：根据现有产物的目录结构和文件组织方式，定义设计线的产品架构（PA），包括树形结构、组件定义和映射关系。EOS 采用双链 PA 架构：平台设计链产出引擎软件构件，业务设计链产出配置定义。
 >

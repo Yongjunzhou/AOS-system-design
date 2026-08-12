@@ -1,5 +1,5 @@
 # 系统需求推导
-**Skill ID**: reverse-t03 · **Step 3: System Requirements Reverse Engineering**
+**人类方案ID**: reverse-t03 · **Step 3: System Requirements Reverse Engineering**
 
 > **概述**：从 PA 组件反向推导系统需求。先从组件职责反推 SysReq 9 级场景活动，再从 9 级聚合为 5 级架构。双链 PA 对应双链 SysReq：平台设计链描述引擎软件处理逻辑，业务设计链描述配置处理逻辑。
 >

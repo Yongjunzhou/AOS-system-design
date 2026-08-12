@@ -1,5 +1,5 @@
 # 相关方需求逆向推导
-**Skill ID**: reverse-t05 · **Step 5: Stakeholder Requirements Reverse Derivation**
+**人类方案ID**: reverse-t05 · **Step 5: Stakeholder Requirements Reverse Derivation**
 
 > **概述**：从 BP IPO 逆向反推 SR 架构和详细分解，建立完整 SR 层定义。
 >

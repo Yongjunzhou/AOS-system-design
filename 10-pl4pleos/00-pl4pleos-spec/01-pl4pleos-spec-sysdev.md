@@ -236,4 +236,4 @@ A1 元流水线 ──系统设计──→ A2 EOS 流水线 ──系统设计�
 | 敏捷式（agile） | 8 | `30-agsysdev-4-pl4eos/agile-t0{1-8}-*.md` |
 | DevOps（devops） | 4 | `40-opsysdev-4-pl4eos/devops-t0{1-4}-*.md` |
 
-每个 Skill 文档的 §一 中标注了其 Skill ID（如 `wft01`），用于在追溯矩阵中唯一标识。
+每个 Skill 文档的 §一 中标注了其 人类方案ID（如 `wft01`），用于在追溯矩阵中唯一标识。

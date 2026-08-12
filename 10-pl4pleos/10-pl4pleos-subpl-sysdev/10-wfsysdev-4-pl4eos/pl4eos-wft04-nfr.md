@@ -1,5 +1,5 @@
 # 非功能需求分析
-**Skill ID**: wft04 · **Step 4: Non-Functional Requirements Analysis**
+**人类方案ID**: wft04 · **Step 4: Non-Functional Requirements Analysis**
 
 > **概述**：单独处理非功能分支，将 SR-NFR 向 SysReq-NFR 层展开，建立 SysReq 非功能 0-6 级架构。
 >

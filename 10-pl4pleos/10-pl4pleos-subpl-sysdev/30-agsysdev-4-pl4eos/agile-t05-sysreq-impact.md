@@ -1,5 +1,5 @@
 # 系统需求影响分析
-**Skill ID**: agile-t05 · **Step 5: System Requirements Impact Analysis**
+**人类方案ID**: agile-t05 · **Step 5: System Requirements Impact Analysis**
 
 > **概述**：分析新需求对系统需求的影响，输出 SysReq 增量定义（同时处理功能和非功能分支）。
 >

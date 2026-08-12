@@ -1,5 +1,5 @@
 # 现有产物梳理与架构分析
-**Skill ID**: reverse-t01 · **Step 1: Artifact Catalog and Architecture Analysis**
+**人类方案ID**: reverse-t01 · **Step 1: Artifact Catalog and Architecture Analysis**
 
 > **概述**：全面梳理 EOS 产品本体的现有实现产物，理解 `30-eos/` 目录中的引擎模块划分、配置定义组织、组件实现结构和伴随文档，将其按架构层级（PA→SysReq→BP→SR→OR）反向映射，建立完整的产物全局视图，为后续逆向推导提供基础。
 >

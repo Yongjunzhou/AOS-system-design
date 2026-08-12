@@ -1,5 +1,5 @@
 # 快速影响范围评估
-**Skill ID**: devops-t01 · **DevOps Step 1: Quick Impact Assessment**
+**人类方案ID**: devops-t01 · **DevOps Step 1: Quick Impact Assessment**
 
 > **概述**：快速判断知识资产缺陷的影响范围，选择最合适的处理模式（模式1/2/3），为后续修复提供精确的定位和导航。
 >

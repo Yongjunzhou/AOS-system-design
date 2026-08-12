@@ -1,5 +1,5 @@
 # 系统需求到产品架构分析
-**Skill ID**: wft05 · **Step 5: System Requirements → Product Architecture**
+**人类方案ID**: wft05 · **Step 5: System Requirements → Product Architecture**
 
 > **概述**：合并功能和非功能分支，建立 SysReq 9→PA 级映射并定义 PA 组件。
 >

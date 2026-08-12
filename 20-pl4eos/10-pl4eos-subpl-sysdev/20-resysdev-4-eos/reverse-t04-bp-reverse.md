@@ -1,5 +1,5 @@
 # 业务流程推导
-**Skill ID**: reverse-t04 · **Step 4: Business Process Reverse Engineering**
+**人类方案ID**: reverse-t04 · **Step 4: Business Process Reverse Engineering**
 
 > **概述**：从 SysReq 9 级场景活动反推业务流程 IPO，建立 BP 定义和去重机制。BP 末级节点即为组件定义，是 EOS 平台的核心资产。
 >

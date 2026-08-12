@@ -1,5 +1,5 @@
 # 模式3·完整设计
-**Skill ID**: devops-t04 · **DevOps Step 4: Mode 3 — Full Design**
+**人类方案ID**: devops-t04 · **DevOps Step 4: Mode 3 — Full Design**
 
 > **概述**：对涉及多层（SR/BP/SysReq/PA）的完整设计变更进行修复，在 2-3 天内完成。
 >

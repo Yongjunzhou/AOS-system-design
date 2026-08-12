@@ -1,5 +1,5 @@
 # 模式2·局部设计
-**Skill ID**: devops-t03 · **DevOps Step 3: Mode 2 — Local Design**
+**人类方案ID**: devops-t03 · **DevOps Step 3: Mode 2 — Local Design**
 
 > **概述**：对涉及 SysReq + PA 层的局部设计变更进行修复，在 1 天内完成。
 >

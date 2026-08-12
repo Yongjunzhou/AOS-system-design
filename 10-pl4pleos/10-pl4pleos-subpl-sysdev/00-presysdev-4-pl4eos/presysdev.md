@@ -1,5 +1,5 @@
 # 原始需求记录与预处理
-**Skill ID**: presysdev · **Step 00: Original Requirements Preprocessing**
+**人类方案ID**: presysdev · **Step 00: Original Requirements Preprocessing**
 
 > **概述**：将来自各相关方的原始需求材料通过条目拆分、规范化、冲突检测及碎片整理，转化为结构化的 OR 条目级需求。
 >

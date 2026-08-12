@@ -1,5 +1,5 @@
 # 产品架构影响分析
-**Skill ID**: agile-t06 · **Step 6: Product Architecture Impact Analysis**
+**人类方案ID**: agile-t06 · **Step 6: Product Architecture Impact Analysis**
 
 > **概述**：分析新需求对产品架构的影响，输出 PA 增量定义。
 >

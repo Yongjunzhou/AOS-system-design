@@ -1,5 +1,5 @@
 # 产品架构逆向定义
-**Skill ID**: reverse-t02 · **Step 2: Product Architecture Reverse Definition**
+**人类方案ID**: reverse-t02 · **Step 2: Product Architecture Reverse Definition**
 
 > **概述**：从现有产物中逆向推导 PA 组件，完成 PA 架构定义。
 >

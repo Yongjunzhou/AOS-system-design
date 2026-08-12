@@ -1,5 +1,5 @@
 # 业务流程到系统需求分析
-**Skill ID**: wft03 · **Step 3: Business Process → System Requirements**
+**人类方案ID**: wft03 · **Step 3: Business Process → System Requirements**
 
 > **概述**：将 BP IPO 清单映射到 SysReq 功能架构，建立 SysReq 功能 0-9 级层级。
 >

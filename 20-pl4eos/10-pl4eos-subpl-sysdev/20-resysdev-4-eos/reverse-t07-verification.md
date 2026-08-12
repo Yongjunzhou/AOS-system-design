@@ -1,5 +1,5 @@
 # 逆向推导验证
-**Skill ID**: reverse-t07 · **Step 7: Verification**
+**人类方案ID**: reverse-t07 · **Step 7: Verification**
 
 > **概述**：验证完整逆向推导后各层之间的追溯链，输出验证报告。需验证双链各自的独立追溯链路完整性，以及跨链接口的正确性。
 >
