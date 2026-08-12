@@ -12,7 +12,7 @@
 - [wft01 三路径自闭环模型](wft01-self-closed-model.md) — 2026-06-23：biz/eng/nfr 三路径自闭环完成 + 5+1 生命周期 + 资产-BA 解耦 + 变更传播协议 + 91 规范 v2.0 修订
 - [ORT00精确查重设计决策](ort00-dedup-design-decisions.md) — 流程内联/逐字精确比对/独立生命周期"已废弃（重复）"/软链接定向引用/语义查重边界暂不实现
 - [ORT关注行三类结构](ort01-three-category-focus-rows.md) — ort01 Step 5 关注行分三类：待选入切分/待选入澄清/待反馈方案
-- [ORT Skill设计模式](ort-skill-design-patterns.md) — 前视AI建议、步骤特异人类决策、1.1/1.2表职责分离
+- [ORT Skill执行文档化模式](ort-skill-design-patterns.md) — SKILL=规则引用人类方案+补E层（版本感知/加载经济/口令规则/判据速查）；表A/B/C三表口径
 - [预处理链前置校验设计](preprocessing-prerequisite-check.md) — 每个skill启动时先检查前置依赖是否就绪，未就绪时输出指引，逐级报错首次即停。2026-06-06 实施 + 泛化写入通用设计规范 §3.6 + §3.7
 - [对齐标注约定](alignment-annotation-convention.md) — ◆ 四种标注类型（对应/差异/定位/继承关系）+ 阅读路径格式
 - [架构增量变更的资产优先原则](architecture_asset_priority.md) — Reuse > Improve(Extend/Split/Merge) > Add，架构节点是组织资产
