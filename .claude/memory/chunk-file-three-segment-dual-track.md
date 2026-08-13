@@ -5,7 +5,7 @@ metadata:
   type: project
 ---
 
-切分文件（.chunk-{seq}.md）= **frontmatter + 管理区 + 正文区**三段（2026-08-13 裁决方向 A，人类方案 §2.3/§4.2）。管理区放状态摘要表（阶段/AI建议/待处理/操作指引），frontmatter.status 记机器状态（raw→annotated→clarified→abandoned）。
+切分文件（.chunk-{seq}.md）= **frontmatter + 管理区 + 正文区**三段（2026-08-13 裁决方向 A，人类方案 §2.3/§4.2）。管理区放状态摘要表（阶段/AI建议/待处理/操作指引），frontmatter.status 记机器状态（**raw→annotated→clarified→normalized→abandoned**；2026-08-13 审视裁决：已规范化时由 ort03 确认执行写 `normalized`，方案期 `待确认规范方案` 保持 `clarified`，值域权威定义见 ort01 §2.4）。
 
 **全链双轨状态模型**：OR 预处理链所有文档都双轨——外部轨道（状态文档表 A/B/C，管"流程推进到哪一步"，AI 入口判断 + 人类批量选材）+ 内部轨道（文档内嵌状态，管"被处理到什么程度"；文本化文档 = 管理区状态摘要表，切分文件 = frontmatter.status + 管理区表）。同步契约：先更新状态文档表（权威），再推导写内嵌状态。
 
