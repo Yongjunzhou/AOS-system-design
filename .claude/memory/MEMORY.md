@@ -12,9 +12,10 @@
 - [wft02 自闭环重构完成](wft02-self-closed-refactor.md) — 2026-06-24：wft02a/b→wft02-biz（STR-F→A2+Bn）+ wft02-eng（STR-E→A1），纵向合并(A+B→自闭环)+横向拆分(按路径)，91 规范 v2.1 同步更新
 - [wft01 三路径自闭环模型](wft01-self-closed-model.md) — 2026-06-23：biz/eng/nfr 三路径自闭环完成 + 5+1 生命周期 + 资产-BA 解耦 + 变更传播协议 + 91 规范 v2.0 修订
 - [ORT00精确查重设计决策](ort00-dedup-design-decisions.md) — 流程内联/逐字精确比对/独立生命周期"已废弃（重复）"/软链接定向引用/语义查重边界暂不实现
-- [ORT关注行三类结构](ort01-three-category-focus-rows.md) — ort01 Step End 三类待办清单：待反馈方案/待选入切分/待选入澄清
+- [ORT关注行三类结构](ort01-three-category-focus-rows.md) — ort01 Step 5 摘要三类待办：待反馈方案/待选入切分/待选入澄清
 - [ort01 语义切分对齐业务对象](ort01-chunk-align-scene-business.md) — 场景业务=业务对象闭环=主责角色职责闭环[91§1.4]，三步确定法（文档抓手/三问/主轴锚定），与 wft01/平台打通
 - [切分文件三段结构+全链双轨](chunk-file-three-segment-dual-track.md) — frontmatter+管理区+正文；表A/B/C外部+内嵌状态内部；「切分文档」=切分文件
+- [ort01 反馈回路 git 基线协议](ort01-feedback-git-baseline-protocol.md) — 2026-08-15：反馈单源（文档变更）+ git diff 检测 + Step 1-6 结构 + 交互只记录不处理；评审待办见 02-eos-sysdev-review.md
 - [ORT Skill执行文档化模式](ort-skill-design-patterns.md) — SKILL=规则引用人类方案+补E层（版本感知/加载经济/口令规则/判据速查）；表A/B/C三表口径
 - [预处理链前置校验设计](preprocessing-prerequisite-check.md) — 每个skill启动时先检查前置依赖是否就绪，未就绪时输出指引，逐级报错首次即停。2026-06-06 实施 + 泛化写入通用设计规范 §3.6 + §3.7
 - [对齐标注约定](alignment-annotation-convention.md) — ◆ 四种标注类型（对应/差异/定位/继承关系）+ 阅读路径格式
