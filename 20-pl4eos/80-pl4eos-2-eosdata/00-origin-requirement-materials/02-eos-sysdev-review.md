@@ -53,6 +53,7 @@
 
 **待办**：
 
+- [ ] **方案 A 实施（2026-08-15 下午，用户已定案）**：Step End 三段式 → 三个独立 Step——Step 4 提交基线（统一）、Step 5 反馈交互（对话）、Step 6 变更汇总（口令触发），执行模式列区分三种性质；涉及 Step 布局表、编号引用全量更新、SKILL 同步、版本 v0.37/v2.20。方案 B（只提 Step 4、②③保留为结束交互协议）已否决
 - [ ] **F2 裁决**：表 A「文本化文档」列 ort01 是否更新为 chunk 名（涉 ort00/状态文档口径）
 - [ ] **F3 修复**：ort03 人类方案「ort01 §2.4」→「§2.2.2」
 - [ ] **记忆库更新**：`ort01-chunk-align-scene-business`（候选单元口径 → 业务对象闭环）、`chunk-file-three-segment-dual-track`（status 序列补 `normalized`）
