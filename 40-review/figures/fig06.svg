@@ -1,0 +1,18 @@
+<svg viewBox="0 0 680 240" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>系统化与即兴发挥的对照</title>
+<desc>系统化意味着有结构、有章法、可重复、全覆盖，即兴发挥则相反</desc>
+<rect x="40" y="40" width="290" height="180" rx="12" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+<text x="185" y="66" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">系统化 Systematic</text>
+<text x="185" y="88" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">像系统一样做事 · 有条有理</text>
+<text x="56" y="112" text-anchor="start" dominant-baseline="central" font-size="12" fill="#0C447C">有结构 — 分解为清晰步骤与阶段</text>
+<text x="56" y="136" text-anchor="start" dominant-baseline="central" font-size="12" fill="#0C447C">有章法 — 每步有标准与检查点</text>
+<text x="56" y="160" text-anchor="start" dominant-baseline="central" font-size="12" fill="#0C447C">可重复 — 换人执行结果仍稳定</text>
+<text x="56" y="184" text-anchor="start" dominant-baseline="central" font-size="12" fill="#0C447C">全覆盖 — 从需求到维护不遗漏</text>
+<rect x="350" y="40" width="290" height="180" rx="12" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text x="495" y="66" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#444441">即兴发挥 Ad hoc</text>
+<text x="495" y="88" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">想到哪做到哪 · 随机应变</text>
+<text x="366" y="112" text-anchor="start" dominant-baseline="central" font-size="12" fill="#444441">无结构 — 步骤随意、临场发挥</text>
+<text x="366" y="136" text-anchor="start" dominant-baseline="central" font-size="12" fill="#444441">无章法 — 怎么做全凭个人感觉</text>
+<text x="366" y="160" text-anchor="start" dominant-baseline="central" font-size="12" fill="#444441">不可复现 — 同一问题每次不同</text>
+<text x="366" y="184" text-anchor="start" dominant-baseline="central" font-size="12" fill="#444441">有盲区 — 关键环节常被遗漏</text>
+</svg>

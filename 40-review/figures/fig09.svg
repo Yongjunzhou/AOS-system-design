@@ -1,0 +1,12 @@
+<svg viewBox="0 0 680 270" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>技术系统与工程系统的嵌套关系</title>
+<desc>工程系统包含技术系统以及人、流程、组织、信息，技术系统只由技术组件构成</desc>
+<rect x="100" y="50" width="480" height="200" rx="16" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+<text x="340" y="72" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">工程系统 / 社会技术系统</text>
+<text x="340" y="92" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">技术系统 + 人 + 流程 + 组织 + 信息</text>
+<rect x="170" y="112" width="340" height="76" rx="12" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+<text x="340" y="134" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">技术系统</text>
+<text x="340" y="156" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">硬件 · 软件 · 机械 · 电气</text>
+<text x="340" y="174" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">人只是使用者，不属于它</text>
+<text x="340" y="210" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">例子：汽车本体 ⊂ 交通出行系统；ERP 软件 ⊂ 企业数字化系统</text>
+</svg>

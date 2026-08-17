@@ -1,0 +1,20 @@
+<svg viewBox="0 0 680 310" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>工程与科学、手艺、艺术的对比</title>
+<desc>工程在认识论上的对立面是科学，方法论上的对立面是手艺，目标上的对立面是艺术</desc>
+<rect x="40" y="40" width="290" height="115" rx="12" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+<text x="185" y="66" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">工程 Engineering</text>
+<text x="185" y="92" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">在约束下系统化地创造有用之物</text>
+<text x="185" y="114" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="500" fill="#0C447C">追求「有用」· 结果可复现</text>
+<rect x="350" y="40" width="290" height="115" rx="12" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text x="495" y="66" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#444441">科学 Science</text>
+<text x="495" y="92" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">观察、解释、预测世界的规律</text>
+<text x="495" y="114" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="500" fill="#444441">追求「真」· 从已知探索未知</text>
+<rect x="40" y="175" width="290" height="115" rx="12" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text x="185" y="201" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#444441">手艺 Craft</text>
+<text x="185" y="227" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">靠个人经验与技巧精雕细琢</text>
+<text x="185" y="249" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="500" fill="#444441">追求「巧」· 结果依赖个人</text>
+<rect x="350" y="175" width="290" height="115" rx="12" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text x="495" y="201" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#444441">艺术 Art</text>
+<text x="495" y="227" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">以作品表达自我与感受</text>
+<text x="495" y="249" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="500" fill="#444441">追求「美」· 无功能约束</text>
+</svg>

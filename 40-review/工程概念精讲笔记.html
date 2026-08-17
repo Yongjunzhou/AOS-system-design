@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>工程概念精讲：从定义到系统思维</title>
+<style>
+  :root{
+    --bg:#f6f5f2; --card:#ffffff; --ink:#1f2328; --ink2:#57606a; --ink3:#8b949e;
+    --line:#e4e2dc; --blue:#185FA5; --blue-deep:#0C447C; --blue-soft:#E6F1FB;
+    --amber:#854F0B; --amber-deep:#633806; --amber-soft:#FAEEDA;
+    --green:#3B6D11; --green-soft:#EAF3DE; --gray:#5F5E5A; --gray-soft:#F1EFE8;
+    --serif:"Georgia","Songti SC","SimSun",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.75;font-size:15px;}
+  .page{max-width:880px;margin:0 auto;padding:48px 32px 80px;}
+  header.hero{background:var(--blue-soft);border:1px solid #b5d4f4;border-radius:16px;padding:36px 40px;margin-bottom:32px;}
+  header.hero .tag{display:inline-block;font-size:12px;color:var(--blue);border:1px solid #b5d4f4;border-radius:999px;padding:2px 12px;margin-bottom:14px;letter-spacing:1px;}
+  header.hero h1{font-family:var(--serif);font-size:34px;font-weight:700;color:var(--blue-deep);line-height:1.3;}
+  header.hero .sub{margin-top:10px;color:var(--ink2);font-size:15px;}
+  header.hero .meta{margin-top:16px;font-size:12px;color:var(--ink3);}
+  nav.toc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 28px;margin-bottom:36px;}
+  nav.toc h3{font-size:13px;color:var(--ink3);font-weight:500;letter-spacing:2px;margin-bottom:10px;}
+  nav.toc ol{margin-left:20px;columns:2;column-gap:40px;}
+  nav.toc li{margin:4px 0;}
+  nav.toc a{color:var(--ink2);text-decoration:none;font-size:13.5px;}
+  nav.toc a:hover{color:var(--blue);}
+  section{margin-bottom:44px;}
+  h2{font-family:var(--serif);font-size:23px;color:var(--ink);border-bottom:2px solid var(--line);padding-bottom:10px;margin-bottom:18px;}
+  h2 .no{color:var(--blue);margin-right:10px;font-family:var(--sans);font-size:15px;font-weight:600;}
+  h3{font-size:16px;margin:22px 0 8px;color:var(--ink);}
+  p{margin:10px 0;}
+  strong{color:var(--ink);}
+  .hl{background:linear-gradient(transparent 60%,#FAC775 60%);padding:0 2px;}
+  blockquote{border-left:3px solid var(--blue);background:var(--blue-soft);border-radius:0 10px 10px 0;padding:12px 18px;margin:14px 0;color:var(--blue-deep);font-size:14.5px;}
+  blockquote.amber{border-left-color:var(--amber);background:var(--amber-soft);color:var(--amber-deep);}
+  .figure{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 16px 12px;margin:18px 0;}
+  .figure .cap{font-size:12.5px;color:var(--ink3);text-align:center;margin-top:8px;}
+  .figure svg{display:block;margin:0 auto;max-width:660px;height:auto;}
+  table{border-collapse:collapse;width:100%;margin:16px 0;font-size:13.5px;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+  th{background:var(--gray-soft);color:var(--ink);font-weight:600;text-align:left;padding:9px 14px;border-bottom:1px solid var(--line);}
+  td{padding:9px 14px;border-bottom:1px solid var(--line);color:var(--ink2);vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  ul,ol.plain{margin:10px 0 10px 22px;}
+  li{margin:5px 0;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:16px 0;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;}
+  .card .ct{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px;}
+  .card .cb{font-size:13px;color:var(--ink2);}
+  .kicker{font-size:12px;color:var(--ink3);letter-spacing:2px;font-weight:600;margin-bottom:2px;}
+  .note{font-size:13px;color:var(--ink2);background:var(--gray-soft);border-radius:10px;padding:12px 16px;margin:14px 0;}
+  .fin{background:var(--blue-deep);color:#fff;border-radius:14px;padding:26px 30px;margin-top:40px;}
+  .fin h2{border:none;color:#fff;font-size:22px;margin-bottom:10px;}
+  .fin p{color:#cfe0f2;font-size:14px;}
+  .fin strong{color:#fff;}
+  @media (max-width:720px){ nav.toc ol{columns:1;} .page{padding:24px 16px 60px;} }
+  @media print{ body{background:#fff;} .page{max-width:100%;padding:0;} section{break-inside:avoid;} header.hero,.figure{break-inside:avoid;} nav.toc{break-inside:avoid;} }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="hero">
+  <span class="tag">概念精讲 · 对话整理</span>
+  <h1>工程概念精讲：从定义到系统思维</h1>
+  <p class="sub">工程是什么？它的对立面是什么？系统工程、软件工程、工程系统、技术系统……一次连续对话的完整梳理。</p>
+  <p class="meta">整理日期：2026-08-17 ｜ 主题：工程 / 方法论 / 系统工程 / 软件工程 / 工程系统 / 技术系统</p>
+</header>
+
+<nav class="toc">
+  <h3>目 录</h3>
+  <ol>
+    <li><a href="#s1">工程是什么：一个定义，四个要素</a></li>
+    <li><a href="#s2">工程的对立面：科学 · 手艺 · 艺术</a></li>
+    <li><a href="#s3">工程是方法论吗：方法 &lt; 方法论 &lt; 工程</a></li>
+    <li><a href="#s4">系统工程与软件工程：构建什么，包含什么</a></li>
+    <li><a href="#s5">权威定义：80 年四个机构的共识</a></li>
+    <li><a href="#s6">系统化（Systematic）到底是什么意思</a></li>
+    <li><a href="#s7">系统化 ≠ 机械化：算法与方法之别</a></li>
+    <li><a href="#s8">工程系统（Engineered System）</a></li>
+    <li><a href="#s9">技术系统（Technical System）与工程系统</a></li>
+    <li><a href="#s10">全篇速查：一张表带走</a></li>
+  </ol>
+</nav>
+
+<section id="s1">
+  <h2><span class="no">01</span>工程是什么：一个定义，四个要素</h2>
+  <p>“工程”一词被使用得很滥（信息工程、管理工程……），但在系统工程、软件工程、硬件工程里，它有一个非常硬核的共同内核：</p>
+  <blockquote><strong>工程 = 在现实约束下，系统化地应用科学原理，创造有用的人造物。</strong></blockquote>
+  <div class="figure">
+    <svg viewBox="0 0 680 290" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+      <title>工程的四要素</title>
+      <defs>
+      <marker id="arrow-1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+      </defs>
+      <line x1="340" y1="86" x2="340" y2="116" stroke="#854F0B" stroke-width="1.5" marker-end="url(#arrow-1)"/>
+      <line x1="340" y1="214" x2="340" y2="184" stroke="#854F0B" stroke-width="1.5" marker-end="url(#arrow-1)"/>
+      <line x1="212" y1="150" x2="242" y2="150" stroke="#854F0B" stroke-width="1.5" marker-end="url(#arrow-1)"/>
+      <line x1="468" y1="150" x2="438" y2="150" stroke="#854F0B" stroke-width="1.5" marker-end="url(#arrow-1)"/>
+      <rect x="250" y="30" width="180" height="56" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+      <text x="340" y="52" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">科学原理</text>
+      <text x="340" y="72" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">应用什么 · 为何行得通</text>
+      <rect x="250" y="214" width="180" height="56" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+      <text x="340" y="236" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">系统方法</text>
+      <text x="340" y="256" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">需求→设计→实现→验证→维护</text>
+      <rect x="40" y="122" width="170" height="56" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+      <text x="125" y="144" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">约束条件</text>
+      <text x="125" y="164" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">时间·成本·资源·风险</text>
+      <rect x="470" y="122" width="170" height="56" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+      <text x="555" y="144" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">有用的人造物</text>
+      <text x="555" y="164" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">满足需求的解决方案</text>
+      <rect x="250" y="122" width="180" height="56" rx="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+      <text x="340" y="144" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">工程</text>
+      <text x="340" y="164" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">Engineering</text>
+    </svg>
+    <div class="cap">图 1｜工程的四个支柱：科学原理、约束条件、系统方法，产出有用的人造物</div>
+  </div>
+  <p>四个要素各司其职：</p>
+  <table>
+    <tr><th>要素</th><th>作用</th><th>要点</th></tr>
+    <tr><td><strong>科学原理</strong></td><td>地基</td><td>工程是<em>应用</em>原理而非<em>发现</em>原理；物理定律、数学模型、算法理论是依托。</td></tr>
+    <tr><td><strong>约束条件</strong></td><td>精髓</td><td>成本、工期、资源、风险、法规、物理极限——工程是<em>戴着镣铐跳舞</em>。</td></tr>
+    <tr><td><strong>系统方法</strong></td><td>过程</td><td>需求分析→架构设计→实现→验证→运维，保证<em>可计划、可度量、可复现</em>。</td></tr>
+    <tr><td><strong>有用的人造物</strong></td><td>目的</td><td>一切为了交付能用的东西；没有约束的“创造”不叫工程，叫发明或艺术。</td></tr>
+  </table>
+  <p class="note">系统工程、软件工程、硬件工程的差异只是<strong>载体</strong>不同——系统的层级结构、代码、物理器件——内核完全一致。</p>
+</section>
+
+<section id="s2">
+  <h2><span class="no">02</span>工程的对立面：科学 · 手艺 · 艺术</h2>
+  <p>反直觉的答案：<strong>“工程”没有单一对立面，它的对立面取决于你站在哪个维度看。</strong></p>
+  <div class="figure">
+    <svg viewBox="0 0 680 310" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+      <title>工程与科学、手艺、艺术的对比</title>
+      <rect x="40" y="40" width="290" height="115" rx="12" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+      <text x="185" y="66" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">工程 Engineering</text>
+      <text x="185" y="92" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">在约束下系统化地创造有用之物</text>
+      <text x="185" y="114" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="500" fill="#0C447C">追求「有用」· 结果可复现</text>
+      <rect x="350" y="40" width="290" height="115" rx="12" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+      <text x="495" y="66" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#444441">科学 Science</text>
+      <text x="495" y="92" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">观察、解释、预测世界的规律</text>
+      <text x="495" y="114" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="500" fill="#444441">追求「真」· 从已知探索未知</text>
+      <rect x="40" y="175" width="290" height="115" rx="12" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+      <text x="185" y="201" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#444441">手艺 Craft</text>
+      <text x="185" y="227" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">靠个人经验与技巧精雕细琢</text>
+      <text x="185" y="249" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="500" fill="#444441">追求「巧」· 结果依赖个人</text>
+      <rect x="350" y="175" width="290" height="115" rx="12" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+      <text x="495" y="201" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#444441">艺术 Art</text>
+      <text x="495" y="227" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">以作品表达自我与感受</text>
+      <text x="495" y="249" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="500" fill="#444441">追求「美」· 无功能约束</text>
+    </svg>
+    <div class="cap">图 2｜工程的三个维度对立面</div>
+  </div>
+  <table>
+    <tr><th>维度</th><th>对立面</th><th>区别</th></tr>
+    <tr><td><strong>认识论</strong></td><td>科学</td><td>科学问“世界是什么”，工程问“应该造出什么”。科学家的失败可贵（推翻假说），工程师的失败是灾难（垮了就垮了）。</td></tr>
+    <tr><td><strong>方法论</strong></td><td>手艺 / 即兴</td><td>手艺靠个人经验与灵感，结果依赖人；工程靠流程、标准、文档、评审、测试，<em>换个人也能交付</em>。</td></tr>
+    <tr><td><strong>目标</strong></td><td>艺术</td><td>艺术为表达自我，功能约束让位于审美；工程为满足用户，一切决策向可用、可靠、可维护汇报。</td></tr>
+  </table>
+  <blockquote class="amber"><strong>试金石：</strong>换个团队、换个人，用同样的需求文档和约束，能不能交付质量相当的成果？能，是工程；不能，那是手艺——哪怕它碰巧也用了代码、图纸或电路。</blockquote>
+</section>
+
+<section id="s3">
+  <h2><span class="no">03</span>工程是方法论吗：方法 &lt; 方法论 &lt; 工程</h2>
+  <p>方法论确实是工程的心脏，但<strong>工程 ≠ 方法论</strong>。先分清三个词：</p>
+  <ul>
+    <li><strong>方法（method）</strong>：一条具体做法，比如“排序用快速排序”。</li>
+    <li><strong>方法论（methodology）</strong>：关于“怎么组织工作、怎么选方法”的系统学说，如瀑布模型、敏捷、CMMI。</li>
+    <li><strong>工程（engineering）</strong>：比前两者都大的整体——方法论只是它的一部分。</li>
+  </ul>
+  <div class="figure">
+    <svg viewBox="0 0 680 310" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+      <title>工程的分层结构</title>
+      <rect x="90" y="30" width="500" height="260" rx="16" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+      <text x="340" y="52" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">工程 = 一个完整的人类实践，方法论只是其中一层</text>
+      <rect x="110" y="66" width="460" height="44" rx="8" fill="#FFFFFF" stroke="#B5D4F4" stroke-width="0.5"/>
+      <text x="126" y="88" text-anchor="start" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">工具与实践</text>
+      <text x="236" y="88" text-anchor="start" dominant-baseline="central" font-size="12" fill="#185FA5">用什么做 · CAD / 编译器 / 测试链</text>
+      <rect x="110" y="120" width="460" height="44" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+      <text x="126" y="142" text-anchor="start" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">方法论</text>
+      <text x="236" y="142" text-anchor="start" dominant-baseline="central" font-size="12" fill="#854F0B">怎么组织 · 需求→设计→实现→验证→维护</text>
+      <rect x="110" y="174" width="460" height="44" rx="8" fill="#FFFFFF" stroke="#B5D4F4" stroke-width="0.5"/>
+      <text x="126" y="196" text-anchor="start" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">工程科学</text>
+      <text x="236" y="196" text-anchor="start" dominant-baseline="central" font-size="12" fill="#185FA5">依据什么 · 原理 / 模型 / 定律</text>
+      <rect x="110" y="228" width="460" height="44" rx="8" fill="#FFFFFF" stroke="#B5D4F4" stroke-width="0.5"/>
+      <text x="126" y="250" text-anchor="start" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">价值与伦理</text>
+      <text x="236" y="250" text-anchor="start" dominant-baseline="central" font-size="12" fill="#185FA5">为了什么 · 安全 / 可靠 / 负责</text>
+    </svg>
+    <div class="cap">图 3｜工程的四层结构：方法论只是“怎么组织”那一层</div>
+  </div>
+  <p>为什么说方法论是心脏？<strong>正是这一层把工程和手艺区分开</strong>——方法论意味着“换个团队也能用同样的方式交付”。但工程绝不止方法论：</p>
+  <ul>
+    <li><strong>工程科学</strong>：方法论不告诉你“为什么这样能行”。没有力学定律，土木工程师只是个会搭积木的人；没有算法理论，软件工程师只是在瞎调参数。</li>
+    <li><strong>工具与实践</strong>：方法论必须落地成工具和动作才产生价值。</li>
+    <li><strong>价值与伦理</strong>：最容易被忽略的一层。泰坦尼克号、挑战者号、波音 737 MAX……每次重大工程事故背后几乎都不是方法论出了问题，而是价值层失守——为成本、进度、利润牺牲安全。只讲方法论不讲伦理，那不叫工程，叫“有组织的赌博”。</li>
+  </ul>
+  <p class="note"><strong>常见误区：</strong>“我们用敏捷，所以我们在做软件工程。”——不。敏捷只是方法论这一层的代表之一，而且常被用歪（只有仪式没有落地）。完整软件工程是知识 + 方法论 + 实践 + 价值四层同时在场。</p>
+</section>
+
+<section id="s4">
+  <h2><span class="no">04</span>系统工程与软件工程：构建什么，包含什么</h2>
+  <p>“可以理解为构建系统的工程、构建软件的工程吗？”——方向正确，但“系统”这个词是<strong>递归的</strong>：</p>
+  <ul>
+    <li><strong>软件工程 = 构建软件系统的工程</strong>。软件本身就是一个系统：模块、接口、数据流、运行时环境、版本演进……软件工程内部同样需要系统思维（架构、接口、集成测试）。</li>
+    <li><strong>系统工程 = 构建复杂系统的工程</strong>。但这里的“系统”特指由多个异构部件（硬件 + 软件 + 人 + 流程 + 数据）组成的整体；系统工程的重心不在“造部件”，而在<strong>整合</strong>。</li>
+  </ul>
+  <div class="figure">
+    <svg viewBox="0 0 680 240" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+      <title>系统工程包含软件工程与硬件工程</title>
+      <defs>
+      <marker id="arrow-4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+      </defs>
+      <rect x="100" y="40" width="480" height="180" rx="16" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+      <text x="340" y="62" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">系统工程 = 构建复杂系统的工程（元工程）</text>
+      <text x="340" y="84" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">跨学科整合 · 接口管理 · 系统级验证</text>
+      <rect x="120" y="104" width="215" height="52" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+      <text x="227" y="124" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">软件工程</text>
+      <text x="227" y="143" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">构建软件系统（部件工程）</text>
+      <rect x="350" y="104" width="215" height="52" rx="8" fill="#FFFFFF" stroke="#B5D4F4" stroke-width="0.5"/>
+      <text x="457" y="124" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">硬件工程</text>
+      <text x="457" y="143" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">构建硬件系统（部件工程）</text>
+      <text x="340" y="176" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">还有人因 · 流程 · 数据 —— 整体大于部分之和</text>
+    </svg>
+    <div class="cap">图 4｜系统工程是“元工程”，软件/硬件工程是其中的部件工程</div>
+  </div>
+  <p>关键区分：<strong>系统工程不造任何部件，它负责“把部件整合成整体”</strong>——把总需求分解分配给各部件工程、定义接口、在系统层面做集成与验证。单个部件都合格，不等于整体合格，这叫<strong>涌现属性（emergent behavior）</strong>：每个发动机都正常、每块机翼都达标，飞机未必能飞。</p>
+  <p>而“递归性”体现在：当软件足够大（操作系统、微服务集群），软件工程内部也会长出系统工程的子集——系统架构师、接口契约、集成测试、端到端验证，即“软件系统工程”。</p>
+  <p class="note"><strong>实践含义：</strong>服务级工程做得好 ≠ 系统级工程做得好。微服务每个单独健康，但调用链、数据一致性、超时熔断没人管，上线必出事——这些“灰色地带”就是系统工程的地盘。</p>
+</section>
+
+<section id="s5">
+  <h2><span class="no">05</span>权威定义：80 年四个机构的共识</h2>
+  <p>“工程”有多个国际权威机构的正式定义，横跨 80 年、三个领域（通用工程、系统工程、软件工程），却惊人地收敛到同一组要素。</p>
+  <blockquote><strong>ECPD（美国工程师职业发展委员会，ABET 前身，1941）</strong>——<br>
+  “The creative application of scientific principles to design or develop structures, machines, apparatus, or manufacturing processes … all as respects an intended function, economics of operation and safety to life and property.”<br>
+  （创造性地应用科学原理，设计或开发结构、机器、装置、制造过程……着眼于预期功能、运行经济性以及对生命财产的安全。）</blockquote>
+  <blockquote><strong>ABET（1979，现行认证标准）</strong>——<br>
+  “The profession in which a knowledge of the mathematical and natural sciences gained by study, experience, and practice is applied with judgment to develop ways to utilize, economically, the materials and forces of nature for the benefit of mankind.”<br>
+  （将通过学习、经验和实践获得的数学与自然科学知识，运用判断力加以应用，以经济地利用自然的物质与力量，造福人类。）</blockquote>
+  <blockquote><strong>INCOSE（国际系统工程学会，2019 年批准）</strong>——<br>
+  “Systems Engineering is a transdisciplinary and integrative approach to enable the successful realization, use, and retirement of engineered systems …”<br>
+  （系统工程是一种跨学科、整合性的方法，运用系统原理以及科学、技术和管理方法，使工程系统的成功实现、使用与退役成为可能。）</blockquote>
+  <blockquote class="amber"><strong>IEEE 610.12-1990（IEEE 标准术语）</strong>——<br>
+  “The application of a systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software; that is, the application of engineering to software.”<br>
+  （将系统化的、规范的、可度量的方法应用于软件的开发、运行与维护——也就是把工程应用于软件。）</blockquote>
+  <div class="figure">
+    <svg viewBox="0 0 680 430" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+      <title>四个权威工程定义及其共同内核</title>
+      <defs>
+      <marker id="arrow-5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+      </defs>
+      <rect x="40" y="40" width="290" height="110" rx="12" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+      <text x="185" y="64" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">ECPD 1941 · 工程经典定义</text>
+      <text x="185" y="88" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">创造性地应用科学原理</text>
+      <text x="185" y="106" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">兼顾功能 · 经济 · 生命财产安全</text>
+      <rect x="350" y="40" width="290" height="110" rx="12" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+      <text x="495" y="64" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#444441">ABET 1979 · 现行认证</text>
+      <text x="495" y="88" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">以判断力应用数理知识</text>
+      <text x="495" y="106" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">经济利用自然 · 造福人类</text>
+      <rect x="40" y="160" width="290" height="110" rx="12" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+      <text x="185" y="184" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#444441">INCOSE 2019 · 系统工程</text>
+      <text x="185" y="208" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">跨学科 · 整合性的方法</text>
+      <text x="185" y="226" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">覆盖全生命周期：实现·使用·退役</text>
+      <rect x="350" y="160" width="290" height="110" rx="12" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+      <text x="495" y="184" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#444441">IEEE 610.12 · 软件工程</text>
+      <text x="495" y="208" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">系统化 · 规范化 · 可度量</text>
+      <text x="495" y="226" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">应用于软件的开发·运行·维护</text>
+      <line x1="185" y1="150" x2="240" y2="292" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow-5)"/>
+      <line x1="495" y1="150" x2="440" y2="292" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow-5)"/>
+      <line x1="185" y1="270" x2="240" y2="292" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow-5)"/>
+      <line x1="495" y1="270" x2="440" y2="292" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow-5)"/>
+      <rect x="100" y="300" width="480" height="110" rx="14" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+      <text x="340" y="322" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">共同内核 —— 四个定义的交集</text>
+      <rect x="120" y="340" width="80" height="28" rx="6" fill="#FFFFFF" stroke="#85B7EB" stroke-width="0.5"/>
+      <text x="160" y="354" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#0C447C">科学原理</text>
+      <rect x="210" y="340" width="80" height="28" rx="6" fill="#FFFFFF" stroke="#85B7EB" stroke-width="0.5"/>
+      <text x="250" y="354" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#0C447C">判断创造</text>
+      <rect x="300" y="340" width="80" height="28" rx="6" fill="#FFFFFF" stroke="#85B7EB" stroke-width="0.5"/>
+      <text x="340" y="354" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#0C447C">约束权衡</text>
+      <rect x="390" y="340" width="80" height="28" rx="6" fill="#FFFFFF" stroke="#85B7EB" stroke-width="0.5"/>
+      <text x="430" y="354" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#0C447C">造福目的</text>
+      <rect x="480" y="340" width="80" height="28" rx="6" fill="#FFFFFF" stroke="#85B7EB" stroke-width="0.5"/>
+      <text x="520" y="354" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#0C447C">系统方法</text>
+      <text x="340" y="392" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">知识为基 · 判断为魂 · 约束为界 · 造福为的 · 方法为径</text>
+    </svg>
+    <div class="cap">图 5｜四个权威定义收敛到五个共同要素</div>
+  </div>
+  <p>注意一个细节：<strong>连 1941 年最早的工程定义里，就同时出现了“运行经济性”和“生命财产安全”</strong>——约束从来不是工程的附加项，而是定义的组成部分。</p>
+  <h3>综合定义（有权威出处背书）</h3>
+  <blockquote><strong>完整版：</strong>工程是以数学与自然科学知识为基础，运用专业判断与创造力，在功能、经济、安全等现实约束下，以系统化、规范化、可度量的方法，设计、构建、运行并维护满足人类需求的工程系统与人造物的专业实践。</blockquote>
+  <blockquote class="amber"><strong>精炼版：</strong>工程 = 科学原理 × 判断与创造，在约束下，用系统方法，造出有用且安全的东西。</blockquote>
+</section>
+
+<section id="s6">
+  <h2><span class="no">06</span>系统化（Systematic）到底是什么意思</h2>
+  <p>“系统化”是 IEEE 定义里的<strong>第一个词</strong>，它不是随便放的。词源上，“系统化”来自“系统”——字面意思就是<strong>“像系统一样做事”</strong>：把工作组织成一个有结构、有序、各部分衔接良好的整体。它有四个可操作的特征：</p>
+  <div class="figure">
+    <svg viewBox="0 0 680 240" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+      <title>系统化与即兴发挥的对照</title>
+      <rect x="40" y="40" width="290" height="180" rx="12" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+      <text x="185" y="66" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">系统化 Systematic</text>
+      <text x="185" y="88" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">像系统一样做事 · 有条有理</text>
+      <text x="56" y="112" text-anchor="start" dominant-baseline="central" font-size="12" fill="#0C447C">有结构 — 分解为清晰步骤与阶段</text>
+      <text x="56" y="136" text-anchor="start" dominant-baseline="central" font-size="12" fill="#0C447C">有章法 — 每步有标准与检查点</text>
+      <text x="56" y="160" text-anchor="start" dominant-baseline="central" font-size="12" fill="#0C447C">可重复 — 换人执行结果仍稳定</text>
+      <text x="56" y="184" text-anchor="start" dominant-baseline="central" font-size="12" fill="#0C447C">全覆盖 — 从需求到维护不遗漏</text>
+      <rect x="350" y="40" width="290" height="180" rx="12" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+      <text x="495" y="66" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#444441">即兴发挥 Ad hoc</text>
+      <text x="495" y="88" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">想到哪做到哪 · 随机应变</text>
+      <text x="366" y="112" text-anchor="start" dominant-baseline="central" font-size="12" fill="#444441">无结构 — 步骤随意、临场发挥</text>
+      <text x="366" y="136" text-anchor="start" dominant-baseline="central" font-size="12" fill="#444441">无章法 — 怎么做全凭个人感觉</text>
+      <text x="366" y="160" text-anchor="start" dominant-baseline="central" font-size="12" fill="#444441">不可复现 — 同一问题每次不同</text>
+      <text x="366" y="184" text-anchor="start" dominant-baseline="central" font-size="12" fill="#444441">有盲区 — 关键环节常被遗漏</text>
+    </svg>
+    <div class="cap">图 6｜系统化与即兴发挥的正反对照</div>
+  </div>
+  <h3>一个中文翻译造成的经典混淆</h3>
+  <p>英文里有两个同源但不同的词，中文都译成“系统的”：</p>
+  <table>
+    <tr><th>词</th><th>含义</th><th>回答的问题</th></tr>
+    <tr><td><strong>systematic（系统化）</strong></td><td>过程有条理——步骤清晰、方法规范、可检查可复现</td><td>怎么做事（IEEE 定义用词）</td></tr>
+    <tr><td><strong>systemic / systems thinking（系统性 / 系统思维）</strong></td><td>视角看整体——关注部分间关系、涌现行为、与环境交互</td><td>怎么看问题（INCOSE 定义的落脚点）</td></tr>
+  </table>
+  <p><strong>systematic 是“做事有章法”，systemic 是“看问题有全局”。</strong>好的工程两者都要——用系统思维发现问题，用系统化方法解决问题。</p>
+  <h3>例子：同样给软件加一个新功能</h3>
+  <p><strong>非系统化：</strong>想起需求直接开写 → 写一半发现要改数据库 → 顺手改了表结构 → 没测旧功能 → 上线后报表挂了 → 连夜回滚 → 三个月后没人知道为什么多了个字段。</p>
+  <p><strong>系统化：</strong>需求写清楚并评审 → 评估影响范围 → 设计评审 → 编码 + 单元测试 → 集成测试回归旧功能 → 代码评审 → 预发布验证 → 上线 → 记录变更。每一步有明确的输入、输出和检查点。</p>
+  <p class="note">系统化的本质不是“流程繁琐”，而是：<strong>每一步都可检查、每个决策都可追溯、整个活动可复制</strong>——这正是工程区别于手艺的那个“换个人也能交付”的来源。</p>
+</section>
+
+<section id="s7">
+  <h2><span class="no">07</span>系统化 ≠ 机械化：算法与方法之别</h2>
+  <p>“像系统一样做事，就是有结构、有算法、可重复、全覆盖吗？”——方向对，四个词里三个准确，但<strong>“有算法”是错的，必须换成“有方法（含判断）”</strong>。</p>
+  <div class="figure">
+    <svg viewBox="0 0 680 348" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+      <title>系统化四特征的逐条检验</title>
+      <rect x="40" y="40" width="600" height="48" rx="10" fill="#FFFFFF" stroke="#B5D4F4" stroke-width="0.5"/>
+      <circle cx="66" cy="64" r="6" fill="#3B6D11"/>
+      <text x="80" y="64" text-anchor="start" dominant-baseline="central" font-size="12" font-weight="500" fill="#3B6D11">准确</text>
+      <text x="132" y="64" text-anchor="start" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">有结构</text>
+      <text x="240" y="64" text-anchor="start" dominant-baseline="central" font-size="12" fill="#444441">工作被组织成有序的步骤与阶段，各部分衔接清晰</text>
+      <rect x="40" y="98" width="600" height="48" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+      <circle cx="66" cy="122" r="6" fill="#BA7517"/>
+      <text x="80" y="122" text-anchor="start" dominant-baseline="central" font-size="12" font-weight="500" fill="#854F0B">需修正</text>
+      <text x="132" y="122" text-anchor="start" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">有算法</text>
+      <text x="240" y="122" text-anchor="start" dominant-baseline="central" font-size="12" fill="#444441">应改为「有方法」——工程靠有章法的判断，不是机械执行</text>
+      <rect x="40" y="156" width="600" height="48" rx="10" fill="#FFFFFF" stroke="#B5D4F4" stroke-width="0.5"/>
+      <circle cx="66" cy="180" r="6" fill="#3B6D11"/>
+      <text x="80" y="180" text-anchor="start" dominant-baseline="central" font-size="12" font-weight="500" fill="#3B6D11">准确</text>
+      <text x="132" y="180" text-anchor="start" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">可重复</text>
+      <text x="240" y="180" text-anchor="start" dominant-baseline="central" font-size="12" fill="#444441">同样的方法、同样的条件，结果保持稳定、可复现</text>
+      <rect x="40" y="214" width="600" height="48" rx="10" fill="#FFFFFF" stroke="#B5D4F4" stroke-width="0.5"/>
+      <circle cx="66" cy="238" r="6" fill="#3B6D11"/>
+      <text x="80" y="238" text-anchor="start" dominant-baseline="central" font-size="12" font-weight="500" fill="#3B6D11">准确</text>
+      <text x="132" y="238" text-anchor="start" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">全覆盖</text>
+      <text x="240" y="238" text-anchor="start" dominant-baseline="central" font-size="12" fill="#444441">从需求、设计到维护、退役，全程无遗漏环节</text>
+      <rect x="40" y="272" width="600" height="56" rx="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+      <text x="56" y="290" text-anchor="start" dominant-baseline="central" font-size="13" font-weight="500" fill="#0C447C">为什么不是「算法」</text>
+      <text x="56" y="310" text-anchor="start" dominant-baseline="central" font-size="12" fill="#185FA5">算法是确定性指令：输入相同、输出必相同，无需判断；工程方法需判断与权衡 —— ABET 原文「applied with judgment」</text>
+    </svg>
+    <div class="cap">图 7｜四特征逐条检验：“有算法”修正为“有方法”</div>
+  </div>
+  <p>为什么“有算法”不对：<strong>算法（algorithm）是确定性的</strong>——给定相同输入，必定产生相同输出，中间不需要任何人做判断。排序算法不会因为“今天心情不好”就排乱。<strong>工程方法不是这样</strong>：它是有章法的（有步骤、有标准、有检查点），但每一步都留有人做判断的空间——材料公差、需求变化、成本权衡、风险取舍，没有唯一正确答案，要靠工程师的判断。</p>
+  <ul>
+    <li><strong>机械化执行（算法化）</strong>：不需要思考，可以被自动化——流水线、编译器干的事。</li>
+    <li><strong>系统化工程（方法 + 判断）</strong>：有流程但不失判断，有章法但能应变。</li>
+  </ul>
+  <p>这也修正了“像系统一样做事”这个比喻——<strong>不是“像机器一样”（按固定程序走），而是“像有组织的整体一样”</strong>（各部分分工协作、有接口、有反馈、能应变）。更准确的类比是<strong>乐队</strong>：每个乐手按总谱演奏，但指挥会根据现场情况调整节奏——这才是系统性，不是机械性。</p>
+  <p class="note"><strong>精髓：</strong>系统化的目的不是消灭不确定性，而是把不确定性纳入可控范围。工程面对的世界从来不是确定性的——需求会变、环境会变、人会犯错。系统化方法通过检查点、评审、测试、反馈回路来管理这些不确定性。软件行业最典型的例子就是敏捷：它有完整的流程，但每一步都依赖人的判断——<strong>高度系统化，但一点都谈不上“算法化”</strong>。</p>
+</section>
+
+<section id="s8">
+  <h2><span class="no">08</span>工程系统（Engineered System）</h2>
+  <p>“工程系统”是 INCOSE 系统工程定义里的核心对象，但常被误读为“工程领域的系统”或“技术系统”。正式定义：</p>
+  <blockquote><strong>INCOSE（2019）：</strong>“A system designed or adapted to interact with an anticipated operational environment to achieve one or more intended purposes while complying with applicable constraints.”<br>（一个被<strong>设计或改造</strong>的、与<strong>预期的运行环境</strong>交互、以达成一个或多个<strong>预期目的</strong>、同时<strong>遵守适用约束</strong>的系统。）</blockquote>
+  <p>关键就在“engineered（被工程化的）”这个词——它把工程系统和所有其他系统区分开。四个特征：</p>
+  <div class="figure">
+    <svg viewBox="0 0 680 290" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+      <title>工程系统的四个特征</title>
+      <defs>
+      <marker id="arrow-8" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+      </defs>
+      <line x1="340" y1="86" x2="340" y2="116" stroke="#854F0B" stroke-width="1.5" marker-end="url(#arrow-8)"/>
+      <line x1="340" y1="214" x2="340" y2="184" stroke="#854F0B" stroke-width="1.5" marker-end="url(#arrow-8)"/>
+      <line x1="212" y1="150" x2="242" y2="150" stroke="#854F0B" stroke-width="1.5" marker-end="url(#arrow-8)"/>
+      <line x1="468" y1="150" x2="438" y2="150" stroke="#854F0B" stroke-width="1.5" marker-end="url(#arrow-8)"/>
+      <rect x="250" y="30" width="180" height="56" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+      <text x="340" y="52" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">人为设计或改造</text>
+      <text x="340" y="72" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">有设计者 · 非自然演化</text>
+      <rect x="250" y="214" width="180" height="56" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+      <text x="340" y="236" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">明确目的</text>
+      <text x="340" y="256" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">服务于利益相关者的需求</text>
+      <rect x="40" y="122" width="170" height="56" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+      <text x="125" y="144" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">环境交互</text>
+      <text x="125" y="164" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">在运行环境中运转</text>
+      <rect x="470" y="122" width="170" height="56" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+      <text x="555" y="144" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">遵守约束</text>
+      <text x="555" y="164" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">物理·法规·成本·安全</text>
+      <rect x="250" y="122" width="180" height="56" rx="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+      <text x="340" y="144" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">工程系统</text>
+      <text x="340" y="164" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">Engineered System</text>
+    </svg>
+    <div class="cap">图 8｜工程系统的四个特征</div>
+  </div>
+  <p>“人为设计或改造”是分水岭：</p>
+  <table>
+    <tr><th>系统类型</th><th>例子</th><th>是工程系统吗</th></tr>
+    <tr><td>自然系统</td><td>山脉、天气、生态系统</td><td>否 —— 自然演化，无设计者</td></tr>
+    <tr><td>社会系统</td><td>市场、语言、城市文化</td><td>否 —— 集体行为涌现，非被设计</td></tr>
+    <tr><td>概念系统</td><td>数学理论、法律框架</td><td>否 —— 纯信息，无运行环境</td></tr>
+    <tr><td><strong>工程系统</strong></td><td>汽车、电网、软件、机场</td><td>是 —— 被设计、有目的、与环境交互、受约束</td></tr>
+  </table>
+  <p>两个容易踩的坑：</p>
+  <ul>
+    <li><strong>工程系统 ≠ 技术系统。</strong>INCOSE 特别说明：工程系统可以由<strong>人、产品、服务、信息、流程、甚至自然元素</strong>组成。最典型的例子是<strong>机场</strong>——跑道和航站楼（物理）、雷达和行李分拣（技术）、塔台和地勤（人）、安检和调度（流程）、航班数据（信息），还有气象条件（环境），合起来才产生“机场顺利运行”这个涌现行为。</li>
+    <li><strong>软件系统是工程系统。</strong>它虽然看不见摸不着（概念系统），但它是被设计出来的、有明确目的、与运行环境交互（操作系统、网络、用户）、受约束（性能、安全、法规）的——四条全中。</li>
+  </ul>
+  <p class="note"><strong>生命周期：</strong>INCOSE 定义说工程系统要被“实现、使用、退役”——意味着工程系统<strong>有生命周期</strong>，要为“退役”做设计（系统能安全关停、数据能迁移）。</p>
+</section>
+
+<section id="s9">
+  <h2><span class="no">09</span>技术系统（Technical System）与工程系统</h2>
+  <p><strong>技术系统 = 由人工技术组件构成的系统</strong>——硬件、软件、机械、电气，它们协同实现功能。人可以操作它，但人<strong>不属于</strong>它——技术系统的边界就是设备的边界。</p>
+  <ul>
+    <li><strong>纯人工制品</strong>：没有自然物、没有“活的”组件；</li>
+    <li><strong>功能靠技术实现</strong>：性能可量化、可测试（吞吐量、负载、响应时间）；</li>
+    <li><strong>人只是外部使用者</strong>：司机、操作员都在系统之外，不是组成部分。</li>
+  </ul>
+  <div class="figure">
+    <svg viewBox="0 0 680 270" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+      <title>技术系统与工程系统的嵌套关系</title>
+      <rect x="100" y="50" width="480" height="200" rx="16" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+      <text x="340" y="72" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">工程系统 / 社会技术系统</text>
+      <text x="340" y="92" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">技术系统 + 人 + 流程 + 组织 + 信息</text>
+      <rect x="170" y="112" width="340" height="76" rx="12" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+      <text x="340" y="134" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">技术系统</text>
+      <text x="340" y="156" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">硬件 · 软件 · 机械 · 电气</text>
+      <text x="340" y="174" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">人只是使用者，不属于它</text>
+      <text x="340" y="210" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">例子：汽车本体 ⊂ 交通出行系统；ERP 软件 ⊂ 企业数字化系统</text>
+    </svg>
+    <div class="cap">图 9｜技术系统是工程系统的内核</div>
+  </div>
+  <p>为什么这个区分如此重要？因为<strong>系统工程史上最昂贵的教训之一，就是“把工程系统当成技术系统来管”</strong>。20 世纪 70-80 年代，系统工程界发现大量项目失败——系统造出来了、性能达标，但<strong>用不起来</strong>。德国系统理论家 Ropohl 等人提出，很多“系统”其实是<strong>社会技术系统（socio-technical system）</strong>：技术子系统 + 人的子系统 + 组织子系统耦合在一起，单独优化技术部分没有意义。这也是为什么 INCOSE 2019 特意把定义从“technical system”改写为“engineered system”并注明可含人、流程、信息——把视野从设备扩到整个运行环境。</p>
+  <h3>最经典的翻车案例：ERP（企业资源计划系统）</h3>
+  <ul>
+    <li>按<strong>技术系统</strong>视角：软件部署好了、服务器跑起来了、模块上线了——“系统成功”。</li>
+    <li>按<strong>工程系统</strong>视角：采购流程没改、财务人员不会用、数据没清洗——“系统失败”。</li>
+  </ul>
+  <p>砸了几千万，最后发现“系统”根本没被用起来。这不是技术问题，是<strong>把技术系统误当成了工程系统来验收</strong>——忘了人、流程、组织也是这个系统的一部分。</p>
+  <p class="note"><strong>收尾：</strong>软件系统本身是技术系统（代码、数据、服务器）；<strong>“软件 + 用户 + 业务流程 + 运维组织”才是工程系统</strong>。说“我们构建了一个技术系统”，说的是设备的集合；说“我们构建了一个工程系统”，承诺的是整个社会技术系统能运转起来——技术达标、人会用、流程顺、组织撑得住。这后一种承诺，才是系统工程真正的活儿。</p>
+</section>
+
+<section id="s10">
+  <h2><span class="no">10</span>全篇速查：一张表带走</h2>
+  <h3>核心概念定义</h3>
+  <table>
+    <tr><th>概念</th><th>一句话定义</th></tr>
+    <tr><td><strong>工程</strong></td><td>科学原理 × 判断与创造，在约束下，用系统方法，造出有用且安全的东西。</td></tr>
+    <tr><td><strong>系统工程</strong></td><td>构建复杂系统的元工程——跨学科整合、接口管理、系统级验证，使工程系统成功实现、使用与退役。</td></tr>
+    <tr><td><strong>软件工程</strong></td><td>将系统化、规范化、可度量的方法应用于软件的开发、运行与维护（IEEE 610.12）。</td></tr>
+    <tr><td><strong>工程系统</strong></td><td>被设计或改造的、与环境交互、有明确目的、受约束的系统（INCOSE 2019）。</td></tr>
+    <tr><td><strong>技术系统</strong></td><td>仅由人工技术组件（硬件、软件、机械、电气）构成的系统，人只是使用者。</td></tr>
+  </table>
+  <h3>关键对偶关系</h3>
+  <table>
+    <tr><th>对比</th><th>本质区别</th></tr>
+    <tr><td>工程 ↔ 科学</td><td>创造 vs 发现；追求“有用” vs 追求“真”</td></tr>
+    <tr><td>工程 ↔ 手艺</td><td>可复现 vs 依赖个人；系统化 vs 即兴</td></tr>
+    <tr><td>工程 ↔ 艺术</td><td>满足需求 vs 自我表达；受约束 vs 自由</td></tr>
+    <tr><td>系统化 ↔ 机械化</td><td>有章法 + 判断 vs 确定性执行；工程靠方法，不靠算法</td></tr>
+    <tr><td>工程系统 ↔ 技术系统</td><td>含人、流程、组织 vs 纯设备；社会技术系统 vs 设备集合</td></tr>
+  </table>
+  <h3>金句</h3>
+  <div class="cards">
+    <div class="card"><div class="ct">试金石</div><div class="cb">换个团队、换个人，用同样的需求文档和约束，能交付质量相当的成果——能，是工程；不能，那是手艺。</div></div>
+    <div class="card"><div class="ct">约束即定义</div><div class="cb">连 1941 年最早的工程定义里，同时出现了“运行经济性”和“生命财产安全”。约束不是附加项，是定义的一部分。</div></div>
+    <div class="card"><div class="ct">系统化 ≠ 机械化</div><div class="cb">systematic 是做事有章法，systemic 是看问题有全局。工程有流程但不失判断，有章法但能应变。</div></div>
+    <div class="card"><div class="ct">涌现属性</div><div class="cb">每个部件都正常，系统未必正常。整体行为不是部分行为的简单相加——这就是系统工程存在的原因。</div></div>
+  </div>
+</section>
+
+<div class="fin">
+  <h2>一句话总结全文</h2>
+  <p><strong>工程是在现实约束下，用系统化方法把科学原理锻造成有用之物的实践；</strong>它的对立面取决于维度——认识论上是科学，方法论上是手艺，目标上是艺术。<strong>系统工程</strong>是整合部件、管理涌现的元工程，<strong>软件工程</strong>是其面向软件载体的子类；两者共同的服务对象是<strong>工程系统</strong>——被设计、有目的、与环境交互、受约束、有生命周期的系统，而不是仅仅由设备构成的<strong>技术系统</strong>。</p>
+</div>
+
+</div>
+</body>
+</html>

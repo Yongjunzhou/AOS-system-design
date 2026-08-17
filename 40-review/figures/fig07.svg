@@ -1,0 +1,27 @@
+<svg viewBox="0 0 680 348" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>系统化四特征的逐条检验</title>
+<desc>有结构、可重复、全覆盖准确，有算法应修正为有方法，工程需要判断而非机械执行</desc>
+<rect x="40" y="40" width="600" height="48" rx="10" fill="#FFFFFF" stroke="#B5D4F4" stroke-width="0.5"/>
+<circle cx="66" cy="64" r="6" fill="#3B6D11"/>
+<text x="80" y="64" text-anchor="start" dominant-baseline="central" font-size="12" font-weight="500" fill="#3B6D11">准确</text>
+<text x="132" y="64" text-anchor="start" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">有结构</text>
+<text x="240" y="64" text-anchor="start" dominant-baseline="central" font-size="12" fill="#444441">工作被组织成有序的步骤与阶段，各部分衔接清晰</text>
+<rect x="40" y="98" width="600" height="48" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+<circle cx="66" cy="122" r="6" fill="#BA7517"/>
+<text x="80" y="122" text-anchor="start" dominant-baseline="central" font-size="12" font-weight="500" fill="#854F0B">需修正</text>
+<text x="132" y="122" text-anchor="start" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">有算法</text>
+<text x="240" y="122" text-anchor="start" dominant-baseline="central" font-size="12" fill="#444441">应改为「有方法」——工程靠有章法的判断，不是机械执行</text>
+<rect x="40" y="156" width="600" height="48" rx="10" fill="#FFFFFF" stroke="#B5D4F4" stroke-width="0.5"/>
+<circle cx="66" cy="180" r="6" fill="#3B6D11"/>
+<text x="80" y="180" text-anchor="start" dominant-baseline="central" font-size="12" font-weight="500" fill="#3B6D11">准确</text>
+<text x="132" y="180" text-anchor="start" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">可重复</text>
+<text x="240" y="180" text-anchor="start" dominant-baseline="central" font-size="12" fill="#444441">同样的方法、同样的条件，结果保持稳定、可复现</text>
+<rect x="40" y="214" width="600" height="48" rx="10" fill="#FFFFFF" stroke="#B5D4F4" stroke-width="0.5"/>
+<circle cx="66" cy="238" r="6" fill="#3B6D11"/>
+<text x="80" y="238" text-anchor="start" dominant-baseline="central" font-size="12" font-weight="500" fill="#3B6D11">准确</text>
+<text x="132" y="238" text-anchor="start" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">全覆盖</text>
+<text x="240" y="238" text-anchor="start" dominant-baseline="central" font-size="12" fill="#444441">从需求、设计到维护、退役，全程无遗漏环节</text>
+<rect x="40" y="272" width="600" height="56" rx="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+<text x="56" y="290" text-anchor="start" dominant-baseline="central" font-size="13" font-weight="500" fill="#0C447C">为什么不是「算法」</text>
+<text x="56" y="310" text-anchor="start" dominant-baseline="central" font-size="12" fill="#185FA5">算法是确定性指令：输入相同、输出必相同，无需判断；工程方法需判断与权衡 —— ABET 原文「applied with judgment」</text>
+</svg>

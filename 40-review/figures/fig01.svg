@@ -1,0 +1,28 @@
+<svg viewBox="0 0 680 290" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>工程的四要素</title>
+<desc>工程由科学原理、约束条件、系统方法三个支柱构成，产出有用的人造物</desc>
+<defs>
+<marker id="arrow-1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+<line x1="340" y1="86" x2="340" y2="116" stroke="#854F0B" stroke-width="1.5" marker-end="url(#arrow-1)"/>
+<line x1="340" y1="214" x2="340" y2="184" stroke="#854F0B" stroke-width="1.5" marker-end="url(#arrow-1)"/>
+<line x1="212" y1="150" x2="242" y2="150" stroke="#854F0B" stroke-width="1.5" marker-end="url(#arrow-1)"/>
+<line x1="468" y1="150" x2="438" y2="150" stroke="#854F0B" stroke-width="1.5" marker-end="url(#arrow-1)"/>
+<rect x="250" y="30" width="180" height="56" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+<text x="340" y="52" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">科学原理</text>
+<text x="340" y="72" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">应用什么 · 为何行得通</text>
+<rect x="250" y="214" width="180" height="56" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+<text x="340" y="236" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">系统方法</text>
+<text x="340" y="256" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">需求→设计→实现→验证→维护</text>
+<rect x="40" y="122" width="170" height="56" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+<text x="125" y="144" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">约束条件</text>
+<text x="125" y="164" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">时间·成本·资源·风险</text>
+<rect x="470" y="122" width="170" height="56" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+<text x="555" y="144" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">有用的人造物</text>
+<text x="555" y="164" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">满足需求的解决方案</text>
+<rect x="250" y="122" width="180" height="56" rx="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+<text x="340" y="144" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">工程</text>
+<text x="340" y="164" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">Engineering</text>
+</svg>

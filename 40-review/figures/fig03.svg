@@ -1,0 +1,18 @@
+<svg viewBox="0 0 680 310" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>工程的分层结构</title>
+<desc>工程包含价值与伦理、工程科学、方法论、工具与实践四个层次，方法论只是其中一层</desc>
+<rect x="90" y="30" width="500" height="260" rx="16" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+<text x="340" y="52" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">工程 = 一个完整的人类实践，方法论只是其中一层</text>
+<rect x="110" y="66" width="460" height="44" rx="8" fill="#FFFFFF" stroke="#B5D4F4" stroke-width="0.5"/>
+<text x="126" y="88" text-anchor="start" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">工具与实践</text>
+<text x="236" y="88" text-anchor="start" dominant-baseline="central" font-size="12" fill="#185FA5">用什么做 · CAD / 编译器 / 测试链</text>
+<rect x="110" y="120" width="460" height="44" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+<text x="126" y="142" text-anchor="start" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">方法论</text>
+<text x="236" y="142" text-anchor="start" dominant-baseline="central" font-size="12" fill="#854F0B">怎么组织 · 需求→设计→实现→验证→维护</text>
+<rect x="110" y="174" width="460" height="44" rx="8" fill="#FFFFFF" stroke="#B5D4F4" stroke-width="0.5"/>
+<text x="126" y="196" text-anchor="start" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">工程科学</text>
+<text x="236" y="196" text-anchor="start" dominant-baseline="central" font-size="12" fill="#185FA5">依据什么 · 原理 / 模型 / 定律</text>
+<rect x="110" y="228" width="460" height="44" rx="8" fill="#FFFFFF" stroke="#B5D4F4" stroke-width="0.5"/>
+<text x="126" y="250" text-anchor="start" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">价值与伦理</text>
+<text x="236" y="250" text-anchor="start" dominant-baseline="central" font-size="12" fill="#185FA5">为了什么 · 安全 / 可靠 / 负责</text>
+</svg>

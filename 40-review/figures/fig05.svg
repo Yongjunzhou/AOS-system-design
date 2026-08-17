@@ -1,0 +1,42 @@
+<svg viewBox="0 0 680 430" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>四个权威工程定义及其共同内核</title>
+<desc>ECPD、ABET、INCOSE、IEEE 四个权威定义共同指向知识、判断、约束、目的、方法五个要素</desc>
+<defs>
+<marker id="arrow-5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+<rect x="40" y="40" width="290" height="110" rx="12" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+<text x="185" y="64" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">ECPD 1941 · 工程经典定义</text>
+<text x="185" y="88" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">创造性地应用科学原理</text>
+<text x="185" y="106" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">兼顾功能 · 经济 · 生命财产安全</text>
+<rect x="350" y="40" width="290" height="110" rx="12" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text x="495" y="64" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#444441">ABET 1979 · 现行认证</text>
+<text x="495" y="88" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">以判断力应用数理知识</text>
+<text x="495" y="106" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">经济利用自然 · 造福人类</text>
+<rect x="40" y="160" width="290" height="110" rx="12" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text x="185" y="184" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#444441">INCOSE 2019 · 系统工程</text>
+<text x="185" y="208" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">跨学科 · 整合性的方法</text>
+<text x="185" y="226" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">覆盖全生命周期：实现·使用·退役</text>
+<rect x="350" y="160" width="290" height="110" rx="12" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text x="495" y="184" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#444441">IEEE 610.12 · 软件工程</text>
+<text x="495" y="208" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">系统化 · 规范化 · 可度量</text>
+<text x="495" y="226" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">应用于软件的开发·运行·维护</text>
+<line x1="185" y1="150" x2="240" y2="292" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow-5)"/>
+<line x1="495" y1="150" x2="440" y2="292" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow-5)"/>
+<line x1="185" y1="270" x2="240" y2="292" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow-5)"/>
+<line x1="495" y1="270" x2="440" y2="292" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow-5)"/>
+<rect x="100" y="300" width="480" height="110" rx="14" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+<text x="340" y="322" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">共同内核 —— 四个定义的交集</text>
+<rect x="120" y="340" width="80" height="28" rx="6" fill="#FFFFFF" stroke="#85B7EB" stroke-width="0.5"/>
+<text x="160" y="354" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#0C447C">科学原理</text>
+<rect x="210" y="340" width="80" height="28" rx="6" fill="#FFFFFF" stroke="#85B7EB" stroke-width="0.5"/>
+<text x="250" y="354" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#0C447C">判断创造</text>
+<rect x="300" y="340" width="80" height="28" rx="6" fill="#FFFFFF" stroke="#85B7EB" stroke-width="0.5"/>
+<text x="340" y="354" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#0C447C">约束权衡</text>
+<rect x="390" y="340" width="80" height="28" rx="6" fill="#FFFFFF" stroke="#85B7EB" stroke-width="0.5"/>
+<text x="430" y="354" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#0C447C">造福目的</text>
+<rect x="480" y="340" width="80" height="28" rx="6" fill="#FFFFFF" stroke="#85B7EB" stroke-width="0.5"/>
+<text x="520" y="354" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#0C447C">系统方法</text>
+<text x="340" y="392" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">知识为基 · 判断为魂 · 约束为界 · 造福为的 · 方法为径</text>
+</svg>
