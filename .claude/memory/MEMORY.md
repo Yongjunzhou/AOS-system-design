@@ -1,5 +1,5 @@
-- [ort02 澄清设计](ort02-clarify-question-list.md) — 2026-08-17：AI 标注生成向相关方确认的问句（`[⨯子类型: 原文→问题：…]`），开发者持清单线下澄清或对话反馈；处理框架对齐 ort01（Step 布局 5→7 步、反馈走「记录+[已处理]」显式分界、Step5 交互/Step6 汇总落表B）；质量诉求转 NFR 不量化；三项条件=相关方已确认；ort02 v0.22/v2.7 落地（新增 §二 澄清核心概念与分工章）
-- [ort03 规范化内涵与规则待讨论](ort03-normalization-connotation.md) — 2026-08-17：用户将开新会话重点讨论 ort03「规范化」概念层（五项标准/拆分判定/优先级/冲突检测的完备性与边界），当前定义已落地 v0.39/v2.7
+- [ort02 澄清设计](ort02-clarify-question-list.md) — 2026-08-17：AI 标注生成向相关方确认的问句（`[⨯子类型: 原文→问题：…]`），开发者持清单线下澄清或对话反馈；处理框架对齐 ort01（Step 布局 5→7 步、反馈走「记录+[已处理]」显式分界、Step5 交互/Step6 汇总落表B）；质量诉求转 NFR 澄清属性/适用对象不量化；三项条件=相关方已确认；ort02 v0.23/v2.8 落地（§二 澄清核心概念与分工 + NFR 质量诉求澄清扩展）
+- [ort03 规范化内涵与规则已定案](ort03-normalization-connotation.md) — 2026-08-17：拆分/质量规则定案——类型先行按类型分治（FR-BIZ 场景为锚一场景可多条 OR、取消能力单元 / FR-ENG 引擎能力 / NFR 四元组原子），资产判定只到 23 输出产品；开放项 #1~#5 已处理（优先级 v0.42 / 23-D v0.43 / 退回路由 v0.44+ort02 v0.24 / 22契约 v1.1 / 重复检测不做）；剩余链级衔接项（FR-ENG 同构/跨块/派生FR）
 - [ort 可读性审视模式](ort-review-style-pattern.md) — 2026-08-17：ort01 趟出并应用（ort01 v0.53/v2.35 样板；ort00 v0.30/v2.5 已应用，登记簿 F29~F37；ort02 v0.22/v2.7 已应用，登记簿 F38~F52 + 框架对齐 + 澄清核心概念章；ort03 v0.39/v2.7 已应用四轮，登记簿 F-a~F-n + S1/M1/M2/L1~L8 + 方案 B 规范化独立成章 + Step 框架完全对齐，中4/低10 + 二/三/四轮），同链推广完成；核心方法论前置 §二 已对齐（ort01/ort02/ort03），Step 框架整链统一 Start/1/2/3/4/5/6/End（ort03 含对话双通道）
 - [CU 定义口径定稿](cu-four-element-caliber.md) — 2026-08-14：CU→配置信息组二级结构（组=某组配置字段能提供相对独立业务能力），配置操作/系统处理/运行期能力以组为单位（操作过程方式+保存时+生效后载件+业务人员操作过程）；主语判据+载件分类+三规则；写入 91 规范 v5.13 §3.3 + wft02-eng v8.6 §2.2.1
 - [架构基础概念与方法文档 v2.8](architecture-fundamentals-document-v2.md) — 2026-08-11：07-generalspec-architecture-fundamentals.md v2.8
@@ -16,7 +16,7 @@
 - [wft01 三路径自闭环模型](wft01-self-closed-model.md) — 2026-06-23：biz/eng/nfr 三路径自闭环完成 + 5+1 生命周期 + 资产-BA 解耦 + 变更传播协议 + 91 规范 v2.0 修订
 - [ORT00精确查重设计决策](ort00-dedup-design-decisions.md) — 流程内联/逐字精确比对/独立生命周期"已废弃（重复）"/软链接定向引用/语义查重边界暂不实现
 - [ORT关注行三类结构](ort01-three-category-focus-rows.md) — ort01 Step 5 摘要三类待办：待反馈方案/待选入切分/待选入澄清
-- [ort01 语义切分对齐业务对象](ort01-chunk-align-scene-business.md) — 场景业务=业务对象闭环=主责角色职责闭环[91§1.4]，三步确定法（文档抓手/三问/主轴锚定），与 wft01/平台打通
+- [ort01 语义切分对齐业务对象](ort01-chunk-align-scene-business.md) — 场景业务=业务对象闭环=主责角色职责闭环[91§1.4]，三步确定法（文档抓手/三问/主轴锚定）；v0.55 扩展候选单元——业务对象闭环 ∪ 系统级非功能约束（适用对象线索对齐 91§九四元组），与 wft01/平台打通
 - [切分文件三段结构+全链双轨](chunk-file-three-segment-dual-track.md) — frontmatter+管理区+正文；表A/B/C外部+内嵌状态内部；「切分文档」=切分文件
 - [ort01 反馈回路 git 基线协议](ort01-feedback-git-baseline-protocol.md) — 2026-08-15：反馈单源（文档变更）+ git diff 检测 + Step 1-6 结构 + 交互只记录不处理；评审待办见 02-eos-sysdev-review.md
 - [ORT Skill执行文档化模式](ort-skill-design-patterns.md) — SKILL=规则引用人类方案+补E层（版本感知/加载经济/口令规则/判据速查）；表A/B/C三表口径
@@ -103,5 +103,5 @@
 - [状态文档子表映射](status-document-subtable-references.md) — 所有Skill尾部行动清单统一指向状态文档子表（编号+表名），全链引用协议
 - [23号资产§11符合性修复](23-asset-sec11-conformance-fix.md) — 2026-07-28 反馈区删除(方案A)+归属裁定用[需裁决]+§11.5@srf-与02资产STR-F-格式跨文档不一致待办
 - [23号资产节点表单化+六级层级](23-asset-node-form-six-level.md) — 2026-07-28 统一13字段横表/六级层级(L5输出文档废IPO)/复用方式吸纳实现策略/追溯归产品数据/定义点判定
-- [待办：92-srf 悬空引用 wft03a](pending-srf-wft03a-dangling-ref.md) — 2026-08-12：92-srf 引用不存在的 eos-wft03a-ba2sr-design.md，且 wft03a/wft03b 概念与实际文件（wft03-biz/eng-bp2sr）不符，待裁决
+- [92-srf 悬空引用 wft03a（已解决）](pending-srf-wft03a-dangling-ref.md) — 2026-08-17：wft03a/wft03b 旧模型已废弃（归档 legacy-a-b-pairs），92-srf 三处引用改现行 wft03-biz/eng-bp2sr（v1.1）
 - [待办：记忆库 ba-* 术语更新](pending-memory-ba-bp-term.md) — 2026-08-12：记忆库 ba-* 系列仍用旧 BA 术语（设计链已改 BP），需逐条更新（保留角色名/4A 域）
