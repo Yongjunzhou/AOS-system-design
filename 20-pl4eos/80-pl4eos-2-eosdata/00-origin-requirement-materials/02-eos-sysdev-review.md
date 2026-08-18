@@ -8,6 +8,21 @@
 
 ## 一、评审记录
 
+### 2026-08-18 · ort02 结构完整性扫描新增（人类方案 v0.33→v0.34 / SKILL v2.18→v2.19）+ ort03 联动（v0.57→v0.58 / v2.25→v2.26）
+
+**对象**：[eos-ort02-clarify.md](../../10-pl4eos-subpl-sysdev/00-presysdev-4-eos/eos-ort02-clarify.md)（v0.33→v0.34）+ [SKILL.md](../../10-pl4eos-subpl-sysdev/00-presysdev-4-eos/eos-ort02-clarify/SKILL.md)（v2.18→v2.19）+ [eos-ort03-norm.md](../../10-pl4eos-subpl-sysdev/00-presysdev-4-eos/eos-ort03-norm.md)（v0.57→v0.58）+ ort03 SKILL（v2.25→v2.26）
+**动因**：人类提出「澄清是否应提示需求完整性问题」。必要性论证（人类裁定「应看必要性，复杂度不否决」）——不追加则三类结构缺口（分支缺对应面/闭环缺端/引用对象缺失）会带「已澄清→可规范化」认证穿过全链（ort03 单条级完整性门禁看不见跨片/跨条件缺口）；且与「缺少定量指标」（v0.27，结构预期）同族，方法论自洽。
+**结论**：人类确认——独立于六种模糊子类型的第二类澄清对象「结构完整性」，新增标注纪律 6（文本自证缺口三形态：分支缺对应面/闭环缺端/引用对象缺失 + 不标模板式业务覆盖猜测）；§2.2/§2.6 三项条件吸收；§4.4 Step 3 分流行为变化（无六类模糊但完整性有缺项→仍进澄清中）。
+**实施落地**：
+
+- `eos-ort02-clarify.md`：v0.33 → v0.34（§2.5 纪律 6 + §2.1 补注 + §2.2/§2.6 三项条件 + §4.4 Step 3 + §5.2/5.3 报告模板 + §5.7 自检 + 概述/§1.1/§1.2/§1.3/§2.3/§2.4 范围同步 + 版本头/变更记录）
+- `eos-ort02-clarify/SKILL.md`：v2.18 → v2.19（frontmatter description + 负责表/核心原则 + 纪律 6 + 附录 A.3/A.4 + Step 3 首轮标注 + §三 标注格式 + 自检 + 变更记录）
+- `eos-ort03-norm.md`：v0.57 → v0.58（§2.4 五项标准「完整性」口径注——结构完整性已在 ort02 澄清检知，本步聚焦 OR 条目表达完整，仍发现缺口走退回路由）
+- `eos-ort03-norm/SKILL.md`：v2.25 → v2.26（附录 A.6 五项标准括注同步）
+- 链级影响：README 各步对照表 + pl4eos 规范 §15.7 对照表 ort02 列同步（全量模糊标注 6 模糊子类型 + 结构完整性扫描 / 三项条件判定）；记忆 ort02-03-readability-revision-plan 更新
+
+---
+
 ### 2026-08-18 · ort03 二章通读收尾（人类方案 v0.56→v0.57 / SKILL v2.24→v2.25）
 
 **对象**：[eos-ort03-norm.md](../../10-pl4eos-subpl-sysdev/00-presysdev-4-eos/eos-ort03-norm.md)（v0.56→v0.57）+ [SKILL.md](../../10-pl4eos-subpl-sysdev/00-presysdev-4-eos/eos-ort03-norm/SKILL.md)（v2.24→v2.25）
