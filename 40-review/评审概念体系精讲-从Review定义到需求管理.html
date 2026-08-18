@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>评审概念体系精讲：从 Review 定义到需求管理</title>
+<style>
+  :root{
+    --bg:#f6f5f2; --card:#ffffff; --ink:#1f2328; --ink2:#57606a; --ink3:#8b949e;
+    --line:#e4e2dc; --blue:#185FA5; --blue-deep:#0C447C; --blue-soft:#E6F1FB;
+    --amber:#854F0B; --amber-deep:#633806; --amber-soft:#FAEEDA;
+    --green:#3B6D11; --green-soft:#EAF3DE; --red:#A32D2D; --red-soft:#FCEBEB;
+    --gray:#5F5E5A; --gray-soft:#F1EFE8;
+    --serif:"Georgia","Songti SC","SimSun",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.75;font-size:15px;}
+  .page{max-width:880px;margin:0 auto;padding:48px 32px 80px;}
+  header.hero{background:var(--blue-soft);border:1px solid #b5d4f4;border-radius:16px;padding:36px 40px;margin-bottom:32px;}
+  header.hero .tag{display:inline-block;font-size:12px;color:var(--blue);border:1px solid #b5d4f4;border-radius:999px;padding:2px 12px;margin-bottom:14px;letter-spacing:1px;}
+  header.hero h1{font-family:var(--serif);font-size:34px;font-weight:700;color:var(--blue-deep);line-height:1.3;}
+  header.hero .sub{margin-top:10px;color:var(--ink2);font-size:15px;}
+  header.hero .meta{margin-top:16px;font-size:12px;color:var(--ink3);}
+  nav.toc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 28px;margin-bottom:36px;}
+  nav.toc h3{font-size:13px;color:var(--ink3);font-weight:500;letter-spacing:2px;margin-bottom:10px;}
+  nav.toc ol{margin-left:20px;columns:2;column-gap:40px;}
+  nav.toc li{margin:4px 0;}
+  nav.toc a{color:var(--ink2);text-decoration:none;font-size:13.5px;}
+  nav.toc a:hover{color:var(--blue);}
+  section{margin-bottom:44px;}
+  h2{font-family:var(--serif);font-size:23px;color:var(--ink);border-bottom:2px solid var(--line);padding-bottom:10px;margin-bottom:18px;}
+  h2 .no{color:var(--blue);margin-right:10px;font-family:var(--sans);font-size:15px;font-weight:600;}
+  h3{font-size:16px;margin:22px 0 8px;color:var(--ink);}
+  p{margin:10px 0;}
+  strong{color:var(--ink);}
+  blockquote{border-left:3px solid var(--blue);background:var(--blue-soft);border-radius:0 10px 10px 0;padding:12px 18px;margin:14px 0;color:var(--blue-deep);font-size:14.5px;}
+  blockquote.amber{border-left-color:var(--amber);background:var(--amber-soft);color:var(--amber-deep);}
+  blockquote.red{border-left-color:var(--red);background:var(--red-soft);color:var(--red);}
+  .figure{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 16px 10px;margin:18px 0;}
+  .figure .cap{font-size:12.5px;color:var(--ink3);text-align:center;margin-top:6px;}
+  .figure .mermaid{display:flex;justify-content:center;overflow-x:auto;padding:6px 0;}
+  table{border-collapse:collapse;width:100%;margin:16px 0;font-size:13.5px;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+  th{background:var(--gray-soft);color:var(--ink);font-weight:600;text-align:left;padding:9px 14px;border-bottom:1px solid var(--line);}
+  td{padding:9px 14px;border-bottom:1px solid var(--line);color:var(--ink2);vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  ul,ol.plain{margin:10px 0 10px 22px;}
+  li{margin:5px 0;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:16px 0;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;}
+  .card .ct{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px;}
+  .card .cb{font-size:13px;color:var(--ink2);}
+  .note{font-size:13px;color:var(--ink2);background:var(--gray-soft);border-radius:10px;padding:12px 16px;margin:14px 0;}
+  .fin{background:var(--blue-deep);color:#fff;border-radius:14px;padding:26px 30px;margin-top:40px;}
+  .fin h2{border:none;color:#fff;font-size:22px;margin-bottom:10px;}
+  .fin p{color:#cfe0f2;font-size:14px;}
+  .fin strong{color:#fff;}
+  code{background:var(--gray-soft);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:13px;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;color:var(--blue-deep);}
+  @media (max-width:720px){ nav.toc ol{columns:1;} .page{padding:24px 16px 60px;} }
+  @media print{ body{background:#fff;} .page{max-width:100%;padding:0;} section{break-inside:avoid;} header.hero,.figure{break-inside:avoid;} nav.toc{break-inside:avoid;} }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="hero">
+  <span class="tag">概念精讲 · 对话整理 · 完整版</span>
+  <h1>评审概念体系精讲：从 Review 定义到需求管理</h1>
+  <p class="sub">基于 ISO 9000:2015、ISO 9001:2015、ISO/IEC/IEEE 12207:2017、IEEE 1028-2008 的系统性梳理——评审是什么、对照什么、怎么落地、需求如何传递。</p>
+  <p class="meta">整理日期：2026-08-18 ｜ 主题：评审 / 需求 / 验证 / 确认 / ISO 9000 / 质量体系</p>
+</header>
+
+<nav class="toc">
+  <h3>目 录</h3>
+  <ol>
+    <li><a href="#s1">Review 是什么</a></li>
+    <li><a href="#s2">Review 的五大目的</a></li>
+    <li><a href="#s3">国际标准依据</a></li>
+    <li><a href="#s4">IEEE 1028 的五种评审类型</a></li>
+    <li><a href="#s5">评审的权威定义（ISO 9000 §3.11.2）</a></li>
+    <li><a href="#s6">评审三问：适宜性 · 充分性 · 有效性</a></li>
+    <li><a href="#s7">评审 vs 验证 vs 确认</a></li>
+    <li><a href="#s8">三个参照对象</a></li>
+    <li><a href="#s9">为什么评审以"目标"为参照</a></li>
+    <li><a href="#s10">产品开发全流程的六类评审</a></li>
+    <li><a href="#s11">六类评审的目标与通过标准</a></li>
+    <li><a href="#s12">需求（requirement）的本质</a></li>
+    <li><a href="#s13">需求的三形态</a></li>
+    <li><a href="#s14">规定需求 vs 明示需求</a></li>
+    <li><a href="#s15">规定需求的作用（枢纽）</a></li>
+    <li><a href="#s16">没有明示的需求，是需求吗</a></li>
+    <li><a href="#s17">隐含需求怎么被确认</a></li>
+    <li><a href="#s18">隐含需求怎么传递给下游</a></li>
+    <li><a href="#s19">术语对照表与口径约定</a></li>
+    <li><a href="#s20">附录：关键辨析补遗</a></li>
+  </ol>
+</nav>
+
+<section id="s1">
+  <h2><span class="no">01</span>Review 是什么</h2>
+  <p><strong>Review（评审）</strong>：在开发流程的关键节点，把阶段性产出物（需求文档、设计方案、代码、测试结果）摆出来，由相关方进行系统性检查并给出明确结论的活动。</p>
+  <div class="cards">
+    <div class="card"><div class="ct">把关，不是汇报</div><div class="cb">汇报展示成果，评审的职责是主动暴露问题——评审是"专门用来挑毛病"的环节。</div></div>
+    <div class="card"><div class="ct">"再看一遍"</div><div class="cb">词源 re-（再）+ view（看）。第一遍是"做"，第二遍是"看"——评审人应独立于被评方。</div></div>
+    <div class="card"><div class="ct">系统性活动</div><div class="cb">IEEE 1028 要求"系统性评审"三属性：团队参与、结果文档化、过程文档化。<strong>没记录的评审不算评审。</strong></div></div>
+  </div>
+  <h3>同族词速记</h3>
+  <table>
+    <tr><th>词</th><th>词根</th><th>含义</th></tr>
+    <tr><td>review</td><td>re-（再）+ view（看）</td><td>再看一遍 → 评审、评论、复习</td></tr>
+    <tr><td>preview</td><td>pre-（先）+ view</td><td>预先看 → 预览</td></tr>
+    <tr><td>interview</td><td>inter-（互相）+ view</td><td>互相看 → 面试</td></tr>
+    <tr><td>overview</td><td>over-（从上）+ view</td><td>总览</td></tr>
+  </table>
+</section>
+
+<section id="s2">
+  <h2><span class="no">02</span>Review 的五大目的</h2>
+  <div class="figure">
+    <div class="mermaid">
+flowchart LR
+    A["Review 评审"] --> B["质量把关<br/>提前暴露缺陷"]
+    A --> C["风险识别<br/>发现技术、进度风险"]
+    A --> D["对齐共识<br/>统一理解，消除歧义"]
+    A --> E["决策推进<br/>给出通过/修改/返工结论"]
+    A --> F["经验沉淀<br/>团队成长，知识传递"]
+    </div>
+    <div class="cap">评审的五大目的</div>
+  </div>
+  <table>
+    <tr><th>目的</th><th>说明</th></tr>
+    <tr><td><strong>质量把关</strong></td><td>多双眼睛盯同一份产出，把缺陷拦在"上线之前"而不是"出事之后"——越早发现，修复成本越低</td></tr>
+    <tr><td><strong>风险识别</strong></td><td>评审不仅是看"对不对"，更是看"会不会出事"——相当于给项目做体检</td></tr>
+    <tr><td><strong>对齐共识</strong></td><td>把"这个按钮放哪里"的想象差异摆上桌面当场敲定，避免各干各的拼不起来</td></tr>
+    <tr><td><strong>决策推进</strong></td><td>给出明确结论：通过 / 有条件通过 / 不通过，不是开完会没下文</td></tr>
+    <tr><td><strong>经验沉淀</strong></td><td>新人学习团队标准和坑，老手梳理思路，比文档更高效的知识传递</td></tr>
+  </table>
+</section>
+
+<section id="s3">
+  <h2><span class="no">03</span>国际标准依据</h2>
+  <table>
+    <tr><th>标准</th><th>角色</th><th>一句话贡献</th></tr>
+    <tr><td><strong>ISO 9000:2015</strong>（GB/T 19000-2016）</td><td>定义</td><td>§3.11.2 评审的权威定义；§3.6.4 需求定义</td></tr>
+    <tr><td><strong>ISO 9001:2015</strong>（GB/T 19001-2016）</td><td>要求</td><td>§8.3.4 评审/验证/确认三分 + 问题闭环 + 保留成文信息</td></tr>
+    <tr><td><strong>ISO/IEC/IEEE 12207:2017</strong></td><td>过程</td><td>联合评审是支持过程，评审方/被评方角色分离</td></tr>
+    <tr><td><strong>IEEE 1028-2008</strong></td><td>方法</td><td>五种评审类型 + 系统性三属性</td></tr>
+  </table>
+  <div class="note">标准层级关系：<strong>定义（ISO 9000）在最顶层，要求（ISO 9001）和方法（IEEE 1028）在下面各管一段</strong>——IEEE 1028 的五种类型、ISO 9001 的闭环要求，本质都是在执行 3.11.2 里"确定适宜性、充分性、有效性"这个动作。</div>
+</section>
+
+<section id="s4">
+  <h2><span class="no">04</span>IEEE 1028 的五种评审类型</h2>
+  <div class="figure">
+    <div class="mermaid">
+flowchart TB
+    subgraph IEEE1028["IEEE 1028-2008 五类评审/审计"]
+        direction TB
+        A["管理评审<br/>Management Review<br/>评估项目状态，支持管理层决策"]
+        B["技术评审<br/>Technical Review<br/>对照规格要求，识别技术偏差"]
+        C["检查<br/>Inspection<br/>最正式，逐行检测，缺陷检出率最高"]
+        D["走查<br/>Walk-through<br/>作者引导讲解，同行熟悉产品"]
+        E["审计<br/>Audit<br/>独立于开发方，核实符合合同与标准"]
+    end
+    </div>
+    <div class="cap">IEEE 1028-2008 定义的软件评审与审计五种类型</div>
+  </div>
+  <p>IEEE 1028 强调"系统性评审"（systematic review）三个必备属性：<strong>团队参与、评审结果文档化、评审过程文档化</strong>。不符合这三条的，按标准的话说就是"非系统性评审"。</p>
+</section>
+
+<section id="s5">
+  <h2><span class="no">05</span>评审的权威定义（ISO 9000 §3.11.2）</h2>
+  <blockquote><strong>评审 review</strong>：对客体（3.6.1）实现所规定目标（3.7.1）的适宜性、充分性或有效性（3.7.11）的确定（3.11.1）<br>示例：管理评审、设计和开发评审、顾客要求评审、纠正措施评审和同行评审。<br>注：评审也可包括确定效率。</blockquote>
+  <div class="note">英文原文：<em>determination of the suitability, adequacy or effectiveness of an object to achieve established objectives.</em></div>
+  <div class="figure">
+    <div class="mermaid">
+flowchart LR
+    subgraph 客体["客体 object · 3.6.1"]
+        direction TB
+        A1["可感知或可想象到的任何事物"]
+        A2["产品 / 服务 / 过程 / 体系 / 资源"]
+    end
+    subgraph 目标["所规定目标 objective · 3.7.1"]
+        direction TB
+        B1["要实现的结果"]
+        B2["战略 / 战术 / 操作层面"]
+    end
+    客体 -->|"实现"| 目标
+    subgraph 三维["三维判定"]
+        direction LR
+        C1["适宜性<br/>方向对不对"]
+        C2["充分性<br/>够不够全"]
+        C3["有效性<br/>管不管用"]
+    end
+    目标 --> 三维
+    </div>
+    <div class="cap">评审 = 对客体实现目标的适宜性 / 充分性 / 有效性的确定</div>
+  </div>
+  <h3>关键词解读</h3>
+  <ul>
+    <li><strong>"确定"（determination）</strong>：3.11.1 定义为"查明一个或多个特性及特性值的活动"——评审是一项<strong>查明事实</strong>的活动，要得出结论，不是开个会随便聊聊</li>
+    <li><strong>参照是"目标"，不是"需求"</strong>：评审的尺子是目标（方向），验证的尺子才是需求（规格）——这是两者分属不同术语组（3.11 vs 3.8）的根本原因</li>
+    <li><strong>目标分层次</strong>：战略、战术、操作——同一客体挂不同目标，结论可能完全不同</li>
+    <li><strong>评审不要求客观证据，验证/确认必须</strong>：这是"判断"与"证明"的本质差别</li>
+  </ul>
+</section>
+
+<section id="s6">
+  <h2><span class="no">06</span>评审三问：适宜性 · 充分性 · 有效性</h2>
+  <table>
+    <tr><th>维度</th><th>英文</th><th>问什么</th><th>举例（点餐 App，目标：上线 3 个月日活 1 万）</th></tr>
+    <tr><td><strong>适宜性</strong></td><td>Suitability</td><td>对症吗？方案与目标是否相称、方向对不对</td><td>想快速验证市场却选重型原生开发 → 不适宜</td></tr>
+    <tr><td><strong>充分性</strong></td><td>Adequacy</td><td>够全吗？范围与深度是否足够、有无遗漏</td><td>只测核心路径，边界情况全没测 → 不充分</td></tr>
+    <tr><td><strong>有效性</strong></td><td>Effectiveness</td><td>管用吗？实际结果是否达成目标</td><td>功能全上线，日活却只有 200 → 无效</td></tr>
+  </table>
+  <div class="figure">
+    <div class="mermaid">
+flowchart LR
+    A["适宜性<br/>（开始前）<br/>对症吗？"] --> B["充分性<br/>（过程中）<br/>够全吗？"] --> C["有效性<br/>（结束后）<br/>管用吗？"]
+    </div>
+    <div class="cap">三者层层递进，缺一不可</div>
+  </div>
+  <blockquote class="amber">完整评审 = 三问都过：方向不对，做得再全也是白费；覆盖不全，方向对了也会翻车；前两个都过，还要看结果说话。<br>ISO 9000 注：评审还可包括确定"效率"（efficiency）——不只是管不管用，还要看投入产出比值不值。ISO 9001:2015 §9.3 管理评审也要求评价质量管理体系"持续的适宜性、充分性和有效性"。</blockquote>
+</section>
+
+<section id="s7">
+  <h2><span class="no">07</span>评审 vs 验证 vs 确认</h2>
+  <table>
+    <tr><th></th><th>评审 Review 3.11.2</th><th>验证 Verification 3.8.12</th><th>确认 Validation 3.8.13</th></tr>
+    <tr><td><strong>定义</strong></td><td>对客体实现<strong>所规定目标</strong>的适宜性、充分性或有效性的确定</td><td>通过提供<strong>客观证据</strong>，对<strong>规定需求</strong>已得到满足的认定</td><td>通过提供<strong>客观证据</strong>，对<strong>特定的预期用途或应用要求</strong>已得到满足的认定</td></tr>
+    <tr><td><strong>参照</strong></td><td>目标</td><td>规定需求</td><td>预期用途 / 应用</td></tr>
+    <tr><td><strong>动作</strong></td><td>确定（判断）</td><td>认定（证明）</td><td>认定（证明）</td></tr>
+    <tr><td><strong>证据</strong></td><td>不要求客观证据</td><td>必须有客观证据</td><td>必须有客观证据</td></tr>
+    <tr><td><strong>问什么</strong></td><td>方向对不对？</td><td>做对了吗？（built it right）</td><td>做对的东西了吗？（built the right thing）</td></tr>
+    <tr><td><strong>时机</strong></td><td>事前/事中做判断</td><td>对结果做证实</td><td>在真实/模拟场景中做证实</td></tr>
+    <tr><td><strong>软件落点</strong></td><td>需求评审、设计评审</td><td>单元/集成/系统测试、压测、合规</td><td>UAT、Beta、灰度、试运行</td></tr>
+  </table>
+  <div class="figure">
+    <div class="mermaid">
+flowchart LR
+    subgraph R["评审 Review · 3.11.2"]
+        direction TB
+        R1["基准：所规定目标"]
+        R2["动作：确定"]
+        R3["无需客观证据"]
+        R4["方向对不对？"]
+    end
+    subgraph V["验证 Verification · 3.8.12"]
+        direction TB
+        V1["基准：规定需求"]
+        V2["动作：认定"]
+        V3["要求客观证据"]
+        V4["做对了吗？"]
+    end
+    subgraph L["确认 Validation · 3.8.13"]
+        direction TB
+        L1["基准：预期用途/应用"]
+        L2["动作：认定"]
+        L3["要求客观证据"]
+        L4["做对的东西了吗？"]
+    end
+    </div>
+    <div class="cap">三者基准、动作、证据要求全不同</div>
+  </div>
+  <h3>逐词辨析</h3>
+  <ul>
+    <li><strong>动作不同：确定 vs 认定</strong>——评审是主动调查（从无结论到有结论），验证/确认是证实状态（结果已有了，去证实它）</li>
+    <li><strong>基准不同</strong>——评审对准"目标"（能力评估），验证对准"规定需求"（符合性检查），确认对准"预期用途"（适用性证明）</li>
+    <li><strong>证据不同</strong>——验证/确认定义里都带着"通过提供客观证据"，评审没有；"测试通过了"是验证的证据，不是评审本身</li>
+    <li><strong>归类不同</strong>——评审在 3.11"有关确定的术语"组；验证/确认在 3.8"有关规范的术语"组。它们根本不是同一类词</li>
+  </ul>
+</section>
+
+<section id="s8">
+  <h2><span class="no">08</span>三个参照对象：目标 / 规定需求 / 预期用途</h2>
+  <div class="figure">
+    <div class="mermaid">
+flowchart TB
+    subgraph 顶层["目标层"]
+        T["所规定目标 objective<br/>要实现的结果"]
+    end
+    subgraph 中层["要求层"]
+        R["规定需求 specified requirement<br/>被明示的、成文的需求"]
+    end
+    subgraph 底层["客体层"]
+        O["客体 object<br/>方案 / 产品 / 代码"]
+    end
+    T -->|"需求由目标推导"| R
+    R -->|"客体按要求实现"| O
+    O -.->|"评审：客体对目标<br/>适宜·充分·有效"| T
+    O -.->|"验证：客体对需求·符合"| R
+    </div>
+    <div class="cap">评审的视线跨越要求层直达目标——所以评审能审"需求本身"，而验证只能核"符合需求"</div>
+  </div>
+  <h3>评审的参照 = 所规定目标（三维度共享同一把尺子）</h3>
+  <p>目标（3.7.1）= <strong>要实现的结果</strong>。可以是战略的、战术的或操作层面的。同一个客体挂不同层级的目标，结论可能完全不同——评审结论是相对于目标而言的，不是绝对的好坏。</p>
+  <h3>验证的参照 = 规定需求</h3>
+  <ul>
+    <li>需求（PRD / 用户故事）：最常见的一类</li>
+    <li>技术规格（接口协议 / 性能指标）</li>
+    <li>标准与法规（等保 / GDPR）</li>
+    <li>合同 / 承诺</li>
+  </ul>
+  <p>关键："规定"（specified）意味着<strong>经明示的、成文的</strong>——口头说的"大概要快一点"不能验证，因为没有"规定"。</p>
+  <h3>确认的参照 = 特定的预期用途或应用要求</h3>
+  <table>
+    <tr><th>构成</th><th>问什么</th><th>举例（点餐 App）</th></tr>
+    <tr><td>目标用户</td><td>给谁用？</td><td>餐厅老板、店员、外卖用户</td></tr>
+    <tr><td>使用场景 / 任务</td><td>用来干什么？</td><td>高峰期快速下单、扫码核销、看报表</td></tr>
+    <tr><td>环境与条件</td><td>什么情况下用？</td><td>门店弱网、午高峰并发、小屏触控</td></tr>
+  </table>
+  <p>确认的证据（3.8.13 注 1）：试验结果，或变换方法计算、文档评审；注 3：使用条件可以是真实的或模拟的——这给了灰度、仿真测试的合法性。</p>
+</section>
+
+<section id="s9">
+  <h2><span class="no">09</span>为什么评审以"目标"而非"需求"为参照</h2>
+  <table>
+    <tr><th>原因</th><th>说明</th></tr>
+    <tr><td><strong>① 需求可能本身就是错的</strong></td><td>需求是人写的，可能理解错、互相矛盾、不完整。如果评审拿"需求"当尺子，就默认"需求一定对"——那谁来审需求本身？<strong>需求评审的本质就是审"需求"对"业务目标"是否适宜/充分/有效</strong></td></tr>
+    <tr><td><strong>② 否则评审和验证就重复了</strong></td><td>验证已经是"以需求为参照、确认符合性"。评审若也以需求为参照，两个术语就变成同一件事，标准体系（3.11 vs 3.8）就塌了</td></tr>
+    <tr><td><strong>③ 满足所有需求 ≠ 达成目标</strong></td><td>需求全做完，但做出来的是没人要的东西——目标错了，需求再对也是白做。评审是唯一"抬头看目标"的环节</td></tr>
+  </table>
+  <blockquote class="amber"><strong>需求是"路"，目标是"目的地"。</strong>评审的价值就在于低头检查路况之外，还要抬头看看目的地对不对。最失败的评审不是没查出问题，而是把评审做成了验证：只核对"满足需求没有"，却从不问"这需求本身对吗"。</blockquote>
+</section>
+
+<section id="s10">
+  <h2><span class="no">10</span>产品开发全流程的六类评审</h2>
+  <div class="figure">
+    <div class="mermaid">
+flowchart LR
+    subgraph 流程["产品开发流程"]
+        direction LR
+        N1["需求"] --> N2["设计"] --> N3["开发"] --> N4["测试"] --> N5["发布"]
+    end
+    R1["① 需求评审"] -.-> N1
+    R2["② 设计评审"] -.-> N2
+    R3["③ 代码评审"] -.-> N3
+    R4["④ 测试评审"] -.-> N4
+    R5["⑤ 发布评审"] -.-> N5
+    R6["⑥ 复盘 Retrospective"] -.->|"驱动下一轮迭代"| N1
+    </div>
+    <div class="cap">五个节点在流程链条上把关（问题越早发现，修复成本越低），复盘绕回起点驱动改进</div>
+  </div>
+  <h3>IEEE 1028 五类在流程中的落点</h3>
+  <table>
+    <tr><th>IEEE 1028 分类</th><th>流程落点</th></tr>
+    <tr><td>技术评审（Technical Review）</td><td>需求评审、设计评审、发布评审</td></tr>
+    <tr><td>检查（Inspection）</td><td>代码评审（最正式时）</td></tr>
+    <tr><td>走查（Walk-through）</td><td>代码评审（非正式时）</td></tr>
+    <tr><td>管理评审（Management Review）</td><td>项目级定期评审（进度/风险/资源）</td></tr>
+    <tr><td>审计（Audit）</td><td>阶段性独立核查（上线前安全审计）</td></tr>
+  </table>
+</section>
+
+<section id="s11">
+  <h2><span class="no">11</span>六类评审的目标与通过标准</h2>
+  <h3>每类评审的目标陈述（具体化）</h3>
+  <table>
+    <tr><th>评审</th><th>目标陈述</th><th>判定内容（查什么）</th><th>结论</th></tr>
+    <tr><td>① 需求评审</td><td>需求达到"可开发"状态</td><td>符合业务目标（适宜）／无遗漏（充分）／可落地（有效）</td><td>通过 / 有条件 / 打回</td></tr>
+    <tr><td>② 设计评审</td><td>方案可行且满足全部需求</td><td>对症（适宜）／周全（充分）／能落地（有效）</td><td>通过 / 有条件 / 打回</td></tr>
+    <tr><td>③ 代码评审</td><td>代码正确、可维护、无缺陷</td><td>正确性 / 可维护性 / 规范性</td><td>approve / changes</td></tr>
+    <tr><td>④ 测试评审</td><td>质量达到准出（release-ready）</td><td>覆盖充分 / 缺陷收敛 / 结果可信</td><td>准出 / 条件准出 / 不准出</td></tr>
+    <tr><td>⑤ 发布评审</td><td>可安全上线、风险可控</td><td>就绪度 / 风险 / 兜底</td><td>放行 / 条件放行 / 暂缓</td></tr>
+    <tr><td>⑥ 复盘</td><td>经验沉淀 + 流程改进</td><td>归因准确 / 行动闭环 / 记录归档</td><td>改进项进入下一轮</td></tr>
+  </table>
+  <h3>每类评审的可勾选通过标准</h3>
+  <table>
+    <tr><th>评审</th><th>通过标准（逐条打勾）</th></tr>
+    <tr><td><strong>① 需求评审</strong></td><td>□ 每条需求有唯一 ID + 验收标准（可测）□ 业务场景覆盖 100% □ 无未决 TBD 项、无需求冲突 □ 每条需求可测 □ 资源/排期认可</td></tr>
+    <tr><td><strong>② 设计评审</strong></td><td>□ 需求→设计追踪矩阵覆盖 100% □ 性能/安全/扩展性逐项有方案 □ P0/P1 风险已识别 + 缓解措施 □ 工作量估算偏差 ≤ 20% □ 关键决策已记录</td></tr>
+    <tr><td><strong>③ 代码评审</strong></td><td>□ CI 全绿（lint/构建/测试通过）□ 至少 1 位 reviewer approve □ P0/P1 问题数 = 0 □ 全部评论已解决或已答复 □ 变更范围与 PR 描述一致</td></tr>
+    <tr><td><strong>④ 测试评审</strong></td><td>□ 需求→用例覆盖率 100% □ P0/P1 缺陷清零 □ P2/P3 缺陷已知且有评估 □ 用例通过率 ≥ 95% □ 测试报告归档留痕</td></tr>
+    <tr><td><strong>⑤ 发布评审</strong></td><td>□ 发布 checklist 100% 通过 □ 回滚预案就绪（已演练）□ 无未决 P0/P1 缺陷 □ 已知缺陷有缓解方案 □ 运营/合规/安全准备到位</td></tr>
+    <tr><td><strong>⑥ 复盘</strong></td><td>□ 每个行动项有负责人 + 截止日期 □ 上轮行动项关闭率 ≥ 80% □ 问题按根因归类（非甩锅）□ 复盘记录归档、可追溯 □ 改进项进入下一轮计划</td></tr>
+  </table>
+  <h3>可落地目标的核心方法</h3>
+  <blockquote><strong>可落地的评审目标 = 评审通过标准 = 一组可勾选的硬条件</strong>（会前定好，会后逐条打勾）。</blockquote>
+  <ul>
+    <li><strong>通过标准要在会前定</strong>：随评审邀请一起发出（"本评审通过标准：…，全部打勾 = 通过；任一不满足 = 打回修改"），不是开会时现想</li>
+    <li><strong>用"数字 + 动作"替代形容词</strong>："需求要清晰"→"每条需求有唯一 ID + 验收标准"；"代码质量要好"→"P0/P1 = 0，CI 全绿"</li>
+    <li><strong>结论 + 记录 + 跟进</strong>：有条件通过必须写明条件 + 复核人 + 期限（对应 ISO 9001 8.3.4 e/f 款：问题必须采取必要措施 + 保留成文信息）</li>
+  </ul>
+</section>
+
+<section id="s12">
+  <h2><span class="no">12</span>需求（requirement）的本质</h2>
+  <h3>ISO 9000:2015 术语 3.6.4 原文</h3>
+  <blockquote><strong>3.6.4 requirement</strong>：need or expectation that is stated, generally implied or obligatory</blockquote>
+  <div class="note">官方中文（GB/T 19000-2016）：3.6.4 要求 requirement：明示的、通常隐含的或必须履行的需求或期望<br>注 1："通常隐含"是指组织和相关方的惯例或一般做法，所考虑的需求或期望是不言而喻的。<br>注 2：规定要求是经明示的要求，如：在成文信息中阐明。<br>注 3：特定要求可使用限定词表示，如：产品要求、质量管理要求、顾客要求、质量要求。<br>注 4：要求可由不同的相关方或组织自己提出。<br>注 5：为实现较高的顾客满意，可能有必要满足那些顾客既没有明示、也不是通常隐含或必须履行的期望。</div>
+  <h3>需求 = 需要或期望 × 呈现方式（二维交叉）</h3>
+  <div class="figure">
+    <div class="mermaid">
+flowchart LR
+    subgraph 内容["内容维度"]
+        direction TB
+        N["need 需要<br/>硬性诉求，缺了会痛<br/>例：能支付、能保存"]
+        E["expectation 期望<br/>软性诉求，缺了会失望<br/>例：要快、要好用"]
+    end
+    subgraph 呈现["呈现方式维度"]
+        direction TB
+        S["stated 明示的<br/>说出来了（口头/成文）"]
+        I["generally implied 通常隐含的<br/>惯例默认，不言而喻"]
+        O["obligatory 必须履行的<br/>法规强制，无条件满足"]
+    end
+    内容 --- 呈现
+    </div>
+    <div class="cap">requirement（需求）是顶层概念，need（需要）和 expectation（期望）是内容构成，stated / implied / obligatory 是呈现方式</div>
+  </div>
+  <h3>三个容易踩的点</h3>
+  <ul>
+    <li><strong>"隐含要求"必须被显性化，才能被验证</strong>——需求评审的一大任务就是把"隐含的"挖出来写进文档、变成"规定的"</li>
+    <li><strong>注 5 是高级玩法</strong>：为达成高顾客满意，可能要满足顾客"既没明示、也不隐含、也不强制"的期望（惊喜体验）——这是要求之外的东西，是加分项，不是评审的通过标准</li>
+    <li><strong>需求 ≠ 目标</strong>：目标是"要实现的结果"（为什么做），要求是"必须满足的需求或期望"（做成什么样）</li>
+  </ul>
+</section>
+
+<section id="s13">
+  <h2><span class="no">13</span>需求的三形态：明示 / 隐含 / 强制</h2>
+  <div class="figure">
+    <div class="mermaid">
+flowchart LR
+    subgraph 全部["需求的全部形态（按定义，三种都是需求）"]
+        direction LR
+        A["明示的 stated<br/>= 规定需求<br/>可直接传递、可验证<br/>是需求 ✓ 且已记录 ✓"]
+        B["通常隐含的 implied<br/>存在，但未记录<br/>需要识别 + 显性化<br/>是需求 ✓ 但未记录 ✗"]
+        C["必须履行的 obligatory<br/>法规、安全强制<br/>需要梳理成清单<br/>是需求 ✓ 但未记录 ✗"]
+    end
+    </div>
+    <div class="cap">三种形态都是需求，但只有明示且成文的才算"规定需求"</div>
+  </div>
+  <table>
+    <tr><th>形态</th><th>是什么</th><th>是规定需求吗</th><th>能直接开发吗</th></tr>
+    <tr><td>明示的 stated</td><td>说出来的（含口头）</td><td>只有成文的才算</td><td>成文后可开发</td></tr>
+    <tr><td>通常隐含的 implied</td><td>惯例、默认，不言而喻</td><td>否（先显性化）</td><td>否（先显性化）</td></tr>
+    <tr><td>必须履行的 obligatory</td><td>法规、安全，强制</td><td>否（先列清单）</td><td>否（先成清单）</td></tr>
+  </table>
+</section>
+
+<section id="s14">
+  <h2><span class="no">14</span>规定需求 vs 明示需求</h2>
+  <blockquote><strong>规定需求 = 被明示的、以成文信息形式记录的需求</strong><br>（ISO 9000 3.6.4 注 2：<em>A specified requirement is one that is stated, for example in documented information</em>）</blockquote>
+  <div class="figure">
+    <div class="mermaid">
+flowchart LR
+    subgraph 明示["stated 明示的需求（说了就行）"]
+        subgraph 规定["specified 规定的需求（成文 + 具体 + 可验证）"]
+            X["白纸黑字<br/>可验证、可传递、可追溯"]
+        end
+    end
+    </div>
+    <div class="cap">规定 ⊂ 明示，是升级版——"明示"只解决"说了吗"，"规定"解决"说得清楚到可验证吗"</div>
+  </div>
+  <table>
+    <tr><th></th><th>口头明示</th><th>成文规定</th></tr>
+    <tr><td>例子</td><td>"页面要快一点"</td><td>"首页加载 ≤ 2 秒（4G 网络）"</td></tr>
+    <tr><td>能验证吗</td><td>❌ "快"是多快？无法判定</td><td>✅ 可测、可验收</td></tr>
+    <tr><td>能传递吗</td><td>⚠️ 转述容易走样</td><td>✅ 白纸黑字不漂移</td></tr>
+    <tr><td>能追溯吗</td><td>❌ 无版本</td><td>✅ 有版本可查</td></tr>
+  </table>
+  <h3>重要澄清：可验证性从哪来</h3>
+  <div class="note"><strong>"规定需求可验证"不是 3.6.4 注 2 的原话</strong>——注 2 只说了"明示 + 成文"。"可验证"是从 <strong>3.8.12 验证定义</strong>推出来的逻辑：验证 = 通过客观证据对<strong>规定需求</strong>已满足的认定，作为验证参照的规定需求必须能提供客观证据。需求"可验证"属性在 <strong>ISO/IEC/IEEE 29148（需求工程）</strong>中是明确要求的需求质量属性；ISO 9001:2015 §8.3.3 也要求设计开发输入"完整、清楚，且不能自相矛盾"。</div>
+</section>
+
+<section id="s15">
+  <h2><span class="no">15</span>规定需求的作用（质量体系枢纽）</h2>
+  <div class="figure">
+    <div class="mermaid">
+flowchart TB
+    H["规定需求<br/>PRD / 规格 / 清单<br/>（写下来的需求）"] --> A["验证的参照<br/>对照它测'做对了吗'<br/>没它无法验证"]
+    H --> B["评审的对象<br/>审它本身对目标是否适宜<br/>需求评审就是审它"]
+    H --> C["传递的载体<br/>上下游共同语言<br/>开发方照着做"]
+    H --> D["追溯的锚点<br/>需求→设计→代码→测试全链可追<br/>变更时能查影响面"]
+    H --> E["验收与责任依据<br/>交付对没对照它判<br/>争议时以它为准"]
+    </div>
+    <div class="cap">规定需求是质量体系的枢纽——五个关键活动都围着它转</div>
+  </div>
+  <table>
+    <tr><th>作用</th><th>说明</th></tr>
+    <tr><td><strong>验证的参照</strong></td><td>测试"做对了吗"的对照物，没有它无法验证——需求文档化是 ISO 9001 硬性要求</td></tr>
+    <tr><td><strong>评审的对象</strong></td><td>需求评审审的就是规定需求本身——隐含需求在显性化之前连"被审"的资格都没有</td></tr>
+    <tr><td><strong>传递的载体</strong></td><td>上下游（产品、设计、开发、测试）唯一共同语言——口头说十遍不如写下来一份</td></tr>
+    <tr><td><strong>追溯的锚点</strong></td><td>需求变更时立刻查出影响哪些设计、代码、测试（ISO 9000 3.6.13 可追溯性）</td></tr>
+    <tr><td><strong>验收与责任依据</strong></td><td>交付对没对以它为准，争议时拿它说话——把"我觉得"变成"文档写的"</td></tr>
+  </table>
+  <blockquote class="amber">规定需求的目的是——<strong>把需求从"大家脑子里的想法"固化成"白纸黑字的约定"</strong>，让验证有参照、评审有对象、传递有载体、变更可追溯、交付有依据。规定需求，就是需求"成年"的标志。</blockquote>
+</section>
+
+<section id="s16">
+  <h2><span class="no">16</span>没有明示的需求，是需求吗</h2>
+  <div class="figure">
+    <div class="mermaid">
+flowchart TB
+    subgraph 存在["存在论：是需求"]
+        A1["它是用户真实的 need / expectation"]
+        A2["漏掉它是缺陷（用户会认为你没做好）"]
+    end
+    subgraph 实践["实践论：不是规定需求"]
+        B1["它还没被明示、成文"]
+        B2["不能直接验证、传递、开发"]
+    end
+    存在 --- 实践
+    </div>
+    <div class="cap">两个回答不矛盾——它们回答的是不同的问题</div>
+  </div>
+  <table>
+    <tr><th></th><th>是需求？</th><th>是规定需求？</th><th>能直接开发？</th></tr>
+    <tr><td>明示的</td><td>✓</td><td>✓（成文的）</td><td>✓</td></tr>
+    <tr><td><strong>隐含的</strong></td><td><strong>✓</strong></td><td><strong>✗</strong></td><td><strong>✗（先显性化）</strong></td></tr>
+    <tr><td>强制的</td><td>✓</td><td>✗</td><td>✗（先列清单）</td></tr>
+  </table>
+  <h3>"隐含"概念的价值在识别端，不在传递端</h3>
+  <div class="figure">
+    <div class="mermaid">
+flowchart LR
+    A["需求以隐含形式存在<br/>用户没说出口"] -->|"识别/挖掘<br/>评审、访谈、观察<br/>'隐含'概念在此生效"| B["显性化<br/>写进 PRD / DoD"] -->|"传递<br/>此时必须明示<br/>'隐含'到此失效"| C["下游开发方"]
+    </div>
+    <div class="cap">传递必须明示，识别必须靠"隐含"概念提醒——两者不矛盾</div>
+  </div>
+  <blockquote class="amber">如果没有"隐含"这个概念，需求工作 = 只接收明示的，评审退化成"读文档"，隐含需求永远漏掉——因为没有人会去找不存在概念的东西。<strong>"隐含"是需求的初始形态，"明示"是需求的传递形态。</strong>隐含必须被识别、然后显性化，才能传递。</blockquote>
+</section>
+
+<section id="s17">
+  <h2><span class="no">17</span>隐含需求怎么被确认</h2>
+  <div class="figure">
+    <div class="mermaid">
+flowchart TB
+    H["没有被明示的需求<br/>通常隐含的 · 必须履行的"] --> P1
+    H --> P2
+    P1["路径 A：先显性化，再验证<br/>需求评审挖掘 → 写成文档/DoD → 变成规定需求<br/>之后走正常验证流程（对照文档）"]
+    P2["路径 B：直接场景确认<br/>原型测试 / UAT / Beta / 灰度 / 可用性测试<br/>真实使用结果就是证据，无需先写文档"]
+    </div>
+    <div class="cap">验证的参照在文档里，确认的参照在场景里——隐含需求是确认存在的最主要理由</div>
+  </div>
+  <h3>为什么确认能兜住隐含需求，而验证不能</h3>
+  <p>答案藏在 ISO 9000 的措辞里：</p>
+  <ul>
+    <li><strong>验证</strong>（3.8.12）：对照<strong>规定需求</strong>——"规定"要求它必须是明示的。没文档 = 没参照 = 无法验证</li>
+    <li><strong>确认</strong>（3.8.13）：对照<strong>特定的预期用途或应用要求</strong>——"预期用途"不是一份文档，而是一种<strong>真实使用情境</strong>。把产品放进情境里，好用不好用是自然显现的事实</li>
+  </ul>
+  <blockquote class="amber"><strong>验证的参照在文档里，确认的参照在场景里。</strong>隐含需求没进文档，验证够不着它——但场景兜得住，确认就是它的归宿。如果所有需求都能写下来被验证，确认这个活动就不需要存在了。</blockquote>
+  <h3>确认对非明示需求的意义（核心洞察）</h3>
+  <div class="figure">
+    <div class="mermaid">
+flowchart TB
+    subgraph 非明示["非明示需求<br/>隐含的 · 强制的（未成文）"]
+    end
+    subgraph 验证射程["验证的射程<br/>对照：规定需求（文档）"]
+        V["只能验证<br/>被明示成文的需求<br/>没文档 = 没参照"]
+    end
+    subgraph 确认射程["确认的射程<br/>对照：预期用途（场景）"]
+        C["能确认<br/>真实场景下好不好用<br/>无需先写文档"]
+    end
+    非明示 -.->|"不在验证射程内 ✗<br/>验证够不着它"| V
+    非明示 -->|"在确认射程内 ✓<br/>放进场景自然显现"| C
+    </div>
+    <div class="cap">验证的射程限制 vs 确认的射程优势——这是确认对非明示需求独特价值的根源</div>
+  </div>
+  <table>
+    <tr><th></th><th>验证（Verification）</th><th>确认（Validation）</th></tr>
+    <tr><td>参照</td><td>规定需求（<strong>文档</strong>）</td><td>预期用途（<strong>场景</strong>）</td></tr>
+    <tr><td>对非明示需求</td><td>✗ <strong>射程之外</strong>——没进文档，没参照可对照</td><td>✓ <strong>射程之内</strong>——放进真实场景，好用与否自然显现</td></tr>
+    <tr><td>前提</td><td>必须先显性化</td><td>无需先写文档</td></tr>
+  </table>
+  <h3>三层意义</h3>
+  <ol>
+    <li><strong>兜底机制</strong>：确认是非明示需求的最后防线——UAT、Beta、灰度，是它们<strong>唯一被检验的机会</strong>。不做确认，隐含需求就永远漏在体系外</li>
+    <li><strong>体验类隐含需求的唯一裁判</strong>：有些需求文字说不清（顺手、直觉、动效、节奏）——显性化写不出来，只有真实使用能裁决。这是确认不可替代的价值</li>
+    <li><strong>把"漏掉的隐含需求"变成"可发现的缺陷"</strong>：确认把隐性缺失显性化——用户用不出来、卡住、放弃、抱怨，就是缺陷证据</li>
+  </ol>
+  <blockquote class="red"><strong>因果链（全篇最硬核的推论）</strong>：只做验证不做确认 → 隐含需求系统性漏失 → 这就是"测试全过、上线没人用"的根源。<br>反过来：<strong>确认的存在价值恰恰建立在非明示需求上——如果所有需求都能写下来被验证，确认这个活动就不需要存在了。</strong></blockquote>
+</section>
+
+<section id="s18">
+  <h2><span class="no">18</span>隐含需求怎么传递给下游</h2>
+  <blockquote class="red">你没法传递一个你没写下来的东西。隐含需求必须：先识别 → 再显性化 → 然后传递。<br>传递的本质就是"翻译"——把没说出来的翻成写下来的。</blockquote>
+  <div class="figure">
+    <div class="mermaid">
+flowchart LR
+    A["隐含需求<br/>没说出来的"] -->|"识别/确认<br/>评审、访谈、观察"| B["显性化<br/>翻译成明示形式"] -->|"传递载体"| C["下游开发方<br/>接收执行"]
+    B --> B1["写进 PRD / 需求文档<br/>功能类"]
+    B --> B2["固化进 DoD / 规范<br/>团队级默认"]
+    B --> B3["画进原型 / 交互稿<br/>体验交互类"]
+    B --> B4["落进合规清单<br/>法规强制类"]
+    </div>
+    <div class="cap">四种传递载体，按需求性质选择</div>
+  </div>
+  <table>
+    <tr><th>需求类型</th><th>传递方式</th><th>载体</th></tr>
+    <tr><td>隐含（惯例）</td><td>评审时挖出来 → 写进文档/DoD</td><td>PRD、DoD</td></tr>
+    <tr><td>隐含（体验）</td><td>原型演示，画出来</td><td>原型、交互稿</td></tr>
+    <tr><td>强制（法规）</td><td>梳理成清单，逐条对照</td><td>合规清单</td></tr>
+  </table>
+  <h3>四种载体选哪种，取决于需求的性质</h3>
+  <table>
+    <tr><th>载体</th><th>适用</th><th>例子</th></tr>
+    <tr><td>① PRD / 需求文档</td><td>功能类隐含需求</td><td>"删除操作需二次确认"</td></tr>
+    <tr><td>② DoD / 团队规范</td><td>团队级默认要求（一次固化，处处生效）</td><td>"完成 = 代码合入 + 测试通过 + 文档更新"</td></tr>
+    <tr><td>③ 原型 / 交互稿</td><td>体验、直觉、交互类（文字说不清的画出来）</td><td>手势、动效、状态变化</td></tr>
+    <tr><td>④ 合规清单</td><td>法规强制类（逐条对照无遗漏）</td><td>等保、GDPR 条目</td></tr>
+  </table>
+</section>
+
+<section id="s19">
+  <h2><span class="no">19</span>术语对照表与口径约定</h2>
+  <h3>ISO 9000:2015 术语速查</h3>
+  <table>
+    <tr><th>术语</th><th>编号</th><th>定义（官方中文）</th></tr>
+    <tr><td>客体 object</td><td>3.6.1</td><td>可感知或可想象到的任何事物</td></tr>
+    <tr><td>要求 requirement</td><td>3.6.4</td><td>明示的、通常隐含的或必须履行的需求或期望</td></tr>
+    <tr><td>目标 objective</td><td>3.7.1</td><td>要实现的结果</td></tr>
+    <tr><td>验证 verification</td><td>3.8.12</td><td>通过提供客观证据，对规定要求已得到满足的认定</td></tr>
+    <tr><td>确认 validation</td><td>3.8.13</td><td>通过提供客观证据，对特定的预期用途或应用要求已得到满足的认定</td></tr>
+    <tr><td>评审 review</td><td>3.11.2</td><td>对客体实现所规定目标的适宜性、充分性或有效性的确定</td></tr>
+  </table>
+  <h3>英文→中文口径约定（Mickey 指定，必须遵守）</h3>
+  <table>
+    <tr><th>英文</th><th>中文</th><th>备注</th></tr>
+    <tr><td>requirement</td><td><strong>需求</strong></td><td>不译"要求"（国标译"要求"，按约定统一用"需求"）</td></tr>
+    <tr><td>need</td><td><strong>需要</strong></td><td>硬性诉求</td></tr>
+    <tr><td>expectation</td><td><strong>期望</strong></td><td>软性诉求</td></tr>
+    <tr><td>specified requirement</td><td><strong>规定需求</strong></td><td>非"规定要求"；被明示的、成文的需求</td></tr>
+    <tr><td>stated</td><td>明示的</td><td>需求的呈现方式之一</td></tr>
+    <tr><td>generally implied</td><td>通常隐含的</td><td>需求的呈现方式之一</td></tr>
+    <tr><td>obligatory</td><td>必须履行的</td><td>需求的呈现方式之一</td></tr>
+    <tr><td>review</td><td>评审</td><td>对目标的适宜性/充分性/有效性</td></tr>
+    <tr><td>verification</td><td>验证</td><td>对规定需求的符合性</td></tr>
+    <tr><td>validation</td><td>确认</td><td>对预期用途的适用性</td></tr>
+  </table>
+  <h3>一句话记忆</h3>
+  <blockquote class="amber"><strong>评审对目标，验证对需求，确认对用途</strong>——方向对不对、做对了吗、真实场景好用吗。隐含需求必须识别、显性化、才能传递；规定需求是质量体系的枢纽，让验证有参照、评审有对象、传递有载体、变更可追溯、交付有依据。</blockquote>
+  <h3>引用标准原文链接</h3>
+  <ul>
+    <li>ISO 9000:2015 官方术语查询：<a href="https://www.iso.org/obp/ui/#iso:std:iso:9000:ed-4:v1:en" target="_blank">https://www.iso.org/obp/ui/#iso:std:iso:9000:ed-4:v1:en</a></li>
+    <li>GB/T 19000-2016 全文：<a href="https://www.gdhzkj.cn/Donald/16.pdf" target="_blank">https://www.gdhzkj.cn/Donald/16.pdf</a></li>
+    <li>IEEE 1028-2008：<a href="https://standards.ieee.org/ieee/1028/4402/" target="_blank">https://standards.ieee.org/ieee/1028/4402/</a></li>
+    <li>ISO/IEC/IEEE 12207:2017：<a href="https://quality.arc42.org/standards/iso12207" target="_blank">https://quality.arc42.org/standards/iso12207</a></li>
+  </ul>
+</section>
+
+<section id="s20">
+  <h2><span class="no">20</span>附录：关键辨析补遗</h2>
+  <h3>20.1 验证的完整三要素（判断"这是不是验证"）</h3>
+  <p>ISO 9000 3.8.12 的定义可以拆成三个必须同时满足的要素——缺一个都不算验证：</p>
+  <div class="figure">
+    <div class="mermaid">
+flowchart LR
+    A["① 对照：规定需求<br/>必须是成文的、明示的<br/>（需求/规格/标准/合同）"] --> B["② 凭据：客观证据<br/>测试/检验/审查/替代计算/文档评审<br/>（3.8.12 注1）"] --> C["③ 结论：认定<br/>判定满足/不满足<br/>给出'已验证'状态"]
+    </div>
+    <div class="cap">验证三要素：对照规定需求 + 提供客观证据 + 做出认定</div>
+  </div>
+  <table>
+    <tr><th>要素</th><th>问什么</th><th>反例</th></tr>
+    <tr><td>① 对照规定需求</td><td>有白纸黑字的尺子吗？</td><td>口头"大概要快一点" → 无法验证</td></tr>
+    <tr><td>② 提供客观证据</td><td>有可复核的证据吗？</td><td>"我认为满足" → 不算验证</td></tr>
+    <tr><td>③ 做出认定</td><td>有明确结论吗？</td><td>"差不多吧" → 不是验证</td></tr>
+  </table>
+  <blockquote><strong>"测试"只是验证的手段之一</strong>（提供客观证据），不是验证本身。验证还包括审查、替代计算、文档评审。把"测试过了"等同于"验证过了"，是把手段当成了目的。</blockquote>
+  <h3>20.2 目标具体化配方与检验三问</h3>
+  <p><strong>配方：目标 = 对象（谁/什么）＋ 时限（何时）＋ 可衡量结果（多少）</strong></p>
+  <table>
+    <tr><th>抽象（评审不了）</th><th>具体（可评审）</th></tr>
+    <tr><td>"做出高质量的产品"</td><td>"Q4 月活用户达 100 万"</td></tr>
+    <tr><td>"提升用户体验"</td><td>"Q4 首页加载时间降到 2 秒以内"</td></tr>
+    <tr><td>"做好支付"</td><td>"本冲刺完成支付闭环，用户可完成首次下单"</td></tr>
+  </table>
+  <p><strong>检验三问</strong>（评审会开场前自测，任何一个答不上来就是目标没定好）：</p>
+  <ol>
+    <li>评审结束后，<strong>通过的标准</strong>是什么？（怎么算达标）</li>
+    <li>这个"达标"有没有<strong>可观察/可测量的判定</strong>？（数字、行为、状态）</li>
+    <li>如果两个人理解不一致，<strong>看什么能裁决</strong>？</li>
+  </ol>
+  <p>三个都答得上 = 目标是"所规定目标"；答不上来 = 先把目标改具体再开会。</p>
+  <h3>20.3 翻译辨析：为什么"被明示的…往往是隐含的或强制的"不对</h3>
+  <p>原句（直译）：<strong>需求 = 被明示的、通常隐含的或必须履行的需要或期望</strong></p>
+  <p>错误译法："被明示的需要或期望，<strong>往往是</strong>隐含的或强制的"——错在两个地方：</p>
+  <ul>
+    <li><strong>把并列译成了主次</strong>：原文 stated / implied / obligatory 三者用 or 并列、地位平等；错误译法把"明示的"当主要定语、把"隐含/强制"降级成"往往"的补充</li>
+    <li><strong>"往往"是原文没有的词</strong>：原文没有任何频率含义，加"往往"等于自己塞进了原文没有的意思</li>
+  </ul>
+  <div class="figure">
+    <div class="mermaid">
+flowchart TB
+    subgraph 原文["原文结构：并列（or 连接，地位平等）"]
+        direction LR
+        A1["stated 明示的"] --- A2["generally implied 通常隐含的"] --- A3["obligatory 必须履行的"]
+    end
+    subgraph 误译["错误译法结构：主次（'往往'是原文没有的词）"]
+        direction LR
+        B1["被明示的（主要）"] --> B2["往往是隐含的或强制的（补充）"]
+    end
+    </div>
+    <div class="cap">定义翻译必须忠实并列结构；"现实中隐含/强制需求占比高"是实践观察，别塞进定义</div>
+  </div>
+  <h3>20.4 "隐含需求"冰山比喻</h3>
+  <blockquote class="amber"><strong>"隐含需求"就像冰山在水下的部分。</strong>传递到下游的只能是浮出水面的部分（明示），但如果没有"水下还有冰山"这个认知，船就直接撞上去了。概念存在的意义，是提醒你<strong>必须去挖掘水下部分</strong>——而不是说水下部分能直接运到岸上。</blockquote>
+  <p>两个推论：</p>
+  <ul>
+    <li>漏掉隐含需求 = 缺陷（不是"没写文档所以不算"）</li>
+    <li>隐含需求要"被识别 → 显性化 → 传递"，三步缺一不可</li>
+  </ul>
+  <h3>20.5 评审 vs 复盘（易混概念辨析）</h3>
+  <table>
+    <tr><th></th><th>评审（Review）</th><th>复盘（Retrospective）</th></tr>
+    <tr><td>时机</td><td>过程关卡，干活之前/之中把关</td><td>事后回顾，干完了总结</td></tr>
+    <tr><td>归属</td><td>IEEE 1028 五类 / ISO 9000 术语</td><td>敏捷实践（Scrum Guide）/ CMMI 组织过程改进</td></tr>
+    <tr><td>标准术语</td><td>review</td><td>Post-Project Review / Lessons Learned（经验教训）</td></tr>
+    <tr><td>目的</td><td>把关：判断适宜/充分/有效</td><td>改进：沉淀经验、驱动下一轮</td></tr>
+    <tr><td>位置</td><td>在流程链条上</td><td>绕回起点（§10 图中的虚线）</td></tr>
+  </table>
+  <blockquote class="amber">一个管"把关"，一个管"改进"，不冲突，但别混为一谈——<strong>复盘不在 IEEE 1028 的五类评审里</strong>。</blockquote>
+</section>
+
+<div class="fin">
+  <h2>一句话带走</h2>
+  <p><strong>评审对目标，验证对需求，确认对用途</strong>——方向对不对、做对了吗、真实场景好用吗。隐含需求必须识别、显性化、才能传递；规定需求是质量体系的枢纽，让验证有参照、评审有对象、传递有载体、变更可追溯、交付有依据。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8fb3d8;">文档完 · 整理自 2026-08-18 概念讨论（完整版） · 术语口径遵循项目约定（requirement→需求，need→需要，expectation→期望）</p>
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'neutral',
+    themeVariables: {
+      fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif',
+      fontSize: '14px'
+    },
+    flowchart: { htmlLabels: true, curve: 'basis' }
+  });
+</script>
+</body>
+</html>
