@@ -8,6 +8,19 @@
 
 ## 一、评审记录
 
+### 2026-08-18 · ort03 二章通读收尾（人类方案 v0.56→v0.57 / SKILL v2.24→v2.25）
+
+**对象**：[eos-ort03-norm.md](../../10-pl4eos-subpl-sysdev/00-presysdev-4-eos/eos-ort03-norm.md)（v0.56→v0.57）+ [SKILL.md](../../10-pl4eos-subpl-sysdev/00-presysdev-4-eos/eos-ort03-norm/SKILL.md)（v2.24→v2.25）
+**动因**：人类要求通读重构后的第二章。通读结论：识别前置（材料级识别业务对象 → 拆分 OR → 质量门）结构连贯、引用一致（§2.2→2.3/2.4、§2.2.1/2.2.2、§3.3/§4.4 均正确）；仅发现 §2.2.1 字段表「从 OR 原文提取候选角色」与节首「从需求原文识别」措辞不一致——识别前置后对象是需求原文/材料，非 OR。
+**结论**：统一为「从需求原文提取候选角色」。
+**实施落地**：
+
+- `eos-ort03-norm.md`：v0.56 → v0.57（§2.2.1 字段表 1 处 + 版本头/变更记录）
+- `eos-ort03-norm/SKILL.md`：v2.24 → v2.25（AI 执行规则语义不变）
+- 链级影响：ort00/ort01/ort02 不改；记忆 ort02-03-readability-revision-plan 更新
+
+---
+
 ### 2026-08-18 · ort03 规范化定义补全（人类方案 v0.55→v0.56 / SKILL v2.23→v2.24）
 
 **对象**：[eos-ort03-norm.md](../../10-pl4eos-subpl-sysdev/00-presysdev-4-eos/eos-ort03-norm.md)（人类方案 v0.55→v0.56）+ [SKILL.md](../../10-pl4eos-subpl-sysdev/00-presysdev-4-eos/eos-ort03-norm/SKILL.md)（v2.23→v2.24）
