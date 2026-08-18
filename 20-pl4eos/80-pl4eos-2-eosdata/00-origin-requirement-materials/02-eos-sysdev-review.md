@@ -8,6 +8,19 @@
 
 ## 一、评审记录
 
+### 2026-08-18 · ort00 以 ort02/ort01 为标杆可读性对齐（人类方案 v0.30→v0.31 / SKILL v2.5→v2.6）
+
+**对象**：[eos-ort00-textualize.md](../../10-pl4eos-subpl-sysdev/00-presysdev-4-eos/eos-ort00-textualize.md)（v0.30→v0.31）+ [SKILL.md](../../10-pl4eos-subpl-sysdev/00-presysdev-4-eos/eos-ort00-textualize/SKILL.md)（v2.5→v2.6）
+**动因**：人类要求以 ort02/ort01（已彻底修订）为标杆审视 ort00。审查发现 F1~F7：§一 章首缺一句话、§二/§四 章首旧式平铺、§三 章首两层信息（路线+运行外参与，与白话注重复）、「核心驱动逻辑」复述路线、布局总览人类参与长括注（Step 1/End）、自检清单 11 项平铺。验证无问题：Step 框架 Start/1/2/3/End 简化形态符合预期（无对话）；§二 混合基础+规则（ort00 最简步骤，记忆已记"未重排"，不强制规则前置）；§4.2 模板「## 一、OR 阶段」在代码围栏内（非异常）。
+**结论**：人类确认修复（叙事层语义不变）：①§一 补章首一句话（定位三问）；②§二 章首升级「载体与规则五问」导航（文档/生命周期/材料进入/查重/工程化）；③§三 章首收纯路线 + 「核心驱动逻辑」瘦身为「反馈机制一句话」（状态条件扫描 + 处理即状态转迁无需 `[已处理]` + 先反馈后新增 + 与 ort01 git 特化差异）+ 布局总览 Step 1/End 人类参与括注精简；④§四 章首三组导航 + §4.5 自检清单四组分组（前置与反馈/新增处理与文本化/查重与落账/基线与交接）。
+**实施落地**：
+
+- `eos-ort00-textualize.md`：v0.30 → v0.31（8 处叙述层调整 + 版本头/变更记录）
+- `eos-ort00-textualize/SKILL.md`：v2.5 → v2.6（AI 执行规则语义不变）
+- 链级影响：ort01/ort02/ort03 不改；记忆 ort-review-style-pattern 更新
+
+---
+
 ### 2026-08-18 · ort01 补 Step End 对齐八步框架（人类方案 v0.56→v0.57 / SKILL v2.38→v2.39）
 
 **对象**：[eos-ort01-chunk.md](../../10-pl4eos-subpl-sysdev/00-presysdev-4-eos/eos-ort01-chunk.md)（v0.56→v0.57）+ [SKILL.md](../../10-pl4eos-subpl-sysdev/00-presysdev-4-eos/eos-ort01-chunk/SKILL.md)（v2.38→v2.39）
