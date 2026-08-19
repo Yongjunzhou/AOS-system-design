@@ -8,6 +8,20 @@
 
 ## 一、评审记录
 
+### 2026-08-19 · wft01-biz 编号规范修正——转换总览去「2.0」编号（人类方案 v3.8→v3.9 / SKILL v1.5→v1.6）
+
+**对象**：[eos-wft01-biz-or2str.md](../../10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft01-biz-or2str.md)（v3.8→v3.9）+ [SKILL.md](../../10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft01-biz-or2str/SKILL.md)（v1.5→v1.6）
+**动因**：人类指出"怎么有 2.0 的编号"——「2.0」是生造的第零节编号，不标准（v3.7 为保 2.1~2.4 锚点而引入）。
+**结论**：采纳去编号——转换总览改为无编号章（### 转换总览），三小节 2.0.1/2.0.2/2.0.3 → 转换原理 / 转换方法 / 规则地图；SKILL 本无 2.0 引用，锚点零影响。
+**实施落地**：
+
+- `eos-wft01-biz-or2str.md`：v3.8 → v3.9（章节/小节去编号 + 章首/节首一句话同步 + 版本头/变更记录）
+- `eos-wft01-biz-or2str/SKILL.md`：v1.5 → v1.6（AI 执行规则语义不变，同步 bump）
+- 链级影响：无（无 2.0 锚点）
+- 记忆 wft01-biz-review-ort02-benchmark 更新（转换总览去编号）
+
+---
+
 ### 2026-08-19 · 链级术语统一「支撑引擎」+ wft01-biz O2 变更记录补录（91 v5.18→v5.19 / wft01-biz v3.7→v3.8 / wft02 v7.3→v7.4 / wft03 v8.5→v8.6 + 三个 SKILL）
 
 **对象**：[91-eos-biz-eng-spec.md](../../10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/91-eos-biz-eng-spec.md)（v5.18→v5.19）+ wft01/02/03-biz 人类方案与 SKILL（正文术语替换 + 版本 bump）
