@@ -21,7 +21,7 @@ description: 业务需求→STR-F 场景业务设计与资产化。接收同角�
 |------|-------------------|
 | 接收同角色 FR-BIZ OR（≤10条），校验类型/数量/状态 | FR-ENG → `wft01-eng` |
 | 按用户角色匹配已有 STR-F → 归入（Phase B）或待聚合池（Phase C） | NFR → `wft01-nfr` |
-| 定义场景职责边界 + 业务链文档序列 + 引擎候选 + Bn 对齐 | 下游详细分解 → `wft02-biz` |
+| 定义场景职责边界（= 主责角色的业务对象闭环）+ 业务链文档序列 + 引擎候选 + Bn 对齐 | 下游详细分解 → `wft02-biz` |
 | E2E 闭合检查 + 生成补充 OR 材料 | 无 OR 输入的治理 STR-F 不主动展开 |
 | 人类确认后写回 23 资产 + 推进 STR-F→`可以分解分配` + OR→`已分配` | 业务人员确认（人类线下活动） |
 | 接收 wft02 退回的 `需wft01修订` STR-F，按人类方案修订 | — |
@@ -144,7 +144,7 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/25-eos-engine-models.m
 #### Phase B — 修订已有 STR-F
 
 **执行顺序**：
-1. **要素提取**——从本轮 OR 提取文档名称和支撑引擎
+1. **要素提取**——从本轮 OR 提取文档名称和正文转化引擎
 2. **边界匹配检查**——确认 OR 在 STR-F 边界内（[§2.3.3](../eos-wft01-biz-or2str.md#233-phase-b-边界匹配检查)）（详见 human spec）：
    - 边界内 → 进入关系检测
    - 边界扩展 → 更新边界陈述 + `[推断]`
@@ -215,7 +215,7 @@ bash ../scripts/update-meta.sh <23-file> bump-version
 bash ../scripts/update-meta.sh <23-file> update-head
 
 # 追加 AI最近变更 记录
-bash ../scripts/update-meta.sh <02-file> add-recent-change "wft01-biz" "资产写回" "<STR-F-ID>" "23 Bn引用写回"
+bash ../scripts/update-meta.sh <02-file> add-recent-change "wft01-biz" "资产写回" "<STR-F-ID>" "23B 引用写回"
 
 # 移出已完成节点
 bash ../scripts/update-meta.sh <01-file> move-node "<OR-ID>" "wft01-biz" "done"
@@ -232,7 +232,7 @@ bash ../scripts/update-meta.sh <01-file> move-node "<OR-ID>" "wft01-biz" "done"
   修订 STR-F-XXX（+N OR，v{N-1}→v{N}）/ 新建 STR-F-YYY（聚合 K 条 OR，v1）
   退回规范化 OR-ZZZ（建议拆为子 OR 后重新提交预处理链）
   待重新分组 OR-WWW（本轮宿主误匹配，留待下一轮）
-资产落账：<23 Bn引用写回 / 未落账>
+资产落账：<23B 引用写回 / 未落账>
 补充原始需求材料：<无 / YYYYMMDD-场景业务名-补充原始需求材料.md>（已登记 OR 原料状态表）
 
 一、方案反馈
@@ -300,6 +300,8 @@ bash ../scripts/update-meta.sh <02-file> add-recent-change "wft01-biz" "反馈�
 ## 附录A：判据速查
 
 ### A.1 STR-F 类型判定
+
+**概念锚点**：场景业务（STR-F）= 一个主责角色的一个业务对象闭环——业务对象与主责角色一一对应（主推动者：提出需求 / 负责完成 / 确认结果），配合角色是闭环内流程环节、不单独成 STR-F（[91 §1.4](../91-eos-biz-eng-spec.md#14-业务场景)）。D 与 PCA 两种类型：
 
 | 类型 | 典型动作词 | 闭合规则 |
 |------|-----------|---------|
@@ -376,5 +378,6 @@ D 和 PCA 处理逻辑完全同构，仅影响 wft02-biz 引擎推断偏好。
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-19 | v1.2 | 业务对象闭环概念同步（负责表 + A.1 概念锚点，对齐人类方案 v3.3 核心定义）+ 引擎术语统一（正文转化引擎）；对齐人类方案 v3.5 |
 | 2026-08-19 | v1.1 | 提交基线（Step 5 写回 + 整体确认后 `git add`+`commit`+`update-head`，链级不变式）+ 确认状态标记口径同步（`[修改]`/`[驳回]`/`[同意]`/`[已处理]`）；对齐人类方案 v3.4（C1/C2） |
 | 2026-07-17 | v1.0 | 初始版本——从人类方案文档提取 Skill，脚本化数据访问，协议精简嵌入 |
