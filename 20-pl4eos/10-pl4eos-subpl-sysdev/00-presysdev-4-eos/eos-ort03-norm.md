@@ -286,7 +286,7 @@ NFR 分类维度判定（仅 NFR OR；取值口径单源，§4.4 Step 3 引用�
 | 表 B — 切分文件处理进度 | 切分文件级 | 控制切分文件是否进入规范化；生成方案后置 `待确认规范方案`；确认后置 `已规范化` |
 | 表 C — OR 基线条目处理进度 | OR 条目级 | 人类确认后追加 OR 条目父子行，作为 OR 当前状态权威源 |
 
-> **frontmatter.status 口径**：方案期（`待确认规范方案`）本步不写 status，保持 `clarified`；确认执行后置 `normalized`；终止置 `abandoned`。status 值域全链权威定义见 ort01 §3.2.2。
+> **frontmatter.status 口径**：方案期（`待确认规范方案`）本步不写 status，保持 `clarified`；确认执行后置 `normalized`；终止置 `abandoned`。status 值域全链权威定义见 ort01 §二 2.3.2。
 
 表 C OR 条目状态机：
 
