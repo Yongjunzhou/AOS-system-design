@@ -8,6 +8,19 @@
 
 ## 一、评审记录
 
+### 2026-08-19 · wft01-biz 反馈检出口径单源化 + 提交基线（人类方案 v3.3→v3.4 / SKILL v1.0→v1.1）
+
+**对象**：[eos-wft01-biz-or2str.md](../../10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft01-biz-or2str.md)（v3.3→v3.4）+ [SKILL.md](../../10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft01-biz-or2str/SKILL.md)（v1.0→v1.1）
+**动因**：以 ort02 v0.34 为标杆审视 wft01-biz（首次走 ort 风格可读性审视）。发现 C1（反馈检出口径三处不一致——§3.1.3 从 `[修改]`/`[驳回]` 检出 vs §3.3 人类不编辑确认状态走对话 vs SKILL Step 2 触发条件）+ C2（缺显式提交基线——Step 1 变更感知依赖 `git diff <HEAD@上次AI运行>..HEAD`、Step 5 更新 HEAD 字段但全文无 git add+commit；同族 wft01-eng §3.6 提交规范第 4 条有、ort 链有 Step 4 提交基线）。另有发现清单（中 5 / 低 10）暂未全部落地（S1 自检清单/C3 引擎术语/D1 SKILL 概念同步等留待后续轮次）。
+**结论**：人类确认「落 C2+C1」。运行模型定案——对话型反馈两轨收集（AI 可以处理节点分节为主通道 + git diff 为次通道，次通道依赖基线不变式）；**确认时统一提交**（Step 5 写回后 `git add -A`+`git commit`+update-head + 整体确认后补提交，防 AI 自写被下轮误判，对齐 ort02 Step 6 汇总后提交）。
+**实施落地**：
+
+- `eos-wft01-biz-or2str.md`：v3.3 → v3.4——①§3.3 新增「确认状态标记状态机」（`[修改]`/`[驳回]`/`[同意]`/`[已处理]`，写入者=AI）+ 跨轮反馈持久化（运行结束余留反馈 → AI 写标记 + 入待反馈处理分节），反馈检出口径单源化（§3.1.3 引用）；②§3.6 Step 5 新增「提交基线」（item 7，`git add -A`+`git commit` 带 Co-Authored-By）+ 更新文件头顺延 item 8；③§3.3.1 整体确认补提交基线；④§3.2 Step 1 变更感知补基线前提注；⑤§3.6 item 6「`[修改]`/`[需裁决]`」改「`[修改]`/`[驳回]`」（增量标记与确认状态标记混用修复）；版本头/变更记录
+- `eos-wft01-biz-or2str/SKILL.md`：v1.0 → v1.1（Step 5 提交基线 + Step End 整体确认标注含提交；AI 执行规则语义不变）+ 变更记录
+- 链级影响：wft02-biz 等下游不改（提交基线补齐后 detect-changes 通道恢复有效性，符合链级「基线=最后 AI 提交，diff 只含人类变更」不变式）；记忆 wft01-biz-review-ort02-benchmark 更新（C1/C2 已落地）
+
+---
+
 ### 2026-08-18 · ort02 结构完整性扫描新增（人类方案 v0.33→v0.34 / SKILL v2.18→v2.19）+ ort03 联动（v0.57→v0.58 / v2.25→v2.26）
 
 **对象**：[eos-ort02-clarify.md](../../10-pl4eos-subpl-sysdev/00-presysdev-4-eos/eos-ort02-clarify.md)（v0.33→v0.34）+ [SKILL.md](../../10-pl4eos-subpl-sysdev/00-presysdev-4-eos/eos-ort02-clarify/SKILL.md)（v2.18→v2.19）+ [eos-ort03-norm.md](../../10-pl4eos-subpl-sysdev/00-presysdev-4-eos/eos-ort03-norm.md)（v0.57→v0.58）+ ort03 SKILL（v2.25→v2.26）
