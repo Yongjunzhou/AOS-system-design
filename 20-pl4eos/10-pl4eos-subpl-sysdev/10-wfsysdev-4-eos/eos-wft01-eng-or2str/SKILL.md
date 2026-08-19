@@ -100,6 +100,8 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requir
 
 **触发条件**：Step Start 检出 `需wft01修订` STR-E，或上一轮 Step End 的反馈等待中人类提出修改意见。
 
+**反馈双轨**（人类任选其一，详见人类方案 §5.3）：①AI 对话反馈——Step End 后不结束对话，直接回复修改意见，AI 即时处理；②线下文档修订——打开 `01/02-*.md` 在确认状态字段标注 `[同意]`/`[修改]`/`[驳回]` 或直接编辑方案内容（自由文本），经 Step 1 变更感知 git diff 检测后按 §A.5 处理。两轨等价均落账（追 `[已处理]`）。
+
 **处理规则**：
 
 1. 从当前轮次对话或退回缺失说明中读取人类反馈意图
@@ -114,6 +116,22 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requ
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md update-head
 ```
 
+**AI 处理反馈规则**：
+
+| 人类输入 | AI 动作 |
+|---------|--------|
+| 显式修改指令 | 定位条目 → Edit 修改 → 追加 `[已处理]` → 输出修改摘要 → 继续等待 |
+| 质疑/讨论 | 解释理由，不自动修改，继续等待决策 |
+| 整体确认 | 全部条目追加 `[同意] [已处理]` → **整理反馈总结** → 推进状态 → Step 5 落账 → 结束 |
+| 模糊意见 | 尝试具体化追问 |
+| 线下修订检出（git diff 发现确认状态标注/自由文本编辑） | 定位条目 → Edit 修订 → 追加 `[已处理]` → 输出修改摘要 → 继续等待 |
+
+**反馈总结**：
+
+```bash
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md add-recent-change "wft01-eng" "反馈处理" "<STR-E-ID>" "<AI总结的反馈要点>"
+```
+
 ---
 
 ### Step 3 · STR-E 场景业务设计
@@ -121,7 +139,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requ
 #### Phase A — OR 溯源与路由
 
 对每条新 OR：
-1. 提取触发来源、能力诉求、运行期结果、主责能力域（详见 human spec §2.4.1）
+1. 提取触发来源、能力诉求、运行期结果、主责能力域（详见 human spec §3.2.1）
 2. **路径归属判定**——OR 实际为业务文档/流程 → 退回 `wft01-biz`；OR 为性能/安全等约束 → 退回 nfr 路径；OR 仅为配置数据 → 标记不进入
 3. **宿主匹配**——OR 的三元组（主责能力域+配置/治理目标+独立验收结果）落入已有 STR-E → Phase B；否则 → 待聚合池 → Phase C
 
@@ -130,7 +148,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requ
 #### Phase B — 修订已有 STR-E
 
 1. **要素提取**——从本轮 OR 提取触发来源、能力诉求、运行期结果、主责能力域
-2. **场景匹配检查**——确认 OR 与 STR-E 的三元组一致（详见 human spec §2.4.3）：
+2. **场景匹配检查**——确认 OR 与 STR-E 的三元组一致（详见 human spec §3.2.3）：
 
 | 匹配结果 | 动作 |
 |---------|------|
@@ -139,7 +157,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requ
 | 共享依赖 | 写入依赖关系，不复制 CU |
 | 主责不匹配 | 退回待聚合池 |
 
-3. **CU 候选关系检测**——比对已有基线（详见 human spec §2.5.3）：
+3. **CU 候选关系检测**——比对已有基线（详见 human spec §3.3.3）：
 
 | 关系 | 判定 | 处理 |
 |------|------|------|
@@ -154,9 +172,9 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requ
 #### Phase C — 新建 STR-E
 
 1. **确定主责能力域**——从 OR 语义提取，判定为引擎专属或平台共享
-2. **定义能力场景范围**——配置/治理目标 → 系统处理要求 → 运行期制品/构件/功能 → 可用性确认
+2. **定义能力场景范围**——配置/治理目标 → 系统处理要求 → 运行期制品/构件/功能 → 可用性确认（终点=OR 显式覆盖、不得在终点后扩展，详见 human spec §3.2.2）
 3. **构建能力链**——按四段排列（配置意图→系统处理→运行期产出→可用确认）
-4. **识别 CU 候选**——名称级列出可能触及的 CU，逐候选标注来源类型和粒度判断（详见 human spec §2.5.1~§2.5.2）
+4. **识别 CU 候选**——名称级列出可能触及的 CU，逐候选标注来源类型和粒度判断（详见 human spec §3.3.1~§3.3.2）
 5. **标注 OR 类型**——逐条 OR 判定五种 FR-ENG OR 类型之一（配置生成类/构件扩展类/布局组件扩展类/横切治理类/运行支撑类），不用于划分 STR-E 边界
 6. **组装 STR-E**——写入 `02-*.md`，完整要素见 human spec §2.1.2
 
@@ -166,7 +184,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requ
 
 按每个 STR-E 独立执行。新建 → 全量检查；修订 → 仅当能力链拓扑变化时重验闭合。
 
-**1. 能力链闭合检查**——三段：配置/治理 → 系统处理 → 运行期可用。配置段缺失→`补充OR`；处理段缺失→`补充OR`；运行期产出缺失→`补充OR`；可用判据不明确→`澄清项`。
+**1. 能力链闭合检查**——四段：配置/治理意图 → 系统处理要求 → 运行期制品/构件/功能 → 可用性确认。配置/治理意图段缺失→`补充OR`；系统处理要求段缺失→`补充OR`；运行期制品/构件/功能段缺失→`补充OR`；可用性确认段缺失（判据不明确）→`澄清项`。
 
 **2. 要素机械检查**——引擎名称/场景边界非空、能力诉求/运行期结果有标注、追溯链完整、CU 候选清单非空且逐条标注来源类型和粒度判断、变更影响声明已写入。
 
@@ -183,18 +201,23 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requ
 2. 遍历 CU 候选，写回 25 资产——仅名称级引用或模型建议，不写详细定义
 3. 对应 OR 条目 → `已分配`
 
-**元信息维护**（用脚本，不手动）：
+**提交基线 + 元信息维护**（用脚本，不手动；顺序对齐人类方案 §5.6，AI 最近变更 随基线入库）：
 
 ```bash
+# 追加 AI最近变更 记录 + 移出已完成节点（先于提交，随基线入库）
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md add-recent-change "wft01-eng" "资产写回" "<STR-E-ID>" "23/25 资产写回"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md move-node "<OR-ID>" "wft01-eng" "done"
+
+# 提交本轮 AI 产出（链级不变式：基线 = 最后 AI 提交，git diff <HEAD @上次 AI 运行>..HEAD 只含人类变更）
+git add -A && git commit -m "[AI] wft01-eng 资产写回（Co-Authored-By: Claude）"
+
+# 更新文件头（HEAD = 刚提交的基线 hash）
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md update-head
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md update-head
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md update-head
-
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md add-recent-change "wft01-eng" "资产写回" "<STR-E-ID>" "23/25 资产写回"
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md move-node "<OR-ID>" "wft01-eng" "done"
 ```
 
 ---
@@ -221,21 +244,6 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-original-require
 ```
 
 **输出后不要结束对话**，等待人类反馈。
-
-**AI 处理反馈规则**：
-
-| 人类输入 | AI 动作 |
-|---------|--------|
-| 显式修改指令 | 定位条目 → Edit 修改 → 追加 `[已处理]` → 输出修改摘要 → 继续等待 |
-| 质疑/讨论 | 解释理由，不自动修改，继续等待决策 |
-| 整体确认 | 全部条目追加 `[同意] [已处理]` → **整理反馈总结** → 推进状态 → Step 5 落账 → 结束 |
-| 模糊意见 | 尝试具体化追问 |
-
-**反馈总结**：
-
-```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md add-recent-change "wft01-eng" "反馈处理" "<STR-E-ID>" "<AI总结的反馈要点>"
-```
 
 ---
 
@@ -369,4 +377,6 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requ
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-19 | v1.2 | 人类方案原理与方法审视修复（v8.5）同步——Step 4 能力链闭合检查三段→四段（配置/治理意图→系统处理要求→运行期制品/构件/功能→可用性确认，对齐 §2.2.1 四段）；Step 5 补 git 提交基线（顺序：AI最近变更 → git add+commit → 文件头，链级不变式，对齐人类方案 §5.6）；Phase C 定义能力场景范围补「终点=OR 显式覆盖、不得在终点后扩展」。AI 执行规则语义不变 |
+| 2026-08-19 | v1.1 | 人类方案知识层三章重构（§二 概念 / §三 原理与判据 / §四 节点演进，对齐 wft01-biz v3.13）同步——Step 2 补「反馈双轨」（AI 对话反馈 + 线下文档修订经 git diff 检出，两轨等价，对齐 91 §A.5 v5.20）；Step End AI 处理反馈规则表补「线下修订检出」行；human spec § 引用迁移（§2.4.1→§3.2.1 / §2.4.3→§3.2.3 / §2.5.1~2→§3.3.1~2 / §2.5.3→§3.3.3）。AI 执行规则语义不变 |
 | 2026-07-20 | v1.0 | 初始版本——从人类方案文档 v8.2 提取 Skill，脚本化数据访问，领域知识引用人类方案 |

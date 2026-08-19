@@ -205,22 +205,20 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/25-eos-engine-models.m
 **提交基线 + 元信息维护**：
 
 ```bash
+# 追加 AI最近变更 记录 + 移出已完成节点（先于提交，随基线入库）
+bash ../scripts/update-meta.sh <02-file> add-recent-change "wft01-biz" "资产写回" "<STR-F-ID>" "23B 引用写回"
+bash ../scripts/update-meta.sh <01-file> move-node "<OR-ID>" "wft01-biz" "done"
+
 # 提交本轮 AI 产出（链级不变式：基线 = 最后 AI 提交，git diff <HEAD @上次 AI 运行>..HEAD 只含人类变更）
 git add -A && git commit -m "[AI] wft01-biz 资产写回（Co-Authored-By: Claude）"
 
-# 更新文件头
+# 更新文件头（HEAD = 刚提交的基线 hash）
 bash ../scripts/update-meta.sh <01-file> bump-version
 bash ../scripts/update-meta.sh <01-file> update-head
 bash ../scripts/update-meta.sh <02-file> bump-version
 bash ../scripts/update-meta.sh <02-file> update-head
 bash ../scripts/update-meta.sh <23-file> bump-version
 bash ../scripts/update-meta.sh <23-file> update-head
-
-# 追加 AI最近变更 记录
-bash ../scripts/update-meta.sh <02-file> add-recent-change "wft01-biz" "资产写回" "<STR-F-ID>" "23B 引用写回"
-
-# 移出已完成节点
-bash ../scripts/update-meta.sh <01-file> move-node "<OR-ID>" "wft01-biz" "done"
 ```
 
 ---
@@ -381,6 +379,7 @@ D 和 PCA 处理逻辑**流程骨架同构**（场景业务→文档序列→每
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-19 | v1.10 | 提交基线顺序修正（对齐人类方案 §5.6 第 5~8 项 / wft01-eng v8.5 M1 先例）：Step 5 由「git commit → 文件头 → add-recent-change → move-node」改为「add-recent-change + move-node（先于提交、随基线入库）→ git commit → 文件头（HEAD=刚提交的基线 hash）」。原顺序使 AI最近变更 与 文件头 更新不进基线提交，违反「基线=最后 AI 提交」链级不变式。AI 执行规则语义不变 |
 | 2026-08-19 | v1.9 | 反馈双轨落地（对齐人类方案 v3.13 / 91 §A.5 v5.20 / wft02 SKILL v1.8）：Step 2 补「反馈双轨」（AI 对话反馈主通道 + 线下文档修订经 git diff 检出，两轨等价）；Step End AI 处理反馈规则表补「线下修订检出」行；AI 执行规则语义不变 |
 | 2026-08-19 | v1.8 | 人类方案原理与方法审视修复（v3.11）同步——Step 4 PCA 闭合检查补"必须包含计划清单文档 + C/A 为运行时结果"；附录 A.1 同构表述改为"流程骨架同构"+ PCA 闭合规则补计划清单要求；Phase C R4 补"开发/记录类文档 + 两个计划文档"注。AI 执行规则随迁 |
 | 2026-08-19 | v1.7 | 人类方案知识层三章重构（§二 概念 / §三 原理与判据 / §四 节点演进）；SKILL 锚点迁移 #322/#323/#335（原 #232/#233/#245），AI 执行规则语义不变。对齐人类方案 v3.10 |
