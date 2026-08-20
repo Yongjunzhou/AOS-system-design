@@ -99,6 +99,8 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-architect
 
 **触发条件**：Step Start 检出 `需wft02修订` BP，或上一轮反馈等待中人类提出修改意见。
 
+**反馈双轨**（人类任选其一，详见人类方案 §5.3）：①AI 对话反馈——Step End 后不结束对话，直接回复修改意见，AI 即时处理；②线下文档修订——打开 `04-*.md` 在确认状态字段标注 `[同意]`/`[修改]`/`[驳回]` 或直接编辑方案内容（自由文本），经 Step 1 变更感知 git diff 检测后按 §A.5 处理。两轨等价均落账（追 `[已处理]`）。
+
 **处理规则**：
 
 1. 从当前轮次或退回缺失说明中读取人类反馈意图
@@ -106,6 +108,12 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-architect
 3. 修改后检查是否仍满足 STR-E 需求
 4. 结构性变更（A1路径/CU清单/配置能力/依赖重组）→ 按需重入 Step 3
 5. 全部条目获认可 → BP → `可以SR设计`
+6. **元信息维护**：
+
+```bash
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md update-head
+```
 
 **特化参数**：
 
@@ -114,15 +122,9 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-architect
 | **锚点需求** | STR-E 节点——以 STR-E 场景业务需求为锚 |
 | **操作条目** | A1 产品路径 + 每个 CU（配置入口/配置要素/系统处理/运行期能力）+ 每条依赖 + 每条缺口补需 |
 | **推进目标** | 全部条目 `[同意]`+`[已处理]` → BP→`可以SR设计` |
+| **清除条件** | 已有 `[同意]`+`[已处理]` 默认跳过。仅当本轮新输入满足任一条件时清除 `[已处理]`（保留 `[同意]`）：<br>1. 新输入是该条目的直接上游节点<br>2. 新输入与条目同属一个架构层级且边界重叠<br>3. 新输入导致条目定义被修订（变更影响声明标注为修订型/结构型） |
 | **级联触发条件** | A1路径/CU清单变更、依赖变更或引擎归属变更 → 触发需求级联检查 |
 | **资产对齐级联** | CU 定义变更 → 更新 25 引用；A1 路径变更 → 更新 23 引用 |
-
-**元信息维护**：
-
-```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md update-head
-```
 
 ---
 
@@ -144,7 +146,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 #### Phase B — 修订已有 BP
 
 1. **要素提取**——从本轮 STR-E 增量合并 A2 上下文和 CU 候选。已有上下文仅追加不重建
-2. **宿主匹配检查**——Q1 直接归入→追加来源；Q2 扩展归入→扩展 BP+变更声明；冲突→`[需裁决]`（详见 human spec §2.4.3）
+2. **宿主匹配检查**——Q1 直接归入→追加来源；Q2 扩展归入→扩展 BP+变更声明；冲突→`[需裁决]`（详见 human spec §3.2.3）
 3. **CU 收敛与关系检测**——执行七种收敛判定 + 六种关系检测：
 
 **CU 收敛七判定**：
@@ -191,9 +193,9 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 
 ---
 
-### Step 4 · 缺口补需与变更声明
+### Step 4 · 引擎需求增补
 
-按每个 BP 独立执行。新建 → 全量检查；修订 → 仅当 CU 拓扑变化时重验。
+按每个 BP 独立执行。新建 → 全量检查；修订 → 仅当 CU 拓扑变化时重验。变更影响声明在 Step 3 Phase B 产出（详见 human spec §5.4.2/§4.2）。
 
 **1. 缺口识别**：
 
@@ -207,7 +209,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 
 **2. 要素机械检查**——A2 上下文完整、A1 路径到位、CU 清单非空且逐条标注来源和收敛判定、每个 CU 四类配置能力已定义、依赖已校验、变更影响声明已写入。
 
-**3. 补充 FR-ENG 材料生成**——写入 `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<BP名称>补充原始需求材料.md`，登记到 OR 原料状态表。
+**3. 补充 FR-ENG 材料生成**——写入 `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<BP名称>补充原始需求材料.md`，登记到 OR 原料状态表。与 wft03-biz 缺口线索同一管道（人类方案 §5.5）：经确认 + ort00→ort03 转正式 FR-ENG OR，不豁免预处理链。
 
 ---
 
@@ -220,17 +222,22 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 2. 遍历 CU 配置能力，写回 25 资产——已确认 CU 写入引用，未确认仅保留候选
 3. `02` STR-E → `已分解分配`（记录 `STR-E 消费版本：v{N}`）
 
-**元信息维护**：
+**提交基线 + 元信息维护**（用脚本，不手动；顺序对齐人类方案 §5.6，AI 最近变更 随基线入库）：
 
 ```bash
+# 追加 AI最近变更 记录（先于提交，随基线入库）
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md add-recent-change "wft02-eng" "资产写回" "<BP-ID>" "23/25 资产写回"
+
+# 提交本轮 AI 产出（链级不变式：基线 = 最后 AI 提交，git diff <HEAD @上次 AI 运行>..HEAD 只含人类变更）
+git add -A && git commit -m "[AI] wft02-eng 资产写回（Co-Authored-By: Claude）"
+
+# 更新文件头（HEAD = 刚提交的基线 hash）
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md update-head
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md update-head
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md update-head
-
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md add-recent-change "wft02-eng" "资产写回" "<BP-ID>" "23/25 资产写回"
 ```
 
 ---
@@ -246,12 +253,19 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 补充原始需求材料：<无 / YYYYMMDD-wft02-eng-批次ID-引擎需求增补.md>（已登记 OR 原料状态表）
 25 模型建议：<无 / 已输出 N 条，待人类审查后录入>
 
-一、方案反馈
+一、设计审核（流水线开发者）
   A. 整体确认 → 回复「整体确认」，快捷同意全部未标注条目
   B. 局部修改 → 在确认状态中标注 [修改]：...
   C. 驳回重做 → 在确认状态中标注 [驳回]：...
+  审核锚点：CU 收敛是否正确、配置能力是否自洽、依赖是否闭合、引擎归属是否准确
 
-二、下一步
+二、可用性确认（EOS 开发者）
+  - CU 配置能力是否足以指导 wft03-eng 推断配置页面？
+  - 追溯链（STR-E→BP→CU）是否可追踪？
+  - CU 定义是否可理解？
+  → 若可用，回复「可用」；若需调整，在确认状态中标注 [修改] 说明问题
+
+三、下一步
   本Skill → 选择 STR-E 节点（`可以分解分配` / `待补充分解分配`）或 `需wft02修订` 的 BP 节点重新运行
   后续    → BP-XXX（可以SR设计）、BP-YYY（待补充SR设计）→ wft03-eng
 ```
@@ -261,8 +275,11 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 | 人类输入 | AI 动作 |
 |---------|--------|
 | 显式修改指令 | 定位条目 → Edit 修改 → 追加 `[已处理]` → 继续等待 |
-| 整体确认 | 全部条目追加 `[同意] [已处理]` → 反馈总结 → Step 5 落账 → 结束 |
+| 整体确认 | 全部条目追加 `[同意] [已处理]` → **整理反馈总结** → Step 5 落账 → 结束 |
 | 质疑/模糊意见 | 解释或追问 |
+| 线下修订检出（git diff 发现确认状态标注/自由文本编辑） | 定位条目 → Edit 修订 → 追加 `[已处理]` → 输出修改摘要 → 继续等待 |
+
+**反馈总结**（仅在人类"整体确认"后执行）：
 
 ```bash
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md add-recent-change "wft02-eng" "反馈处理" "<BP-ID>" "<AI总结>"
@@ -387,4 +404,5 @@ CU 清单
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-20 | v1.1 | 人类方案 v9.0 知识层三章重构同步——Step 2 补「反馈双轨」（AI 对话反馈 + 线下文档修订经 git diff 检出，两轨等价均落账）；Step 4 标题改名「引擎需求增补」+ 补管道句（与 wft03-biz 缺口线索同一管道，不豁免预处理链）；Step 5 补 git 提交基线（顺序：AI最近变更 → git add+commit → 文件头，链级不变式，对齐人类方案 §5.6）；Step End 改三角色四区（设计审核 + 可用性确认 + 下一步）+ 反馈规则表补「线下修订检出」行；human spec § 引用迁移（§2.4.3→§3.2.3）。AI 执行规则语义不变 |
 | 2026-07-20 | v1.0 | 初始版本——从人类方案文档 v8.2 提取 Skill |
