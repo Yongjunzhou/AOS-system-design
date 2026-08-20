@@ -20,7 +20,7 @@
 - [wft02-biz v3.8~v3.9 审视修复与冗余精简](wft02-biz-v38-review.md) — 2026-07-01：F1~F7 七项修复 + R1~R3 三项冗余精简（设计心法链去重/IPO表压缩/散文重述删除）
 - [wft01-biz 缺少 Bn 侧 23-Q 判定](wft01-biz-bn-23q-gap.md) — 2026-06-30：STR-F 只带 A2 侧产品类型/构件类型，wft02-biz Phase B 缺少 PL2/PL3 现成信息，需在 wft01-biz 补 Bn 侧 23-Q
 - [wft02-biz v2.41 一致性审查修复](wft02-biz-v241-conformance-review.md) — 2026-06-29：两轮审查（§3.1/§3.2）修正7项，已提交推送
-- [wft02-eng 未来对标 biz 结构](wft02-eng-align-to-biz-structure.md) — 2026-06-30：wft02-eng 将参照 wft02-biz §3.1 共享上下文 + Phase 拆分模式做结构对齐，下次审视 eng 时以此记忆为基线
+- [wft02-eng 对齐 biz 结构已完成](wft02-eng-align-to-biz-structure.md) — 2026-08-20：以 wft02-biz v8.9 + wft01-eng v8.8 为标杆知识层三章重构（v8.6→v9.0）+ 张力点①~④（v9.2~v9.5）+ eng 链设计归属重构（wft01-eng v9.2 设计内聚 / wft02-eng v9.6 收缩详细定义 / 91 v5.23 / 两 SKILL v1.8/v1.6）+ 会话3 一致性通读修复（**wft02-eng v9.7**：FR-ENG 指标补 CU 级要素落点四→五要素/悬空引用/§4.1 状态名按 §A.6 自声明/承接缺陷退回需wft01修订/分组冲突分界/目标合并）+ **wft03-eng v7.5** 出口闸门承接核查（消费前提注记+指标项/拆分合并归属回 wft01/术语 CU IPO→配置能力）+ 两 SKILL v1.7/v1.2，提交 3c4d0f9。**链级批待执行**：wft01-eng/wft02-biz §4.1 状态名映射表悬空引用 + §8.x 三层/三角色引用核查
 - [wft01-biz 场景引擎+菜单引擎角色澄清](wft01-biz-scene-menu-engine-clarification.md) — 2026-06-27：场景引擎L4标签（无条件无需判定）+菜单引擎wft01-biz边界外 + 菜单权限设计链贯穿（STR-F属性→BA权限推导→SR→引擎配置方案）；wft01-biz v1.37 + wft02-biz v2.16
 - [wft02 自闭环重构完成](wft02-self-closed-refactor.md) — 2026-06-24：wft02a/b→wft02-biz（STR-F→A2+Bn）+ wft02-eng（STR-E→A1），纵向合并(A+B→自闭环)+横向拆分(按路径)，91 规范 v2.1 同步更新
 - [wft01 三路径自闭环模型](wft01-self-closed-model.md) — 2026-06-23：biz/eng/nfr 三路径自闭环完成 + 5+1 生命周期 + 资产-BA 解耦 + 变更传播协议 + 91 规范 v2.0 修订
