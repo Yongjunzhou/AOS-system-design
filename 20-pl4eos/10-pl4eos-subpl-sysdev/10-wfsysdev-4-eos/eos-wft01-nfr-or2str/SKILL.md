@@ -122,6 +122,8 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requir
 
 **触发条件**：Step Start 检出 `需wft01修订` STR-NFR，或上一轮 Step End 的反馈等待中人类提出修改意见。
 
+**反馈双轨**（人类任选其一，详见人类方案 §3.3）：①AI 对话反馈——Step End 后不结束对话，直接回复修改意见，AI 即时处理；②线下文档修订——打开 `01/02-*.md` 在确认状态字段标注 `[同意]`/`[修改]`/`[驳回]` 或直接编辑方案内容（自由文本），经 Step Start 变更感知 git diff 检出后按 §A.5 处理。两轨等价均落账（追 `[已处理]`）。
+
 **处理规则**：
 
 1. 从当前轮次对话上下文或退回缺失说明中读取人类反馈意图
@@ -220,22 +222,23 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requ
 1. 遍历已确认 STR-NFR，按 22 分类对齐结果写回 22 资产——Q1 追加引用（去重），Q2 引用+候选扩展说明（标注 `[推断]`），Q3/Q3+ 写入候选分类建议（标注 `[推断]`/`[需裁决]`）。不写系统量化指标
 2. 对应 OR 条目 → `已分配`
 
-**元信息维护**（用脚本，不手动）：
+**提交基线 + 元信息维护**（用脚本，不手动；顺序对齐人类方案 §3.6，AI 最近变更 随基线入库）：
 
 ```bash
-# 更新文件头
+# 追加 AI最近变更 记录 + 移出已完成节点（先于提交，随基线入库）
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md add-recent-change "wft01-nfr" "资产写回" "<STR-NFR-ID>" "22 分类引用写回"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md move-node "<OR-ID>" "wft01-nfr" "done"
+
+# 提交本轮 AI 产出（链级不变式：基线 = 最后 AI 提交，git diff <HEAD @上次 AI 运行>..HEAD 只含人类变更）
+git add -A && git commit -m "[AI] wft01-nfr 资产写回（Co-Authored-By: Claude）"
+
+# 更新文件头（HEAD = 刚提交的基线 hash）
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md update-head
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md update-head
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md update-head
-
-# 追加 AI最近变更 记录
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md add-recent-change "wft01-nfr" "资产写回" "<STR-NFR-ID>" "22 分类引用写回"
-
-# 移出已完成节点
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md move-node "<OR-ID>" "wft01-nfr" "done"
 ```
 
 ---
@@ -416,6 +419,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requ
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-20 | v1.3 | 人类方案 v5.5 框架对齐同步——Step 2 补「反馈双轨」（AI 对话反馈主通道 + 线下文档修订经 Step Start 变更感知检出，两轨等价）；Step 5 补 git 提交基线（顺序：add-recent-change/move-node → git commit → 文件头，链级不变式，对齐人类方案 §3.6）；Step End AI 处理反馈规则表补「线下修订检出」行。AI 执行规则语义不变 |
 | 2026-08-20 | v1.2 | 人类方案 v5.4 同步——Step Start 补「变更感知」（detect-changes.sh 先于入口检测，检出人类线下修订纳入"待反馈处理"分节）；Step 1「版本感知」改「安全复查」（仅标记 [需确认] 不自动推进，对齐 §A.3.3 R0a）。AI 执行规则语义不变 |
 | 2026-08-18 | v1.1 | 同步人类方案 v5.3 NFR 定量指标来源链级联动（AI 执行规则语义不变）：待量化线索处理补「目标值已在 ort02 澄清中由相关方确认」。 |
 | 2026-07-20 | v1.0 | 初始版本——从人类方案文档 v5.1 提取 Skill，脚本化数据访问，领域知识引用人类方案 |

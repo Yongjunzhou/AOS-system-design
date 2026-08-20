@@ -115,6 +115,8 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement
 
 ### Step 2 · 方案反馈处理
 
+**反馈双轨**（人类任选其一，详见人类方案 §3.3）：①AI 对话反馈——Step End 后不结束对话，直接回复修改意见，AI 即时处理；②线下文档修订——打开 `05/06-*.md` 在确认状态字段标注 `[同意]`/`[修改]`/`[驳回]` 或直接编辑方案内容（自由文本），经 Step Start 变更感知 git diff 检出后按 §A.5 处理。两轨等价均落账（追 `[已处理]`）。
+
 **本 Skill 的条目**：量化指标 + 分层约束表行 + 页面 NFR + 22 写回项 + 06 详细定义。条目 `确认状态` 字段位于 `05-*.md` SysReq-NFR 节点块各条目正文中。
 
 #### 特化参数
@@ -251,10 +253,16 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement
 | STR-NFR 推进 | `02-*.md` | 写入 `STR-NFR 消费版本：v{N}`，→ `已NFR设计` |
 | 约束包发布 | — | 首版标记 `待消费`；后续有效变化且旧版已消费时标记 `需重消费` |
 
-**元信息维护**（用脚本，不手动）：
+**提交基线 + 元信息维护**（用脚本，不手动；顺序对齐人类方案 §3.6，AI 最近变更 随基线入库）：
 
 ```bash
-# 更新文件头
+# 追加 AI最近变更 记录（先于提交，随基线入库）
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md add-recent-change "wft04-nfr" "资产写回" "<SysReq-NFR-ID>" "22/06/05/02 资产写回"
+
+# 提交本轮 AI 产出（链级不变式：基线 = 最后 AI 提交，git diff <HEAD @上次 AI 运行>..HEAD 只含人类变更）
+git add -A && git commit -m "[AI] wft04-nfr 资产写回（Co-Authored-By: Claude）"
+
+# 更新文件头（HEAD = 刚提交的基线 hash）
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md update-head
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md bump-version
@@ -263,9 +271,6 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requireme
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirements-detailed.md update-head
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md update-head
-
-# AI最近变更
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md add-recent-change "wft04-nfr" "资产写回" "<SysReq-NFR-ID>" "22/06/05/02 资产写回"
 ```
 
 ---
@@ -280,12 +285,19 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
   NFR 约束包：<约束包 ID / 包版本 / 变更类型 / 消费状态 / wft05-eng 已消费版本>
 资产落账：<未落账 / 已写回 22/06/05/02>
 
-一、方案反馈
+一、设计审核（流水线开发者）
   A. 整体确认 → 回复「整体确认」，快捷同意全部未标注条目
   B. 局部修改 → 在确认状态中标注 [修改]：...
   C. 驳回重做 → 在确认状态中标注 [驳回]：...
+  审核锚点：量化指标是否可验证、分层约束是否正确、页面 NFR 是否可消费、22/06 归属是否合理
 
-二、下一步
+二、可用性确认（EOS 开发者）
+  - 量化指标是否可验证（单位/统计口径/测量方法/验收条件）？
+  - 追溯链（STR-NFR→SysReq-NFR→22/06）是否可追踪？
+  - 分层约束是否足以指导 wft05-eng 展开架构设计？
+  → 若可用，回复「可用」；若需调整，在确认状态中标注 [修改] 说明问题
+
+三、下一步
   本Skill → 选择 STR-NFR 节点（`可以NFR设计` / `待补充NFR设计`）或 `需wft04修订` 的 SysReq-NFR 节点重新运行
   后续    → wft05-eng 仅在首版约束包已确认时首次启动；后续包版本递增时按变更声明增量重入
 ```
@@ -300,6 +312,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 | 质疑/讨论（"为什么选 X？"） | 解释理由，不自动修改，继续等待决策 |
 | 整体确认（"可以"/"整体确认"） | 全部条目追加 `[同意] [已处理]` → **整理本次反馈总结** → 推进状态 → Step 6 落账 → 结束 |
 | 模糊意见 | 尝试具体化追问，引导可执行指令 |
+| 线下修订检出（git diff 发现确认状态标注/自由文本编辑） | 定位条目 → Edit 修订 → 追加 `[已处理]` → 输出修改摘要 → 继续等待 |
 
 **反馈总结**（仅在人类"整体确认"后执行）：
 
@@ -454,6 +467,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-20 | v1.3 | 人类方案 v5.5 框架对齐同步——Step 2 补「反馈双轨」（AI 对话反馈主通道 + 线下文档修订经 Step Start 变更感知检出，两轨等价）；Step 6 补 git 提交基线（顺序：add-recent-change → git commit → 文件头，链级不变式，对齐人类方案 §3.6）；Step End 改三角色四区 + AI 处理反馈规则表补「线下修订检出」行。AI 执行规则语义不变 |
 | 2026-08-20 | v1.2 | 人类方案 v5.4 同步——Step Start 补「变更感知」（detect-changes.sh 先于入口检测，检出人类线下修订纳入"待反馈处理"分节）；Step 1「版本感知」改「安全复查」（仅标记 [需确认] 不自动推进，对齐 §A.3.3 R0a）。AI 执行规则语义不变 |
 | 2026-08-18 | v1.1 | 同步人类方案 v5.3 NFR 定量指标来源链级联动（AI 执行规则语义不变）：量化职责改「承接相关方经澄清确认的目标值，展开系统级量化指标」。 |
 | 2026-07-20 | v1.0 | 初始版本——从人类方案文档 v5.2 提取 Skill，脚本化数据访问，领域知识引用人类方案 |
