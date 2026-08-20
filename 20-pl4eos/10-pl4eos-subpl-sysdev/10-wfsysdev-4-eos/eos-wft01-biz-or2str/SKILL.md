@@ -40,6 +40,15 @@ description: 业务需求→STR-F 场景业务设计与资产化。接收同角�
 
 ### Step Start · 前置校验与路由
 
+**变更感知**（先于入口检测，检出人类线下修订）：
+
+```bash
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md
+```
+
+检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 变更感知）。
+
 **入口检测**（按 [§A.4](../protocols/wft01-runtime-protocols.md#a4-入口条件与优先级step-start)）：
 
 ```bash
@@ -65,14 +74,14 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-req
 
 ### Step 1 · 设计材料加载
 
-**1. 版本感知**：
+**1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
 bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md
 bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md
 ```
 
-检出 `HAS_CHANGES=1` → AI 检查变更行，理解人类是否做了非预期修改，必要时标记 `[需确认]`。
+检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
 
 **2. 加载本轮 OR 条目**：
 
@@ -113,7 +122,7 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/25-eos-engine-models.m
 
 **触发条件**：Step Start 检出 `需wft01修订` STR-F，或上一轮 Step End 的反馈等待中人类提出修改意见。
 
-**反馈双轨**（人类任选其一，详见人类方案 §5.3）：①AI 对话反馈——Step End 后不结束对话，直接回复修改意见，AI 即时处理；②线下文档修订——打开 `01/02-*.md` 在确认状态字段标注 `[同意]`/`[修改]`/`[驳回]` 或直接编辑方案内容（自由文本），经 Step 1 变更感知 git diff 检测后按 §A.5 处理。两轨等价均落账（追 `[已处理]`）。
+**反馈双轨**（人类任选其一，详见人类方案 §5.3）：①AI 对话反馈——Step End 后不结束对话，直接回复修改意见，AI 即时处理；②线下文档修订——打开 `01/02-*.md` 在确认状态字段标注 `[同意]`/`[修改]`/`[驳回]` 或直接编辑方案内容（自由文本），经 Step Start 变更感知 git diff 检出后按 §A.5 处理。两轨等价均落账（追 `[已处理]`）。
 
 **处理规则**：
 
@@ -379,6 +388,7 @@ D 和 PCA 处理逻辑**流程骨架同构**（场景业务→文档序列→每
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-20 | v1.11 | 人类方案 v3.14 同步——Step Start 补「变更感知」（detect-changes.sh 先于入口检测，检出人类线下修订纳入"待反馈处理"分节）；Step 1「版本感知」改「安全复查」（仅标记 [需确认] 不自动推进，对齐 §A.3.3 R0a）。AI 执行规则语义不变 |
 | 2026-08-19 | v1.10 | 提交基线顺序修正（对齐人类方案 §5.6 第 5~8 项 / wft01-eng v8.5 M1 先例）：Step 5 由「git commit → 文件头 → add-recent-change → move-node」改为「add-recent-change + move-node（先于提交、随基线入库）→ git commit → 文件头（HEAD=刚提交的基线 hash）」。原顺序使 AI最近变更 与 文件头 更新不进基线提交，违反「基线=最后 AI 提交」链级不变式。AI 执行规则语义不变 |
 | 2026-08-19 | v1.9 | 反馈双轨落地（对齐人类方案 v3.13 / 91 §A.5 v5.20 / wft02 SKILL v1.8）：Step 2 补「反馈双轨」（AI 对话反馈主通道 + 线下文档修订经 git diff 检出，两轨等价）；Step End AI 处理反馈规则表补「线下修订检出」行；AI 执行规则语义不变 |
 | 2026-08-19 | v1.8 | 人类方案原理与方法审视修复（v3.11）同步——Step 4 PCA 闭合检查补"必须包含计划清单文档 + C/A 为运行时结果"；附录 A.1 同构表述改为"流程骨架同构"+ PCA 闭合规则补计划清单要求；Phase C R4 补"开发/记录类文档 + 两个计划文档"注。AI 执行规则随迁 |

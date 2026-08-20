@@ -45,6 +45,15 @@ description: BP→业务配置需求/PA·页面组件开发。接收≥1个BP节
 
 ### Step Start · 前置校验与路由
 
+**变更感知**（先于入口检测，检出人类线下修订）：
+
+```bash
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md
+```
+
+检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 变更感知）。
+
 **入口检测**（按 [91 规范 §A.4](../91-eos-biz-eng-spec.md#a4-入口条件与优先级step-start)）：
 
 ```bash
@@ -81,14 +90,14 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirem
 
 ### Step 1 · 设计材料加载
 
-**1. 变更感知**：
+**1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
 bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md
 bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md
 ```
 
-检出 `HAS_CHANGES=1` → AI 检查变更行，理解人类是否做了非预期修改，必要时标记 `[需确认]`（线下修订通道的确认状态标注/自由文本编辑由此检出，分流规则详见人类方案 §5.2）。
+检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
 
 **2. 读取 AI 可以处理节点**：读取 `05-*.md`/`06-*.md` 的 `## AI可以处理节点` 中本 Skill 对应分节。有节点 → 逐节点 `grep -n '@{节点ID}'` 定位行号 → Read 节点块。
 
@@ -115,7 +124,7 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 **反馈双轨**——人类可任选两种方式反馈，本 Skill 均支持：
 
 - **AI 对话反馈**：Step End 后不结束对话，直接在对话中提出修改意见（自然语言）——AI 按 §A.5 即时处理（主通道）
-- **线下文档修订**：直接打开 `05/06-*.md` 修订——在确认状态字段标注 `[同意]`/`[修改]`/`[驳回]`，或直接编辑方案内容（自由文本）——经 Step 1 变更感知（git diff）检出后加入"待反馈处理"分节，按 §A.5 处理
+- **线下文档修订**：直接打开 `05/06-*.md` 修订——在确认状态字段标注 `[同意]`/`[修改]`/`[驳回]`，或直接编辑方案内容（自由文本）——经 Step Start 变更感知（git diff）检出后加入"待反馈处理"分节，按 §A.5 处理
 
 两轨等价：对话反馈由 AI 即时落账（追 `[已处理]`），线下修订经 git diff 检出后同样落账；AI 每轮提交基线（Step 8），保证下一轮 diff 只含人类变更。
 
@@ -611,6 +620,7 @@ wft03-biz 写入 `待确认方案`/`可构件开发`/`需wft03修订`；下游�
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-20 | v1.6 | 人类方案 v9.4 同步——Step Start 补「变更感知」（detect-changes.sh 先于入口检测，检出人类线下修订纳入"待反馈处理"分节）；Step 1「变更感知」改「安全复查」（仅标记 [需确认] 不自动推进，对齐 §A.3.3 R0a）。AI 执行规则语义不变 |
 | 2026-08-19 | v1.5 | 反馈双轨落实到执行层（人类提出"也要支持基于与AI交互方式的反馈，以及线下直接打开文档进行反馈"，参照 wft02 SKILL v1.8）：Step 1 变更感知检出处理对齐 wft02（检出 HAS_CHANGES=1→检查变更行→必要时标记 [需确认]，分流规则见人类方案 §5.2）；Step 2 补「反馈双轨」段（AI 对话反馈主通道 + 线下文档修订，两轨等价）；Step End AI 处理反馈规则表补「线下修订检出」行。对齐人类方案 §5.2/§5.3（v9.1 已补，本次落 SKILL）；不设「反馈循环闭环」机制（对齐 wft02——循环由 Step 1 变更感知 + 提交基线 + Step End + 下一轮 Step 1 承担） |
 | 2026-08-19 | v1.4 | 同步人类方案 v9.2：Step 5 act 标签页编排为该文档的流程类页面序列（在文档内部按节点顺序流转，不并入文档级 TAB）；AI 执行规则语义不变 |
 | 2026-08-19 | v1.3 | 同步人类方案 v9.1：A.8 变更类型表补「无变更」+ 缺失型移出（对齐 §4.2.1 四类 + 退回路由注）；AI 执行规则语义不变 |

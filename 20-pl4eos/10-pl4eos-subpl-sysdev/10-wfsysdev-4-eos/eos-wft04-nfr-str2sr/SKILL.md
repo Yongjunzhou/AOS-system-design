@@ -42,6 +42,15 @@ description: STR-NFR→SysReq-NFR 非功能需求架构与页面约束设计。�
 
 ### Step Start · 前置校验与路由
 
+**变更感知**（先于入口检测，检出人类线下修订）：
+
+```bash
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md
+```
+
+检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §3.1 变更感知）。
+
 **入口检测**（按 [91 规范 §A.4](../91-eos-biz-eng-spec.md#a4-入口条件与优先级step-start)）：
 
 ```bash
@@ -66,12 +75,14 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirem
 
 ### Step 1 · 设计材料加载
 
-**1. 版本感知**：
+**1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
 bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md
 bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md
 ```
+
+检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
 
 **2. 加载本轮 STR-NFR 节点**：
 
@@ -443,5 +454,6 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-20 | v1.2 | 人类方案 v5.4 同步——Step Start 补「变更感知」（detect-changes.sh 先于入口检测，检出人类线下修订纳入"待反馈处理"分节）；Step 1「版本感知」改「安全复查」（仅标记 [需确认] 不自动推进，对齐 §A.3.3 R0a）。AI 执行规则语义不变 |
 | 2026-08-18 | v1.1 | 同步人类方案 v5.3 NFR 定量指标来源链级联动（AI 执行规则语义不变）：量化职责改「承接相关方经澄清确认的目标值，展开系统级量化指标」。 |
 | 2026-07-20 | v1.0 | 初始版本——从人类方案文档 v5.2 提取 Skill，脚本化数据访问，领域知识引用人类方案 |
