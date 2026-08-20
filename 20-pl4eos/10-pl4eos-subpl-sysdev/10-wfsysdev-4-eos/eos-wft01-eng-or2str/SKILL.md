@@ -134,7 +134,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requ
 
 ---
 
-### Step 3 · STR-E 场景业务设计
+### Step 3 · 场景业务设计
 
 #### Phase A — OR 溯源与路由
 
@@ -180,7 +180,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requ
 
 ---
 
-### Step 4 · 补充 FR-ENG 与变更声明
+### Step 4 · FR-ENG 需求增补
 
 按每个 STR-E 独立执行。新建 → 全量检查；修订 → 仅当能力链拓扑变化时重验闭合。
 
@@ -188,7 +188,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requ
 
 **2. 要素机械检查**——引擎名称/场景边界非空、能力诉求/运行期结果有标注、追溯链完整、CU 候选清单非空且逐条标注来源类型和粒度判断、变更影响声明已写入。
 
-**3. 补充 FR-ENG 材料生成**——写入 `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<STR-E名称>补充原始需求材料.md`，登记到 OR 原料状态表。
+**3. 补充 FR-ENG 材料生成**——写入 `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<STR-E名称>补充原始需求材料.md`，登记到 OR 原料状态表。与 wft03-biz 缺口线索同一管道（人类方案 §5.5）：经确认 + ort00→ort03 转正式 FR-ENG OR，不豁免预处理链。
 
 ---
 
@@ -377,6 +377,8 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-19 | v1.4 | 人类方案 Step 框架对齐 wft01-biz（v8.8）同步——Step 3 标题去 STR-E 前缀（「场景业务设计」）、Step 4 标题改名（「FR-ENG 需求增补」）。AI 执行规则语义不变 |
+| 2026-08-19 | v1.3 | 人类方案原理深度分析落定（v8.6）同步——Step 4 补充 FR-ENG 材料生成补管道句（与 wft03-biz 缺口线索同一管道：经确认 + ort00→ort03 转正式 FR-ENG OR，不豁免预处理链）。AI 执行规则语义不变 |
 | 2026-08-19 | v1.2 | 人类方案原理与方法审视修复（v8.5）同步——Step 4 能力链闭合检查三段→四段（配置/治理意图→系统处理要求→运行期制品/构件/功能→可用性确认，对齐 §2.2.1 四段）；Step 5 补 git 提交基线（顺序：AI最近变更 → git add+commit → 文件头，链级不变式，对齐人类方案 §5.6）；Phase C 定义能力场景范围补「终点=OR 显式覆盖、不得在终点后扩展」。AI 执行规则语义不变 |
 | 2026-08-19 | v1.1 | 人类方案知识层三章重构（§二 概念 / §三 原理与判据 / §四 节点演进，对齐 wft01-biz v3.13）同步——Step 2 补「反馈双轨」（AI 对话反馈 + 线下文档修订经 git diff 检出，两轨等价，对齐 91 §A.5 v5.20）；Step End AI 处理反馈规则表补「线下修订检出」行；human spec § 引用迁移（§2.4.1→§3.2.1 / §2.4.3→§3.2.3 / §2.5.1~2→§3.3.1~2 / §2.5.3→§3.3.3）。AI 执行规则语义不变 |
 | 2026-07-20 | v1.0 | 初始版本——从人类方案文档 v8.2 提取 Skill，脚本化数据访问，领域知识引用人类方案 |
