@@ -48,7 +48,7 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/01-eos-original-requ
 bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md
 ```
 
-检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 步骤零）。
+检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 变更感知）。
 
 **入口检测**（按 [91 规范 §A.4](../91-eos-biz-eng-spec.md#a4-入口条件与优先级step-start)）：
 
@@ -84,7 +84,7 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/01-eos-original-requ
 bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md
 ```
 
-检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 步骤零 R0a）。
+检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
 
 **2. 加载本轮 OR + 已有 STR-E**：
 
@@ -388,7 +388,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
-| 2026-08-20 | v1.5 | 人类方案 v8.9 同步——Step Start 补「变更感知」（detect-changes.sh 先于入口检测，检出人类线下修订纳入"待反馈处理"分节）；Step 1「版本感知」改「安全复查」（仅标记 [需确认] 不自动推进，对齐 §A.3.3 步骤零 R0a）。AI 执行规则语义不变 |
+| 2026-08-20 | v1.5 | 人类方案 v8.9 同步——Step Start 补「变更感知」（detect-changes.sh 先于入口检测，检出人类线下修订纳入"待反馈处理"分节）；Step 1「版本感知」改「安全复查」（仅标记 [需确认] 不自动推进，对齐 §A.3.3 R0a）。AI 执行规则语义不变 |
 | 2026-08-19 | v1.4 | 人类方案 Step 框架对齐 wft01-biz（v8.8）同步——Step 3 标题去 STR-E 前缀（「场景业务设计」）、Step 4 标题改名（「FR-ENG 需求增补」）。AI 执行规则语义不变 |
 | 2026-08-19 | v1.3 | 人类方案原理深度分析落定（v8.6）同步——Step 4 补充 FR-ENG 材料生成补管道句（与 wft03-biz 缺口线索同一管道：经确认 + ort00→ort03 转正式 FR-ENG OR，不豁免预处理链）。AI 执行规则语义不变 |
 | 2026-08-19 | v1.2 | 人类方案原理与方法审视修复（v8.5）同步——Step 4 能力链闭合检查三段→四段（配置/治理意图→系统处理要求→运行期制品/构件/功能→可用性确认，对齐 §2.2.1 四段）；Step 5 补 git 提交基线（顺序：AI最近变更 → git add+commit → 文件头，链级不变式，对齐人类方案 §5.6）；Phase C 定义能力场景范围补「终点=OR 显式覆盖、不得在终点后扩展」。AI 执行规则语义不变 |
