@@ -43,6 +43,15 @@ description: STR-F→BP 业务流程设计与资产化。接收≥1个STR-F节�
 
 ### Step Start · 前置校验与路由
 
+**变更感知**（先于入口检测，检出人类线下修订）：
+
+```bash
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md
+```
+
+检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 步骤零）。
+
 **入口检测**（按 [91 规范 §A.4](../91-eos-biz-eng-spec.md#a4-入口条件与优先级step-start)）：
 
 ```bash
@@ -77,14 +86,14 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-archit
 
 ### Step 1 · 设计材料加载
 
-**1. 变更感知**：
+**1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
 bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md
 bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md
 ```
 
-检出 `HAS_CHANGES=1` → AI 检查变更行，理解人类是否做了非预期修改，必要时标记 `[需确认]`。
+检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 步骤零 R0a）。
 
 **2. 读取 AI 可以处理节点（优先）**：
 
@@ -124,7 +133,7 @@ grep -n '索引行数：' ../../80-pl4eos-2-eosdata/04-eos-business-architecture
 
 **触发条件**：Step Start 检出"待反馈处理"分节中有未处理的 BP 条目，或上一轮 Step End 的反馈等待中人类提出修改意见。
 
-**反馈双轨**（人类任选其一，详见人类方案 §5.3）：①AI 对话反馈——Step End 后不结束对话，直接回复修改意见，AI 即时处理；②线下文档修订——打开 `04-*.md` 在确认状态字段标注 `[同意]`/`[修改]`/`[驳回]` 或直接编辑方案内容（自由文本），经 Step 1 变更感知 git diff 检测后按 §A.5 处理。两轨等价均落账。
+**反馈双轨**（人类任选其一，详见人类方案 §5.3）：①AI 对话反馈——Step End 后不结束对话，直接回复修改意见，AI 即时处理；②线下文档修订——打开 `04-*.md` 在确认状态字段标注 `[同意]`/`[修改]`/`[驳回]` 或直接编辑方案内容（自由文本），经 Step Start 变更感知 git diff 检出后按 §A.5 处理。两轨等价均落账。
 
 **本 Skill 的条目**：A2 方案 / Bn 方案 / 输出文档设计（含 PL6-A 活动节点 + PL6-B 正文条目需求）/ 数据权限 / 23/24/26/27/28 资产对齐结论。条目 `确认状态` 字段位于 `04-*.md` BP 节点块各条目正文中。
 
@@ -594,6 +603,7 @@ wft01 已捕获节点是业务流转确认结果（供人类确认过），wft02
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-20 | v1.9 | 人类方案 v9.0 同步——Step Start 补「变更感知」（detect-changes.sh 先于入口检测，检出人类线下修订纳入"待反馈处理"分节）；Step 1「变更感知」改「安全复查」（仅标记 [需确认] 不自动推进，对齐 §A.3.3 步骤零 R0a）。AI 执行规则语义不变 |
 | 2026-08-19 | v1.8 | 人类方案 v8.9——Step 2 补「反馈双轨」（AI 对话反馈 + 线下文档修订经 git diff 检测，两轨等价均落账）；AI 执行规则语义不变 |
 | 2026-08-19 | v1.7 | 人类方案 v8.8——WBS 归组引用补数据依赖链硬判据（§3.3.2，跨链不归组/同链切段/管理类按其支撑的交付链归属）；AI 执行规则语义不变 |
 | 2026-08-19 | v1.6 | 人类方案 v8.7 + wft01 v3.12——A.9 任务节点引擎化补接力边界（wft01 已捕获节点=业务流转确认结果、不重新推断；缺陷标注 [需裁决]/退回 wft01）；AI 执行规则语义不变 |

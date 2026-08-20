@@ -42,6 +42,15 @@ description: STR-E→BP·A1配置单元架构设计。接收≥1个STR-E节点�
 
 ### Step Start · 前置校验与路由
 
+**变更感知**（先于入口检测，检出人类线下修订）：
+
+```bash
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md
+```
+
+检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 步骤零）。
+
 **入口检测**：
 
 ```bash
@@ -67,12 +76,14 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-archit
 
 ### Step 1 · 设计材料加载
 
-**1. 版本感知**：
+**1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
 bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md
 bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md
 ```
+
+检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 步骤零 R0a）。
 
 **2. 加载本轮 STR-E + 已有 BP**：
 
@@ -99,7 +110,7 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-architect
 
 **触发条件**：Step Start 检出 `需wft02修订` BP，或上一轮反馈等待中人类提出修改意见。
 
-**反馈双轨**（人类任选其一，详见人类方案 §5.3）：①AI 对话反馈——Step End 后不结束对话，直接回复修改意见，AI 即时处理；②线下文档修订——打开 `04-*.md` 在确认状态字段标注 `[同意]`/`[修改]`/`[驳回]` 或直接编辑方案内容（自由文本），经 Step 1 变更感知 git diff 检测后按 §A.5 处理。两轨等价均落账（追 `[已处理]`）。
+**反馈双轨**（人类任选其一，详见人类方案 §5.3）：①AI 对话反馈——Step End 后不结束对话，直接回复修改意见，AI 即时处理；②线下文档修订——打开 `04-*.md` 在确认状态字段标注 `[同意]`/`[修改]`/`[驳回]` 或直接编辑方案内容（自由文本），经 Step Start 变更感知 git diff 检出后按 §A.5 处理。两轨等价均落账（追 `[已处理]`）。
 
 **处理规则**：
 
@@ -404,5 +415,6 @@ CU 清单
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-20 | v1.2 | 人类方案 v9.1 同步——Step Start 补「变更感知」（detect-changes.sh 先于入口检测，检出人类线下修订纳入"待反馈处理"分节）；Step 1「版本感知」改「安全复查」（仅标记 [需确认] 不自动推进，对齐 §A.3.3 步骤零 R0a）。AI 执行规则语义不变 |
 | 2026-08-20 | v1.1 | 人类方案 v9.0 知识层三章重构同步——Step 2 补「反馈双轨」（AI 对话反馈 + 线下文档修订经 git diff 检出，两轨等价均落账）；Step 4 标题改名「引擎需求增补」+ 补管道句（与 wft03-biz 缺口线索同一管道，不豁免预处理链）；Step 5 补 git 提交基线（顺序：AI最近变更 → git add+commit → 文件头，链级不变式，对齐人类方案 §5.6）；Step End 改三角色四区（设计审核 + 可用性确认 + 下一步）+ 反馈规则表补「线下修订检出」行；human spec § 引用迁移（§2.4.3→§3.2.3）。AI 执行规则语义不变 |
 | 2026-07-20 | v1.0 | 初始版本——从人类方案文档 v8.2 提取 Skill |

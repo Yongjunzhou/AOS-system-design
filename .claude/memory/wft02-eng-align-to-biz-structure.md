@@ -1,6 +1,6 @@
 ---
 name: wft02-eng-align-to-biz-structure
-description: 2026-08-20 已完成——以 wft02-biz v8.9 + wft01-eng v8.8 为标杆重构 wft02-eng 知识层三章（人类方案 v8.6→v9.0 + SKILL v1.0→v1.1），语言层级不加（镜像 wft01-eng），Step 4 改名「引擎需求增补」
+description: 2026-08-20 已完成——以 wft02-biz v8.9 + wft01-eng v8.8 为标杆重构 wft02-eng 知识层三章（人类方案 v8.6→v9.0 + SKILL v1.0→v1.1），语言层级不加（镜像 wft01-eng），Step 4 改名「引擎需求增补」；v9.1 反馈检出前置 Step Start（链级推广 wft01-eng v8.9 / wft02-biz v9.0 / 91 §A.5 v5.21 对齐）
 metadata: 
   node_type: memory
   type: project
@@ -9,6 +9,8 @@ metadata:
 ---
 
 2026-08-20 完成（人类确认两个决策点：「不加」语言层级——严格镜像 wft01-eng 先例；Step 4 改名「引擎需求增补」——对齐 wft01-eng「FR-ENG 需求增补」命名模式）。
+
+**v9.1 反馈检出前置 Step Start（链级推广）**：人类提出"分析 step 框架是否支持两种反馈方式，思路应与 wft01-eng/wft02-biz 一致"→审查发现链级缺陷（三个 Skill 的 Step Start 只读「AI可以处理节点」分节判定入口，变更感知写进 Step 1，纯线下修订会被误判「无待处理对象」退出）→确认后修复：①Step Start 增加**步骤零·变更感知**（git diff H..HEAD 检出人类线下修订 → 判定变更类型 → 纳入「待反馈处理」分节，**先于入口判定**，对齐 91 §11.10 权威口径）；②Step 1 步骤一改**安全复查**（detect-changes.sh 检出非预期修改标记 [需确认]，§A.3.3 步骤零 R0a，职责分离消除混叠）；③同步 Step 布局表/反馈机制一句话/反馈双轨/跨轮持久化/提交基线/自检清单。**链级推广**（人类确认三个 Skill 一起修）：wft01-eng v8.9 / wft02-biz v9.0 同款修复 + 91 规范 §A.5 v5.21（反馈通道+确认状态字段两处「Step 1 变更感知」→「Step Start」消除规范内部矛盾）。**待办**：wft01-biz/wft03-biz/wft03-eng/wft01-nfr/wft04-nfr/wft05-eng 六个 Skill 仍有同款「Step 1 变更感知」表述，需后续链级推广。
 
 **产出**：
 - 人类方案 [eos-wft02-eng-str2bp.md](../../20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft02-eng-str2bp.md) v8.6→**v9.0**（知识层三章重构 + 原理方法审视 + Step 框架对齐一次完成，覆盖 wft01-eng v8.4~v8.8 全部内容）：
