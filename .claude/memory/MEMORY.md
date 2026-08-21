@@ -1,120 +1,98 @@
 - **教材子项目（50-reserch 教材书+培训教材）**：记忆已独立，存放于 `50-reserch/记忆/`（自有 `MEMORY.md` 索引 + `教材项目.md` 主记忆），不从属于本索引——打磨教材时读/写该目录，勿写本项目记忆（2026-08-20 独立）。
-- [eng 链 5 层「概要/详细」框架（已定案，第①②③④步已实施）](eng-chain-five-layer-framework.md) — 2026-08-21：01 业务概要[配置信息组+概要说明]/02 业务详细[操作活动定义·基准=PDF v1.5.2]/03 功能概要[功能表单+概要说明·配置类+运行类]/04 功能详细[**新增 wft04-eng**·表单组件及其业务]/05 产品概要[前后端组件+需求定义·07 PA]；逻辑同构 biz、内容异质（功能表单两链同名同层不同内容，非共享资产）；关键决策：操作活动=步骤化三段式（编辑时处理/载件标注/分支显式化）、功能表单粒度=子页即页面、03 纯概要承接 02 只组织页面、PA 收敛项下移 04、产品层末层无 06、文档 01/02→STR-E·BP、03/04→SR-F 状态机接力（03→可以详细定义、04→已详细定义）；02 详设基准=Downloads PDF v1.5.2（9 CU 全步骤化统一保存机制；**.md 旧形态保存时处理不作基准**）；**实施进度**：第①步 wft01-eng v9.5 完成（定位重述业务概要定义+结构判定级+能力→操作衔接，SKILL v1.11，aab2f53）、第②步 wft02-eng v10.0 完成（详设形态对齐操作活动定义·编辑时处理+统一保存机制+系统标识生成规则，SKILL v1.10，d0a0f46）、第③步 wft03-eng v9.0 完成（收缩为功能概要·操作活动清单承接 02+布局组件/PA 收敛项下移 04+SR-F 状态机接力，SKILL v1.5，82abf4f）、第④步**新增 wft04-eng v1.0 完成**（功能详细 sr2sr·组件业务+PA 收敛项收纳下移内容+状态机接力，SKILL v1.0，18338de）；待办：**wft05 输入变**→91/SKILL 联动
-- [biz 链分工「概要/详细」重述框架（已定案并实施）](biz-chain-summary-detail-framework.md) — 2026-08-21：s01 业务概要(末级=文档+结构判定级概要说明)/s02 业务详细(条目=活动+正文条目+表单使用顺序)/s03 系统概要(末级=功能表单) 一棵树定稿；四问全裁（①结构判定级、字段留 s02、②PL6-B 三级接力+s02 条目泛化、③A2 非第二条树+Bn 组装**执行上移 s01**[WBS/23 一致性/缺口推断=构件产品数据清单完整性]、④引擎/任务类型权威留 s02+其余按现状）；总方向=概念确认+叙述，唯一真边界变更=Bn 组装上移；91 规范可能旧、Skill 文档为活依据。**已实施**：人类方案 wft01-biz v3.17/wft02-biz v9.3/wft03-biz v9.7/91 v5.26 + SKILL wft01 v1.13/wft02 v1.11/wft03 v1.8（含层级表联动审查补齐 91 §10.3/§10.6/§7.1/§7.2 任务清单 + 叙述完整度补齐：通用规范兼容句/一棵树读法下沉三概念章/归纳枝措辞/Step4 记忆校正）
-- [非主价值链 Step 框架三链统一（biz 为标准）](skill-step-framework-unify-biz-standard.md) — 2026-08-21：biz×3 + eng×4 + nfr×2 = 9 人类方案 + 9 SKILL 的非主价值链框架统一为 biz 形态——移除三角色分工表、Step End 双区合并单区、Step 2 统一内联 5 行处理表（补线下行/补表/整体确认补 [同意]）、输入校验表统一「判定|动作」、布局表 7 列、标注纪律框架 9 文件补齐、反馈总结补齐 wft02/03-biz；版本 wft01-biz v3.15/wft02-biz v9.1/wft03-biz v9.5/wft01-eng v9.4/wft02-eng v9.9/wft03-eng v8.1/wft05-eng v9.1/wft01-nfr v5.6/wft04-nfr v5.6；反转了 v8.8/v8.0/v5.5 的三角色四区裁决
-- [wft01-biz 审视发现与运行模型定案](wft01-biz-review-ort02-benchmark.md) — 2026-08-19：可读性审视七轮全落地（v3.4~v3.10，知识层三章+链级术语统一）+ 原理与方法审视全落地（v3.11：PCA 计划清单强制要求/C-A 运行时口径/流程骨架同构/R4 原理/渐进闭环收敛/治理判据/规则地图补齐，SKILL v1.8）+ 任务节点业务确认定位（v3.12：捕获节点=供人类确认业务流转关系）+ 反馈双轨化（v3.13：链级统一 wft02/91 §A.5 v5.20，SKILL v1.9）+ 提交基线顺序修正（SKILL v1.10，wft01-eng v8.5 M1 链级推广）
-- [wft02-eng 对齐 biz 结构已完成](wft02-eng-align-to-biz-structure.md) — 2026-08-20：以 wft02-biz v8.9 + wft01-eng v8.8 为标杆知识层三章重构完成——人类方案 v8.6→v9.0（§二 概念[转换总览五步一条链无语言层级]+新 §三 原理判据[3.1 转换原理含引擎权威两层/3.2 要素提取/3.3 CU 收敛与依赖/3.4 完备性判据]+§四 演进+§五 操作[Step Start 四子节/Step 2 反馈双轨/Step 4 改名引擎需求增补/Step 5 提交基线顺序修正/Step End 三角色四区]+§七 自检清单）；SKILL v1.0→v1.1；关键决策：语言层级不加（镜像 wft01-eng，准架构→架构跃迁融进转换原理）+ Step 4 改名；M1 提交基线顺序修正；参照 [[wft01-eng-align-to-biz-structure]]。**v9.1 反馈检出前置 Step Start**（人类分析两种反馈方式→发现链级缺陷）：Step Start 加变更感知引导段（无编号，git diff 先于入口判定，纯线下修订不再被误判退出）+ Step 1 改安全复查（R0a）；**六个 Skill 全链推广完成**（wft01-biz v3.14/wft03-biz v9.4/wft03-eng v7.4/wft05-eng v8.2/wft01-nfr v5.4/wft04-nfr v5.4）+ **nfr 框架级对齐**（wft01-nfr/wft04-nfr v5.5：Step 布局表列/三角色/反馈双轨/状态机/反馈总结/提交基线顺序/Step End 四区/自检清单，§ 编号保持 3.x）+ 91 §A.5 v5.21；**四个 ort 感知顺序修复**（ort01 v0.59 git diff 类加感知前置/ort00 v0.33 状态扫描/ort02 v0.36 确认/ort03 v0.60 反馈载体扫描）；统一原则：Step Start「无待处理退出」判定必须在感知之后；**张力点①新增引擎/新增CU 已落地**（v9.2 + wft01-eng v9.0，SKILL wft01 v1.6/wft02 v1.3：设计/记录/整理记录/使用四概念 + 文档结对骨架复用→改进→新增 + 人机协同执行，25 模型建议表述全链去除）；**张力点②③④ 落地**（②配置信息组原理 v9.3、③A2/A1 单向支撑 v9.4、④缺口锚定边界+来源类型需求侧/资产侧两分 v9.5，wft01-eng v9.1、91 v5.22、SKILL wft01 v1.7/wft02 v1.5）；**⑤可消费性判据分两层落地**（前置门禁上移 wft01 §3.4 / 出口闸门留 wft02 §3.4）；**eng 链设计归属重构全部落地**（DP1~DP5 裁决：DP2 配置信息组拆分随分解上移 wft01 / DP3 A2 装配上移 / DP5 上移五关系 / DP1 状态改名 `可以详细定义` 等）——wft01-eng v9.2 设计内聚（概要+分解+分配+分析，e7da776）+ wft02-eng v9.6 收缩为详细定义（承接已分配 CU，移除收敛/来源类型/关系检测/拆分，A2 装配改承接，出口闸门 §3.4 确立）+ 91 v5.23（CU 设计权规则两段/§8.1 分解分配/§8.2 收缩/接力链表/§10.6 状态名）+ 两 SKILL v1.8/v1.6，全部提交（详见记忆文件"实施进度"节）**；**wft03-eng v8.0 原理与方法审视（2026-08-21，提交 4f7218a）**：知识层三章重构 + 配置信息组分工定案（wft01=概要设计末级节点=配置信息组带概要说明 / wft02=三段式详设 / wft03=承接映射为页面，CU 业务过程=配置信息组业务过程集成）+ PA 边界（PA=wft05 前后端组件）+ 完备性判据 9→11 + 方法层对齐 + SKILL v1.3；**链级待办 #1 已落地（2026-08-21，正名调整）**：wft01-eng v9.3 + wft02-eng v9.8 + 91 v5.24 + 两 SKILL v1.9/v1.8——「详细需求条目」→「配置信息组（概要说明）」（wft01 概要设计直接产出配置信息组清单+概要说明，wft02 承接展开详设，三段命名保留，接力链表注记补「配置信息组概要」）
-- [wft01-eng 知识层重构已完成](wft01-eng-align-to-biz-structure.md) — 2026-08-19：以 wft01-biz v3.13 为标杆重构完成——人类方案 v8.3→v8.4（§二 概念[转换总览无语言层级]/§三 原理判据[转换原理新增]/§四 节点演进/§五 操作[反馈双轨+状态机+提交基线]/§七 自检清单）→v8.5（原理方法审视修复：M1 提交基线顺序/M2 追踪自然终点/M3 闭合三段→四段/L1 端到端完整性/L2 归组锚点与闭合形态原理）→v8.6（原理深度分析落定：A 引擎权威分两层[业务语义→STR 权威/方案上下文→下游权威]/B 五类型→能力链起点映射/C 补充 FR-ENG 管道统一/D 缺口回路方向）→v8.7（§3.1 末尾可行性结语：可验证性为锚/追溯完整优先于设计完整/权威归信息最全方/三层咬合）→v8.8（Step 框架对齐 biz：Step Start 拆四子节/Step 4 改名 FR-ENG 需求增补/Step End 保持四区/Step 3 去前缀）；SKILL v1.0→v1.4（锚点迁移+反馈双轨+线下检出+git 提交基线+管道句+标题同步）；严格镜像 wft01-biz（人类确认去语言层级）；术语核查支撑引擎不适用 eng 路径
-- [wft05-eng 知识层重构已完成](wft05-eng-knowledge-layer-restructure.md) — 2026-08-21：wft05-eng v8.2→v9.0 知识层三章重构 + 原理与方法审视 + PA 边界对齐全部落地（人类方案 + SKILL v1.2，eng 链最后一个未重构 Skill 收官）——§二 基本概念（转换总览五步一条链 + 规则地图；概念 2.1 PA组件架构/2.2 平台架构归属/2.3 三类组件与NFR/新增 2.4 PA层收敛项承接锚[三级分工+五类标记+载件为主要来源]）+ 新 §三 设计原理与判据（3.1 转换原理新增/3.2 要素提取/3.3 组件推断/3.4 完备性判据）+ 新 §四 节点演进（SR-F侧+PA侧双生命周期/变更传播）+ §五 操作（3.x→5.x，Step 布局表补人类参与/执行模式列、Step 2 反馈双轨/状态机/反馈总结、Step 8 提交基线顺序修正[AI最近变更→滚动删除→git commit→文件头]、Step End 三角色四区）+ §七 自检清单；PA 边界对齐 wft03 v8.0（PA=本 Skill 三类组件、PA 层收敛项=wft03 标注、只承接设计不重新标注）；链级核查：91 §8.4 无需同步、无悬空引用
-- [wft02-biz 知识层重构与审视修复](wft02-biz-v80-knowledge-layer-restructure.md) — 2026-08-19：以 wft01-biz 为标杆知识层重构（v7.4→v8.0）+ 审视修复（v8.1）+ STR→BP 原理讨论（v8.2~v8.4：任务类型-引擎耦合/引擎权威定位/双视角互证修正互为投影/语言层级施工图比喻）+ 任务活动设计补齐（v8.5）+ 缺口处理边界显式化（v8.6）+ 任务活动设计分工与接力边界（v8.7 + wft01 v3.12）+ WBS 分组硬判据数据依赖链（v8.8）+ 反馈双轨显式化（v8.9）；SKILL 锚点 #262→#332
-- [wft03-biz 知识层重构与审视修复](wft03-biz-v90-knowledge-layer-restructure.md) — 2026-08-19：以 wft02-biz v8.9 为标杆知识层三章重构（v8.6→v9.0）+ 原理与方法审视修复（v9.1）+ 逻辑审视修复（v9.2）+ 原理补充（v9.3：双视角在页面层的交汇/A2/Bn 缝合机制）+ 反馈双轨 SKILL 落地（v1.5，对齐 wft02 不设闭环）+ 链级反馈机制统一（91 §A.5 v5.20 / wft01 v3.13）；后续待办：自检清单/菜单树判据提炼 E3/确认状态位置 L3
-- [需求权威定义](requirement-definition-authoritative.md) — 2026-08-18：需求=需求描述+性能指标（通用设计规范 §1.2，不可衡量则不成为需求；性能指标分定量/二元判定两类）；缺定量指标=ort02 第六子类型（FR/NFR 同构澄清目标值）；NFR 目标值由相关方经澄清确认，wft04-nfr 只做系统侧设计——已废除「质量诉求不量化、数值留给 wft04-nfr」旧说法
-- [ort02 澄清设计](ort02-clarify-question-list.md) — 2026-08-17：AI 标注生成向相关方确认的问句（`[⨯子类型: 原文→问题：…]`），开发者持清单线下澄清或对话反馈；处理框架对齐 ort01（Step 布局 5→7 步、反馈走「记录+[已处理]」显式分界、Step5 交互/Step6 汇总落表B）；缺少定量指标第六子类型（FR/NFR 同构，NFR 分支澄清目标值+单位+条件，废除不量化路由，锚定通用设计规范 §1.2）；三项条件=相关方已确认；ort02 v0.27/v2.12 落地 + 链级 ort03 v0.45/91 v5.18/wft01-04 v5.3
-- [ort02 结构完整性扫描](ort02-structural-completeness.md) — 2026-08-18：独立于六种模糊子类型的第二类澄清对象（标注纪律 6）——文本自证缺口三形态（分支缺对应面/闭环缺端/引用对象缺失），禁止模板式业务覆盖猜测；三项条件吸收 + Step3 无六类模糊但完整性有缺项仍进澄清中（行为变化）；ort02 v0.34/v2.19 落地 + 链级 ort03 v0.58/v2.26 完整性门禁口径对齐
-- [ort03 逐章可读性修订计划](ort02-03-readability-revision-plan.md) — 2026-08-18：ort02 已彻底修订（v0.34/v2.19，含结构完整性扫描）+ 链级对齐（ort01 v0.57 / ort00 v0.31）完成，打法已趟通（章首导航/规则前置/反馈机制一句话/自检清单分组/全文一致性通读）；ort03 逐章修订 + 收尾 + 合并重构全部完成（v0.58/v2.26）
-- [ort03 规范化内涵与规则已定案](ort03-normalization-connotation.md) — 2026-08-17：拆分/质量规则定案——类型先行按类型分治（FR-BIZ 场景为锚一场景可多条 OR、取消能力单元 / FR-ENG 引擎能力 / NFR 四元组原子），资产判定只到 23 输出产品；开放项 #1~#5 已处理（优先级 v0.42 / 23-D v0.43 / 退回路由 v0.44+ort02 v0.24 / 22契约 v1.1 / 重复检测不做）；NFR 定量指标来源 v0.45 改「相关方经 ort02 澄清确认，wft04-nfr 系统侧设计」；剩余链级衔接项（FR-ENG 同构/跨块/派生FR）
-- [ort 可读性审视模式](ort-review-style-pattern.md) — 2026-08-17：ort01 趟出并应用（ort01 v0.53/v2.35 样板；ort00 v0.30/v2.5；ort02 v0.22/v2.7；ort03 v0.39/v2.7 四轮），同链推广完成；2026-08-18 ort02 逐章彻底修订（v0.33/v2.18，六种子类型+NFR 目标值澄清+全文一致性）+ ort01 对齐并补 Step End（v0.57/v2.39，F1 闭环）+ ort00 同款对齐（v0.31/v2.6）——链级叙述层全部对齐；核心方法论前置 §二 已对齐（ort01/02/03）；Step 框架 ort01/02/03 统一八步 Start/1-6/End、ort00 简化五步；2026-08-19 ort00 以 wft01-biz 为标杆知识层三章重构（v0.32/v2.7，概念/原理/演进/操作）+ ort01 同款完成（v0.58/v2.40，转换总览+切分原理+演进章，归属取舍定案；ort03 status 权威引用随迁 §2.3.2）+ ort02 同款完成（v0.35/v2.20，澄清主线+澄清原理+演进章，归属取舍定案；ort03 完整性口径引用随迁 §三 3.2）——链级知识层三章 ort00~03 全部收官（ort03 v0.59/v2.27，规范化主线+规范化原理+重进入/变更传播演进章，归属取舍定案；副题「规范化、识别、拆分与检查」；ort01/ort02 链级引用随迁后仍有效）
-- [ort01 知识层重构已关闭](ort01-knowledge-layer-restructure-pending.md) — 2026-08-19 完成：ort01 以 ort00 v0.32 为标杆知识层三章重构落地（v0.58/v2.40，转换总览+切分原理+演进章，自检独立 §七）；归属取舍定案——状态模型归概念（§2.3，反馈记录格式④剥离至判据）/反馈检测归判据（§3.6）/重切分变更传播归演进（§四）/业务对象概念归概念（§2.1）/入口归判据（§3.5）；ort03「ort01 §3.2.2」随迁 §2.3.2
-- [CU 定义口径定稿](cu-four-element-caliber.md) — 2026-08-14：CU→配置信息组二级结构（组=某组配置字段能提供相对独立业务能力），配置操作/系统处理/运行期能力以组为单位（操作过程方式+保存时+生效后载件+业务人员操作过程）；主语判据+载件分类+三规则；写入 91 规范 v5.13 §3.3 + wft02-eng v8.6 §2.2.1
-- [架构基础概念与方法文档 v4.0](architecture-fundamentals-document-v2.md) — 2026-08-18：07-generalspec-architecture-fundamentals.md v4.0，融入四份概念研习笔记（ISO42010 深解/工程概念/评审概念/配置管理），十章+两附录，新增质量验证章与配置基线章
-- [wft02-biz v6.1 对齐91规范v4.8](wft02-biz-v61-91-v48-alignment.md) — 2026-07-12：16项修订（§1.1 目标对齐§7.2八项任务+§2.5.4 PL6-B正文条目需求定义+引用§A.x体系+§3对齐附录A入口/读取/反馈协议+§3.5.6 PL6-B设计步骤+AI可以处理节点维护）
-- [wft01-biz v2.1 对齐91规范v4.8](wft01-biz-v21-91-v48-alignment.md) — 2026-07-12：14项修订（§1.2上下游衔接+PL6-B三独立+引用§A.x体系+§3对齐附录A入口/读取/反馈协议+AI可以处理节点维护）
-- [wft01-biz v1.71 第四章重组](wft01-biz-v171-ch4-restructure.md) — 2026-07-03：第四章按域对象→推导规则→生命周期三区重组（§4.1场景业务/§4.2输出文档/§4.3业务引擎/§4.4场景业务要素提取/§4.5输出文档推断/§4.6生命周期），以 25 资产 §1 为定义权威源，修复 F1(@engine-function)/F2(执行模式)，§5.8 缩为引用
-- [wft01-biz v1.69 目的与目标重写](wft01-biz-v169-purpose-objective-rewrite.md) — 2026-07-03：§1.1 目的段新增"意图"维度 + 目标改为五条操作条目 + 对齐模型三侧→纯Bn（A2继承/26跟随）
-- [wft02-biz v3.8~v3.9 审视修复与冗余精简](wft02-biz-v38-review.md) — 2026-07-01：F1~F7 七项修复 + R1~R3 三项冗余精简（设计心法链去重/IPO表压缩/散文重述删除）
-- [wft01-biz 缺少 Bn 侧 23-Q 判定](wft01-biz-bn-23q-gap.md) — 2026-06-30：STR-F 只带 A2 侧产品类型/构件类型，wft02-biz Phase B 缺少 PL2/PL3 现成信息，需在 wft01-biz 补 Bn 侧 23-Q
-- [wft02-biz v2.41 一致性审查修复](wft02-biz-v241-conformance-review.md) — 2026-06-29：两轮审查（§3.1/§3.2）修正7项，已提交推送
-- [wft01-biz 场景引擎+菜单引擎角色澄清](wft01-biz-scene-menu-engine-clarification.md) — 2026-06-27：场景引擎L4标签（无条件无需判定）+菜单引擎wft01-biz边界外 + 菜单权限设计链贯穿（STR-F属性→BA权限推导→SR→引擎配置方案）；wft01-biz v1.37 + wft02-biz v2.16
-- [wft02 自闭环重构完成](wft02-self-closed-refactor.md) — 2026-06-24：wft02a/b→wft02-biz（STR-F→A2+Bn）+ wft02-eng（STR-E→A1），纵向合并(A+B→自闭环)+横向拆分(按路径)，91 规范 v2.1 同步更新
-- [wft01 三路径自闭环模型](wft01-self-closed-model.md) — 2026-06-23：biz/eng/nfr 三路径自闭环完成 + 5+1 生命周期 + 资产-BA 解耦 + 变更传播协议 + 91 规范 v2.0 修订
-- [ORT00精确查重设计决策](ort00-dedup-design-decisions.md) — 流程内联/逐字精确比对/独立生命周期"已废弃（重复）"/软链接定向引用/语义查重边界暂不实现
-- [ORT关注行三类结构](ort01-three-category-focus-rows.md) — ort01 Step 5 摘要三类待办：待反馈方案/待选入切分/待选入澄清
-- [ort01 语义切分对齐业务对象](ort01-chunk-align-scene-business.md) — 场景业务=业务对象闭环=主责角色职责闭环[91§1.4]，三步确定法（文档抓手/三问/主轴锚定）；v0.55 扩展候选单元——业务对象闭环 ∪ 系统级非功能约束（适用对象线索对齐 91§九四元组），与 wft01/平台打通
-- [切分文件三段结构+全链双轨](chunk-file-three-segment-dual-track.md) — frontmatter+管理区+正文；表A/B/C外部+内嵌状态内部；「切分文档」=切分文件
-- [ort01 反馈回路 git 基线协议](ort01-feedback-git-baseline-protocol.md) — 2026-08-15：反馈单源（文档变更）+ git diff 检测 + Step 1-6 结构 + 交互只记录不处理；评审待办见 02-eos-sysdev-review.md
-- [ORT Skill执行文档化模式](ort-skill-design-patterns.md) — SKILL=规则引用人类方案+补E层（版本感知/加载经济/口令规则/判据速查）；表A/B/C三表口径
-- [预处理链前置校验设计](preprocessing-prerequisite-check.md) — 每个skill启动时先检查前置依赖是否就绪，未就绪时输出指引，逐级报错首次即停。2026-06-06 实施 + 泛化写入通用设计规范 §3.6 + §3.7
-- [对齐标注约定](alignment-annotation-convention.md) — ◆ 四种标注类型（对应/差异/定位/继承关系）+ 阅读路径格式
-- [架构增量变更的资产优先原则](architecture_asset_priority.md) — Reuse > Improve(Extend/Split/Merge) > Add，架构节点是组织资产
-- [BA IPO 泛化](ba-ipo-generalization.md) — I/O 从"文档"泛化为"完整表意单元"，覆盖非人类角色；涉及第四章 §4.4 + 第五章 §5.2.1 第3步联动修改
-- [BA两类产品类型](ba-two-product-types-output-product-role-scenario.md) — 输出产品+角色场景两类产品类型，角色场景走履职流程分解到编排定义（A2）
-- [输出产品架构锚定法与术语体系](ba_method_naming_output_product_anchoring.md) — BA方法正式命名 + 目标产品/输出产品术语区分
-- [系统设计准则优化说明](design_standards_optimization.md) — v2.1优化版，从概念到应用，实用指导型风格
-- [术语统一：解决方案实体](terminology_solution_entity.md) — 通用设计规范全文档用"解决方案实体"替代"设计实现节点/实体"描述架构末级节点
-- [系统设计准则v2.0修订完成](design_standards_v2_complete.md) — 架构与详细设计分离，5层结构，完整映射规则
-- [DevOps缺陷即知识资产](devops_bug_as_knowledge_asset.md) — EOS流水线DevOps场景中，bug/问题的本质是知识资产缺陷而非代码缺陷
-- [文档风格规则确立](doc-style-rules-established.md) — 2026-06-01 通用设计规范风格统一 + 规范模板 v2.0 重写完成，确立了 H5/H6 编号规则、引用格式、注记分层等风格标准
-- [端到端业务分解框架](end_to_end_business_framework.md) — 从产品架构节点类型推导价值业务，加项目管理业务构成完整项目业务
-- [端到端业务与跨域接口原则](end_to_end_cross_domain_principle.md) — 端到端流程不吞并其他域，通过域间需求-响应契约实现协作
-- [E2E 项目三类相关方驱动](e2e-project-stakeholder-definition.md) — 上级/监管方→经营类、客户→产品类、内部员工→资源类，三类 E2E 项目驱动
-- [EOS引擎平台架构](eos_architecture_engines_platform.md) — 四层平台架构（引擎→组件→模块→使用），两类需求（引擎开发 vs 业务配置），引擎清单
-- [CLAUDE.md 不加章节号](feedback_claude_no_section_numbers.md) — 保持层级标题格式，不添加数字章节号
-- [CLAUDE.md 定位](feedback-claude-role.md) — 只做项目导航和文件引用，不包含方法论摘要，避免一致性风险
-- [反馈：主动规划](feedback-proactive-planning.md) — 用户要求更主动地理解完整意图，避免逐条指示的反复修改
-- [符合性审查工作流](feedback-review-workflow.md) — 符合性审查严格分两段：审查阶段仅发现不修改 → 修复阶段先清单确认后执行
-- [工作风格：先发现后修改](feedback-work-style.md) — 先审查列发现，等确认后再执行修改
-- [信息处理模式十三类](info_processing_classification_10_types.md) — 替代五分类，13种信息处理模式决定PA分解边界
-- [方法论核心内核（5条）](methodology-core-principles.md) — 方法论五条内核：相对角色、文档构成、结对设计、持续分解分配分析、基于资产定义架构
-- [OR规范规则符合性审查通过](or_spec_rule_conformance_pass.md) — 02-pipeline-original-requirements-specification.md v1.4 审查零发现，完全符合准则 v3.8
-- [父子指标符合性审查方法](parent_child_indicator_conformance.md) — 架构末级到详细定义的指标分解运算关系（响应时间/可用性/吞吐量/准确率）及AI自动化审查方法
-- [流水线类系统需求推导](pipeline_class_derivation.md) — 推导锚点偏移到输出产品（原目标产品），输出产品可是实物/软件/方法工具集等任何形态
-- [流水线准则修订 v3.5](pipeline-standards-revision-v35.md) — 流水线系统设计准则 v3.4→v3.5 修订完成，对齐通用准则 v1.0
-- [产品形态分类框架](product_classification_framework.md) — 四种形态：实物/软件/AI Skill/服务（知识/方法），正交产品类型维度，修正§6.5。设计描述≠构件
-- [AI Skill 产品架构模式](pipeline_architecture_skill_leaf_node.md) — AI Skill 产品形态（A1/A2）的架构末级节点=Skill。已限定为四种形态之一，非通用模式
-- [产品关系重构完成](product_relationship_reframe_complete.md) — 两层产品关系→三层工作层面，Pipeline v3.7 + AOS v2.1
-- [业务架构层级结构](project_ba_hierarchy.md) — 0-6级层级定义，5级组件是需求承接关键层级
-- [反馈：层级表联动审查](feedback-layer-table-as-authority.md) — 层级表变更后须逐节联动审查同章所有相关描述
-- [设计指南修订 v3.2](project-revisions-complete.md) — 四个设计指南+快速参考卡修订完成，对齐依据A v3.3，加入两类产品示例
-- [需求符合性审查三层二维框架](requirements_conformance_3layer_2dim.md) — 需求符合性审查的核心结构：第1层分解质量→第2层承接验证→第3层满足度，两维贯穿（语义+指标）
-- [BA IPO 指代定义当前状态](ba-ipo-definition-current.md) — §4.4 优化后的 BA IPO 定义、领域中立原则、I/O 泛化定义，第五章优化以此为前置上下文
-- [规则提取颗粒度方法论](rule_granularity_methodology.md) — 规则提取的颗粒度确定方法
-- [语义段落聚类三标准](rule_paragraph_clustering_criteria.md) — 通读路径优先 > 判断焦点 > 原文位置，独立编号补偿同一路径内不同焦点的规则
-- [以可验证性驱动的规则提取](rule_verifiability_driven_extraction.md) — 从"阅读理解"转向"可验证性分析"，提取单位是约束判断单元
-- [SR-F架构末级节点识别方法](sr_f_architecture_identification.md) — 三步分析法：角色类型→触发定义端到端→分解分配分析验证，触发抽象级别与多角色共享节点
-- [系统设计流水线完整规则](system_design_pipeline_rules.md) — BA→SysReq→PA完整映射规则，SysReq 0-9级层级定义
+- [eng 链 5 层「概要/详细」框架（定案，①②③④步已实施）](eng-chain-five-layer-framework.md) — 01 业务概要[配置信息组+概要说明]/02 业务详细[操作活动定义·基准=PDF v1.5.2]/03 功能概要[功能表单+概要说明]/04 功能详细[新增 wft04-eng]/05 产品概要[前后端组件]；逻辑同构 biz、内容异质；02 详设基准=Downloads PDF v1.5.2（**.md 旧形态保存时处理不作基准**）；实施：①wft01-eng v9.5 定位重述+结构判定级（aab2f53）②wft02-eng v10.0 操作活动定义步骤化（d0a0f46）③wft03-eng v9.0 收缩功能概要+SR-F 状态机接力（82abf4f）④新增 wft04-eng v1.0 sr2sr（18338de）；待办：wft05 输入变→91/SKILL 联动
+- [biz 链分工「概要/详细」重述框架（已定案并实施）](biz-chain-summary-detail-framework.md) — s01 业务概要/s02 业务详细/s03 系统概要 一棵树；四问全裁，唯一真边界变更=Bn 组装执行上移 s01；已实施：wft01-biz v3.17/wft02-biz v9.3/wft03-biz v9.7/91 v5.26 + 三 SKILL
+- [非主价值链 Step 框架三链统一（biz 为标准）](skill-step-framework-unify-biz-standard.md) — biz×3+eng×4+nfr×2 移除三角色表、Step End 单区、Step 2 内联处理表、输入校验「判定|动作」；反转 v8.8/v8.0/v5.5 三角色四区裁决
+- [wft02-eng 对齐 biz 结构已完成](wft02-eng-align-to-biz-structure.md) — 知识层三章重构 v8.6→v9.0 起；反馈检出前置 Step Start 链级推广；eng 链设计归属重构 DP1~DP5 落地（wft01-eng 设计内聚/wft02-eng 收缩/91 v5.23）；wft03-eng v8.0 原理审视；「详细需求条目」→「配置信息组（概要说明）」正名（v9.3/v9.8/91 v5.24）
+- [wft01-eng 知识层重构已完成](wft01-eng-align-to-biz-structure.md) — 以 wft01-biz v3.13 为标杆 v8.3→v8.8 重构；M1~M3+L1~L2 审视修复；原理深度分析（引擎权威两层/五类型映射/补充 FR-ENG 管道）；Step 框架对齐 biz
+- [wft05-eng 知识层重构已完成](wft05-eng-knowledge-layer-restructure.md) — v8.2→v9.0 知识层三章+原理审视+PA 边界对齐；PA=三类组件、PA 层收敛项=wft03 标注、只承接设计不重新标注
+- [wft02-biz 知识层重构与审视修复](wft02-biz-v80-knowledge-layer-restructure.md) — v7.4→v8.0 重构 + 审视修复 + STR→BP 原理讨论 + WBS 分组硬判据数据依赖链；SKILL 锚点 #262→#332
+- [wft03-biz 知识层重构与审视修复](wft03-biz-v90-knowledge-layer-restructure.md) — v8.6→v9.0 三章重构 + 原理补充（双视角交汇/A2/Bn 缝合）+ 反馈双轨 SKILL 落地
+- [需求权威定义](requirement-definition-authoritative.md) — 需求=需求描述+性能指标；缺定量指标=ort02 第六子类型；NFR 目标值由相关方澄清确认，wft04-nfr 只做系统侧设计
+- [ort02 澄清设计](ort02-clarify-question-list.md) — AI 标注向相关方确认的问句；缺少定量指标第六子类型；三项条件=相关方已确认
+- [ort02 结构完整性扫描](ort02-structural-completeness.md) — 独立于六种模糊子类型的第二类澄清对象；文本自证缺口三形态；禁止模板式业务覆盖猜测
+- [ort03 规范化内涵与规则已定案](ort03-normalization-connotation.md) — 类型先行按类型分治；资产判定只到 23；NFR 定量指标来源改相关方澄清确认
+- [ort 可读性审视模式](ort-review-style-pattern.md) — ort01 趟出并同链推广；ort00~03 链级知识层三章全部收官；Step 框架 ort01/02/03 统一八步、ort00 五步
+- [ort01 知识层重构已关闭](ort01-knowledge-layer-restructure-pending.md) — 以 ort00 v0.32 为标杆三章重构落地；归属取舍定案（状态模型归概念/反馈检测归判据等）
+- [CU 定义口径定稿](cu-four-element-caliber.md) — CU→配置信息组二级结构；主语判据+载件分类+三规则；写入 91 v5.13 §3.3 + wft02-eng v8.6 §2.2.1
+- [架构基础概念与方法文档 v4.0](architecture-fundamentals-document-v2.md) — 07-generalspec 十章+两附录，融入四份概念研习笔记，新增质量验证章与配置基线章
+- [ort01 反馈回路 git 基线协议](ort01-feedback-git-baseline-protocol.md) — 反馈单源（文档变更）+ git diff 检测 + Step 1-6 结构 + 交互只记录不处理
+- [预处理链前置校验设计](preprocessing-prerequisite-check.md) — 每个 skill 启动先检查前置依赖，未就绪输出指引，逐级报错首次即停；已入通用规范 §3.6/§3.7
+- [业务层级术语标准化](business-hierarchy-terminology-standardization.md) — L0~L6 七级业务层级 + 引擎三级生成+横切；25/24/06/01-pl4eos-spec + wft Skill×8 + 02/03 更新
+- [EOS UI 模型与业务-引擎映射](eos-ui-model-business-engine-mapping.md) — UI 交互模型（单窗分屏无限下钻）；场景部件:输出文档=1:1；引擎分工总图
+- [术语重构：引擎与业务](terminology-refactor-engine-business.md) — 三术语→两术语；引擎四级五引擎；业务四级编排
+- [91规范v4.0引擎重构](91-spec-v4-engine-restructure.md) — 取消 @engine-document/@engine-ledger/@engine-requirement（13→11）；正式/轻量文档模型；D/PCA 分类保留
+- [EOS 引擎平台架构](eos_architecture_engines_platform.md) — 四层平台架构（引擎→组件→模块→使用）；两类需求（引擎开发 vs 业务配置）
+- [方法论核心内核（5条）](methodology-core-principles.md) — 相对角色、文档构成、结对设计、持续分解分配分析、基于资产定义架构
+- [需求符合性审查三层二维框架](requirements_conformance_3layer_2dim.md) — 第1层分解质量→第2层承接验证→第3层满足度；两维贯穿（语义+指标）
+- [SR-F架构末级节点识别方法](sr_f_architecture_identification.md) — 三步分析法：角色类型→触发定义端到端→分解分配分析验证
+- [系统设计流水线完整规则](system_design_pipeline_rules.md) — BA→SysReq→PA 完整映射规则，SysReq 0-9 级层级定义
 - [用户角色](user-role.md) — 流水线开发者/团队B架构师，中文工作，重视文档一致性
-- [AI SKILL 术语统一](eos-pipeline-ai-skill-standardization.md) — 2026-06-01 EOS 流水线规范：AI 辅助文档 → AI 技能文档（AI SKILL），全文约15处
-- ["类"后缀使用规则](product_form_classification_rule.md) — 产品类型用"类"（流水线类/非流水线类），产品形态不用"类"（软件产品/AI Skill 产品等）
-- [流水线产品形态决定规则](pipeline_product_form_determination.md) — 流水线类产品的形态由用户与开发者共同确定，非方法论强制，取决于执行主体
-- [目录结构调整方向](directory-restructure-direction.md) — 一级目录方案：00-generalspec/10-meta-pipeline/20-pipeline4eos/30-eos，产品数据随流水线走
-- [EOS Pipeline Spec 2026-06-01](2026-06-01-eos-pipeline-spec-optimization.md) — §一重构、§二对齐、§2.3重写、设计准则→设计规范、AI SKILL 术语统一
-- [两层目录同构化](two-tier-isomorphic-structure.md) — 10-pl4pleos/ 和 20-pl4eos/ 同构，各含 00-spec/10-subpl-sysdev/20-subpl-comdev/30-subpl-sysint/40-subpl-sysops/80-X-2-Ydata
-- [交付物框架缩减为两类](delivery-framework-two-types.md) — A1/A2 从"四类构件"改为"两类交付物"（设计规范 + AI SKILL）
-- [元流水线规范降级计划](meta-pipeline-spec-downgrade-plan.md) — 计划将 01-pl4pleos-spec-sysdev.md 从完整规范降级为方法论说明+工程导航
-- [pl4eos 规范使命定义](pl4eos-spec-mission.md) — pl4eos 的系统设计规范是产品的设计描述，服务于设计线开发人员；A1 使命对称但需精简
-- [A1/A2 AI SKILL 分离决策](a1-a2-ai-skill-separation.md) — 两套 AI SKILL 显性化，分别承载各自产品形态知识，不共用
-- [三字段正交状态模型（v2简化版）](three-field-orthogonal-status-model.md) — 生命周期状态 + AI 建议（需澄清/可确认/建议终止）+ 人类决策（已确认/已终止）+ 文档选项交互机制
-- [预处理链统一模型](preprocessing-chain-unified-model.md) — chunk→sub 重命名 + clarify 合并入 sub 文件 + "已切分"生命周期
-- [切片确认标记机制](chunk-confirmation-marker.md) — 预处理链"待确认→已确认"转迁：AI 在文档末尾写操作选项 → 人类删行确认 → AI 自动同步状态表（三字段"文档即状态"的具体实现）
-- [三字段简化推导过程](three-field-simplification.md) — 从 建议待处理/建议暂搁置 → 需澄清/可确认 的精简路径 + 文档选项交互设计推演
-- [t01-or-clarify 单次通过模型](t01-or-clarify-single-pass-model.md) — 三个可复用设计模式：单次通过模型（last_size 驱动重入）、行动清单模式（动态行动项+静态指南）、Skill 间接口契约（生命周期+人类决策两字段门禁）
-- [Skill 终结必荐后续原则](skill-action-output-principle.md) — Skill 终结时须向人类输出结构化后续行动建议（做什么+为什么），按行动类型分组，使 Skill 执行终点成为清晰的人机交接点
-- [pre-t04 全自动执行模式](pre-t04-norm-full-automatic-mode.md) — 预处理链 Skill 的无决策门/无对话交互模式，AI 完成后输出线下行动指南作为人机交接点（原 pre-t03-norm 继承）
-- [文档一致性三类问题](doc-consistency-three-issue-types.md) — 时序矛盾/语义聚类错位/记录完整性缺失的三类检出方法
-- [文档状态嵌入 + 变更记录表 → 通用设计规范 §3.5](embedded-state-tracking-general-spec.md)
+- [反馈：主动规划](feedback-proactive-planning.md) — 用户要求更主动地理解完整意图，避免逐条指示反复修改
+- [符合性审查工作流](feedback-review-workflow.md) — 严格分两段：审查阶段仅发现不修改 → 修复阶段先清单确认后执行
+- [工作风格：先发现后修改](feedback-work-style.md) — 先审查列发现，等确认后再执行修改
+- [反馈：层级表联动审查](feedback-layer-table-as-authority.md) — 层级表变更后须逐节联动审查同章所有相关描述
+- [CLAUDE.md 不加章节号](feedback_claude_no_section_numbers.md) — 保持层级标题格式，不添加数字章节号
+- [CLAUDE.md 定位](feedback-claude-role.md) — 只做项目导航和文件引用，不包含方法论摘要
+- [对齐标注约定](alignment-annotation-convention.md) — ◆ 四种标注类型（对应/差异/定位/继承关系）+ 阅读路径格式
+- [架构增量变更的资产优先原则](architecture_asset_priority.md) — Reuse > Improve(Extend/Split/Merge) > Add
+- [BA IPO 泛化](ba-ipo-generalization.md) — I/O 从"文档"泛化为"完整表意单元"，覆盖非人类角色
+- [BA两类产品类型](ba-two-product-types-output-product-role-scenario.md) — 输出产品+角色场景两类产品类型
+- [输出产品架构锚定法与术语体系](ba_method_naming_output_product_anchoring.md) — BA 方法正式命名 + 目标产品/输出产品术语区分
+- [端到端业务分解框架](end_to_end_business_framework.md) — 从产品架构节点类型推导价值业务 + 项目管理业务
+- [端到端业务与跨域接口原则](end_to_end_cross_domain_principle.md) — 端到端流程不吞并其他域，通过域间需求-响应契约协作
+- [E2E 项目三类相关方驱动](e2e-project-stakeholder-definition.md) — 上级→经营类、客户→产品类、员工→资源类
+- [信息处理模式十三类](info_processing_classification_10_types.md) — 替代五分类，13 种信息处理模式决定 PA 分解边界
+- [父子指标符合性审查方法](parent_child_indicator_conformance.md) — 指标分解运算关系（响应时间/可用性/吞吐量/准确率）及 AI 自动化审查
+- [流水线类系统需求推导](pipeline_class_derivation.md) — 推导锚点偏移到输出产品，输出产品可是任何形态
+- [产品形态分类框架](product_classification_framework.md) — 四种形态：实物/软件/AI Skill/服务；正交产品类型维度；设计描述≠构件
+- [AI Skill 产品架构模式](pipeline_architecture_skill_leaf_node.md) — AI Skill 产品形态的架构末级节点=Skill；已限定为四种形态之一
+- [产品关系重构完成](product_relationship_reframe_complete.md) — 两层产品关系→三层工作层面
+- [业务架构层级结构](project_ba_hierarchy.md) — 0-6 级层级定义，5 级组件是需求承接关键层级
+- [系统设计准则 v2.0 修订完成](design_standards_v2_complete.md) — 架构与详细设计分离，5 层结构，完整映射规则
+- [系统设计准则优化说明](design_standards_optimization.md) — v2.1 优化版，从概念到应用，实用指导型风格
+- [术语统一：解决方案实体](terminology_solution_entity.md) — 全文档用"解决方案实体"替代"设计实现节点/实体"
+- [文档风格规则确立](doc-style-rules-established.md) — 通用设计规范风格统一 + 规范模板 v2.0；H5/H6 编号、引用格式、注记分层
+- [DevOps缺陷即知识资产](devops_bug_as_knowledge_asset.md) — bug/问题本质是知识资产缺陷而非代码缺陷
+- [BA IPO 指代定义当前状态](ba-ipo-definition-current.md) — §4.4 优化后的 BA IPO 定义、领域中立、I/O 泛化
+- [规则提取颗粒度方法论](rule_granularity_methodology.md) — 规则提取的颗粒度确定方法
+- [语义段落聚类三标准](rule_paragraph_clustering_criteria.md) — 通读路径优先 > 判断焦点 > 原文位置
+- [以可验证性驱动的规则提取](rule_verifiability_driven_extraction.md) — 提取单位是约束判断单元
+- [EOS BA 五级层级与 23 号资产对应关系](ba-five-level-hierarchy.md) — BA 五级（业务域/项目类型/端到端业务/WBS/IPO）；23-*.md 提供锚点；WBS 归属 04
+- [wft02 并行模型与派生需求全对称](wft02-parallel-model-derived-requirements.md) — 两路径并行从 STR 分配，派生 STR 也走两分支，全对称
+- [wft01~05 目的与目标框架](wft01-05-purpose-objective-framework.md) — 全链路7文件统一「本Skill目的与目标」格式，五步信任接力链
+- [wft03 SR-F 三分支分类模式](wft03-srf-three-branch-classification.md) — SR-F 分类"业务功能+平台服务+工作空间"三分支
+- [设计开发+资产维护两阶段分离模式](design-split-pattern.md) — 所有 wft skill 拆 Phase 1/Phase 2，人类审阅为门禁
+- [wft01a脑补信息与后续OR关系](wft01a-brainfill-vs-subsequent-or.md) — AI 一轮"脑补"信息在新 OR 进入时的升级/确认/补充/矛盾规则缺口
+- [wft01a重新设计：多OR收敛+业务确认](wft01a-redesign-multi-or-convergence.md) — 需重设计以支持多 OR 积累收敛+业务人员确认
+- [wft01-biz 场景引擎+菜单引擎角色澄清](wft01-biz-scene-menu-engine-clarification.md) — 场景引擎 L4 标签无条件、菜单引擎 wft01-biz 边界外、菜单权限设计链贯穿
+- [wft02 自闭环重构完成](wft02-self-closed-refactor.md) — wft02a/b→wft02-biz + wft02-eng；纵向合并+横向拆分；91 v2.1 同步
+- [wft01 三路径自闭环模型](wft01-self-closed-model.md) — biz/eng/nfr 三路径自闭环 + 5+1 生命周期 + 变更传播协议
+- [ORT00精确查重设计决策](ort00-dedup-design-decisions.md) — 流程内联/逐字精确比对/独立生命周期"已废弃（重复）"/软链接定向引用
+- [ORT关注行三类结构](ort01-three-category-focus-rows.md) — ort01 Step 5 摘要三类待办：待反馈方案/待选入切分/待选入澄清
+- [ort01 语义切分对齐业务对象](ort01-chunk-align-scene-business.md) — 场景业务=业务对象闭环=主责角色职责闭环；三步确定法
+- [切分文件三段结构+全链双轨](chunk-file-three-segment-dual-track.md) — frontmatter+管理区+正文；表A/B/C外部+内嵌状态内部
+- [ORT Skill执行文档化模式](ort-skill-design-patterns.md) — SKILL=规则引用人类方案+补E层（版本感知/加载经济/口令规则/判据速查）
+- [三字段正交状态模型（v2简化版）](three-field-orthogonal-status-model.md) — 生命周期状态 + AI 建议 + 人类决策 + 文档选项交互
+- [预处理链统一模型](preprocessing-chain-unified-model.md) — chunk→sub 重命名 + clarify 合并入 sub + "已切分"生命周期
+- [切片确认标记机制](chunk-confirmation-marker.md) — "待确认→已确认"转迁：AI 写操作选项→人类删行确认→AI 同步状态表
+- [三字段简化推导过程](three-field-simplification.md) — 从 建议待处理/建议暂搁置 → 需澄清/可确认 的精简路径
+- [t01-or-clarify 单次通过模型](t01-or-clarify-single-pass-model.md) — 单次通过模型/行动清单模式/Skill 间接口契约三个可复用设计模式
+- [Skill 终结必荐后续原则](skill-action-output-principle.md) — Skill 终结时输出结构化后续行动建议，成为人机交接点
+- [pre-t04 全自动执行模式](pre-t04-norm-full-automatic-mode.md) — 预处理链无决策门/无对话交互，AI 完成后输出线下行动指南
+- [文档一致性三类问题](doc-consistency-three-issue-types.md) — 时序矛盾/语义聚类错位/记录完整性缺失三类检出方法
+- [文档状态嵌入 + 变更记录表 → 通用规范 §3.5](embedded-state-tracking-general-spec.md)
 - [OR 基线单区+逐条状态机设计](or-baseline-single-zone-state-machine.md)
-- [OR 基线管理区精简](or-baseline-management-zone-simplification.md) — 管理区仅保留元信息+状态表，移除详细条目区和需求统计区。t01 分解结果归 SR 架构文档 — v1/v2 双区→单区+6状态状态机，t06 为唯一聚合点 — 文档状态嵌入原则 + 变更记录表交互协议（四情形分流）已纳入通用设计规范 §3.5
-- [wft01 v4.2 → 通用规范 v1.7 三条模式提取](wft01-feedback-cascade-to-generalspec.md) — 节点级迭代（§2.3.4）、架构节点自包含需求原文（§2.2.1）、映射变更级联更新（§3.2.4）
-- [资产管理步骤设计模式](asset-management-step-pattern.md) — 方案反馈与资产反馈分离，资产反馈放在资产自身，独立为资产管理步骤
-- [EOS BA 五级层级与 23 号资产对应关系](ba-five-level-hierarchy.md) — EOS 为流水线类软件产品→输出产品架构锚定法；BA 五级（业务域/项目类型/端到端业务/WBS/IPO）；23-*.md 提供 2~3级锚点+5级 I/O 参考；WBS 归属 04-*.md 不放 23
-- [wft02 v3.0 修订方案](wft02-revision-plan.md) — BA 五级层级改造 + 24/25 资产联动 + Step 命名对齐。Step 3 为核心（层级导航五步法→Q1/Q2/Q3 在路径内→写入 24/25），Step Start~Step End 全流程修订
-- [wft02 并行模型与派生需求全对称](wft02-parallel-model-derived-requirements.md) — 两条路径并行从 STR 分配，派生 STR 也走两条分支，全对称处理，靠多轮迭代收敛
-- [wft02-eng §3.2 深入讨论](wft02-eng-3.2-deep-discussion.md) — 6个核心问题已决策，v2.4 已实施（设计心法+颗粒度准则+25-Q判定参考表+依赖回引+占位生命周期+Q3完整示例）
-- [wft01~05 目的与目标框架](wft01-05-purpose-objective-framework.md) — 全链路7文件统一「本Skill目的与目标」格式，五步信任接力链：相关方→wft01(听懂)→wft02(方案对)→wft03(覆盖业务)→wft04(指标合理)→wft05(能开工)→开发方
-- [wft03 SR-F 三分支分类模式](wft03-srf-three-branch-classification.md) — SR-F 分类重组采用"业务功能+平台服务+工作空间"三分支，对应三类 BA IPO 产品类型自动分流
-- [设计开发+资产维护两阶段分离模式](design-split-pattern.md) — 所有 wft skill 拆分 Phase 1(设计开发)/Phase 2(资产维护)，同构六步骤，人类审阅为门禁，试点建议 wft05
-- [wft01a脑补信息与后续OR关系](wft01a-brainfill-vs-subsequent-or.md) — AI在wft01a中一轮"脑补"的信息载体在新OR进入时如何升级/确认/补充/矛盾的规则缺口
-- [wft01a重新设计：多OR收敛+业务确认](wft01a-redesign-multi-or-convergence.md) — 需重新设计wft01a以支持多OR积累收敛+业务人员确认机制，替代当前单OR完整脑补模型
-- [业务层级术语标准化](business-hierarchy-terminology-standardization.md) — 2026-06-27：L0~L6 七级业务层级 + 引擎三级生成+横切；废弃功能菜单/功能业务/场景定义/功能单元/对象及其功能；25/24/06/01-pl4eos-spec + wft Skill×8 + 02/03 产品数据全部更新
-- [EOS UI 模型与业务-引擎映射](eos-ui-model-business-engine-mapping.md) — 2026-06-27：UI 交互模型（单窗分屏无限下钻+面包屑导航）、场景部件:输出文档=1:1、两种产生方式（引擎直产/人工外设）、实体引擎约束子业务TAB、引擎分工总图；10-eos-architecture.md v2.0 同步重写
-- [术语重构：引擎与业务](terminology-refactor-engine-business.md) — 2026-06-26：三术语→两术语重构完成；引擎四级五引擎；业务四级编排；术语表+规范§2.5+25/24/26/27资产文件已更新；23.md待讨论
-- [91规范v4.0引擎重构](91-spec-v4-engine-restructure.md) — 2026-07-10：引擎体系重构讨论定稿并全量联动完成——取消 @engine-document/@engine-ledger/@engine-requirement（13→11），@engine-indicator 独立；正式/轻量文档模型（封面+正文1:1+引用+处理配置）；D/PCA 语义分类保留；25/B.1/B.2 附录残留修复；全部 Skill 和资产文件已对齐
-- [wft01-nfr/wft04-nfr v4.1 深度对齐91规范v4.8](wft01-nfr-wft04-nfr-v41-91-v48-deep-revision.md) — 2026-07-12：wft01-nfr §3.1 重构为§A.2.4四子节模式；wft04-nfr §3.1 重构+NFR流向改为仅eng路径（移除wft03-biz消费）；wft01-nfr→v4.1, wft04-nfr→v4.1
-- [Bn构件进度=文档序列完成度](bn-component-progress-document-sequence.md) — 2026-07-14：Bn视角下构件端到端业务由01→09产品数据文档序列构成，构件进度可从各文档完成状态两层聚合计算
-
-- [BA存在的本质原因](ba_existence_reason.md) — BA作为相关方可验证的业务操作界面，确保功能需求捕获的完备性
-- [状态文档子表映射](status-document-subtable-references.md) — 所有Skill尾部行动清单统一指向状态文档子表（编号+表名），全链引用协议
-- [23号资产§11符合性修复](23-asset-sec11-conformance-fix.md) — 2026-07-28 反馈区删除(方案A)+归属裁定用[需裁决]+§11.5@srf-与02资产STR-F-格式跨文档不一致待办
-- [23号资产节点表单化+六级层级](23-asset-node-form-six-level.md) — 2026-07-28 统一13字段横表/六级层级(L5输出文档废IPO)/复用方式吸纳实现策略/追溯归产品数据/定义点判定
-- [92-srf 悬空引用 wft03a（已解决）](pending-srf-wft03a-dangling-ref.md) — 2026-08-17：wft03a/wft03b 旧模型已废弃（归档 legacy-a-b-pairs），92-srf 三处引用改现行 wft03-biz/eng-bp2sr（v1.1）
-- [待办：记忆库 ba-* 术语更新](pending-memory-ba-bp-term.md) — 2026-08-12：记忆库 ba-* 系列仍用旧 BA 术语（设计链已改 BP），需逐条更新（保留角色名/4A 域）
+- [OR 基线管理区精简](or-baseline-management-zone-simplification.md) — 管理区仅保留元信息+状态表；v1/v2 双区→单区+6 状态状态机，t06 为唯一聚合点
+- [wft01 v4.2 → 通用规范 v1.7 三条模式提取](wft01-feedback-cascade-to-generalspec.md) — 节点级迭代/架构节点自包含需求原文/映射变更级联更新
+- [资产管理步骤设计模式](asset-management-step-pattern.md) — 方案反馈与资产反馈分离，资产反馈放在资产自身
+- [wft02 v3.0 修订方案](wft02-revision-plan.md) — BA 五级层级改造 + 24/25 资产联动 + Step 命名对齐
+- [wft02-eng §3.2 深入讨论](wft02-eng-3.2-deep-discussion.md) — 6 个核心问题已决策 v2.4 实施
+- [91规范v4.0引擎重构](91-spec-v4-engine-restructure.md) — 取消三引擎（13→11）；正式/轻量文档模型；D/PCA 分类保留
+- [wft01-nfr/wft04-nfr v4.1 深度对齐91规范v4.8](wft01-nfr-wft04-nfr-v41-91-v48-deep-revision.md) — §3.1 重构；NFR 流向改仅 eng 路径
+- [Bn构件进度=文档序列完成度](bn-component-progress-document-sequence.md) — 构件端到端业务由 01→09 文档序列构成，进度两层聚合
+- [BA存在的本质原因](ba_existence_reason.md) — BA 作为相关方可验证的业务操作界面，确保功能需求捕获完备性
+- [状态文档子表映射](status-document-subtable-references.md) — 所有 Skill 尾部行动清单统一指向状态文档子表
+- [23号资产§11符合性修复](23-asset-sec11-conformance-fix.md) — 反馈区删除+归属裁定用[需裁决]
+- [23号资产节点表单化+六级层级](23-asset-node-form-six-level.md) — 统一13字段横表/六级层级(L5输出文档废IPO)
+- [92-srf 悬空引用 wft03a（已解决）](pending-srf-wft03a-dangling-ref.md) — wft03a/b 旧模型已废弃，92-srf 引用改现行 wft03
+- [待办：记忆库 ba-* 术语更新](pending-memory-ba-bp-term.md) — 记忆库 ba-* 系列仍用旧 BA 术语（设计链已改 BP），需逐条更新
