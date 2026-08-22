@@ -8,7 +8,7 @@ metadata:
   modified: 2026-08-22
 ---
 
-**2026-08-22 已执行深审（A1+A2+B 组，7 文件工作区待 commit）**。biz 链现版本：**wft01-biz v3.19 / wft02-biz v9.5 / wft03-biz v9.9**；SKILL：**wft01 v1.14 / wft02 v1.12 / wft03 v1.9**；24 资产 **v1.6**。
+**2026-08-22 已执行深审（A1+A2+B 组）并已提交推送（commit b86266a → origin+gitee，2026-08-22）**。biz 链现版本：**wft01-biz v3.19 / wft02-biz v9.5 / wft03-biz v9.9**；SKILL：**wft01 v1.14 / wft02 v1.12 / wft03 v1.9**；24 资产 **v1.6**。
 
 **本轮落地**：
 - **A1 对齐 91（人类裁决，方向=以 BP PL6-A 为基准）**：wft03 §5.6 Step 5 重写——删除 26→24 流程定义定位机制（该资产结构在 24/26 中不存在：24=DEF-TEMPLATE 可复用业务模板无活动节点序列、26=DOC-TEMPLATE 无关联流程定义 ID；91 §7.3 Task 5 本就只写「消费 wft02 的 PL6-A」，机制超出 91 权威且按现文必落「无法匹配→退回 wft02」）。同步 §3.5 判据 11、Step 1 加载清单（删 24）、§5.9 写回要求（删 Q2/Q3→wft02 写回 24/26 路由）+ SKILL（Step 5 重写 + 删「24 资产写回」行 + 附录 A.4 改 PL6-A 消费编排）。
@@ -22,4 +22,4 @@ metadata:
 
 **遗留观察**：24 资产头 v1.5 但变更记录表止于 v1.3（v1.4/v1.5 行缺失，未擅补）；wft01 §5.4 Phase B/C 与 wft02 §5.6 的 `**N.**` 加粗子项未被编号引用（不悬空，未动）。
 
-**待办**：①本轮 7 文件未 commit（AOS 主线，commit message 带 [AI] 前缀 + 归属说明）；②C 组口径统一（新开对话或用户指定）；③wft03 §5.6 改动后需对真实 BP 验证可执行性。相关：[[biz-chain-summary-detail-framework]]、[[skill-step-framework-unify-biz-standard]]。
+**待办**：①已提交（b86266a，AOS 主线 + 记忆，推送 origin+gitee）✅；②C 组口径统一（新开对话或用户指定）；③wft03 §5.6 改动后需对真实 BP 验证可执行性。相关：[[pending-eng-chain-deep-review]]。
