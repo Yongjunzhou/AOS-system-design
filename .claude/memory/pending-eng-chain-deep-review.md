@@ -1,6 +1,6 @@
 ---
 name: pending-eng-chain-deep-review
-description: 计划新开对话深入审视 eng 链（wft01-eng~wft05-eng），重点关注业务链（eng 与 biz 链的衔接/承接/对称性）
+description: eng 链深审已执行 + A1 树 4 层架构升级落地（配置信息组=末级=PL5）——2026-08-22
 metadata:
   node_type: memory
   type: project
@@ -9,7 +9,9 @@ metadata:
 
 用户计划**新开对话深入审视 eng 链，重点关注业务链**（2026-08-22 定，biz 链深审完成后）。
 
-**当前版本（2026-08-22）**：wft01-eng v9.6 / wft02-eng v10.1 / wft03-eng v9.1 / wft04-eng v1.1 / wft05-eng v10.1；SKILL wft01 v1.11 / wft02 v1.10 / wft03 v1.5 / wft04 v1.1 / wft05 v1.4。91 规范 v5.31。对照文件 = `20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft0X-eng-*.md` + 各 SKILL。
+**2026-08-22 深审已执行 + A1 树 4 层架构升级落地**（人类逐项裁决后实施）。深审结论：①五大重点关注项（FR-ENG 线索回路 / FR-BIZ 指标约束包 / CU 设计权 / biz↔eng 对称性 / 并行路径）全部闭环；②内部引用/锚点无悬空（B 组干净）；③核心发现并裁决升级——**配置信息组是 A1 产品树真正的末级节点**（可独立交付/验收的能力单元），A1 树 4 层（产品→引擎→CU[PL4]→配置信息组[PL5 末级]），A1 无 WBS（Bn 保留）；④同批：A1 锁定态全链操作化（wft02/wft03/wft05 补「锁定写回」，对齐 wft04 E5）+ C1（wft04/wft05 SKILL `PA层待处理-*`→`PA层收敛-*`）+ C2（wft02 SKILL Step End 占位）+ D2（wft05 Q2/Q3→Q2/Q3/Q4）。详见 [[eng-chain-five-layer-framework]] 架构升级段。
+
+**当前版本（2026-08-22 深审+架构升级后）**：wft01-eng v9.7 / wft02-eng v10.2 / wft03-eng v9.2 / wft04-eng v1.1 / wft05-eng v10.2；SKILL wft01 v1.12 / wft02 v1.11 / wft03 v1.6 / wft04 v1.2 / wft05 v1.5。91 规范 v5.31。对照文件 = `20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft0X-eng-*.md` + 各 SKILL。
 
 **「重点关注业务链」理解**（待新会话与用户确认口径）：聚焦 eng 链与 biz 链的**衔接/承接/对称性**——
 - **FR-ENG 候选线索回路**：wft03-biz 产出 FR-ENG 候选线索 → ort00→ort03 → wft01-eng（91 §4.4/§10.1 门禁），核对回路两端口径
