@@ -122,8 +122,7 @@
 |------|------|
 | `23-eos-output-architecture.md` | 输出产品架构路径和构件类型 |
 | `24-eos-business-definitions.md` | 可复用业务定义 |
-| `25-eos-engine-models.md` | 业务引擎模型 |
-| `26-eos-document-definitions.md` | 输入 / 输出文档资产 |
+| `25-eos-engine-models.md` | 业务引擎模型（含业务文档承接 §1.7） |
 | `27-eos-resource-assets.md` | CAX、AI、模板、专业能力和作业指南资源 |
 
 ---

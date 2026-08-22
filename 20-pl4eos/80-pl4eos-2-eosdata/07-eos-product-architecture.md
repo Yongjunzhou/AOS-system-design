@@ -189,7 +189,7 @@ EOS 企业运营体系 — 产品架构
 | SysReq-NFR-* | constrains | PA-* | 本文档 | 模板 | 非功能需求约束 PA 组件 |
 | PA-* | uses_asset | @def-* | `24-eos-business-definitions.md` | 模板 | PA 组件引用业务定义 |
 | PA-* | uses_asset | @engine-* | `25-eos-engine-models.md` | 模板 | PA 组件引用引擎模型 |
-| PA-* | consumes_doc / produces_doc | @doc-* | `26-eos-document-definitions.md` | 模板 | PA 组件消费或产生文档资产 |
+| PA-* | consumes_doc / produces_doc | @doc-* | 23 PL5 输出文档节点 / 04 BP 文档方案 | 模板 | PA 组件消费或产生文档（@doc- 定义落 23/04，26 已取消） |
 
 ---
 

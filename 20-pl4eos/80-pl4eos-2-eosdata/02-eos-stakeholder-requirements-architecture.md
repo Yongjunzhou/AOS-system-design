@@ -151,7 +151,6 @@ STR-F 架构末级节点指代场景业务。每个 STR-F 节点对应一个主�
 | `21-eos-stakeholder-roles.md` | 已确认角色归属 |
 | `22-eos-nfr-taxonomy.md` | NFR 分类与指标归类 |
 | `23-eos-output-architecture.md` | 业务域、产品类型、构件类型候选 |
-| `26-eos-document-definitions.md` | 信息载体和文档定义候选 |
 
 ---
 
