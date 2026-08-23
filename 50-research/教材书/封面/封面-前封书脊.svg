@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="1132" viewBox="0 0 860 1132">
+  <!-- ══════════ 书脊（左 60px） ══════════ -->
+  <rect x="0" y="0" width="60" height="1132" fill="#EFE7D7"/>
+  <!-- 书脊顶/底红书挡 -->
+  <rect x="24" y="80" width="12" height="2.6" fill="#A63D2F"/>
+  <rect x="24" y="1049" width="12" height="2.6" fill="#A63D2F"/>
+  <!-- 书脊竖排书名 -->
+  <text x="30" y="566" fill="#211A13" font-family="'Noto Serif SC','Source Han Serif SC','SimSun','Songti SC',serif" font-size="21" text-anchor="middle" letter-spacing="2" transform="rotate(-90 30 566)">架构师是个怎样的物种？—— 从工程师到架构师</text>
+  <!-- 书脊/前封折线 -->
+  <line x1="60" y1="0" x2="60" y2="1132" stroke="#211A13" stroke-opacity="0.35" stroke-width="1"/>
+
+  <!-- ══════════ 前封（800px 宽） ══════════ -->
+  <rect x="60" y="0" width="800" height="1132" fill="#F7F1E6"/>
+
+  <!-- 细双框（标本卡语法） -->
+  <rect x="84" y="28" width="752" height="1076" fill="none" stroke="#211A13" stroke-opacity="0.85" stroke-width="2"/>
+  <rect x="92" y="36" width="736" height="1060" fill="none" stroke="#211A13" stroke-opacity="0.45" stroke-width="1"/>
+
+  <!-- 顶部题词：全书使命 -->
+  <text x="460" y="86" fill="#6E5F4C" font-family="'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="15" letter-spacing="3" text-anchor="middle">「大部分人在不准确的地基上盖房子」</text>
+  <line x1="330" y1="104" x2="590" y2="104" stroke="#211A13" stroke-opacity="0.3" stroke-width="0.8"/>
+
+  <!-- 书名（左齐堆叠，？朱红） -->
+  <text x="132" y="250" fill="#211A13" font-family="'Noto Serif SC','Source Han Serif SC','SimSun','Songti SC',serif" font-size="80" font-weight="700" letter-spacing="10">架构师是</text>
+  <text x="132" y="354" fill="#211A13" font-family="'Noto Serif SC','Source Han Serif SC','SimSun','Songti SC',serif" font-size="80" font-weight="700" letter-spacing="2">个怎样的物种<tspan fill="#A63D2F">？</tspan></text>
+
+  <!-- 副题：从工程师到架构师（朱红破折 + 文本） -->
+  <line x1="138" y1="408" x2="176" y2="408" stroke="#A63D2F" stroke-width="2.4"/>
+  <text x="196" y="418" fill="#6E5F4C" font-family="'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="26" letter-spacing="3">从工程师到架构师</text>
+
+  <!-- ══════════ 主体视觉：尺子 × 三粒度攀升 ══════════ -->
+  <!-- 尺子基线（判据主义） -->
+  <line x1="132" y1="690" x2="788" y2="690" stroke="#211A13" stroke-width="1.6"/>
+  <!-- 主刻度 -->
+  <g stroke="#211A13" stroke-width="1.1">
+    <line x1="132" y1="690" x2="132" y2="678"/>
+    <line x1="214" y1="690" x2="214" y2="678"/>
+    <line x1="296" y1="690" x2="296" y2="678"/>
+    <line x1="378" y1="690" x2="378" y2="678"/>
+    <line x1="460" y1="690" x2="460" y2="678"/>
+    <line x1="542" y1="690" x2="542" y2="678"/>
+    <line x1="624" y1="690" x2="624" y2="678"/>
+    <line x1="706" y1="690" x2="706" y2="678"/>
+    <line x1="788" y1="690" x2="788" y2="678"/>
+  </g>
+  <!-- 次刻度 -->
+  <g stroke="#211A13" stroke-opacity="0.55" stroke-width="0.9">
+    <line x1="173" y1="690" x2="173" y2="682"/>
+    <line x1="255" y1="690" x2="255" y2="682"/>
+    <line x1="337" y1="690" x2="337" y2="682"/>
+    <line x1="419" y1="690" x2="419" y2="682"/>
+    <line x1="501" y1="690" x2="501" y2="682"/>
+    <line x1="583" y1="690" x2="583" y2="682"/>
+    <line x1="665" y1="690" x2="665" y2="682"/>
+    <line x1="747" y1="690" x2="747" y2="682"/>
+  </g>
+
+  <!-- 三粒度攀升：垂线 + 虚连线 + 节点 -->
+  <g stroke="#6E5F4C" stroke-opacity="0.6" stroke-width="1">
+    <line x1="296" y1="648" x2="296" y2="690"/>
+    <line x1="460" y1="592" x2="460" y2="690"/>
+    <line x1="624" y1="536" x2="624" y2="690"/>
+  </g>
+  <line x1="296" y1="648" x2="460" y2="592" stroke="#211A13" stroke-opacity="0.5" stroke-width="1.2" stroke-dasharray="2 4"/>
+  <line x1="460" y1="592" x2="624" y2="536" stroke="#211A13" stroke-opacity="0.5" stroke-width="1.2" stroke-dasharray="2 4"/>
+  <circle cx="296" cy="648" r="5.5" fill="#211A13"/>
+  <circle cx="460" cy="592" r="5.5" fill="#211A13"/>
+  <circle cx="624" cy="536" r="5.5" fill="#A63D2F"/>
+
+  <!-- 三粒度标签 -->
+  <text x="296" y="730" fill="#211A13" font-family="'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="20" text-anchor="middle" letter-spacing="1">工程师</text>
+  <text x="460" y="730" fill="#211A13" font-family="'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="20" text-anchor="middle" letter-spacing="1">系统工程师</text>
+  <text x="624" y="730" fill="#A63D2F" font-family="'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="20" font-weight="600" text-anchor="middle" letter-spacing="1">架构师</text>
+
+  <!-- 图号（标本卡） -->
+  <text x="132" y="780" fill="#6E5F4C" font-family="'Noto Serif SC','Source Han Serif SC','SimSun','Songti SC',serif" font-size="17" font-style="italic" letter-spacing="1">Fig. 01 · 一个物种，三种粒度</text>
+
+  <!-- ══════════ 学名块（标本卡语法） ══════════ -->
+  <text x="132" y="856" fill="#6E5F4C" font-family="'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="14" letter-spacing="4">学名</text>
+  <text x="188" y="858" fill="#211A13" font-family="'Noto Serif SC','Source Han Serif SC','SimSun','Songti SC',serif" font-size="26" letter-spacing="1">Architectus Systematis</text>
+  <line x1="132" y1="874" x2="560" y2="874" stroke="#211A13" stroke-opacity="0.3" stroke-width="0.8"/>
+  <text x="132" y="908" fill="#6E5F4C" font-family="'Noto Serif SC','Source Han Serif SC','SimSun','Songti SC',serif" font-size="19" letter-spacing="1">特征：先为工程师，再把整条链背在身上。</text>
+
+  <!-- ══════════ 底部 ══════════ -->
+  <!-- 朱文印：把话说准 -->
+  <rect x="132" y="980" width="62" height="62" fill="#A63D2F" rx="3"/>
+  <text x="137" y="1004" fill="#F7F1E6" font-family="'Noto Serif SC','Source Han Serif SC','SimSun','Songti SC',serif" font-size="21" font-weight="700" text-anchor="middle">把</text>
+  <text x="185" y="1004" fill="#F7F1E6" font-family="'Noto Serif SC','Source Han Serif SC','SimSun','Songti SC',serif" font-size="21" font-weight="700" text-anchor="middle">话</text>
+  <text x="137" y="1026" fill="#F7F1E6" font-family="'Noto Serif SC','Source Han Serif SC','SimSun','Songti SC',serif" font-size="21" font-weight="700" text-anchor="middle">说</text>
+  <text x="185" y="1026" fill="#F7F1E6" font-family="'Noto Serif SC','Source Han Serif SC','SimSun','Songti SC',serif" font-size="21" font-weight="700" text-anchor="middle">准</text>
+
+  <!-- 作者/出版占位 -->
+  <text x="788" y="1006" fill="#6E5F4C" font-family="'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="15" text-anchor="end" letter-spacing="2">○○○ 著</text>
+  <text x="788" y="1032" fill="#6E5F4C" font-family="'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="15" text-anchor="end" letter-spacing="2">○○ 出版社</text>
+</svg>
