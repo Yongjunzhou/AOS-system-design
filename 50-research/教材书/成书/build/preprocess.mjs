@@ -77,7 +77,7 @@ for (const [srcName, base] of MANIFEST) {
   text = stripVersionRecord(text);
   const chap = base.match(/^(\d+)/)?.[1] ?? '00';
   text = extractMermaid(text, chap);
-  text = markUnlisted(text, base === '16-附录');
+  text = markUnlisted(text, base === '17-附录');
   writeFileSync(join(OUT, base + '.book.md'), text);
   manifestRows.push(base);
   console.log(`✓ ${srcName} → ${base}.book.md（${(text.length / 1024).toFixed(0)} KB）`);

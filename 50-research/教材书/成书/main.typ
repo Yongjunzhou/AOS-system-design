@@ -1,5 +1,5 @@
 // main.typ — 《架构师是个怎样的物种？》PDF 入口（位于 成书/ 根，路径相对根解析）
-// 组装：封面 → 版权页 → 序言 → 前言 → 目录 → 第1~15章 → 附录 → 封底占位
+// 组装：封面 → 版权页 → 序言 → 前言 → 目录 → 第1~16章 → 附录 → 封底占位
 #import "template/book.typ": book, SANS
 
 #show: book.with(book-title: "架构师是个怎样的物种？——从工程师到架构师")
@@ -17,7 +17,7 @@
   #v(.6cm)
   #text(size: 11pt)[——从工程师到架构师]
   #v(3cm)
-  #text(size: 10pt)[编著：○○○] \
+  #text(size: 10pt)[著：周拥军] \
   #text(size: 10pt)[2026 年 8 月] \
   #v(2cm)
   #text(size: 9pt, fill: luma(140))[自出版 · EPUB / A5 打印稿] \
@@ -50,7 +50,7 @@
 #include "build/13-第13章.typ"
 #include "build/14-第14章.typ"
 #include "build/15-第15章.typ"
-#include "build/16-附录.typ"
+#include "build/17-附录.typ"
 
 // ── 封底占位 ──
 #pagebreak(weak: true)
