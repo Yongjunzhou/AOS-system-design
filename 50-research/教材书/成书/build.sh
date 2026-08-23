@@ -7,6 +7,11 @@ cd "$(dirname "$0")"
 
 # 工具链 PATH（pandoc/typst 由 winget 安装，非系统 PATH）
 export PATH="/c/Users/HUAWEI/AppData/Local/Pandoc:/c/Users/HUAWEI/AppData/Local/Microsoft/WinGet/Packages/Typst.Typst_Microsoft.Winget.Source_8wekyb3d8bbwe/typst-x86_64-pc-windows-msvc:$PATH"
+# 图1-5 蛇形渲染依赖 puppeteer-core（随 mmdc 下载在 npx 缓存里）
+PPC="$(find /c/Users/HUAWEI/AppData/Local/npm-cache/_npx -maxdepth 4 -type d -name puppeteer-core 2>/dev/null | head -1)"
+if [ -n "$PPC" ]; then
+  export NODE_PATH="$(dirname "$PPC")${NODE_PATH:+:$NODE_PATH}"
+fi
 
 OUT=build
 mkdir -p "$OUT/.mmd" "$OUT/figs" "$OUT/assets"
@@ -22,6 +27,13 @@ if [ "${1:-}" = "--rerender" ] || [ -z "$(ls "$OUT/figs"/*.png 2>/dev/null)" ]; 
   done
 else
   echo "  图已存在（重渲请加 --rerender）"
+fi
+
+echo "[2.5/6] 图1-5 蛇形渲染（mermaid 子图方向失效 → 手绘 SVG 直渲）"
+if [ "${1:-}" = "--rerender" ] || [ ! -f "$OUT/figs/ch01-fig05.png" ]; then
+  node "$OUT/render-fig05-snake.cjs"
+else
+  echo "  图1-5 蛇形 PNG 已存在"
 fi
 
 echo "[3/6] 封面裁剪（书脊 60px → 前封 800×1132）"

@@ -131,7 +131,7 @@ validation 主案例：恒信集团合同审批系统（IT侧）｜
 <三个参照对象目标规定需求预期用途>
 为什么是三把尺子，不是两把，也不是一把？因为三个看门人#strong[看向三个不同的参照物]。把产品开发的世界画成三层，一眼看清：
 
-#figure(image("figs/ch08-fig01.png", alt: "图 8-1", width: 259.3pt),
+#figure(image("figs/ch08-fig01.png", alt: "图 8-1", width: 261.4pt),
   caption: [
     图 8-1
   ]
@@ -564,7 +564,7 @@ UAT，测的还是需求；后一种 UAT，测的是场景。
 第3、4 章讲过”隐含需求”------"箱体要能扛住装卸磕碰""25
 号之后签的合同归属下个统计月"，这些没人写，但漏了用户会骂。它们不是规定需求，于是#strong[不在验证的射程内]：
 
-#figure(image("figs/ch08-fig02.png", alt: "图 8-2", width: 273.5pt),
+#figure(image("figs/ch08-fig02.png", alt: "图 8-2", width: 269.1pt),
   caption: [
     图 8-2
   ]

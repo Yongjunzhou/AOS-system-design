@@ -381,7 +381,7 @@ requirement）]：被明示的、以成文信息记录的需求（ISO 9000:2015 
 
 把闭环画成图，一眼看清：
 
-#figure(image("figs/ch04-fig01.png", alt: "图 4-1", width: 127.4pt),
+#figure(image("figs/ch04-fig01.png", alt: "图 4-1", width: 126.8pt),
   caption: [
     图 4-1
   ]

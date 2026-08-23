@@ -97,7 +97,7 @@ M3；架构是它不可还原的涵义------"断链即报废还能撑到接入�
 
 架构领域的三层结构，几乎就是弗雷格模型的翻版：
 
-#figure(image("figs/ch10-fig01.png", alt: "图 10-1", width: 141.3pt),
+#figure(image("figs/ch10-fig01.png", alt: "图 10-1", width: 140.4pt),
   caption: [
     图 10-1
   ]
