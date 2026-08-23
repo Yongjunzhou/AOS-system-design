@@ -44,6 +44,16 @@ function stripVersionRecord(text) {
   return text.slice(0, i).replace(/\n---\s*\n?$/, '').replace(/\s+$/, '\n');
 }
 
+/**
+ * 剔除首标题后的元信息引用块（仅序言/前言）——写作契约保留在源文件，不入书。
+ * 与「版本变更记录」同属写作元数据；章首导语（第4章/附录等给读者看）不受影响。
+ * 结构：`# 标题` + 空行 + `> 元信息` + 空行 + `---`；替换后剩 `# 标题` + 空行 + `---`
+ */
+function stripLeadingMetaQuote(text, base) {
+  if (base !== '00-序言' && base !== '00-前言') return text;
+  return text.replace(/^(# .*?)\n\n>.*?\n\n(?=---)/ms, '$1\n\n');
+}
+
 function extractMermaid(text, chapterNo) {
   let figCount = 0;
   const chapDisp = String(parseInt(chapterNo, 10) || 0); // 图注用「1-3」非「01-3」
@@ -75,6 +85,7 @@ const manifestRows = [];
 for (const [srcName, base] of MANIFEST) {
   let text = readFileSync(join(SRC, srcName), 'utf8');
   text = stripVersionRecord(text);
+  text = stripLeadingMetaQuote(text, base);
   const chap = base.match(/^(\d+)/)?.[1] ?? '00';
   text = extractMermaid(text, chap);
   text = markUnlisted(text, base === '17-附录');

@@ -63,3 +63,7 @@ figcaption { font-size: .85em; color: #666; margin-top: .3em; }
 
 /* 列表 */
 li { list-style-position: outside; margin: .2em 0; }
+
+/* 序言/前言署名：右对齐，不缩进 */
+.signature { text-align: right; }
+.signature p { text-indent: 0; margin: .4em 0 0; }

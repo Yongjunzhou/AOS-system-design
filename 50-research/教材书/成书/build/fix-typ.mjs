@@ -27,6 +27,8 @@ for (const f of readdirSync(OUT).filter(f => f.endsWith('.typ'))) {
   const path = join(OUT, f);
   let t = readFileSync(path, 'utf8');
   const orig = t;
+  // 统一行尾为 LF：pandoc 在 Windows 输出 CRLF，否则 ^…\n / #block[…\n 等行锚正则全部失配
+  t = t.replace(/\r\n/g, '\n');
   // 剥掉 pandoc 生成的独立 label 行（如 <本章判据>）——各章同名 label 会破坏 outline 定位，
   // 而书内无 @ 交叉引用这些 label，剥离安全
   t = t.replace(/^<[^>\n]+>\n/gm, '');
@@ -38,6 +40,12 @@ for (const f of readdirSync(OUT).filter(f => f.endsWith('.typ'))) {
     const scale = Math.min(MAX_W / wpt, MAX_H / hpt, 1);
     const w = wpt * scale;
     return `image("figs/${file}", alt: "${alt}", width: ${w.toFixed(1)}pt)`;
+  });
+  // 序言/前言署名（fenced div .signature → pandoc 转 #block[名 日期]）→ 右对齐块
+  // 正文全局 first-line-indent:2em，署名去缩进；内容门控（黄涛/周拥军）防误伤其他 #block
+  t = t.replace(/#block\[\n([^\n]+)\n\n\]/g, (m, inner) => {
+    if (!/(黄涛|周拥军)/.test(inner)) return m;
+    return `#align(right)[\n  #set par(first-line-indent: 0em)\n  ${inner}\n]`;
   });
   if (t !== orig) {
     writeFileSync(path, t);
