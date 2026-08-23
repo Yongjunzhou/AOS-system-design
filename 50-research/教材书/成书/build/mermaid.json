@@ -1,0 +1,5 @@
+{
+  "fontFamily": "'Noto Sans SC','Microsoft YaHei',sans-serif",
+  "theme": "default",
+  "flowchart": { "htmlLabels": false }
+}

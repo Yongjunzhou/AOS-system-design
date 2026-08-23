@@ -1,0 +1,65 @@
+/* book.css — 《架构师是个怎样的物种？》EPUB 版式 */
+body {
+  font-family: "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", serif;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* 标题：黑体族 */
+h1, h2, h3, h4 {
+  font-family: "Source Han Sans SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: bold;
+  page-break-after: avoid;
+}
+h1 { page-break-before: always; font-size: 1.6em; margin: 1.2em 0 .8em; }
+h2 { font-size: 1.3em; margin: 1.2em 0 .6em; }
+h3 { font-size: 1.1em; margin: 1em 0 .5em; }
+h4 { font-size: 1em; margin: .8em 0 .4em; }
+
+/* 正文：段首两字缩进 */
+p { text-indent: 2em; margin: .35em 0; }
+/* 块元素不缩进 */
+h1+p, h2+p, h3+p, h4+p, blockquote, li, pre, table, figure, figcaption, ul, ol {
+  text-indent: 0;
+}
+
+/* 引用块（章首导语 + 概念卡）：朱红左竖线 */
+blockquote {
+  margin: .8em 0;
+  padding: .3em 1em;
+  border-left: 3px solid #A63D2F;
+  background: #faf6ef;
+}
+blockquote table { width: 100%; }
+
+/* 表格：防溢出 + 细线 */
+table {
+  max-width: 100%;
+  font-size: .85em;
+  border-collapse: collapse;
+  margin: .6em 0;
+}
+th, td {
+  border: 1px solid #d8d0c4;
+  padding: 3px 5px;
+  vertical-align: top;
+}
+th { background: #f5efe4; font-weight: bold; }
+
+/* ASCII 概念档案盒：等宽 + 横向滚动 */
+pre {
+  font-family: "Sarasa Mono SC", "NSimSun", Consolas, monospace;
+  font-size: .78em;
+  white-space: pre;
+  overflow-x: auto;
+  background: #fafafa;
+  padding: .4em;
+}
+
+/* 图 */
+img { max-width: 100%; height: auto; }
+figure { margin: 1em 0; text-align: center; }
+figcaption { font-size: .85em; color: #666; margin-top: .3em; }
+
+/* 列表 */
+li { list-style-position: outside; margin: .2em 0; }

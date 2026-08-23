@@ -1,0 +1,6 @@
+flowchart TD
+    CR["变更请求单 CR"] --> IA["影响分析<br/>经追溯矩阵反查"]
+    IA --> CCB["CCB 评审<br/>批准/拒绝/暂缓"]
+    CCB -->|批准| IMP["实施变更<br/>同步 SRS·RTM"]
+    IMP --> VER["再验证<br/>符合新的规定需求"]
+    VER --> CL["关闭<br/>更新基线·登记日志"]
