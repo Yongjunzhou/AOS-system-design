@@ -1256,7 +1256,7 @@ STR-NFR 节点                                        SysReq-NFR 架构 + 量化
           (BP 双视角)          (业务详细定义)     (SysReq-NFR 量化)
                 │                   │                   │
                 ▼                   ▼                   │
-          wft03-biz-bp2sr    wft03-eng-bp2sr           │
+          wft03-biz-bpd2sfh    wft03-eng-bp2sr           │
           (页面组件)            (功能概要 SR-F)          │
                 │                   │                   │
                 ▼                   ▼                   │

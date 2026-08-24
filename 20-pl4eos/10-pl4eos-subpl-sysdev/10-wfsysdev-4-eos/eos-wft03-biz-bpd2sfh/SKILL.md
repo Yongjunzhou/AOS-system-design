@@ -1,5 +1,5 @@
 ---
-name: eos-wft03-biz-bp2sr
+name: eos-wft03-biz-bpd2sfh
 description: BP→系统概要定义（s03）·业务配置需求/PA·页面组件开发。接收≥1个BP节点（可SR设计/待补充SR设计），
              展开为功能表单+窗口标签页三层页面编排（菜单→场景→窗口），
              形成引擎能力使用需求+FR-BIZ指标约束包+FR-ENG候选线索，推进至可构件开发。
@@ -7,7 +7,7 @@ description: BP→系统概要定义（s03）·业务配置需求/PA·页面组�
 
 # eos-wft03-biz · BP → 业务配置需求/PA · 页面组件开发
 
-> **设计依据**：[eos-wft03-biz-bp2sr.md](../eos-wft03-biz-bp2sr.md)（人类方案——权威源）
+> **设计依据**：[eos-wft03-biz-bpd2sfh.md](../eos-wft03-biz-bpd2sfh.md)（人类方案——权威源）
 > **运行时协议**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md) 附录A（入口条件/读取协议/反馈交互/Step End输出模板）
 > **领域规范**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md)
 
@@ -595,7 +595,7 @@ wft03-biz 写入 `待确认方案`/`可构件开发`/`需wft03修订`；下游�
 | `detect-changes.sh` | `bash ../scripts/detect-changes.sh <文件>` | 检测人类自上次 AI 运行以来的文档变更 |
 | `update-meta.sh` | `bash ../scripts/update-meta.sh <文件> <操作>` | 维护文件元信息（bump-version / update-head / add-recent-change / move-node） |
 
-所有脚本路径相对于 `eos-wft03-biz-bp2sr/` 目录。
+所有脚本路径相对于 `eos-wft03-biz-bpd2sfh/` 目录。
 
 ---
 
@@ -603,6 +603,7 @@ wft03-biz 写入 `待确认方案`/`可构件开发`/`需wft03修订`；下游�
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v1.15 | 文件名更名同步（人类定名 2026-08-24）——`eos-wft03-biz-bp2sr` → `eos-wft03-biz-bpd2sfh`（name/frontmatter/设计依据/全库引用改向）。AI 执行规则语义不变 |
 | 2026-08-22 | v1.14 | 人类方案 v10.4 同步（深审第三轮修复）——①§7.2 覆盖判定补「待填充 CU 归 Q3」注、Q4 收紧「CU 已存在」；②Step 8 写回表 BP 消费状态改只推进状态（BP 消费版本由 SR-F 节点「来源 BP」记录，04 不重复写）；③A.5 Q4 收紧。AI 执行规则语义变更（待填充 CU 不再落 Q4，归 Q3 生成 FR-ENG 候选线索） |
 | 2026-08-22 | v1.13 | 人类方案 v10.3 同步（深审第二轮实锤 1 处置）：§4.3 步骤一读 25 §2.0 功能引擎表单能力三字段（去性能指标上限）；§7.2 Q1/Q2 语义化（业务指标类型在 CU 能力描述范围内）；§7.3 Q2 转化「增强性能/当前值→目标值」→「扩展能力边界/目标值」；A.5 覆盖判定表 Q1/Q2 语义化；Step End 摘要 Q2 增强候选→扩展能力候选。AI 执行规则语义变更（覆盖判定不再做数值性能比较，系统性能归 NFR 链） |
 | 2026-08-22 | v1.12 | 人类方案 v10.2 同步（深审 C 组 + 取消 26 扩展 25）：Step 1 加载清单删 26（25 补 §1.7 清单类条目字段锚点）；PL6-B 条目映射 26→25（风险/问题→@engine-workorder、计划/行动项/改进措施→@engine-task）；§4.2 字段对齐 26→25 @entity-cu-field + 数据字典；Step 5/A.4「不读取 24/26 资产流程定义」→「24 资产（26 已取消）」；A.9 条目映射改 25；不负责表补 24 写回排除；§3.2 场景标签页输入改 wft02 Step 3 表单使用顺序。AI 执行规则语义变更（清单类条目字段结构来源 26→25 对应引擎配置信息组） |
