@@ -6,6 +6,7 @@
 - [biz 链分工「概要/详细」重述框架（已定案并实施）](biz-chain-summary-detail-framework.md) — s01 业务概要/s02 业务详细/s03 系统概要 一棵树；四问全裁，唯一真边界变更=Bn 组装执行上移 s01；已实施：wft01-biz v3.17/wft02-biz v9.3/wft03-biz v9.7/91 v5.26 + 三 SKILL
 - [非主价值链 Step 框架三链统一（biz 为标准）](skill-step-framework-unify-biz-standard.md) — biz×3+eng×4+nfr×2 移除三角色表、Step End 单区、Step 2 内联处理表、输入校验「判定|动作」；反转 v8.8/v8.0/v5.5 三角色四区裁决
 - [wft02-eng 对齐 biz 结构已完成](wft02-eng-align-to-biz-structure.md) — 知识层三章重构 v8.6→v9.0 起；反馈检出前置 Step Start 链级推广；eng 链设计归属重构 DP1~DP5 落地（wft01-eng 设计内聚/wft02-eng 收缩/91 v5.23）；wft03-eng v8.0 原理审视；「详细需求条目」→「配置信息组（概要说明）」正名（v9.3/v9.8/91 v5.24）；**深审 v10.11/v1.20（2026-08-24）**——标题正名「平台能力业务流程概要定义 → 平台能力业务流程详细定义 · A1 配置信息组详细定义」（定义单位=配置信息组末级/承接单位=配置单元不同轴）+ SKILL 全同步（S1~S5）+ 主文档 M1~M5 + T1/T2
+- [wft03-eng 深审落地（v10.0/v1.14，2026-08-24）](wft03-eng-deep-review.md) — 标题全称正名「平台能力业务流程详细定义 → 平台能力系统需求概要定义 · 功能表单概要定义」+ 链级 wft04-eng 标题正名（v1.9/v1.8，镜像后缀「· 组件业务详细定义」）+ M1~M4 内部缺陷（§2.4.1 四级 / §4.1 资产线与 SR 线 / 规则地图 §3.2.3 / 删 §5.1.2 重复行）+ S1~S4 SKILL 对齐 + C2 操作活动标注区分（承接不标 [推断]、组织推断标 [推断]）；提交 455d0877
 - [wft01-eng 知识层重构已完成](wft01-eng-align-to-biz-structure.md) — 以 wft01-biz v3.13 为标杆 v8.3→v8.8 重构；M1~M3+L1~L2 审视修复；原理深度分析（引擎权威两层/五类型映射/补充 FR-ENG 管道）；Step 框架对齐 biz
 - [wft05-eng 知识层重构已完成](wft05-eng-knowledge-layer-restructure.md) — v8.2→v9.0 知识层三章+原理审视+PA 边界对齐；PA=三类组件、PA 层收敛项=wft03 标注、只承接设计不重新标注
 - [wft02-biz 知识层重构与审视修复](wft02-biz-v80-knowledge-layer-restructure.md) — v7.4→v8.0 重构 + 审视修复 + STR→BP 原理讨论 + WBS 分组硬判据数据依赖链；SKILL 锚点 #262→#332
