@@ -211,7 +211,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary
 
 **2. 要素机械检查**——逐 bph-nfr：用户角色/业务域/一级类目非空、分类需求清单非空且逐项标注、22 分类对齐到位、变更影响声明已写入。发现即标注 `[覆盖缺口]`。
 
-**3. 补充 NFR 材料生成**——写入 `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<bph-nfr名称>补充原始需求材料.md`，登记到 OR 原料状态表。
+**3. 补充 NFR 材料生成**——写入 `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<bph-nfr名称>补充原始需求材料.md`，登记到 材料状态表。
 
 ---
 
@@ -254,7 +254,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md 
   分类冲突 OR-ZZZ（建议拆为子 OR 后重新提交预处理链）
   宿主误匹配 OR-WWW（本轮退回待聚合池，留待下一轮重新匹配）
 资产落账：<22 分类引用写回 / 未落账>
-补充原始需求材料：<无 / YYYYMMDD-bph-nfr名称-补充原始需求材料.md>（已登记 OR 原料状态表）
+补充原始需求材料：<无 / YYYYMMDD-bph-nfr名称-补充原始需求材料.md>（已登记 材料状态表）
 22 分类建议：<无 / 已输出 N 条，待人类审查后录入>
 
 一、方案反馈
@@ -421,6 +421,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v1.8 | 材料状态表联动（wft03 单独轮 B4）——「OR 原料状态表」→「材料状态表」（2 处）。AI 执行规则语义不变 |
 | 2026-08-24 | v1.7 | 人类方案同步（缩写更名 sfh→srh/sfd→srd + 中文层名统一）；AI 执行规则语义不变（术语随迁）。 |
 | 2026-08-24 | v1.6 | 资产名更名（人类定案）——STR-NFR→bph-nfr（SysReq-NFR 保留），版本头同步递增 |
 | 2026-08-22 | v1.5 | 人类方案 v5.7 同步（STR-NFR 归组锚点口径对齐 91 §9.1，人类裁决 M6 方案）：①附录A.1 适用对象线索**收敛回五种对象**（STR-F/STR-E/业务域/平台能力/全局），页面类型/具体页面 ID 降为适用范围线索备注（不进归组键，页面 NFR 绑定由 wft04-nfr 执行）；②附录A.5 完备性判据同步（页面线索不参与归组判定）；③输入校验表补「OR 混入多个无关角色语境｜边界混杂（软提示）」行 + 判定列统一「硬退出/软提示」标注（对齐人类方案 §3.1.1）。AI 执行规则语义不变 |

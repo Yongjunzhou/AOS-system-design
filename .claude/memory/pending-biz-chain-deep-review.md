@@ -1,12 +1,20 @@
 ---
 name: pending-biz-chain-deep-review
-description: biz 链深审——三轮+第四轮+wft02 审视完成并提交；wft03 单独轮待办（标题/OR/全称统一）
+description: biz 链深审——三轮+第四轮+wft02+wft03 审视完成并提交；wft03 轮收口（材料状态表全链联动）；挂账：正式 OR 节点改名待链级清扫
 metadata: 
   node_type: memory
   type: project
   originSessionId: 0b3c7086-2f4f-457a-8ec1-1d141cce4da7
   modified: 2026-08-24
 ---
+
+**2026-08-24（续）wft03-biz 单独轮审视完成——主 v10.8 / SKILL v1.18 + 全链联动**。人类逐项裁决：
+- **A 组（标题/pa-eng 旧定位）**：标题「业务详细（bpd-biz）→ 业务配置需求/pa-eng」→「**业务流程详细（bpd-biz）→ 系统需求概要定义**」（主+SKILL 标题/description）；正文 `pa-eng 末级节点`→`配置业务系统 PA 末级节点`×3、`不做 pa-eng 配置规格`→`不做配置业务系统 PA 的配置规格`×2；§二 章首补「srh-biz 的语义」注释；91 §7.3 同型残留同步。
+- **B 组（OR 口径）**：OR→规范化需求 4 处（治理承接/指标来源×2/追溯链）；**「OR 原料状态表」→「材料状态表」全链联动**（wft03 9 + wft02-biz 4 + wft02-eng 3 + wft01-eng 1 + wft01-nfr 3 + wft01-biz「规范化需求材料状态表」3 + 91 2 + 01-pl4eos-spec 1；联动文件版本各 +1 + 变更记录补行 + 头部版本号补落后）；**「正式 OR」/「FR-ENG OR」保留**（=01 资产 OR 节点身份，物理存在）。
+- **C 组（D1 全称统一）**：s01/s02/s03 全称 ×6（业务概要定义→业务流程概要定义、业务详细定义→业务流程详细定义、系统概要定义→系统需求概要定义）。
+- **D 组（SKILL 同步）**：A.6 覆盖自查补资产对齐 9~12 + 缺口闭环 13；§7.4 补「完成后执行覆盖自查（A.6 清单）」。
+- **E 组**：输入线称呼统一（有反馈的 srh-biz 节点）；10-eos-fr-biz-constraint-package 格式镜像「来源 OR」→「来源 规范化需求」同步。
+- **挂账（未决）**：**正式 OR 节点是否改名规范化需求节点**（横跨 ort 链 + 01 资产节点 ID OR-XXX + 01-eos-sysdev-status 标题 + 规范 §3.5「正式 OR 节点契约」）——独立链级清扫待办。
 
 **2026-08-24（续）命名更正已执行并提交**：**sfh→srh、sfd→srd**（`sr`=系统需求缩写，srh=系统需求概要定义、srd=系统需求详细定义）——全链更名完成：资产名（srh-biz/srh-eng/srd-eng）、状态名（可以srh设计/在srh设计/已srh设计/待补充srh设计）、文件名（wft03-biz bpd2sfh→bpd2srh、wft03-eng bpd2srh、wft04-eng srh2srd、wft05-eng srd2pa、92-sfh-biz→92-srh-biz、05/06-eos-system-requirement-*）、中文层名统一（eng 链「功能概要/功能详细」→「系统需求概要/详细」、资产「系统功能概要/功能系统需求」→「系统需求」）、英文标题随迁（System Requirement Summary/Detailed）。版本递增：wft01-biz v3.29/wft02 v9.12/wft03 v10.7、wft01-eng v10.2/wft02-eng v10.7/wft03-eng v9.7/wft04-eng v1.6/wft05-eng v10.8、nfr v5.9×2、wft06 v3.7、91 v5.38、92 v1.3、05 v3.2/06 v2.2、00-pl4eos-spec v1.4、SKILL 各 +1。范围=EOS 设计子线全层 + 00-pl4eos-spec + 记忆；**不含通用规范**（保留「系统功能架构定义」§7.5 锚点）。wft03 单独轮待办仍有效（标题 pa-eng 旧定位 + OR 残留）。
 

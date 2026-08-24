@@ -205,7 +205,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detaile
 
 **2. 要素机械检查**——A2 上下文完整（承接自 bph-eng）、A1 路径到位、CU 承接非空且含配置信息组（概要说明）清单、每个 CU 操作活动定义（配置操作/系统处理/运行期能力）+ 配置入口/FR-ENG 指标已定义、依赖已定义并校验、变更影响声明已写入。
 
-**3. 补充 FR-ENG 材料生成**——写入 `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<bpd-eng名称>补充原始需求材料.md`，登记到 OR 原料状态表。与 wft03-biz 缺口线索同一管道（人类方案 §5.5）：经确认 + ort00→ort03 转正式 FR-ENG OR，不豁免预处理链。
+**3. 补充 FR-ENG 材料生成**——写入 `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<bpd-eng名称>补充原始需求材料.md`，登记到 材料状态表。与 wft03-biz 缺口线索同一管道（人类方案 §5.5）：经确认 + ort00→ort03 转正式 FR-ENG OR，不豁免预处理链。
 
 ---
 
@@ -246,7 +246,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
 当前状态：<待确认方案 / 可以srh设计>
   本轮 bpd-eng：<bpd-eng-ID / 新建或修订 / 版本变化 / 来源 bph-eng>
 资产落账：<未落账 / 已写回 02/04/23/25>
-补充原始需求材料：<无 / <YYYYMMDD>-<bpd-eng名称>补充原始需求材料.md>（已登记 OR 原料状态表）
+补充原始需求材料：<无 / <YYYYMMDD>-<bpd-eng名称>补充原始需求材料.md>（已登记 材料状态表）
 新类型设计记录：<无 / 已详设 N 个配置信息组/载件，记录进 25>
 
 一、方案反馈
@@ -376,6 +376,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detaile
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v1.17 | 材料状态表联动（wft03 单独轮 B4）——「OR 原料状态表」→「材料状态表」（2 处）。AI 执行规则语义不变 |
 | 2026-08-24 | v1.16 | 人类方案同步（缩写更名 sfh→srh/sfd→srd + 中文层名统一）；AI 执行规则语义不变（术语随迁）。 |
 | 2026-08-24 | v1.15 | 资产名更名（人类定案）——STR-E→bph-eng、BP→bpd-eng（节点类型/节点ID/状态名），版本头同步递增 |
 | 2026-08-24 | v1.14 | 文件名更名同步（人类定名 2026-08-24）——`eos-wft02-eng-str2bp` → `eos-wft02-eng-bph2bpd`（name/frontmatter/设计依据/全库引用改向）。AI 执行规则语义不变 |

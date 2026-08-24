@@ -215,7 +215,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary
 
 **3. 要素机械检查**——引擎名称/场景边界非空、A2 上下文已装配、能力诉求/运行期结果有标注、追溯链（OR→bph-eng→配置信息组（概要说明）→CU 承接）完整、配置信息组候选清单非空且逐条标注来源类型和粒度判断、配置信息组（概要说明）已分解、CU 承接关系完整、变更影响声明已写入。
 
-**4. 补充 FR-ENG 材料生成**——写入 `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<bph-eng名称>补充原始需求材料.md`，登记到 OR 原料状态表。与 wft03-biz 缺口线索同一管道（人类方案 §5.5）：经确认 + ort00→ort03 转正式 FR-ENG OR，不豁免预处理链。**模型缺口（25 盘存无承接的配置面/引擎）不走补充 OR 回路**——由骨架判定（§3.3.2）作为设计决策处理，经人类审核决策后由 wft02-eng 业务详细定义。
+**4. 补充 FR-ENG 材料生成**——写入 `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<bph-eng名称>补充原始需求材料.md`，登记到 材料状态表。与 wft03-biz 缺口线索同一管道（人类方案 §5.5）：经确认 + ort00→ort03 转正式 FR-ENG OR，不豁免预处理链。**模型缺口（25 盘存无承接的配置面/引擎）不走补充 OR 回路**——由骨架判定（§3.3.2）作为设计决策处理，经人类审核决策后由 wft02-eng 业务详细定义。
 
 ---
 
@@ -258,7 +258,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
   修订 bph-eng-XXX（+N OR，v{N-1}→v{N}）/ 新建 bph-eng-YYY（新能力场景，聚合 K 条 OR，v1）
   场景不匹配 OR-WWW（本轮退回待聚合池，留待重新匹配其他 bph-eng）
 资产落账：<23 引擎引用写回 + 25 CU承接引用写回 / 未落账>
-补充原始需求材料：<无 / YYYYMMDD-bph-eng名称-补充原始需求材料.md>（已登记 OR 原料状态表）
+补充原始需求材料：<无 / YYYYMMDD-bph-eng名称-补充原始需求材料.md>（已登记 材料状态表）
 
 一、方案反馈
   A. 整体确认 → 回复「整体确认」，快捷同意全部未标注条目
@@ -414,6 +414,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v1.18 | 材料状态表联动（wft03 单独轮 B4）——「OR 原料状态表」→「材料状态表」（2 处）。AI 执行规则语义不变 |
 | 2026-08-24 | v1.17 | 人类方案同步（缩写更名 sfh→srh/sfd→srd + 中文层名统一）；AI 执行规则语义不变（术语随迁）。 |
 | 2026-08-24 | v1.16 | 资产名更名（人类定案）——STR-E→bph-eng、BP→bpd-eng（节点类型/节点ID/状态名），版本头同步递增 |
 | 2026-08-24 | v1.15 | 文件名更名同步（人类定名 2026-08-24）——`eos-wft01-eng-or2str` → `eos-wft01-eng-spr2bph`（name/frontmatter/设计依据/全库引用改向）。AI 执行规则语义不变 |
