@@ -8,7 +8,7 @@ metadata:
   originSessionId: 1dd56fe9-9d2b-4481-8afe-e8749e82b8e3
 ---
 
-**2026-08-24（续）wft01-eng 文件名更名**：`eos-wft01-eng-or2str` → **`eos-wft01-eng-spr2bph`**（人类定名）——本环节语义 = 规范化（Specified）需求→业务概要定义（eng 链 01 层业务概要 = 配置信息组 + 概要说明·结构判定级），`or2str` 不能反映实际转换；主文档 v10.0 / SKILL v1.15，全库引用同步。与 biz 链同批更名（spr2bph/bph2bpd/bpd2sfh），见 [[pending-biz-chain-deep-review]]。
+**2026-08-24（续）eng 链文件名更名（5 层全部完成）**：wft01 `or2str`→**`spr2bph`**（v10.0/v1.15）；wft02 `str2bp`→**`bph2bpd`**（v10.5/v1.14）；wft03 `bp2sr`→**`bpd2sfh`**（v9.4/v1.9）；wft04 `sr2sr`→**`sfh2sfd`**（v1.3/v1.5）；wft05 `sr2pa`→**`sfd2pa`**（v10.6/v1.9）。语义链：规范化（Specified）需求→业务概要→业务详细→功能概要→功能详细→产品架构（spr→bph→bpd→sfh→sfd→pa），旧名不能反映实际转换；人类方案ID/全库引用/记忆同步。与 biz 链同批更名（spr2bph/bph2bpd/bpd2sfh），见 [[pending-biz-chain-deep-review]]。
 
 **第四轮深审（2026-08-22，人类逐项裁决，提交 01857e5，13 文件）已执行并提交**。覆盖记忆「下一轮聚焦方向」①~④ + 遗留待办 B4 + 本轮新讨论的 NFR 分解设计：
 

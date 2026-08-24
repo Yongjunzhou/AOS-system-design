@@ -7,7 +7,7 @@ metadata:
 
 # CU 定义口径定稿（2026-08-14，三轮：四要素 → 配置信息组 → 能力锚定）
 
-2026-08-14 逐轮讨论定稿，写入 [91 规范 v5.13 §3.3](../../20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/91-eos-biz-eng-spec.md) + [wft02-eng v8.6 §2.2.1](../../20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft02-eng-str2bp.md)。
+2026-08-14 逐轮讨论定稿，写入 [91 规范 v5.13 §3.3](../../20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/91-eos-biz-eng-spec.md) + [wft02-eng v8.6 §2.2.1](../../20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft02-eng-bph2bpd.md)。
 
 ## CU → 配置信息组 二级结构
 

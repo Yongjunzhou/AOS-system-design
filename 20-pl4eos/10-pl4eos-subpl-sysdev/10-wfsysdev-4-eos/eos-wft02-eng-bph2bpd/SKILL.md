@@ -1,5 +1,5 @@
 ---
-name: eos-wft02-eng-str2bp
+name: eos-wft02-eng-bph2bpd
 description: STR-E→BP·A1业务详细定义（操作活动定义）。接收≥1个STR-E节点（可以详细定义/待补充详细定义），
              承接wft01-eng已分配的CU，展开配置信息组操作活动定义（配置操作/系统处理/运行期能力，步骤化三段式）
              /依赖/状态迁移详细定义，写回23/25资产，形成可进入wft03-eng（功能概要）的BP节点。
@@ -7,7 +7,7 @@ description: STR-E→BP·A1业务详细定义（操作活动定义）。接收�
 
 # eos-wft02-eng · STR-E → BP · A1 业务详细定义（操作活动定义）
 
-> **设计依据**：[eos-wft02-eng-str2bp.md](../eos-wft02-eng-str2bp.md)（人类方案——权威源）
+> **设计依据**：[eos-wft02-eng-bph2bpd.md](../eos-wft02-eng-bph2bpd.md)（人类方案——权威源）
 > **运行时协议**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md) 附录A
 > **领域规范**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md)
 
@@ -376,6 +376,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v1.14 | 文件名更名同步（人类定名 2026-08-24）——`eos-wft02-eng-str2bp` → `eos-wft02-eng-bph2bpd`（name/frontmatter/设计依据/全库引用改向）。AI 执行规则语义不变 |
 | 2026-08-22 | v1.13 | eng 链第四轮修复（人类逐项裁决）：C3 清除条件措辞对齐主文件——条件②示例「如新 CU 承接改变了已有承接的范围或归属」→「如同属 CU，新 CU 改变了已有 CU 的范围」、条件③补「，§A.5.3 Step 1」引用。AI 执行规则语义不变。 |
 | 2026-08-22 | v1.12 | 人类方案 v10.4 同步（eng 链第三轮深审修复）：①清除条件措辞补回每条括号示例（对齐主文件/biz 链 SKILL）；②A2 归位措辞、依赖缺口处置、资产写回 01 等同步主文件。AI 执行规则语义不变。 |
 | 2026-08-22 | v1.11 | 人类方案 v10.2 同步（A1 树 4 层架构升级 + STR-E 锁定态闭环）：①Step Start 输入校验通过后补「锁定写回」——STR-E 状态写为 `在详细定义`（锁定态，对齐人类方案 §4.1）、完成且人类确认后推进 `已详细定义`；②Step End 补充材料占位文件名对齐人类方案 v10.1（`<YYYYMMDD>-<BP名称>补充原始需求材料.md`）。 |

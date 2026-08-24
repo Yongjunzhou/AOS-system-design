@@ -1252,19 +1252,19 @@ STR-NFR 节点                                        SysReq-NFR 架构 + 量化
           (STR-F 场景业务)    (STR-E 引擎场景)   (STR-NFR 分类)
                 │                   │                   │
                 ▼                   ▼                   ▼
-          wft02-biz-bph2bpd   wft02-eng-str2bp   wft04-nfr-str2sr
+          wft02-biz-bph2bpd   wft02-eng-bph2bpd   wft04-nfr-str2sr
           (BP 双视角)          (业务详细定义)     (SysReq-NFR 量化)
                 │                   │                   │
                 ▼                   ▼                   │
-          wft03-biz-bpd2sfh    wft03-eng-bp2sr           │
+          wft03-biz-bpd2sfh    wft03-eng-bpd2sfh           │
           (页面组件)            (功能概要 SR-F)          │
                 │                   │                   │
                 ▼                   ▼                   │
-          wft04-eng-sr2sr           │                   │
+          wft04-eng-sfh2sfd           │                   │
           (功能详细 SR-F)           │                   │
                 │                   │  (等待两类约束包)   │
                 ▼                   ▼                   │
-           业务配置需求 ①        wft05-eng-sr2pa ◄───────┘
+           业务配置需求 ①        wft05-eng-sfd2pa ◄───────┘
            (状态=可构件开发)      (PA 三类组件设计)
                 │                       │
                 └───────────┬───────────┘

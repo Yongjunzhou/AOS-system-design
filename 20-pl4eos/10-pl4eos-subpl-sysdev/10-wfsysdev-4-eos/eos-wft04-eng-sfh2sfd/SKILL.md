@@ -1,5 +1,5 @@
 ---
-name: eos-wft04-eng-sr2sr
+name: eos-wft04-eng-sfh2sfd
 description: 功能概要SR-F→功能详细SR-F·功能表单组件及其业务。接收≥1个功能概要SR-F节点（可以详细定义/待补充详细定义），
              判定区域内布局组件/构件、定义组件业务（功能级不写实现）、标注PA层收敛项，
              写回25功能详细引用，形成可进入wft05-eng（已详细定义）的SR-F节点。
@@ -7,7 +7,7 @@ description: 功能概要SR-F→功能详细SR-F·功能表单组件及其业务
 
 # eos-wft04-eng · 功能概要 SR-F → 功能详细 SR-F · 功能表单组件及其业务
 
-> **设计依据**：[eos-wft04-eng-sr2sr.md](../eos-wft04-eng-sr2sr.md)（人类方案——权威源）
+> **设计依据**：[eos-wft04-eng-sfh2sfd.md](../eos-wft04-eng-sfh2sfd.md)（人类方案——权威源）
 > **运行时协议**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md) 附录A
 > **领域规范**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md)
 
@@ -386,6 +386,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v1.5 | 文件名更名同步（人类定名 2026-08-24）——`eos-wft04-eng-sr2sr` → `eos-wft04-eng-sfh2sfd`（name/frontmatter/设计依据/全库引用改向）。AI 执行规则语义不变 |
 | 2026-08-22 | v1.4 | eng 链第三轮深审修复（人类逐项裁决）：①Step 2 特化参数表补**清除条件**行 + 确认状态状态机句补「已处理复活」分支；②Step 1 材料表 25 改「读/写（引用更新）」。 |
 | 2026-08-22 | v1.3 | 深审修正（人类裁决）：A.8 生命周期图补 `在详细定义` 锁定态（`可以详细定义 ──wft04锁定──→ 在详细定义 ──本Skill完成──→ 已详细定义`），「人类确认」移入内部待确认方案支线（对齐人类方案 §4.1；此前图直接跳过本 Skill Step Start 写入的锁定态，与自身矛盾）。 |
 | 2026-08-22 | v1.2 | 补足 v1.1 未落实项：A.6 PA 收敛项表与 A.4 示例的 `PA层待处理-*` 残留（A.6 表 4 行 + 示例 1 处）全部改为 `PA层收敛-*`（v1.1 变更记录已声明统一但正文未改，本版落实；对齐人类方案 v1.1 与 91 §8.4）。 |

@@ -4,7 +4,7 @@
 >
 > **定位**：先行规范。待规则稳定后，核心内容应合入 `01-pl4eos-spec-sysdev.md` §4.4；本文件在合入后降级为历史参考。
 >
-> **设计模式参考**：[91-eos-biz-eng-spec.md](91-eos-biz-eng-spec.md)、[eos-wft03-biz-bpd2sfh.md](eos-wft03-biz-bpd2sfh.md)、[eos-wft03-eng-bp2sr.md](eos-wft03-eng-bp2sr.md)
+> **设计模式参考**：[91-eos-biz-eng-spec.md](91-eos-biz-eng-spec.md)、[eos-wft03-biz-bpd2sfh.md](eos-wft03-biz-bpd2sfh.md)、[eos-wft03-eng-bpd2sfh.md](eos-wft03-eng-bpd2sfh.md)
 >
 > **版本**：v1.0 | **修订**：2026-06-21
 
@@ -308,7 +308,7 @@ SR-F 可以**先按业务域大分区**，但**每个分区内仍须按系统职
 | 文件 | 关系 |
 |------|------|
 | `01-pl4eos-spec-sysdev.md` §4.4 | 本规范是其 SR-F 分类规则的**先行补充**。§4.4 定义输入口径和第一层组织方式，本规范定义第二层（系统职责）分类规则。待规则稳定后合入 §4.4 |
-| `eos-wft03-biz-bpd2sfh.md` / `eos-wft03-eng-bp2sr.md` | 本规范是 wft03-biz/eng Step 3（分类映射）的**可执行规则参考** |
+| `eos-wft03-biz-bpd2sfh.md` / `eos-wft03-eng-bpd2sfh.md` | 本规范是 wft03-biz/eng Step 3（分类映射）的**可执行规则参考** |
 | `91-eos-biz-eng-spec.md` | 本规范是 91 规范在「SR-F 分类宿主匹配」环节的**领域专用规则** |
 
 ---
@@ -317,5 +317,5 @@ SR-F 可以**先按业务域大分区**，但**每个分区内仍须按系统职
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
-| 2026-08-17 | v1.1 | 修复悬空引用：wft03a/wft03b 旧模型已废弃（归档 90-hold/legacy-a-b-pairs），引用改现行 `eos-wft03-biz-bpd2sfh.md` / `eos-wft03-eng-bp2sr.md`（概述/设计模式参考/§六 关系表三处）。 |
+| 2026-08-17 | v1.1 | 修复悬空引用：wft03a/wft03b 旧模型已废弃（归档 90-hold/legacy-a-b-pairs），引用改现行 `eos-wft03-biz-bpd2sfh.md` / `eos-wft03-eng-bpd2sfh.md`（概述/设计模式参考/§六 关系表三处）。 |
 | 2026-06-21 | v1.0 | 初版。基于 2026-06-16 Codex 讨论整理，内容源于通用规范 §4.5 分类原则 + EOS 规范 §4.4 特化规则 + 系统职责定义与分类原则讨论 |

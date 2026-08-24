@@ -1,5 +1,5 @@
 ---
-name: eos-wft05-eng-sr2pa
+name: eos-wft05-eng-sfd2pa
 description: 功能详细SR-F+两类约束包→PA·引擎三类组件设计。接收功能详细SR-F（已详细定义，含PA层收敛项）+FR-BIZ指标约束包+NFR约束包，
              从组件业务推断三类PA组件(前端/后端/平台服务)+四类平台架构决策+SR详细定义，
              推进至待追溯验证。
@@ -7,7 +7,7 @@ description: 功能详细SR-F+两类约束包→PA·引擎三类组件设计。�
 
 # eos-wft05-eng · 功能详细 SR-F + 约束包 → PA · 引擎三类组件设计
 
-> **设计依据**：[eos-wft05-eng-sr2pa.md](../eos-wft05-eng-sr2pa.md)（人类方案——权威源）
+> **设计依据**：[eos-wft05-eng-sfd2pa.md](../eos-wft05-eng-sfd2pa.md)（人类方案——权威源）
 > **运行时协议**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md) 附录A
 > **领域规范**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md)
 
@@ -434,6 +434,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-architec
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v1.9 | 文件名更名同步（人类定名 2026-08-24）——`eos-wft05-eng-sr2pa` → `eos-wft05-eng-sfd2pa`（name/frontmatter/设计依据/全库引用改向）。AI 执行规则语义不变 |
 | 2026-08-22 | v1.8 | 人类方案 v10.5 同步（eng 链第四轮深审修复）：①Step 1 材料表补两约束包文件路径（`10-eos-fr-biz-constraint-package.md` / `11-eos-nfr-constraint-package.md`）；②Step 3 补 NFR 约束包分解处理（可用性子目标绑定为验收目标 / 响应时间设计预算记 PA/SRD）+ 消费完成后回写消费版本与消费状态到约束包头；③Step 2 操作条目已含 FR-BIZ 指标承接（与主文件 §5.3.1 对齐）。AI 执行规则语义不变。 |
 | 2026-08-22 | v1.7 | 人类方案 v10.4 同步（eng 链第三轮深审修复）：①Step 2 特化参数表补**清除条件**行 + 确认状态状态机句补「已处理复活」分支、操作条目补 FR-BIZ 指标承接；②Step 3 改「约束映射与平台架构决策」补 FR-BIZ 指标行承接映射（Q1→组件、Q2/Q3/Q4→待正式 OR）；③Step 7/A.6 闭环检查补 FR-BIZ 承接项；④Step 1 材料表 25 改「读/写（引用更新）」。 |
 | 2026-08-22 | v1.6 | 深审修正（人类裁决）：正文「跨路径 wft03-biz」约束包缺口行口径 **Q2/Q3 → Q2/Q3/Q4**（v1.5 变更记录已声明统一、正文漏改；对齐主文件 v10.2 与 wft03-biz §3.2 四象限）。 |

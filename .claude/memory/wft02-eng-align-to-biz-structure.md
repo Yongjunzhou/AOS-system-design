@@ -178,7 +178,7 @@ SKILL 同步：wft02 v1.6→v1.7、wft03 v1.1→v1.2（人类方案 §5.1.1 承�
 
 ## 历史产出（v9.0 知识层重构，供结构参照）
 
-- 人类方案 [eos-wft02-eng-str2bp.md](../../20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft02-eng-str2bp.md) v8.6→**v9.0**：§二 基本概念（转换总览五步一条链+规则地图，无语言层级）+ 新 §三 设计原理与判据（3.1 转换原理 / 3.2 要素提取 / 3.3 CU 收敛与依赖 / 3.4 完备性）+ 新 §四 演进 + §五 操作（Step 框架对齐：Start 四子节 / Step 2 反馈双轨 / Step 4 改名引擎需求增补 / Step 5 提交基线顺序 / Step End 三角色四区）+ §七 自检清单
+- 人类方案 [eos-wft02-eng-bph2bpd.md](../../20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft02-eng-bph2bpd.md) v8.6→**v9.0**：§二 基本概念（转换总览五步一条链+规则地图，无语言层级）+ 新 §三 设计原理与判据（3.1 转换原理 / 3.2 要素提取 / 3.3 CU 收敛与依赖 / 3.4 完备性）+ 新 §四 演进 + §五 操作（Step 框架对齐：Start 四子节 / Step 2 反馈双轨 / Step 4 改名引擎需求增补 / Step 5 提交基线顺序 / Step End 三角色四区）+ §七 自检清单
 - SKILL v1.0→**v1.1**：锚点迁移 + 反馈双轨 + 提交基线 + 管道句
 - 关键决策：语言层级不加（严格镜像 wft01-eng）；Step 4 改名「引擎需求增补」
 - 审视发现：M1 提交基线顺序修正（AI最近变更→滚动删除→git commit→文件头，链级不变式）
