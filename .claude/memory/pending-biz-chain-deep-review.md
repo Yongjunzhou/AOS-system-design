@@ -1,12 +1,24 @@
 ---
 name: pending-biz-chain-deep-review
-description: wft01/02/03-biz 业务链深审——三轮全部完成并提交；第三轮 5 主题 26 项裁决修复（2026-08-22）
+description: biz 链深审——三轮+第四轮+wft02 审视完成并提交；wft03 单独轮待办（标题/OR/全称统一）
 metadata: 
   node_type: memory
   type: project
   originSessionId: 0b3c7086-2f4f-457a-8ec1-1d141cce4da7
-  modified: 2026-08-22
+  modified: 2026-08-24
 ---
+
+**2026-08-24（续）wft02-biz 审视完成并提交（681e6c7）——主 v9.11 / SKILL v1.18**。人类逐项裁决：
+- **A 组更名残留**：5 处 STR/SR→bph-biz/sfh-biz（五层链/§3.1 标题/缺陷路由/不负责表×2/自检清单）+ 验证补抓 L4 概述/L538 状态表。
+- **B 组锚点/引用**：`#553-补充-or-材料生成` 失效→`#553-补充规范化需求材料生成`（wft01 标题早已全称，v9.5「自动生效」误判）；看板指标引 §2.5.4、活动节点引 §2.5.1。
+- **D1 术语全称统一**：s01/s02/s03 = **业务流程概要定义 / 业务流程详细定义 / 系统需求概要定义**（标题/正文/SKILL 全称）。
+- **D2 OR→规范化需求口径**：`[推断-待OR确认]`→`[推断-待规范化需求确认]`、FR-BIZ OR 材料→补充规范化需求材料、发起 OR 的签字→发起补充规范化需求的签字、OR→bph-biz 管道→规范化需求→bph-biz 管道；**「OR 原料状态表」表名保留**（wft03 轮定）。
+- **C 组 SKILL 四项**：Phase B 补「主子/下钻关系」（wft03 TAB 编排消费）、Step 5 补「覆盖自查」、Phase A 修正行补「同步修正任务类型」、A.6 补三项核对（业务缺口闭环/PCA 计划清单/任务关系+PL6-B）。
+- **E 组**：§4.1.3 补「待确认方案」中间态（对齐自家流程图/wft03）；回修表述统一「走 Step 3~5」。
+
+**术语定案（人类确认）**：**sfh-biz（系统需求概要定义）= 配置业务系统的产品架构（产品物理结构概要定义）**——配置实现的业务需求落到系统层面即业务系统的物理产品结构；称「系统需求」是为对齐 eng 链命名节奏（bph-eng→bpd-eng→sfh-eng→sfd-eng→pa-eng）。已写入 wft02 §二 章首注释。
+
+**wft03 单独轮待办（本轮不碰 wft03）**：①标题「业务详细（bpd-biz）→ 业务配置需求/pa-eng」带 pa-eng 旧定位，应更新为「业务流程详细（bpd-biz）→ 系统需求概要定义」；②OR 残留（来源「OR/bph-biz/bpd-biz」、OR 原料状态表是否改名）；③D1 全称统一同步（业务流程概要定义/业务流程详细定义/系统需求概要定义）。
 
 **2026-08-24（续）资产名更名清单已执行并提交**（人类定案全部待议项后）——biz 链：STR-F→`bph-biz`、BP→`bpd-biz`、SR-F→`sfh-biz`；eng 链：STR-E→`bph-eng`、BP→`bpd-eng`、SR-F→`sfh-eng`（03 功能概要）/`sfd-eng`（04 功能详细）、PA→`pa-eng`；nfr 链：STR-NFR→`bph-nfr`（SysReq-NFR 保留）。节点 ID 前缀直接替换+链后缀（STR-F-GOV-001→bph-biz-GOV-001 等）、分节名随新命名（STR树画像→业务概要树画像）、状态名随迁（可以SR设计→可以sfh设计）；「配置信息组/CU」保留不动；资产文件名随迁（02-eos-stakeholder-requirements-architecture.md→02-eos-business-summary-architecture.md 等，92-srf→92-sfh-biz）；「资产名保留，不迁移」句改写为迁移说明。执行范围=EOS 设计子线全层（91/92 + biz/eng/nfr/or 链 skill+SKILL + 00-pl4eos-spec + eosdata 全部资产 + reverse/agile/devops + 记忆），不含通用规范/元流水线/30-eos。
 
