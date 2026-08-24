@@ -1,11 +1,11 @@
 ---
 name: eos-wft04-eng-srh2srd
-description: 系统需求概要srd-eng→系统需求详细srd-eng·功能表单组件及其业务。接收≥1个系统需求概要srd-eng节点（可以详细定义/待补充详细定义），
+description: 系统需求概要srh-eng→系统需求详细srd-eng·功能表单组件及其业务。接收≥1个系统需求概要srh-eng节点（可以详细定义/待补充详细定义），
              判定区域内布局组件/构件、定义组件业务（功能级不写实现）、标注pa-eng层收敛项，
              写回25系统需求详细引用，形成可进入wft05-eng（已详细定义）的srd-eng节点。
 ---
 
-# eos-wft04-eng · 系统需求概要 srh-eng → 系统需求详细 srd-eng · 功能表单组件及其业务
+# eos-wft04-eng · 平台能力系统需求概要定义 → 平台能力系统需求详细定义 · 组件业务详细定义
 
 > **设计依据**：[eos-wft04-eng-srh2srd.md](../eos-wft04-eng-srh2srd.md)（人类方案——权威源）
 > **运行时协议**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md) 附录A
@@ -386,6 +386,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v1.8 | 人类方案 v1.9 同步（标题全称正名）——「系统需求概要 srh-eng → 系统需求详细 srd-eng · 功能表单组件及其业务」→「平台能力系统需求概要定义 → 平台能力系统需求详细定义 · 组件业务详细定义」；frontmatter description 修正「系统需求概要srd-eng」→「系统需求概要srh-eng」笔误。AI 执行规则语义不变 |
 | 2026-08-24 | v1.7 | 人类方案同步（缩写更名 sfh→srh/sfd→srd + 中文层名统一）；AI 执行规则语义不变（术语随迁）。 |
 | 2026-08-24 | v1.6 | 人类方案 v1.5 同步——SR-F→srh-eng/srd-eng、PA→pa-eng、BP→bpd-eng（节点类型/节点ID/状态名/追溯链） |
 | 2026-08-24 | v1.5 | 文件名更名同步（人类定名 2026-08-24）——`eos-wft04-eng-sr2sr` → `eos-wft04-eng-srh2srd`（name/frontmatter/设计依据/全库引用改向）。AI 执行规则语义不变 |
