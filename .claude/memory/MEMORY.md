@@ -100,3 +100,4 @@
 - [23号资产节点表单化+六级层级](23-asset-node-form-six-level.md) — 统一13字段横表/六级层级(L5输出文档废IPO)
 - [92-srf 悬空引用 wft03a（已解决）](pending-srf-wft03a-dangling-ref.md) — wft03a/b 旧模型已废弃，92-srf 引用改现行 wft03
 - [待办：记忆库 ba-* 术语更新](pending-memory-ba-bp-term.md) — 记忆库 ba-* 系列仍用旧 BA 术语（设计链已改 BP），需逐条更新
+- [wft01-eng 深审 + 全链术语正名](wft01-eng-deep-review-chain-term-renaming.md) — 2026-08-24：wft01-eng v10.3→v10.11 深审修复（标题正名/STR残留/坏锚点/加载清单）；全链输出术语正名（业务概要定义→业务流程概要定义、业务详细定义→业务流程详细定义，对齐 biz v3.26，5 人类+5 SKILL+91 v5.40）；树画像链级清理（数据分节名实际形态=「0. X 树画像」）；提交 961984dc
