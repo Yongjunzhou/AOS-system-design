@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 600" font-family="'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif">
+  <defs>
+    <filter id="cardShadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="1020" height="600" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="510" y="52" text-anchor="middle" font-size="24" font-weight="700" fill="#111827">三个领域 × 同一个规律：本体有几维，根概念就有几个</text>
+
+  <!-- ============ 卡片 1：高速信号传输 ============ -->
+  <g>
+    <rect x="30" y="110" width="300" height="440" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" filter="url(#cardShadow)"/>
+    <path d="M30 124 a14 14 0 0 1 14 -14 h272 a14 14 0 0 1 14 14 v8 h-300 z" fill="#3b82f6"/>
+    <text x="180" y="162" text-anchor="middle" font-size="21" font-weight="700" fill="#1e40af">高速信号传输</text>
+    <text x="180" y="186" text-anchor="middle" font-size="12" fill="#94a3b8">high-speed signaling</text>
+
+    <text x="180" y="216" text-anchor="middle" font-size="13" fill="#94a3b8">本体（ontology）</text>
+    <text x="180" y="244" text-anchor="middle" font-size="17" font-weight="600" fill="#334155">电磁波行为</text>
+    <text x="180" y="266" text-anchor="middle" font-size="13" fill="#64748b">（一维）</text>
+    <line x1="60" y1="282" x2="300" y2="282" stroke="#f1f5f9" stroke-width="1.5"/>
+
+    <text x="180" y="308" text-anchor="middle" font-size="13" fill="#94a3b8">根概念</text>
+    <circle cx="180" cy="348" r="26" fill="#3b82f6"/>
+    <text x="180" y="356" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">×1</text>
+
+    <rect x="70" y="392" width="220" height="98" rx="12" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+    <text x="180" y="432" text-anchor="middle" font-size="19" font-weight="600" fill="#1e40af">阻抗</text>
+    <text x="180" y="460" text-anchor="middle" font-size="13" fill="#64748b">impedance</text>
+  </g>
+
+  <!-- ============ 卡片 2：产品开发 ============ -->
+  <g>
+    <rect x="360" y="110" width="300" height="440" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" filter="url(#cardShadow)"/>
+    <path d="M360 124 a14 14 0 0 1 14 -14 h272 a14 14 0 0 1 14 14 v8 h-300 z" fill="#f59e0b"/>
+    <text x="510" y="162" text-anchor="middle" font-size="21" font-weight="700" fill="#b45309">产品开发</text>
+    <text x="510" y="186" text-anchor="middle" font-size="12" fill="#94a3b8">product development</text>
+
+    <text x="510" y="216" text-anchor="middle" font-size="13" fill="#94a3b8">本体（ontology）</text>
+    <text x="510" y="244" text-anchor="middle" font-size="17" font-weight="600" fill="#334155">价值 × 对象 × 行为</text>
+    <text x="510" y="266" text-anchor="middle" font-size="13" fill="#64748b">（三维）</text>
+    <line x1="390" y1="282" x2="630" y2="282" stroke="#f1f5f9" stroke-width="1.5"/>
+
+    <text x="510" y="308" text-anchor="middle" font-size="13" fill="#94a3b8">根概念</text>
+    <circle cx="510" cy="348" r="26" fill="#f59e0b"/>
+    <text x="510" y="356" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">×3</text>
+
+    <rect x="400" y="392" width="220" height="46" rx="10" fill="#fff7ed" stroke="#fed7aa" stroke-width="1"/>
+    <text x="510" y="412" text-anchor="middle" font-size="15" font-weight="600" fill="#b45309">需求</text>
+    <text x="510" y="429" text-anchor="middle" font-size="11" fill="#78716c">requirement</text>
+
+    <rect x="400" y="444" width="220" height="46" rx="10" fill="#fff7ed" stroke="#fed7aa" stroke-width="1"/>
+    <text x="510" y="464" text-anchor="middle" font-size="15" font-weight="600" fill="#b45309">系统</text>
+    <text x="510" y="481" text-anchor="middle" font-size="11" fill="#78716c">system</text>
+
+    <rect x="400" y="496" width="220" height="46" rx="10" fill="#fff7ed" stroke="#fed7aa" stroke-width="1"/>
+    <text x="510" y="516" text-anchor="middle" font-size="15" font-weight="600" fill="#b45309">设计</text>
+    <text x="510" y="533" text-anchor="middle" font-size="11" fill="#78716c">design</text>
+  </g>
+
+  <!-- ============ 卡片 3：企业运行体系（开发与运行） ============ -->
+  <g>
+    <rect x="690" y="110" width="300" height="440" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" filter="url(#cardShadow)"/>
+    <path d="M690 124 a14 14 0 0 1 14 -14 h272 a14 14 0 0 1 14 14 v8 h-300 z" fill="#10b981"/>
+    <text x="840" y="158" text-anchor="middle" font-size="20" font-weight="700" fill="#047857">企业运行体系</text>
+    <text x="840" y="180" text-anchor="middle" font-size="12" fill="#64748b">（开发与运行）</text>
+    <text x="840" y="200" text-anchor="middle" font-size="11" fill="#94a3b8">enterprise operation</text>
+
+    <text x="840" y="228" text-anchor="middle" font-size="13" fill="#94a3b8">本体（ontology）</text>
+    <text x="840" y="256" text-anchor="middle" font-size="16" font-weight="600" fill="#334155">对象 —— 产品数据</text>
+    <text x="840" y="278" text-anchor="middle" font-size="13" fill="#64748b">（一维）</text>
+    <line x1="720" y1="294" x2="960" y2="294" stroke="#f1f5f9" stroke-width="1.5"/>
+
+    <text x="840" y="320" text-anchor="middle" font-size="13" fill="#94a3b8">根概念</text>
+    <circle cx="840" cy="360" r="26" fill="#10b981"/>
+    <text x="840" y="368" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">×1</text>
+
+    <rect x="730" y="404" width="220" height="98" rx="12" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+    <text x="840" y="444" text-anchor="middle" font-size="19" font-weight="600" fill="#047857">产品数据</text>
+    <text x="840" y="472" text-anchor="middle" font-size="13" fill="#64748b">product data</text>
+  </g>
+
+  <!-- 规律条 -->
+  <rect x="30" y="566" width="960" height="28" rx="14" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="510" y="584" text-anchor="middle" font-size="14" font-weight="600" fill="#15803d">规律：本体有几维，根概念就有几个 —— 维度拆得越细、承重柱越多</text>
+</svg>
