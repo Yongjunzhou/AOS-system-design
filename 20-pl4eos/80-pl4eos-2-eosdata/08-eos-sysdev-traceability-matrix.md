@@ -46,9 +46,9 @@
 | OR → 业务概要 | `01-eos-specified-requirements.md` | `02-eos-business-summary-architecture.md` | OR 末级分配到 业务概要架构末级 |
 | 业务概要 → 业务概要详细 | `02-eos-business-summary-architecture.md` | `03-eos-business-summary-detailed.md` | 业务概要架构节点细化为详细定义 |
 | 业务概要详细 → 业务详细 | `03-eos-business-summary-detailed.md` | `04-eos-business-detailed.md` | 业务概要详细定义由业务详细方案满足 |
-| 业务详细 → 系统功能概要 | `04-eos-business-detailed.md` | `05-eos-function-summary-architecture.md` | 业务详细末级节点映射为系统功能概要架构末级 |
-| 系统功能概要 → 系统功能详细 | `05-eos-function-summary-architecture.md` | `06-eos-function-detailed.md` | 系统功能概要架构节点细化为详细定义 |
-| 系统功能详细 → 产品概要 | `06-eos-function-detailed.md` | `07-eos-product-summary.md` | 系统功能详细活动或约束由产品概要组件承接 |
+| 业务详细 → 系统需求概要 | `04-eos-business-detailed.md` | `05-eos-system-requirement-summary-architecture.md` | 业务详细末级节点映射为系统需求概要架构末级 |
+| 系统需求概要 → 系统系统需求详细 | `05-eos-system-requirement-summary-architecture.md` | `06-eos-system-requirement-detailed.md` | 系统需求概要架构节点细化为详细定义 |
+| 系统系统需求详细 → 产品概要 | `06-eos-system-requirement-detailed.md` | `07-eos-product-summary.md` | 系统系统需求详细活动或约束由产品概要组件承接 |
 | 过程文档 → 资产 | `02~07` | `21~27` | 节点引用角色、NFR、输出产品、业务定义、引擎、文档和资源资产 |
 
 ### 0.2 关系类型
@@ -59,7 +59,7 @@
 | `refines` | 对上游架构节点做详细化 | 业务概要详细 refines 业务概要 |
 | `allocated_to` | 上游需求分配到下游方案节点 | OR allocated_to 业务概要 |
 | `satisfies` | 下游节点满足上游需求 | 业务详细 satisfies 业务概要详细 |
-| `implemented_by` | 需求或定义由组件承接 | 系统功能概要 implemented_by 产品概要 |
+| `implemented_by` | 需求或定义由组件承接 | 系统需求概要 implemented_by 产品概要 |
 | `uses_asset` | 节点引用资产条目 | 业务详细 uses_asset @def-* |
 | `produces_doc` | 节点产生文档资产 | 业务详细 produces_doc @doc-* |
 | `consumes_doc` | 节点消费文档资产 | 业务详细 consumes_doc @doc-* |
@@ -71,8 +71,8 @@
 | OR 末级总数 | — | 2026-06-21 |
 | 映射到业务概要的覆盖率 | — | 2026-06-21 |
 | 业务概要详细定义末级总数 | — | 2026-06-21 |
-| 映射到系统功能概要的覆盖率 | — | 2026-06-21 |
-| 系统功能概要活动总数 | — | 2026-06-21 |
+| 映射到系统需求概要的覆盖率 | — | 2026-06-21 |
+| 系统需求概要活动总数 | — | 2026-06-21 |
 | 映射到产品概要的覆盖率 | — | 2026-06-21 |
 | 端到端追溯链完整率 | — | 2026-06-21 |
 
@@ -102,8 +102,8 @@
 |--------|----------|------|--------------|--------|------|
 | TRACE-SHARD-OR-BPH | OR → 业务概要 | 原始需求到相关方需求架构 | `wft01` 验证 OR 分配 | — | `4.1 OR 到业务概要关系块` |
 | TRACE-SHARD-BPH-BPD | 业务概要 → 业务详细 | 业务概要详细定义到 业务详细 | `wft02` 验证 业务详细满足关系 | — | `4.2 业务概要到业务详细关系块` |
-| TRACE-SHARD-BPD-SFH | 业务详细 → 系统功能概要 | 业务详细 到系统需求 | `wft03` 验证映射 | — | `4.3 业务详细到系统功能概要关系块` |
-| TRACE-SHARD-SFH-产品概要 | 系统功能概要 → 产品概要 | 系统需求到产品架构 | `wft05` 验证组件承接 | — | `4.4 系统功能概要到产品概要关系块` |
+| TRACE-SHARD-BPD-SRH | 业务详细 → 系统需求概要 | 业务详细 到系统需求 | `wft03` 验证映射 | — | `4.3 业务详细到系统需求概要关系块` |
+| TRACE-SHARD-SRH-产品概要 | 系统需求概要 → 产品概要 | 系统需求到产品架构 | `wft05` 验证组件承接 | — | `4.4 系统需求概要到产品概要关系块` |
 | TRACE-SHARD-ASSET | 过程文档 → 资产 | 对 `21~27` 的资产引用 | 资产一致性检查 | — | `4.5 资产引用关系块` |
 
 ### 2.2 关系索引
@@ -123,9 +123,9 @@
 | 层间映射 | 检查项 | 期望结果 |
 |----------|--------|----------|
 | OR 末级 → 业务概要架构末级 | 每条 OR 末级分配到唯一 业务概要架构末级 | 一条 OR 不应同时分配给多个 业务概要 末级 |
-| bph-biz 详细末级 → sfh-biz 架构末级 | 每条 STR-F 详细末级分配到唯一 SysReq-F 架构末级 | 一条 业务概要详细定义不应同时分配给多个 SysReq-F |
+| bph-biz 详细末级 → srh-biz 架构末级 | 每条 STR-F 详细末级分配到唯一 SysReq-F 架构末级 | 一条 业务概要详细定义不应同时分配给多个 SysReq-F |
 | bph-nfr 详细末级 → SysReq-NFR 架构末级 | 每条 STR-NFR 详细末级分配到唯一 SysReq-NFR | 非功能需求分配唯一 |
-| 系统功能概要 9级活动 → 产品概要 末级 | 每条 系统功能概要活动分配到唯一 产品概要 末级 | 一个活动由一个 产品概要 末级主承接 |
+| 系统需求概要 9级活动 → 产品概要 末级 | 每条 系统需求概要活动分配到唯一 产品概要 末级 | 一个活动由一个 产品概要 末级主承接 |
 
 ### 3.2 N:1 承接口径
 
@@ -168,13 +168,13 @@
 
 > 业务概要 到 业务详细 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `satisfies`、`uses_asset`。
 
-### 4.3 业务详细到系统功能概要关系块
+### 4.3 业务详细到系统需求概要关系块
 
-> 业务详细 到 系统功能概要 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `allocated_to`、`refines`。
+> 业务详细 到 系统需求概要 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `allocated_to`、`refines`。
 
-### 4.4 系统功能概要到产品概要关系块
+### 4.4 系统需求概要到产品概要关系块
 
-> 系统功能概要 到 产品概要 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `implemented_by`。
+> 系统需求概要 到 产品概要 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `implemented_by`。
 
 ### 4.5 资产引用关系块
 

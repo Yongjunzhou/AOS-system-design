@@ -50,7 +50,7 @@
 | 第1层 | 原始需求 | Original Requirements (OR) | 仅需求 |
 | 第2层 | 业务概要 | Business Summary (bph) | 需求/方案 |
 | 第3层 | 业务详细 | Business Detailed (bpd) | 仅方案 |
-| 第4层 | 系统功能概要 | Function Summary (sfh) | 需求/方案 |
+| 第4层 | 系统需求概要 | Function Summary (srh) | 需求/方案 |
 | 第5层 | 产品概要 | Product Summary (pa) | 仅方案 |
 
 ## 需求类型
@@ -103,7 +103,7 @@
 
 | 中文 | 英文 | 说明 |
 |------|------|------|
-| 知识领域内聚性 | Knowledge Domain Cohesion | 操作同一知识领域的系统功能概要 倾向合并为同一构件 |
+| 知识领域内聚性 | Knowledge Domain Cohesion | 操作同一知识领域的系统需求概要 倾向合并为同一构件 |
 | 质量要求相容性 | Quality Requirement Compatibility | 质量属性冲突的需求不应共享同一构件 |
 | 交付形态相似性 | Delivery Form Similarity | 信息处理模式相同的需求倾向合并（同模式可共享，不同模式应分离） |
 | 三因素决策矩阵 | Three-Factor Decision Matrix | 综合三因素判断 pa-eng 构件合并/分离的决策工具 |

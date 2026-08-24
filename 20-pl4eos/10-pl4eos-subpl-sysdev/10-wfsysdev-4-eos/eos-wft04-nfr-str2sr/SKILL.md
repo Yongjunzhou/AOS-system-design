@@ -46,7 +46,7 @@ description: bph-nfr→SysReq-NFR 非功能需求架构与页面约束设计。�
 
 ```bash
 bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
 ```
 
 检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §3.1 变更感知）。
@@ -56,7 +56,7 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-function-summ
 ```bash
 # 1. 读取待处理节点
 bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "AI可以处理节点"
 ```
 
 **输入校验**（按顺序，命中即退出）：
@@ -79,7 +79,7 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-function-summar
 
 ```bash
 bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
 ```
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
@@ -94,9 +94,9 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-a
 **3. 加载已有 SysReq-NFR 节点**（用于宿主匹配）：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md "SysReq树画像"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md "SysReq节点索引"
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md <SysReq-NFR-ID>
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "SysReq树画像"
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "SysReq节点索引"
+bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md <SysReq-NFR-ID>
 ```
 
 **4. 加载资产全貌**：
@@ -181,8 +181,8 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-a
 1. **确定 22 分类路径** → 一级类目 → 分类维度 → 具体需求归属判定
 2. **生成量化指标** → 逐需求项提取待量化线索 → 目标值/单位/统计口径/测量方法/验收条件。**信息不足时标注 `待确认`，不伪造确定值**。多对象可切分指标按分解规则生成子指标（四类运算：加法=响应时间/乘法=可用性/弱链=吞吐量/职责分布=安全审计权限；候选子预算 `[需裁决]`，人类确认后入约束包；父→子引用记录；单对象指标不分解；子指标到组件类型级标 `待wft05映射`，规则见 human spec §2.4.1）
 3. **判定分层约束** → 六类约束范围判定（附录 A.3）
-4. **生成页面 NFR** → 影响用户可感知页面行为时绑定页面类型/sfh-biz/业务域
-5. **装配分层约束包** → 按全局/业务域/sfh-biz/页面级/CU/pa-eng组件/共享七组独立组织
+4. **生成页面 NFR** → 影响用户可感知页面行为时绑定页面类型/srh-biz/业务域
+5. **装配分层约束包** → 按全局/业务域/srh-biz/页面级/CU/pa-eng组件/共享七组独立组织
 6. **组装 SysReq-NFR** → 写入 `05-*.md`
 
 ---
@@ -197,7 +197,7 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-a
 |----------|---------|
 | 全局 | 影响 EOS 整体运行质量 |
 | 业务域 | 只影响某业务域或产品类型 |
-| sfh-biz | 指向具体功能性系统需求 |
+| srh-biz | 指向具体功能性系统需求 |
 | CU | 指向配置单元、配置规则或配置可达性 |
 | pa-eng组件 | 指向前后端组件类型、接口或运行机制 |
 | 页面级 | 指向七种页面类型之一、具体页面 ID、交互行为或页面体验 |
@@ -208,9 +208,9 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-a
 
 **3. wft05-eng NFR 约束包装配**
 
-生成唯一约束包，只引用分层约束表行 ID 和页面 NFR 条目，不复制正文。**分解子指标作为独立约束行装配，标注「分解运算 + 父指标引用」**（分解规则见 human spec §2.4.1）。包头记录：约束包 ID / 包版本 / 生成时间 / 来源 SysReq-NFR / 上一版本 / 变更类型 / 新增/修订/删除行 / 消费状态 / wft05-eng 已消费版本。正文按七组分别列示（全局/业务域/sfh-biz/页面级/CU/pa-eng组件/共享）。
+生成唯一约束包，只引用分层约束表行 ID 和页面 NFR 条目，不复制正文。**分解子指标作为独立约束行装配，标注「分解运算 + 父指标引用」**（分解规则见 human spec §2.4.1）。包头记录：约束包 ID / 包版本 / 生成时间 / 来源 SysReq-NFR / 上一版本 / 变更类型 / 新增/修订/删除行 / 消费状态 / wft05-eng 已消费版本。正文按七组分别列示（全局/业务域/srh-biz/页面级/CU/pa-eng组件/共享）。
 
-**首版发布门禁**：全局/共享约束可无具体对象 ID；业务域约束必须绑定业务域；sfh-biz/CU/页面级约束必须绑定已存在的目标 ID；pa-eng 组件级约束在 pa-eng 未生成时只记录组件类型+映射条件，标记 `待wft05映射`，不得虚构 pa-eng ID。阻断型约束未满足条件 → SysReq-NFR 保持 `待目标绑定`，不发布首版。
+**首版发布门禁**：全局/共享约束可无具体对象 ID；业务域约束必须绑定业务域；srh-biz/CU/页面级约束必须绑定已存在的目标 ID；pa-eng 组件级约束在 pa-eng 未生成时只记录组件类型+映射条件，标记 `待wft05映射`，不得虚构 pa-eng ID。阻断型约束未满足条件 → SysReq-NFR 保持 `待目标绑定`，不发布首版。
 
 ---
 
@@ -257,7 +257,7 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-a
 
 ```bash
 # 追加 AI最近变更 记录（先于提交，随基线入库）
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md add-recent-change "wft04-nfr" "资产写回" "<SysReq-NFR-ID>" "22/06/05/02 资产写回"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md add-recent-change "wft04-nfr" "资产写回" "<SysReq-NFR-ID>" "22/06/05/02 资产写回"
 
 # 提交本轮 AI 产出（链级不变式：基线 = 最后 AI 提交，git diff <HEAD @上次 AI 运行>..HEAD 只含人类变更）
 git add -A && git commit -m "[AI] wft04-nfr 资产写回（Co-Authored-By: Claude）"
@@ -265,10 +265,10 @@ git add -A && git commit -m "[AI] wft04-nfr 资产写回（Co-Authored-By: Claud
 # 更新文件头（HEAD = 刚提交的基线 hash）
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-function-detailed.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-function-detailed.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md update-head
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md update-head
 ```
@@ -313,7 +313,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md 
 **反馈总结**（仅在人类"整体确认"后执行）：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md add-recent-change "wft04-nfr" "反馈处理" "<SysReq-NFR-ID>" "<AI 总结的反馈要点>"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md add-recent-change "wft04-nfr" "反馈处理" "<SysReq-NFR-ID>" "<AI 总结的反馈要点>"
 ```
 
 ---
@@ -350,7 +350,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary
 | 锚点 | 说明 |
 |------|------|
 | 22 分类维度 | 一级类目 + 分类维度，决定主要质量属性 |
-| 约束对象 | 全局、业务域、sfh-biz、CU、pa-eng 组件、页面级对象 |
+| 约束对象 | 全局、业务域、srh-biz、CU、pa-eng 组件、页面级对象 |
 | 指标口径 | 目标值、单位、统计口径、测量方法 |
 | 适用链路 | `biz` / `eng` / `共享` |
 
@@ -369,7 +369,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary
 |----------|----------|---------|
 | 全局 | 影响 EOS 整体运行质量 | wft05-eng |
 | 业务域 | 只影响某业务域或产品类型 | wft05-eng |
-| sfh-biz | 指向具体功能性系统需求 | wft05-eng |
+| srh-biz | 指向具体功能性系统需求 | wft05-eng |
 | CU | 指向配置单元、配置规则或配置可达性 | wft05-eng |
 | pa-eng组件 | 指向前后端组件类型、接口或运行机制 | wft05-eng |
 | 页面级 | 指向七种页面类型之一、具体页面 ID | wft05-eng |
@@ -453,7 +453,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary
 | **弱链** | 吞吐量/并发等 | 每子目标 ≥ 系统目标 | 不切预算，逐对象类型指派（各承接全量） |
 | **职责分布** | 安全/审计/权限/易用性等 | 无守恒 | 不切预算，逐对象类型指派职责 |
 
-**多对象识别**：约束对象类型按 91 §8.5 三类组件（前端/后端/平台服务）+ sfh-biz/CU/页面级判定；一条指标同时影响多个对象类型时为多对象。加法/乘法多对象→生成子指标（组件类型级）；弱链/职责分布多对象→逐对象类型生成约束行、不切预算。**单对象指标不分解**，一条到底（保持原约束范围）。子指标目标到组件类型级，不预判具体组件（`待wft05映射`）。**记录**：父指标记「分解运算 + 子指标引用」，子指标记「父指标引用 + 分解运算 + 目标对象类型」。
+**多对象识别**：约束对象类型按 91 §8.5 三类组件（前端/后端/平台服务）+ srh-biz/CU/页面级判定；一条指标同时影响多个对象类型时为多对象。加法/乘法多对象→生成子指标（组件类型级）；弱链/职责分布多对象→逐对象类型生成约束行、不切预算。**单对象指标不分解**，一条到底（保持原约束范围）。子指标目标到组件类型级，不预判具体组件（`待wft05映射`）。**记录**：父指标记「分解运算 + 子指标引用」，子指标记「父指标引用 + 分解运算 + 目标对象类型」。
 
 ---
 
@@ -474,6 +474,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v1.7 | 人类方案同步（缩写更名 sfh→srh/sfd→srd + 中文层名统一）；AI 执行规则语义不变（术语随迁）。 |
 | 2026-08-24 | v1.6 | 资产名更名（人类定案）——STR-NFR→bph-nfr（SysReq-NFR 保留），版本头同步递增 |
 | 2026-08-22 | v1.5 | 人类方案 v5.7 同步（NFR 分解设计，人类逐项裁决 2026-08-22）：①Step 3 Phase C 生成量化指标补**分解规则**（四类运算：加法=响应时间/乘法=可用性/弱链=吞吐量/职责分布=安全审计权限；候选子预算 `[需裁决]` 人类确认后入约束包；父→子引用记录；单对象指标不分解；子指标到组件类型级 `待wft05映射`）；②Step 4 约束包装配补**分解子指标独立装配**（标注分解运算+父指标引用）+ 包头补生成时间/wft05-eng 已消费版本；③Step 6 约束包发布补**消费状态回写单写者约定**（消费状态/已消费版本由 wft05-eng 消费后回写，本 Skill 发布时写 `待消费` 不自行置 `已消费`）；④附录A 新增 A.9 量化指标分解规则判据。AI 执行规则语义不变 |
 | 2026-08-21 | v1.4 | 人类方案 v5.6 同步（非主价值链 Step 框架链级统一——移除三角色/Step End 单区/内联处理表/输入校验 biz 格式/标注纪律框架）。AI 执行规则语义不变 |

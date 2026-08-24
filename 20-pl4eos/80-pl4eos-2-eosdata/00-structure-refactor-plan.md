@@ -35,8 +35,8 @@
 | 系统设计过程文档 | `02-eos-business-summary-architecture.md` | STR 树画像、状态队列、节点索引、场景定义正文块、十链归属状态 |
 | 系统设计过程文档 | `03-eos-business-summary-detailed.md` | STR 详细定义索引、正文块、与 02 的追溯 |
 | 系统设计过程文档 | `04-eos-business-detailed.md` | BP 树画像、状态队列、节点索引、A1/A2/Bn 方案块 |
-| 系统设计过程文档 | `05-eos-function-summary-architecture.md` | SysReq 节点索引、状态队列、正文块规范化 |
-| 系统设计过程文档 | `06-eos-function-detailed.md` | SysReq 详细定义索引、正文块、与 05/07 的追溯 |
+| 系统设计过程文档 | `05-eos-system-requirement-summary-architecture.md` | SysReq 节点索引、状态队列、正文块规范化 |
+| 系统设计过程文档 | `06-eos-system-requirement-detailed.md` | SysReq 详细定义索引、正文块、与 05/07 的追溯 |
 | 系统设计过程文档 | `07-eos-product-summary.md` | PA 组件索引、状态队列、正文块、组件反馈区 |
 | 验证类文档 | `08-eos-sysdev-traceability-matrix.md` | 统一追溯关系视图、关系类型标准化 |
 | 验证类文档 | `09-eos-sysdev-verification-report.md` | 验证任务队列、验证结果索引、断链问题索引 |
@@ -300,8 +300,8 @@ L3 节点正文块：具体节点定义
 | `02-eos-business-summary-architecture.md` | 角色类型 / 需求类型 / 状态 |
 | `03-eos-business-summary-detailed.md` | STR 节点 / 业务域 / 细节审阅状态 |
 | `04-eos-business-detailed.md` | 业务域 / 产品类型 / A1-A2-Bn 路径 / 状态 |
-| `05-eos-function-summary-architecture.md` | 业务定义类型 / NFR 分类 / 状态 |
-| `06-eos-function-detailed.md` | SysReq 节点 / 业务定义类型 / 细节审阅状态 |
+| `05-eos-system-requirement-summary-architecture.md` | 业务定义类型 / NFR 分类 / 状态 |
+| `06-eos-system-requirement-detailed.md` | SysReq 节点 / 业务定义类型 / 细节审阅状态 |
 | `07-eos-product-summary.md` | 组件层 / 产品类型 / 业务链与平台链 |
 | `21-eos-stakeholder-roles.md` | 角色类型 / 状态 / 来源 OR |
 | `22-eos-nfr-taxonomy.md` | 一级类目 / 分类维度 / 具体需求状态 |
@@ -325,7 +325,7 @@ L3 节点正文块：具体节点定义
 4. OR 条目写入 `01-eos-specified-requirements.md` 后，OR 条目级状态应逐步迁入 01 文档状态队列。
 5. STR 节点状态以 `02-eos-business-summary-architecture.md` 的状态队列为准。
 6. BP 节点状态以 `04-eos-business-detailed.md` 的状态队列为准。
-7. SysReq 节点状态以 `05-eos-function-summary-architecture.md` 的状态队列为准。
+7. SysReq 节点状态以 `05-eos-system-requirement-summary-architecture.md` 的状态队列为准。
 8. PA 组件状态以 `07-eos-product-summary.md` 的状态队列为准。
 9. 资产生命周期状态以各资产文档自身的资产全貌 / 状态字段为准。
 
@@ -370,7 +370,7 @@ L3 节点正文块：具体节点定义
 4. 为 `03` 增加 `wft02b` 写回 STR 详细定义所需的目标块定位、细节审阅状态和反馈入口。
 5. 将 `04-eos-business-detailed.md` 改为 BP 树画像、状态队列、节点索引、BP 正文块结构。
 6. 为 `04` 增加 `wft02a/wft02b` 所需的待资产写回、方案反馈、转交记录字段。
-7. 将 `06-eos-function-detailed.md` 改为 SysReq 详细定义树画像、状态队列、节点索引、正文块和追溯关系结构。
+7. 将 `06-eos-system-requirement-detailed.md` 改为 SysReq 详细定义树画像、状态队列、节点索引、正文块和追溯关系结构。
 8. 为 `06` 增加 `wft05b` 写回 SysReq 详细定义所需的目标块定位、细节审阅状态和反馈入口。
 9. 保留现有模板内容，但移动到目标结构的正文块或模板区。
 

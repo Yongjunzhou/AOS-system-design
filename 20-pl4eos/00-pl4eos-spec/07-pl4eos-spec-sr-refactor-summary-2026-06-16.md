@@ -94,7 +94,7 @@
 - 通用系统设计规范
 - EOS 流水线系统设计规范
 - `eos-wft03-bp2sr.md`
-- `05-eos-function-summary-architecture.md`
+- `05-eos-system-requirement-summary-architecture.md`
 
 ### 已清理的旧口径
 

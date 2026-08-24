@@ -3,7 +3,7 @@
 
 > **概述**：分析新需求对系统需求的影响，输出 SysReq 增量定义（同时处理功能和非功能分支）。功能分支（t03→t04→t05）与非功能分支（t03 NFR→t05 非功能部分）在此处合并处理。
 >
-> **输入 → 输出**：bpd-biz 增量定义 + 业务详细→系统功能概要 骨架映射 → SysReq 增量定义（功能 0-9 级 + 非功能 0-6 级）+ SysReq→pa-eng 骨架映射
+> **输入 → 输出**：bpd-biz 增量定义 + 业务详细→系统需求概要 骨架映射 → SysReq 增量定义（功能 0-9 级 + 非功能 0-6 级）+ SysReq→pa-eng 骨架映射
 >
 > **适用场景**：敏捷式第5步。基于 bpd-biz 增量对 SysReq 层做增量更新，功能和非功能分支同步处理。
 >
@@ -100,7 +100,7 @@
 
 > 开始敏捷式 t05（或 agile-t05-sysreq-impact）
 
-AI 动作序列：读取本文件 → 读取 t04 产出的 bpd-biz 增量定义 + 业务详细→系统功能概要 骨架映射 → 加载现有 SysReq 文档基线（`05-*.md` + `06-*.md`）→ 按五阶段流程执行 → 完成后通知人类审核。
+AI 动作序列：读取本文件 → 读取 t04 产出的 bpd-biz 增量定义 + 业务详细→系统需求概要 骨架映射 → 加载现有 SysReq 文档基线（`05-*.md` + `06-*.md`）→ 按五阶段流程执行 → 完成后通知人类审核。
 
 ---
 
@@ -125,7 +125,7 @@ AI 动作序列：读取本文件 → 读取 t04 产出的 bpd-biz 增量定义 
 详细 AI 提示词模板见 `03-agile-eos-pipeline-system-design/workflow-prompts.md` 第5步。
 
 请在开始前确认：
-- 是否已加载 t04 产出的 bpd-biz 增量定义 + 业务详细→系统功能概要 骨架映射？
+- 是否已加载 t04 产出的 bpd-biz 增量定义 + 业务详细→系统需求概要 骨架映射？
 - 是否已加载现有 SysReq 文档基线（`05-*.md` 功能 0-9 级 + `06-*.md` 非功能 0-6 级）？
 - 功能分支和非功能分支的增量是否都已到达本步？
 - 非功能指标是否已从 业务概要 通过 bpd-biz 正确继承？
@@ -193,8 +193,8 @@ AI 动作序列：读取本文件 → 读取 t04 产出的 bpd-biz 增量定义 
 
 | 文件 | 层内角色 | 说明 | 路径 |
 |------|---------|------|------|
-| SysReq 架构定义（更新） | SysReq 层架构部分 | 增量更新后的 SysReq 架构定义 | `90-eos-system-product-data/05-eos-function-summary-architecture.md` |
-| SysReq 详细定义（更新） | SysReq 层详细部分 | 增量更新后的 SysReq 详细定义 | `90-eos-system-product-data/06-eos-function-detailed.md` |
+| SysReq 架构定义（更新） | SysReq 层架构部分 | 增量更新后的 SysReq 架构定义 | `90-eos-system-product-data/05-eos-system-requirement-summary-architecture.md` |
+| SysReq 详细定义（更新） | SysReq 层详细部分 | 增量更新后的 SysReq 详细定义 | `90-eos-system-product-data/06-eos-system-requirement-detailed.md` |
 
 ---
 

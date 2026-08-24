@@ -49,8 +49,8 @@
 
 | 分片ID | 分片名称 | 节点类型 | 条目数 | 说明 |
 |--------|----------|----------|--------|------|
-| bph-biz-DETAIL | 功能详细定义 | bph-biz | 0 | bph-biz 场景业务的详细条目 |
-| bph-nfr-DETAIL | 非功能详细定义 | bph-nfr | 0 | bph-nfr 的指标与验证方法详细条目 |
+| bph-biz-DETAIL | 系统需求详细定义 | bph-biz | 0 | bph-biz 场景业务的详细条目 |
+| bph-nfr-DETAIL | 非系统需求详细定义 | bph-nfr | 0 | bph-nfr 的指标与验证方法详细条目 |
 
 ---
 
@@ -84,8 +84,8 @@
 
 | 分片ID | 读取条件 | ID范围 | 说明 |
 |--------|----------|--------|------|
-| bph-biz-DETAIL | 处理 bph-biz 功能详细定义时读取 | `bph-biz-*` | 功能场景业务详细条目 |
-| bph-nfr-DETAIL | 处理 bph-nfr 非功能详细定义时读取 | `bph-nfr-*` | 非功能指标详细条目 |
+| bph-biz-DETAIL | 处理 bph-biz 系统需求详细定义时读取 | `bph-biz-*` | 功能场景业务详细条目 |
+| bph-nfr-DETAIL | 处理 bph-nfr 非系统需求详细定义时读取 | `bph-nfr-*` | 非功能指标详细条目 |
 
 ---
 
@@ -97,13 +97,13 @@
 
 ### 3.2 分配约束
 
-每条业务概要功能详细定义末级条目应分配到唯一一个 bpd-biz IPO。bph-nfr 详细定义不经过 bpd-biz，直接分配到 SysReq-NFR 架构末级节点。
+每条业务概要系统需求详细定义末级条目应分配到唯一一个 bpd-biz IPO。bph-nfr 详细定义不经过 bpd-biz，直接分配到 SysReq-NFR 架构末级节点。
 
 ---
 
 ## 4. 正文节点块
 
-### 4.1 bph-biz 功能详细定义模板
+### 4.1 bph-biz 系统需求详细定义模板
 
 <!-- BLOCK: bph-biz-DETAIL-TEMPLATE -->
 #### bph-biz-{id} {场景业务名称} — 详细定义
@@ -130,7 +130,7 @@
 <!-- 人类在此输入：[同意] / [修改] / [驳回] 及具体意见 -->
 <!-- /BLOCK: bph-biz-DETAIL-TEMPLATE -->
 
-### 4.2 bph-nfr 非功能详细定义模板
+### 4.2 bph-nfr 非系统需求详细定义模板
 
 <!-- BLOCK: bph-nfr-DETAIL-TEMPLATE -->
 #### bph-nfr-{id} {非功能需求名称} — 详细定义
