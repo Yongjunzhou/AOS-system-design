@@ -1,11 +1,11 @@
 ---
 name: eos-wft01-eng-spr2bph
-description: FR-ENG OR→STR-E 业务概要定义。接收正式FR-ENG OR（≤10条），
-             完成OR→STR-E业务概要定义（溯源→能力链→名称级识别→配置信息组（概要说明，业务概要定义末级节点；结构判定级）→CU承接→完备性检查），
-             写回23/25资产 CU 承接引用，形成可进入wft02-eng（业务详细定义）的STR-E节点。
+description: FR-ENG OR→bph-eng 业务概要定义。接收正式FR-ENG OR（≤10条），
+             完成OR→bph-eng业务概要定义（溯源→能力链→名称级识别→配置信息组（概要说明，业务概要定义末级节点；结构判定级）→CU承接→完备性检查），
+             写回23/25资产 CU 承接引用，形成可进入wft02-eng（业务详细定义）的bph-eng节点。
 ---
 
-# eos-wft01-eng · FR-ENG OR → STR-E 业务概要定义
+# eos-wft01-eng · FR-ENG OR → 业务概要定义（bph-eng）· 平台能力场景业务设计
 
 > **设计依据**：[eos-wft01-eng-spr2bph.md](../eos-wft01-eng-spr2bph.md)（人类方案——权威源）
 > **运行时协议**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md) 附录A（入口条件/读取协议/反馈交互/Step End输出模板）
@@ -21,19 +21,19 @@ description: FR-ENG OR→STR-E 业务概要定义。接收正式FR-ENG OR（≤1
 |------|-------------------|
 | 接收正式 FR-ENG OR（≤10条），校验类型/状态/主责能力域 | FR-BIZ 业务场景和输出文档设计 → `wft01-biz` |
 | 识别主责能力域（引擎专属/平台共享）+ 配置/治理目标 + 可独立验收结果 | NFR 分类与量化 → `wft01-nfr` / `wft04-nfr` |
-| 按三元组（能力域+目标+验收结果）匹配已有 STR-E | 配置信息组的操作活动定义（配置操作/系统处理/运行期能力）→ `wft02-eng` |
+| 按三元组（能力域+目标+验收结果）匹配已有 bph-eng | 配置信息组的操作活动定义（配置操作/系统处理/运行期能力）→ `wft02-eng` |
 | 名称级识别配置信息组候选 + 分解为配置信息组（概要说明，业务概要定义末级节点；结构判定级）+ 分配配置信息组到 CU 承接（含收敛判定/骨架判定）+ 构建能力链 + 完备性检查 | 功能概要（功能表单+概要说明）→ `wft03-eng`；功能详细（功能表单组件及其业务）→ `wft04-eng` |
 | 装配 A2 上下文（支撑 CU 来源判定与追溯链前端锚点） | 前后端组件、接口和实现边界 → `wft05-eng` |
 | 检出能力链缺口 → 生成补充 FR-ENG 材料 | 操作活动定义展开 → `wft02-eng`（业务详细定义）承接已分配 CU 详设 |
-| 人类确认后推进 STR-E→`可以详细定义` + OR→`已分配` | — |
-| 接收 wft02-eng 退回的 `需wft01修订` STR-E，按人类方案修订 | — |
+| 人类确认后推进 bph-eng→`可以详细定义` + OR→`已分配` | — |
+| 接收 wft02-eng 退回的 `需wft01修订` bph-eng，按人类方案修订 | — |
 
 ### 上下游衔接
 
 | 方向 | Skill | 交接内容 |
 |------|-------|---------|
 | 上游 | OR 预处理（`ort03`） | 正式 FR-ENG OR 写入 `01-*.md`，状态=`待处理`。通过 `## AI可以处理节点` 的"待 wft01-eng 处理"分节检测。wft03-biz 产生的 FR-ENG 候选线索须先经人类确认+完整通过 ort00→ort03 才能进入 |
-| 下游 | `wft02-eng` | 消费 `可以详细定义`/`待补充详细定义` 的 STR-E，承接已分配 CU 做业务详细定义（操作活动定义）。缺陷时退回 `需wft01修订`+缺失说明 |
+| 下游 | `wft02-eng` | 消费 `可以详细定义`/`待补充详细定义` 的 bph-eng，承接已分配 CU 做业务详细定义（操作活动定义）。缺陷时退回 `需wft01修订`+缺失说明 |
 | 同级 | `wft01-biz`、`wft01-nfr` | 各自处理 FR-BIZ / NFR，本 Skill 输入校验检出后退出并提示路由 |
 
 ---
@@ -45,8 +45,8 @@ description: FR-ENG OR→STR-E 业务概要定义。接收正式FR-ENG OR（≤1
 **变更感知**（先于入口检测，检出人类线下修订）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
 ```
 
 检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 变更感知）。
@@ -54,15 +54,15 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-r
 **入口检测**（按 [91 规范 §A.4](../91-eos-biz-eng-spec.md#a4-入口条件与优先级step-start)）：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "AI可以处理节点"
 ```
 
 **输入校验**（按顺序，命中即退出）：
 
 | 条件 | 判定 | 动作 |
 |------|------|------|
-| STR-E 状态=`需wft01修订` 且人类未提供改进方案 | 退回方案缺失 | 输出 wft02-eng 缺失说明 → **退出** |
+| bph-eng 状态=`需wft01修订` 且人类未提供改进方案 | 退回方案缺失 | 输出 wft02-eng 缺失说明 → **退出** |
 | OR 状态≠`待处理` | 不可处理 | 输出当前状态 → **退出** |
 | OR 类型为 FR-BIZ | 路由错误 | 输出类型分布 + 路由指引（→ `wft01-biz`）→ **退出** |
 | OR 类型为 NFR | 路由错误 | 输出类型分布 + 路由指引（→ `wft01-nfr`）→ **退出** |
@@ -72,7 +72,7 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-req
 | OR >10 条 | 软提示 | 输出超限提示 → 人类确认 |
 | 无任何待处理 | — | 输出"无待处理对象"→ **退出** |
 
-**退回优先**：存在 `需wft01修订` STR-E → 检查人类是否提供改进方案。已提供 → 读取缺失说明，走 Phase B 修订。未提供 → 输出缺失说明 → **退出**。
+**退回优先**：存在 `需wft01修订` bph-eng → 检查人类是否提供改进方案。已提供 → 读取缺失说明，走 Phase B 修订。未提供 → 输出缺失说明 → **退出**。
 
 ---
 
@@ -81,19 +81,19 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-req
 **1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
 ```
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
 
-**2. 加载本轮 OR + 已有 STR-E**：
+**2. 加载本轮 OR + 已有 bph-eng**：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md "待 wft01-eng 处理"
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md <OR-ID>
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md "STR树画像"
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md <STR-E-ID>
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md "待 wft01-eng 处理"
+bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md <OR-ID>
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "STR树画像"
+bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md <bph-eng-ID>
 ```
 
 **3. 加载资产全貌**：
@@ -110,7 +110,7 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requir
 
 ### Step 2 · 方案反馈处理
 
-**触发条件**：Step Start 检出 `需wft01修订` STR-E，或上一轮 Step End 的反馈等待中人类提出修改意见。
+**触发条件**：Step Start 检出 `需wft01修订` bph-eng，或上一轮 Step End 的反馈等待中人类提出修改意见。
 
 **反馈双轨**（人类任选其一，详见人类方案 §5.3）：①AI 对话反馈——Step End 后不结束对话，直接回复修改意见，AI 即时处理；②线下文档修订——打开 `01/02-*.md` 在确认状态字段标注 `[同意]`/`[修改]`/`[驳回]` 或直接编辑方案内容（自由文本），经 Step Start 变更感知 git diff 检出后按 §A.5 处理。两轨等价均落账（追 `[已处理]`）。
 
@@ -120,12 +120,12 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requir
 2. **逐条处理**——AI 输出方案后人类直接回复 → 当前轮次继续；wft02 退回 → 下一轮走 Step Start 退回优先
 3. 修改后检查是否仍满足 OR 需求
 4. 结构性变更（边界/能力链/分解分配重组）→ 按需重入 Step 3
-5. 全部条目获认可 → STR-E → `可以详细定义`
+5. 全部条目获认可 → bph-eng → `可以详细定义`
 6. **元信息维护**：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
 ```
 
 **AI 处理反馈规则**：
@@ -141,7 +141,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requ
 **反馈总结**：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md add-recent-change "wft01-eng" "反馈处理" "<STR-E-ID>" "<AI总结的反馈要点>"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md add-recent-change "wft01-eng" "反馈处理" "<bph-eng-ID>" "<AI总结的反馈要点>"
 ```
 
 **特化参数**（[91 规范 §A.5.4](91-eos-biz-eng-spec.md#a54-其他规则) 要求各 Skill 定义以下参数）：
@@ -149,10 +149,10 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requ
 | 参数 | 本 Skill 值 |
 |------|-------------|
 | **锚点需求** | 本 Skill 的锚点是 FR-ENG OR——反馈处理以 OR 需求理解为锚，不脱离 OR 文本内容自行修订 |
-| **操作条目** | 场景边界 + 能力链 + A2 上下文 + 每个配置信息组候选 + 每个配置信息组（概要说明）+ 每条 CU 承接 + 每条补充 FR-ENG 材料。各条目的 `确认状态` 字段写入 `02-*.md` STR-E 节点的对应条目中 |
-| **推进目标** | 全部条目含 `[同意]`+`[已处理]` → STR-E → `可以详细定义`。存在 `[修改]`/`[驳回]` 且无 `[需重设计]` → 保持 `待确认方案`。存在 `[需重设计]` → 保持 `待确认方案`，需进入 Step 3 重做 |
-| **清除条件** | 已有 `[同意]`+`[已处理]` 的条目默认跳过扫描。仅当本轮新输入满足以下任一条件时，清除 `[已处理]`（保留 `[同意]`）使其回到待处理：（1）新输入为该条目的直接上游节点（如新 FR-ENG OR 条目是 STR-E 节点的来源）；（2）新输入与条目同属一个架构层级且边界重叠（如同属 CU 承接，新承接改变了已有承接的范围或归属）；（3）新输入导致条目定义被修订（变更影响声明标注为修订型或结构型，§A.5.3 Step 1） |
-| **级联触发条件** | 场景边界或被驳回/修改导致引擎归属变更、能力链拓扑变化或 CU 承接关系重组 → 触发需求级联检查（重验修改后 STR-E 是否仍满足 FR-ENG OR 需求）→ 通过后触发资产对齐级联 |
+| **操作条目** | 场景边界 + 能力链 + A2 上下文 + 每个配置信息组候选 + 每个配置信息组（概要说明）+ 每条 CU 承接 + 每条补充 FR-ENG 材料。各条目的 `确认状态` 字段写入 `02-*.md` bph-eng 节点的对应条目中 |
+| **推进目标** | 全部条目含 `[同意]`+`[已处理]` → bph-eng → `可以详细定义`。存在 `[修改]`/`[驳回]` 且无 `[需重设计]` → 保持 `待确认方案`。存在 `[需重设计]` → 保持 `待确认方案`，需进入 Step 3 重做 |
+| **清除条件** | 已有 `[同意]`+`[已处理]` 的条目默认跳过扫描。仅当本轮新输入满足以下任一条件时，清除 `[已处理]`（保留 `[同意]`）使其回到待处理：（1）新输入为该条目的直接上游节点（如新 FR-ENG OR 条目是 bph-eng 节点的来源）；（2）新输入与条目同属一个架构层级且边界重叠（如同属 CU 承接，新承接改变了已有承接的范围或归属）；（3）新输入导致条目定义被修订（变更影响声明标注为修订型或结构型，§A.5.3 Step 1） |
+| **级联触发条件** | 场景边界或被驳回/修改导致引擎归属变更、能力链拓扑变化或 CU 承接关系重组 → 触发需求级联检查（重验修改后 bph-eng 是否仍满足 FR-ENG OR 需求）→ 通过后触发资产对齐级联 |
 | **资产对齐级联** | 方案变更影响 23/25 资产时，更新对齐结论——CU 承接引擎归属变更 → 更新 25 引用；引擎归属变更 → 更新 23 引用。资产映射由 Step 5 维护 |
 
 ---
@@ -164,19 +164,19 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requ
 对每条新 OR：
 1. 提取触发来源、能力诉求、运行期结果、主责能力域（详见 human spec §3.2.1）
 2. **路径归属判定**——OR 实际为业务文档/流程 → 退回 `wft01-biz`；OR 为性能/安全等约束 → 退回 nfr 路径；OR 仅为配置数据 → 标记不进入
-3. **宿主匹配**——OR 的三元组（主责能力域+配置/治理目标+独立验收结果）落入已有 STR-E → Phase B；否则 → 待聚合池 → Phase C
+3. **宿主匹配**——OR 的三元组（主责能力域+配置/治理目标+独立验收结果）落入已有 bph-eng → Phase B；否则 → 待聚合池 → Phase C
 
 待聚合池按**主责能力域（引擎）**分组。
 
-#### Phase B — 修订已有 STR-E
+#### Phase B — 修订已有 bph-eng
 
 1. **要素提取**——从本轮 OR 提取触发来源、能力诉求、运行期结果、主责能力域
-2. **场景匹配检查**——确认 OR 与 STR-E 的三元组一致（详见 human spec §3.2.3）：
+2. **场景匹配检查**——确认 OR 与 bph-eng 的三元组一致（详见 human spec §3.2.3）：
 
 | 匹配结果 | 动作 |
 |---------|------|
 | 场景匹配（三元组一致） | 进入 CU 承接关系检测 |
-| 同域不同场景 | 匹配其他 STR-E 或触发 Phase C 新建 |
+| 同域不同场景 | 匹配其他 bph-eng 或触发 Phase C 新建 |
 | 共享依赖 | 写入依赖关系，不复制 CU |
 | 主责不匹配 | 退回待聚合池 |
 
@@ -190,9 +190,9 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requ
 | 补充 | CU不匹配 | 新增到候选清单 |
 | 过时 | 基线CU未被本轮覆盖 | `[过时]`+保留不删 |
 
-4. **变更影响声明**——判定变更类型，写入 STR-E 节点末尾
+4. **变更影响声明**——判定变更类型，写入 bph-eng 节点末尾
 
-#### Phase C — 新建 STR-E
+#### Phase C — 新建 bph-eng
 
 1. **确定主责能力域**——从 OR 语义提取，判定为引擎专属或平台共享
 2. **定义能力场景范围**——配置/治理目标 → 系统处理要求 → 运行期制品/构件/功能 → 可用性确认（终点=OR 显式覆盖、不得在终点后扩展，详见 human spec §3.2.3）
@@ -200,31 +200,31 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requ
 4. **装配 A2 上下文**——从 OR 触发来源与 23/24 资产装配业务运行对象/配置角色/触发事件/状态影响（详见 human spec §3.2.2）
 5. **分解为配置信息组（概要说明）**——名称级识别配置信息组候选，逐候选按"可以运行的能力"分解为配置信息组（概要说明，业务概要定义末级节点；结构判定级），逐候选标注来源类型、粒度判断（详见 human spec §3.3.1）
 6. **分配配置信息组到 CU 承接**——逐配置信息组找 CU 承接（1:1），执行收敛判定（复用/新增/拆分/合并）+ 对照 25 盘存骨架判定（复用/改进/新增）+ 引擎归属判定（详见 human spec §3.3.2~§3.3.3）
-7. **标注 OR 类型**——逐条 OR 判定五种 FR-ENG OR 类型之一（配置生成类/构件扩展类/布局组件扩展类/横切治理类/运行支撑类），不用于划分 STR-E 边界
-8. **组装 STR-E**——写入 `02-*.md`，完整要素见 human spec §2.1.2
+7. **标注 OR 类型**——逐条 OR 判定五种 FR-ENG OR 类型之一（配置生成类/构件扩展类/布局组件扩展类/横切治理类/运行支撑类），不用于划分 bph-eng 边界
+8. **组装 bph-eng**——写入 `02-*.md`，完整要素见 human spec §2.1.2
 
 ---
 
 ### Step 4 · FR-ENG 需求增补
 
-按每个 STR-E 独立执行。新建 → 全量检查；修订 → 仅当能力链拓扑变化时重验闭合。
+按每个 bph-eng 独立执行。新建 → 全量检查；修订 → 仅当能力链拓扑变化时重验闭合。
 
 **1. 能力链闭合检查**——四段：配置/治理意图 → 系统处理要求 → 运行期制品/构件/功能 → 可用性确认。配置/治理意图段缺失→`补充OR`；系统处理要求段缺失→`补充OR`；运行期制品/构件/功能段缺失→`补充OR`；可用性确认段缺失（判据不明确）→`澄清项`。
 
-**2. 分解分配完备检查**（前置门禁·追溯完整）——每个配置信息组（概要说明）已分配 CU；每条 CU 承接可追溯 STR-E 与 OR；需求侧无锚的缺口 CU 已生成补充 FR-ENG 材料；每个 CU 承接的配置信息组（概要说明）清单可覆盖其全部能力点（详见 human spec §3.4/§5.5）。
+**2. 分解分配完备检查**（前置门禁·追溯完整）——每个配置信息组（概要说明）已分配 CU；每条 CU 承接可追溯 bph-eng 与 OR；需求侧无锚的缺口 CU 已生成补充 FR-ENG 材料；每个 CU 承接的配置信息组（概要说明）清单可覆盖其全部能力点（详见 human spec §3.4/§5.5）。
 
-**3. 要素机械检查**——引擎名称/场景边界非空、A2 上下文已装配、能力诉求/运行期结果有标注、追溯链（OR→STR-E→配置信息组（概要说明）→CU 承接）完整、配置信息组候选清单非空且逐条标注来源类型和粒度判断、配置信息组（概要说明）已分解、CU 承接关系完整、变更影响声明已写入。
+**3. 要素机械检查**——引擎名称/场景边界非空、A2 上下文已装配、能力诉求/运行期结果有标注、追溯链（OR→bph-eng→配置信息组（概要说明）→CU 承接）完整、配置信息组候选清单非空且逐条标注来源类型和粒度判断、配置信息组（概要说明）已分解、CU 承接关系完整、变更影响声明已写入。
 
-**4. 补充 FR-ENG 材料生成**——写入 `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<STR-E名称>补充原始需求材料.md`，登记到 OR 原料状态表。与 wft03-biz 缺口线索同一管道（人类方案 §5.5）：经确认 + ort00→ort03 转正式 FR-ENG OR，不豁免预处理链。**模型缺口（25 盘存无承接的配置面/引擎）不走补充 OR 回路**——由骨架判定（§3.3.2）作为设计决策处理，经人类审核决策后由 wft02-eng 业务详细定义。
+**4. 补充 FR-ENG 材料生成**——写入 `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<bph-eng名称>补充原始需求材料.md`，登记到 OR 原料状态表。与 wft03-biz 缺口线索同一管道（人类方案 §5.5）：经确认 + ort00→ort03 转正式 FR-ENG OR，不豁免预处理链。**模型缺口（25 盘存无承接的配置面/引擎）不走补充 OR 回路**——由骨架判定（§3.3.2）作为设计决策处理，经人类审核决策后由 wft02-eng 业务详细定义。
 
 ---
 
 ### Step 5 · 资产写回与落账
 
-仅写回状态=`可以详细定义` 的 STR-E 节点。Step 3 新产出留待下一轮。
+仅写回状态=`可以详细定义` 的 bph-eng 节点。Step 3 新产出留待下一轮。
 
 **写回操作**：
-1. 遍历已确认 STR-E，按主责类型和能力域写回 23 资产——已有引擎追加引用（去重），新引擎候选按主责能力域设计判定落账（设计产物记录，非待裁决建议）
+1. 遍历已确认 bph-eng，按主责类型和能力域写回 23 资产——已有引擎追加引用（去重），新引擎候选按主责能力域设计判定落账（设计产物记录，非待裁决建议）
 2. 遍历 CU 承接关系，写回 25 资产——仅写 CU 承接关系与骨架判定（复用/改进/新增）记录，不写操作活动定义（配置信息组/配置能力由 wft02-eng 业务详细定义后记录）
 3. 对应 OR 条目 → `已分配`
 
@@ -232,17 +232,17 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requ
 
 ```bash
 # 追加 AI最近变更 记录 + 移出已完成节点（先于提交，随基线入库）
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md add-recent-change "wft01-eng" "资产写回" "<STR-E-ID>" "23/25 资产写回"
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md move-node "<OR-ID>" "wft01-eng" "done"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md add-recent-change "wft01-eng" "资产写回" "<bph-eng-ID>" "23/25 资产写回"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md move-node "<OR-ID>" "wft01-eng" "done"
 
 # 提交本轮 AI 产出（链级不变式：基线 = 最后 AI 提交，git diff <HEAD @上次 AI 运行>..HEAD 只含人类变更）
 git add -A && git commit -m "[AI] wft01-eng 资产写回（Co-Authored-By: Claude）"
 
 # 更新文件头（HEAD = 刚提交的基线 hash）
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md update-head
 ```
@@ -255,10 +255,10 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
 
 ```text
 当前状态：<待确认方案 / 可以详细定义>
-  修订 STR-E-XXX（+N OR，v{N-1}→v{N}）/ 新建 STR-E-YYY（新能力场景，聚合 K 条 OR，v1）
-  场景不匹配 OR-WWW（本轮退回待聚合池，留待重新匹配其他 STR-E）
+  修订 bph-eng-XXX（+N OR，v{N-1}→v{N}）/ 新建 bph-eng-YYY（新能力场景，聚合 K 条 OR，v1）
+  场景不匹配 OR-WWW（本轮退回待聚合池，留待重新匹配其他 bph-eng）
 资产落账：<23 引擎引用写回 + 25 CU承接引用写回 / 未落账>
-补充原始需求材料：<无 / YYYYMMDD-STR-E名称-补充原始需求材料.md>（已登记 OR 原料状态表）
+补充原始需求材料：<无 / YYYYMMDD-bph-eng名称-补充原始需求材料.md>（已登记 OR 原料状态表）
 
 一、方案反馈
   A. 整体确认 → 回复「整体确认」，快捷同意全部未标注条目
@@ -266,8 +266,8 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
   C. 驳回重做 → 在确认状态中标注 [驳回]：...
 
 二、下一步
-  本Skill → 选择 FR-ENG OR 或 `需wft01修订` 的 STR-E 节点重新运行
-  后续    → STR-E-XXX（可以详细定义）、STR-E-ZZZ（待补充详细定义）→ wft02-eng
+  本Skill → 选择 FR-ENG OR 或 `需wft01修订` 的 bph-eng 节点重新运行
+  后续    → bph-eng-XXX（可以详细定义）、bph-eng-ZZZ（待补充详细定义）→ wft02-eng
 ```
 
 **输出后不要结束对话**，等待人类反馈。
@@ -281,7 +281,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
 每次 Step 3 完成后，向人类输出增量清单：
 
 ```text
-=== STR-E-XXXX 本轮更新清单 ===
+=== bph-eng-XXXX 本轮更新清单 ===
 
 [新增] 承接 OR-ENG-001, OR-ENG-002（共2条，类型：配置生成类）
 
@@ -304,11 +304,11 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
 
 ## 附录A：判据速查
 
-### A.1 STR-E 归组三元组 + FR-ENG OR 五种类型
+### A.1 bph-eng 归组三元组 + FR-ENG OR 五种类型
 
 **归组锚点**：`主责能力域 + 配置/治理目标 + 可独立验收结果`。主责类型分引擎专属和平台共享。
 
-**OR 类型**（不用于划分 STR-E 边界，仅作 OR 级特征标注）：
+**OR 类型**（不用于划分 bph-eng 边界，仅作 OR 级特征标注）：
 
 | 类型 | 触发源 | 场景终点 |
 |------|--------|---------|
@@ -332,7 +332,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
 | `OR隐含` | 需求侧 | 不推出该 CU 则能力链存在逻辑缺口 |
 | `构件缺口推断` | 需求侧 | 现有构件无法满足，推断需要新构件配置 CU |
 | `布局组件缺口推断` | 需求侧 | 现有布局组件无法承载，推断需要新布局组件配置 CU |
-| `同类引擎推断` | 资产侧·模式参照 | 同引擎类型已有 STR-E 的类似 CU 模式 |
+| `同类引擎推断` | 资产侧·模式参照 | 同引擎类型已有 bph-eng 的类似 CU 模式 |
 | `模型线索推断` | 资产侧·复用承接 | 25 资产已有匹配 CU 定义（需求已锚定时承接，不构成需求证据） |
 
 > 非 `OR明示` 来源均标注 `[推断]`。资产侧参照（`同类引擎推断`/`模型线索推断`）不构成需求证据，不得单独作为缺口 CU 的承接依据（人类方案 §3.1 缺口锚定边界）。
@@ -353,8 +353,8 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
 | 结果 | 判定 | 动作 |
 |------|------|------|
 | 场景匹配 | 三元组一致 | 进入 CU 承接关系检测 |
-| 同域不同场景 | 能力域相同但目标/验收不同 | 匹配其他 STR-E 或新建 |
-| 共享依赖 | 能力由已有共享 STR-E 提供 | 写入依赖关系，不复制 CU |
+| 同域不同场景 | 能力域相同但目标/验收不同 | 匹配其他 bph-eng 或新建 |
+| 共享依赖 | 能力由已有共享 bph-eng 提供 | 写入依赖关系，不复制 CU |
 | 主责不匹配 | OR 归属其他能力域 | 退回待聚合池 |
 
 ### A.6 Phase B CU 承接关系检测
@@ -367,20 +367,20 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
 | 补充 | CU不匹配 | 新增到候选清单 |
 | 过时 | 基线CU未被本轮覆盖 | `[过时]`+保留不删 |
 
-### A.7 STR-E 完备性判据
+### A.7 bph-eng 完备性判据
 
 | 检查项 | 判据 | 缺口处理 |
 |--------|------|----------|
 | 能力链闭合 | 配置意图能走到运行期可用 | 生成补充 FR-ENG |
 | 主责归属明确 | 只有一个主责能力域 | 标记 `需澄清` |
 | 场景可独立验收 | 目标和结果可独立判定 | 合并或降为依赖 |
-| 共享不重复 | 共享 CU 只在共享 STR-E 定义一次 | 删除重复 CU |
-| 分配完备（前置门禁·追溯完整） | 每个配置信息组（概要说明）已分配 CU；每条 CU 承接可追溯 STR-E 与 OR | 无锚配置信息组走补充 FR-ENG 回路 |
+| 共享不重复 | 共享 CU 只在共享 bph-eng 定义一次 | 删除重复 CU |
+| 分配完备（前置门禁·追溯完整） | 每个配置信息组（概要说明）已分配 CU；每条 CU 承接可追溯 bph-eng 与 OR | 无锚配置信息组走补充 FR-ENG 回路 |
 | 配置信息组清单完整 | 每个 CU 承接的配置信息组（概要说明）清单可覆盖其全部能力点 | 补充分解或标记 `[需裁决]` |
 | CU 可展开 | CU 承接足以让 wft02-eng 定位并详设 | 标记 `[需裁决]` |
 | 缺口层级正确 | 构件/布局组件/CU 级区分清楚 | 改写缺口说明 |
 
-### A.8 STR-E 节点生命周期状态流转
+### A.8 bph-eng 节点生命周期状态流转
 
 ```
 待确认方案 ──人类确认──→ 可以详细定义 ──wft02锁定──→ 在详细定义 ──wft02完成──→ 已详细定义
@@ -414,6 +414,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v1.16 | 资产名更名（人类定案）——STR-E→bph-eng、BP→bpd-eng（节点类型/节点ID/状态名），版本头同步递增 |
 | 2026-08-24 | v1.15 | 文件名更名同步（人类定名 2026-08-24）——`eos-wft01-eng-or2str` → `eos-wft01-eng-spr2bph`（name/frontmatter/设计依据/全库引用改向）。AI 执行规则语义不变 |
 | 2026-08-22 | v1.14 | 人类方案 v9.9 同步（eng 链第四轮修复）：①操作条目「补充 FR-ENG 缺口」→「补充 FR-ENG 材料」（对齐主文件 C1 术语统一）；②「配置信息组（概要说明，结构判定级）」→「配置信息组（概要说明，业务概要定义末级节点；结构判定级）」（B3 术语读法 A 落地，3 处）。AI 执行规则语义不变。 |
 | 2026-08-22 | v1.13 | 人类方案 v9.8 同步（eng 链第三轮深审修复）：①术语读法 A——「概要末级节点」→名称级识别（过程步骤），配置信息组（概要说明）=业务概要定义末级节点，追溯链简化；②Step 2 补**特化参数表**（含清除条件，对齐 91 §A.5.4 与主文件）；③「引擎能力缺口线索」→「FR-ENG 候选线索」。 |

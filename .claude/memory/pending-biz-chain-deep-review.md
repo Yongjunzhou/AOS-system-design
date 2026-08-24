@@ -8,6 +8,8 @@ metadata:
   modified: 2026-08-22
 ---
 
+**2026-08-24（续）资产名更名清单已执行并提交**（人类定案全部待议项后）——biz 链：STR-F→`bph-biz`、BP→`bpd-biz`、SR-F→`sfh-biz`；eng 链：STR-E→`bph-eng`、BP→`bpd-eng`、SR-F→`sfh-eng`（03 功能概要）/`sfd-eng`（04 功能详细）、PA→`pa-eng`；nfr 链：STR-NFR→`bph-nfr`（SysReq-NFR 保留）。节点 ID 前缀直接替换+链后缀（STR-F-GOV-001→bph-biz-GOV-001 等）、分节名随新命名（STR树画像→业务概要树画像）、状态名随迁（可以SR设计→可以sfh设计）；「配置信息组/CU」保留不动；资产文件名随迁（02-eos-stakeholder-requirements-architecture.md→02-eos-business-summary-architecture.md 等，92-srf→92-sfh-biz）；「资产名保留，不迁移」句改写为迁移说明。执行范围=EOS 设计子线全层（91/92 + biz/eng/nfr/or 链 skill+SKILL + 00-pl4eos-spec + eosdata 全部资产 + reverse/agile/devops + 记忆），不含通用规范/元流水线/30-eos。
+
 **2026-08-24 深审第四轮（wft01-biz 审视，人类逐项裁决）完成并提交（f5a7094）**。biz 链现版本：**wft01 v3.22 / wft02 v9.8 / wft03 v10.4 / 91 v5.36 / 25 v2.6 / 24 v1.6** + SKILL v1.17/v1.15/v1.14。
 
 **第四轮裁决与修复**：

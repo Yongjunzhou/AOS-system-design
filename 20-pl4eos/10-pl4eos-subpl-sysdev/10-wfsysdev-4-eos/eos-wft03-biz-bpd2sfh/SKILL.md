@@ -1,11 +1,11 @@
 ---
 name: eos-wft03-biz-bpd2sfh
-description: BP→系统概要定义（s03）·业务配置需求/PA·页面组件开发。接收≥1个BP节点（可SR设计/待补充SR设计），
+description: bpd-biz→系统概要定义（s03）·业务配置需求/PA·页面组件开发。接收≥1个bpd-biz节点（可sfh设计/待补充sfh设计），
              展开为功能表单+窗口标签页三层页面编排（菜单→场景→窗口），
              形成引擎能力使用需求+FR-BIZ指标约束包+FR-ENG候选线索，推进至可构件开发。
 ---
 
-# eos-wft03-biz · BP → 业务配置需求/PA · 页面组件开发
+# eos-wft03-biz · 业务详细（bpd-biz）→ 业务配置需求/pa-eng · 页面组件开发
 
 > **设计依据**：[eos-wft03-biz-bpd2sfh.md](../eos-wft03-biz-bpd2sfh.md)（人类方案——权威源）
 > **运行时协议**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md) 附录A（入口条件/读取协议/反馈交互/Step End输出模板）
@@ -19,22 +19,22 @@ description: BP→系统概要定义（s03）·业务配置需求/PA·页面组�
 
 | 负责 | 不负责（路由指向） |
 |------|-------------------|
-| 接收≥1个 BP 节点（`可以SR设计`/`待补充SR设计`），校验状态/类型/数量 | A1 平台引擎产品 SR-F → `wft03-eng-bpd2sfh` |
-| 按来源 BP、需求对象和主职责匹配已有 SR-F，判定 SR-Q1/Q2/Q3 | NFR → `wft04-nfr-str2sr` |
-| 菜单树推导（M1~M4）+ 场景标签页编排 + 窗口标签页占位符序列 | PA 组件设计 → wft05-eng；CU 设计 → eng 路径（wft01-eng 承接 / wft02-eng 详细定义，依据 91 §3.3）；技术实现参数 → 构件开发流水线 |
+| 接收≥1个 bpd-biz 节点（`可以sfh设计`/`待补充sfh设计`），校验状态/类型/数量 | A1 平台引擎产品 sfh-biz → `wft03-eng-bpd2sfh` |
+| 按来源 bpd-biz、需求对象和主职责匹配已有 sfh-biz，判定 SR-Q1/Q2/Q3 | NFR → `wft04-nfr-str2sr` |
+| 菜单树推导（M1~M4）+ 场景标签页编排 + 窗口标签页占位符序列 | pa-eng 组件设计 → wft05-eng；CU 设计 → eng 路径（wft01-eng 承接 / wft02-eng 详细定义，依据 91 §3.3）；技术实现参数 → 构件开发流水线 |
 | 实体需求定义（封面/正文字段）+ 正文功能表单需求（布局/交互/校验/权限） | 25 引擎资产写回（仅只读参照） |
 | 流程类窗口标签页序列（消费 PL6-A）+ 流转规则 + 节点交互差异 | 28 看板指标资产写回（仅只读参照） |
 | 任务间触发规则 + 文档间引用需求 + 一致性校验 | 引擎能力缺口的技术实现 → eng 路径承接 |
 | PL6-B 条目需求转化（消费 wft02 三独立判定通过的条目） | 主子表单运行期实现（本 Skill 只定义组装关系和交互需求） |
 | 引擎能力使用需求 + FR-BIZ 指标约束包 + FR-ENG 候选线索（Q2/Q3/Q4） | 在 07 产品架构中重复定义（biz 路径终止于本 Skill，不入 07）；24 业务资产写回（不读不写 24，24 改进/新建建议由 wft02 详设层写回） |
 | 覆盖自查 + 写回 04/05/06 → 推进至 `可构件开发` | — |
-| 接收下游退回 `需wft03修订`；根因在 BP 则退回 `需wft02修订` | — |
+| 接收下游退回 `需wft03修订`；根因在 bpd-biz 则退回 `需wft02修订` | — |
 
 ### 上下游衔接
 
 | 方向 | Skill | 交接内容 |
 |------|-------|---------|
-| 上游 | `wft02-biz` | 产出**业务详细定义**（s02）BP 节点（`可以SR设计`/`待补充SR设计`），含 A2 角色场景（含表单使用顺序）+ Bn 输出产品（消费 wft01 Bn 组装结论）+ PL6-B 条目 + 引擎支撑信息。通过 `## AI可以处理节点` 的"待 wft03-biz 处理"分节检测 |
+| 上游 | `wft02-biz` | 产出**业务详细定义**（s02）bpd-biz 节点（`可以sfh设计`/`待补充sfh设计`），含 A2 角色场景（含表单使用顺序）+ Bn 输出产品（消费 wft01 Bn 组装结论）+ PL6-B 条目 + 引擎支撑信息。通过 `## AI可以处理节点` 的"待 wft03-biz 处理"分节检测 |
 | 下游 | 构件开发流水线 | 消费 `可构件开发` 的需求节点，展开构件需求定义。缺陷时退回 `需wft03修订` |
 | 下游 | `wft05-eng` | 消费 FR-BIZ 指标约束包，分配到软件组件 |
 | 同级 | `wft03-eng`、`wft04-nfr` | 各自处理 A1/NFR，本 Skill 输入校验检出后退出并提示路由 |
@@ -48,8 +48,8 @@ description: BP→系统概要定义（s03）·业务配置需求/PA·页面组�
 **变更感知**（先于入口检测，检出人类线下修订）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md
 ```
 
 检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 变更感知）。
@@ -58,31 +58,31 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 
 ```bash
 # 1. 读取待处理节点（三个分节）
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirements-detailed.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/06-eos-function-detailed.md "AI可以处理节点"
 ```
 
 三类入口节点：
-- **待 wft03-biz 处理** → 新 BP 节点
-- **待反馈处理** → 人类退回的 SR-F 条目
-- **待下游退回处理** → `需wft03修订` 的 SR-F 节点
+- **待 wft03-biz 处理** → 新 bpd-biz 节点
+- **待反馈处理** → 人类退回的 sfh-biz 条目
+- **待下游退回处理** → `需wft03修订` 的 sfh-biz 节点
 
 **输入校验**（按顺序，命中即退出）：
 
 | 条件 | 判定 | 动作 |
 |------|------|------|
-| SR-F 状态=`需wft03修订` 且人类未提供改进方案 | 退回方案缺失 | 输出下游缺失说明 → **退出** |
+| sfh-biz 状态=`需wft03修订` 且人类未提供改进方案 | 退回方案缺失 | 输出下游缺失说明 → **退出** |
 | 无任何待处理节点 | 无待处理对象 | 输出"无待处理对象"→ **退出** |
-| BP 状态≠`可以SR设计`/`待补充SR设计` | 状态不符 | 输出状态分布 → **退出** |
-| BP 含 A1 平台引擎产品 | 类型不匹配 | 提示分路径（→ `wft03-eng`）→ **退出** |
-| BP 状态=`需wft02修订` | 上游待修 | 输出缺失说明 → **退出** |
-| 选中 BP >5 个 | 超建议阈值（软提示） | 输出建议分批 → 人类确认 |
+| bpd-biz 状态≠`可以sfh设计`/`待补充sfh设计` | 状态不符 | 输出状态分布 → **退出** |
+| bpd-biz 含 A1 平台引擎产品 | 类型不匹配 | 提示分路径（→ `wft03-eng`）→ **退出** |
+| bpd-biz 状态=`需wft02修订` | 上游待修 | 输出缺失说明 → **退出** |
+| 选中 bpd-biz >5 个 | 超建议阈值（软提示） | 输出建议分批 → 人类确认 |
 
-**退回优先**：存在 `需wft03修订` SR-F → 检查人类是否提供改进方案。已提供 → 读取缺失说明，按人类方案修订。未提供 → 输出缺失说明 → **退出**。若缺失根因在 BP（PL6-A/PL6-B 定义或支撑引擎信息缺失），将 BP 标为 `需wft02修订`。
+**退回优先**：存在 `需wft03修订` sfh-biz → 检查人类是否提供改进方案。已提供 → 读取缺失说明，按人类方案修订。未提供 → 输出缺失说明 → **退出**。若缺失根因在 bpd-biz（PL6-A/PL6-B 定义或支撑引擎信息缺失），将 bpd-biz 标为 `需wft02修订`。
 
-**反馈处理**：存在"待反馈处理"分节中 SR-F 条目（确认状态=`[修改]`/`[驳回]` 且无 `[已处理]`）→ 进入 Step 2。
+**反馈处理**：存在"待反馈处理"分节中 sfh-biz 条目（确认状态=`[修改]`/`[驳回]` 且无 `[已处理]`）→ 进入 Step 2。
 
-**新 BP 路由**：有未处理 BP → 进入 Step 1→Step 3。
+**新 bpd-biz 路由**：有未处理 bpd-biz → 进入 Step 1→Step 3。
 
 > **执行顺序**：Step 2（反馈处理）必须先于 Step 3（新增设计）。
 
@@ -93,8 +93,8 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirem
 **1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md
 ```
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
@@ -105,15 +105,15 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 
 | 资产 | 用途 | 读写 |
 |------|------|------|
-| `04-*.md` — BP 节点块 | 定位本轮 BP 正文 + 待处理节点清单 | 读 |
-| `05-*.md` — SR-F 架构节点块 | 定位候选 SR-F 节点 | 读/写 |
-| `06-*.md` — SR-F 详细定义 | 功能表单详细定义引用 | 读/写 |
+| `04-*.md` — bpd-biz 节点块 | 定位本轮 bpd-biz 正文 + 待处理节点清单 | 读 |
+| `05-*.md` — sfh-biz 架构节点块 | 定位候选 sfh-biz 节点 | 读/写 |
+| `06-*.md` — sfh-biz 详细定义 | 功能表单详细定义引用 | 读/写 |
 | `23-eos-output-architecture.md` | A2/Bn/菜单路径筛选 | 读 |
 | `25-eos-engine-models.md` | 引擎 CU 能力结构 + 业务文档承接 §1.7（清单类条目字段结构锚点） | **只读** |
 | `27-eos-resource-assets.md` | 资源引用 | 读 |
 | `28-eos-dashboard-indicator-assets.md` | 看板/指标去重校验 | **只读** |
 
-**按需扩大原则**：仅在索引无法定位、候选冲突、追溯断裂或人类明确要求时扩大读取范围。禁止默认加载全文件正文。BP 缺少引擎支撑信息时，不自行补判——标记 `需wft02修订` 候选。
+**按需扩大原则**：仅在索引无法定位、候选冲突、追溯断裂或人类明确要求时扩大读取范围。禁止默认加载全文件正文。bpd-biz 缺少引擎支撑信息时，不自行补判——标记 `需wft02修订` 候选。
 
 ---
 
@@ -132,26 +132,26 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 
 | 特化维度 | wft03-biz 值 |
 |---------|-------------|
-| **锚点需求** | 当前 SR-F 所承接的全部 BP 方案——人类反馈以 BP 角色的场景职责及输出文档需求为最终锚点 |
+| **锚点需求** | 当前 sfh-biz 所承接的全部 bpd-biz 方案——人类反馈以 bpd-biz 角色的场景职责及输出文档需求为最终锚点 |
 | **操作条目** | 菜单树与菜单标签页映射、场景标签页编排、功能表单、窗口标签页、引擎能力使用需求、FR-BIZ指标、任务关系、支持信息引用 |
 | **推进目标** | 全部条目含 `[同意]`+`[已处理]` → 需求节点推进至 `可构件开发` |
 | **清除条件** | 已有 `[同意]`+`[已处理]` 默认跳过。仅当本轮新输入满足任一条件时清除 `[已处理]`（保留 `[同意]`）：<br>1. 新输入为该条目的直接上游节点<br>2. 新输入与条目同属一个架构层级且边界重叠<br>3. 新输入导致条目定义被修订（变更影响声明标注为修订型/结构型） |
 | **级联触发条件** | `[修改]`/`[驳回]` 导致菜单映射、场景标签页边界、页面组件组合、功能表单结构、流程节点顺序或指标定义变化 → 标记 `[需重设计]` |
-| **资产对齐级联** | 方案变更影响 05/06 资产引用 → 更新受影响 SR-F 的 BP 追溯引用 |
+| **资产对齐级联** | 方案变更影响 05/06 资产引用 → 更新受影响 sfh-biz 的 bpd-biz 追溯引用 |
 
 #### 确认状态格式示例
 
 **AI 写入（Step 3~7 完成时）**：
 
 ```text
-- 菜单标签页 @srf-menu-purchase-apply | 确认状态: (空)
+- 菜单标签页 @sfh-biz-menu-purchase-apply | 确认状态: (空)
 - 功能表单"采购申请单正文"（@engine-entity + @engine-flow） | 确认状态: (空)
 ```
 
 **人类标注 + AI 处理完成**：
 
 ```text
-- 菜单标签页 @srf-menu-purchase-apply | 确认状态: [同意] [已处理]
+- 菜单标签页 @sfh-biz-menu-purchase-apply | 确认状态: [同意] [已处理]
 - 功能表单"采购申请单正文"（@engine-entity + @engine-workorder） | 确认状态: [修改]：引擎改为 @engine-workorder [已处理]
 ```
 
@@ -159,13 +159,13 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 
 ### Step 3 · 菜单树与场景编排推导
 
-> 从 BP 的结构信息推导菜单层级结构、场景标签页划分和窗口标签页占位序列。窗口标签页此处仅以占位符存在（页面 ID、来源 PL5、页面组件类型候选、显示顺序），字段/布局/交互的详细定义由 Step 4~5 补充。
+> 从 bpd-biz 的结构信息推导菜单层级结构、场景标签页划分和窗口标签页占位序列。窗口标签页此处仅以占位符存在（页面 ID、来源 PL5、页面组件类型候选、显示顺序），字段/布局/交互的详细定义由 Step 4~5 补充。
 
 #### 3.1 菜单树推导
 
 **步骤一：读取已有菜单树**。从 `05-*.md`/`06-*.md` 读取平台当前已定义的菜单节点（M1~M4），提取已有 M1（业务域归属）、M2（角色类型分组）、M3（角色职责分组）、M4（映射的场景业务 ID）。
 
-**步骤二：逐新增场景业务匹配与推导**。从 BP 提取四层归属信息（PL1/SL1 业务域、SL3 角色类型、SL4 角色职责、SL5 场景业务），逐层匹配：
+**步骤二：逐新增场景业务匹配与推导**。从 bpd-biz 提取四层归属信息（PL1/SL1 业务域、SL3 角色类型、SL4 角色职责、SL5 场景业务），逐层匹配：
 
 | 层级 | 匹配规则 | 匹配成功 | 匹配失败 |
 |------|---------|---------|---------|
@@ -176,11 +176,11 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 
 **步骤三：逐节点定义**。逐 M4：名称 + 映射的场景业务 ID + 可见性候选（继承场景业务角色范围，标注 `[推断]`）+ 权限需求 + 所含场景标签页列表。逐非末级节点（仅新建或属性变更）：父节点归属、显示顺序、可见角色候选（下辖节点角色并集）。
 
-> 若 wft02 的 BP 节点已标注菜单归属提示，优先采用，跳过匹配流程。AI 推断的匹配结论、新建节点和省略判定均标注 `[推断]`。
+> 若 wft02 的 bpd-biz 节点已标注菜单归属提示，优先采用，跳过匹配流程。AI 推断的匹配结论、新建节点和省略判定均标注 `[推断]`。
 
 #### 3.2 场景标签页编排
 
-一个场景业务（SL5）= 一个场景标签页。从 BP 提取 PL5 输出文档序列（wft02 Step 3 表单使用顺序 定义的文档流转顺序），逐文档生成 TAB：
+一个场景业务（SL5）= 一个场景标签页。从 bpd-biz 提取 PL5 输出文档序列（wft02 Step 3 表单使用顺序 定义的文档流转顺序），逐文档生成 TAB：
 
 - **首文档 D1 正文占位符** = 初始态单窗（列表模式优先——集合型正文→列表页，单据型正文→单据页）
 - **遍历 D2...DN**：D_k 有下钻子文档 → 子文档不占 TAB（平台双击时自动分屏展示）；否则 → D_k 追加到 TAB 序列末位
@@ -190,8 +190,8 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 
 逐 PL5 输出文档生成窗口标签页占位符，按流转顺序排列为 TAB 序列：
 
-- **页面 ID**：`@srf-tab-{场景业务简称}-{序号}`
-- **来源**：PL5 输出文档 ID + BP 节点 ID + BP 消费版本
+- **页面 ID**：`@sfh-biz-tab-{场景业务简称}-{序号}`
+- **来源**：PL5 输出文档 ID + bpd-biz 节点 ID + bpd-biz 消费版本
 - **页面组件类型候选**：列表模式/单据模式/图示模式（含指标模式、看板模式），全量 `[推断]`
 - **显示顺序**：在 TAB 序列中的位置
 - **组装关系注解**：正式文档标注"需 1:1 封面—正文主子组装"；有下钻关系标注"需 1+N 下钻组装→目标占位符 ID"；轻量文档标注"无封面组装"
@@ -202,14 +202,14 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 
 | 对象 | ID 格式 | 示例 |
 |------|--------|------|
-| 菜单标签页 | `@srf-menu-{M4简称}` | `@srf-menu-purchase-apply` |
-| 场景标签页 | `@srf-scene-{场景业务简称}-{序号}` | `@srf-scene-purchase-apply-1` |
-| 窗口标签页占位符（PL5） | `@srf-tab-{场景业务简称}-{序号}` | `@srf-tab-purchase-apply-01` |
-| 窗口标签页（PL6-A） | `@srf-tab-{场景业务简称}-act-{序号}` | `@srf-tab-purchase-apply-act-01` |
+| 菜单标签页 | `@sfh-biz-menu-{M4简称}` | `@sfh-biz-menu-purchase-apply` |
+| 场景标签页 | `@sfh-biz-scene-{场景业务简称}-{序号}` | `@sfh-biz-scene-purchase-apply-1` |
+| 窗口标签页占位符（PL5） | `@sfh-biz-tab-{场景业务简称}-{序号}` | `@sfh-biz-tab-purchase-apply-01` |
+| 窗口标签页（PL6-A） | `@sfh-biz-tab-{场景业务简称}-act-{序号}` | `@sfh-biz-tab-purchase-apply-act-01` |
 
 #### 3.5 菜单权限需求
 
-逐 M4：可见角色 = BP 的 SL3 角色类型 ∪ PL6-A 活动节点的处理角色（审批人/派发对象等）。M1~M3 可见角色 = 下辖 M4 角色并集。全量标注 `[推断]`。
+逐 M4：可见角色 = bpd-biz 的 SL3 角色类型 ∪ PL6-A 活动节点的处理角色（审批人/派发对象等）。M1~M3 可见角色 = 下辖 M4 角色并集。全量标注 `[推断]`。
 
 ---
 
@@ -217,9 +217,9 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 
 #### 4.1 输出文档定义消费
 
-逐 PL5 输出文档，从 BP 节点提取（只读消费）：
+逐 PL5 输出文档，从 bpd-biz 节点提取（只读消费）：
 
-| 提取项 | 来源（BP 节点字段） | 用途 |
+| 提取项 | 来源（bpd-biz 节点字段） | 用途 |
 |--------|-------------------|------|
 | 文档类型 | wft02 Step 4（输出文档方案定义） 判定——正式/轻量 | 决定是否生成封面实体 |
 | 封面字段（正式文档） | wft02 Step 4（输出文档方案定义）"封面字段"列表 | → 实体字段定义 |
@@ -229,7 +229,7 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 | PL6-B 条目类型 | wft02 Step 4（PL6-B 正文条目需求定义） 三独立判定通过的条目 | → §4.4 PL6-B 条目转化 |
 | 支持信息引用 | wft02 Step 4（输出文档方案定义） 文档间引用关系 | → Step 6 引用需求 |
 
-> 若 BP 缺少某项信息（如引擎未标注、封面字段为空），标记 `分解依据不足`，Step End 输出缺失说明并建议退回 `需wft02修订`。不得自行补做 BP 设计。
+> 若 bpd-biz 缺少某项信息（如引擎未标注、封面字段为空），标记 `分解依据不足`，Step End 输出缺失说明并建议退回 `需wft02修订`。不得自行补做 bpd-biz 设计。
 
 #### 4.2 实体需求定义
 
@@ -249,7 +249,7 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 |----|------|
 | **展示层** | 字段布局（列表型→字段映射到表格列/单据型→字段分组排列）、筛选/排序/分页（列表型默认启用）、导入/导出 |
 | **交互层** | 功能按钮（25 默认操作集 + 任务类型叠加：计划→策划/发布、流程→提交审批/通过/驳回、工单→派发/验收）、权限（行/列/按钮对角色或状态的可见可编辑规则）、校验（字段级+表单级+状态前置）、状态反馈（Toast + 数据状态标签） |
-| **性能层** | FR-BIZ 性能指标（名称/目标值/适用条件/统计口径/测量方法/来源 BP），由 Step 7 分配到引擎/CU |
+| **性能层** | FR-BIZ 性能指标（名称/目标值/适用条件/统计口径/测量方法/来源 bpd-biz），由 Step 7 分配到引擎/CU |
 
 #### 4.4 PL6-B 正文条目需求转化
 
@@ -273,17 +273,17 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 
 仅针对有任务类型（计划/流程/工单）的 PL5 输出文档。消费 wft02 Step 4（任务活动设计）产出的 PL6-A 活动节点需求定义，编排为窗口标签页序列（对齐 91 §7.3 Task 5）。流程定义的复用与新建由 wft02 在业务详细定义中完成，本 Step 只消费其结果、不读取 24 资产中的流程定义（26 号资产已取消）。
 
-**5.1 消费 BP 的 PL6-A 活动节点需求**（只读）
+**5.1 消费 bpd-biz 的 PL6-A 活动节点需求**（只读）
 
-从 BP 节点提取 wft02 Step 4 已产出的 PL6-A 需求：活动节点序列（流程=审批流转/工单=派发·处理·验收/计划=策划→发布）、各节点处理角色、各节点可执行动作、状态集与状态变迁、系统自动节点·异常路径·超时处理、任务类型。
+从 bpd-biz 节点提取 wft02 Step 4 已产出的 PL6-A 需求：活动节点序列（流程=审批流转/工单=派发·处理·验收/计划=策划→发布）、各节点处理角色、各节点可执行动作、状态集与状态变迁、系统自动节点·异常路径·超时处理、任务类型。
 
-> BP 缺少 PL6-A 定义 → 标记 `分解依据不足`，建议退回 `需wft02修订`。不得自行补做 BP 设计。
+> bpd-biz 缺少 PL6-A 定义 → 标记 `分解依据不足`，建议退回 `需wft02修订`。不得自行补做 bpd-biz 设计。
 
 **5.2 编排流程类页面序列**
 
-- **节点层**：每活动节点对应一个窗口标签页（单据模式，ID 格式 `@srf-tab-{场景业务简称}-act-{序号}`）；系统自动节点不生成独立标签页；act 标签页编排为该文档的**流程类页面序列**（文档内部按节点顺序流转，不并入场景标签页文档级 TAB）；各节点功能表单的字段布局/操作集由 Step 4 定义，本 Step 只定义节点级差异
+- **节点层**：每活动节点对应一个窗口标签页（单据模式，ID 格式 `@sfh-biz-tab-{场景业务简称}-act-{序号}`）；系统自动节点不生成独立标签页；act 标签页编排为该文档的**流程类页面序列**（文档内部按节点顺序流转，不并入场景标签页文档级 TAB）；各节点功能表单的字段布局/操作集由 Step 4 定义，本 Step 只定义节点级差异
 - **动作层**：各节点可执行动作 → 按钮操作集（按钮状态随生命周期联动）；状态集与状态变迁 → 封面行/正文行状态字段值域；节点交互差异（字段可见性/动作/校验/状态反馈）
-- **规则层**：页面间流转规则（顺序/条件分支/回退/终止，来自 BP 异常路径）；超时与异常规则；任务状态附着（正式→DocumentCover 封面行 [91 R6]、轻量→正文实体行 [91 §2.4]）；FR-BIZ 指标由 Step 7 分配（§7.4）
+- **规则层**：页面间流转规则（顺序/条件分支/回退/终止，来自 bpd-biz 异常路径）；超时与异常规则；任务状态附着（正式→DocumentCover 封面行 [91 R6]、轻量→正文实体行 [91 §2.4]）；FR-BIZ 指标由 Step 7 分配（§7.4）
 
 ---
 
@@ -291,13 +291,13 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 
 **6.1 wft02 任务关系与引用信息消费**（只读）
 
-从 BP 提取两类信息：
+从 bpd-biz 提取两类信息：
 
 **任务关系**（wft02 Step 4 任务关系引擎化）：来源任务/目标任务/触发时机/触发条件/启动参数。
 
 **文档间引用**（wft02 Step 4 输出文档方案定义）：引用源/引用目标/引用角色标签（输入文档/规范文档/指南文档/合规文档/资源文档）。
 
-> BP 缺少任务关系或引用信息 → 标记 `分解依据不足`，建议退回 `需wft02修订`。
+> bpd-biz 缺少任务关系或引用信息 → 标记 `分解依据不足`，建议退回 `需wft02修订`。
 
 **6.2 任务间触发规则需求定义**
 
@@ -356,7 +356,7 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 | Q3 能力缺失 | 在 {引擎名称} 中新增/扩展 CU，使其承接 {业务动作}，输出 {期望输出} |
 | Q4 边界不清 | {引擎名称} 的 {CU名称} 需明确其能力范围定义 |
 
-每条 FR-ENG 候选线索包含：需求 ID（`FR-ENG-REQ-{YYYYMMDD}-{序号}`）/ 来源（业务页面 ID + BP 节点 ID）/ 目标引擎 / 需求类型 / 缺口层级（构件级/布局组件级/CU级）/ 当前能力 / 需求能力 / 指标要求 / 业务场景 / 业务影响。
+每条 FR-ENG 候选线索包含：需求 ID（`FR-ENG-REQ-{YYYYMMDD}-{序号}`）/ 来源（业务页面 ID + bpd-biz 节点 ID）/ 目标引擎 / 需求类型 / 缺口层级（构件级/布局组件级/CU级）/ 当前能力 / 需求能力 / 指标要求 / 业务场景 / 业务影响。
 
 > **门禁**：FR-ENG 候选线索不是正式 OR，登记到 OR 原料状态表 A（候选线索材料文件写入 `10-raw-files/`，生命周期=`已登记`）。人类确认纳入后须完整通过 ort00→ort03 形成正式 FR-ENG OR。
 
@@ -368,30 +368,30 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 
 ### Step 8 · 资产写回与落账
 
-仅写回人类已在 Step 2 确认的 SR-F 条目。
+仅写回人类已在 Step 2 确认的 sfh-biz 条目。
 
 | 操作 | 写入位置 | 内容 |
 |------|---------|------|
-| SR-F 架构节点 | `05-*.md` | 写入或更新 SR-F 架构节点、状态队列、追溯引用 |
-| SR-F 详细定义 | `06-*.md` | 写入或更新 SR-F 详细定义 |
-| BP 消费状态 | `04-*.md` | BP 节点状态→`已SR设计`（BP 消费版本由 SR-F 节点「来源 BP」记录，04 不重复写） |
+| sfh-biz 架构节点 | `05-*.md` | 写入或更新 sfh-biz 架构节点、状态队列、追溯引用 |
+| sfh-biz 详细定义 | `06-*.md` | 写入或更新 sfh-biz 详细定义 |
+| bpd-biz 消费状态 | `04-*.md` | bpd-biz 节点状态→`已sfh设计`（bpd-biz 消费版本由 sfh-biz 节点「来源 bpd-biz」记录，04 不重复写） |
 | 需求节点状态 | `05/06-*.md` | 功能表单/窗口标签页 → `可构件开发` |
 | FR-BIZ 指标约束包 | `10-eos-fr-biz-constraint-package.md`（独立数据文件） | 同步发布或更新 FR-BIZ 指标约束包（包 ID / 版本 / 变更声明） |
-| 资产写回记录 | `04-*.md` | 日期/来源 BP/目标 SR-F/动作/消费版本/下游状态 |
+| 资产写回记录 | `04-*.md` | 日期/来源 bpd-biz/目标 sfh-biz/动作/消费版本/下游状态 |
 
 **元信息维护**（用脚本，不手动）：
 
 ```bash
 # 更新文件头
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirements-detailed.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirements-detailed.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-function-detailed.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-function-detailed.md update-head
 
 # 追加 AI最近变更 记录
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md add-recent-change "wft03-biz" "资产写回" "<SR-F-ID>" "功能表单+窗口标签页需求写回"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md add-recent-change "wft03-biz" "资产写回" "<sfh-biz-ID>" "功能表单+窗口标签页需求写回"
 ```
 
 不写回 25（仅只读参照）、28（仅只读参照）。FR-ENG 候选线索登记到 OR 原料状态表 A。
@@ -417,7 +417,7 @@ FR-ENG 候选线索：<无 / Q 条，已登记 OR 原料状态表 A>
   C. 驳回重做 → 在确认状态中标注 [驳回]：...
 
 二、下一步
-  本Skill → 选择 BP 节点（`可以SR设计` / `待补充SR设计`）或 `需wft03修订` 的 SR-F 节点重新运行
+  本Skill → 选择 bpd-biz 节点（`可以sfh设计` / `待补充sfh设计`）或 `需wft03修订` 的 sfh-biz 节点重新运行
   后续    → 功能表单需求/窗口标签页需求（可构件开发）→ 构件开发流水线
 ```
 
@@ -436,7 +436,7 @@ FR-ENG 候选线索：<无 / Q 条，已登记 OR 原料状态表 A>
 **反馈总结**（仅在人类"整体确认"后执行）：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md add-recent-change "wft03-biz" "反馈处理" "<SR-F-ID>" "<AI 总结的反馈要点>"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md add-recent-change "wft03-biz" "反馈处理" "<sfh-biz-ID>" "<AI 总结的反馈要点>"
 ```
 
 ---
@@ -448,28 +448,28 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 每次 Step 3~7 完成后，向人类输出增量清单，格式如：
 
 ```text
-=== 本轮 SR-F 增量清单 ===
+=== 本轮 sfh-biz 增量清单 ===
 
 [新增] 菜单树与场景编排：采购申请执行
-  菜单标签页：@srf-menu-purchase-apply / M4 / 采购申请执行
-  场景标签页：@srf-scene-purchase-apply-1 / 初始态单窗
-  窗口标签页序列：@srf-tab-purchase-apply-01→02→03
+  菜单标签页：@sfh-biz-menu-purchase-apply / M4 / 采购申请执行
+  场景标签页：@sfh-biz-scene-purchase-apply-1 / 初始态单窗
+  窗口标签页序列：@sfh-biz-tab-purchase-apply-01→02→03
 
 [新增] 功能表单需求：采购申请单正文
-  来源：BP-XXX / PL5-采购申请单
+  来源：bpd-biz-XXX / PL5-采购申请单
   页面组件：窗口标签页（列表模式+单据模式）
   字段/布局/交互/展示：（摘要）
 
 [新增] 窗口标签页需求：审批流程
-  来源：BP-XXX / PL6-A 活动节点
+  来源：bpd-biz-XXX / PL6-A 活动节点
   页面序列：提交→部门审批→财务审核→归档
 
 [变更] 功能表单：采购订单正文
   变化：新增"期望到货日期"字段
   影响：下游构件的需求定义需检查
 
-[确认] 复用已有 SR-F：供应商查询
-  追加来源：BP-YYY
+[确认] 复用已有 sfh-biz：供应商查询
+  追加来源：bpd-biz-YYY
 
 [需裁决] FR-ENG 候选线索：指标计算能力不足
   缺口层级：CU级
@@ -480,13 +480,13 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 
 ## 附录A：判据速查
 
-### A.1 SR-F Q1/Q2/Q3 匹配判定
+### A.1 sfh-biz Q1/Q2/Q3 匹配判定
 
 | 判定 | 条件 | 动作 |
 |------|------|------|
-| **SR-Q1** | 已有 SR-F 对应同一 BP 对象、同一输入线、同一支撑引擎，且功能职责一致 | 复用已有 SR-F，追加 BP 引用 |
-| **SR-Q2** | 已有 SR-F 主体一致但功能规则、按钮操作、流程或验收口径需扩展 | 扩展已有 SR-F，全量重写功能定义 |
-| **SR-Q3** | 无可用已有 SR-F | 新建 SR-F 末级条目 |
+| **SR-Q1** | 已有 sfh-biz 对应同一 bpd-biz 对象、同一输入线、同一支撑引擎，且功能职责一致 | 复用已有 sfh-biz，追加 bpd-biz 引用 |
+| **SR-Q2** | 已有 sfh-biz 主体一致但功能规则、按钮操作、流程或验收口径需扩展 | 扩展已有 sfh-biz，全量重写功能定义 |
+| **SR-Q3** | 无可用已有 sfh-biz | 新建 sfh-biz 末级条目 |
 
 ### A.2 菜单树四层匹配规则
 
@@ -501,20 +501,20 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 
 | 对象 | ID 格式 |
 |------|--------|
-| 菜单标签页 | `@srf-menu-{M4简称}` |
-| 场景标签页 | `@srf-scene-{场景业务简称}-{序号}` |
-| 窗口标签页占位符（PL5） | `@srf-tab-{场景业务简称}-{序号}` |
-| 窗口标签页（PL6-A） | `@srf-tab-{场景业务简称}-act-{序号}` |
+| 菜单标签页 | `@sfh-biz-menu-{M4简称}` |
+| 场景标签页 | `@sfh-biz-scene-{场景业务简称}-{序号}` |
+| 窗口标签页占位符（PL5） | `@sfh-biz-tab-{场景业务简称}-{序号}` |
+| 窗口标签页（PL6-A） | `@sfh-biz-tab-{场景业务简称}-act-{序号}` |
 
 ### A.4 流程类 PL6-A 消费与编排
 
 消费 wft02 Step 4（任务活动设计）产出的 PL6-A，直接编排 act 标签页序列（对齐 91 §7.3 Task 5），**不读取 24 资产中的流程定义（26 号资产已取消）**：
 
-- **节点层**：每活动节点对应一个窗口标签页（单据模式，ID `@srf-tab-{场景业务简称}-act-{序号}`）；系统自动节点不生成独立标签页；act 标签页编排为流程类页面序列（不并入文档级 TAB）
+- **节点层**：每活动节点对应一个窗口标签页（单据模式，ID `@sfh-biz-tab-{场景业务简称}-act-{序号}`）；系统自动节点不生成独立标签页；act 标签页编排为流程类页面序列（不并入文档级 TAB）
 - **动作层**：各节点可执行动作 → 按钮操作集（状态随生命周期联动）；状态集与状态变迁 → 封面行/正文行状态字段值域；节点交互差异
 - **规则层**：页面间流转规则（顺序/条件分支/回退/终止）；超时与异常规则；任务状态附着（正式→封面行 [91 R6]、轻量→正文实体行 [91 §2.4]）
 
-BP 缺少 PL6-A 定义 → 标记 `分解依据不足`，退回 `需wft02修订`。
+bpd-biz 缺少 PL6-A 定义 → 标记 `分解依据不足`，退回 `需wft02修订`。
 
 ### A.5 引擎能力缺口 Q1~Q4 判定
 
@@ -531,18 +531,18 @@ BP 缺少 PL6-A 定义 → 标记 `分解依据不足`，退回 `需wft02修订`
 Step 7 末尾使用，逐项打勾，发现遗漏仅标注不回退：
 
 **业务覆盖**：
-1. A2 线：每个 SL5 场景业务均有 SR-F 承接
+1. A2 线：每个 SL5 场景业务均有 sfh-biz 承接
 2. A2 线：每个被编排的功能表单/主子表单均有需求定义承接
-3. Bn 线：每个 PL5 输出文档均有生成、维护或查询类 SR-F 承接
-4. Bn 线：每个 PL5 输出文档的实体定义/关系/状态事件/业务规则均已被对应 SR-F 承接
-5. 横切线：菜单可达、权限推导、上层指标方案均已转成必要 SR-F 或明确不生成理由
-6. 追溯：每条 SR-F 均记录 BP 节点 ID、BP 对象 ID、BP 消费版本
+3. Bn 线：每个 PL5 输出文档均有生成、维护或查询类 sfh-biz 承接
+4. Bn 线：每个 PL5 输出文档的实体定义/关系/状态事件/业务规则均已被对应 sfh-biz 承接
+5. 横切线：菜单可达、权限推导、上层指标方案均已转成必要 sfh-biz 或明确不生成理由
+6. 追溯：每条 sfh-biz 均记录 bpd-biz 节点 ID、bpd-biz 对象 ID、bpd-biz 消费版本
 7. 页面模型：每条需求均区分页面组件与布局组件，说明编排链
 
 **引擎覆盖**：
 8. 25 参照：每条需求记录支撑引擎及能力参照；能力不足项已形成 FR-ENG 线索或退回 wft02
 
-### A.7 SR-F 节点生命周期状态流转
+### A.7 sfh-biz 节点生命周期状态流转
 
 **主线流转**（wft03-biz → 构件开发流水线）：
 
@@ -556,25 +556,25 @@ Step 7 末尾使用，逐项打勾，发现遗漏仅标注不回退：
 
 wft03-biz 写入 `待确认方案`/`可构件开发`/`需wft03修订`；下游流水线负责锁定态和完成态。
 
-**BP 消费状态**：
+**bpd-biz 消费状态**：
 
-| BP 状态 | 本 Skill 动作 |
+| bpd-biz 状态 | 本 Skill 动作 |
 |---------|--------------|
-| `可以SR设计` | 首次进入，生成或修订 SR-F |
-| `待补充SR设计` | 按 BP 变更影响声明增量补全 SR-F |
-| `在SR设计` | 写入活动说明，避免并发重入 |
-| `已SR设计` | 处理完成后写入 |
+| `可以sfh设计` | 首次进入，生成或修订 sfh-biz |
+| `待补充sfh设计` | 按 bpd-biz 变更影响声明增量补全 sfh-biz |
+| `在sfh设计` | 写入活动说明，避免并发重入 |
+| `已sfh设计` | 处理完成后写入 |
 
-### A.8 BP→SR-F 变更类型判定
+### A.8 bpd-biz→sfh-biz 变更类型判定
 
-| 类型 | 判定条件 | SR-F 处理 |
+| 类型 | 判定条件 | sfh-biz 处理 |
 |------|----------|-----------|
-| **无变更** | 本轮 BP 无实质变更——重入时全部走来源确认或引用追加 | 下游无需任何动作 |
-| **增量型** | BP 新增 SL5/PL5/权限/指标对象，既有对象未变 | 仅为新增对象生成 SR-F，既有 SR-F 不动 |
-| **修订型** | BP 既有 IPO、编排、权限、指标口径或产品数据边界被修改 | 修订受影响 SR-F，全量重写受影响条目 |
-| **结构型** | BP 场景边界、产品路径、场景部件结构或菜单结构重塑 | 输出影响范围，等待人类裁决后重组 |
+| **无变更** | 本轮 bpd-biz 无实质变更——重入时全部走来源确认或引用追加 | 下游无需任何动作 |
+| **增量型** | bpd-biz 新增 SL5/PL5/权限/指标对象，既有对象未变 | 仅为新增对象生成 sfh-biz，既有 sfh-biz 不动 |
+| **修订型** | bpd-biz 既有 IPO、编排、权限、指标口径或产品数据边界被修改 | 修订受影响 sfh-biz，全量重写受影响条目 |
+| **结构型** | bpd-biz 场景边界、产品路径、场景部件结构或菜单结构重塑 | 输出影响范围，等待人类裁决后重组 |
 
-> BP 信息缺口（分解依据不足）不属变更类型，按退回路由标 `需wft02修订`。
+> bpd-biz 信息缺口（分解依据不足）不属变更类型，按退回路由标 `需wft02修订`。
 
 ### A.9 PL6-B 条目类型→资产读取映射
 
@@ -591,7 +591,7 @@ wft03-biz 写入 `待确认方案`/`可构件开发`/`需wft03修订`；下游�
 | 脚本 | 用法 | 说明 |
 |------|------|------|
 | `read-section.sh` | `bash ../scripts/read-section.sh <文件> <分节名>` | 提取 ##/### 分节完整内容 |
-| `read-node.sh` | `bash ../scripts/read-node.sh <文件> <节点ID>` | 按节点ID提取节点块（支持 BP-XXX / SR-F-XXX / @srf-tab-XXX / @engine-xxx 等） |
+| `read-node.sh` | `bash ../scripts/read-node.sh <文件> <节点ID>` | 按节点ID提取节点块（支持 bpd-biz-XXX / sfh-biz-XXX / @sfh-biz-tab-XXX / @engine-xxx 等） |
 | `detect-changes.sh` | `bash ../scripts/detect-changes.sh <文件>` | 检测人类自上次 AI 运行以来的文档变更 |
 | `update-meta.sh` | `bash ../scripts/update-meta.sh <文件> <操作>` | 维护文件元信息（bump-version / update-head / add-recent-change / move-node） |
 
@@ -603,6 +603,7 @@ wft03-biz 写入 `待确认方案`/`可构件开发`/`需wft03修订`；下游�
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v1.16 | 资产名更名（人类定案）——STR-F→bph-biz、BP→bpd-biz、SR-F→sfh-biz（节点类型/节点ID/状态名/分节名），版本头版本号同步递增 |
 | 2026-08-24 | v1.15 | 文件名更名同步（人类定名 2026-08-24）——`eos-wft03-biz-bp2sr` → `eos-wft03-biz-bpd2sfh`（name/frontmatter/设计依据/全库引用改向）。AI 执行规则语义不变 |
 | 2026-08-22 | v1.14 | 人类方案 v10.4 同步（深审第三轮修复）——①§7.2 覆盖判定补「待填充 CU 归 Q3」注、Q4 收紧「CU 已存在」；②Step 8 写回表 BP 消费状态改只推进状态（BP 消费版本由 SR-F 节点「来源 BP」记录，04 不重复写）；③A.5 Q4 收紧。AI 执行规则语义变更（待填充 CU 不再落 Q4，归 Q3 生成 FR-ENG 候选线索） |
 | 2026-08-22 | v1.13 | 人类方案 v10.3 同步（深审第二轮实锤 1 处置）：§4.3 步骤一读 25 §2.0 功能引擎表单能力三字段（去性能指标上限）；§7.2 Q1/Q2 语义化（业务指标类型在 CU 能力描述范围内）；§7.3 Q2 转化「增强性能/当前值→目标值」→「扩展能力边界/目标值」；A.5 覆盖判定表 Q1/Q2 语义化；Step End 摘要 Q2 增强候选→扩展能力候选。AI 执行规则语义变更（覆盖判定不再做数值性能比较，系统性能归 NFR 链） |

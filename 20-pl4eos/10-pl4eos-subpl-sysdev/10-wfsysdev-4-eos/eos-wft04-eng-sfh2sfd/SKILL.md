@@ -1,11 +1,11 @@
 ---
 name: eos-wft04-eng-sfh2sfd
-description: 功能概要SR-F→功能详细SR-F·功能表单组件及其业务。接收≥1个功能概要SR-F节点（可以详细定义/待补充详细定义），
-             判定区域内布局组件/构件、定义组件业务（功能级不写实现）、标注PA层收敛项，
-             写回25功能详细引用，形成可进入wft05-eng（已详细定义）的SR-F节点。
+description: 功能概要sfd-eng→功能详细sfd-eng·功能表单组件及其业务。接收≥1个功能概要sfd-eng节点（可以详细定义/待补充详细定义），
+             判定区域内布局组件/构件、定义组件业务（功能级不写实现）、标注pa-eng层收敛项，
+             写回25功能详细引用，形成可进入wft05-eng（已详细定义）的sfd-eng节点。
 ---
 
-# eos-wft04-eng · 功能概要 SR-F → 功能详细 SR-F · 功能表单组件及其业务
+# eos-wft04-eng · 功能概要 sfh-eng → 功能详细 sfd-eng · 功能表单组件及其业务
 
 > **设计依据**：[eos-wft04-eng-sfh2sfd.md](../eos-wft04-eng-sfh2sfd.md)（人类方案——权威源）
 > **运行时协议**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md) 附录A
@@ -19,20 +19,20 @@ description: 功能概要SR-F→功能详细SR-F·功能表单组件及其业务
 
 | 负责 | 不负责（路由指向） |
 |------|-------------------|
-| 接收≥1个功能概要 SR-F 节点（`可以详细定义`/`待补充详细定义`），校验功能概要完整 | 功能概要（功能表单清单/操作活动清单/页面编排概要）→ `wft03-eng`（只承接不重新定义） |
+| 接收≥1个功能概要 sfh-eng 节点（`可以详细定义`/`待补充详细定义`），校验功能概要完整 | 功能概要（功能表单清单/操作活动清单/页面编排概要）→ `wft03-eng`（只承接不重新定义） |
 | 按 引擎+CU+功能表单+区域内组件 匹配已有功能详细条目 | 操作活动定义（配置操作/系统处理/运行期能力）→ `wft02-eng` |
-| 布局组件判定（七种组合）+ 构件识别（展示/交互/数据/反馈四类） | PA 前后端组件设计 → `wft05-eng`（本 Skill 只标注收敛项，不设计组件） |
+| 布局组件判定（七种组合）+ 构件识别（展示/交互/数据/反馈四类） | pa-eng 前后端组件设计 → `wft05-eng`（本 Skill 只标注收敛项，不设计组件） |
 | 组件业务定义（承载操作活动/数据来源/交互行为/状态反馈，功能级不写实现） | 代码实现、测试用例、数据库物理表或字段级接口协议 → 构件开发流水线 |
-| PA 层收敛项标注（组件边界/接口/数据/运行/NFR） | — |
-| 覆盖自查 + 推进 SR-F→`已详细定义` | — |
+| pa-eng 层收敛项标注（组件边界/接口/数据/运行/NFR） | — |
+| 覆盖自查 + 推进 sfd-eng→`已详细定义` | — |
 | 接收 wft05-eng 退回 `需wft04修订`；根因在功能概要 → 退回 `wft03-eng` | — |
 
 ### 上下游衔接
 
 | 方向 | Skill | 交接内容 |
 |------|-------|---------|
-| 上游 | `wft03-eng` | 产出功能概要 SR-F（功能表单清单/结构判定级概要说明/操作活动清单/页面编排概要）。通过 `## AI可以处理节点` 的"待 wft04-eng 处理"分节检测 |
-| 下游 | `wft05-eng` | 消费 `已详细定义` 的功能详细 SR-F（区域内布局组件/构件 + 组件业务 + PA 层收敛项），设计 PA 三类组件（前端/后端/平台服务）。缺陷时退回 `需wft04修订` |
+| 上游 | `wft03-eng` | 产出功能概要 sfh-eng（功能表单清单/结构判定级概要说明/操作活动清单/页面编排概要）。通过 `## AI可以处理节点` 的"待 wft04-eng 处理"分节检测 |
+| 下游 | `wft05-eng` | 消费 `已详细定义` 的功能详细 sfd-eng（区域内布局组件/构件 + 组件业务 + pa-eng 层收敛项），设计 pa-eng 三类组件（前端/后端/平台服务）。缺陷时退回 `需wft04修订` |
 
 ---
 
@@ -43,7 +43,7 @@ description: 功能概要SR-F→功能详细SR-F·功能表单组件及其业务
 **变更感知**（先于入口检测，检出人类线下修订）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md
 ```
 
 检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 变更感知）。
@@ -51,23 +51,23 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 **入口检测**：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md "AI可以处理节点"
 ```
 
 **输入校验**（按顺序，命中即退出）：
 
 | 条件 | 判定 | 动作 |
 |------|------|------|
-| SR-F 状态=`需wft04修订` 且人类未提供改进方案 | 退回方案缺失 | 输出 wft05-eng 缺失说明 → **退出** |
-| SR-F 不是 eng 路径功能概要节点 | 类型不匹配 | 提示走 `wft03-biz` 或 nfr 路径 → **退出** |
-| SR-F 状态≠`可以详细定义`/`待补充详细定义` | 状态不符 | 输出状态分布 → **退出** |
-| 功能概要缺少任一项（功能表单清单/操作活动清单/页面编排概要） | 上游待修 | SR-F→`需wft03修订`+缺失说明 → **退出** |
-| 选中 SR-F >5 个 | 软提示 | 输出超限提示 → 人类确认 |
+| sfd-eng 状态=`需wft04修订` 且人类未提供改进方案 | 退回方案缺失 | 输出 wft05-eng 缺失说明 → **退出** |
+| sfd-eng 不是 eng 路径功能概要节点 | 类型不匹配 | 提示走 `wft03-biz` 或 nfr 路径 → **退出** |
+| sfd-eng 状态≠`可以详细定义`/`待补充详细定义` | 状态不符 | 输出状态分布 → **退出** |
+| 功能概要缺少任一项（功能表单清单/操作活动清单/页面编排概要） | 上游待修 | sfd-eng→`需wft03修订`+缺失说明 → **退出** |
+| 选中 sfd-eng >5 个 | 软提示 | 输出超限提示 → 人类确认 |
 | 无任何待处理 | — | 输出"无待处理对象"→ **退出** |
 
-**退回优先**：存在 `需wft04修订` SR-F → 已提供改进方案则走 Phase B 修订，未提供则输出缺失说明退出。
+**退回优先**：存在 `需wft04修订` sfd-eng → 已提供改进方案则走 Phase B 修订，未提供则输出缺失说明退出。
 
-**锁定写回**：输入校验通过后，将承接的 SR-F 状态写为 `在详细定义`（锁定态，本 Skill 消费展开期间，对齐人类方案 §4.1）；完成组件业务且人类确认后推进 `已详细定义`。
+**锁定写回**：输入校验通过后，将承接的 sfd-eng 状态写为 `在详细定义`（锁定态，本 Skill 消费展开期间，对齐人类方案 §4.1）；完成组件业务且人类确认后推进 `已详细定义`。
 
 ---
 
@@ -76,24 +76,24 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirem
 **1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md
 ```
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
 
-**2. 加载本轮功能概要 SR-F**：
+**2. 加载本轮功能概要 sfh-eng**：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md "待 wft04-eng 处理"
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md <SR-F-ID>
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md "待 wft04-eng 处理"
+bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md <sfd-eng-ID>
 ```
 
 **3. 加载资产全貌**：
 
 | 资产 | 用途 | 读写 |
 |------|------|------|
-| `05-*.md` | 功能概要 SR-F 节点 | 读/写 |
-| `04-*.md` | BP 追溯来源 | 读 |
+| `05-*.md` | 功能概要 sfh-eng 节点 | 读/写 |
+| `04-*.md` | bpd-eng 追溯来源 | 读 |
 | `23-eos-output-architecture.md` | A1 产品路径筛选 | 读 |
 | `25-eos-engine-models.md` | 引擎/CU 类型（引用更新） | **读/写** |
 
@@ -109,11 +109,11 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement
 
 | 维度 | wft04-eng 值 |
 |------|-------------|
-| **锚点需求** | 功能概要 SR-F |
-| **操作条目** | 布局组件 + 构件 + 组件业务 + PA 收敛项 |
+| **锚点需求** | 功能概要 sfh-eng |
+| **操作条目** | 布局组件 + 构件 + 组件业务 + pa-eng 收敛项 |
 | **推进目标** | 全部条目 `[同意]`+`[已处理]` → `已详细定义` |
 | **清除条件** | 已有 `[同意]`+`[已处理]` 的条目默认跳过。仅在新输入满足以下任一时，清除 `[已处理]`（保留 `[同意]`）回到待处理：<br>• 新输入是条目的直接上游节点（如新功能概要是功能详细来源）<br>• 新输入与条目同属一个架构层级且边界重叠（如新组件改变已有组件的类型或业务）<br>• 新输入导致条目被修订（变更影响声明标注修订型或结构型） |
-| **级联触发条件** | 组件清单/布局组件/构件变更、组件业务增删、PA 收敛项边界变化 |
+| **级联触发条件** | 组件清单/布局组件/构件变更、组件业务增删、pa-eng 收敛项边界变化 |
 | **资产对齐级联** | 方案变更 → 更新 25 功能详细引用 |
 
 **确认状态标记状态机**：`(空)` 待反馈 → 人类标注 `[同意]`/`[修改]`/`[驳回]` → AI 处理追 `[已处理]`（对话反馈写入者=AI，线下标注写入者=人类，经 git diff 检出后按 §A.5 处理）。跨轮余留反馈由 AI 标 `[修改]`/`[驳回]` 入"待反馈处理"分节。**已有 `[已处理]` 的条目默认跳过**；新输入满足清除条件时清除 `[已处理]`（保留 `[同意]`）回到待处理（见特化参数）。
@@ -121,8 +121,8 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement
 **元信息维护**：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md update-head
 ```
 
 ---
@@ -147,37 +147,37 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 
 | 关系 | 判定 | 处理 |
 |------|------|------|
-| 确认 | 组件匹配+类型一致+来源升级 | 追加 BP/CU 来源 |
+| 确认 | 组件匹配+类型一致+来源升级 | 追加 bpd-eng/CU 来源 |
 | 无新增 | 组件匹配+全部已确认 | 增量合并细节 |
-| 组件业务扩展 | 类型一致+业务/PA收敛项边界扩展 | 全量重写，保留历史 |
+| 组件业务扩展 | 类型一致+业务/pa-eng收敛项边界扩展 | 全量重写，保留历史 |
 | 补充 | 组件不匹配 | 新增功能详细条目 |
 | 过时 | 基线组件未被本轮覆盖 | `[过时]`+保留不删 |
 
-4. **变更影响声明**——判定变更类型，写入 SR-F 末尾
+4. **变更影响声明**——判定变更类型，写入 sfd-eng 末尾
 
 #### Phase C — 新建功能详细
 
 1. **判定布局组件**——在页面编排概要基础上独立判断区域需要的布局组件组合（附录 A.3）
 2. **识别构件**——按展示/交互/数据/反馈四类独立识别（附录 A.4）
 3. **定义组件业务**——逐组件定义承载操作活动/数据来源/交互行为/状态反馈（附录 A.5，功能级不写实现）
-4. **标注 PA 层收敛项**——组件边界/接口/存储/运行机制/NFR 均标注（附录 A.6）
+4. **标注 pa-eng 层收敛项**——组件边界/接口/存储/运行机制/NFR 均标注（附录 A.6）
 5. **组装功能详细**——写入 `05-*.md`
 
 ---
 
-### Step 4 · 组件业务定义与 PA 收敛项
+### Step 4 · 组件业务定义与 pa-eng 收敛项
 
 **1. 组件业务定义**——对每个布局组件/构件，按 §3.3.1 要素定义组件业务（承载操作活动[承接 03 操作活动清单]/数据来源/交互行为/状态反馈，功能级不写实现）。全量 `[推断]`。
 
-**2. PA 层收敛项标注**——逐组件检查五类（附录 A.6），存在则写入 `PA层收敛-*` 标记。载件（wft02 系统处理产物，经 03 操作活动清单承接）是主要来源——供 wft05 判断由前后端组件承接。本 Skill 不设计 PA 组件——只传递待处理问题。
+**2. pa-eng 层收敛项标注**——逐组件检查五类（附录 A.6），存在则写入 `pa-eng层收敛-*` 标记。载件（wft02 系统处理产物，经 03 操作活动清单承接）是主要来源——供 wft05 判断由前后端组件承接。本 Skill 不设计 pa-eng 组件——只传递待处理问题。
 
-**3. 要素机械检查**——组件名称/所属功能表单/所在区域已定义、布局组件类型/构件类型已判定、组件业务已定义、PA 收敛项已标注、所有区域与操作活动清单均被组件承接。
+**3. 要素机械检查**——组件名称/所属功能表单/所在区域已定义、布局组件类型/构件类型已判定、组件业务已定义、pa-eng 收敛项已标注、所有区域与操作活动清单均被组件承接。
 
 ---
 
 ### Step 5 · 覆盖自查与变更声明
 
-**九项覆盖自查**：区域覆盖 / 操作活动覆盖 / 布局组件覆盖 / 组件业务完整 / PA收敛标注 / 追溯覆盖 / 共享不重复 / 推断依据标注 / 25关系清晰（判据见附录 A.7）。
+**九项覆盖自查**：区域覆盖 / 操作活动覆盖 / 布局组件覆盖 / 组件业务完整 / pa-eng收敛标注 / 追溯覆盖 / 共享不重复 / 推断依据标注 / 25关系清晰（判据见附录 A.7）。
 
 **缺口处理**：
 
@@ -186,7 +186,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 | 区域或操作活动未覆盖 | 补充组件或退回 wft03-eng |
 | 布局组件未判定 | 补充布局组件判定 |
 | 组件业务不完整 | 补充业务要素（功能级不写实现） |
-| PA 必收敛项缺失 | 补充收敛项，不推进到可消费 |
+| pa-eng 必收敛项缺失 | 补充收敛项，不推进到可消费 |
 
 ---
 
@@ -196,8 +196,8 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 
 **写回操作**：
 1. `05` 写入或更新功能详细节点、状态队列、追溯引用
-2. `25` 写入功能详细引用或待办（不固化 PA 组件设计）
-3. SR-F→`已详细定义`
+2. `25` 写入功能详细引用或待办（不固化 pa-eng 组件设计）
+3. sfd-eng→`已详细定义`
 
 **提交基线**（链级不变式，顺序对齐 wft02-eng §5.6）：
 
@@ -209,10 +209,10 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 **元信息维护**：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md update-head
 
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md add-recent-change "wft04-eng" "资产写回" "<SR-F-ID>" "05 资产写回"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md add-recent-change "wft04-eng" "资产写回" "<sfd-eng-ID>" "05 资产写回"
 ```
 
 ---
@@ -223,7 +223,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 
 ```text
 当前状态：<待确认方案 / 已详细定义>
-  本轮功能详细：<SR-F-ID / 新建或修订 / 版本变化 / 来源功能概要>
+  本轮功能详细：<sfd-eng-ID / 新建或修订 / 版本变化 / 来源功能概要>
 资产落账：<未落账 / 已写回 05/25>
 
 一、方案反馈
@@ -231,12 +231,12 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
     - "节点配置区补一个'批量删除'构件"
     - "整体确认"（快捷同意全部未标注条目）
     - "组件业务补状态反馈段"
-  审核锚点：布局组件/构件判定是否合理、组件业务定义是否完整（功能级不写实现）、PA 收敛项标注是否到位
-  可用性锚点：功能详细是否足以指导 wft05-eng 设计前后端组件？追溯链（组件→功能表单→配置信息组→CU→BP→STR-E）是否可追踪？
+  审核锚点：布局组件/构件判定是否合理、组件业务定义是否完整（功能级不写实现）、pa-eng 收敛项标注是否到位
+  可用性锚点：功能详细是否足以指导 wft05-eng 设计前后端组件？追溯链（组件→功能表单→配置信息组→CU→bpd-eng→bph-eng）是否可追踪？
 
 二、下一步
-  本Skill → 选择功能概要 SR-F 节点（`可以详细定义` / `待补充详细定义`）或 `需wft04修订` 的 SR-F 节点重新运行
-  后续    → SR-F-XXX（已详细定义）、SR-F-YYY（待补充详细定义）→ wft05-eng
+  本Skill → 选择功能概要 sfh-eng 节点（`可以详细定义` / `待补充详细定义`）或 `需wft04修订` 的 sfd-eng 节点重新运行
+  后续    → sfd-eng-XXX（已详细定义）、sfd-eng-YYY（待补充详细定义）→ wft05-eng
 ```
 
 **输出后不结束对话**，等待人类反馈。
@@ -249,7 +249,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 | 线下修订检出（git diff 发现确认状态标注/自由文本编辑） | 定位条目 → Edit 修订 → 追加 `[已处理]` → 输出修改摘要 → 继续等待 |
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md add-recent-change "wft04-eng" "反馈处理" "<SR-F-ID>" "<AI总结>"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md add-recent-change "wft04-eng" "反馈处理" "<sfd-eng-ID>" "<AI总结>"
 ```
 
 ---
@@ -261,18 +261,18 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 增量清单示例：
 
 ```text
-=== SR-F-ENG-FLOW-PAGE-001 功能详细 本轮更新清单 ===
+=== sfd-eng-ENG-FLOW-PAGE-001 功能详细 本轮更新清单 ===
 
-[新增] 承接功能概要 SR-F-ENG-FLOW-PAGE-001（03 产出）
+[新增] 承接功能概要 sfh-eng-ENG-FLOW-PAGE-001（03 产出）
 
 区域内组件
   [新增] 布局组件：节点配置区-列表（列表页面）+辅助栏
   [新增] 构件：新建节点按钮（交互类）、节点状态标签（反馈类）
     组件业务：新建节点按钮（承接操作活动·配置维护，数据来源=FlowNodeConfig，交互=点击弹窗，反馈=校验提示）
-    PA 层收敛项：节点元数据存储 [PA层收敛-数据]、发布装载接口 [PA层收敛-接口]
+    pa-eng 层收敛项：节点元数据存储 [pa-eng层收敛-数据]、发布装载接口 [pa-eng层收敛-接口]
 
 完备性检查
-  区域覆盖 ✓ / 操作活动覆盖 ✓ / 组件业务完整 ✓ / PA 收敛 ⚠
+  区域覆盖 ✓ / 操作活动覆盖 ✓ / 组件业务完整 ✓ / pa-eng 收敛 ⚠
 ```
 
 ---
@@ -328,19 +328,19 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 | 组件名称 / 所属功能表单 / 所在区域 | 组件定位 |
 | 布局组件类型 / 构件类型 | 组件种类 |
 | 组件业务 | 承载的操作活动清单（承接 03）、数据来源、交互行为、状态反馈——**不写实现** |
-| PA 层收敛项 | 组件边界/接口/数据/运行/NFR 标注（§2.3） |
+| pa-eng 层收敛项 | 组件边界/接口/数据/运行/NFR 标注（§2.3） |
 
-### A.6 PA 层收敛项五类
+### A.6 pa-eng 层收敛项五类
 
 | 收敛项 | 标注 |
 |--------|------|
-| 组件边界 | `PA层收敛-组件边界` |
-| 接口问题 | `PA层收敛-接口` |
-| 数据问题 | `PA层收敛-数据` |
-| 运行问题 | `PA层收敛-运行` |
-| NFR 问题 | `PA层收敛-NFR` |
+| 组件边界 | `pa-eng层收敛-组件边界` |
+| 接口问题 | `pa-eng层收敛-接口` |
+| 数据问题 | `pa-eng层收敛-数据` |
+| 运行问题 | `pa-eng层收敛-运行` |
+| NFR 问题 | `pa-eng层收敛-NFR` |
 
-> 本 Skill 不设计 PA 组件——PA 层内容只能作为待处理问题传递（PA 本身由 wft05 设计前后端组件），不得预选实现机制。载件（wft02 系统处理产物，经 03 操作活动清单承接）是 PA 收敛项的主要来源。
+> 本 Skill 不设计 pa-eng 组件——pa-eng 层内容只能作为待处理问题传递（pa-eng 本身由 wft05 设计前后端组件），不得预选实现机制。载件（wft02 系统处理产物，经 03 操作活动清单承接）是 pa-eng 收敛项的主要来源。
 
 ### A.7 功能详细完备性判据（9 项）
 
@@ -350,16 +350,16 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 | 操作活动覆盖 | 操作活动清单的每个活动均有组件承接 |
 | 布局组件覆盖 | 区域内布局组件组合已判定，四类构件均已检查 |
 | 组件业务完整 | 组件业务含承载操作活动/数据来源/交互行为/状态反馈（功能级不写实现） |
-| PA 收敛标注 | 五类收敛项均标注（无则写"无"） |
-| 追溯覆盖 | 组件→功能表单→配置信息组→CU→BP→STR-E 追溯完整 |
+| pa-eng 收敛标注 | 五类收敛项均标注（无则写"无"） |
+| 追溯覆盖 | 组件→功能表单→配置信息组→CU→bpd-eng→bph-eng 追溯完整 |
 | 共享不重复 | 共享组件功能详细只在主责链定义 |
-| 推断依据标注 | 组件/PA 收敛项推断均标 `[推断]` 及依据，无静默补判 |
+| 推断依据标注 | 组件/pa-eng 收敛项推断均标 `[推断]` 及依据，无静默补判 |
 | 25 关系清晰 | 25 功能详细引用已有/待确认/缺失关系已标注 |
 
 ### A.8 功能详细节点生命周期
 
 ```
-可以详细定义 ──wft04锁定──→ 在详细定义 ──本Skill完成──→ 已详细定义 ──wft05锁定──→ 在PA设计 ──wft05完成──→ 已产品架构
+可以详细定义 ──wft04锁定──→ 在详细定义 ──本Skill完成──→ 已详细定义 ──wft05锁定──→ 在pa-eng设计 ──wft05完成──→ 已产品架构
    （wft03 写入）                 │                     （wft05 写入）
                                   │
                                   └─ 内部：产出组件业务方案 → 待确认方案 ──人类确认──→（确认后推进至 已详细定义）
@@ -367,7 +367,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 下游退回：已产品架构/已详细定义 ──wft05退回──→ 需wft04修订 ──修订+人类确认──→ 已详细定义
 ```
 
-> SR-F 状态机接力：03 写功能表单概要→`可以详细定义`、04 写组件业务→`已详细定义`（03/04 文档承载 SR-F）。
+> sfd-eng 状态机接力：03 写功能表单概要→`可以详细定义`、04 写组件业务→`已详细定义`（03/04 文档承载 sfd-eng）。
 
 ---
 
@@ -386,6 +386,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v1.6 | 人类方案 v1.5 同步——SR-F→sfh-eng/sfd-eng、PA→pa-eng、BP→bpd-eng（节点类型/节点ID/状态名/追溯链） |
 | 2026-08-24 | v1.5 | 文件名更名同步（人类定名 2026-08-24）——`eos-wft04-eng-sr2sr` → `eos-wft04-eng-sfh2sfd`（name/frontmatter/设计依据/全库引用改向）。AI 执行规则语义不变 |
 | 2026-08-22 | v1.4 | eng 链第三轮深审修复（人类逐项裁决）：①Step 2 特化参数表补**清除条件**行 + 确认状态状态机句补「已处理复活」分支；②Step 1 材料表 25 改「读/写（引用更新）」。 |
 | 2026-08-22 | v1.3 | 深审修正（人类裁决）：A.8 生命周期图补 `在详细定义` 锁定态（`可以详细定义 ──wft04锁定──→ 在详细定义 ──本Skill完成──→ 已详细定义`），「人类确认」移入内部待确认方案支线（对齐人类方案 §4.1；此前图直接跳过本 Skill Step Start 写入的锁定态，与自身矛盾）。 |

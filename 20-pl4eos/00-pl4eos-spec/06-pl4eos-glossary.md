@@ -17,9 +17,9 @@
 |------|------|------|
 | EOS 流水线 | EOS Pipeline | 服务于 EOS 全生命周期的流水线，由设计线/开发线/集成线/运维线四子线组成 |
 | 元流水线 | Meta-Pipeline | 用于设计 EOS 流水线的流水线，当前处于系统设计阶段 |
-| 输出产品架构锚定法 | Output Product Architecture Anchoring Method | 流水线类产品的 BP 开发特化方法：以输出产品的 PA 节点类型为推导锚点 |
-| 用户角色架构锚定法 | User Role Architecture Anchoring Method | BP 开发的通用方法：以全量用户角色集为推导锚点 |
-| 四类构件 | Four Component Types | EOS 流水线 PA 的四类交付物：设计准则、设计指南、AI 辅助文档、任务定义 |
+| 输出产品架构锚定法 | Output Product Architecture Anchoring Method | 流水线类产品的业务详细（bpd-biz）开发特化方法：以输出产品的 pa-eng 节点类型为推导锚点 |
+| 用户角色架构锚定法 | User Role Architecture Anchoring Method | 业务详细（bpd-biz）开发的通用方法：以全量用户角色集为推导锚点 |
+| 四类构件 | Four Component Types | EOS 流水线 pa-eng 的四类交付物：设计准则、设计指南、AI 辅助文档、任务定义 |
 
 ## 三层工作层面
 
@@ -28,7 +28,7 @@
 | 中文 | 英文 | 说明 |
 |------|------|------|
 | 第1层：流水线设计 | Layer 1: Pipeline Design | 用元流水线对 EOS 流水线进行系统设计，产出其产品架构 |
-| 第2层：构件开发 | Layer 2: Component Development | 根据 PA 构件定义开发各构件的完整内容（准则/指南/AI辅助/任务定义） |
+| 第2层：构件开发 | Layer 2: Component Development | 根据 pa-eng 构件定义开发各构件的完整内容（准则/指南/AI辅助/任务定义） |
 | 第3层：使用工具设计 EOS | Layer 3: EOS Design Using Tools | EOS 开发者使用第2层产出的工具对 EOS 进行系统设计 |
 
 ## 三个参与者
@@ -48,10 +48,10 @@
 | 层级 | 中文 | 英文 | 角色 |
 |------|------|------|------|
 | 第1层 | 原始需求 | Original Requirements (OR) | 仅需求 |
-| 第2层 | 相关方需求 | Stakeholder Requirements (SR) | 需求/方案 |
-| 第3层 | 业务流程 | Business Process (BP) | 仅方案 |
-| 第4层 | 系统需求 | System Requirements (SysReq) | 需求/方案 |
-| 第5层 | 产品架构 | Product Architecture (PA) | 仅方案 |
+| 第2层 | 业务概要 | Business Summary (bph) | 需求/方案 |
+| 第3层 | 业务详细 | Business Detailed (bpd) | 仅方案 |
+| 第4层 | 系统功能概要 | Function Summary (sfh) | 需求/方案 |
+| 第5层 | 产品概要 | Product Summary (pa) | 仅方案 |
 
 ## 需求类型
 
@@ -59,7 +59,7 @@
 
 | 中文 | 英文 | 说明 |
 |------|------|------|
-| 功能需求 | Functional Requirement (FR) | 系统必须执行的功能或服务，经 BP 路径分配 |
+| 功能需求 | Functional Requirement (FR) | 系统必须执行的功能或服务，经业务详细路径分配 |
 | 非功能需求 | Non-Functional Requirement (NFR) | 系统必须满足的质量属性，经平行路径分配 |
 | 末级需求 | Leaf-level Requirement | 不可再分的原子粒度需求条目 |
 | 架构末级节点 | Architecture Leaf Node | 方案文档树形结构的末级节点，承接上层需求 |
@@ -94,19 +94,19 @@
 |------|------|------|
 | 1:1 分配约束 | One-to-One Allocation Constraint | 每条详细定义末级分配到下层唯一的架构末级节点 |
 | N:1 承接 | Many-to-One Acceptance | 每个架构末级节点可承接多条上层末级条目 |
-| 双向追溯 | Bidirectional Traceability | OR→PA 正向和 PA→OR 反向均可追踪 |
+| 双向追溯 | Bidirectional Traceability | OR→产品概要 正向和产品概要→OR 反向均可追踪 |
 | 资产优先 | Organizational Asset Priority | 按复用→改进→新增优先级处理架构变更 |
 
-## PA 节点定义三因素
+## pa-eng 节点定义三因素
 
-> **【特有】** EOS 流水线产品专用的 PA 分解决策因素（知识/方法类产品特化）。
+> **【特有】** EOS 流水线产品专用的 pa-eng 分解决策因素（知识/方法类产品特化）。
 
 | 中文 | 英文 | 说明 |
 |------|------|------|
-| 知识领域内聚性 | Knowledge Domain Cohesion | 操作同一知识领域的 SysReq 倾向合并为同一构件 |
+| 知识领域内聚性 | Knowledge Domain Cohesion | 操作同一知识领域的系统功能概要 倾向合并为同一构件 |
 | 质量要求相容性 | Quality Requirement Compatibility | 质量属性冲突的需求不应共享同一构件 |
 | 交付形态相似性 | Delivery Form Similarity | 信息处理模式相同的需求倾向合并（同模式可共享，不同模式应分离） |
-| 三因素决策矩阵 | Three-Factor Decision Matrix | 综合三因素判断 PA 构件合并/分离的决策工具 |
+| 三因素决策矩阵 | Three-Factor Decision Matrix | 综合三因素判断 pa-eng 构件合并/分离的决策工具 |
 
 ## 信息处理模式
 

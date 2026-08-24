@@ -1,11 +1,11 @@
 ---
 name: eos-wft02-eng-bph2bpd
-description: STR-E→BP·A1业务详细定义（操作活动定义）。接收≥1个STR-E节点（可以详细定义/待补充详细定义），
+description: bph-eng→bpd-eng·A1业务详细定义（操作活动定义）。接收≥1个bph-eng节点（可以详细定义/待补充详细定义），
              承接wft01-eng已分配的CU，展开配置信息组操作活动定义（配置操作/系统处理/运行期能力，步骤化三段式）
-             /依赖/状态迁移详细定义，写回23/25资产，形成可进入wft03-eng（功能概要）的BP节点。
+             /依赖/状态迁移详细定义，写回23/25资产，形成可进入wft03-eng（功能概要）的bpd-eng节点。
 ---
 
-# eos-wft02-eng · STR-E → BP · A1 业务详细定义（操作活动定义）
+# eos-wft02-eng · 业务概要（bph-eng）→ 业务详细（bpd-eng）· A1 配置单元详细定义
 
 > **设计依据**：[eos-wft02-eng-bph2bpd.md](../eos-wft02-eng-bph2bpd.md)（人类方案——权威源）
 > **运行时协议**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md) 附录A
@@ -19,22 +19,22 @@ description: STR-E→BP·A1业务详细定义（操作活动定义）。接收�
 
 | 负责 | 不负责（路由指向） |
 |------|-------------------|
-| 接收≥1个 STR-E 节点（`可以详细定义`/`待补充详细定义`），校验状态/主责能力域/已分配 CU 结构 | STR-E 概要定义、分解分配与 CU 承接设计（含收敛判定）、A2 装配 → `wft01-eng` |
-| 按目标引擎+能力域匹配已有 BP——同域不同场景不强行合并 | A2/Bn 业务流程输出文档设计 → `wft02-biz` |
-| 承接已分配 CU——读取 STR-E 的 CU 承接关系，不重新收敛/不重新判定引擎归属 | 功能概要（功能表单+概要说明）→ `wft03-eng`；功能详细（功能表单组件及其业务）→ `wft04-eng` |
+| 接收≥1个 bph-eng 节点（`可以详细定义`/`待补充详细定义`），校验状态/主责能力域/已分配 CU 结构 | bph-eng 概要定义、分解分配与 CU 承接设计（含收敛判定）、A2 装配 → `wft01-eng` |
+| 按目标引擎+能力域匹配已有 bpd-eng——同域不同场景不强行合并 | A2/Bn 业务流程输出文档设计 → `wft02-biz` |
+| 承接已分配 CU——读取 bph-eng 的 CU 承接关系，不重新收敛/不重新判定引擎归属 | 功能概要（功能表单+概要说明）→ `wft03-eng`；功能详细（功能表单组件及其业务）→ `wft04-eng` |
 | 定义每个 CU 的配置信息组操作活动定义（配置操作/系统处理/运行期能力，步骤化三段式，基准=PDF v1.5.2）/配置入口/FR-ENG 指标 + 引擎状态迁移 | 前后端组件、接口、数据库设计 → `wft05-eng` |
-| 承接 STR-E 的 A2 上下文（校验字段完整）+ A1 装配 | 将业务实例配置写入 25（25 是模型事实源） |
+| 承接 bph-eng 的 A2 上下文（校验字段完整）+ A1 装配 | 将业务实例配置写入 25（25 是模型事实源） |
 | 定义并校验四类依赖（引擎内/跨引擎/布局组件构件/治理） | — |
 | 详设缺口补需——配置能力/依赖/状态迁移缺口→补充FR-ENG；承接缺陷→退回 wft01-eng；详设变更 `[调整]` | — |
-| 人类确认后推进 BP→`可以SR设计` + STR-E→`已详细定义` | — |
-| 接收 wft03-eng 退回的 `需wft02修订` BP，按人类方案修订 | — |
+| 人类确认后推进 bpd-eng→`可以sfh设计` + bph-eng→`已详细定义` | — |
+| 接收 wft03-eng 退回的 `需wft02修订` bpd-eng，按人类方案修订 | — |
 
 ### 上下游衔接
 
 | 方向 | Skill | 交接内容 |
 |------|-------|---------|
-| 上游 | `wft01-eng` | 产出 STR-E（主责能力域、能力链、配置信息组候选、配置信息组（概要说明）、CU 承接关系、依赖STR-E）。通过 `## AI可以处理节点` 的"待 wft02-eng 处理"分节检测 |
-| 下游 | `wft03-eng` | 消费 `可以SR设计` 的 BP，依据 CU 操作活动定义组织功能概要（功能表单），经 wft04-eng 功能详细→wft05-eng 产品概要。缺陷时退回 `需wft02修订` |
+| 上游 | `wft01-eng` | 产出 bph-eng（主责能力域、能力链、配置信息组候选、配置信息组（概要说明）、CU 承接关系、依赖bph-eng）。通过 `## AI可以处理节点` 的"待 wft02-eng 处理"分节检测 |
+| 下游 | `wft03-eng` | 消费 `可以sfh设计` 的 bpd-eng，依据 CU 操作活动定义组织功能概要（功能表单），经 wft04-eng 功能详细→wft05-eng 产品概要。缺陷时退回 `需wft02修订` |
 
 ---
 
@@ -45,8 +45,8 @@ description: STR-E→BP·A1业务详细定义（操作活动定义）。接收�
 **变更感知**（先于入口检测，检出人类线下修订）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md
 ```
 
 检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 变更感知）。
@@ -54,25 +54,25 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-arch
 **入口检测**：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md "AI可以处理节点"
 ```
 
 **输入校验**（按顺序，命中即退出）：
 
 | 条件 | 判定 | 动作 |
 |------|------|------|
-| BP 状态=`需wft02修订` 且人类未提供改进方案 | 退回方案缺失 | 输出 wft03-eng 缺失说明 → **退出** |
-| STR 类型不是 STR-E | 类型不匹配 | 输出类型分布 + 路由指引 → **退出** |
-| STR-E 状态≠`可以详细定义`/`待补充详细定义` | 状态不符 | 输出状态分布 → **退出** |
-| STR-E 缺少场景边界/能力链/触发追溯 | 上游待修 | STR-E→`需wft01修订`+缺失说明 → **退出** |
-| STR-E 无已分配 CU 或承接结构不完整（缺配置信息组（概要说明）清单） | 输入不足 | STR-E→`需wft01修订`+缺失说明 → **退出** |
-| 选中 STR-E >5 个 | 软提示 | 输出超限提示 → 人类确认 |
+| bpd-eng 状态=`需wft02修订` 且人类未提供改进方案 | 退回方案缺失 | 输出 wft03-eng 缺失说明 → **退出** |
+| STR 类型不是 bph-eng | 类型不匹配 | 输出类型分布 + 路由指引 → **退出** |
+| bph-eng 状态≠`可以详细定义`/`待补充详细定义` | 状态不符 | 输出状态分布 → **退出** |
+| bph-eng 缺少场景边界/能力链/触发追溯 | 上游待修 | bph-eng→`需wft01修订`+缺失说明 → **退出** |
+| bph-eng 无已分配 CU 或承接结构不完整（缺配置信息组（概要说明）清单） | 输入不足 | bph-eng→`需wft01修订`+缺失说明 → **退出** |
+| 选中 bph-eng >5 个 | 软提示 | 输出超限提示 → 人类确认 |
 | 无任何待处理 | — | 输出"无待处理对象"→ **退出** |
 
-**锁定写回**：输入校验通过后，将承接的 STR-E 状态写为 `在详细定义`（锁定态，本 Skill 消费展开期间，对齐人类方案 §4.1 与 91 §A.6 锁定态=下游写入）；完成操作活动定义且人类确认后推进 `已详细定义`。
+**锁定写回**：输入校验通过后，将承接的 bph-eng 状态写为 `在详细定义`（锁定态，本 Skill 消费展开期间，对齐人类方案 §4.1 与 91 §A.6 锁定态=下游写入）；完成操作活动定义且人类确认后推进 `已详细定义`。
 
-**退回优先**：存在 `需wft02修订` BP → 检查人类是否提供改进方案。已提供 → 读取缺失说明，走 Phase B 修订。未提供 → 输出缺失说明 → **退出**。
+**退回优先**：存在 `需wft02修订` bpd-eng → 检查人类是否提供改进方案。已提供 → 读取缺失说明，走 Phase B 修订。未提供 → 输出缺失说明 → **退出**。
 
 ---
 
@@ -81,19 +81,19 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-archit
 **1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md
 ```
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
 
-**2. 加载本轮 STR-E + 已有 BP**：
+**2. 加载本轮 bph-eng + 已有 bpd-eng**：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md "待 wft02-eng 处理"
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md <STR-E-ID>
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md "BP树画像"
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md <BP-ID>
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "待 wft02-eng 处理"
+bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md <bph-eng-ID>
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md "bpd-eng树画像"
+bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md <bpd-eng-ID>
 ```
 
 **3. 加载资产全貌**：
@@ -110,7 +110,7 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-architect
 
 ### Step 2 · 方案反馈处理
 
-**触发条件**：Step Start 检出 `需wft02修订` BP，或上一轮反馈等待中人类提出修改意见。
+**触发条件**：Step Start 检出 `需wft02修订` bpd-eng，或上一轮反馈等待中人类提出修改意见。
 
 **反馈双轨**（人类任选其一，详见人类方案 §5.3）：①AI 对话反馈——Step End 后不结束对话，直接回复修改意见，AI 即时处理；②线下文档修订——打开 `04-*.md` 在确认状态字段标注 `[同意]`/`[修改]`/`[驳回]` 或直接编辑方案内容（自由文本），经 Step Start 变更感知 git diff 检出后按 §A.5 处理。两轨等价均落账（追 `[已处理]`）。
 
@@ -118,48 +118,48 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-architect
 
 1. 从当前轮次或退回缺失说明中读取人类反馈意图
 2. **逐条处理**——AI 输出后人类直接回复 → 当前轮次继续；wft03 退回 → 下一轮走 Step Start 退回优先
-3. 修改后检查是否仍满足 STR-E 需求
+3. 修改后检查是否仍满足 bph-eng 需求
 4. 结构性变更（A1路径/CU清单/配置能力/依赖重组）→ 按需重入 Step 3
-5. 全部条目获认可 → BP → `可以SR设计`
+5. 全部条目获认可 → bpd-eng → `可以sfh设计`
 6. **元信息维护**：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md update-head
 ```
 
 **特化参数**：
 
 | 维度 | wft02-eng 值 |
 |------|-------------|
-| **锚点需求** | STR-E 节点——以 STR-E 场景业务需求为锚 |
+| **锚点需求** | bph-eng 节点——以 bph-eng 场景业务需求为锚 |
 | **操作条目** | A1 产品路径 + 每个 CU（配置入口/操作活动定义）+ 每条依赖 + 每条缺口补需 |
-| **推进目标** | 全部条目 `[同意]`+`[已处理]` → BP→`可以SR设计` |
-| **清除条件** | 已有 `[同意]`+`[已处理]` 默认跳过。仅当本轮新输入满足任一条件时清除 `[已处理]`（保留 `[同意]`）：<br>1. 新输入为该条目的直接上游节点（如新 STR-E 是 BP 节点的来源）<br>2. 新输入与条目同属一个架构层级且边界重叠（如同属 CU，新 CU 改变了已有 CU 的范围）<br>3. 新输入导致条目定义被修订（变更影响声明标注为修订型或结构型，§A.5.3 Step 1） |
+| **推进目标** | 全部条目 `[同意]`+`[已处理]` → bpd-eng→`可以sfh设计` |
+| **清除条件** | 已有 `[同意]`+`[已处理]` 默认跳过。仅当本轮新输入满足任一条件时清除 `[已处理]`（保留 `[同意]`）：<br>1. 新输入为该条目的直接上游节点（如新 bph-eng 是 bpd-eng 节点的来源）<br>2. 新输入与条目同属一个架构层级且边界重叠（如同属 CU，新 CU 改变了已有 CU 的范围）<br>3. 新输入导致条目定义被修订（变更影响声明标注为修订型或结构型，§A.5.3 Step 1） |
 | **级联触发条件** | A1路径/CU清单变更、依赖变更或引擎归属变更 → 触发需求级联检查 |
 | **资产对齐级联** | CU 定义变更 → 更新 25 引用；A1 路径变更 → 更新 23 引用 |
 
 ---
 
-### Step 3 · A1/CU BP 设计
+### Step 3 · A1/CU bpd-eng 设计
 
-#### Phase A — STR-E 宿主匹配
+#### Phase A — bph-eng 宿主匹配
 
-逐 STR-E 按目标引擎+能力域匹配已有 BP：
+逐 bph-eng 按目标引擎+能力域匹配已有 bpd-eng：
 
 | 条件 | 路由 |
 |------|------|
-| 同一目标引擎 + 能力域一致或互补，落入已有 BP 的 A1 路径 | 归入该 BP → Phase B |
+| 同一目标引擎 + 能力域一致或互补，落入已有 bpd-eng 的 A1 路径 | 归入该 bpd-eng → Phase B |
 | 不满足 | 进入待聚合池 → Phase C |
 | 同一 CU 被多个主引擎争用或 A1 路径不一致 | 标记 `[需裁决]` |
-| CU 属于依赖的共享 STR-E | 不进入本 BP（共享能力独立建模，消费方只记录依赖） |
+| CU 属于依赖的共享 bph-eng | 不进入本 bpd-eng（共享能力独立建模，消费方只记录依赖） |
 
 待聚合池按**同一目标引擎 + 同一能力域**分组。
 
-#### Phase B — 修订已有 BP
+#### Phase B — 修订已有 bpd-eng
 
-1. **要素提取**——从本轮 STR-E 增量合并 A2 上下文和 CU 承接关系。已有上下文仅追加不重建
-2. **宿主匹配检查**——Q1 直接归入→追加来源；Q2 扩展归入→扩展 BP+变更声明；冲突→`[需裁决]`（详见 human spec §3.2.3）
+1. **要素提取**——从本轮 bph-eng 增量合并 A2 上下文和 CU 承接关系。已有上下文仅追加不重建
+2. **宿主匹配检查**——Q1 直接归入→追加来源；Q2 扩展归入→扩展 bpd-eng+变更声明；冲突→`[需裁决]`（详见 human spec §3.2.3）
 3. **CU 详设与变更处理**——承接已分配 CU，定义配置信息组操作活动定义（配置操作/系统处理/运行期能力，步骤化三段式）+ 配置入口/FR-ENG 指标 + 引擎状态迁移（详见 human spec §3.3.2）：
 
 **详设变更处理**（详见 human spec §3.3.3）：
@@ -167,15 +167,15 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 | 变更类型 | 触发 | 处理 |
 |----------|------|------|
 | 配置能力扩展 | 已有 CU 的操作活动定义内容（配置操作步骤/系统处理/运行期能力）扩展 | 修订 CU 操作活动定义，叠加 `[调整]` + 变更原因。不改变 CU 承接关系 |
-| 承接关系变更 | 新 STR-E 的已分配 CU 与已有承接冲突 | 不静默改——退回 `需wft01修订`，由 wft01-eng 重新分配 |
+| 承接关系变更 | 新 bph-eng 的已分配 CU 与已有承接冲突 | 不静默改——退回 `需wft01修订`，由 wft01-eng 重新分配 |
 
-4. **变更影响声明**——判定变更类型，写入 BP 节点末尾
+4. **变更影响声明**——判定变更类型，写入 bpd-eng 节点末尾
 
-#### Phase C — 新建 BP
+#### Phase C — 新建 bpd-eng
 
 1. **确定 A1 产品路径**——流程与 IT 域 → 引擎 → CU
-2. **承接 A2 上下文**——读取 wft01-eng 装配的 A2 上下文（业务配置人员→STR-E→配置活动序列→运行期能力可用），校验字段完整
-3. **承接已分配 CU**——读取 STR-E 的 CU 承接关系 + 配置信息组（概要说明）清单，校验清单完整，不重新收敛
+2. **承接 A2 上下文**——读取 wft01-eng 装配的 A2 上下文（业务配置人员→bph-eng→配置活动序列→运行期能力可用），校验字段完整
+3. **承接已分配 CU**——读取 bph-eng 的 CU 承接关系 + 配置信息组（概要说明）清单，校验清单完整，不重新收敛
 4. **定义 CU 操作活动定义**——承接 wft01 的配置信息组清单+结构判定级概要说明，逐配置信息组展开内容（步骤化三段式，基准=PDF v1.5.2）：
 
 | 定义项 | 回答的问题 | 设计粒度 |
@@ -192,46 +192,46 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 
 ### Step 4 · 引擎需求增补
 
-按每个 BP 独立执行。新建 → 全量检查；修订 → 仅当详设内容变化时重验。变更影响声明在 Step 3 Phase B 产出（详见 human spec §5.4.2/§4.2）。
+按每个 bpd-eng 独立执行。新建 → 全量检查；修订 → 仅当详设内容变化时重验。变更影响声明在 Step 3 Phase B 产出（详见 human spec §5.4.2/§4.2）。
 
 **1. 详设缺口识别**：
 
 | 缺口类型 | 处理 |
 |---------|------|
-| 上游缺口（STR-E 场景边界缺失/能力链不闭合） | 退回 `需wft01修订` |
+| 上游缺口（bph-eng 场景边界缺失/能力链不闭合） | 退回 `需wft01修订` |
 | 承接缺陷（CU 承接关系/配置信息组（概要说明）清单无法在该 CU 下展开，§3.1） | 不静默改——退回 `需wft01修订`，由 wft01-eng 重新分配 |
 | 配置能力缺口（入口/操作步骤/系统处理/运行期能力/指标缺失） | 生成补充 FR-ENG |
 | 依赖缺口（跨引擎无对应模型） | 设计新模型记录（走 25 类型模板，`[推断]` 供流水线开发者审核决策） |
 
-**2. 要素机械检查**——A2 上下文完整（承接自 STR-E）、A1 路径到位、CU 承接非空且含配置信息组（概要说明）清单、每个 CU 操作活动定义（配置操作/系统处理/运行期能力）+ 配置入口/FR-ENG 指标已定义、依赖已定义并校验、变更影响声明已写入。
+**2. 要素机械检查**——A2 上下文完整（承接自 bph-eng）、A1 路径到位、CU 承接非空且含配置信息组（概要说明）清单、每个 CU 操作活动定义（配置操作/系统处理/运行期能力）+ 配置入口/FR-ENG 指标已定义、依赖已定义并校验、变更影响声明已写入。
 
-**3. 补充 FR-ENG 材料生成**——写入 `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<BP名称>补充原始需求材料.md`，登记到 OR 原料状态表。与 wft03-biz 缺口线索同一管道（人类方案 §5.5）：经确认 + ort00→ort03 转正式 FR-ENG OR，不豁免预处理链。
+**3. 补充 FR-ENG 材料生成**——写入 `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<bpd-eng名称>补充原始需求材料.md`，登记到 OR 原料状态表。与 wft03-biz 缺口线索同一管道（人类方案 §5.5）：经确认 + ort00→ort03 转正式 FR-ENG OR，不豁免预处理链。
 
 ---
 
 ### Step 5 · 资产写回与落账
 
-仅写回状态=`可以SR设计` 的 BP 节点。
+仅写回状态=`可以sfh设计` 的 bpd-eng 节点。
 
 **写回操作**：
-1. 遍历已确认 BP，按引擎判定写回 23 资产——已有引擎追加引用（去重），新引擎候选按设计判定落账（设计产物记录）
+1. 遍历已确认 bpd-eng，按引擎判定写回 23 资产——已有引擎追加引用（去重），新引擎候选按设计判定落账（设计产物记录）
 2. 遍历 CU 操作活动定义，写回 25 资产——已确认 CU 写入引用，未确认仅保留候选
-3. `02` STR-E → `已详细定义`（记录 `STR-E 消费版本：v{N}`）
+3. `02` bph-eng → `已详细定义`（记录 `bph-eng 消费版本：v{N}`）
 
 **提交基线 + 元信息维护**（用脚本，不手动；顺序对齐人类方案 §5.6，AI 最近变更 随基线入库）：
 
 ```bash
 # 追加 AI最近变更 记录（先于提交，随基线入库）
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md add-recent-change "wft02-eng" "资产写回" "<BP-ID>" "23/25 资产写回"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md add-recent-change "wft02-eng" "资产写回" "<bpd-eng-ID>" "23/25 资产写回"
 
 # 提交本轮 AI 产出（链级不变式：基线 = 最后 AI 提交，git diff <HEAD @上次 AI 运行>..HEAD 只含人类变更）
 git add -A && git commit -m "[AI] wft02-eng 资产写回（Co-Authored-By: Claude）"
 
 # 更新文件头（HEAD = 刚提交的基线 hash）
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md update-head
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md update-head
 ```
@@ -243,10 +243,10 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
 按三区模板输出方案摘要：
 
 ```text
-当前状态：<待确认方案 / 可以SR设计>
-  本轮 BP：<BP-ID / 新建或修订 / 版本变化 / 来源 STR-E>
+当前状态：<待确认方案 / 可以sfh设计>
+  本轮 bpd-eng：<bpd-eng-ID / 新建或修订 / 版本变化 / 来源 bph-eng>
 资产落账：<未落账 / 已写回 02/04/23/25>
-补充原始需求材料：<无 / <YYYYMMDD>-<BP名称>补充原始需求材料.md>（已登记 OR 原料状态表）
+补充原始需求材料：<无 / <YYYYMMDD>-<bpd-eng名称>补充原始需求材料.md>（已登记 OR 原料状态表）
 新类型设计记录：<无 / 已详设 N 个配置信息组/载件，记录进 25>
 
 一、方案反馈
@@ -255,11 +255,11 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
     - "整体确认"（快捷同意全部未标注条目）
     - "流程节点配置的配置信息组粒度太粗，调整一下"
   审核锚点：操作活动定义是否自洽、依赖是否闭合、详设变更 [调整] 是否合理、承接冲突是否已退回 wft01-eng
-  可用性锚点：CU 操作活动定义是否足以指导 wft03-eng 组织功能概要（功能表单）？追溯链（STR-E→BP→CU）是否可追踪？CU 定义是否可理解？
+  可用性锚点：CU 操作活动定义是否足以指导 wft03-eng 组织功能概要（功能表单）？追溯链（bph-eng→bpd-eng→CU）是否可追踪？CU 定义是否可理解？
 
 二、下一步
-  本Skill → 选择 STR-E 节点（`可以详细定义` / `待补充详细定义`）或 `需wft02修订` 的 BP 节点重新运行
-  后续    → BP-XXX（可以SR设计）、BP-YYY（待补充SR设计）→ wft03-eng
+  本Skill → 选择 bph-eng 节点（`可以详细定义` / `待补充详细定义`）或 `需wft02修订` 的 bpd-eng 节点重新运行
+  后续    → bpd-eng-XXX（可以sfh设计）、bpd-eng-YYY（待补充sfh设计）→ wft03-eng
 ```
 
 **输出后不要结束对话**，等待人类反馈。
@@ -274,7 +274,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
 **反馈总结**（仅在人类"整体确认"后执行）：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-architecture.md add-recent-change "wft02-eng" "反馈处理" "<BP-ID>" "<AI总结>"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md add-recent-change "wft02-eng" "反馈处理" "<bpd-eng-ID>" "<AI总结>"
 ```
 
 ---
@@ -286,14 +286,14 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 增量清单示例：
 
 ```text
-=== BP-ENG-FLOW-001 本轮更新清单 ===
+=== bpd-eng-ENG-FLOW-001 本轮更新清单 ===
 
-[新增] 承接 STR-E-ENG-FLOW-001 v1
+[新增] 承接 bph-eng-ENG-FLOW-001 v1
 
 已分配 CU 详设
-  [新增] "流程节点配置"（@engine-flow）  承接自 STR-E-ENG-FLOW-001（wft01 已分配）
+  [新增] "流程节点配置"（@engine-flow）  承接自 bph-eng-ENG-FLOW-001（wft01 已分配）
     - 配置信息组：节点基本信息/类型组、关联表单组、办理人/传阅人组、操作项/办理意见组、子业务校验规则组、节点事件组、超时流转规则组
-  [新增] "发布配置"（@engine-flow）  承接自 STR-E-ENG-FLOW-001
+  [新增] "发布配置"（@engine-flow）  承接自 bph-eng-ENG-FLOW-001
     - 配置信息组：发布配置组（[调整] 新增回滚审计载件）
 
 完备性检查
@@ -310,7 +310,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 | 变更类型 | 触发 | 处理 |
 |----------|------|------|
 | 配置能力扩展 | 已有 CU 的操作活动定义内容（配置操作步骤/系统处理/运行期能力）扩展 | 修订 CU 操作活动定义，叠加 `[调整]` + 变更原因。不改变 CU 承接关系 |
-| 承接关系变更 | 新 STR-E 的已分配 CU 与已有承接冲突 | 不静默改——退回 `需wft01修订`，由 wft01-eng 重新分配 |
+| 承接关系变更 | 新 bph-eng 的已分配 CU 与已有承接冲突 | 不静默改——退回 `需wft01修订`，由 wft01-eng 重新分配 |
 
 ### A.2 CU 配置信息组与操作活动定义
 
@@ -325,7 +325,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 
 | 缺口类型 | 处理 |
 |---------|------|
-| 上游缺口（STR-E 场景边界缺失/能力链不闭合） | 退回 `需wft01修订` |
+| 上游缺口（bph-eng 场景边界缺失/能力链不闭合） | 退回 `需wft01修订` |
 | 承接缺陷（承接关系/配置信息组（概要说明）清单无法展开） | 不静默改——退回 `需wft01修订` |
 | 配置能力缺口（入口/操作步骤/系统处理/运行期能力/指标缺失） | 生成补充 FR-ENG |
 | 依赖缺口（跨引擎无对应模型） | 设计新模型记录（走 25 类型模板，`[推断]` 待决策） |
@@ -334,12 +334,12 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 
 | 依赖类型 | 示例 | 处理 |
 |----------|------|------|
-| 引擎内依赖 | 流转规则配置依赖流程节点配置 | BP中写明先后关系 |
+| 引擎内依赖 | 流转规则配置依赖流程节点配置 | bpd-eng中写明先后关系 |
 | 跨引擎依赖 | 流程配置依赖实体字段、权限规则 | 引用依赖引擎/CU，不改主归属 |
 | 布局组件/构件依赖 | 流程CU运行期需要按钮构件 | 说明被渲染的构件 |
 | 治理依赖 | 发布、版本、审计、回滚、监控 | 缺失时生成补充FR-ENG或设计新治理配置面（记录进 25） |
 
-### A.5 BP 完备性判据
+### A.5 bpd-eng 完备性判据
 
 | 检查项 | 判据 | 缺口处理 |
 |--------|------|----------|
@@ -349,10 +349,10 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 | 运行期可消费（出口闸门） | 足以让wft03-eng组织功能概要（功能表单） | 不足则保持待确认方案 |
 | 25关系清晰 | 已有/待确认/缺失的模型关系已标注 | 标注新配置信息组/载件设计记录（走 25 类型模板，`[推断]` 待决策） |
 
-### A.6 BP 节点生命周期
+### A.6 bpd-eng 节点生命周期
 
 ```
-待确认方案 ──人类确认──→ 可以SR设计 ──wft03锁定──→ 在SR设计 ──wft03完成──→ 已SR设计
+待确认方案 ──人类确认──→ 可以sfh设计 ──wft03锁定──→ 在sfh设计 ──wft03完成──→ 已sfh设计
      ↑                        ↑                         │
      │                        │               wft03退回  │
      │                        │                         ↓
@@ -376,6 +376,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-archite
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v1.15 | 资产名更名（人类定案）——STR-E→bph-eng、BP→bpd-eng（节点类型/节点ID/状态名），版本头同步递增 |
 | 2026-08-24 | v1.14 | 文件名更名同步（人类定名 2026-08-24）——`eos-wft02-eng-str2bp` → `eos-wft02-eng-bph2bpd`（name/frontmatter/设计依据/全库引用改向）。AI 执行规则语义不变 |
 | 2026-08-22 | v1.13 | eng 链第四轮修复（人类逐项裁决）：C3 清除条件措辞对齐主文件——条件②示例「如新 CU 承接改变了已有承接的范围或归属」→「如同属 CU，新 CU 改变了已有 CU 的范围」、条件③补「，§A.5.3 Step 1」引用。AI 执行规则语义不变。 |
 | 2026-08-22 | v1.12 | 人类方案 v10.4 同步（eng 链第三轮深审修复）：①清除条件措辞补回每条括号示例（对齐主文件/biz 链 SKILL）；②A2 归位措辞、依赖缺口处置、资产写回 01 等同步主文件。AI 执行规则语义不变。 |

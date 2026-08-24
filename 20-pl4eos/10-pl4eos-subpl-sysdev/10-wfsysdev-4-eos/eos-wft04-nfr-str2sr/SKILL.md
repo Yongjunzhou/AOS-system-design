@@ -1,11 +1,11 @@
 ---
 name: eos-wft04-nfr-str2sr
-description: STR-NFR→SysReq-NFR 非功能需求架构与页面约束设计。接收≥1个STR-NFR节点（可NFR设计/待补充NFR设计），
+description: bph-nfr→SysReq-NFR 非功能需求架构与页面约束设计。接收≥1个bph-nfr节点（可NFR设计/待补充NFR设计），
              将定性分类需求转化为可验证的量化约束+分层约束表+页面NFR+wft05-eng NFR约束包，
              写回22具体需求资产+06详细定义，推进至已验证冻结。
 ---
 
-# eos-wft04-nfr · STR-NFR → SysReq-NFR 非功能需求架构与页面约束设计
+# eos-wft04-nfr · bph-nfr → SysReq-NFR 非功能需求架构与页面约束设计
 
 > **设计依据**：[eos-wft04-nfr-str2sr.md](../eos-wft04-nfr-str2sr.md)（人类方案——权威源）
 > **运行时协议**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md) 附录A（入口条件/读取协议/反馈交互/Step End输出模板）
@@ -19,20 +19,20 @@ description: STR-NFR→SysReq-NFR 非功能需求架构与页面约束设计。�
 
 | 负责 | 不负责（路由指向） |
 |------|-------------------|
-| 接收≥1个 STR-NFR 节点（`可以NFR设计`/`待补充NFR设计`），校验状态/分类边界 | 修改 wft01-nfr 已确认的角色语境/NFR 分类边界/OR 分组 → 退回 `wft01-nfr` |
+| 接收≥1个 bph-nfr 节点（`可以NFR设计`/`待补充NFR设计`），校验状态/分类边界 | 修改 wft01-nfr 已确认的角色语境/NFR 分类边界/OR 分组 → 退回 `wft01-nfr` |
 | 量化——承接相关方经澄清确认的目标值，展开系统级量化指标（名称/单位/统计口径/测量方法/验收条件） | 设计业务场景/输出文档/功能表单 → biz 路径 |
 | 归架构——按 22 分类维度+约束对象+指标口径匹配或新建 SysReq-NFR 节点 | 设计引擎场景/CU 详细定义/前后端组件结构 → eng 路径 |
 | 分层——生成分层约束表（六类约束范围×适用链路×消费目标） | 修改 22 已确认分类维度本身（本 Skill 只写具体需求和指标集） |
 | 落页面——对影响用户可感知页面行为的指标生成页面 NFR | 替代人类确认无法推断的目标值 |
 | 装配 wft05-eng NFR 约束包（七组独立组织，含版本与变更声明） | — |
-| 写回 22 具体需求资产 + 06 详细定义 + 推进 STR-NFR→`已NFR设计` + SysReq-NFR→`已验证冻结` | — |
-| 退回——STR-NFR 分类边界/角色语境/适用范围不足时退回 `需wft01修订` | — |
+| 写回 22 具体需求资产 + 06 详细定义 + 推进 bph-nfr→`已NFR设计` + SysReq-NFR→`已验证冻结` | — |
+| 退回——bph-nfr 分类边界/角色语境/适用范围不足时退回 `需wft01修订` | — |
 
 ### 上下游衔接
 
 | 方向 | Skill | 交接内容 |
 |------|-------|---------|
-| 上游 | `wft01-nfr` | 产出 STR-NFR 节点（`可以NFR设计`/`待补充NFR设计`），含角色语境、22 分类路径、分类需求清单、适用对象线索、待量化线索。通过 `## AI可以处理节点` 的"待 wft04-nfr 处理"分节检测 |
+| 上游 | `wft01-nfr` | 产出 bph-nfr 节点（`可以NFR设计`/`待补充NFR设计`），含角色语境、22 分类路径、分类需求清单、适用对象线索、待量化线索。通过 `## AI可以处理节点` 的"待 wft04-nfr 处理"分节检测 |
 | 下游 | `wft05-eng` | 消费 wft05-eng NFR 约束包（含分层约束表+页面 NFR）。首版约束包已确认是 wft05-eng 首次启动的必备前置输入；后续版本递增触发增量重入 |
 | 验证 | 06 详细定义 | 供后续验证与追溯使用 |
 
@@ -45,8 +45,8 @@ description: STR-NFR→SysReq-NFR 非功能需求架构与页面约束设计。�
 **变更感知**（先于入口检测，检出人类线下修订）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md
 ```
 
 检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §3.1 变更感知）。
@@ -55,8 +55,8 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 
 ```bash
 # 1. 读取待处理节点
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md "AI可以处理节点"
 ```
 
 **输入校验**（按顺序，命中即退出）：
@@ -64,9 +64,9 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirem
 | 条件 | 判定 | 动作 |
 |------|------|------|
 | SysReq-NFR 状态=`需wft04修订` 且人类未提供改进方案 | 退回方案缺失 | 输出下游缺失说明 → **退出** |
-| STR-NFR 状态≠`可以NFR设计`/`待补充NFR设计` | 状态不符 | 输出状态分布 → **退出** |
-| STR-NFR 分类边界或角色语境明显缺失 | 上游待修 | STR-NFR→`需wft01修订` + 缺失说明 → **退出** |
-| 选中 STR-NFR >5 个 | 软提示 | 输出超限提示 → 人类确认 |
+| bph-nfr 状态≠`可以NFR设计`/`待补充NFR设计` | 状态不符 | 输出状态分布 → **退出** |
+| bph-nfr 分类边界或角色语境明显缺失 | 上游待修 | bph-nfr→`需wft01修订` + 缺失说明 → **退出** |
+| 选中 bph-nfr >5 个 | 软提示 | 输出超限提示 → 人类确认 |
 | 无任何待处理 | — | 输出"无待处理对象"→ **退出** |
 
 **退回优先**：存在 `需wft04修订` SysReq-NFR → 检查人类是否提供改进方案。已提供 → 读取缺失说明，走 Phase B 修订。未提供 → 输出缺失说明 → **退出**。
@@ -78,32 +78,32 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirem
 **1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md
 ```
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
 
-**2. 加载本轮 STR-NFR 节点**：
+**2. 加载本轮 bph-nfr 节点**：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md "待 wft04-nfr 处理"
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md <STR-NFR-ID>
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "待 wft04-nfr 处理"
+bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md <bph-nfr-ID>
 ```
 
 **3. 加载已有 SysReq-NFR 节点**（用于宿主匹配）：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md "SysReq树画像"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md "SysReq节点索引"
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md <SysReq-NFR-ID>
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md "SysReq树画像"
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md "SysReq节点索引"
+bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md <SysReq-NFR-ID>
 ```
 
 **4. 加载资产全貌**：
 
 | 资产 | 用途 | 读写 |
 |------|------|------|
-| `02-*.md` — STR-NFR 节点块 | 角色语境、分类需求清单、适用对象线索、待量化线索 | 读 |
+| `02-*.md` — bph-nfr 节点块 | 角色语境、分类需求清单、适用对象线索、待量化线索 | 读 |
 | `05-*.md` — SysReq-NFR 节点块 | 已有 SysReq-NFR 宿主匹配 | 读/写 |
 | `06-*.md` — 系统需求详细定义索引 | 定位写入目标 | 读/写 |
 | `22-eos-nfr-taxonomy.md` | NFR 分类维度/具体需求/候选条目（运行时动态读取，不缓存） | 读/写 |
@@ -123,9 +123,9 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement
 
 | 特化维度 | wft04-nfr 值 |
 |---------|-------------|
-| **锚点需求** | STR-NFR 分类需求清单——反馈处理以 STR-NFR 需求理解为锚，不脱离上游需求内容自行修订 |
+| **锚点需求** | bph-nfr 分类需求清单——反馈处理以 bph-nfr 需求理解为锚，不脱离上游需求内容自行修订 |
 | **操作条目** | 量化指标 + 分层约束表行 + 页面 NFR + 22 写回项 + 06 详细定义 |
-| **推进目标** | 全部条目含 `[同意]`+`[已处理]` → SysReq-NFR→`已验证冻结`，STR-NFR→`已NFR设计` |
+| **推进目标** | 全部条目含 `[同意]`+`[已处理]` → SysReq-NFR→`已验证冻结`，bph-nfr→`已NFR设计` |
 | **清除条件** | 已有 `[同意]`+`[已处理]` 默认跳过。仅当本轮新输入满足任一条件时清除 `[已处理]`（保留 `[同意]`）：<br>1. 新输入为该条目的直接上游节点<br>2. 新输入与条目同属一个架构层级且边界重叠<br>3. 新输入导致条目定义被修订（变更影响声明标注为修订型/结构型） |
 | **级联触发条件** | 量化指标/分层约束拓扑变化或 22 判定变更 → 触发需求级联检查 → 触发资产对齐级联 |
 | **资产对齐级联** | 22 判定变更 → 更新 22 引用；指标口径变更 → 更新 06 详细定义 |
@@ -147,9 +147,9 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement
 
 ### Step 3 · 非功能需求架构设计
 
-#### Phase A — STR-NFR 消费感知与宿主匹配
+#### Phase A — bph-nfr 消费感知与宿主匹配
 
-逐 STR-NFR 检查消费版本——首次消费→全量设计，版本递增→按变更声明分流；分类边界或语境不足→退回 wft01-nfr。按 22 分类维度 + 约束对象 + 指标口径匹配已有宿主：
+逐 bph-nfr 检查消费版本——首次消费→全量设计，版本递增→按变更声明分流；分类边界或语境不足→退回 wft01-nfr。按 22 分类维度 + 约束对象 + 指标口径匹配已有宿主：
 
 | 条件 | 路由 |
 |------|------|
@@ -161,13 +161,13 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement
 
 #### Phase B — 修订已有 SysReq-NFR
 
-1. **要素提取**——从 STR-NFR 提取待量化线索、适用对象线索和 22 分类路径
+1. **要素提取**——从 bph-nfr 提取待量化线索、适用对象线索和 22 分类路径
 2. **宿主匹配检查**——Q1→追加指标和追溯；Q2→修订宿主+变更声明；宿主冲突→`[需裁决]`（详见 human spec §2.4.3）
-3. **重判定与关系检测**——基于全部 STR-NFR 重新量化指标，比对已有基线判定六种关系（详见 human spec §2.5.3）：
+3. **重判定与关系检测**——基于全部 bph-nfr 重新量化指标，比对已有基线判定六种关系（详见 human spec §2.5.3）：
 
 | 关系 | 判定 | 处理 |
 |------|------|------|
-| 确认 | 指标匹配+22分类一致+来源升级 | 追加 STR-NFR 引用 |
+| 确认 | 指标匹配+22分类一致+来源升级 | 追加 bph-nfr 引用 |
 | 无新增 | 指标匹配+全部已确认 | 增量合并口径/测量细节 |
 | 指标口径变更 | 指标匹配+目标值/统计口径/测量方法变化 | 更新指标定义+变更原因 |
 | 22判定变更 | 指标匹配+22判定不同 | 更新22判定+变更原因 |
@@ -181,8 +181,8 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement
 1. **确定 22 分类路径** → 一级类目 → 分类维度 → 具体需求归属判定
 2. **生成量化指标** → 逐需求项提取待量化线索 → 目标值/单位/统计口径/测量方法/验收条件。**信息不足时标注 `待确认`，不伪造确定值**。多对象可切分指标按分解规则生成子指标（四类运算：加法=响应时间/乘法=可用性/弱链=吞吐量/职责分布=安全审计权限；候选子预算 `[需裁决]`，人类确认后入约束包；父→子引用记录；单对象指标不分解；子指标到组件类型级标 `待wft05映射`，规则见 human spec §2.4.1）
 3. **判定分层约束** → 六类约束范围判定（附录 A.3）
-4. **生成页面 NFR** → 影响用户可感知页面行为时绑定页面类型/SR-F/业务域
-5. **装配分层约束包** → 按全局/业务域/SR-F/页面级/CU/PA组件/共享七组独立组织
+4. **生成页面 NFR** → 影响用户可感知页面行为时绑定页面类型/sfh-biz/业务域
+5. **装配分层约束包** → 按全局/业务域/sfh-biz/页面级/CU/pa-eng组件/共享七组独立组织
 6. **组装 SysReq-NFR** → 写入 `05-*.md`
 
 ---
@@ -197,9 +197,9 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement
 |----------|---------|
 | 全局 | 影响 EOS 整体运行质量 |
 | 业务域 | 只影响某业务域或产品类型 |
-| SR-F | 指向具体功能性系统需求 |
+| sfh-biz | 指向具体功能性系统需求 |
 | CU | 指向配置单元、配置规则或配置可达性 |
-| PA组件 | 指向前后端组件类型、接口或运行机制 |
+| pa-eng组件 | 指向前后端组件类型、接口或运行机制 |
 | 页面级 | 指向七种页面类型之一、具体页面 ID、交互行为或页面体验 |
 
 **2. 页面 NFR 生成**
@@ -208,9 +208,9 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement
 
 **3. wft05-eng NFR 约束包装配**
 
-生成唯一约束包，只引用分层约束表行 ID 和页面 NFR 条目，不复制正文。**分解子指标作为独立约束行装配，标注「分解运算 + 父指标引用」**（分解规则见 human spec §2.4.1）。包头记录：约束包 ID / 包版本 / 生成时间 / 来源 SysReq-NFR / 上一版本 / 变更类型 / 新增/修订/删除行 / 消费状态 / wft05-eng 已消费版本。正文按七组分别列示（全局/业务域/SR-F/页面级/CU/PA组件/共享）。
+生成唯一约束包，只引用分层约束表行 ID 和页面 NFR 条目，不复制正文。**分解子指标作为独立约束行装配，标注「分解运算 + 父指标引用」**（分解规则见 human spec §2.4.1）。包头记录：约束包 ID / 包版本 / 生成时间 / 来源 SysReq-NFR / 上一版本 / 变更类型 / 新增/修订/删除行 / 消费状态 / wft05-eng 已消费版本。正文按七组分别列示（全局/业务域/sfh-biz/页面级/CU/pa-eng组件/共享）。
 
-**首版发布门禁**：全局/共享约束可无具体对象 ID；业务域约束必须绑定业务域；SR-F/CU/页面级约束必须绑定已存在的目标 ID；PA 组件级约束在 PA 未生成时只记录组件类型+映射条件，标记 `待wft05映射`，不得虚构 PA ID。阻断型约束未满足条件 → SysReq-NFR 保持 `待目标绑定`，不发布首版。
+**首版发布门禁**：全局/共享约束可无具体对象 ID；业务域约束必须绑定业务域；sfh-biz/CU/页面级约束必须绑定已存在的目标 ID；pa-eng 组件级约束在 pa-eng 未生成时只记录组件类型+映射条件，标记 `待wft05映射`，不得虚构 pa-eng ID。阻断型约束未满足条件 → SysReq-NFR 保持 `待目标绑定`，不发布首版。
 
 ---
 
@@ -233,7 +233,7 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement
 | 类型 | 动作 |
 |------|------|
 | 可当场补齐（指标定义不全/约束范围未判定/页面 NFR 缺失） | 本 Skill 内补齐后重验 |
-| 根因在上游（STR-NFR 分类边界不清/角色语境缺失） | 退回 `需wft01修订`+缺失说明 |
+| 根因在上游（bph-nfr 分类边界不清/角色语境缺失） | 退回 `需wft01修订`+缺失说明 |
 | 需人类裁决（目标值无法推断/约束层级归属有争议） | 标记 `[需裁决]`，不进 Step 6 |
 | 不可脑补 | 缺口就是缺口——不虚构节点或指标值 |
 
@@ -249,26 +249,26 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement
 |------|---------|------|
 | 22 写回 | `22-*.md` | 复用→追加引用；升级→扩展+引用+指标集；新增→新建条目 |
 | 06 详细定义 | `06-*.md` | NFR 系统需求详细定义（来源/指标/测量/验收/分层约束引用/22 引用） |
-| SysReq-NFR 推进 | `05-*.md` | → `已验证冻结`，记录 22/06 引用和 STR-NFR 消费版本 |
-| STR-NFR 推进 | `02-*.md` | 写入 `STR-NFR 消费版本：v{N}`，→ `已NFR设计` |
+| SysReq-NFR 推进 | `05-*.md` | → `已验证冻结`，记录 22/06 引用和 bph-nfr 消费版本 |
+| bph-nfr 推进 | `02-*.md` | 写入 `bph-nfr 消费版本：v{N}`，→ `已NFR设计` |
 | 约束包发布 | — | 首版标记 `待消费`；后续有效变化且旧版已消费时标记 `需重消费`。消费状态/已消费版本由 wft05-eng 消费后回写（本 Skill 发布时写 `待消费`，不自行置 `已消费`，单写者分离） |
 
 **提交基线 + 元信息维护**（用脚本，不手动；顺序对齐人类方案 §3.6，AI 最近变更 随基线入库）：
 
 ```bash
 # 追加 AI最近变更 记录（先于提交，随基线入库）
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md add-recent-change "wft04-nfr" "资产写回" "<SysReq-NFR-ID>" "22/06/05/02 资产写回"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md add-recent-change "wft04-nfr" "资产写回" "<SysReq-NFR-ID>" "22/06/05/02 资产写回"
 
 # 提交本轮 AI 产出（链级不变式：基线 = 最后 AI 提交，git diff <HEAD @上次 AI 运行>..HEAD 只含人类变更）
 git add -A && git commit -m "[AI] wft04-nfr 资产写回（Co-Authored-By: Claude）"
 
 # 更新文件头（HEAD = 刚提交的基线 hash）
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirements-detailed.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirements-detailed.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-function-detailed.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-function-detailed.md update-head
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md update-head
 ```
@@ -281,7 +281,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md 
 
 ```text
 当前状态：<待确认方案 / 已验证冻结>
-  本轮 SysReq-NFR：<SysReq-NFR-ID / 新建或修订 / 版本变化 / 来源 STR-NFR>
+  本轮 SysReq-NFR：<SysReq-NFR-ID / 新建或修订 / 版本变化 / 来源 bph-nfr>
   NFR 约束包：<约束包 ID / 包版本 / 变更类型 / 消费状态 / wft05-eng 已消费版本>
 资产落账：<未落账 / 已写回 22/06/05/02>
 
@@ -291,10 +291,10 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md 
     - "整体确认"（快捷同意全部未标注条目）
     - "分层约束调整粒度"
   审核锚点：量化指标是否可验证、分层约束是否正确、页面 NFR 是否可消费、22/06 归属是否合理
-  可用性锚点：量化指标是否可验证（单位/统计口径/测量方法/验收条件）？追溯链（STR-NFR→SysReq-NFR→22/06）是否可追踪？分层约束是否足以指导 wft05-eng 展开架构设计？
+  可用性锚点：量化指标是否可验证（单位/统计口径/测量方法/验收条件）？追溯链（bph-nfr→SysReq-NFR→22/06）是否可追踪？分层约束是否足以指导 wft05-eng 展开架构设计？
 
 二、下一步
-  本Skill → 选择 STR-NFR 节点（`可以NFR设计` / `待补充NFR设计`）或 `需wft04修订` 的 SysReq-NFR 节点重新运行
+  本Skill → 选择 bph-nfr 节点（`可以NFR设计` / `待补充NFR设计`）或 `需wft04修订` 的 SysReq-NFR 节点重新运行
   后续    → wft05-eng 仅在首版约束包已确认时首次启动；后续包版本递增时按变更声明增量重入
 ```
 
@@ -313,7 +313,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md 
 **反馈总结**（仅在人类"整体确认"后执行）：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md add-recent-change "wft04-nfr" "反馈处理" "<SysReq-NFR-ID>" "<AI 总结的反馈要点>"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md add-recent-change "wft04-nfr" "反馈处理" "<SysReq-NFR-ID>" "<AI 总结的反馈要点>"
 ```
 
 ---
@@ -327,14 +327,14 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 ```text
 === SysReq-NFR-PERF-001 本轮更新清单 ===
 
-[新增] 承接 STR-NFR-NFR-PERF-001（消费版本 v1）
+[新增] 承接 bph-nfr-NFR-PERF-001（消费版本 v1）
 
 量化指标
   [新增] 列表查询 P95 响应时间 ≤ 2000ms（高峰期100并发，压测）  资产对齐：22=新增具体需求
 
 分层约束
   [新增] 页面级 / biz / 窗口标签页 / @page-procurement-list / 页面性能 / 阻断型
-  [新增] PA组件 / eng / 前端业务能力支持组件 / 运行约束机制 / 非阻断型
+  [新增] pa-eng组件 / eng / 前端业务能力支持组件 / 运行约束机制 / 非阻断型
 
 完备性检查
   量化完整 ✓ / 宿主唯一 ✓ / 分层正确 ✓ / 页面可消费 ✓
@@ -350,7 +350,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 | 锚点 | 说明 |
 |------|------|
 | 22 分类维度 | 一级类目 + 分类维度，决定主要质量属性 |
-| 约束对象 | 全局、业务域、SR-F、CU、PA 组件、页面级对象 |
+| 约束对象 | 全局、业务域、sfh-biz、CU、pa-eng 组件、页面级对象 |
 | 指标口径 | 目标值、单位、统计口径、测量方法 |
 | 适用链路 | `biz` / `eng` / `共享` |
 
@@ -369,9 +369,9 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 |----------|----------|---------|
 | 全局 | 影响 EOS 整体运行质量 | wft05-eng |
 | 业务域 | 只影响某业务域或产品类型 | wft05-eng |
-| SR-F | 指向具体功能性系统需求 | wft05-eng |
+| sfh-biz | 指向具体功能性系统需求 | wft05-eng |
 | CU | 指向配置单元、配置规则或配置可达性 | wft05-eng |
-| PA组件 | 指向前后端组件类型、接口或运行机制 | wft05-eng |
+| pa-eng组件 | 指向前后端组件类型、接口或运行机制 | wft05-eng |
 | 页面级 | 指向七种页面类型之一、具体页面 ID | wft05-eng |
 
 > NFR 约束仅流向 eng 路径——所有约束行消费目标均为 `wft05-eng`。
@@ -399,7 +399,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 
 ### A.6 SysReq-NFR 双生命周期状态流转
 
-**STR-NFR 侧**（上游消费）：
+**bph-nfr 侧**（上游消费）：
 
 ```
 可以NFR设计 ──wft04锁定──→ 在NFR设计 ──wft04完成──→ 已NFR设计
@@ -420,7 +420,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
                               待确认方案 ←── wft04修订 ── 需wft04修订
 ```
 
-**上游变更**：`已验证冻结` ──新STR-NFR修订──→ `待补充NFR验证` ──补全──→ `已验证冻结`
+**上游变更**：`已验证冻结` ──新bph-nfr修订──→ `待补充NFR验证` ──补全──→ `已验证冻结`
 
 ### A.7 页面 NFR 典型类型
 
@@ -437,7 +437,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 
 | 关系 | 判定 | 处理 |
 |------|------|------|
-| 确认 | 指标匹配+22分类一致+来源升级 | 追加 STR-NFR 引用 |
+| 确认 | 指标匹配+22分类一致+来源升级 | 追加 bph-nfr 引用 |
 | 无新增 | 指标匹配+全部已确认 | 增量合并口径/测量细节 |
 | 指标口径变更 | 指标匹配+目标值/统计口径/测量方法变化 | 更新指标定义+变更原因 |
 | 22判定变更 | 指标匹配+22判定不同 | 更新22判定+变更原因 |
@@ -453,7 +453,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 | **弱链** | 吞吐量/并发等 | 每子目标 ≥ 系统目标 | 不切预算，逐对象类型指派（各承接全量） |
 | **职责分布** | 安全/审计/权限/易用性等 | 无守恒 | 不切预算，逐对象类型指派职责 |
 
-**多对象识别**：约束对象类型按 91 §8.5 三类组件（前端/后端/平台服务）+ SR-F/CU/页面级判定；一条指标同时影响多个对象类型时为多对象。加法/乘法多对象→生成子指标（组件类型级）；弱链/职责分布多对象→逐对象类型生成约束行、不切预算。**单对象指标不分解**，一条到底（保持原约束范围）。子指标目标到组件类型级，不预判具体组件（`待wft05映射`）。**记录**：父指标记「分解运算 + 子指标引用」，子指标记「父指标引用 + 分解运算 + 目标对象类型」。
+**多对象识别**：约束对象类型按 91 §8.5 三类组件（前端/后端/平台服务）+ sfh-biz/CU/页面级判定；一条指标同时影响多个对象类型时为多对象。加法/乘法多对象→生成子指标（组件类型级）；弱链/职责分布多对象→逐对象类型生成约束行、不切预算。**单对象指标不分解**，一条到底（保持原约束范围）。子指标目标到组件类型级，不预判具体组件（`待wft05映射`）。**记录**：父指标记「分解运算 + 子指标引用」，子指标记「父指标引用 + 分解运算 + 目标对象类型」。
 
 ---
 
@@ -474,6 +474,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v1.6 | 资产名更名（人类定案）——STR-NFR→bph-nfr（SysReq-NFR 保留），版本头同步递增 |
 | 2026-08-22 | v1.5 | 人类方案 v5.7 同步（NFR 分解设计，人类逐项裁决 2026-08-22）：①Step 3 Phase C 生成量化指标补**分解规则**（四类运算：加法=响应时间/乘法=可用性/弱链=吞吐量/职责分布=安全审计权限；候选子预算 `[需裁决]` 人类确认后入约束包；父→子引用记录；单对象指标不分解；子指标到组件类型级 `待wft05映射`）；②Step 4 约束包装配补**分解子指标独立装配**（标注分解运算+父指标引用）+ 包头补生成时间/wft05-eng 已消费版本；③Step 6 约束包发布补**消费状态回写单写者约定**（消费状态/已消费版本由 wft05-eng 消费后回写，本 Skill 发布时写 `待消费` 不自行置 `已消费`）；④附录A 新增 A.9 量化指标分解规则判据。AI 执行规则语义不变 |
 | 2026-08-21 | v1.4 | 人类方案 v5.6 同步（非主价值链 Step 框架链级统一——移除三角色/Step End 单区/内联处理表/输入校验 biz 格式/标注纪律框架）。AI 执行规则语义不变 |
 | 2026-08-20 | v1.3 | 人类方案 v5.5 框架对齐同步——Step 2 补「反馈双轨」（AI 对话反馈主通道 + 线下文档修订经 Step Start 变更感知检出，两轨等价）；Step 6 补 git 提交基线（顺序：add-recent-change → git commit → 文件头，链级不变式，对齐人类方案 §3.6）；Step End 改三角色四区 + AI 处理反馈规则表补「线下修订检出」行。AI 执行规则语义不变 |

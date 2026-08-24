@@ -8,7 +8,7 @@
 **文档类型**：验证类索引文档
 **权威状态源**：本文档 `1. 追溯关系状态与处理队列`
 
-> **文档定位**：EOS 系统设计端到端追溯关系的统一索引文件。本文档不复制 `01~07` 的正文，而是记录 OR、STR、BP、SysReq、PA 和资产文档之间的关系，支持按源节点、目标节点、关系类型和问题状态进行局部读取。
+> **文档定位**：EOS 系统设计端到端追溯关系的统一索引文件。本文档不复制 `01~07` 的正文，而是记录 OR、STR、BP、SysReq、产品概要 和资产文档之间的关系，支持按源节点、目标节点、关系类型和问题状态进行局部读取。
 
 ## AI读取文档说明
 
@@ -43,37 +43,37 @@
 
 | 层级 | 源文档 | 目标文档 | 关系目标 |
 |------|--------|----------|----------|
-| OR → STR | `01-eos-original-requirements.md` | `02-eos-stakeholder-requirements-architecture.md` | OR 末级分配到 STR 架构末级 |
-| STR → STR-D | `02-eos-stakeholder-requirements-architecture.md` | `03-eos-stakeholder-requirements-detailed.md` | STR 架构节点细化为详细定义 |
-| STR-D → BP | `03-eos-stakeholder-requirements-detailed.md` | `04-eos-business-architecture.md` | STR 详细定义由 BP 方案满足 |
-| BP → SysReq | `04-eos-business-architecture.md` | `05-eos-system-requirements-architecture.md` | BP 末级节点映射为 SysReq 架构末级 |
-| SysReq → SysReq-D | `05-eos-system-requirements-architecture.md` | `06-eos-system-requirements-detailed.md` | SysReq 架构节点细化为详细定义 |
-| SysReq-D → PA | `06-eos-system-requirements-detailed.md` | `07-eos-product-architecture.md` | SysReq 详细活动或约束由 PA 组件承接 |
+| OR → 业务概要 | `01-eos-specified-requirements.md` | `02-eos-business-summary-architecture.md` | OR 末级分配到 业务概要架构末级 |
+| 业务概要 → 业务概要详细 | `02-eos-business-summary-architecture.md` | `03-eos-business-summary-detailed.md` | 业务概要架构节点细化为详细定义 |
+| 业务概要详细 → 业务详细 | `03-eos-business-summary-detailed.md` | `04-eos-business-detailed.md` | 业务概要详细定义由业务详细方案满足 |
+| 业务详细 → 系统功能概要 | `04-eos-business-detailed.md` | `05-eos-function-summary-architecture.md` | 业务详细末级节点映射为系统功能概要架构末级 |
+| 系统功能概要 → 系统功能详细 | `05-eos-function-summary-architecture.md` | `06-eos-function-detailed.md` | 系统功能概要架构节点细化为详细定义 |
+| 系统功能详细 → 产品概要 | `06-eos-function-detailed.md` | `07-eos-product-summary.md` | 系统功能详细活动或约束由产品概要组件承接 |
 | 过程文档 → 资产 | `02~07` | `21~27` | 节点引用角色、NFR、输出产品、业务定义、引擎、文档和资源资产 |
 
 ### 0.2 关系类型
 
 | 关系类型 | 含义 | 典型场景 |
 |----------|------|----------|
-| `derived_from` | 从上游材料或节点推导而来 | STR derived_from OR |
-| `refines` | 对上游架构节点做详细化 | STR-D refines STR |
-| `allocated_to` | 上游需求分配到下游方案节点 | OR allocated_to STR |
-| `satisfies` | 下游节点满足上游需求 | BP satisfies STR-D |
-| `implemented_by` | 需求或定义由组件承接 | SysReq implemented_by PA |
-| `uses_asset` | 节点引用资产条目 | BP uses_asset @def-* |
-| `produces_doc` | 节点产生文档资产 | BP produces_doc @doc-* |
-| `consumes_doc` | 节点消费文档资产 | BP consumes_doc @doc-* |
+| `derived_from` | 从上游材料或节点推导而来 | 业务概要 derived_from OR |
+| `refines` | 对上游架构节点做详细化 | 业务概要详细 refines 业务概要 |
+| `allocated_to` | 上游需求分配到下游方案节点 | OR allocated_to 业务概要 |
+| `satisfies` | 下游节点满足上游需求 | 业务详细 satisfies 业务概要详细 |
+| `implemented_by` | 需求或定义由组件承接 | 系统功能概要 implemented_by 产品概要 |
+| `uses_asset` | 节点引用资产条目 | 业务详细 uses_asset @def-* |
+| `produces_doc` | 节点产生文档资产 | 业务详细 produces_doc @doc-* |
+| `consumes_doc` | 节点消费文档资产 | 业务详细 consumes_doc @doc-* |
 
 ### 0.3 覆盖率摘要
 
 | 指标 | 值 | 最近更新 |
 |------|-----|----------|
 | OR 末级总数 | — | 2026-06-21 |
-| 映射到 STR 的覆盖率 | — | 2026-06-21 |
-| STR 详细定义末级总数 | — | 2026-06-21 |
-| 映射到 SysReq 的覆盖率 | — | 2026-06-21 |
-| SysReq 活动总数 | — | 2026-06-21 |
-| 映射到 PA 的覆盖率 | — | 2026-06-21 |
+| 映射到业务概要的覆盖率 | — | 2026-06-21 |
+| 业务概要详细定义末级总数 | — | 2026-06-21 |
+| 映射到系统功能概要的覆盖率 | — | 2026-06-21 |
+| 系统功能概要活动总数 | — | 2026-06-21 |
+| 映射到产品概要的覆盖率 | — | 2026-06-21 |
 | 端到端追溯链完整率 | — | 2026-06-21 |
 
 ---
@@ -100,10 +100,10 @@
 
 | 分片ID | 分片名称 | 范围 | 默认读取场景 | 关系数 | 入口 |
 |--------|----------|------|--------------|--------|------|
-| TRACE-SHARD-OR-STR | OR → STR | 原始需求到相关方需求架构 | `wft01` 验证 OR 分配 | — | `4.1 OR 到 STR 关系块` |
-| TRACE-SHARD-STR-BP | STR → BP | STR 详细定义到 BP | `wft02` 验证 BP 满足关系 | — | `4.2 STR 到 BP 关系块` |
-| TRACE-SHARD-BP-SYSREQ | BP → SysReq | BP 到系统需求 | `wft03` 验证映射 | — | `4.3 BP 到 SysReq 关系块` |
-| TRACE-SHARD-SYSREQ-PA | SysReq → PA | 系统需求到产品架构 | `wft05` 验证组件承接 | — | `4.4 SysReq 到 PA 关系块` |
+| TRACE-SHARD-OR-BPH | OR → 业务概要 | 原始需求到相关方需求架构 | `wft01` 验证 OR 分配 | — | `4.1 OR 到业务概要关系块` |
+| TRACE-SHARD-BPH-BPD | 业务概要 → 业务详细 | 业务概要详细定义到 业务详细 | `wft02` 验证 业务详细满足关系 | — | `4.2 业务概要到业务详细关系块` |
+| TRACE-SHARD-BPD-SFH | 业务详细 → 系统功能概要 | 业务详细 到系统需求 | `wft03` 验证映射 | — | `4.3 业务详细到系统功能概要关系块` |
+| TRACE-SHARD-SFH-产品概要 | 系统功能概要 → 产品概要 | 系统需求到产品架构 | `wft05` 验证组件承接 | — | `4.4 系统功能概要到产品概要关系块` |
 | TRACE-SHARD-ASSET | 过程文档 → 资产 | 对 `21~27` 的资产引用 | 资产一致性检查 | — | `4.5 资产引用关系块` |
 
 ### 2.2 关系索引
@@ -111,8 +111,8 @@
 | 关系ID | 源节点 | 源文档 | 关系类型 | 目标节点 | 目标文档 | 状态 | 块ID | 最后更新 |
 |--------|--------|--------|----------|----------|----------|------|------|----------|
 | TRACE-TEMPLATE | — | — | derived_from / refines / allocated_to / satisfies / implemented_by / uses_asset | — | — | 模板 | TRACE-TEMPLATE | 2026-06-21 |
-| TRACE-GOV-ARCH | STR-F-GOV-001~007 | 02-eos-stakeholder-requirements-architecture.md | uses_asset | @prod-gov-arch | 23-eos-output-architecture.md | 已确认 | — | 2026-07-28 |
-| TRACE-GOV-DATA | STR-F-GOV-008~009 | 02-eos-stakeholder-requirements-architecture.md | uses_asset | @prod-gov-data | 23-eos-output-architecture.md | 已确认 | — | 2026-07-28 |
+| TRACE-GOV-ARCH | bph-biz-GOV-001~007 | 02-eos-business-summary-architecture.md | uses_asset | @prod-gov-arch | 23-eos-output-architecture.md | 已确认 | — | 2026-07-28 |
+| TRACE-GOV-DATA | bph-biz-GOV-008~009 | 02-eos-business-summary-architecture.md | uses_asset | @prod-gov-data | 23-eos-output-architecture.md | 已确认 | — | 2026-07-28 |
 
 ---
 
@@ -122,10 +122,10 @@
 
 | 层间映射 | 检查项 | 期望结果 |
 |----------|--------|----------|
-| OR 末级 → STR 架构末级 | 每条 OR 末级分配到唯一 STR 架构末级 | 一条 OR 不应同时分配给多个 STR 末级 |
-| STR-F 详细末级 → SysReq-F 架构末级 | 每条 STR-F 详细末级分配到唯一 SysReq-F 架构末级 | 一条 STR 详细定义不应同时分配给多个 SysReq-F |
-| STR-NFR 详细末级 → SysReq-NFR 架构末级 | 每条 STR-NFR 详细末级分配到唯一 SysReq-NFR | 非功能需求分配唯一 |
-| SysReq 9级活动 → PA 末级 | 每条 SysReq 活动分配到唯一 PA 末级 | 一个活动由一个 PA 末级主承接 |
+| OR 末级 → 业务概要架构末级 | 每条 OR 末级分配到唯一 业务概要架构末级 | 一条 OR 不应同时分配给多个 业务概要 末级 |
+| bph-biz 详细末级 → sfh-biz 架构末级 | 每条 STR-F 详细末级分配到唯一 SysReq-F 架构末级 | 一条 业务概要详细定义不应同时分配给多个 SysReq-F |
+| bph-nfr 详细末级 → SysReq-NFR 架构末级 | 每条 STR-NFR 详细末级分配到唯一 SysReq-NFR | 非功能需求分配唯一 |
+| 系统功能概要 9级活动 → 产品概要 末级 | 每条 系统功能概要活动分配到唯一 产品概要 末级 | 一个活动由一个 产品概要 末级主承接 |
 
 ### 3.2 N:1 承接口径
 
@@ -137,7 +137,7 @@
 
 ## 4. 正文关系块
 
-### 4.1 OR 到 STR 关系块
+### 4.1 OR 到业务概要关系块
 
 <!-- BLOCK: TRACE-TEMPLATE -->
 #### TRACE-TEMPLATE 追溯关系模板
@@ -164,17 +164,17 @@
 
 <!-- /BLOCK: TRACE-TEMPLATE -->
 
-### 4.2 STR 到 BP 关系块
+### 4.2 业务概要到业务详细关系块
 
-> STR 到 BP 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `satisfies`、`uses_asset`。
+> 业务概要 到 业务详细 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `satisfies`、`uses_asset`。
 
-### 4.3 BP 到 SysReq 关系块
+### 4.3 业务详细到系统功能概要关系块
 
-> BP 到 SysReq 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `allocated_to`、`refines`。
+> 业务详细 到 系统功能概要 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `allocated_to`、`refines`。
 
-### 4.4 SysReq 到 PA 关系块
+### 4.4 系统功能概要到产品概要关系块
 
-> SysReq 到 PA 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `implemented_by`。
+> 系统功能概要 到 产品概要 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `implemented_by`。
 
 ### 4.5 资产引用关系块
 

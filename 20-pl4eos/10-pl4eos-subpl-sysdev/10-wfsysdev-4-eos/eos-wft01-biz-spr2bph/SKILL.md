@@ -43,8 +43,8 @@ description: 规范化需求→业务流程概要定义（s01）· 业务流程�
 **变更感知**（先于入口检测，检出人类线下修订）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
 ```
 
 检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 变更感知）。
@@ -53,8 +53,8 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-r
 
 ```bash
 # 1. 读取待处理节点
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "AI可以处理节点"
 ```
 
 **输入校验**（按顺序，命中即退出）：
@@ -77,8 +77,8 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-req
 **1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/01-eos-original-requirements.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-stakeholder-requirements-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
 ```
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
@@ -428,7 +428,7 @@ s01 末级（文档）完整性的双闸之一——A2 闭环（Step 4 闭合检
 | 脚本 | 用法 | 说明 |
 |------|------|------|
 | `read-section.sh` | `bash ../scripts/read-section.sh <文件> <分节名>` | 提取 ##/### 分节完整内容 |
-| `read-node.sh` | `bash ../scripts/read-node.sh <文件> <节点ID>` | 按节点ID提取节点块（支持规范化需求-NNN / ROLE-XXX / 业务流程概要定义-XXX / STR-NFR-XXX / @node-xxx / @engine-xxx / @nfr-NNN） |
+| `read-node.sh` | `bash ../scripts/read-node.sh <文件> <节点ID>` | 按节点ID提取节点块（支持规范化需求-NNN / ROLE-XXX / 业务流程概要定义-XXX / bph-nfr-XXX / @node-xxx / @engine-xxx / @nfr-NNN） |
 | `detect-changes.sh` | `bash ../scripts/detect-changes.sh <文件>` | 检测人类自上次 AI 运行以来的文档变更 |
 | `update-meta.sh` | `bash ../scripts/update-meta.sh <文件> <操作>` | 维护文件元信息（bump-version / update-head / add-recent-change / move-node） |
 
@@ -440,6 +440,7 @@ s01 末级（文档）完整性的双闸之一——A2 闭环（Step 4 闭合检
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v1.24 | 资产名更名补遗（人类方案 v3.28）——read-node 支持格式 STR-NFR-XXX→bph-nfr-XXX |
 | 2026-08-24 | v1.22 | 标题正名同步（人类定名）——规范化需求 → 业务流程概要定义与资产化。AI 执行规则语义不变 |
 | 2026-08-24 | v1.21 | 输出术语正名同步（人类纠正）——业务概要定义→业务流程概要定义（bph）、业务详细定义→业务流程详细定义（标题/描述/锚点随迁）。AI 执行规则语义不变 |
 | 2026-08-24 | v1.20 | 内容层逻辑修正同步（人类指示"仔细看看"）——规范化需求需求复合词、需求规范化（ort03）、材料状态表、STR 树画像还原（资产分节名）。AI 执行规则语义不变 |

@@ -37,13 +37,13 @@
 
 | 编号 | 文档名称 | 对应层级 | 对应步骤 | 状态 |
 |------|---------|---------|---------|------|
-| 01 | [原始需求详细定义](01-eos-original-requirements.md) | 第 1 层 | 第 1 步 | 结构已改造，现有 OR 已迁入索引 |
-| 02 | [相关方需求架构定义](02-eos-stakeholder-requirements-architecture.md) | 第 2 层（架构定义） | 第 1 步 | 结构已改造，待填充 |
-| 03 | [相关方需求详细定义](03-eos-stakeholder-requirements-detailed.md) | 第 2 层（详细定义） | 第 2 步 | 结构已改造，待填充 |
-| 04 | [业务流程定义](04-eos-business-architecture.md) | 第 3 层 | 第 2 步 | 结构已改造，待填充 |
-| 05 | [系统需求架构定义](05-eos-system-requirements-architecture.md) | 第 4 层（架构定义） | 第 3-4 步 | 结构已改造，待填充 |
-| 06 | [系统需求详细定义](06-eos-system-requirements-detailed.md) | 第 4 层（详细定义） | 第 5 步 | 结构已改造，待填充 |
-| 07 | [产品架构定义](07-eos-product-architecture.md) | 第 5 层 | 第 5 步 | 结构已改造，待填充 |
+| 01 | [规范化需求清单](01-eos-specified-requirements.md) | 第 1 层 | 第 1 步 | 结构已改造，现有 OR 已迁入索引 |
+| 02 | [业务流程概要架构定义](02-eos-business-summary-architecture.md) | 第 2 层（架构定义） | 第 1 步 | 结构已改造，待填充 |
+| 03 | [业务流程概要详细定义](03-eos-business-summary-detailed.md) | 第 2 层（详细定义） | 第 2 步 | 结构已改造，待填充 |
+| 04 | [业务流程详细定义](04-eos-business-detailed.md) | 第 3 层 | 第 2 步 | 结构已改造，待填充 |
+| 05 | [系统功能概要架构定义](05-eos-function-summary-architecture.md) | 第 4 层（架构定义） | 第 3-4 步 | 结构已改造，待填充 |
+| 06 | [系统功能详细定义](06-eos-function-detailed.md) | 第 4 层（详细定义） | 第 5 步 | 结构已改造，待填充 |
+| 07 | [产品概要定义](07-eos-product-summary.md) | 第 5 层 | 第 5 步 | 结构已改造，待填充 |
 | 08 | [追溯矩阵](08-eos-sysdev-traceability-matrix.md) | 全层 | 第 6 步 | 结构已改造，待填充 |
 | 09 | [验证报告](09-eos-sysdev-verification-report.md) | 全层 | 第 6 步 | 结构已改造，待填充 |
 | 21 | [相关方角色目录](21-eos-stakeholder-roles.md) | 全层（跨层资产·发现型） | ort03/wft01~wft06 | 结构已改造，待填充 |
@@ -69,20 +69,20 @@
 ## 五层结构与文档对应
 
 ```
-第1层：原始需求 (OR)         → 01-eos-original-requirements.md
+第1层：规范化需求 (spr)         → 01-eos-specified-requirements.md
     ↓ N:1 分配
-第2层：相关方需求 (SR)       → 02-eos-...-architecture.md + 03-eos-...-detailed.md
+第2层：业务流程概要 (bph)       → 02-eos-...-architecture.md + 03-eos-...-detailed.md
     ├─ 功能部分 ↓
-    │   第3层：业务流程 (BP)  → 04-eos-business-architecture.md
+    │   第3层：业务流程详细 (bpd)  → 04-eos-business-detailed.md
     │       ↓
-    │   第4层：系统需求 (SysReq) → 05-eos-...-architecture.md + 06-eos-...-detailed.md
+    │   第4层：系统功能概要 (sfh) → 05-eos-...-architecture.md + 06-eos-...-detailed.md
     │       ↓
-    │   第5层：产品架构 (PA)  → 07-eos-product-architecture.md
+    │   第5层：产品概要 (pa)  → 07-eos-product-summary.md
     │
     └─ 非功能部分 ↓
         第4层：SysReq-NFR    → 05-eos-...-architecture.md（非功能部分）
             ↓
-        第5层：PA            → 07-eos-product-architecture.md（非功能约束）
+        第5层：pa-eng            → 07-eos-product-summary.md（非功能约束）
 
 追溯矩阵                    → 08-eos-sysdev-traceability-matrix.md
 验证报告                    → 09-eos-sysdev-verification-report.md

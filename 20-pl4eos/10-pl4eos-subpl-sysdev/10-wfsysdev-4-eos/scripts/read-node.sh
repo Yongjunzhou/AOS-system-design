@@ -4,7 +4,7 @@
 #
 # 支持的节点ID格式（自动识别）：
 #   OR-NNN           → 01文件，匹配 #### OR-NNN
-#   STR-F-GOV-NNN    → 02文件，通过 <!-- BLOCK: ... --> 定位
+#   bph-biz-GOV-NNN    → 02文件，通过 <!-- BLOCK: ... --> 定位
 #   @node-xxx        → 23文件，匹配 ##### @node-xxx
 #   @prod-xxx        → 23文件，匹配 ##### @prod-xxx
 #   @engine-xxx      → 25文件，匹配 #### @engine-xxx
@@ -41,7 +41,7 @@ case "$NODE_ID" in
         }
         ' "$TARGET"
         ;;
-    STR-F-*|STR-NFR-*)
+    bph-biz-*|bph-nfr-*)
         # 格式B：通过 <!-- BLOCK: XXX --> 和 <!-- /BLOCK: XXX --> 定位
         start_line=$(grep -n "<!-- BLOCK: $NODE_ID -->" "$TARGET" | head -1 | cut -d: -f1)
         if [ -z "$start_line" ]; then
@@ -103,7 +103,7 @@ case "$NODE_ID" in
         ;;
     *)
         echo "❌ 不支持的节点ID格式: $NODE_ID"
-        echo "   支持的格式: OR-NNN, STR-F-GOV-NNN, STR-NFR-NNN, @node-xxx, @prod-xxx, @engine-xxx, @nfr-NNN"
+        echo "   支持的格式: OR-NNN, bph-biz-GOV-NNN, bph-nfr-NNN, @node-xxx, @prod-xxx, @engine-xxx, @nfr-NNN"
         exit 0
         ;;
 esac

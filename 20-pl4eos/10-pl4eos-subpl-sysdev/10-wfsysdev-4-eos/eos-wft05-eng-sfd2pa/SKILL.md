@@ -1,11 +1,11 @@
 ---
 name: eos-wft05-eng-sfd2pa
-description: 功能详细SR-F+两类约束包→PA·引擎三类组件设计。接收功能详细SR-F（已详细定义，含PA层收敛项）+FR-BIZ指标约束包+NFR约束包，
-             从组件业务推断三类PA组件(前端/后端/平台服务)+四类平台架构决策+SR详细定义，
+description: 功能详细sfd-eng+两类约束包→pa-eng·引擎三类组件设计。接收功能详细sfd-eng（已详细定义，含pa-eng层收敛项）+FR-BIZ指标约束包+NFR约束包，
+             从组件业务推断三类pa-eng组件(前端/后端/平台服务)+四类平台架构决策+SR详细定义，
              推进至待追溯验证。
 ---
 
-# eos-wft05-eng · 功能详细 SR-F + 约束包 → PA · 引擎三类组件设计
+# eos-wft05-eng · 功能详细 sfd-eng + 约束包 → pa-eng · 引擎三类组件设计
 
 > **设计依据**：[eos-wft05-eng-sfd2pa.md](../eos-wft05-eng-sfd2pa.md)（人类方案——权威源）
 > **运行时协议**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md) 附录A
@@ -19,24 +19,24 @@ description: 功能详细SR-F+两类约束包→PA·引擎三类组件设计。�
 
 | 负责 | 不负责（路由指向） |
 |------|-------------------|
-| 接收功能详细 SR-F（`已详细定义`，含 PA 层收敛项）+ FR-BIZ 指标约束包 + NFR 约束包，校验状态/版本 | STR-E 场景识别 → `wft01-eng` |
-| 按归属+职责+承接对象匹配已有 PA 组件 | CU 操作活动定义 → `wft02-eng`；功能概要 → `wft03-eng`；功能详细（组件业务/PA 收敛项）→ `wft04-eng` |
-| 推断前端组件（组件业务：布局/构件类型→容器→交互构件→状态反馈） | 功能详细定义（布局组件/构件/组件业务/PA 层收敛项标注）→ `wft04-eng` |
+| 接收功能详细 sfd-eng（`已详细定义`，含 pa-eng 层收敛项）+ FR-BIZ 指标约束包 + NFR 约束包，校验状态/版本 | bph-eng 场景识别 → `wft01-eng` |
+| 按归属+职责+承接对象匹配已有 pa-eng 组件 | CU 操作活动定义 → `wft02-eng`；功能概要 → `wft03-eng`；功能详细（组件业务/pa-eng 收敛项）→ `wft04-eng` |
+| 推断前端组件（组件业务：布局/构件类型→容器→交互构件→状态反馈） | 功能详细定义（布局组件/构件/组件业务/pa-eng 层收敛项标注）→ `wft04-eng` |
 | 推断后端组件（组件业务承载操作活动→校验/持久化/发布/审计/运行支撑） | 业务功能表单/窗口标签页 → biz 路径 |
 | 推断平台服务组件 + 四类平台架构决策（部署/通信/数据/安全） | 代码实现/测试用例/数据库物理表 → 构件开发流水线 |
 | NFR 约束逐行映射 + FR-BIZ 指标分别承接 | — |
 | 展开 SR 详细定义（六要素可验证条目） | — |
-| 冻结判定 + 推进 SR-F→`已产品架构` + PA→`待追溯验证` | — |
-| 回修：组件/NFR/架构缺陷留在本 Skill；组件业务/PA 收敛项缺失→wft04-eng；约束包缺陷→wft04-nfr | — |
+| 冻结判定 + 推进 sfd-eng→`已pa-eng架构` + pa-eng→`待追溯验证` | — |
+| 回修：组件/NFR/架构缺陷留在本 Skill；组件业务/pa-eng 收敛项缺失→wft04-eng；约束包缺陷→wft04-nfr | — |
 
 ### 上下游衔接
 
 | 方向 | Skill | 交接内容 |
 |------|-------|---------|
-| 上游 | `wft04-eng` | 产出功能详细 SR-F（区域内布局组件/构件 + 组件业务 + PA 收敛项[五类标记，载件为主要来源]）。通过 `## AI可以处理节点` 检测 |
-| 跨路径 | `wft03-biz` | FR-BIZ 指标约束包（Q1行→PA指标承接；Q2/Q3/Q4缺口行→须关联正式FR-ENG OR或待裁决结论） |
+| 上游 | `wft04-eng` | 产出功能详细 sfd-eng（区域内布局组件/构件 + 组件业务 + pa-eng 收敛项[五类标记，载件为主要来源]）。通过 `## AI可以处理节点` 检测 |
+| 跨路径 | `wft03-biz` | FR-BIZ 指标约束包（Q1行→pa-eng指标承接；Q2/Q3/Q4缺口行→须关联正式FR-ENG OR或待裁决结论） |
 | 前置 | `wft04-nfr` | wft05-eng NFR 约束包（首版已确认是首次启动的必备前置输入） |
-| 下游 | 验证+构件开发 | 消费 PA 组件和 SR 详细定义。缺陷退回 `需wft05修订` |
+| 下游 | 验证+构件开发 | 消费 pa-eng 组件和 SR 详细定义。缺陷退回 `需wft05修订` |
 
 ---
 
@@ -47,8 +47,8 @@ description: 功能详细SR-F+两类约束包→PA·引擎三类组件设计。�
 **变更感知**（先于入口检测，检出人类线下修订）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/07-eos-product-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md
 ```
 
 检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 变更感知）。
@@ -56,27 +56,27 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/07-eos-product-archi
 **入口检测**：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/07-eos-product-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md "AI可以处理节点"
 ```
 
 **输入校验**（按顺序，命中即退出）：
 
 | 条件 | 判定 | 动作 |
 |------|------|------|
-| PA 状态=`需wft05修订` 且人类未提供改进方案 | 退回方案缺失 | 输出缺失说明 → **退出** |
-| SR-F 路径≠`eng` 或类型≠`功能详细` | 类型不匹配 | 提示走 biz 路径 → **退出** |
-| SR-F 状态≠`已详细定义` | 状态不符 | 输出状态分布 → **退出** |
-| SR-F 缺组件业务/PA收敛项/CU追溯 | 上游待修 | SR-F→`需wft04修订`+缺失说明 → **退出** |
+| pa-eng 状态=`需wft05修订` 且人类未提供改进方案 | 退回方案缺失 | 输出缺失说明 → **退出** |
+| sfd-eng 路径≠`eng` 或类型≠`功能详细` | 类型不匹配 | 提示走 biz 路径 → **退出** |
+| sfd-eng 状态≠`已详细定义` | 状态不符 | 输出状态分布 → **退出** |
+| sfd-eng 缺组件业务/pa-eng收敛项/CU追溯 | 上游待修 | sfd-eng→`需wft04修订`+缺失说明 → **退出** |
 | NFR 约束包缺失/版本不可判定 | 前置缺失 | 退回 wft04-nfr 补齐 → **退出** |
 | FR-BIZ 约束包缺失/版本不可判定 | 前置缺失 | 退回 wft03-biz 补齐 → **退出** |
 | 首版约束包未确认或有未绑定阻断型约束 | 前置未就绪 | 退回 wft04-nfr 完成绑定 → **退出** |
-| 选中 SR-F >5 个 | 软提示 | 输出超限提示 → 人类确认 |
+| 选中 sfd-eng >5 个 | 软提示 | 输出超限提示 → 人类确认 |
 | 无任何待处理 | — | 输出"无待处理对象"→ **退出** |
 
-**锁定写回**：输入校验通过后，将承接的 SR-F 状态写为 `在PA设计`（锁定态，本 Skill 消费展开期间，对齐人类方案 §4.1 与 91 §A.6 锁定态=下游写入）；完成三类组件设计且正式冻结后推进 `已产品架构`。
+**锁定写回**：输入校验通过后，将承接的 sfd-eng 状态写为 `在pa-eng设计`（锁定态，本 Skill 消费展开期间，对齐人类方案 §4.1 与 91 §A.6 锁定态=下游写入）；完成三类组件设计且正式冻结后推进 `已pa-eng架构`。
 
-**退回优先**：存在 `需wft05修订` PA → 判定根因分流（组件边界不清→本Skill修订；组件业务/PA 收敛项缺失→退回wft04-eng；CU配置能力错误→退回wft02-eng）。
+**退回优先**：存在 `需wft05修订` pa-eng → 判定根因分流（组件边界不清→本Skill修订；组件业务/pa-eng 收敛项缺失→退回wft04-eng；CU配置能力错误→退回wft02-eng）。
 
 ---
 
@@ -85,28 +85,28 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/07-eos-product-archite
 **1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/07-eos-product-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md
 ```
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
 
-**2. 加载本轮 SR-F + 已有 PA**：
+**2. 加载本轮 sfd-eng + 已有 pa-eng**：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md "待 wft05-eng 处理"
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md <SR-F-ID>
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/07-eos-product-architecture.md "PA树画像"
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/07-eos-product-architecture.md <PA-ID>
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md "待 wft05-eng 处理"
+bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md <sfd-eng-ID>
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md "pa-eng树画像"
+bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md <pa-eng-ID>
 ```
 
 **3. 加载资产与约束包**：
 
 | 资产 | 用途 | 读写 |
 |------|------|------|
-| `05-*.md` | SR-F 正文（组件业务/PA 收敛项） | 读 |
+| `05-*.md` | sfd-eng 正文（组件业务/pa-eng 收敛项） | 读 |
 | `06-*.md` | SR 详细定义索引（去重校验） | 读/写 |
-| `07-*.md` | 已有 PA 组件节点 | 读/写 |
+| `07-*.md` | 已有 pa-eng 组件节点 | 读/写 |
 | `23-eos-output-architecture.md` | A1 产品/组件索引 | 读/写 |
 | `25-eos-engine-models.md` | 引擎/CU/构件（引用更新） | **读/写** |
 | FR-BIZ 指标约束包（`10-eos-fr-biz-constraint-package.md`） | 跨路径正式输入 | 读 |
@@ -123,10 +123,10 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/07-eos-product-architectu
 
 | 维度 | wft05-eng 值 |
 |------|-------------|
-| **锚点需求** | 功能详细 SR-F 的组件业务和 PA 收敛项 |
+| **锚点需求** | 功能详细 sfd-eng 的组件业务和 pa-eng 收敛项 |
 | **操作条目** | 平台架构归属 + 前端组件 + 后端组件 + 依赖 + NFR 承接 + FR-BIZ 指标承接 + SR 详细定义 |
-| **推进目标** | 全部条目 `[同意]`+`[已处理]` + 满足正式冻结条件 → PA→`待追溯验证`，SR-F→`已产品架构` |
-| **清除条件** | 已有 `[同意]`+`[已处理]` 的条目默认跳过。仅在本轮新输入满足以下任一条件时，清除 `[已处理]`（保留 `[同意]`）回到待处理：<br>• 新输入为该条目的直接上游节点（如新 SR-F 节点是 PA 组件的来源）<br>• 新输入与条目同属一个架构层级且边界重叠（如同属前端组件，新组件改变了已有组件的职责或归属）<br>• 新输入导致条目定义被修订（变更影响声明标注修订型或结构型） |
+| **推进目标** | 全部条目 `[同意]`+`[已处理]` + 满足正式冻结条件 → pa-eng→`待追溯验证`，sfd-eng→`已pa-eng架构` |
+| **清除条件** | 已有 `[同意]`+`[已处理]` 的条目默认跳过。仅在本轮新输入满足以下任一条件时，清除 `[已处理]`（保留 `[同意]`）回到待处理：<br>• 新输入为该条目的直接上游节点（如新 sfd-eng 节点是 pa-eng 组件的来源）<br>• 新输入与条目同属一个架构层级且边界重叠（如同属前端组件，新组件改变了已有组件的职责或归属）<br>• 新输入导致条目定义被修订（变更影响声明标注修订型或结构型） |
 | **级联触发条件** | 归属变更/组件增删/依赖重组/阻断型NFR边界变化 |
 | **资产对齐级联** | 组件新增→更新23组件索引；CU/构件引用变更→更新25引用 |
 
@@ -137,14 +137,14 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/07-eos-product-architectu
 | 根因 | 处理 |
 |------|------|
 | 组件边界不清/依赖不闭合/NFR承接不足/SRD不可验证 | 留在本 Skill 修订 |
-| 组件业务/PA 收敛项缺失 | SR-F→`需wft04修订` |
+| 组件业务/pa-eng 收敛项缺失 | sfd-eng→`需wft04修订` |
 | CU 配置能力或依赖来源错误 | 退回 `wft02-eng` |
 
 **元信息维护**：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-architecture.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md update-head
 ```
 
 ---
@@ -153,28 +153,28 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-architec
 
 先加载 NFR 约束包：首次消费全量加载；版本递增时按变更声明仅处理增量和修订行。逐约束行判定范围（CU级→前后端组件参数 / 组件级→并发/缓存/持久化 / 全局级→平台架构决策）。
 
-随后加载 FR-BIZ 指标约束包并逐行承接映射：Q1 已覆盖行判定承接组件归属（指标展示 → 前端组件、指标计算/聚合 → 后端组件、共享指标基础 → 平台服务组件），记录承接组件及包版本/消费版本到 PA 节点；Q2/Q3/Q4 缺口行标记为待正式 FR-ENG OR（或待裁决结论），不承接。
+随后加载 FR-BIZ 指标约束包并逐行承接映射：Q1 已覆盖行判定承接组件归属（指标展示 → 前端组件、指标计算/聚合 → 后端组件、共享指标基础 → 平台服务组件），记录承接组件及包版本/消费版本到 pa-eng 节点；Q2/Q3/Q4 缺口行标记为待正式 FR-ENG OR（或待裁决结论），不承接。
 
-输出四类平台架构决策（部署/通信/数据/安全），每项引用来源约束行 ID。对携带「分解运算」的 NFR 约束行按类型处理：可用性子目标（乘法）绑定到对应组件类型并作为验收目标；响应时间类（加法）不硬切分，由组件设计预算（记 PA/SRD 作为设计决策）共同保证 E2E 目标。约束映射完成后，将本 Skill 消费的 NFR 约束包版本与消费状态（已消费）回写约束包头。
+输出四类平台架构决策（部署/通信/数据/安全），每项引用来源约束行 ID。对携带「分解运算」的 NFR 约束行按类型处理：可用性子目标（乘法）绑定到对应组件类型并作为验收目标；响应时间类（加法）不硬切分，由组件设计预算（记 pa-eng/SRD 作为设计决策）共同保证 E2E 目标。约束映射完成后，将本 Skill 消费的 NFR 约束包版本与消费状态（已消费）回写约束包头。
 
 #### Phase A — 候选组件生成与宿主匹配
 
-逐功能详细 SR-F 提取组件候选（组件业务[布局组件→前端容器、构件类型→公共构件、承载操作活动→前后端组件]、PA收敛项→决策候选），然后按归属+职责+承接对象匹配已知 PA：
+逐功能详细 sfd-eng 提取组件候选（组件业务[布局组件→前端容器、构件类型→公共构件、承载操作活动→前后端组件]、pa-eng收敛项→决策候选），然后按归属+职责+承接对象匹配已知 pa-eng：
 
 | 条件 | 路由 |
 |------|------|
-| 归属+职责+承接对象落入已有 PA 组件 | 归入 → Phase B |
+| 归属+职责+承接对象落入已有 pa-eng 组件 | 归入 → Phase B |
 | 不满足 | 待聚合池 → Phase C |
 | 组件可能公共化/拆分/合并或跨引擎归属不明 | `[需裁决]` |
 
-#### Phase B — 修订已有 PA
+#### Phase B — 修订已有 pa-eng
 
-1. **要素提取**——从本轮 SR-F 提取组件候选，已有仅追加不重建
+1. **要素提取**——从本轮 sfd-eng 提取组件候选，已有仅追加不重建
 2. **组件匹配检查**——Q1复用→追加来源；Q2扩展→全量重写+变更声明；需裁决→`[需裁决]`
-3. **重判定与关系检测**——基于全部 SR-F 和当前 NFR 重判归属，比对基线判定六种关系（确认/无新增/组件职责扩展/归属变更/补充/过时）
-4. **变更影响声明**——判定类型（无变更/增量/修订/结构/返工），写入 PA 末尾
+3. **重判定与关系检测**——基于全部 sfd-eng 和当前 NFR 重判归属，比对基线判定六种关系（确认/无新增/组件职责扩展/归属变更/补充/过时）
+4. **变更影响声明**——判定类型（无变更/增量/修订/结构/返工），写入 pa-eng 末尾
 
-#### Phase C — 新建 PA
+#### Phase C — 新建 pa-eng
 
 1. **判定平台架构归属**——五类（引擎专属/布局组件扩展/公共构件/公共平台服务/运行支撑模块），优先复用已有公共能力
 2. **推断前端组件**——组件业务（布局/构件类型→容器→交互构件→状态反馈）
@@ -182,7 +182,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-architec
 4. **制定平台架构决策**——部署/通信/数据/安全
 5. **推断平台服务组件**——职责/约束行ID/实现策略/依赖/消费方
 6. **装配三类组件架构**——循环依赖和无人承接检查
-7. **展开 SR 详细定义并组装 PA**——写入 `06/07`
+7. **展开 SR 详细定义并组装 pa-eng**——写入 `06/07`
 
 ---
 
@@ -223,34 +223,34 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-architec
 
 **三类组件架构装配**：前端组件层次（页面容器→公共构件→状态管理）、后端组件拓扑（服务边界→数据/事件流→运行支撑依赖）、三类协作链路（页面动作→后端服务→平台服务→状态反馈）。检查循环依赖、重复承接和无人承接。
 
-**SR 详细定义**（写入 `06-*.md`）：每条按六要素（系统职责/输入触发/系统处理/输出结果/约束NFR/验收口径），标注来源（SR-F ID / PA 组件 ID）。
+**SR 详细定义**（写入 `06-*.md`）：每条按六要素（系统职责/输入触发/系统处理/输出结果/约束NFR/验收口径），标注来源（sfd-eng ID / pa-eng 组件 ID）。
 
 ---
 
 ### Step 7 · 闭环检查与冻结判定
 
-**九项闭环检查**：组件业务覆盖/活动覆盖/组件覆盖/PA收敛/NFR承接/FR-BIZ承接/平台架构/平台服务/依赖闭合/SRD完整。发现遗漏标注 `[覆盖缺口]`。FR-BIZ 承接项：约束包 Q1 行均有组件承接结论，缺口行已关联 FR-ENG 候选线索或正式 OR 或待裁决。
+**九项闭环检查**：组件业务覆盖/活动覆盖/组件覆盖/pa-eng收敛/NFR承接/FR-BIZ承接/平台架构/平台服务/依赖闭合/SRD完整。发现遗漏标注 `[覆盖缺口]`。FR-BIZ 承接项：约束包 Q1 行均有组件承接结论，缺口行已关联 FR-ENG 候选线索或正式 OR 或待裁决。
 
 **冻结判定**：
 
 | 条件 | 动作 |
 |------|------|
-| 全部检查通过 + 人类确认（正式冻结） | SR-F→`已产品架构`，PA→`待追溯验证` |
+| 全部检查通过 + 人类确认（正式冻结） | sfd-eng→`已pa-eng架构`，pa-eng→`待追溯验证` |
 | 有可延后收敛项或非阻断缺口（阶段性冻结） | 保持待确认/待补充 |
-| 组件业务/PA 收敛项缺失，根因在上游 | SR-F→`需wft04修订` |
-| 验证/开发发现组件边界/依赖/NFR/SRD缺陷 | PA→`需wft05修订` |
-| 公共化/拆分合并/阻断NFR承接需裁决 | PA→`需裁决` |
+| 组件业务/pa-eng 收敛项缺失，根因在上游 | sfd-eng→`需wft04修订` |
+| 验证/开发发现组件边界/依赖/NFR/SRD缺陷 | pa-eng→`需wft05修订` |
+| 公共化/拆分合并/阻断NFR承接需裁决 | pa-eng→`需裁决` |
 
 ---
 
 ### Step 8 · 资产写回与落账
 
-仅写回已确认且满足正式冻结条件的 PA 组件。
+仅写回已确认且满足正式冻结条件的 pa-eng 组件。
 
 **写回操作**：
-1. `07` 写入 PA 组件方案，PA→`待追溯验证`
+1. `07` 写入 pa-eng 组件方案，pa-eng→`待追溯验证`
 2. `06` 写入 SR 详细定义
-3. `05` SR-F→`已产品架构`（记录消费版本）
+3. `05` sfd-eng→`已pa-eng架构`（记录消费版本）
 4. `23` 更新 A1 产品组件索引
 5. `25` 更新引擎/CU/构件引用
 
@@ -264,16 +264,16 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-architec
 **元信息维护**：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirements-architecture.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirements-detailed.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirements-detailed.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-architecture.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-function-summary-architecture.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-function-detailed.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-function-detailed.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md update-head
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md update-head
 
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-architecture.md add-recent-change "wft05-eng" "资产写回" "<PA-ID>" "05/06/07/23/25 资产写回"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md add-recent-change "wft05-eng" "资产写回" "<pa-eng-ID>" "05/06/07/23/25 资产写回"
 ```
 
 ---
@@ -283,9 +283,9 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-architec
 按三区模板输出方案摘要：
 
 ```text
-当前状态：<待确认方案 / 需裁决 / 已确认方案 / 阶段性PA>
-  本轮 PA：<PA-ID / 新建或修订 / 版本变化 / 来源 SR-F>
-冻结判定：<正式冻结（SR-F→已产品架构）/ 阶段性冻结（待办 N 项）/ 未冻结>
+当前状态：<待确认方案 / 需裁决 / 已确认方案 / 阶段性pa-eng>
+  本轮 pa-eng：<pa-eng-ID / 新建或修订 / 版本变化 / 来源 sfd-eng>
+冻结判定：<正式冻结（sfd-eng→已pa-eng架构）/ 阶段性冻结（待办 N 项）/ 未冻结>
 资产落账：<未落账 / 已写回 05/06/07/23/25>
 
 一、方案反馈
@@ -293,12 +293,12 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-architec
     - "发布服务应复用公共平台发布服务"
     - "整体确认"（快捷同意全部未标注条目）
     - "前端组件方案调整交互结构"
-  审核锚点：组件归属判定是否合理、三类组件职责/依赖是否完整、PA 层收敛项是否全部承接、阻断型 NFR 是否已改变设计
-  可用性锚点：三类 PA 组件是否足以指导构件开发流水线？追溯链（组件→SR-F→配置信息组→CU→BP→STR-E）是否可追踪？SR 详细定义是否可验证？
+  审核锚点：组件归属判定是否合理、三类组件职责/依赖是否完整、pa-eng 层收敛项是否全部承接、阻断型 NFR 是否已改变设计
+  可用性锚点：三类 pa-eng 组件是否足以指导构件开发流水线？追溯链（组件→sfd-eng→配置信息组→CU→bpd-eng→bph-eng）是否可追踪？SR 详细定义是否可验证？
 
 二、下一步
-  本Skill → 选择功能详细 SR-F 节点（`已详细定义`）或 `需wft05修订` 的 PA 节点重新运行
-  后续    → PA-XXX（已确认方案）冻结后进入追溯验证 → 构件开发流水线
+  本Skill → 选择功能详细 sfd-eng 节点（`已详细定义`）或 `需wft05修订` 的 pa-eng 节点重新运行
+  后续    → pa-eng-XXX（已确认方案）冻结后进入追溯验证 → 构件开发流水线
 ```
 
 **输出后不结束对话**，等待人类反馈。
@@ -311,7 +311,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-architec
 | 线下修订检出（git diff 发现确认状态标注/自由文本编辑） | 定位条目 → Edit 修订 → 追加 `[已处理]` → 输出修改摘要 → 继续等待 |
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-architecture.md add-recent-change "wft05-eng" "反馈处理" "<PA-ID>" "<AI总结>"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md add-recent-change "wft05-eng" "反馈处理" "<pa-eng-ID>" "<AI总结>"
 ```
 
 ---
@@ -323,9 +323,9 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-architec
 增量清单示例：
 
 ```text
-=== PA-FLOW-001 本轮更新清单 ===
+=== pa-eng-FLOW-001 本轮更新清单 ===
 
-[新增] 承接 SR-F-ENG-FLOW-PAGE-001, SR-F-ENG-FLOW-PAGE-002
+[新增] 承接 sfd-eng-ENG-FLOW-PAGE-001, sfd-eng-ENG-FLOW-PAGE-002
 
 前端组件
   [新增] "流程节点配置表格"（列表容器，布局组件扩展）  承接：流程节点配置页  NFR：权限可见、审计记录
@@ -352,7 +352,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-architec
 | 公共平台服务 | 审计服务、版本服务、任务调度服务 |
 | 运行支撑模块 | 运行日志模块、错误恢复模块 |
 
-### A.2 三类 PA 组件
+### A.2 三类 pa-eng 组件
 
 | 组件类型 | 来源 | 核心定义 |
 |----------|------|---------|
@@ -393,29 +393,29 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-architec
 
 ### A.6 九项闭环检查 + 正式冻结条件
 
-闭环检查：组件业务覆盖/活动覆盖/组件覆盖/PA收敛/NFR承接/FR-BIZ承接/平台架构/平台服务/依赖闭合/SRD完整。
+闭环检查：组件业务覆盖/活动覆盖/组件覆盖/pa-eng收敛/NFR承接/FR-BIZ承接/平台架构/平台服务/依赖闭合/SRD完整。
 
-正式冻结（七条全满足方可推进）：SR-F已确认/组件业务构件活动均有组件承接/PA收敛项已闭合/阻断型NFR已改变设计/三类组件依赖闭合/SRD完整可验证/人类已确认全部PA条目。
+正式冻结（七条全满足方可推进）：sfd-eng已确认/组件业务构件活动均有组件承接/pa-eng收敛项已闭合/阻断型NFR已改变设计/三类组件依赖闭合/SRD完整可验证/人类已确认全部pa-eng条目。
 
-### A.7 PA 双生命周期状态流转
+### A.7 pa-eng 双生命周期状态流转
 
-**SR-F 侧**：`已详细定义` ──wft05锁定──→ `在PA设计` ──wft05完成──→ `已产品架构`
+**sfd-eng 侧**：`已详细定义` ──wft05锁定──→ `在pa-eng设计` ──wft05完成──→ `已pa-eng架构`
 
-**PA 侧**：`待确认方案` ──人类确认──→ `已确认方案` ──冻结──→ `待追溯验证` ──验证──→ `已验证冻结`
+**pa-eng 侧**：`待确认方案` ──人类确认──→ `已确认方案` ──冻结──→ `待追溯验证` ──验证──→ `已验证冻结`
 
-### A.8 PA 层收敛项承接锚（输入锚）
+### A.8 pa-eng 层收敛项承接锚（输入锚）
 
-**PA 是 wft05-eng 的设计产出**（前端承接配置展示/交互，后端承接配置处理与业务逻辑）；**PA 层收敛项是 wft04-eng 在组件业务条目中标注的待本 Skill 判断的问题线索**——本 Skill 只承接设计组件，不重新标注收敛项（发现缺失退回 `需wft04修订`）。
+**pa-eng 是 wft05-eng 的设计产出**（前端承接配置展示/交互，后端承接配置处理与业务逻辑）；**pa-eng 层收敛项是 wft04-eng 在组件业务条目中标注的待本 Skill 判断的问题线索**——本 Skill 只承接设计组件，不重新标注收敛项（发现缺失退回 `需wft04修订`）。
 
 | 收敛项 | 标注 | 本 Skill 承接 |
 |--------|------|--------------|
-| 组件边界 | `PA层收敛-组件边界` | 判定组件归属与边界 |
-| 接口问题 | `PA层收敛-接口` | 定义组件间接口契约 |
-| 数据问题 | `PA层收敛-数据` | 决定持久化归属与数据架构 |
-| 运行问题 | `PA层收敛-运行` | 决定同步/异步、回滚、缓存等运行机制 |
-| NFR 问题 | `PA层收敛-NFR` | 消费约束包后承接约束 |
+| 组件边界 | `pa-eng层收敛-组件边界` | 判定组件归属与边界 |
+| 接口问题 | `pa-eng层收敛-接口` | 定义组件间接口契约 |
+| 数据问题 | `pa-eng层收敛-数据` | 决定持久化归属与数据架构 |
+| 运行问题 | `pa-eng层收敛-运行` | 决定同步/异步、回滚、缓存等运行机制 |
+| NFR 问题 | `pa-eng层收敛-NFR` | 消费约束包后承接约束 |
 
-> **载件是 PA 收敛项的主要来源**——wft02-eng 详设的配置信息组"系统处理·生效后响应"生成的载件（数据/配置/界面/构件/实例/支撑载件），经 wft04-eng 标注为收敛项后由本 Skill 判断如何由前后端组件承接。
+> **载件是 pa-eng 收敛项的主要来源**——wft02-eng 详设的配置信息组"系统处理·生效后响应"生成的载件（数据/配置/界面/构件/实例/支撑载件），经 wft04-eng 标注为收敛项后由本 Skill 判断如何由前后端组件承接。
 
 ---
 
@@ -434,6 +434,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-architec
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v2.0 | 人类方案 v10.7 同步——SR-F→sfd-eng、PA→pa-eng、BP→bpd-eng（节点类型/节点ID/状态名/追溯链） |
 | 2026-08-24 | v1.9 | 文件名更名同步（人类定名 2026-08-24）——`eos-wft05-eng-sr2pa` → `eos-wft05-eng-sfd2pa`（name/frontmatter/设计依据/全库引用改向）。AI 执行规则语义不变 |
 | 2026-08-22 | v1.8 | 人类方案 v10.5 同步（eng 链第四轮深审修复）：①Step 1 材料表补两约束包文件路径（`10-eos-fr-biz-constraint-package.md` / `11-eos-nfr-constraint-package.md`）；②Step 3 补 NFR 约束包分解处理（可用性子目标绑定为验收目标 / 响应时间设计预算记 PA/SRD）+ 消费完成后回写消费版本与消费状态到约束包头；③Step 2 操作条目已含 FR-BIZ 指标承接（与主文件 §5.3.1 对齐）。AI 执行规则语义不变。 |
 | 2026-08-22 | v1.7 | 人类方案 v10.4 同步（eng 链第三轮深审修复）：①Step 2 特化参数表补**清除条件**行 + 确认状态状态机句补「已处理复活」分支、操作条目补 FR-BIZ 指标承接；②Step 3 改「约束映射与平台架构决策」补 FR-BIZ 指标行承接映射（Q1→组件、Q2/Q3/Q4→待正式 OR）；③Step 7/A.6 闭环检查补 FR-BIZ 承接项；④Step 1 材料表 25 改「读/写（引用更新）」。 |
