@@ -1,5 +1,5 @@
 ---
-name: eos-wft01-eng-or2str
+name: eos-wft01-eng-spr2bph
 description: FR-ENG OR→STR-E 业务概要定义。接收正式FR-ENG OR（≤10条），
              完成OR→STR-E业务概要定义（溯源→能力链→名称级识别→配置信息组（概要说明，业务概要定义末级节点；结构判定级）→CU承接→完备性检查），
              写回23/25资产 CU 承接引用，形成可进入wft02-eng（业务详细定义）的STR-E节点。
@@ -7,7 +7,7 @@ description: FR-ENG OR→STR-E 业务概要定义。接收正式FR-ENG OR（≤1
 
 # eos-wft01-eng · FR-ENG OR → STR-E 业务概要定义
 
-> **设计依据**：[eos-wft01-eng-or2str.md](../eos-wft01-eng-or2str.md)（人类方案——权威源）
+> **设计依据**：[eos-wft01-eng-spr2bph.md](../eos-wft01-eng-spr2bph.md)（人类方案——权威源）
 > **运行时协议**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md) 附录A（入口条件/读取协议/反馈交互/Step End输出模板）
 > **领域规范**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md)
 
@@ -406,7 +406,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
 | `detect-changes.sh` | `bash ../scripts/detect-changes.sh <文件>` | 检测人类自上次 AI 运行以来的文档变更 |
 | `update-meta.sh` | `bash ../scripts/update-meta.sh <文件> <操作>` | 维护文件元信息（bump-version / update-head / add-recent-change / move-node） |
 
-所有脚本路径相对于 `eos-wft01-eng-or2str/` 目录。
+所有脚本路径相对于 `eos-wft01-eng-spr2bph/` 目录。
 
 ---
 
@@ -414,6 +414,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v1.15 | 文件名更名同步（人类定名 2026-08-24）——`eos-wft01-eng-or2str` → `eos-wft01-eng-spr2bph`（name/frontmatter/设计依据/全库引用改向）。AI 执行规则语义不变 |
 | 2026-08-22 | v1.14 | 人类方案 v9.9 同步（eng 链第四轮修复）：①操作条目「补充 FR-ENG 缺口」→「补充 FR-ENG 材料」（对齐主文件 C1 术语统一）；②「配置信息组（概要说明，结构判定级）」→「配置信息组（概要说明，业务概要定义末级节点；结构判定级）」（B3 术语读法 A 落地，3 处）。AI 执行规则语义不变。 |
 | 2026-08-22 | v1.13 | 人类方案 v9.8 同步（eng 链第三轮深审修复）：①术语读法 A——「概要末级节点」→名称级识别（过程步骤），配置信息组（概要说明）=业务概要定义末级节点，追溯链简化；②Step 2 补**特化参数表**（含清除条件，对齐 91 §A.5.4 与主文件）；③「引擎能力缺口线索」→「FR-ENG 候选线索」。 |
 | 2026-08-22 | v1.12 | 人类方案 v9.7 同步（A1 树 4 层架构升级，AI 执行规则语义不变）——配置信息组=A1 产品树末级节点（PL5）、CU=PL4；本 SKILL 的 AI 执行规则（分解分配/写回/状态机）不受影响。 |

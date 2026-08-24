@@ -8,6 +8,8 @@ metadata:
   originSessionId: 1dd56fe9-9d2b-4481-8afe-e8749e82b8e3
 ---
 
+**2026-08-24（续）wft01-eng 文件名更名**：`eos-wft01-eng-or2str` → **`eos-wft01-eng-spr2bph`**（人类定名）——本环节语义 = 规范化（Specified）需求→业务概要定义（eng 链 01 层业务概要 = 配置信息组 + 概要说明·结构判定级），`or2str` 不能反映实际转换；主文档 v10.0 / SKILL v1.15，全库引用同步。与 biz 链同批更名（spr2bph/bph2bpd/bpd2sfh），见 [[pending-biz-chain-deep-review]]。
+
 **第四轮深审（2026-08-22，人类逐项裁决，提交 01857e5，13 文件）已执行并提交**。覆盖记忆「下一轮聚焦方向」①~④ + 遗留待办 B4 + 本轮新讨论的 NFR 分解设计：
 
 **A 级（语义矛盾）**：

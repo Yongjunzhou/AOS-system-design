@@ -1248,7 +1248,7 @@ STR-NFR 节点                                        SysReq-NFR 架构 + 量化
                 │ FR-BIZ            │ FR-ENG            │ NFR
                 │                   │                   │
                 ▼                   ▼                   ▼
-          wft01-biz-spr2bph   wft01-eng-or2str   wft01-nfr-or2str
+          wft01-biz-spr2bph   wft01-eng-spr2bph   wft01-nfr-or2str
           (STR-F 场景业务)    (STR-E 引擎场景)   (STR-NFR 分类)
                 │                   │                   │
                 ▼                   ▼                   ▼
