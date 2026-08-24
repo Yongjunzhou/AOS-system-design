@@ -10,6 +10,7 @@
 - [wft05-eng 知识层重构已完成](wft05-eng-knowledge-layer-restructure.md) — v8.2→v9.0 知识层三章+原理审视+PA 边界对齐；PA=三类组件、PA 层收敛项=wft03 标注、只承接设计不重新标注
 - [wft02-biz 知识层重构与审视修复](wft02-biz-v80-knowledge-layer-restructure.md) — v7.4→v8.0 重构 + 审视修复 + STR→BP 原理讨论 + WBS 分组硬判据数据依赖链；SKILL 锚点 #262→#332
 - [wft03-biz 知识层重构与审视修复](wft03-biz-v90-knowledge-layer-restructure.md) — v8.6→v9.0 三章重构 + 原理补充（双视角交汇/A2/Bn 缝合）+ 反馈双轨 SKILL 落地
+- [wft03-biz v10.9~v10.12 第二轮审视 + 数据文件分层定案](wft03-biz-v109-v1012-review.md) — v10.8→v10.12/SKILL v1.18→v1.22：标题全称统一 + A1 断链 + **数据文件分层定案**（06=L4 详细档 biz/eng 分节共存、05 补 srh-eng、A2 队列 bpd→04/srh→05/06、删旧 PDF）+ B1 场景标签页交互口径（设计输入 vs 渲染机制）+ B2/B3/C1/C2/C3/D3 批量；遗留 D1 自检清单/D2 E3 菜单树判据/91 §A.5.4 自引/正式 OR 改名清扫
 - [需求权威定义](requirement-definition-authoritative.md) — 需求=需求描述+性能指标；缺定量指标=ort02 第六子类型；NFR 目标值由相关方澄清确认，wft04-nfr 只做系统侧设计
 - [ort02 澄清设计](ort02-clarify-question-list.md) — AI 标注向相关方确认的问句；缺少定量指标第六子类型；三项条件=相关方已确认
 - [ort02 结构完整性扫描](ort02-structural-completeness.md) — 独立于六种模糊子类型的第二类澄清对象；文本自证缺口三形态；禁止模板式业务覆盖猜测

@@ -5,7 +5,7 @@ description: bpd-biz→系统需求概要定义（s03）·页面组件开发。�
              形成引擎能力使用需求+FR-BIZ指标约束包+FR-ENG候选线索，推进至可构件开发。
 ---
 
-# eos-wft03-biz · 业务流程详细（bpd-biz）→ 系统需求概要定义 · 页面组件开发
+# eos-wft03-biz · 业务流程详细定义 → 系统需求概要定义 · 页面组件开发
 
 > **设计依据**：[eos-wft03-biz-bpd2srh.md](../eos-wft03-biz-bpd2srh.md)（人类方案——权威源）
 > **运行时协议**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md) 附录A（入口条件/读取协议/反馈交互/Step End输出模板）
@@ -57,15 +57,16 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 **入口检测**（按 [91 规范 §A.4](../91-eos-biz-eng-spec.md#a4-入口条件与优先级step-start)）：
 
 ```bash
-# 1. 读取待处理节点（三个分节）
+# 1. 读取待处理节点（三类分节：bpd 队列在 04，srh 队列在 05/06）
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md "AI可以处理节点"
 bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "AI可以处理节点"
 bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md "AI可以处理节点"
 ```
 
 三类入口节点：
-- **待 wft03-biz 处理** → 新 bpd-biz 节点
-- **待反馈处理** → 人类退回的 srh-biz 条目
-- **待下游退回处理** → `需wft03修订` 的 srh-biz 节点
+- **待 wft03-biz 处理**（`04-*.md`）→ 新 bpd-biz 节点
+- **待反馈处理**（`05/06-*.md`）→ 人类退回的 srh-biz 条目
+- **待下游退回处理**（`05/06-*.md`）→ `需wft03修订` 的 srh-biz 节点
 
 **输入校验**（按顺序，命中即退出）：
 
@@ -99,13 +100,13 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
 
-**2. 读取 AI 可以处理节点**：读取 `05-*.md`/`06-*.md` 的 `## AI可以处理节点` 中本 Skill 对应分节。有节点 → 逐节点 `grep -n '@{节点ID}'` 定位行号 → Read 节点块。
+**2. 读取 AI 可以处理节点**：读取 `04-*.md` 的 `## AI可以处理节点`（待 wft03-biz 处理，bpd-biz）与 `05-*.md`/`06-*.md` 的 `## AI可以处理节点`（待反馈/待下游退回，srh-biz）中本 Skill 对应分节。有节点 → 逐节点 `grep -n '@{节点ID}'` 定位行号 → Read 节点块。
 
 **3. 加载清单**（定位后的具体加载内容）：
 
 | 资产 | 用途 | 读写 |
 |------|------|------|
-| `04-*.md` — bpd-biz 节点块 | 定位本轮 bpd-biz 正文 + 待处理节点清单 | 读 |
+| `04-*.md` — bpd-biz 节点块 + AI可以处理节点 | 定位本轮 bpd-biz 正文 + 待处理节点清单（"待 wft03-biz 处理"） | 读 |
 | `05-*.md` — srh-biz 架构节点块 | 定位候选 srh-biz 节点 | 读/写 |
 | `06-*.md` — srh-biz 详细定义 | 功能表单详细定义引用 | 读/写 |
 | `23-eos-output-architecture.md` | A2/Bn/菜单路径筛选 | 读 |
@@ -358,7 +359,7 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 
 每条 FR-ENG 候选线索包含：需求 ID（`FR-ENG-REQ-{YYYYMMDD}-{序号}`）/ 来源（业务页面 ID + bpd-biz 节点 ID）/ 目标引擎 / 需求类型 / 缺口层级（构件级/布局组件级/CU级）/ 当前能力 / 需求能力 / 指标要求 / 业务场景 / 业务影响。
 
-> **门禁**：FR-ENG 候选线索不是正式 OR，登记到材料状态表 A（候选线索材料文件写入 `10-raw-files/`，生命周期=`已登记`）。人类确认纳入后须完整通过 ort00→ort03 形成正式 FR-ENG OR。
+> **门禁**：FR-ENG 候选线索不是正式 OR，登记到材料状态表 A（`00-origin-requirement-materials/01-eos-sysdev-status.md`，候选线索材料文件写入 `10-raw-files/`，生命周期=`已登记`）。人类确认纳入后须完整通过 ort00→ort03 形成正式 FR-ENG OR。
 
 **7.4 FR-BIZ 指标分配与约束包装配**
 
@@ -378,6 +379,8 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 | 需求节点状态 | `05/06-*.md` | 功能表单/窗口标签页 → `可构件开发` |
 | FR-BIZ 指标约束包 | `10-eos-fr-biz-constraint-package.md`（独立数据文件） | 同步发布或更新 FR-BIZ 指标约束包（包 ID / 版本 / 变更声明） |
 | 资产写回记录 | `04-*.md` | 日期/来源 bpd-biz/目标 srh-biz/动作/消费版本/下游状态 |
+
+**AI可以处理节点维护**：在 `04-*.md` 的 `## AI可以处理节点` 中将已处理的 bpd-biz 节点移出"待 wft03-biz 处理"分节；在 `05/06-*.md` 的 `## AI可以处理节点` 中将产生 `[修改]`/`[需裁决]` 的 srh-biz 条目加入"待反馈处理"分节。
 
 **元信息维护**（用脚本，不手动）：
 
@@ -612,6 +615,10 @@ wft03-biz 写入 `待确认方案`/`可构件开发`/`需wft03修订`；下游�
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v1.22 | 人类方案 v10.12 同步（剩余审查项 B2/B3/C1/C2/C3/C4/D3）——Step 7.3 门禁补材料状态表 A 物理文件（00-origin-requirement-materials/01-eos-sysdev-status.md）；其余为人类方案概念/校验层表述（§2.3.2/§5.1.1/§5.3/§2.4），SKILL 无对应执行规则差异。AI 执行规则语义不变 |
+| 2026-08-24 | v1.21 | 人类方案 v10.11 同步（B1 场景标签页交互口径精确化）——SKILL 无对应执行规则差异（Step 3.2 场景标签页编排/增量清单本就只含初始态单窗，不含分屏态双窗/辅助栏/面包屑产出）。AI 执行规则语义不变 |
+| 2026-08-24 | v1.20 | 人类方案 v10.10 同步（A2 队列位置拉平）——Step Start 入口检测补读 `04-*.md`（待 wft03-biz 处理），三类入口标注所在文件；Step 1 读取 AI可以处理节点补 04、加载清单 04 行补 AI可以处理节点；Step 8 补 AI可以处理节点维护（bpd 队列 04 / srh 反馈队列 05/06）。AI 执行规则语义变更（bpd-biz 队列位置 05/06→04） |
+| 2026-08-24 | v1.19 | 人类方案 v10.9 同步——标题全称统一（`业务流程详细（bpd-biz）→ 系统需求概要定义` → `业务流程详细定义 → 系统需求概要定义`）。AI 执行规则语义不变 |
 | 2026-08-24 | v1.18 | 人类方案 v10.8 同步（wft03 单独轮审视）——①标题/description 更名（业务流程详细（bpd-biz）→ 系统需求概要定义，去 pa-eng 旧定位）；②「OR 原料状态表 A」→「材料状态表 A」（3 处）；③D1 全称统一（业务详细定义→业务流程详细定义 ×2）；④A.6 覆盖自查补资产对齐 9~12 + 缺口闭环 13；⑤§7.4 补「完成后执行覆盖自查（A.6 清单）」。AI 执行规则语义变更（覆盖自查清单补全） |
 | 2026-08-24 | v1.17 | 人类方案同步（缩写更名 sfh→srh/sfd→srd + 中文层名统一）；AI 执行规则语义不变（术语随迁）。 |
 | 2026-08-24 | v1.16 | 资产名更名（人类定案）——STR-F→bph-biz、BP→bpd-biz、SR-F→srh-biz（节点类型/节点ID/状态名/分节名），版本头版本号同步递增 |

@@ -42,7 +42,7 @@
 | 03 | [业务流程概要详细定义](03-eos-business-summary-detailed.md) | 第 2 层（详细定义） | 第 2 步 | 结构已改造，待填充 |
 | 04 | [业务流程详细定义](04-eos-business-detailed.md) | 第 3 层 | 第 2 步 | 结构已改造，待填充 |
 | 05 | [系统需求概要架构定义](05-eos-system-requirement-summary-architecture.md) | 第 4 层（架构定义） | 第 3-4 步 | 结构已改造，待填充 |
-| 06 | [系统系统需求详细定义](06-eos-system-requirement-detailed.md) | 第 4 层（详细定义） | 第 5 步 | 结构已改造，待填充 |
+| 06 | [系统需求详细定义](06-eos-system-requirement-detailed.md) | 第 4 层（详细定义） | 第 5 步 | 结构已改造，待填充 |
 | 07 | [产品概要定义](07-eos-product-summary.md) | 第 5 层 | 第 5 步 | 结构已改造，待填充 |
 | 08 | [追溯矩阵](08-eos-sysdev-traceability-matrix.md) | 全层 | 第 6 步 | 结构已改造，待填充 |
 | 09 | [验证报告](09-eos-sysdev-verification-report.md) | 全层 | 第 6 步 | 结构已改造，待填充 |
