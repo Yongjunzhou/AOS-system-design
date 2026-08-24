@@ -9,7 +9,7 @@
 >
 > **设计模式参考**：[91-eos-biz-eng-spec.md](91-eos-biz-eng-spec.md)
 >
-> **版本**：v10.5 | **修订**：2026-08-24 | **说明**：文件名更名（人类定名 2026-08-24）——`eos-wft02-eng-str2bp.md` → `eos-wft02-eng-bph2bpd.md`（本环节语义 = 业务概要定义→业务详细定义，eng 链 02 层，`bph`=high-level、`bpd`=detailed；`str2bp` 不能反映实际转换）；人类方案ID 与全库引用同步。
+> **版本**：v10.5 | **修订**：2026-08-24
 
 ---
 
