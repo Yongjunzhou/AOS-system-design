@@ -18,7 +18,7 @@ metadata:
 - **D1 变更记录表修复**：wft01 v3.16 行字面 `|` 拆列 → 恢复 v3.14/v3.15/v3.16 三行 + 补录 v3.21（→v3.22）；wft02 v9.2 行同款损坏 → 拆 v9.0/v9.1/v9.2 + 补录 v9.7（→v9.8）。**教训：GFM 表格单元格内字面 `|` 必须 `\|` 转义（反引号包不生效，会拆列）**。
 - **观察（未处理）**：正文 §5.3.3 反馈总结示例 5 列 vs §5.6 描述 4 字段（改动前既有，下轮可议）。
 
-**2026-08-24（同日，续）文件名更名**：wft01-biz 由 `eos-wft01-biz-or2str` 更名 **`eos-wft01-biz-spr2bph`**（人类定名）——本环节语义 = **规范化需求（spr）→ 业务流程概要定义（bph，h=high-level definition）**，`or2str` 不能反映实际转换；人类方案ID/全库引用/记忆同步，主文档 v3.23 / SKILL v1.18。eng/nfr（or2str）、wft02（str2bp）、wft03（bp2sr）命名**不动**，链级后续单议。
+**2026-08-24（同日，续）链级文件名更名**：①wft01-biz `eos-wft01-biz-or2str` → **`eos-wft01-biz-spr2bph`**（规范化（Specified）需求→业务流程概要定义，`h`=high-level definition；v3.23/v1.18）；②wft02-biz `eos-wft02-biz-str2bp` → **`eos-wft02-biz-bph2bpd`**（业务流程概要→业务流程详细定义，`d`=detailed；v9.9/v1.16）。语义：`or2str`/`str2bp` 不能反映实际转换；人类方案ID/全库引用/记忆同步。**仍不动**：eng/nfr（or2str）、wft03（bp2sr）——链级后续单议。
 
 **此前：2026-08-22 深审第三轮完成（人类逐项裁决）**。第三轮时版本：**wft01 v3.21 / wft02 v9.7 / wft03 v10.4 / 91 v5.36 / 25 v2.6 / 24 v1.6** + SKILL v1.16/v1.14/v1.14。
 

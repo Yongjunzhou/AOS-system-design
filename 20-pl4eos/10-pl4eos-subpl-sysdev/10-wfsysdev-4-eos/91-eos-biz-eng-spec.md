@@ -1252,7 +1252,7 @@ STR-NFR 节点                                        SysReq-NFR 架构 + 量化
           (STR-F 场景业务)    (STR-E 引擎场景)   (STR-NFR 分类)
                 │                   │                   │
                 ▼                   ▼                   ▼
-          wft02-biz-str2bp   wft02-eng-str2bp   wft04-nfr-str2sr
+          wft02-biz-bph2bpd   wft02-eng-str2bp   wft04-nfr-str2sr
           (BP 双视角)          (业务详细定义)     (SysReq-NFR 量化)
                 │                   │                   │
                 ▼                   ▼                   │

@@ -1,5 +1,5 @@
 ---
-name: eos-wft02-biz-str2bp
+name: eos-wft02-biz-bph2bpd
 description: STR-F→业务详细定义（s02）· BP 业务流程设计与资产化。接收≥1个STR-F节点（可分解分配/待补充分解分配），
              完成A2+Bn双视角业务详细定义（Step 3角色场景→表单使用顺序 + Step 4输出产品：消费Bn组装→引擎校验→文档方案→活动设计→权限→PL6-B→任务关系），
              写回23/24/27/28资产，形成可进入wft03-biz的BP节点。
@@ -7,7 +7,7 @@ description: STR-F→业务详细定义（s02）· BP 业务流程设计与资�
 
 # eos-wft02-biz · STR-F → BP 业务流程设计与资产化
 
-> **设计依据**：[eos-wft02-biz-str2bp.md](../eos-wft02-biz-str2bp.md)（人类方案——权威源）
+> **设计依据**：[eos-wft02-biz-bph2bpd.md](../eos-wft02-biz-bph2bpd.md)（人类方案——权威源）
 > **运行时协议**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md) 附录A（入口条件/读取协议/反馈交互/Step End输出模板）
 > **领域规范**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md)
 
@@ -569,7 +569,7 @@ wft01 已捕获节点是业务流转确认结果（供人类确认过），wft02
 | `detect-changes.sh` | `bash ../scripts/detect-changes.sh <文件>` | 检测人类自上次 AI 运行以来的文档变更 |
 | `update-meta.sh` | `bash ../scripts/update-meta.sh <文件> <操作>` | 维护文件元信息（bump-version / update-head / add-recent-change / move-node） |
 
-所有脚本路径相对于 `eos-wft02-biz-str2bp/` 目录。
+所有脚本路径相对于 `eos-wft02-biz-bph2bpd/` 目录。
 
 ---
 
@@ -577,6 +577,7 @@ wft01 已捕获节点是业务流转确认结果（供人类确认过），wft02
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v1.16 | 文件名更名同步（人类定名 2026-08-24）——`eos-wft02-biz-str2bp` → `eos-wft02-biz-bph2bpd`（name/frontmatter/设计依据/全库引用改向）。AI 执行规则语义不变 |
 | 2026-08-24 | v1.15 | 人类方案 v9.8 同步（深审第四轮跨文件接口修复——STR-F 锁步）：负责表补「锁定 STR-F→`在分解分配`」、Step 3 补锁步动作（写 `02-*.md` 节点状态 `在分解分配` + 活动说明）、Step 6 追溯表「STR-F 推进」改「`在分解分配` → `已分解分配`」。AI 执行规则随迁（新增锁步执行动作） |
 | 2026-08-22 | v1.14 | 人类方案 v9.7 同步（深审第三轮修复）——①Step 6 写回表「STR-F 推进」改只推进状态（消费版本由 BP 节点「来源 STR-F」记录，资产写回补消费版本列）；②自检项改「Step 3/4 执行完整性」（表单使用顺序标注 Step 3）。AI 执行规则语义变更（消费版本记录位置 02→BP 节点） |
 | 2026-08-22 | v1.13 | 人类方案 v9.6 同步（深审 C 组 + 取消 26 扩展 25）：description/负责表/特化参数写回集 23/24/26/27/28→23/24/27/28；Step 1 加载清单删 26（补 25 §1.7 承接映射）；Phase D「26 文档定义对齐」→「文档定义承载（04 + 25 §1.7）」；Step 5 例外「26 资产已定义补列」→「已定义文档补列（23/04）」；Step 6 写回表 24 行改 L4~L6 业务本体层级 + 删 26 行 + 元信息删 26；A.1 判据表删 26 行 + 24 行口径更新；A.6 覆盖自查去 26 项；增量清单示例 26=Q 改「文档定义落 04」。AI 执行规则语义不变（文档定义不再对齐 26 资产） |

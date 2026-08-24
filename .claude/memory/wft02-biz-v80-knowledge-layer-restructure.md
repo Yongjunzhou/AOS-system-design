@@ -5,7 +5,7 @@ metadata:
   type: project
 ---
 
-2026-08-19 对 [eos-wft02-biz-str2bp.md](../../20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft02-biz-str2bp.md)（人类方案）以 wft01-biz v3.11 为标杆做**知识层三章重构**（人类提出"以 wft01-biz 为标杆，重构第二章"，确认完整对标）。v7.4 → **v8.0**，SKILL v1.1 → v1.2（仅锚点迁移）。
+2026-08-19 对 [eos-wft02-biz-bph2bpd.md](../../20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft02-biz-bph2bpd.md)（人类方案）以 wft01-biz v3.11 为标杆做**知识层三章重构**（人类提出"以 wft01-biz 为标杆，重构第二章"，确认完整对标）。v7.4 → **v8.0**，SKILL v1.1 → v1.2（仅锚点迁移）。
 
 **结构映射（旧 → 新）**——旧 §二「BP 设计基础」（概念+规则+演进混合）拆为三章：
 - **§二 基本概念：从 STR-F 到 BP**——新增**转换总览**（转换方法六步一条链 + 规则地图判据索引，镜像 wft01）；概念 2.1~2.5（2.1.1 合并双视角模型+节点要素、2.2.1/2.3.1 合并层级；2.4.2 留推导路径概念、2.5.4 留定义要素表；校验规则/三独立判据移 §三）
