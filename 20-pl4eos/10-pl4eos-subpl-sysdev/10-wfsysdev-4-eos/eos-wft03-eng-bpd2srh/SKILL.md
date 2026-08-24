@@ -3,7 +3,7 @@ name: eos-wft03-eng-bpd2srh
 description: bpd-eng(A1)→srh-eng·系统需求概要定义。承接配置信息组操作活动定义，组织五类功能表单+概要说明（页面职责/类别/使用角色/承载关系/操作活动清单/页面编排概要），布局组件/构件与pa-eng收敛项下移wft04-eng，推进bpd-eng→已srh设计，srh-eng→可以详细定义。
 ---
 
-# eos-wft03-eng · 业务详细（bpd-eng）→ 系统需求概要（srh-eng）· 系统需求概要设计
+# eos-wft03-eng · 业务流程详细（bpd-eng）→ 系统需求概要（srh-eng）· 系统需求概要设计
 
 > **设计依据**：[eos-wft03-eng-bpd2srh.md](../eos-wft03-eng-bpd2srh.md)（人类方案——权威源）
 > **运行时协议**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md) 附录A
@@ -89,7 +89,6 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 ```bash
 bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md "待 wft03-eng 处理"
 bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md <bpd-eng-ID>
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "srh-eng树画像"
 bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md <srh-eng-ID>
 ```
 
@@ -374,6 +373,8 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v1.13 | 人类方案 v9.9 同步——输出术语正名：业务概要定义→业务流程概要定义、业务详细定义→业务流程详细定义（成对一致，含缩写随迁）。AI 执行规则语义不变 |
+| 2026-08-24 | v1.12 | 人类方案 v9.8 同步（链级联动，同 wft01-eng v1.20）——Step 1 移除 `read-section.sh ... "srh-eng树画像"` 失效命令（05 数据文件实际分节为「0. 系统需求概要树画像」，read-section 精确匹配失败）；加载改由 AI可以处理节点 + read-node 定位。AI 执行规则语义不变 |
 | 2026-08-24 | v1.11 | 人类方案同步（缩写更名 sfh→srh/sfd→srd + 中文层名统一）；AI 执行规则语义不变（术语随迁）。 |
 | 2026-08-24 | v1.10 | 资产名更名（人类定案）——SR-F→srh-eng（03 系统需求概要）/srd-eng（04 系统需求详细）、PA→pa-eng（节点类型/节点ID/状态名），版本头同步递增 |
 | 2026-08-24 | v1.9 | 文件名更名同步（人类定名 2026-08-24）——`eos-wft03-eng-bp2sr` → `eos-wft03-eng-bpd2srh`（name/frontmatter/设计依据/全库引用改向）。AI 执行规则语义不变 |

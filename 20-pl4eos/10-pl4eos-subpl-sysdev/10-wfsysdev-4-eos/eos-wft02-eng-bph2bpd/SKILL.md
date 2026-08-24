@@ -1,11 +1,11 @@
 ---
 name: eos-wft02-eng-bph2bpd
-description: bph-eng→bpd-eng·A1业务详细定义（操作活动定义）。接收≥1个bph-eng节点（可以详细定义/待补充详细定义），
+description: bph-eng→bpd-eng·A1业务流程详细定义（操作活动定义）。接收≥1个bph-eng节点（可以详细定义/待补充详细定义），
              承接wft01-eng已分配的CU，展开配置信息组操作活动定义（配置操作/系统处理/运行期能力，步骤化三段式）
              /依赖/状态迁移详细定义，写回23/25资产，形成可进入wft03-eng（系统需求概要）的bpd-eng节点。
 ---
 
-# eos-wft02-eng · 业务概要（bph-eng）→ 业务详细（bpd-eng）· A1 配置单元详细定义
+# eos-wft02-eng · 业务流程概要（bph-eng）→ 业务流程详细（bpd-eng）· A1 配置单元详细定义
 
 > **设计依据**：[eos-wft02-eng-bph2bpd.md](../eos-wft02-eng-bph2bpd.md)（人类方案——权威源）
 > **运行时协议**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md) 附录A
@@ -92,7 +92,6 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-deta
 ```bash
 bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "待 wft02-eng 处理"
 bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md <bph-eng-ID>
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md "bpd-eng树画像"
 bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md <bpd-eng-ID>
 ```
 
@@ -376,6 +375,8 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detaile
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v1.19 | 人类方案 v10.10 同步——输出术语正名：业务概要定义→业务流程概要定义、业务详细定义→业务流程详细定义（成对一致，含缩写随迁）。AI 执行规则语义不变 |
+| 2026-08-24 | v1.18 | 人类方案 v10.9 同步（链级联动，同 wft01-eng v1.20）——Step 1 移除 `read-section.sh ... "bpd-eng树画像"` 失效命令（04 数据文件实际分节为「0. 业务详细树画像」，read-section 精确匹配失败）；加载改由 AI可以处理节点 + read-node 定位。AI 执行规则语义不变 |
 | 2026-08-24 | v1.17 | 材料状态表联动（wft03 单独轮 B4）——「OR 原料状态表」→「材料状态表」（2 处）。AI 执行规则语义不变 |
 | 2026-08-24 | v1.16 | 人类方案同步（缩写更名 sfh→srh/sfd→srd + 中文层名统一）；AI 执行规则语义不变（术语随迁）。 |
 | 2026-08-24 | v1.15 | 资产名更名（人类定案）——STR-E→bph-eng、BP→bpd-eng（节点类型/节点ID/状态名），版本头同步递增 |

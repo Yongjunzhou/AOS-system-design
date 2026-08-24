@@ -96,7 +96,6 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/07-eos-product-summa
 ```bash
 bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "待 wft05-eng 处理"
 bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md <srd-eng-ID>
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md "pa-eng树画像"
 bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md <pa-eng-ID>
 ```
 
@@ -434,6 +433,8 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-24 | v2.3 | 人类方案 v10.10 同步——输出术语正名：业务概要定义→业务流程概要定义、业务详细定义→业务流程详细定义（成对一致，含缩写随迁）。AI 执行规则语义不变 |
+| 2026-08-24 | v2.2 | 人类方案 v10.9 同步（链级联动，同 wft01-eng v1.20）——Step 1 移除 `read-section.sh ... "pa-eng树画像"` 失效命令（07 数据文件实际分节为「0. 产品概要树画像」，read-section 精确匹配失败）；加载改由 AI可以处理节点 + read-node 定位。AI 执行规则语义不变 |
 | 2026-08-24 | v2.1 | 人类方案同步（缩写更名 sfh→srh/sfd→srd + 中文层名统一）；AI 执行规则语义不变（术语随迁）。 |
 | 2026-08-24 | v2.0 | 人类方案 v10.7 同步——SR-F→srd-eng、PA→pa-eng、BP→bpd-eng（节点类型/节点ID/状态名/追溯链） |
 | 2026-08-24 | v1.9 | 文件名更名同步（人类定名 2026-08-24）——`eos-wft05-eng-sr2pa` → `eos-wft05-eng-srd2pa`（name/frontmatter/设计依据/全库引用改向）。AI 执行规则语义不变 |
