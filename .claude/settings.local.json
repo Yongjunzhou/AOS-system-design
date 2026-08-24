@@ -11,7 +11,16 @@
       "Bash(grep -n '---' \"/Users/iproyongjunzhou/claude/AOS-system-design/_current/new-structure/00-platform-docs/02-design-guidelines/03-reverse-engineering-guide.md\")",
       "Bash(grep -n '^---$' \"/Users/iproyongjunzhou/claude/AOS-system-design/_current/new-structure/00-platform-docs/02-design-guidelines/03-reverse-engineering-guide.md\")",
       "Bash(rm /Users/iproyongjunzhou/claude/AOS-system-design/_current/new-structure/00-platform-docs/03-ai-support/*.md)",
-      "Bash(grep -E \"^-.*md$\")"
+      "Bash(grep -E \"^-.*md$\")",
+      "Bash(node build/preprocess.mjs*)",
+      "Bash(node build/fix-typ.mjs*)",
+      "Bash(npx -y @mermaid-js/mermaid-cli*)",
+      "Bash(pandoc *)",
+      "Bash(typst *)",
+      "Bash(powershell -ExecutionPolicy Bypass *)",
+      "Bash(curl *)",
+      "Bash(unzip *)",
+      "Bash(bash build.sh*)"
     ],
     "additionalDirectories": [
       "e:\\mywork\\AOS\\.claude",
