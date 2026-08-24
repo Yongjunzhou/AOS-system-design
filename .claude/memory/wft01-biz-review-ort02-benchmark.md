@@ -5,7 +5,7 @@ metadata:
   type: project
 ---
 
-2026-08-19 对 [eos-wft01-biz-or2str.md](../../20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft01-biz-or2str.md)（人类方案）以 ort02 v0.34 为标杆做可读性审视——**wft01-biz 首次走 ort 风格审视**（登记簿 02-eos-sysdev-review.md 自此有专条）。七轮落地：**v3.4/v1.1（C1+C2）→ v3.5/v1.2（S1+C3+D1+R1~R4+C4+O1）→ v3.6/v1.3（三步地图）→ v3.7/v1.4（拆两章 + 转换总览）→ v3.8/v1.5（链级术语统一 + O2 补录）→ v3.9/v1.6（去 2.0 编号）→ v3.10/v1.7（知识层三章重构）**。审视待办清零。
+2026-08-19 对 [eos-wft01-biz-spr2bph.md](../../20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft01-biz-spr2bph.md)（人类方案）以 ort02 v0.34 为标杆做可读性审视——**wft01-biz 首次走 ort 风格审视**（登记簿 02-eos-sysdev-review.md 自此有专条）。七轮落地：**v3.4/v1.1（C1+C2）→ v3.5/v1.2（S1+C3+D1+R1~R4+C4+O1）→ v3.6/v1.3（三步地图）→ v3.7/v1.4（拆两章 + 转换总览）→ v3.8/v1.5（链级术语统一 + O2 补录）→ v3.9/v1.6（去 2.0 编号）→ v3.10/v1.7（知识层三章重构）**。审视待办清零。
 
 **发现清单最终状态（中 5 / 低 10）**：
 - **中**：

@@ -74,7 +74,7 @@ D（执行类）/PCA（管理类）作为场景业务语义分类保留，影响
 ## 当前进度
 - [x] 91-eos-biz-eng-spec.md → 已写入 v4.0（全部变更已在正文体现）
 - [x] 25-eos-engine-models.md → v2.0 已联动更新（2026-07-10）；B.1/B.2 附录残留 @engine-requirement 已修复（2026-07-10 审视）
-- [x] eos-wft01-biz-or2str.md → v2.0（2026-07-10）
+- [x] eos-wft01-biz-spr2bph.md → v2.0（2026-07-10）
 - [x] eos-wft02-biz-str2ba.md → v6.0（2026-07-10）
 - [x] eos-wft03-biz-ba2sr.md → v5.0（2026-07-10）
 - [x] eos-wft01~05-eng → 全部 v5.1（2026-07-10）

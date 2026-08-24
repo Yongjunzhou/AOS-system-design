@@ -55,7 +55,7 @@ metadata:
 | 24-eos-business-assets.md | v1.1→v1.2 | 业务层级表重写，分片索引扩展至六片，模板/正文块同步 |
 | 06-eos-glossary.md | v2.2→v2.3 | 引擎与业务术语组全量重写，新增10+术语行 |
 | 01-pl4eos-spec-sysdev.md | — | 引擎/业务层级表和编排关系重写 |
-| eos-wft01-biz-or2str.md | — | 场景定义→场景业务，功能菜单→场景部件，菜单级→场景部件级 |
+| eos-wft01-biz-spr2bph.md | — | 场景定义→场景业务，功能菜单→场景部件，菜单级→场景部件级 |
 | eos-wft02-biz-str2ba.md | — | 同上，L2-MENU→L5-PART，菜单业务→场景部件 |
 | eos-wft01a/or2str-design.md 等 6 个 Skill 文件 | — | 场景定义→场景业务（含字段名/正文引用） |
 | 91-doc-paired-skill-spec.md | — | 场景定义→场景业务，功能菜单→场景部件 |
@@ -71,7 +71,7 @@ metadata:
 
 ### 已完成
 - 全量术语标准化（17 文件）
-- wft01-biz-or2str v1.27 Step 3 场景部件架构锚点修正——去菜单引擎残留
+- wft01-biz-spr2bph v1.27 Step 3 场景部件架构锚点修正——去菜单引擎残留
 - **业务层级与引擎关系澄清**（2026-06-27 讨论）：
   - EOS UI 交互模型确认（单窗→双窗分屏→无限下钻+面包屑导航）
   - 场景部件 : 输出文档 = 1 : 1 定性
@@ -97,4 +97,4 @@ metadata:
 - 24-eos-business-assets: v1.2
 - 06-eos-glossary: v2.3
 - 10-eos-architecture: v2.0
-- eos-wft01-biz-or2str: v1.27（待改 §3.1/§3.2）
+- eos-wft01-biz-spr2bph: v1.27（待改 §3.1/§3.2）
