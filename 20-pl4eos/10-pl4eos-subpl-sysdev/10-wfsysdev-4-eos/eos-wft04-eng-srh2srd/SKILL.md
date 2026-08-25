@@ -43,8 +43,8 @@ description: 系统需求概要srh-eng→系统需求详细srd-eng·功能表单
 **变更感知**（先于入口检测，检出人类线下修订）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md
 ```
 
 检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 变更感知）。
@@ -52,8 +52,8 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/06-eos-system-requir
 **入口检测**：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md "AI可以处理节点"
 ```
 
 **输入校验**（按顺序，命中即退出）：
@@ -77,8 +77,8 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirem
 **1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md
 ```
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
@@ -86,8 +86,8 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/06-eos-system-requir
 **2. 加载本轮系统需求概要 srh-eng**：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "待 wft04-eng 处理"
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md <srh-eng-ID>
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "待 wft04-eng 处理"
+bash ../scripts/read-node.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md <srh-eng-ID>
 ```
 
 **3. 加载资产全貌**：
@@ -123,8 +123,8 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement
 **元信息维护**：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md update-head
 ```
 
 ---
@@ -213,10 +213,10 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requireme
 **元信息维护**：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md update-head
 
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md add-recent-change "wft04-eng" "资产写回" "<srd-eng-ID>" "06 资产写回"
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md add-recent-change "wft04-eng" "资产写回" "<srd-eng-ID>" "06 资产写回"
 ```
 
 ---
@@ -253,7 +253,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requireme
 | 线下修订检出（git diff 发现确认状态标注/自由文本编辑） | 定位条目 → Edit 修订 → 追加 `[已处理]` → 输出修改摘要 → 继续等待 |
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md add-recent-change "wft04-eng" "反馈处理" "<srd-eng-ID>" "<AI总结>"
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md add-recent-change "wft04-eng" "反馈处理" "<srd-eng-ID>" "<AI总结>"
 ```
 
 ---
@@ -389,6 +389,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requireme
 ## 变更记录
 
 | 日期 | 版本 | 说明 |
+| 2026-08-25 | v1.11 | 链级机械修正（wft01-nfr 深审链级联动，人类裁决 2026-08-25）——数据文件相对路径修正 `../../80-pl4eos-2-eosdata/`→`../../../80-pl4eos-2-eosdata/`（自 skill 子目录上跳 3 级）。AI 执行规则语义不变 |
 |------|------|------|
 | 2026-08-25 | v1.10 | 人类方案 v2.1 同步（C2 链级联动，人类逐项裁决）——srd-eng 文件位置 05→06（06=L4 详细档）：Step 6 写回、Phase C 组装写入、Step End 资产落账（06/25）、元信息维护（Step 2/Step 6 bump-version+update-head、add-recent-change 资产写回/反馈处理）全部 `05-eos-system-requirement-summary-architecture.md`→`06-eos-system-requirement-detailed.md`；Step Start/Step 1 变更感知与 Step Start 入口检测补 `06-eos-system-requirement-detailed.md`（输出 srd-eng 反馈/退回可达），输入侧 srh-eng 读取（05）保留。AI 执行规则语义不变 |
 | 2026-08-24 | v1.8 | 人类方案 v1.9 同步（标题全称正名）——「系统需求概要 srh-eng → 系统需求详细 srd-eng · 功能表单组件及其业务」→「平台能力系统需求概要定义 → 平台能力系统需求详细定义 · 组件业务详细定义」；frontmatter description 修正「系统需求概要srd-eng」→「系统需求概要srh-eng」笔误。AI 执行规则语义不变 |

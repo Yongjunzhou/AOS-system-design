@@ -45,8 +45,8 @@ description: FR-ENG 规范化需求节点→bph-eng 业务流程概要定义。�
 **变更感知**（先于入口检测，检出人类线下修订）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
 ```
 
 检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 变更感知）。
@@ -54,8 +54,8 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summ
 **入口检测**（按 [91 规范 §A.4](../91-eos-biz-eng-spec.md#a4-入口条件与优先级step-start)）：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "AI可以处理节点"
 ```
 
 **输入校验**（按顺序，命中即退出）：
@@ -81,8 +81,8 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summar
 **1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
 ```
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
@@ -90,9 +90,9 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summ
 **2. 加载本轮 规范化需求 + 已有 bph-eng**：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md "待 wft01-eng 处理"
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md <OR-ID>
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md <bph-eng-ID>
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md "待 wft01-eng 处理"
+bash ../scripts/read-node.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md <spr-ID>
+bash ../scripts/read-node.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md <bph-eng-ID>
 ```
 
 **3. 加载资产全貌**：
@@ -123,8 +123,8 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-a
 6. **元信息维护**：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
 ```
 
 **AI 处理反馈规则**：
@@ -140,7 +140,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary
 **反馈总结**：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md add-recent-change "wft01-eng" "反馈处理" "<bph-eng-ID>" "<AI总结的反馈要点>"
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md add-recent-change "wft01-eng" "反馈处理" "<bph-eng-ID>" "<AI总结的反馈要点>"
 ```
 
 **特化参数**（[91 规范 §A.5.4](91-eos-biz-eng-spec.md#a54-其他规则) 要求各 Skill 定义以下参数）：
@@ -214,7 +214,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary
 
 **3. 要素机械检查**——引擎名称/场景边界非空、A2 上下文已装配、能力诉求/运行期结果有标注、追溯链（规范化需求→bph-eng→配置信息组（概要说明）→CU 承接）完整、配置信息组候选清单非空且逐条标注来源类型和粒度判断、配置信息组（概要说明）已分解、CU 承接关系完整、变更影响声明已写入。
 
-**4. 补充 FR-ENG 材料生成**——写入 `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<bph-eng名称>补充原始需求材料.md`，登记到 材料状态表。与 wft03-biz 缺口线索同一管道（人类方案 §5.5）：经确认 + ort00→ort03 转FR-ENG 规范化需求节点，不豁免预处理链。**模型缺口（25 盘存无承接的配置面/引擎）不走补充 规范化需求 回路**——由骨架判定（§3.3.2）作为设计决策处理，经人类审核决策后由 wft02-eng 业务流程详细定义。
+**4. 补充 FR-ENG 材料生成**——写入 `../../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<bph-eng名称>补充原始需求材料.md`，登记到 材料状态表。与 wft03-biz 缺口线索同一管道（人类方案 §5.5）：经确认 + ort00→ort03 转FR-ENG 规范化需求节点，不豁免预处理链。**模型缺口（25 盘存无承接的配置面/引擎）不走补充 规范化需求 回路**——由骨架判定（§3.3.2）作为设计决策处理，经人类审核决策后由 wft02-eng 业务流程详细定义。
 
 ---
 
@@ -231,19 +231,19 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary
 
 ```bash
 # 追加 AI最近变更 记录 + 移出已完成节点（先于提交，随基线入库）
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md add-recent-change "wft01-eng" "资产写回" "<bph-eng-ID>" "23/25 资产写回"
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md move-node "<OR-ID>" "wft01-eng" "done"
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md add-recent-change "wft01-eng" "资产写回" "<bph-eng-ID>" "23/25 资产写回"
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md move-node "<spr-ID>" "wft01-eng" "done"
 
 # 提交本轮 AI 产出（链级不变式：基线 = 最后 AI 提交，git diff <HEAD @上次 AI 运行>..HEAD 只含人类变更）
 git add -A && git commit -m "[AI] wft01-eng 资产写回（Co-Authored-By: Claude）"
 
 # 更新文件头（HEAD = 刚提交的基线 hash）
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/23-eos-output-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/23-eos-output-architecture.md update-head
 ```
 
 ---
@@ -255,7 +255,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
 ```text
 当前状态：<待确认方案 / 可以详细定义>
   修订 bph-eng-XXX（+N 规范化需求，v{N-1}→v{N}）/ 新建 bph-eng-YYY（新能力场景，聚合 K 条 规范化需求，v1）
-  场景不匹配 OR-WWW（本轮退回待聚合池，留待重新匹配其他 bph-eng）
+  场景不匹配 规范化需求-WWW（本轮退回待聚合池，留待重新匹配其他 bph-eng）
 资产落账：<23 引擎引用写回 + 25 CU承接引用写回 / 未落账>
 补充原始需求材料：<无 / YYYYMMDD-bph-eng名称-补充原始需求材料.md>（已登记 材料状态表）
 
@@ -282,7 +282,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
 ```text
 === bph-eng-XXXX 本轮更新清单 ===
 
-[新增] 承接 OR-ENG-001, OR-ENG-002（共2条，类型：配置生成类）
+[新增] 承接 规范化需求-001, 规范化需求-002（共2条，类型：配置生成类）
 
 能力链
   [新增] 流程配置意图 → 校验保存 → 发布装载 → 单据页流程按钮与节点能力可用
@@ -413,6 +413,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-25 | v1.23 | 链级机械修正（wft01-nfr 深审链级联动，人类裁决 2026-08-25）：①数据文件相对路径修正 `../../80-pl4eos-2-eosdata/`→`../../../80-pl4eos-2-eosdata/`（自 skill 子目录上跳 3 级）；②OR 残留清扫（正式 OR 改名清扫漏网）——`<OR-ID>`→`<spr-ID>`、`OR-WWW`→`规范化需求-WWW`、`OR-ENG-001/002`→`规范化需求-001/002`。AI 执行规则语义不变 |
 | 2026-08-24 | v1.22 | 人类方案 v10.11 同步——输出术语正名：业务概要定义→业务流程概要定义、业务详细定义→业务流程详细定义（成对一致，含缩写随迁）。AI 执行规则语义不变 |
 | 2026-08-24 | v1.21 | SKILL 侧引用修正（人类裁决 2026-08-24）——Phase B 场景匹配检查「详见 human spec §3.2.3」→「§3.2.4」（§3.2.3 为 Phase C 能力场景边界定义，§3.2.4 才是 Phase B 场景匹配检查）。AI 执行规则语义不变 |
 | 2026-08-24 | v1.20 | 人类方案 v10.5 同步——Step 1 移除 `read-section.sh ... "STR树画像"` 失效命令（02 数据文件无此分节，read-section 精确匹配将失败）；加载改由 AI可以处理节点 + read-node 定位。AI 执行规则语义不变 |

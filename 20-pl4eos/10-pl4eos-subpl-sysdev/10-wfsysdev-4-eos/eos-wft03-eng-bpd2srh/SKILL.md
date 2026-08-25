@@ -42,8 +42,8 @@ description: bpd-eng(A1)→srh-eng·系统需求概要定义。承接配置信�
 **变更感知**（先于入口检测，检出人类线下修订）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
 ```
 
 检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 变更感知）。
@@ -51,8 +51,8 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 **入口检测**：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "AI可以处理节点"
 ```
 
 > **消费前提（出口闸门再验证）**：bpd-eng 推进为 `可以srh设计` 前已通过 wft02-eng 出口闸门（[wft02-eng §3.4](../eos-wft02-eng-bph2bpd.md#34-完备性判据)——运行期制品/构件/功能、指标和配置入口足以组织系统需求概要）。此处输入校验对该判据做再验证，配置信息组操作活动定义须含配置操作、系统处理、运行期能力与 FR-ENG 指标。
@@ -79,8 +79,8 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirem
 **1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
 ```
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
@@ -88,9 +88,9 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 **2. 加载本轮 bpd-eng + 已有 srh-eng**：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md "待 wft03-eng 处理"
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md <bpd-eng-ID>
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md <srh-eng-ID>
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md "待 wft03-eng 处理"
+bash ../scripts/read-node.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md <bpd-eng-ID>
+bash ../scripts/read-node.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md <srh-eng-ID>
 ```
 
 **3. 加载资产全貌**：
@@ -125,8 +125,8 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement
 **元信息维护**：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md update-head
 ```
 
 ---
@@ -216,12 +216,12 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 **元信息维护**：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md update-head
 
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md add-recent-change "wft03-eng" "资产写回" "<srh-eng-ID>" "04/05 资产写回"
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md add-recent-change "wft03-eng" "资产写回" "<srh-eng-ID>" "04/05 资产写回"
 ```
 
 ---
@@ -258,7 +258,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 | 线下修订检出（git diff 发现确认状态标注/自由文本编辑） | 定位条目 → Edit 修订 → 追加 `[已处理]` → 输出修改摘要 → 继续等待 |
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md add-recent-change "wft03-eng" "反馈处理" "<srh-eng-ID>" "<AI总结>"
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md add-recent-change "wft03-eng" "反馈处理" "<srh-eng-ID>" "<AI总结>"
 ```
 
 ---
@@ -375,6 +375,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 ## 变更记录
 
 | 日期 | 版本 | 说明 |
+| 2026-08-25 | v1.15 | 链级机械修正（wft01-nfr 深审链级联动，人类裁决 2026-08-25）——数据文件相对路径修正 `../../80-pl4eos-2-eosdata/`→`../../../80-pl4eos-2-eosdata/`（自 skill 子目录上跳 3 级）。AI 执行规则语义不变 |
 |------|------|------|
 | 2026-08-24 | v1.14 | 人类方案 v10.0 同步（深审修复，人类逐项裁决）——①标题全称正名「平台能力业务流程详细定义 → 平台能力系统需求概要定义 · 功能表单概要定义」；②Step Start 删输入校验「需wft03修订未提供方案」重复行（与退回门禁/退回优先重复）+ 补「消费前提（出口闸门再验证）」注记（对齐主文档 §5.1.2）；③Step 6 写回操作补「资产写回记录」第 5 步（对齐主文档 §5.7）；④附录 A.5 补「缺口处理」列（对齐主文档 §3.4）+ Step 5 缺口表补「不因缺口脑补节点——缺口就是缺口」行；⑤Step 4 操作活动清单标注区分——承接 02 的操作活动不标 `[推断]`（内容已在 wft02 详设确认），页面归属/类别等组织推断标 `[推断]`（C2 人类裁决）。AI 执行规则语义不变 |
 | 2026-08-24 | v1.13 | 人类方案 v9.9 同步——输出术语正名：业务概要定义→业务流程概要定义、业务详细定义→业务流程详细定义（成对一致，含缩写随迁）。AI 执行规则语义不变 |

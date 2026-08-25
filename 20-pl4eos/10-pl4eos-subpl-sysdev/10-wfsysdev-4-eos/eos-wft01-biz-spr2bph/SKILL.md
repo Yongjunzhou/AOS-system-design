@@ -43,8 +43,8 @@ description: 规范化需求→业务流程概要定义（s01）· 业务流程�
 **变更感知**（先于入口检测，检出人类线下修订）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
 ```
 
 检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 变更感知）。
@@ -53,8 +53,8 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summ
 
 ```bash
 # 1. 读取待处理节点
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "AI可以处理节点"
 ```
 
 **输入校验**（按顺序，命中即退出）：
@@ -77,8 +77,8 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summar
 **1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
 ```
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
@@ -108,10 +108,10 @@ bash ../scripts/read-node.sh <02-file> <业务流程概要定义-ID>
 
 ```bash
 # 23 资产：Bn 侧对齐锚点
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md "业务域索引"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/23-eos-output-architecture.md "业务域索引"
 
 # 25 资产：功能引擎清单（运行时动态读取，不缓存）
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/25-eos-engine-models.md "引擎全景"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/25-eos-engine-models.md "引擎全景"
 ```
 
 **按需扩大原则**：仅在索引无法定位、候选冲突、追溯断裂或人类明确要求时扩大读取范围。禁止默认加载全文件正文。
@@ -196,7 +196,7 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/25-eos-engine-models.m
 
 **执行顺序**：
 
-1. **确定业务域**——从已加载的规范化需求节点块的 `**所属角色**` 字段获取角色名。若 Step 1 已加载的角色索引中有该角色的业务域信息则直接引用；否则用 `bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/21-eos-stakeholder-roles.md ROLE-<ID>` 加载角色定义块查找。若 21 文件中无该角色或角色定义中无业务域字段，标记 `[推断]` 并基于角色职责语义匹配
+1. **确定业务域**——从已加载的规范化需求节点块的 `**所属角色**` 字段获取角色名。若 Step 1 已加载的角色索引中有该角色的业务域信息则直接引用；否则用 `bash ../scripts/read-node.sh ../../../80-pl4eos-2-eosdata/21-eos-stakeholder-roles.md ROLE-<ID>` 加载角色定义块查找。若 21 文件中无该角色或角色定义中无业务域字段，标记 `[推断]` 并基于角色职责语义匹配
 2. **定义端到端边界**——识别触发→追踪自然终点→闭合验证→边界检查（[§3.2.2](../eos-wft01-biz-spr2bph.md#322-端到端边界定义)）（详见 human spec）
 3. **判定业务流程概要定义类型**——D 或 PCA（判据见附录 A.1）
 4. **逐文档要素提取**：
@@ -222,7 +222,7 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/25-eos-engine-models.m
 
 **2. 要素机械检查**——逐文档确认非空或有合理空置原因：文档名称/用途/封面模式/引擎/开发方式/任务类型/任务关系（信息不足标 `[待wft02推断]`）/PL6-B（信息不足标 `[待wft02推断]`）/生命周期/支持信息/交互信息/Bn 组装（Q 判定 + WBS 归组 + 缺口推断）。
 
-**3. 补充规范化需求材料生成**——闭合缺口 + **Bn 组装结构性缺口**（构件产品数据清单未覆盖，附录 A.7 ③）时生成补充规范化需求材料，写入 `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<场景业务名称>补充规范化需求材料.md`，登记到材料状态表。
+**3. 补充规范化需求材料生成**——闭合缺口 + **Bn 组装结构性缺口**（构件产品数据清单未覆盖，附录 A.7 ③）时生成补充规范化需求材料，写入 `../../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<场景业务名称>补充原始需求材料.md`，登记到材料状态表。
 
 **4. 治理业务覆盖检查**——从 Step 1 已加载的树画像（`read-section.sh` 获取）中识别治理角色（业务架构管理员/数据治理员）的业务流程概要定义节点，判定当前批次是否触发治理需求。触发但缺规范化需求 → Step End 提示人类渐进增补。**治理业务流程概要定义业务链完备性判据**——按角色类型预定文档集核对（`21-eos-stakeholder-roles.md`）：业务链文档与预定产出文档集不一致 → 标注 `[治理缺口]` + Step End 提示人类渐进增补。
 
@@ -270,7 +270,7 @@ bash ../scripts/update-meta.sh <23-file> update-head
   退回规范化规范化需求-ZZZ（建议拆为子规范化需求后重新提交预处理链）
   待重新分组规范化需求-WWW（本轮宿主误匹配，留待下一轮）
 资产落账：<23B 引用写回 / 未落账>
-补充规范化需求材料：<无 / YYYYMMDD-场景业务名-补充规范化需求材料.md>（已登记材料状态表）
+补充原始需求材料：<无 / YYYYMMDD-场景业务名-补充原始需求材料.md>（已登记材料状态表）
 
 一、方案反馈
   A. 整体确认 → 回复「整体确认」，快捷同意全部未标注条目
@@ -334,7 +334,7 @@ Bn 组装
 
 完备性检查
   业务链端到端闭合 ⚠ / 业务流程概要定义类型：执行类
-  → 补充规范化需求材料: 20260717-采购执行补充规范化需求材料.md
+  → 补充原始需求材料: 20260717-采购执行补充原始需求材料.md
 ```
 
 ---
@@ -440,6 +440,7 @@ s01 末级（文档）完整性的双闸之一——A2 闭环（Step 4 闭合检
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-08-25 | v1.28 | 链级机械修正（wft01-nfr 深审链级联动，人类裁决 2026-08-25）：①补充材料文件名统一「补充规范化需求材料.md」→「补充原始需求材料.md」（4 处，对齐 nfr/eng）；②数据文件相对路径修正 `../../80-pl4eos-2-eosdata/`→`../../../80-pl4eos-2-eosdata/`（自 skill 子目录上跳 3 级）。AI 执行规则语义不变 |
 | 2026-08-24 | v1.27 | 树画像分节名修正（链级联动，人类裁决 2026-08-24）——Step 1/Step 4 的「STR树画像 / STR节点索引」→ 02 数据文件实际分节名「0. 业务概要树画像」「2. 业务概要节点索引 / 分片索引」（原 read-section 精确匹配失败；v1.20「还原」指向的分节名有误）。AI 执行规则语义不变 |
 | 2026-08-24 | v1.26 | 材料状态表联动（wft03 单独轮 B4）——「规范化需求材料状态表」→「材料状态表」（2 处）。AI 执行规则语义不变 |
 | 2026-08-24 | v1.25 | 人类方案同步（缩写更名 sfh→srh/sfd→srd + 中文层名统一）；AI 执行规则语义不变（术语随迁）。 |

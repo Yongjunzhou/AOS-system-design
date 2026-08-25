@@ -46,8 +46,8 @@ description: bph-eng→bpd-eng·A1业务流程详细定义（操作活动定义�
 **变更感知**（先于入口检测，检出人类线下修订）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md
 ```
 
 检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 变更感知）。
@@ -55,8 +55,8 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-deta
 **入口检测**：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md "AI可以处理节点"
 ```
 
 **输入校验**（按顺序，命中即退出）：
@@ -81,8 +81,8 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-detail
 **1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md
 ```
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
@@ -90,9 +90,9 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-deta
 **2. 加载本轮 bph-eng + 已有 bpd-eng**：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "待 wft02-eng 处理"
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md <bph-eng-ID>
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md <bpd-eng-ID>
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "待 wft02-eng 处理"
+bash ../scripts/read-node.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md <bph-eng-ID>
+bash ../scripts/read-node.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md <bpd-eng-ID>
 ```
 
 **3. 加载资产全貌**：
@@ -123,8 +123,8 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.
 6. **元信息维护**：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md update-head
 ```
 
 **特化参数**：
@@ -205,7 +205,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detaile
 
 **2. 要素机械检查**——A2 上下文完整（承接自 bph-eng）、A1 路径到位、CU 承接非空且含配置信息组（概要说明）清单、每个 CU 操作活动定义（配置操作/系统处理/运行期能力）+ 配置入口/FR-ENG 指标已定义、依赖已定义并校验、变更影响声明已写入。
 
-**3. 补充 FR-ENG 材料生成**——写入 `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<bpd-eng名称>补充原始需求材料.md`，登记到 材料状态表。与 wft03-biz 缺口线索同一管道（人类方案 §5.5）：经确认 + ort00→ort03 转FR-ENG 规范化需求节点，不豁免预处理链。
+**3. 补充 FR-ENG 材料生成**——写入 `../../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<bpd-eng名称>补充原始需求材料.md`，登记到 材料状态表。与 wft03-biz 缺口线索同一管道（人类方案 §5.5）：经确认 + ort00→ort03 转FR-ENG 规范化需求节点，不豁免预处理链。
 
 ---
 
@@ -223,18 +223,18 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detaile
 
 ```bash
 # 追加 AI最近变更 记录（先于提交，随基线入库）
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md add-recent-change "wft02-eng" "资产写回" "<bpd-eng-ID>" "23/25 资产写回"
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md add-recent-change "wft02-eng" "资产写回" "<bpd-eng-ID>" "23/25 资产写回"
 
 # 提交本轮 AI 产出（链级不变式：基线 = 最后 AI 提交，git diff <HEAD @上次 AI 运行>..HEAD 只含人类变更）
 git add -A && git commit -m "[AI] wft02-eng 资产写回（Co-Authored-By: Claude）"
 
 # 更新文件头（HEAD = 刚提交的基线 hash）
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/23-eos-output-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/23-eos-output-architecture.md update-head
 ```
 
 ---
@@ -275,7 +275,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architect
 **反馈总结**（仅在人类"整体确认"后执行）：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md add-recent-change "wft02-eng" "反馈处理" "<bpd-eng-ID>" "<AI总结>"
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md add-recent-change "wft02-eng" "反馈处理" "<bpd-eng-ID>" "<AI总结>"
 ```
 
 ---
@@ -376,6 +376,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detaile
 ## 变更记录
 
 | 日期 | 版本 | 说明 |
+| 2026-08-25 | v1.22 | 链级机械修正（wft01-nfr 深审链级联动，人类裁决 2026-08-25）——数据文件相对路径修正 `../../80-pl4eos-2-eosdata/`→`../../../80-pl4eos-2-eosdata/`（自 skill 子目录上跳 3 级）。AI 执行规则语义不变 |
 |------|------|------|
 | 2026-08-25 | v1.21 | 人类方案 v10.12 同步（层名全对齐）——下游衔接「wft05-eng 产品概要」→「wft05-eng 平台产品架构」。AI 执行规则语义不变 |
 | 2026-08-24 | v1.19 | 人类方案 v10.10 同步——输出术语正名：业务概要定义→业务流程概要定义、业务详细定义→业务流程详细定义（成对一致，含缩写随迁）。AI 执行规则语义不变 |

@@ -48,8 +48,8 @@ description: bpd-biz→系统需求概要定义（s03）·页面组件开发。�
 **变更感知**（先于入口检测，检出人类线下修订）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
 ```
 
 检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 变更感知）。
@@ -58,9 +58,9 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 
 ```bash
 # 1. 读取待处理节点（三类分节：bpd 队列在 04，srh 队列在 05/06）
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md "AI可以处理节点"
 ```
 
 三类入口节点：
@@ -94,8 +94,8 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirem
 **1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
 ```
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
@@ -386,15 +386,15 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 
 ```bash
 # 更新文件头
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md update-head
 
 # 追加 AI最近变更 记录
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md add-recent-change "wft03-biz" "资产写回" "<srh-biz-ID>" "功能表单+窗口标签页需求写回"
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md add-recent-change "wft03-biz" "资产写回" "<srh-biz-ID>" "功能表单+窗口标签页需求写回"
 ```
 
 不写回 25（仅只读参照）、28（仅只读参照）。FR-ENG 候选线索登记到材料状态表 A。
@@ -439,7 +439,7 @@ FR-ENG 候选线索：<无 / Q 条，已登记材料状态表 A>
 **反馈总结**（仅在人类"整体确认"后执行）：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md add-recent-change "wft03-biz" "反馈处理" "<srh-biz-ID>" "<AI 总结的反馈要点>"
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md add-recent-change "wft03-biz" "反馈处理" "<srh-biz-ID>" "<AI 总结的反馈要点>"
 ```
 
 ---
@@ -614,6 +614,7 @@ wft03-biz 写入 `待确认方案`/`可构件开发`/`需wft03修订`；下游�
 ## 变更记录
 
 | 日期 | 版本 | 说明 |
+| 2026-08-25 | v1.23 | 链级机械修正（wft01-nfr 深审链级联动，人类裁决 2026-08-25）——数据文件相对路径修正 `../../80-pl4eos-2-eosdata/`→`../../../80-pl4eos-2-eosdata/`（自 skill 子目录上跳 3 级）。AI 执行规则语义不变 |
 |------|------|------|
 | 2026-08-24 | v1.22 | 人类方案 v10.12 同步（剩余审查项 B2/B3/C1/C2/C3/C4/D3）——Step 7.3 门禁补材料状态表 A 物理文件（00-origin-requirement-materials/01-eos-sysdev-status.md）；其余为人类方案概念/校验层表述（§2.3.2/§5.1.1/§5.3/§2.4），SKILL 无对应执行规则差异。AI 执行规则语义不变 |
 | 2026-08-24 | v1.21 | 人类方案 v10.11 同步（B1 场景标签页交互口径精确化）——SKILL 无对应执行规则差异（Step 3.2 场景标签页编排/增量清单本就只含初始态单窗，不含分屏态双窗/辅助栏/面包屑产出）。AI 执行规则语义不变 |

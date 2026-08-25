@@ -45,8 +45,8 @@ description: bph-nfr→SysReq-NFR 非功能需求架构与页面约束设计。�
 **变更感知**（先于入口检测，检出人类线下修订）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
 ```
 
 检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §3.1 变更感知）。
@@ -55,8 +55,8 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 
 ```bash
 # 1. 读取待处理节点
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "AI可以处理节点"
 ```
 
 **输入校验**（按顺序，命中即退出）：
@@ -78,8 +78,8 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirem
 **1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
 ```
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
@@ -87,16 +87,16 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 **2. 加载本轮 bph-nfr 节点**：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "待 wft04-nfr 处理"
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md <bph-nfr-ID>
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "待 wft04-nfr 处理"
+bash ../scripts/read-node.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md <bph-nfr-ID>
 ```
 
 **3. 加载已有 SysReq-NFR 节点**（用于宿主匹配）：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "SysReq树画像"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "SysReq节点索引"
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md <SysReq-NFR-ID>
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "SysReq树画像"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "SysReq节点索引"
+bash ../scripts/read-node.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md <SysReq-NFR-ID>
 ```
 
 **4. 加载资产全貌**：
@@ -257,20 +257,20 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement
 
 ```bash
 # 追加 AI最近变更 记录（先于提交，随基线入库）
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md add-recent-change "wft04-nfr" "资产写回" "<SysReq-NFR-ID>" "22/06/05/02 资产写回"
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md add-recent-change "wft04-nfr" "资产写回" "<SysReq-NFR-ID>" "22/06/05/02 资产写回"
 
 # 提交本轮 AI 产出（链级不变式：基线 = 最后 AI 提交，git diff <HEAD @上次 AI 运行>..HEAD 只含人类变更）
 git add -A && git commit -m "[AI] wft04-nfr 资产写回（Co-Authored-By: Claude）"
 
 # 更新文件头（HEAD = 刚提交的基线 hash）
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md update-head
 ```
 
 ---
@@ -313,7 +313,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md 
 **反馈总结**（仅在人类"整体确认"后执行）：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md add-recent-change "wft04-nfr" "反馈处理" "<SysReq-NFR-ID>" "<AI 总结的反馈要点>"
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md add-recent-change "wft04-nfr" "反馈处理" "<SysReq-NFR-ID>" "<AI 总结的反馈要点>"
 ```
 
 ---
@@ -473,6 +473,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requireme
 ## 变更记录
 
 | 日期 | 版本 | 说明 |
+| 2026-08-25 | v1.8 | 链级机械修正（wft01-nfr 深审链级联动，人类裁决 2026-08-25）——数据文件相对路径修正 `../../80-pl4eos-2-eosdata/`→`../../../80-pl4eos-2-eosdata/`（自 skill 子目录上跳 3 级）。AI 执行规则语义不变 |
 |------|------|------|
 | 2026-08-24 | v1.7 | 人类方案同步（缩写更名 sfh→srh/sfd→srd + 中文层名统一）；AI 执行规则语义不变（术语随迁）。 |
 | 2026-08-24 | v1.6 | 资产名更名（人类定案）——STR-NFR→bph-nfr（SysReq-NFR 保留），版本头同步递增 |

@@ -43,25 +43,24 @@ description: NFR 规范化需求→bph-nfr 角色非功能需求分类设计。�
 **变更感知**（先于入口检测，检出人类线下修订）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
 ```
 
-检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §3.1 变更感知）。
+检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 变更感知）。
 
 **入口检测**（按 [91 规范 §A.4](../91-eos-biz-eng-spec.md#a4-入口条件与优先级step-start)）：
 
 ```bash
 # 1. 读取待处理节点
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "AI可以处理节点"
 ```
 
 **输入校验**（按顺序，命中即退出）：
 
 | 条件 | 判定 | 动作 |
 |------|------|------|
-| bph-nfr 状态=`需wft01修订` 且人类未提供改进方案 | 退回方案缺失（硬退出） | 输出 wft04 缺失说明，提示提供改进方案 → **退出** |
 | 规范化需求 状态≠`待处理` | 状态不符（硬退出） | 输出不合格条目及当前状态 → **退出** |
 | 规范化需求 类型为 FR-BIZ | 类型不匹配（硬退出） | 输出类型分布，提示走 `wft01-biz` → **退出** |
 | 规范化需求 类型为 FR-ENG | 类型不匹配（硬退出） | 输出类型分布，提示走 `wft01-eng` → **退出** |
@@ -79,8 +78,8 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summar
 **1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
+bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
 ```
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
@@ -91,21 +90,21 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/02-eos-business-summ
 
 ```bash
 # 获取待处理 规范化需求 节点 ID 列表
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md "待 wft01-nfr 处理"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md "待 wft01-nfr 处理"
 
 # 逐节点读取正文
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md <OR-ID>
+bash ../scripts/read-node.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md <spr-ID>
 ```
 
 **3. 加载已有 bph-nfr 节点**（用于宿主匹配）：
 
 ```bash
 # 读取 STR 树画像和节点索引
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "STR树画像"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "STR节点索引"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "STR树画像"
+bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "STR节点索引"
 
 # 按需读取候选 bph-nfr 节点块（同角色/同语境/同分类维度）
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md <bph-nfr-ID>
+bash ../scripts/read-node.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md <bph-nfr-ID>
 ```
 
 **4. 加载资产全貌**：
@@ -123,7 +122,7 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-a
 
 **触发条件**：Step Start 检出 `需wft01修订` bph-nfr，或上一轮 Step End 的反馈等待中人类提出修改意见。
 
-**反馈双轨**（人类任选其一，详见人类方案 §3.3）：①AI 对话反馈——Step End 后不结束对话，直接回复修改意见，AI 即时处理；②线下文档修订——打开 `01/02-*.md` 在确认状态字段标注 `[同意]`/`[修改]`/`[驳回]` 或直接编辑方案内容（自由文本），经 Step Start 变更感知 git diff 检出后按 §A.5 处理。两轨等价均落账（追 `[已处理]`）。
+**反馈双轨**（人类任选其一，详见人类方案 §5.3）：①AI 对话反馈——Step End 后不结束对话，直接回复修改意见，AI 即时处理；②线下文档修订——打开 `01/02-*.md` 在确认状态字段标注 `[同意]`/`[修改]`/`[驳回]` 或直接编辑方案内容（自由文本），经 Step Start 变更感知 git diff 检出后按 §A.5 处理。两轨等价均落账（追 `[已处理]`）。
 
 **处理规则**：
 
@@ -137,8 +136,8 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-a
 6. **元信息维护**：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
 ```
 
 ---
@@ -158,8 +157,8 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary
 
 **执行顺序**：
 
-1. **要素提取**——从本轮 规范化需求 提取关注角色、业务/平台语境、非功能诉求、待量化线索和适用对象线索（详见 human spec §2.4.1）
-2. **边界匹配检查**——确认 规范化需求 在 bph-nfr 边界内（详见 human spec §2.4.3）：
+1. **要素提取**——从本轮 规范化需求 提取关注角色、业务/平台语境、非功能诉求、待量化线索和适用对象线索（详见 human spec §3.2.1）
+2. **边界匹配检查**——确认 规范化需求 在 bph-nfr 边界内（详见 human spec §3.2.3）：
 
 | 匹配结果 | 动作 |
 |---------|------|
@@ -169,7 +168,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary
 | 分类冲突 | 标记 `[需裁决]`，必要时拆分 |
 | 宿主误匹配 | 退回待聚合池 |
 
-3. **需求项关系检测**——比对已有基线（详见 human spec §2.5.3）：
+3. **需求项关系检测**——比对已有基线（详见 human spec §3.3.3）：
 
 | 关系 | 判定 | 处理 |
 |------|------|------|
@@ -179,7 +178,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary
 | 补充 | 需求项不匹配 | 新增到清单 |
 | 过时 | 基线需求项未被本轮覆盖 | `[过时]`+保留不删 |
 
-4. **变更影响声明**——判定变更类型，写入 bph-nfr 节点末尾（详见 human spec §2.7）
+4. **变更影响声明**——判定变更类型，写入 bph-nfr 节点末尾（详见 human spec §4.2）
 
 #### Phase C — 新建 bph-nfr
 
@@ -187,7 +186,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary
 
 1. **确定角色语境**——从 规范化需求 语义提取关注角色、业务/平台语境、链身份
 2. **判定 22 分类路径**——从 22 资产动态读取一级类目和分类维度，按 规范化需求 语义匹配。全量标注 `[推断]`（22-Q1/Q2/Q3/Q3+ 判据见附录 A.2）
-3. **生成分类需求清单**——识别需求项→去重收敛→逐项判定来源类型与待量化线索→标注字段（详见 human spec §2.5.1~§2.5.2）
+3. **生成分类需求清单**——识别需求项→去重收敛→逐项判定来源类型与待量化线索→标注字段（详见 human spec §3.3.1~§3.3.2）
 4. **执行完备性检查**——五项：角色语境清楚/分类维度单一/适用对象有线索/待量化线索保留/分类资产对齐明确
 5. **组装 bph-nfr**——写入 `02-*.md`，完整要素见 human spec §2.1.2
 
@@ -209,9 +208,9 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary
 | 分类维度冲突 | `分类裁决` | 输出分类裁决项 |
 | 一个 规范化需求 混合多个维度 | `拆分建议` | 输出拆分建议，退回 规范化需求预处理 |
 
-**2. 要素机械检查**——逐 bph-nfr：用户角色/业务域/一级类目非空、分类需求清单非空且逐项标注、22 分类对齐到位、变更影响声明已写入。发现即标注 `[覆盖缺口]`。
+**2. 要素机械检查**——逐 bph-nfr：用户角色/业务域/一级类目非空、分类需求清单非空且逐项标注、22 分类对齐到位（Q3/Q3+ 已有三准则评审结论）、变更影响声明已写入。发现即标注 `[覆盖缺口]`。
 
-**3. 补充 NFR 材料生成**——写入 `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<bph-nfr名称>补充原始需求材料.md`，登记到 材料状态表。
+**3. 补充 NFR 材料生成**——写入 `../../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<bph-nfr名称>补充原始需求材料.md`，登记到 材料状态表。
 
 ---
 
@@ -220,26 +219,26 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary
 仅写回状态=`可以NFR设计` 的 bph-nfr 节点。Step 3 新产出留待下一轮。
 
 **写回操作**：
-1. 遍历已确认 bph-nfr，按 22 分类对齐结果写回 22 资产——Q1 追加引用（去重），Q2 引用+候选扩展说明（标注 `[推断]`），Q3/Q3+ 写入候选分类建议（标注 `[推断]`/`[需裁决]`）。不写系统量化指标
+1. 遍历已确认 bph-nfr，按 22 分类对齐结果写回 22 资产——Q1 追加引用（去重），Q2 引用+候选扩展说明（标注 `[推断]`），Q3/Q3+ 与承接 ort03 `候选待写` 聚类精炼 + 三准则评审（详见 human spec §3.3.4）：通过 → 写回 22 分类维度（状态=疑似，标注 `[推断]`，待人类在 22 反馈区确认）；未通过 → 22 反馈区建议废弃（不写回）。不写系统量化指标，不写具体需求（具体需求写回归 wft04-nfr）
 2. 对应 规范化需求条目 → `已分配`
 
-**提交基线 + 元信息维护**（用脚本，不手动；顺序对齐人类方案 §3.6，AI 最近变更 随基线入库）：
+**提交基线 + 元信息维护**（用脚本，不手动；顺序对齐人类方案 §5.6，AI 最近变更 随基线入库）：
 
 ```bash
 # 追加 AI最近变更 记录 + 移出已完成节点（先于提交，随基线入库）
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md add-recent-change "wft01-nfr" "资产写回" "<bph-nfr-ID>" "22 分类引用写回"
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md move-node "<OR-ID>" "wft01-nfr" "done"
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md add-recent-change "wft01-nfr" "资产写回" "<bph-nfr-ID>" "22 分类引用写回"
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md move-node "<spr-ID>" "wft01-nfr" "done"
 
 # 提交本轮 AI 产出（链级不变式：基线 = 最后 AI 提交，git diff <HEAD @上次 AI 运行>..HEAD 只含人类变更）
 git add -A && git commit -m "[AI] wft01-nfr 资产写回（Co-Authored-By: Claude）"
 
 # 更新文件头（HEAD = 刚提交的基线 hash）
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md bump-version
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md update-head
 ```
 
 ---
@@ -251,8 +250,8 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md 
 ```text
 当前状态：<待确认方案 / 可以NFR设计>
   修订 bph-nfr-XXX（+N 规范化需求，v{N-1}→v{N}）/ 新建 bph-nfr-YYY（聚合 K 条 规范化需求，v1）
-  分类冲突 OR-ZZZ（建议拆为子 规范化需求 后重新提交预处理链）
-  宿主误匹配 OR-WWW（本轮退回待聚合池，留待下一轮重新匹配）
+  分类冲突 规范化需求-ZZZ（建议拆为子 规范化需求 后重新提交预处理链）
+  宿主误匹配 规范化需求-WWW（本轮退回待聚合池，留待下一轮重新匹配）
 资产落账：<22 分类引用写回 / 未落账>
 补充原始需求材料：<无 / YYYYMMDD-bph-nfr名称-补充原始需求材料.md>（已登记 材料状态表）
 22 分类建议：<无 / 已输出 N 条，待人类审查后录入>
@@ -287,7 +286,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md 
 **反馈总结**（仅在人类"整体确认"后执行）：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md add-recent-change "wft01-nfr" "反馈处理" "<bph-nfr-ID>" "<AI 总结的反馈要点>"
+bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md add-recent-change "wft01-nfr" "反馈处理" "<bph-nfr-ID>" "<AI 总结的反馈要点>"
 ```
 
 摘要示例：`22判定修正：批量导入并发性能 Q1→Q2；新增待量化线索"高峰期并发数"`
@@ -303,11 +302,11 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary
 ```text
 === bph-nfr-PERF-001 本轮更新清单 ===
 
-[新增] 承接 OR-NFR-001, OR-NFR-002（共2条）
+[新增] 承接 规范化需求-001, 规范化需求-002（共2条）
 
 分类需求清单
-  [新增] "页面查询响应时间"（系统性能，22-Q1）  待量化线索：规范化需求提到"高峰期"和"列表查询"
-  [新增] "批量导入并发性能"（系统性能，22-Q2）  待量化线索：规范化需求提到"并发使用"
+  [新增] "页面查询响应时间"（系统性能，22-Q1）  待量化线索：规范化需求提到"2秒内"（目标值已由相关方确认）
+  [新增] "批量导入并发性能"（系统性能，22-Q2）  待量化线索：规范化需求提到"并发数100"
 
 完备性检查
   角色语境清楚 ✓ / 分类维度单一 ✓ / 适用对象有线索 ✓
@@ -337,6 +336,8 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary
 | **22-Q3+** | 现有一级类目也无法承载 | 提出候选新增一级类目 + 分类维度建议，标记 `[需裁决]` |
 
 状态敏感规则：`已确认` 可稳定引用；`候选`/`疑似` 只能作为线索，引用时标记 `[需裁决]`；`废弃` 不得作为归属。
+
+**三准则评审**：Q3/Q3+ 候选与承接 ort03 `候选待写` 写回 22 前经三准则（可复用性/可定义性/可验证性）评审——全过 → 写回 22 疑似（待人类确认）；任一不过 → 22 反馈区建议废弃（不写回）。详见 human spec §3.3.4。
 
 ### A.3 Phase B 边界匹配结果
 
@@ -409,7 +410,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary
 | 脚本 | 用法 | 说明 |
 |------|------|------|
 | `read-section.sh` | `bash ../scripts/read-section.sh <文件> <分节名>` | 提取 ##/### 分节完整内容 |
-| `read-node.sh` | `bash ../scripts/read-node.sh <文件> <节点ID>` | 按节点ID提取节点块（支持 OR-NNN / bph-nfr-XXX / @node-xxx 等） |
+| `read-node.sh` | `bash ../scripts/read-node.sh <文件> <节点ID>` | 按节点ID提取节点块（支持 spr-NNN / bph-nfr-XXX / @node-xxx 等） |
 | `detect-changes.sh` | `bash ../scripts/detect-changes.sh <文件>` | 检测人类自上次 AI 运行以来的文档变更 |
 | `update-meta.sh` | `bash ../scripts/update-meta.sh <文件> <操作>` | 维护文件元信息（bump-version / update-head / add-recent-change / move-node） |
 
@@ -421,7 +422,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
-| 2026-08-24 | v1.8 | 材料状态表联动（wft03 单独轮 B4）——「规范化需求 原料状态表」→「材料状态表」（2 处）。AI 执行规则语义不变 |
+| 2026-08-25 | v1.9 | 人类方案 v6.0 同步（知识层三章重构 + 链级深审修复）：①正文引用 § 迁移（概念 §2.x 保留、规则 §2.4/§2.5→§3.2/§3.3、演进 §2.6/§2.7→§4.1/§4.2、操作 §3.x→§5.x、完备性判据 §2.1.3→§3.4）；②Step 5 写回补三准则（Q3/Q3+ 与 ort03 候选待写 → 聚类精炼 + 三准则评审：通过写回 22 疑似、未通过反馈区建议废弃；不写具体需求）；③Step 4 要素机械检查补三准则结论项；④附录 A.2 补三准则评审行；⑤数据文件相对路径修正 `../../80-pl4eos-2-eosdata/`→`../../../80-pl4eos-2-eosdata/`（自 skill 子目录上跳 3 级）；⑥OR 残留清扫——`<OR-ID>`→`<spr-ID>`、`OR-ZZZ/WWW`→`规范化需求-ZZZ/WWW`、`OR-NFR-001/002`→`规范化需求-001/002`、read-node.sh 说明 `OR-NNN`→`spr-NNN`；⑦待量化线索示例修正（高峰期/并发使用→2秒内/并发数100）。AI 执行规则语义不变 |
 | 2026-08-24 | v1.7 | 人类方案同步（缩写更名 sfh→srh/sfd→srd + 中文层名统一）；AI 执行规则语义不变（术语随迁）。 |
 | 2026-08-24 | v1.6 | 资产名更名（人类定案）——STR-NFR→bph-nfr（SysReq-NFR 保留），版本头同步递增 |
 | 2026-08-22 | v1.5 | 人类方案 v5.7 同步（STR-NFR 归组锚点口径对齐 91 §9.1，人类裁决 M6 方案）：①附录A.1 适用对象线索**收敛回五种对象**（STR-F/STR-E/业务域/平台能力/全局），页面类型/具体页面 ID 降为适用范围线索备注（不进归组键，页面 NFR 绑定由 wft04-nfr 执行）；②附录A.5 完备性判据同步（页面线索不参与归组判定）；③输入校验表补「规范化需求 混入多个无关角色语境｜边界混杂（软提示）」行 + 判定列统一「硬退出/软提示」标注（对齐人类方案 §3.1.1）。AI 执行规则语义不变 |
