@@ -219,3 +219,9 @@
 - 主项目改动与子项目改动**分别 commit**（各自语义独立，commit message 注明归属）。
 - 处理主项目时，不把子项目改动混入本次提交；处理子项目时，不把主项目改动混入。
 - 新子项目创建时：建子目录 → 建子 CLAUDE.md（复制隔离协议模板）→ 建 `记忆/`（独立 MEMORY.md + 主记忆）→ 在本章指针区加一行。
+
+---
+
+## 十、工作风格
+
+- **禁止选项式交互**：讨论/确认事项时一律自由散文陈述（背景 + 问题 + 建议 + 理由），不用选项卡片/选项卡界面让用户做多选题；用户自由回答"改/不改/怎么改"，再据其指示执行（2026-08-25 用户定）。教材子项目侧同步记录于 [`50-research/记忆/feedback-no-option-interaction.md`](50-research/记忆/feedback-no-option-interaction.md) 及 [`50-research/CLAUDE.md`](50-research/CLAUDE.md) 工作风格节。
