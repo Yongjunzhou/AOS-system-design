@@ -1,11 +1,11 @@
 ---
 name: eos-wft05-eng-srd2pa
-description: 系统需求详细srd-eng+两类约束包→pa-eng·引擎三类组件设计。接收系统需求详细srd-eng（已详细定义，含pa-eng层收敛项）+FR-BIZ指标约束包+NFR约束包，
+description: 系统需求详细定义→平台产品架构。接收系统需求详细srd-eng（已详细定义，含pa-eng层收敛项）+FR-BIZ指标约束包+NFR约束包，
              从组件业务推断三类pa-eng组件(前端/后端/平台服务)+四类平台架构决策+SR详细定义，
              推进至待追溯验证。
 ---
 
-# eos-wft05-eng · 系统需求详细 srd-eng + 约束包 → pa-eng · 引擎三类组件设计
+# eos-wft05-eng · 系统需求详细定义 → 平台产品架构
 
 > **设计依据**：[eos-wft05-eng-srd2pa.md](../eos-wft05-eng-srd2pa.md)（人类方案——权威源）
 > **运行时协议**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md) 附录A
@@ -47,7 +47,7 @@ description: 系统需求详细srd-eng+两类约束包→pa-eng·引擎三类组
 **变更感知**（先于入口检测，检出人类线下修订）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md
 bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md
 ```
 
@@ -56,7 +56,7 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/07-eos-product-summa
 **入口检测**：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md "AI可以处理节点"
 bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md "AI可以处理节点"
 ```
 
@@ -64,7 +64,6 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary
 
 | 条件 | 判定 | 动作 |
 |------|------|------|
-| pa-eng 状态=`需wft05修订` 且人类未提供改进方案 | 退回方案缺失 | 输出缺失说明 → **退出** |
 | srd-eng 路径≠`eng` 或类型≠`系统需求详细` | 类型不匹配 | 提示走 biz 路径 → **退出** |
 | srd-eng 状态≠`已详细定义` | 状态不符 | 输出状态分布 → **退出** |
 | srd-eng 缺组件业务/pa-eng收敛项/CU追溯 | 上游待修 | srd-eng→`需wft04修订`+缺失说明 → **退出** |
@@ -85,7 +84,7 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary
 **1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md
 bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md
 ```
 
@@ -94,8 +93,8 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/07-eos-product-summa
 **2. 加载本轮 srd-eng + 已有 pa-eng**：
 
 ```bash
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "待 wft05-eng 处理"
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md <srd-eng-ID>
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md "待 wft05-eng 处理"
+bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md <srd-eng-ID>
 bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md <pa-eng-ID>
 ```
 
@@ -103,7 +102,7 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md
 
 | 资产 | 用途 | 读写 |
 |------|------|------|
-| `05-*.md` | srd-eng 正文（组件业务/pa-eng 收敛项） | 读 |
+| `06-*.md` | srd-eng 正文（组件业务/pa-eng 收敛项） | 读 |
 | `06-*.md` | SR 详细定义索引（去重校验） | 读/写 |
 | `07-*.md` | 已有 pa-eng 组件节点 | 读/写 |
 | `23-eos-output-architecture.md` | A1 产品/组件索引 | 读/写 |
@@ -228,7 +227,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.
 
 ### Step 7 · 闭环检查与冻结判定
 
-**九项闭环检查**：组件业务覆盖/活动覆盖/组件覆盖/pa-eng收敛/NFR承接/FR-BIZ承接/平台架构/平台服务/依赖闭合/SRD完整。发现遗漏标注 `[覆盖缺口]`。FR-BIZ 承接项：约束包 Q1 行均有组件承接结论，缺口行已关联 FR-ENG 候选线索或正式 OR 或待裁决。
+**十项闭环检查**：组件业务覆盖/活动覆盖/组件覆盖/pa-eng收敛/NFR承接/FR-BIZ承接/平台架构/平台服务/依赖闭合/SRD完整。发现遗漏标注 `[覆盖缺口]`。FR-BIZ 承接项：约束包 Q1 行均有组件承接结论，缺口行已关联 FR-ENG 候选线索或正式 OR 或待裁决。
 
 **冻结判定**：
 
@@ -263,8 +262,6 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.
 **元信息维护**：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md update-head
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md update-head
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md bump-version
@@ -272,7 +269,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md update-head
 
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md add-recent-change "wft05-eng" "资产写回" "<pa-eng-ID>" "05/06/07/23/25 资产写回"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md add-recent-change "wft05-eng" "资产写回" "<pa-eng-ID>" "06/07/23/25 资产写回"
 ```
 
 ---
@@ -390,11 +387,11 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.
 | 约束与 NFR | 性能/安全/审计/可靠性等 |
 | 验收口径 | 如何验证该需求被承接 |
 
-### A.6 九项闭环检查 + 正式冻结条件
+### A.6 十项闭环检查 + 正式冻结条件
 
 闭环检查：组件业务覆盖/活动覆盖/组件覆盖/pa-eng收敛/NFR承接/FR-BIZ承接/平台架构/平台服务/依赖闭合/SRD完整。
 
-正式冻结（七条全满足方可推进）：srd-eng已确认/组件业务构件活动均有组件承接/pa-eng收敛项已闭合/阻断型NFR已改变设计/三类组件依赖闭合/SRD完整可验证/人类已确认全部pa-eng条目。
+正式冻结（八条全满足方可推进）：srd-eng已确认/组件业务构件活动均有组件承接/pa-eng收敛项已闭合/阻断型NFR已改变设计/FR-BIZ指标约束包Q1行均有组件承接结论（Q2/Q3/Q4缺口行已关联FR-ENG候选线索或正式OR或待裁决）/三类组件依赖闭合/SRD完整可验证/人类已确认全部pa-eng条目。
 
 ### A.7 pa-eng 双生命周期状态流转
 
@@ -433,7 +430,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
-| 2026-08-24 | v2.3 | 人类方案 v10.10 同步——输出术语正名：业务概要定义→业务流程概要定义、业务详细定义→业务流程详细定义（成对一致，含缩写随迁）。AI 执行规则语义不变 |
+| 2026-08-25 | v2.4 | 人类方案 v10.11 同步（深审修复，人类逐项裁决）——①标题/description 正名「系统需求详细定义→平台产品架构」（人类定名）；②Step 7「九项闭环检查」→「十项闭环检查」、A.6 标题同步「十项闭环检查」+ 正式冻结补 FR-BIZ 承接条（七条→八条）；③Step Start 输入校验删「需wft05修订未提供方案」重复行（与退回门禁/退回优先三处重复）；④Step Start/Step 1/Step 8 文件引用 `05-eos-system-requirement-summary-architecture.md`→`06-eos-system-requirement-detailed.md`（srd-eng 在 06=L4 详细档）+ Step 8 元信息维护去重（05 移除，06 已覆盖）+ add-recent-change 摘要 05/06/07/23/25→06/07/23/25。AI 执行规则语义不变 |
 | 2026-08-24 | v2.2 | 人类方案 v10.9 同步（链级联动，同 wft01-eng v1.20）——Step 1 移除 `read-section.sh ... "pa-eng树画像"` 失效命令（07 数据文件实际分节为「0. 产品概要树画像」，read-section 精确匹配失败）；加载改由 AI可以处理节点 + read-node 定位。AI 执行规则语义不变 |
 | 2026-08-24 | v2.1 | 人类方案同步（缩写更名 sfh→srh/sfd→srd + 中文层名统一）；AI 执行规则语义不变（术语随迁）。 |
 | 2026-08-24 | v2.0 | 人类方案 v10.7 同步——SR-F→srd-eng、PA→pa-eng、BP→bpd-eng（节点类型/节点ID/状态名/追溯链） |
