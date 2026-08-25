@@ -2,7 +2,7 @@ flowchart TB
     subgraph 目标层["目标层"]
         T["所规定目标 objective<br/>要实现的结果"]
     end
-    subgraph 要求层["要求层"]
+    subgraph 需求层["需求层"]
         R["规定需求 specified requirement<br/>被明示、成文的需求"]
     end
     subgraph 客体层["客体层"]
@@ -11,8 +11,8 @@ flowchart TB
     subgraph 场景层["场景层"]
         U["预期用途 intended use<br/>谁用 · 怎么用 · 什么条件下用"]
     end
-    T -->|"要求由目标推导"| R
-    R -->|"客体按要求实现"| O
+    T -->|"需求由目标推导"| R
+    R -->|"客体按需求实现"| O
     O -.->|"评审：客体对目标<br/>适宜 · 充分 · 有效"| T
     O -.->|"验证：客体对需求<br/>符合"| R
     O -.->|"确认：客体对用途<br/>适用"| U

@@ -73,14 +73,11 @@
   <text x="460" y="730" fill="#211A13" font-family="'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="20" text-anchor="middle" letter-spacing="1">系统工程师</text>
   <text x="624" y="730" fill="#A63D2F" font-family="'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="20" font-weight="600" text-anchor="middle" letter-spacing="1">架构师</text>
 
-  <!-- 图号（标本卡） -->
-  <text x="132" y="780" fill="#6E5F4C" font-family="'Noto Serif SC','Source Han Serif SC','SimSun','Songti SC',serif" font-size="17" font-style="italic" letter-spacing="1">Fig. 01 · 一个物种，三种粒度</text>
-
   <!-- ══════════ 学名块（标本卡语法） ══════════ -->
   <text x="132" y="856" fill="#6E5F4C" font-family="'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="14" letter-spacing="4">学名</text>
   <text x="188" y="858" fill="#211A13" font-family="'Noto Serif SC','Source Han Serif SC','SimSun','Songti SC',serif" font-size="26" letter-spacing="1">Architectus Systematis</text>
   <line x1="132" y1="874" x2="560" y2="874" stroke="#211A13" stroke-opacity="0.3" stroke-width="0.8"/>
-  <text x="132" y="908" fill="#6E5F4C" font-family="'Noto Serif SC','Source Han Serif SC','SimSun','Songti SC',serif" font-size="19" letter-spacing="1">特征：先为工程师，再把整条链背在身上。</text>
+  <text x="132" y="908" fill="#6E5F4C" font-family="'Noto Serif SC','Source Han Serif SC','SimSun','Songti SC',serif" font-size="19" letter-spacing="1">路径：先成为工程师，再提升系统架构能力</text>
 
   <!-- ══════════ 底部 ══════════ -->
   <!-- 朱文印：把话说准 -->
@@ -92,5 +89,5 @@
 
   <!-- 作者/出版占位 -->
   <text x="788" y="1006" fill="#6E5F4C" font-family="'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="15" text-anchor="end" letter-spacing="2">周拥军 著</text>
-  <text x="788" y="1032" fill="#6E5F4C" font-family="'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="15" text-anchor="end" letter-spacing="2">○○ 出版社</text>
+  <text x="788" y="1032" fill="#6E5F4C" font-family="'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="15" text-anchor="end" letter-spacing="2">系统工程出版社</text>
 </svg>

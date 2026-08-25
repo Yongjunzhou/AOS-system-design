@@ -1,0 +1,20 @@
+flowchart TD
+    R["需求（requirement）<br/>价值维 · 要什么"]
+    S["系统（system）<br/>对象维 · 是什么"]
+    D["设计（design）<br/>行为维 · 怎么做"]
+    R --> Q["质量<br/>需求投影"]
+    R --> FN["功能<br/>需求投影"]
+    S --> IF["接口<br/>系统投影"]
+    S --> CP["组件<br/>系统投影"]
+    D --> AR["架构<br/>设计投影"]
+    Q --> PR["产品（广义产品）<br/>围绕价值 × 对象 × 行为的整合"]
+    FN --> PR
+    IF --> PR
+    CP --> PR
+    AR --> PR
+    classDef root fill:#B5D4F4,stroke:#185FA5,color:#0C447C
+    classDef proj fill:#D3D1C7,stroke:#5F5E5A,color:#444441
+    classDef comp fill:#E1F5EE,stroke:#0F6E56,color:#085041
+    class R,S,D root
+    class Q,FN,IF,CP,AR proj
+    class PR comp

@@ -20,7 +20,7 @@
   #text(size: 10pt)[著：周拥军] \
   #text(size: 10pt)[2026 年 8 月] \
   #v(2cm)
-  #text(size: 9pt, fill: luma(140))[自出版 · EPUB / A5 打印稿] \
+  #text(size: 9pt, fill: luma(140))[系统工程出版社 · EPUB / A5 打印稿] \
   #text(size: 9pt, fill: luma(140))[ISBN：—（待定）]
 ]
 #pagebreak(weak: true)
