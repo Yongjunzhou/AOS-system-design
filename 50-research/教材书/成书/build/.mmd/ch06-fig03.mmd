@@ -1,0 +1,14 @@
+flowchart TB
+    A["① 拆需求<br/>把'要什么'（需求概要末级节点）拆成更细的'要什么'（需求详细定义）"]
+    B["② 验分解<br/>检查拆得清楚、不打架、没漏、没越界"]
+    C["③ 出方案<br/>基于需求 + 组织资产，出 ≥2 个候选'怎么做'（方案概要定义）"]
+    D["④ 对需求<br/>把每条'要什么'贴到方案对应的部分，看覆盖全不全"]
+    E["⑤ 做裁决<br/>按规则比较候选，挑一个，把理由记下来"]
+    F["⑥ 签定稿<br/>定下最终方案，相关方确认，冻结成基线"]
+    A --> B --> C --> D --> E --> F
+    classDef req fill:#fdf6ec,stroke:#c9a44a,color:#4a3c28;
+    classDef sol fill:#eef3f8,stroke:#5b7fa6,color:#2c3e50;
+    classDef fin fill:#e8f3ec,stroke:#3d7a4f,color:#2c5a3a;
+    class A,B,D req;
+    class C,E sol;
+    class F fin;
