@@ -7,7 +7,7 @@
 >
 > **适用场景**：瀑布式系统设计第6步（最终验证步骤）；支持 biz 单链、eng 单链、nfr 单链、跨链和全链五种验证批次。
 >
-> **版本**：v3.6 | **修订**：2026-08-24
+> **版本**：v3.7 | **修订**：2026-08-25
 
 ---
 
@@ -41,7 +41,7 @@
 |------|------------|-------------|
 | biz | FR-BIZ 规范化需求 → bph-biz → bpd-biz 输出文档/PL6 → 功能表单/窗口标签页 | 需求承接、配置业务系统 pa-eng 完整性、FR-BIZ 指标分配、来源追溯和 `可构件开发` 门禁 |
 | eng | FR-ENG 规范化需求节点 → bph-eng → CU bpd-eng → 系统需求概要 srh-eng → 系统需求详细 srd-eng → pa-eng 三类组件 | bph-eng 主责能力域唯一、共享依赖不重复、CU 配置能力、页面/构件覆盖、系统需求概要/系统需求详细 srh-eng→pa-eng 承接和 `待追溯验证` 门禁 |
-| nfr | NFR 规范化需求 → bph-nfr → SysReq-NFR → 分层约束表 → NFR 约束包 → eng pa-eng | 指标可验证、宿主唯一、约束包完整、消费版本及 pa-eng 承接闭环 |
+| nfr | 规范化非功能需求 → bph-nfr → SysReq-NFR → 分层约束表 → NFR 约束包 → eng pa-eng | 指标可验证、宿主唯一、约束包完整、消费版本及 pa-eng 承接闭环 |
 
 > 三条路径异构：biz 的功能表单/窗口标签页同时是配置业务系统 pa-eng，但不写入 07；eng 的软件组件 pa-eng 写入 07；nfr 不产生第二套 pa-eng。wft05-eng 是 FR-BIZ 指标约束包和 NFR 约束包的软件实现消费方。
 
@@ -103,7 +103,7 @@
 |------|---------|
 | biz | FR-BIZ 规范化需求→bph-biz；bph-biz→bpd-biz 输出文档/PL6；bpd-biz→功能表单/窗口标签页；FR-BIZ指标→引擎/CU |
 | eng | FR-ENG 规范化需求节点→bph-eng；bph-eng→CU bpd-eng；CU→系统需求概要 srh-eng；系统需求概要→系统需求详细 srd-eng；系统需求详细→pa-eng 组件 |
-| nfr | NFR 规范化需求→bph-nfr；分类需求项→唯一 SysReq-NFR；约束行→唯一约束包条目→pa-eng 消费结论 |
+| nfr | 规范化非功能需求→bph-nfr；分类需求项→唯一 SysReq-NFR；约束行→唯一约束包条目→pa-eng 消费结论 |
 
 “1:1”只在该层规则确实要求唯一分配时使用；允许聚合的环节验证唯一宿主和反向来源完整性，不机械要求一对一。
 
@@ -117,7 +117,7 @@
 
 - biz 正向：`FR-BIZ 规范化需求→bph-biz→bpd-biz→功能表单/窗口标签页→FR-BIZ指标分配`；反向相反。
 - eng 正向：`FR-ENG 规范化需求节点→bph-eng→CU bpd-eng→系统需求概要 srh-eng→系统需求详细 srd-eng→pa-eng`；反向相反。
-- nfr 正向：`NFR 规范化需求→bph-nfr→SysReq-NFR→约束行→约束包→pa-eng消费结论`；反向相反。
+- nfr 正向：`规范化非功能需求→bph-nfr→SysReq-NFR→约束行→约束包→pa-eng消费结论`；反向相反。
 
 ### 3.6 Step 6 · 跨路径接口验证
 
@@ -237,7 +237,7 @@ AI 动作序列：读取本文件 → 读取验证批次 → 按路径范围加�
 验证范围：
 1. biz：FR-BIZ 规范化需求→bph-biz→bpd-biz 输出文档/PL6→功能表单/窗口标签页。
 2. eng：FR-ENG 规范化需求节点→bph-eng→CU bpd-eng→系统需求概要 srh-eng→系统需求详细 srd-eng→pa-eng 组件。
-3. nfr：NFR 规范化需求→bph-nfr→唯一 SysReq-NFR 宿主→约束行→约束包→pa-eng 消费结论。
+3. nfr：规范化非功能需求→bph-nfr→唯一 SysReq-NFR 宿主→约束行→约束包→pa-eng 消费结论。
 
 输出格式：
 | 约束范围 | 总条目数 | 通过数 | 未通过数 | 通过率 |
@@ -273,7 +273,7 @@ N:1 验证结果：[引用5.3的输出]
 1. 【正向追溯】按三条真实路径追踪：
    biz：FR-BIZ 规范化需求 → bph-biz → bpd-biz → 功能表单/窗口标签页
    eng：FR-ENG 规范化需求节点 → bph-eng → CU bpd-eng → 系统需求概要 srh-eng → 系统需求详细 srd-eng → pa-eng
-   nfr：NFR 规范化需求 → bph-nfr → SysReq-NFR → 约束行 → 约束包 → pa-eng消费结论
+   nfr：规范化非功能需求 → bph-nfr → SysReq-NFR → 约束行 → 约束包 → pa-eng消费结论
 
    对每个映射环节（如 规范化需求→SR），用三个维度判断：
    ├─ Q1 正向链路完整性：出发节点是否标注了分配目标（→下层方案节点）？
@@ -342,7 +342,7 @@ N:1 验证结果：[引用5.3的输出]
    └─ 符合性分析是否引用具体的需求指标？
 
 2. 指标跨层一致性
-   ├─ nfr：NFR 规范化需求→bph-nfr→SysReq-NFR 的指标语义和量化口径是否完整？
+   ├─ nfr：规范化非功能需求→bph-nfr→SysReq-NFR 的指标语义和量化口径是否完整？
    ├─ nfr→eng：约束包目标值、测量方法是否被 pa-eng 组件/平台决策完整承接？
    └─ biz：只检查业务配置需求中的体验/能力下限是否有对应 NFR 或引擎能力承接，不虚构 biz pa-eng 指标。
 
@@ -365,7 +365,7 @@ N:1 验证结果：[引用5.3的输出]
 追溯矩阵分节格式：
 - biz：`FR-BIZ 规范化需求 | bph-biz | bpd-biz输出文档/PL6 | 功能表单/窗口标签页 | FR-BIZ指标分配 | 追溯状态`
 - eng：`FR-ENG 规范化需求节点 | bph-eng | CU bpd-eng | 系统需求概要srh-eng | 系统需求详细srd-eng | pa-eng组件 | 追溯状态`
-- nfr：`NFR 规范化需求 | bph-nfr | SysReq-NFR | 约束行 | 包版本 | pa-eng消费结论 | 追溯状态`
+- nfr：`规范化非功能需求 | bph-nfr | SysReq-NFR | 约束行 | 包版本 | pa-eng消费结论 | 追溯状态`
 - biz→eng：`功能表单/窗口标签页 | FR-BIZ指标行ID | 引擎/CU/srh-biz | 承接组件/消费版本 | FR-ENG缺口处理结论 | 覆盖状态`
 - nfr→eng：`约束行 | 包版本 | pa-eng组件/平台决策 | 消费版本 | 承接状态`
 
@@ -486,6 +486,7 @@ N:1 验证结果：[引用5.3的输出]
 ## 变更日志
 
 | 日期 | 版本 | 说明 |
+| 2026-08-25 | v3.7 | 标题正名链级联动（wft01-nfr v6.1）——三路径图/追溯表「NFR 规范化需求」→「规范化非功能需求」（7 处）。 |
 |------|------|------|
 | 2026-08-24 | v3.6 | 资产名更名（人类定案）——三路径链名 STR-F→bph-biz、STR-E→bph-eng、STR-NFR→bph-nfr、BP→bpd-biz/bpd-eng、SR-F→srh-eng/srd-eng、PA→pa-eng（SysReq-NFR 保留）；追溯矩阵/加载清单/链路句随迁 |
 | 2026-08-22 | v3.5 | 对齐 91 规范 v5.32 + NFR 分解设计（人类逐项裁决 2026-08-22）：①§3.6 biz→eng 缺口行口径对齐 wft05 三可（候选线索/规范化需求节点/待裁决结论），补 FR-BIZ 消费版本核对（PA 节点承接组件/消费版本与约束包行一致）；②§3.6 nfr→eng 补分解预算守恒核对（加法 Σ子≤父 / 乘法 Π子≥父 / 弱链 每子≥父 / 职责分布 无守恒）+ 约束包消费状态回写核对（`已消费`）；③§3.2 加载清单补两约束包文件路径（`10-eos-fr-biz-constraint-package.md` / `11-eos-nfr-constraint-package.md`）；④§5.7 biz→eng 矩阵列补「FR-BIZ指标行ID / 承接组件/消费版本」。 |

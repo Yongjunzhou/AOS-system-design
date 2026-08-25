@@ -34,7 +34,7 @@ description: 三路径双向追溯与跨链验证。验证biz/eng/nfr三条异�
 |------|------------|---------|
 | biz | FR-BIZ 规范化需求 → bph-biz → bpd-biz 输出文档/PL6 → 功能表单/窗口标签页 → FR-BIZ 指标分配 | 需求承接、pa-eng 完整性、`可构件开发` 门禁 |
 | eng | FR-ENG 规范化需求节点 → bph-eng → CU bpd-eng → 系统需求概要 srh-eng → 系统需求详细 srd-eng → pa-eng 三类组件 | 主责能力域唯一、共享不重复、CU 配置能力、系统需求概要/系统需求详细 srd-eng→pa-eng 承接、`待追溯验证` 门禁 |
-| nfr | NFR 规范化需求 → bph-nfr → SysReq-NFR → 约束行 → 约束包 → pa-eng 消费结论 | 宿主唯一、约束包完整、pa-eng 承接闭环 |
+| nfr | 规范化非功能需求 → bph-nfr → SysReq-NFR → 约束行 → 约束包 → pa-eng 消费结论 | 宿主唯一、约束包完整、pa-eng 承接闭环 |
 
 **跨路径接口**：
 
@@ -118,7 +118,7 @@ description: 三路径双向追溯与跨链验证。验证biz/eng/nfr三条异�
 |------|--------|
 | biz | `FR-BIZ 规范化需求 \| bph-biz \| bpd-biz输出文档/PL6 \| 功能表单/窗口标签页 \| FR-BIZ指标分配 \| 追溯状态` |
 | eng | `FR-ENG 规范化需求节点 \| bph-eng \| CU bpd-eng \| 系统需求概要srh-eng \| 系统需求详细srd-eng \| pa-eng组件 \| 追溯状态` |
-| nfr | `NFR 规范化需求 \| bph-nfr \| SysReq-NFR \| 约束行 \| 包版本 \| pa-eng消费结论 \| 追溯状态` |
+| nfr | `规范化非功能需求 \| bph-nfr \| SysReq-NFR \| 约束行 \| 包版本 \| pa-eng消费结论 \| 追溯状态` |
 | biz→eng | `功能表单/窗口标签页 \| FR-BIZ指标行ID \| 引擎/CU/srh-biz \| 承接组件/消费版本 \| FR-ENG缺口处理结论 \| 覆盖状态` |
 | nfr→eng | `约束行 \| 包版本 \| pa-eng组件/平台决策 \| 消费版本 \| 承接状态` |
 
@@ -141,6 +141,7 @@ description: 三路径双向追溯与跨链验证。验证biz/eng/nfr三条异�
 ## 变更记录
 
 | 日期 | 版本 | 说明 |
+| 2026-08-25 | v1.4 | 人类方案 v3.7 输入术语正名同步——「NFR 规范化需求」→「规范化非功能需求」（2 处）。AI 执行规则语义不变 |
 |------|------|------|
 | 2026-08-24 | v1.3 | 人类方案同步（缩写更名 sfh→srh/sfd→srd + 中文层名统一）；AI 执行规则语义不变（术语随迁）。 |
 | 2026-08-24 | v1.2 | 人类方案 v3.6 同步——三路径链名更名（STR-F→bph-biz、STR-E→bph-eng、STR-NFR→bph-nfr、BP→bpd-biz/bpd-eng、SR-F→srh-eng/srd-eng、PA→pa-eng，SysReq-NFR 保留） |
