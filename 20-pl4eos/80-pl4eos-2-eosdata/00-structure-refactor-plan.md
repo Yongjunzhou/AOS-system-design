@@ -31,7 +31,7 @@
 
 | 类型 | 文件 | 改造重点 |
 |------|------|---------|
-| 系统设计过程文档 | `01-eos-specified-requirements.md` | OR 条目状态队列、节点索引、正文块、反馈区 |
+| 系统设计过程文档 | `01-eos-specified-requirements.md` | 规范化需求条目状态队列、节点索引、正文块、反馈区 |
 | 系统设计过程文档 | `02-eos-business-summary-architecture.md` | STR 树画像、状态队列、节点索引、场景定义正文块、十链归属状态 |
 | 系统设计过程文档 | `03-eos-business-summary-detailed.md` | STR 详细定义索引、正文块、与 02 的追溯 |
 | 系统设计过程文档 | `04-eos-business-detailed.md` | BP 树画像、状态队列、节点索引、A1/A2/Bn 方案块 |
@@ -138,7 +138,7 @@
 
 | 文档类型 | 重点补充 |
 |----------|---------|
-| `01` OR 文档 | 说明先读 OR 状态队列和 OR 节点索引，再读目标 OR 正文块 |
+| `01` 规范化需求 文档 | 说明先读 规范化需求 状态队列和 规范化需求 节点索引，再读目标 规范化需求 正文块 |
 | `02` STR 架构文档 | 说明先读 STR 状态队列、活动锁、十链归属状态和 STR 节点索引 |
 | `03` STR 详细定义文档 | 说明先读 STR 详细定义状态队列、节点索引和待写回 / 待审阅详细定义块 |
 | `04` BP 架构文档 | 说明先读 BP 状态队列、待资产写回队列和 BP 节点索引 |
@@ -266,9 +266,9 @@
 
 | 关系类型 | 含义 | 示例 |
 |----------|------|------|
-| `derived_from` | 从上游材料或节点推导而来 | STR 节点 derived_from OR 条目 |
+| `derived_from` | 从上游材料或节点推导而来 | STR 节点 derived_from 规范化需求条目 |
 | `refines` | 对上游架构节点做详细化 | STR 详细条目 refines STR 架构节点 |
-| `allocated_to` | 上游需求分配到下游方案节点 | OR allocated_to STR |
+| `allocated_to` | 上游需求分配到下游方案节点 | 规范化需求 allocated_to STR |
 | `satisfies` | 下游节点满足上游需求 | BP satisfies STR 详细条目 |
 | `uses_asset` | 节点引用资产条目 | STR uses_asset @nfr-001 |
 | `produces_doc` | 节点产生文档资产 | BP produces_doc @doc-xxx |
@@ -303,7 +303,7 @@ L3 节点正文块：具体节点定义
 | `05-eos-system-requirement-summary-architecture.md` | 业务定义类型 / NFR 分类 / 状态 |
 | `06-eos-system-requirement-detailed.md` | SysReq 节点 / 业务定义类型 / 细节审阅状态 |
 | `07-eos-platform-product-architecture.md` | 组件层 / 产品类型 / 业务链与平台链 |
-| `21-eos-stakeholder-roles.md` | 角色类型 / 状态 / 来源 OR |
+| `21-eos-stakeholder-roles.md` | 角色类型 / 状态 / 来源 规范化需求 |
 | `22-eos-nfr-taxonomy.md` | 一级类目 / 分类维度 / 具体需求状态 |
 | `23-eos-output-architecture.md` | 业务域 / 产品类型 / 构件类型 / 状态 |
 | `24-eos-business-definitions.md` | 业务定义类型 / 复用状态 / 来源节点 |
@@ -321,8 +321,8 @@ L3 节点正文块：具体节点定义
 
 1. 对象所在文档的状态队列是该对象的权威状态源。
 2. 集中状态文档只作为派生仪表盘，不直接作为下游 Skill 的唯一入口。
-3. OR 预处理阶段的材料级状态可由 `00-origin-requirement-materials/01-eos-sysdev-status.md` 管理。
-4. OR 条目写入 `01-eos-specified-requirements.md` 后，OR 条目级状态应逐步迁入 01 文档状态队列。
+3. 规范化需求预处理阶段的材料级状态可由 `00-origin-requirement-materials/01-eos-sysdev-status.md` 管理。
+4. 规范化需求条目写入 `01-eos-specified-requirements.md` 后，规范化需求条目级状态应逐步迁入 01 文档状态队列。
 5. STR 节点状态以 `02-eos-business-summary-architecture.md` 的状态队列为准。
 6. BP 节点状态以 `04-eos-business-detailed.md` 的状态队列为准。
 7. SysReq 节点状态以 `05-eos-system-requirement-summary-architecture.md` 的状态队列为准。
@@ -410,7 +410,7 @@ L3 节点正文块：具体节点定义
 
 任务：
 
-1. 改造 `01`，将 OR 条目从旧三区结构迁移到状态队列 + 节点索引 + OR 正文块。
+1. 改造 `01`，将 规范化需求条目从旧三区结构迁移到状态队列 + 节点索引 + 规范化需求 正文块。
 2. 对齐 `05` 现有结构，补齐块 ID、节点索引与追溯关系区。
 3. 改造 `07`，建立 PA 组件状态队列、组件索引、正文块和组件反馈区。
 4. 改造 `08`，将追溯矩阵从静态结果表升级为可按节点 ID 定位的追溯关系索引。

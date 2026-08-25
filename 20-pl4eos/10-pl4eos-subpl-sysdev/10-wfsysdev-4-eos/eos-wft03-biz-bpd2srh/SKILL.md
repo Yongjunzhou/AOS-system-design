@@ -359,7 +359,7 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/05-eos-system-requir
 
 每条 FR-ENG 候选线索包含：需求 ID（`FR-ENG-REQ-{YYYYMMDD}-{序号}`）/ 来源（业务页面 ID + bpd-biz 节点 ID）/ 目标引擎 / 需求类型 / 缺口层级（构件级/布局组件级/CU级）/ 当前能力 / 需求能力 / 指标要求 / 业务场景 / 业务影响。
 
-> **门禁**：FR-ENG 候选线索不是正式 OR，登记到材料状态表 A（`00-origin-requirement-materials/01-eos-sysdev-status.md`，候选线索材料文件写入 `10-raw-files/`，生命周期=`已登记`）。人类确认纳入后须完整通过 ort00→ort03 形成正式 FR-ENG OR。
+> **门禁**：FR-ENG 候选线索不是规范化需求节点，登记到材料状态表 A（`00-origin-requirement-materials/01-eos-sysdev-status.md`，候选线索材料文件写入 `10-raw-files/`，生命周期=`已登记`）。人类确认纳入后须完整通过 ort00→ort03 形成FR-ENG 规范化需求节点。
 
 **7.4 FR-BIZ 指标分配与约束包装配**
 

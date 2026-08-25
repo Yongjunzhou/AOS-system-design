@@ -47,7 +47,7 @@
 
 | 层级 | 中文 | 英文 | 角色 |
 |------|------|------|------|
-| 第1层 | 原始需求 | Original Requirements (OR) | 仅需求 |
+| 第1层 | 原始需求 | Original Requirements (规范化需求) | 仅需求 |
 | 第2层 | 业务概要 | Business Summary (bph) | 需求/方案 |
 | 第3层 | 业务详细 | Business Detailed (bpd) | 仅方案 |
 | 第4层 | 系统需求概要 | Function Summary (srh) | 需求/方案 |
@@ -94,7 +94,7 @@
 |------|------|------|
 | 1:1 分配约束 | One-to-One Allocation Constraint | 每条详细定义末级分配到下层唯一的架构末级节点 |
 | N:1 承接 | Many-to-One Acceptance | 每个架构末级节点可承接多条上层末级条目 |
-| 双向追溯 | Bidirectional Traceability | OR→产品概要 正向和产品概要→OR 反向均可追踪 |
+| 双向追溯 | Bidirectional Traceability | 规范化需求→产品概要 正向和产品概要→规范化需求 反向均可追踪 |
 | 资产优先 | Organizational Asset Priority | 按复用→改进→新增优先级处理架构变更 |
 
 ## pa-eng 节点定义三因素
@@ -124,9 +124,9 @@
 
 | 中文 | 英文 | 说明 |
 |------|------|------|
-| 瀑布式 | Waterfall | 从零开始的正向完整设计（OR→SR→BP→SysReq→PA） |
+| 瀑布式 | Waterfall | 从零开始的正向完整设计（规范化需求→SR→BP→SysReq→PA） |
 | 敏捷式 | Agile | 在现有设计基础上的增量迭代 |
-| 逆向工程 | Reverse Engineering | 从已有构件反向推导至 OR |
+| 逆向工程 | Reverse Engineering | 从已有构件反向推导至 规范化需求 |
 | DevOps | DevOps | 最小化正向变更的快速修复 |
 
 ## 文档名称对照
