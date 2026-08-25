@@ -28,6 +28,7 @@
 宋宁 2026年8月8
 
 ]
+#pagebreak(weak: true)
 #heading(level: 2, outlined: false)[序二 · 概念，是留给人的那道门槛]
 我在这行做了三十多年。
 
@@ -56,6 +57,7 @@ AI
   #set par(first-line-indent: 0em)
   黄涛 2026年8月18
 ]
+#pagebreak(weak: true)
 #heading(level: 2, outlined: false)[序三 · 另一个世界，同一把尺子]
 我第一次翻这本书，带着一条界线。书名问”架构师是个怎样的物种”------架构师？那不是我管的那一行。我这辈子在体系工程里，管装备、管系统之系统、管院校里的学员，跟”架构师”隔着不止一个行业。翻之前我打定主意：这是一本写给别人的书。
 
