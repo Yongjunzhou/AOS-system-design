@@ -1,7 +1,7 @@
 # 模式1·快速修复
 **人类方案ID**: devops-t02 · **DevOps Step 2: Mode 1 — Quick Fix**
 
-> **概述**：对仅涉及 pa-eng 层的最小化变更进行快速修复，在几小时内完成。仅修改产品概要定义，不涉及上层需求文档的改动。
+> **概述**：对仅涉及 pa-eng 层的最小化变更进行快速修复，在几小时内完成。仅修改平台产品架构，不涉及上层需求文档的改动。
 >
 > **输入 → 输出**：影响范围评估报告（模式1） → 更新后的 pa-eng 文档（增量标记 `~` 修改 / `+` 新增）
 >
@@ -41,7 +41,7 @@
 | 条件 | 说明 |
 |------|------|
 | 输入 | t01 产出的影响范围评估报告（选定模式1，含受影响的 pa-eng 节点定位） |
-| 参考基线 | 现有 pa-eng 文档 `90-eos-system-product-data/07-eos-product-summary.md` |
+| 参考基线 | 现有 pa-eng 文档 `90-eos-system-product-data/07-eos-platform-product-architecture.md` |
 
 ### 文档结对关系
 
@@ -190,7 +190,7 @@ AI 动作序列：读取本文件 → 加载 t01 影响范围评估报告（模�
 
 | 文件 | 说明 | 路径 |
 |------|------|------|
-| 更新后的 pa-eng 文档 | 增量更新后的产品概要文档（含 `~`/`+` 标记） | `90-eos-system-product-data/07-eos-product-summary.md` |
+| 更新后的 pa-eng 文档 | 增量更新后的平台产品架构文档（含 `~`/`+` 标记） | `90-eos-system-product-data/07-eos-platform-product-architecture.md` |
 
 ---
 

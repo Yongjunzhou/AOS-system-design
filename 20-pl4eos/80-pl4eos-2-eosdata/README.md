@@ -43,7 +43,7 @@
 | 04 | [业务流程详细定义](04-eos-business-detailed.md) | 第 3 层 | 第 2 步 | 结构已改造，待填充 |
 | 05 | [系统需求概要架构定义](05-eos-system-requirement-summary-architecture.md) | 第 4 层（架构定义） | 第 3-4 步 | 结构已改造，待填充 |
 | 06 | [系统需求详细定义](06-eos-system-requirement-detailed.md) | 第 4 层（详细定义） | 第 5 步 | 结构已改造，待填充 |
-| 07 | [产品概要定义](07-eos-product-summary.md) | 第 5 层 | 第 5 步 | 结构已改造，待填充 |
+| 07 | [平台产品架构](07-eos-platform-product-architecture.md) | 第 5 层 | 第 5 步 | 结构已改造，待填充 |
 | 08 | [追溯矩阵](08-eos-sysdev-traceability-matrix.md) | 全层 | 第 6 步 | 结构已改造，待填充 |
 | 09 | [验证报告](09-eos-sysdev-verification-report.md) | 全层 | 第 6 步 | 结构已改造，待填充 |
 | 21 | [相关方角色目录](21-eos-stakeholder-roles.md) | 全层（跨层资产·发现型） | ort03/wft01~wft06 | 结构已改造，待填充 |
@@ -77,12 +77,12 @@
     │       ↓
     │   第4层：系统需求概要 (srh) → 05-eos-...-architecture.md + 06-eos-...-detailed.md
     │       ↓
-    │   第5层：产品概要 (pa)  → 07-eos-product-summary.md
+    │   第5层：平台产品架构 (pa)  → 07-eos-platform-product-architecture.md
     │
     └─ 非功能部分 ↓
         第4层：SysReq-NFR    → 05-eos-...-architecture.md（非功能部分）
             ↓
-        第5层：pa-eng            → 07-eos-product-summary.md（非功能约束）
+        第5层：pa-eng            → 07-eos-platform-product-architecture.md（非功能约束）
 
 追溯矩阵                    → 08-eos-sysdev-traceability-matrix.md
 验证报告                    → 09-eos-sysdev-verification-report.md

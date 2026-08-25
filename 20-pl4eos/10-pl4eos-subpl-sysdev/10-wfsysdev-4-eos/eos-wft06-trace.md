@@ -191,7 +191,7 @@ AI 动作序列：读取本文件 → 读取验证批次 → 按路径范围加�
 ├─ 04-eos-business-detailed.md — 业务流程
 ├─ 05-eos-system-requirement-summary-architecture.md — 系统需求架构定义（功能+NFR）
 ├─ 06-eos-system-requirement-detailed.md — 系统需求详细定义（9级活动）
-├─ 07-eos-product-summary.md — 产品架构
+├─ 07-eos-platform-product-architecture.md — 产品架构
 ├─ 08-eos-system-design-traceability-matrix.md — 追溯矩阵（如有）
 └─ 09-eos-system-design-verification-report.md — 验证报告（如有）
 

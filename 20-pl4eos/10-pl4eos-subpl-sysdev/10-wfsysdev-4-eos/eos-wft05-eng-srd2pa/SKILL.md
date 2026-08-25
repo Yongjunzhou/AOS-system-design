@@ -48,7 +48,7 @@ description: 系统需求详细定义→平台产品架构。接收系统需求�
 
 ```bash
 bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/07-eos-platform-product-architecture.md
 ```
 
 检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 变更感知）。
@@ -57,7 +57,7 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/07-eos-product-summa
 
 ```bash
 bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md "AI可以处理节点"
+bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/07-eos-platform-product-architecture.md "AI可以处理节点"
 ```
 
 **输入校验**（按顺序，命中即退出）：
@@ -85,7 +85,7 @@ bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary
 
 ```bash
 bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md
-bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md
+bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/07-eos-platform-product-architecture.md
 ```
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
@@ -95,7 +95,7 @@ bash ../scripts/detect-changes.sh ../../80-pl4eos-2-eosdata/07-eos-product-summa
 ```bash
 bash ../scripts/read-section.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md "待 wft05-eng 处理"
 bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md <srd-eng-ID>
-bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md <pa-eng-ID>
+bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/07-eos-platform-product-architecture.md <pa-eng-ID>
 ```
 
 **3. 加载资产与约束包**：
@@ -141,8 +141,8 @@ bash ../scripts/read-node.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md
 **元信息维护**：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-platform-product-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-platform-product-architecture.md update-head
 ```
 
 ---
@@ -264,12 +264,12 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.
 ```bash
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md update-head
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md update-head
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-platform-product-architecture.md bump-version
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-platform-product-architecture.md update-head
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md bump-version
 bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/23-eos-output-architecture.md update-head
 
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md add-recent-change "wft05-eng" "资产写回" "<pa-eng-ID>" "06/07/23/25 资产写回"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-platform-product-architecture.md add-recent-change "wft05-eng" "资产写回" "<pa-eng-ID>" "06/07/23/25 资产写回"
 ```
 
 ---
@@ -307,7 +307,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.
 | 线下修订检出（git diff 发现确认状态标注/自由文本编辑） | 定位条目 → Edit 修订 → 追加 `[已处理]` → 输出修改摘要 → 继续等待 |
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.md add-recent-change "wft05-eng" "反馈处理" "<pa-eng-ID>" "<AI总结>"
+bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-platform-product-architecture.md add-recent-change "wft05-eng" "反馈处理" "<pa-eng-ID>" "<AI总结>"
 ```
 
 ---
@@ -430,7 +430,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-product-summary.
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
-| 2026-08-25 | v2.4 | 人类方案 v10.11 同步（深审修复，人类逐项裁决）——①标题/description 正名「系统需求详细定义→平台产品架构」（人类定名）；②Step 7「九项闭环检查」→「十项闭环检查」、A.6 标题同步「十项闭环检查」+ 正式冻结补 FR-BIZ 承接条（七条→八条）；③Step Start 输入校验删「需wft05修订未提供方案」重复行（与退回门禁/退回优先三处重复）；④Step Start/Step 1/Step 8 文件引用 `05-eos-system-requirement-summary-architecture.md`→`06-eos-system-requirement-detailed.md`（srd-eng 在 06=L4 详细档）+ Step 8 元信息维护去重（05 移除，06 已覆盖）+ add-recent-change 摘要 05/06/07/23/25→06/07/23/25。AI 执行规则语义不变 |
+| 2026-08-25 | v2.5 | 人类方案 v10.12 同步（层名全对齐）——Step Start/Step 1/Step 8 等 `07-eos-product-summary.md`→`07-eos-platform-product-architecture.md`（07 数据文件随迁，机械替换）。AI 执行规则语义不变 |
 | 2026-08-24 | v2.2 | 人类方案 v10.9 同步（链级联动，同 wft01-eng v1.20）——Step 1 移除 `read-section.sh ... "pa-eng树画像"` 失效命令（07 数据文件实际分节为「0. 产品概要树画像」，read-section 精确匹配失败）；加载改由 AI可以处理节点 + read-node 定位。AI 执行规则语义不变 |
 | 2026-08-24 | v2.1 | 人类方案同步（缩写更名 sfh→srh/sfd→srd + 中文层名统一）；AI 执行规则语义不变（术语随迁）。 |
 | 2026-08-24 | v2.0 | 人类方案 v10.7 同步——SR-F→srd-eng、PA→pa-eng、BP→bpd-eng（节点类型/节点ID/状态名/追溯链） |

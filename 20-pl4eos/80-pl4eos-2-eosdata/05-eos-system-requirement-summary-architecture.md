@@ -225,7 +225,7 @@ EOS 企业运营体系 — 系统需求
 | bpd-biz IPO-* | allocated_to | srh-biz-* | 本文档 | 模板 | 首次出现 bpd-biz末级节点映射为 srh-biz |
 | bph-nfr-* | allocated_to | SysReq-NFR-* | 本文档 | 模板 | 非系统需求详细需求映射为 SysReq-NFR |
 | SysReq-* | refined_by | SysReq-D-* | `06-eos-system-requirement-detailed.md` | 模板 | 系统需求概要架构节点细化为详细定义 |
-| SysReq-* | implemented_by | pa-eng-* | `07-eos-product-summary.md` | 模板 | 系统需求概要末级节点由 pa-eng组件承接 |
+| SysReq-* | implemented_by | pa-eng-* | `07-eos-platform-product-architecture.md` | 模板 | 系统需求概要末级节点由 pa-eng组件承接 |
 
 ---
 
