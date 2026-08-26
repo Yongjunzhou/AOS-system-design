@@ -35,7 +35,7 @@ function findFile(prefix) {
   return hit;
 }
 const chapters = Array.from({ length: 16 }, (_, i) => `${String(i + 1).padStart(2, '0')}-第${i + 1}章`);
-const MANIFEST = ['00-序言', '00-前言', ...chapters, '17-附录'].map(prefix => [findFile(prefix), prefix]);
+const MANIFEST = ['00-序言', '00-前言', ...chapters, '00-后记', '17-附录'].map(prefix => [findFile(prefix), prefix]);
 
 // ---------- 变换 ----------
 function stripVersionRecord(text) {
@@ -50,7 +50,7 @@ function stripVersionRecord(text) {
  * 结构：`# 标题` + 空行 + `> 元信息` + 空行 + `---`；替换后剩 `# 标题` + 空行 + `---`
  */
 function stripLeadingMetaQuote(text, base) {
-  if (base !== '00-序言' && base !== '00-前言') return text;
+  if (base !== '00-序言' && base !== '00-前言' && base !== '00-后记') return text;
   return text.replace(/^(# .*?)\n\n>.*?\n\n(?=---)/ms, '$1\n\n');
 }
 
