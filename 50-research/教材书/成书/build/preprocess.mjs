@@ -73,9 +73,15 @@ function markUnlisted(text, isAppendix) {
   return text.split('\n').map(line => {
     const m = line.match(/^(\#{2,3})\s+(.+?)\s*$/);
     if (!m) return line;
+    // 保留 heading 已有 classes（如 .pagebreak，EPUB section 分页用），再合并 .unlisted（双轨目录排除）
+    const attrMatch = m[2].match(/\{([^}]*)\}/);
+    const existing = attrMatch ? ((attrMatch[1].match(/\.([\w-]+)/g) || []).map(s => s.slice(1))) : [];
     const title = m[2].replace(/\s*\{[^}]*\}\s*$/, '').trim();
     // 章首·误解现场（带编号但约定不入目录）或未编号章末件 → 目录排除
-    if (title.includes('章首') || !/^\d/.test(title)) return `${m[1]} ${title} {.unlisted}`;
+    if (title.includes('章首') || !/^\d/.test(title)) {
+      const classes = [...new Set([...existing, 'unlisted'])];
+      return `${m[1]} ${title} {.${classes.join(' .')}}`;
+    }
     return line;
   }).join('\n');
 }

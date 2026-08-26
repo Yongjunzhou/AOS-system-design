@@ -12,6 +12,8 @@ h1, h2, h3, h4 {
   page-break-after: avoid;
 }
 h1 { page-break-before: always; font-size: 1.6em; margin: 1.2em 0 .8em; }
+/* 序二/序三 各自独立起页：heading 挂 .pagebreak → pandoc 传播到 section（真实元素级分页，EPUB 阅读器普遍支持） */
+section.pagebreak { break-before: page; page-break-before: always; }
 h2 { font-size: 1.3em; margin: 1.2em 0 .6em; }
 h3 { font-size: 1.1em; margin: 1em 0 .5em; }
 h4 { font-size: 1em; margin: .8em 0 .4em; }
