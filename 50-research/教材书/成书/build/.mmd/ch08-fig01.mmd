@@ -1,9 +1,15 @@
 flowchart TB
+    subgraph 目的层["目的层"]
+        P["目的 Purpose<br/>系统存在的理由"]
+    end
+    E["环境 / 法规<br/>通道② · 不经目标"]
+    S["相关方隐含需要<br/>通道③ · 未必被目标覆盖"]
     subgraph 目标层["目标层"]
-        T["所规定目标 objective<br/>要实现的结果"]
+        T["目标 Objective · §3.7.1<br/>可实现的结果 · 战略 / 战术 / 操作<br/>操作目标 = 运行层可判定层 · 链接需求那层"]
     end
     subgraph 需求层["需求层"]
-        R["规定需求 specified requirement<br/>被明示、成文的需求"]
+        R["需求 Requirement · §3.6.4<br/>明示 / 隐含 / 必须履行"]
+        SR["规定需求 specified requirement<br/>被明示 · 成文"]
     end
     subgraph 客体层["客体层"]
         O["客体 object<br/>方案 / 产品 / 代码"]
@@ -11,8 +17,14 @@ flowchart TB
     subgraph 场景层["场景层"]
         U["预期用途 intended use<br/>谁用 · 怎么用 · 什么条件下用"]
     end
-    T -->|"需求由目标推导"| R
-    R -->|"客体按需求实现"| O
+    P -->|"具体化 / 展开"| T
+    T -->|"转化（跨类导出 ≠ 分解）"| R
+    E --> R
+    S --> R
+    R -->|"明示 → 规定需求"| SR
+    R -.->|"隐含 → 场景"| U
+    SR -->|"客体按需求实现"| O
     O -.->|"评审：客体对目标<br/>适宜 · 充分 · 有效"| T
-    O -.->|"验证：客体对需求<br/>符合"| R
+    O -.->|"验证：客体对规定需求<br/>符合"| SR
     O -.->|"确认：客体对用途<br/>适用"| U
+    O -.->|"评审 / 确认：上溯到目的"| P
