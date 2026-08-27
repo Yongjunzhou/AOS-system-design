@@ -7,7 +7,7 @@
 >
 > **适用场景**：DevOps 第4步·模式3。模式3直接发布，需运行 rule-conformance-review 进行完整审查。
 >
-> **版本**：v1.1 | **修订**：2026-08-24
+> **版本**：v1.2 | **修订**：2026-08-27
 
 ---
 
@@ -212,7 +212,7 @@ AI 动作序列：读取本文件 → 加载 t01 影响范围评估报告（模�
 | 文件 | 说明 | 路径 |
 |------|------|------|
 | 更新后的 业务概要 架构定义 | 增量更新后的业务流程概要架构定义 | `90-eos-system-product-data/02-eos-business-summary-architecture.md` |
-| 更新后的 bpd-biz 架构定义 | 增量更新后的业务详细定义 | `90-eos-system-product-data/04-eos-business-detailed.md` |
+| 更新后的 bpd-biz 架构定义 | 增量更新后的业务流程详细定义 | `90-eos-system-product-data/04-eos-business-detailed.md` |
 | 更新后的 系统需求概要 架构定义 | 增量更新后的系统需求架构定义 | `90-eos-system-product-data/05-eos-system-requirement-summary-architecture.md` |
 | 更新后的 系统需求概要 详细定义 | 增量更新后的系统需求详细定义 | `90-eos-system-product-data/06-eos-system-requirement-detailed.md` |
 | 更新后的 pa-eng 文档 | 增量更新后的平台产品架构文档 | `90-eos-system-product-data/07-eos-platform-product-architecture.md` |
