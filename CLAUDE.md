@@ -124,7 +124,7 @@
 
 | 文件 | 内容 |
 |------|------|
-| `01-specified-requirements.md` | 规范化需求 |
+| `01-specified-requirements.md` | 规范化的相关方需求 |
 | `02-business-summary-architecture.md` | 业务流程概要架构定义 |
 | `03-business-summary-detailed.md` | 业务流程概要详细定义 |
 | `04-business-detailed.md` | 业务流程详细 |
