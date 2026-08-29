@@ -1,7 +1,7 @@
 # EOS 流水线系统设计术语对照表
 **EOS Pipeline System Design — Terminology Glossary**
 
-**文档版本**：v2.2
+**文档版本**：v2.3
 **创建日期**：2026-05-28
 **用途**：统一 EOS 流水线系统设计领域的英中术语对照，便于文档写作和国际交流。
 
@@ -17,8 +17,8 @@
 |------|------|------|
 | EOS 流水线 | EOS Pipeline | 服务于 EOS 全生命周期的流水线，由设计线/开发线/集成线/运维线四子线组成 |
 | 元流水线 | Meta-Pipeline | 用于设计 EOS 流水线的流水线，当前处于系统设计阶段 |
-| 输出产品架构锚定法 | Output Product Architecture Anchoring Method | 流水线类产品的业务详细（bpd-biz）开发特化方法：以输出产品的 pa-eng 节点类型为推导锚点 |
-| 用户角色架构锚定法 | User Role Architecture Anchoring Method | 业务详细（bpd-biz）开发的通用方法：以全量用户角色集为推导锚点 |
+| 输出产品架构锚定法 | Output Product Architecture Anchoring Method | 流水线类产品的业务方案（bpd-biz）开发特化方法：以输出产品的 pa-eng 节点类型为推导锚点 |
+| 用户角色架构锚定法 | User Role Architecture Anchoring Method | 业务方案（bpd-biz）开发的通用方法：以全量用户角色集为推导锚点 |
 | 四类构件 | Four Component Types | EOS 流水线 pa-eng 的四类交付物：设计准则、设计指南、AI 辅助文档、任务定义 |
 
 ## 三层工作层面
@@ -49,7 +49,7 @@
 |------|------|------|------|
 | 第1层 | 原始需求 | Original Requirements (规范化的相关方需求) | 仅需求 |
 | 第2层 | 业务概要 | Business Summary (bph) | 需求/方案 |
-| 第3层 | 业务详细 | Business Detailed (bpd) | 仅方案 |
+| 第3层 | 业务方案 | Business Detailed (bpd) | 仅方案 |
 | 第4层 | 系统需求概要 | Function Summary (srh) | 需求/方案 |
 | 第5层 | 产品概要 | Product Summary (pa) | 仅方案 |
 
@@ -59,7 +59,7 @@
 
 | 中文 | 英文 | 说明 |
 |------|------|------|
-| 功能需求 | Functional Requirement (FR) | 系统必须执行的功能或服务，经业务详细路径分配 |
+| 功能需求 | Functional Requirement (FR) | 系统必须执行的功能或服务，经业务方案路径分配 |
 | 非功能需求 | Non-Functional Requirement (NFR) | 系统必须满足的质量属性，经平行路径分配 |
 | 末级需求 | Leaf-level Requirement | 不可再分的原子粒度需求条目 |
 | 架构末级节点 | Architecture Leaf Node | 方案文档树形结构的末级节点，承接上层需求 |

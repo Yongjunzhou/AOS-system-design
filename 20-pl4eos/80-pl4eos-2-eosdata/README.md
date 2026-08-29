@@ -1,7 +1,7 @@
 # EOS 运营体系 — 产品数据
 **EOS Enterprise Operation System — Product Data**
 
-**版本**：v1.3
+**版本**：v1.4
 **最后更新**：2026-06-21
 
 ---
@@ -40,9 +40,9 @@
 | 01 | [规范化的相关方需求清单](01-eos-specified-requirements.md) | 第 1 层 | 第 1 步 | 结构已改造，现有 规范化的相关方需求 已迁入索引 |
 | 02 | [业务流程概要架构定义](02-eos-business-summary-architecture.md) | 第 2 层（架构定义） | 第 1 步 | 结构已改造，待填充 |
 | 03 | [业务流程概要详细定义](03-eos-business-summary-detailed.md) | 第 2 层（详细定义） | 第 2 步 | 结构已改造，待填充 |
-| 04 | [业务流程详细定义](04-eos-business-detailed.md) | 第 3 层 | 第 2 步 | 结构已改造，待填充 |
+| 04 | [业务流程方案](04-eos-business-detailed.md) | 第 3 层 | 第 2 步 | 结构已改造，待填充 |
 | 05 | [系统需求概要架构定义](05-eos-system-requirement-summary-architecture.md) | 第 4 层（架构定义） | 第 3-4 步 | 结构已改造，待填充 |
-| 06 | [系统需求详细定义](06-eos-system-requirement-detailed.md) | 第 4 层（详细定义） | 第 5 步 | 结构已改造，待填充 |
+| 06 | [系统需求方案](06-eos-system-requirement-detailed.md) | 第 4 层（详细定义） | 第 5 步 | 结构已改造，待填充 |
 | 07 | [平台产品架构](07-eos-platform-product-architecture.md) | 第 5 层 | 第 5 步 | 结构已改造，待填充 |
 | 08 | [追溯矩阵](08-eos-sysdev-traceability-matrix.md) | 全层 | 第 6 步 | 结构已改造，待填充 |
 | 09 | [验证报告](09-eos-sysdev-verification-report.md) | 全层 | 第 6 步 | 结构已改造，待填充 |
@@ -73,7 +73,7 @@
     ↓ N:1 分配
 第2层：业务流程概要 (bph)       → 02-eos-...-architecture.md + 03-eos-...-detailed.md
     ├─ 功能部分 ↓
-    │   第3层：业务流程详细 (bpd)  → 04-eos-business-detailed.md
+    │   第3层：业务流程方案 (bpd)  → 04-eos-business-detailed.md
     │       ↓
     │   第4层：系统需求概要 (srh) → 05-eos-...-architecture.md + 06-eos-...-detailed.md
     │       ↓

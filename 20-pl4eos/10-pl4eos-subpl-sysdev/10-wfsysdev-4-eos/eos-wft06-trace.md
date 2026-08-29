@@ -7,7 +7,7 @@
 >
 > **适用场景**：瀑布式系统设计第6步（最终验证步骤）；支持 biz 单链、eng 单链、nfr 单链、跨链和全链五种验证批次。
 >
-> **版本**：v3.8 | **修订**：2026-08-27
+> **版本**：v3.9 | **修订**：2026-08-28
 
 ---
 
@@ -40,7 +40,7 @@
 | 路径 | 端到端链路 | 本步验证内容 |
 |------|------------|-------------|
 | biz | FR-BIZ 规范化的相关方需求 → bph-biz → bpd-biz 输出文档/PL6 → 功能表单/窗口标签页 | 需求承接、配置业务系统 pa-eng 完整性、FR-BIZ 指标分配、来源追溯和 `可构件开发` 门禁 |
-| eng | FR-ENG 规范化的相关方需求节点 → bph-eng → CU bpd-eng → 系统需求概要 srh-eng → 系统需求详细 srd-eng → pa-eng 三类组件 | bph-eng 主责能力域唯一、共享依赖不重复、CU 配置能力、页面/构件覆盖、系统需求概要/系统需求详细 srh-eng→pa-eng 承接和 `待追溯验证` 门禁 |
+| eng | FR-ENG 规范化的相关方需求节点 → bph-eng → CU bpd-eng → 系统需求概要 srh-eng → 系统需求方案 srd-eng → pa-eng 三类组件 | bph-eng 主责能力域唯一、共享依赖不重复、CU 配置能力、页面/构件覆盖、系统需求概要/系统需求方案 srh-eng→pa-eng 承接和 `待追溯验证` 门禁 |
 | nfr | 规范化非功能需求 → bph-nfr → SysReq-NFR → 分层约束表 → NFR 约束包 → eng pa-eng | 指标可验证、宿主唯一、约束包完整、消费版本及 pa-eng 承接闭环 |
 
 > 三条路径异构：biz 的功能表单/窗口标签页同时是配置业务系统 pa-eng，但不写入 07；eng 的软件组件 pa-eng 写入 07；nfr 不产生第二套 pa-eng。wft05-eng 是 FR-BIZ 指标约束包和 NFR 约束包的软件实现消费方。
@@ -93,7 +93,7 @@
 
 1. 读取批次范围、各路径节点索引、AI最近变更、待确认项和决策记录。
 2. biz 加载 `01/02/04/05/06` 中与选定 bph-biz/配置需求相关的节点块 + FR-BIZ 指标约束包（`10-eos-fr-biz-constraint-package.md`）。
-3. eng 加载 `01/02/04/05/06/07/23` 中与选定 bph-eng/CU/系统需求概要 srh-eng/系统需求详细 srd-eng/pa-eng 相关的节点块。
+3. eng 加载 `01/02/04/05/06/07/23` 中与选定 bph-eng/CU/系统需求概要 srh-eng/系统需求方案 srd-eng/pa-eng 相关的节点块。
 4. nfr 加载 `01/02/05/06`、分层约束表、wft05-eng NFR 约束包（`11-eos-nfr-constraint-package.md`）及 wft05 消费记录。
 5. 跨链验证额外加载 25 引擎模型和 biz 需求中的能力参照/FR-ENG 缺口线索。
 
@@ -102,7 +102,7 @@
 | 路径 | 检查链路 |
 |------|---------|
 | biz | FR-BIZ 规范化的相关方需求→bph-biz；bph-biz→bpd-biz 输出文档/PL6；bpd-biz→功能表单/窗口标签页；FR-BIZ指标→引擎/CU |
-| eng | FR-ENG 规范化的相关方需求节点→bph-eng；bph-eng→CU bpd-eng；CU→系统需求概要 srh-eng；系统需求概要→系统需求详细 srd-eng；系统需求详细→pa-eng 组件 |
+| eng | FR-ENG 规范化的相关方需求节点→bph-eng；bph-eng→CU bpd-eng；CU→系统需求概要 srh-eng；系统需求概要→系统需求方案 srd-eng；系统需求方案→pa-eng 组件 |
 | nfr | 规范化非功能需求→bph-nfr；分类需求项→唯一 SysReq-NFR；约束行→唯一约束包条目→pa-eng 消费结论 |
 
 “1:1”只在该层规则确实要求唯一分配时使用；允许聚合的环节验证唯一宿主和反向来源完整性，不机械要求一对一。
@@ -116,12 +116,12 @@
 对每个映射环节执行：Q1 正向目标存在、Q2 反向来源存在、Q3 语义/指标不降级。结果标记：✅完整、⚠️待确认、❌中断、❓证据不足。
 
 - biz 正向：`FR-BIZ 规范化的相关方需求→bph-biz→bpd-biz→功能表单/窗口标签页→FR-BIZ指标分配`；反向相反。
-- eng 正向：`FR-ENG 规范化的相关方需求节点→bph-eng→CU bpd-eng→系统需求概要 srh-eng→系统需求详细 srd-eng→pa-eng`；反向相反。
+- eng 正向：`FR-ENG 规范化的相关方需求节点→bph-eng→CU bpd-eng→系统需求概要 srh-eng→系统需求方案 srd-eng→pa-eng`；反向相反。
 - nfr 正向：`规范化非功能需求→bph-nfr→SysReq-NFR→约束行→约束包→pa-eng消费结论`；反向相反。
 
 ### 3.6 Step 6 · 跨路径接口验证
 
-**biz→eng 能力与指标覆盖**：逐条功能表单/窗口标签页及 FR-BIZ 指标约束行核对引擎、CU、系统需求概要 srh-eng、系统需求详细 srd-eng 与 pa-eng 能力。每条指标保留 FR-BIZ 类型和来源，验证组件承接、适用条件、统计口径、测量方法和消费版本（wft05-eng 记录到 pa-eng 节点的承接组件/消费版本须与约束包行一致）。缺口行（Q2/Q3/Q4）须关联 FR-ENG 候选线索或FR-ENG 规范化的相关方需求节点 或待裁决结论（三可）；候选线索或规范化的相关方需求节点 只有在经过 ort00→ort03 形成规范化的相关方需求节点 并获得处理结论后，才算闭环。
+**biz→eng 能力与指标覆盖**：逐条功能表单/窗口标签页及 FR-BIZ 指标约束行核对引擎、CU、系统需求概要 srh-eng、系统需求方案 srd-eng 与 pa-eng 能力。每条指标保留 FR-BIZ 类型和来源，验证组件承接、适用条件、统计口径、测量方法和消费版本（wft05-eng 记录到 pa-eng 节点的承接组件/消费版本须与约束包行一致）。缺口行（Q2/Q3/Q4）须关联 FR-ENG 候选线索或FR-ENG 规范化的相关方需求节点 或待裁决结论（三可）；候选线索或规范化的相关方需求节点 只有在经过 ort00→ort03 形成规范化的相关方需求节点 并获得处理结论后，才算闭环。
 
 **nfr→eng pa-eng 消费**：逐约束行核对包版本、消费版本、目标组件/平台决策和验收口径。携带「分解运算」的约束行核对预算守恒（加法 Σ子≤父 / 乘法 Π子≥父 / 弱链 每子≥父 / 职责分布 无守恒），并核对约束包消费状态已由 wft05-eng 回写（`已消费`）。阻断型 NFR 只写备注、未改变组件边界/接口/运行机制时判定为 ❌。
 
@@ -190,7 +190,7 @@ AI 动作序列：读取本文件 → 读取验证批次 → 按路径范围加�
 ├─ 03-eos-business-summary-detailed.md — 相关方需求详细定义
 ├─ 04-eos-business-detailed.md — 业务流程
 ├─ 05-eos-system-requirement-summary-architecture.md — 系统需求架构定义（功能+NFR）
-├─ 06-eos-system-requirement-detailed.md — 系统需求详细定义（9级活动）
+├─ 06-eos-system-requirement-detailed.md — 系统需求方案（9级活动）
 ├─ 07-eos-platform-product-architecture.md — 产品架构
 ├─ 08-eos-system-design-traceability-matrix.md — 追溯矩阵（如有）
 └─ 09-eos-system-design-verification-report.md — 验证报告（如有）
@@ -236,7 +236,7 @@ AI 动作序列：读取本文件 → 读取验证批次 → 按路径范围加�
 
 验证范围：
 1. biz：FR-BIZ 规范化的相关方需求→bph-biz→bpd-biz 输出文档/PL6→功能表单/窗口标签页。
-2. eng：FR-ENG 规范化的相关方需求节点→bph-eng→CU bpd-eng→系统需求概要 srh-eng→系统需求详细 srd-eng→pa-eng 组件。
+2. eng：FR-ENG 规范化的相关方需求节点→bph-eng→CU bpd-eng→系统需求概要 srh-eng→系统需求方案 srd-eng→pa-eng 组件。
 3. nfr：规范化非功能需求→bph-nfr→唯一 SysReq-NFR 宿主→约束行→约束包→pa-eng 消费结论。
 
 输出格式：
@@ -272,7 +272,7 @@ N:1 验证结果：[引用5.3的输出]
 
 1. 【正向追溯】按三条真实路径追踪：
    biz：FR-BIZ 规范化的相关方需求 → bph-biz → bpd-biz → 功能表单/窗口标签页
-   eng：FR-ENG 规范化的相关方需求节点 → bph-eng → CU bpd-eng → 系统需求概要 srh-eng → 系统需求详细 srd-eng → pa-eng
+   eng：FR-ENG 规范化的相关方需求节点 → bph-eng → CU bpd-eng → 系统需求概要 srh-eng → 系统需求方案 srd-eng → pa-eng
    nfr：规范化非功能需求 → bph-nfr → SysReq-NFR → 约束行 → 约束包 → pa-eng消费结论
 
    对每个映射环节（如 规范化的相关方需求→SR），用三个维度判断：
@@ -364,7 +364,7 @@ N:1 验证结果：[引用5.3的输出]
 
 追溯矩阵分节格式：
 - biz：`FR-BIZ 规范化的相关方需求 | bph-biz | bpd-biz输出文档/PL6 | 功能表单/窗口标签页 | FR-BIZ指标分配 | 追溯状态`
-- eng：`FR-ENG 规范化的相关方需求节点 | bph-eng | CU bpd-eng | 系统需求概要srh-eng | 系统需求详细srd-eng | pa-eng组件 | 追溯状态`
+- eng：`FR-ENG 规范化的相关方需求节点 | bph-eng | CU bpd-eng | 系统需求概要srh-eng | 系统需求方案srd-eng | pa-eng组件 | 追溯状态`
 - nfr：`规范化非功能需求 | bph-nfr | SysReq-NFR | 约束行 | 包版本 | pa-eng消费结论 | 追溯状态`
 - biz→eng：`功能表单/窗口标签页 | FR-BIZ指标行ID | 引擎/CU/srh-biz | 承接组件/消费版本 | FR-ENG缺口处理结论 | 覆盖状态`
 - nfr→eng：`约束行 | 包版本 | pa-eng组件/平台决策 | 消费版本 | 承接状态`
@@ -486,6 +486,7 @@ N:1 验证结果：[引用5.3的输出]
 ## 变更日志
 
 | 日期 | 版本 | 说明 |
+| 2026-08-28 | v3.9 | 层名更名（人类指示 2026-08-28）——业务流程概要定义→业务流程概要、业务流程详细定义→业务流程方案、系统需求概要定义→系统需求概要、系统需求详细定义→系统需求方案（nfr/eng 链同构，含短名/标题后缀）；历史变更记录保留旧词。 |
 | 2026-08-27 | v3.8 | 链级术语清扫（人类指示 2026-08-27）——规范化需求→规范化的相关方需求（术语全称化：需求来源=相关方、加工程度=规范化）。 |
 | 2026-08-25 | v3.7 | 标题正名链级联动（wft01-nfr v6.1）——三路径图/追溯表「NFR 规范化需求」→「规范化非功能需求」（7 处）。 |
 |------|------|------|

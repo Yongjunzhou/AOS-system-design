@@ -126,7 +126,7 @@
 | `03-stakeholder-requirements-detailed.md` | 相关方需求详细定义 |
 | `04-business-architecture.md` | 业务流程 |
 | `05-system-requirements-architecture.md` | 系统需求架构定义 |
-| `06-system-requirements-detailed.md` | 系统需求详细定义 |
+| `06-system-requirements-detailed.md` | 系统需求方案 |
 | `07-product-architecture.md` | 产品架构 |
 | `08-traceability-matrix.md` | 追溯矩阵 |
 | `09-verification-report.md` | 验证报告 |

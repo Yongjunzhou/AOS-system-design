@@ -1,9 +1,9 @@
 # EOS 系统设计追溯矩阵
 **EOS System Design Traceability Matrix**
 
-**文档版本**：v2.3
+**文档版本**：v2.4
 **创建日期**：2026-05-20
-**修订日期**：2026-08-27
+**修订日期**：2026-08-28
 **状态**：骨架已改造，待填充
 **文档类型**：验证类索引文档
 **权威状态源**：本文档 `1. 追溯关系状态与处理队列`
@@ -45,10 +45,10 @@
 |------|--------|----------|----------|
 | 规范化的相关方需求 → 业务概要 | `01-eos-specified-requirements.md` | `02-eos-business-summary-architecture.md` | 规范化的相关方需求 末级分配到 业务概要架构末级 |
 | 业务概要 → 业务概要详细 | `02-eos-business-summary-architecture.md` | `03-eos-business-summary-detailed.md` | 业务概要架构节点细化为详细定义 |
-| 业务概要详细 → 业务详细 | `03-eos-business-summary-detailed.md` | `04-eos-business-detailed.md` | 业务概要详细定义由业务详细方案满足 |
-| 业务详细 → 系统需求概要 | `04-eos-business-detailed.md` | `05-eos-system-requirement-summary-architecture.md` | 业务详细末级节点映射为系统需求概要架构末级 |
-| 系统需求概要 → 系统系统需求详细 | `05-eos-system-requirement-summary-architecture.md` | `06-eos-system-requirement-detailed.md` | 系统需求概要架构节点细化为详细定义 |
-| 系统系统需求详细 → 平台产品架构 | `06-eos-system-requirement-detailed.md` | `07-eos-platform-product-architecture.md` | 系统系统需求详细活动或约束由平台产品架构组件承接 |
+| 业务概要详细 → 业务方案 | `03-eos-business-summary-detailed.md` | `04-eos-business-detailed.md` | 业务概要详细定义由业务方案满足 |
+| 业务方案 → 系统需求概要 | `04-eos-business-detailed.md` | `05-eos-system-requirement-summary-architecture.md` | 业务方案末级节点映射为系统需求概要架构末级 |
+| 系统需求概要 → 系统系统需求方案 | `05-eos-system-requirement-summary-architecture.md` | `06-eos-system-requirement-detailed.md` | 系统需求概要架构节点细化为详细定义 |
+| 系统系统需求方案 → 平台产品架构 | `06-eos-system-requirement-detailed.md` | `07-eos-platform-product-architecture.md` | 系统系统需求方案活动或约束由平台产品架构组件承接 |
 | 过程文档 → 资产 | `02~07` | `21~27` | 节点引用角色、NFR、输出产品、业务定义、引擎、文档和资源资产 |
 
 ### 0.2 关系类型
@@ -58,11 +58,11 @@
 | `derived_from` | 从上游材料或节点推导而来 | 业务概要 derived_from 规范化的相关方需求 |
 | `refines` | 对上游架构节点做详细化 | 业务概要详细 refines 业务概要 |
 | `allocated_to` | 上游需求分配到下游方案节点 | 规范化的相关方需求 allocated_to 业务概要 |
-| `satisfies` | 下游节点满足上游需求 | 业务详细 satisfies 业务概要详细 |
+| `satisfies` | 下游节点满足上游需求 | 业务方案 satisfies 业务概要详细 |
 | `implemented_by` | 需求或定义由组件承接 | 系统需求概要 implemented_by 平台产品架构 |
-| `uses_asset` | 节点引用资产条目 | 业务详细 uses_asset @def-* |
-| `produces_doc` | 节点产生文档资产 | 业务详细 produces_doc @doc-* |
-| `consumes_doc` | 节点消费文档资产 | 业务详细 consumes_doc @doc-* |
+| `uses_asset` | 节点引用资产条目 | 业务方案 uses_asset @def-* |
+| `produces_doc` | 节点产生文档资产 | 业务方案 produces_doc @doc-* |
+| `consumes_doc` | 节点消费文档资产 | 业务方案 consumes_doc @doc-* |
 
 ### 0.3 覆盖率摘要
 
@@ -101,8 +101,8 @@
 | 分片ID | 分片名称 | 范围 | 默认读取场景 | 关系数 | 入口 |
 |--------|----------|------|--------------|--------|------|
 | TRACE-SHARD-spr-BPH | 规范化的相关方需求 → 业务概要 | 原始需求到相关方需求架构 | `wft01` 验证 规范化的相关方需求 分配 | — | `4.1 规范化的相关方需求 到业务概要关系块` |
-| TRACE-SHARD-BPH-BPD | 业务概要 → 业务详细 | 业务概要详细定义到 业务详细 | `wft02` 验证 业务详细满足关系 | — | `4.2 业务概要到业务详细关系块` |
-| TRACE-SHARD-BPD-SRH | 业务详细 → 系统需求概要 | 业务详细 到系统需求 | `wft03` 验证映射 | — | `4.3 业务详细到系统需求概要关系块` |
+| TRACE-SHARD-BPH-BPD | 业务概要 → 业务方案 | 业务概要详细定义到 业务方案 | `wft02` 验证 业务方案满足关系 | — | `4.2 业务概要到业务方案关系块` |
+| TRACE-SHARD-BPD-SRH | 业务方案 → 系统需求概要 | 业务方案 到系统需求 | `wft03` 验证映射 | — | `4.3 业务方案到系统需求概要关系块` |
 | TRACE-SHARD-SRH-平台产品架构 | 系统需求概要 → 平台产品架构 | 系统需求到产品架构 | `wft05` 验证组件承接 | — | `4.4 系统需求概要到平台产品架构关系块` |
 | TRACE-SHARD-ASSET | 过程文档 → 资产 | 对 `21~27` 的资产引用 | 资产一致性检查 | — | `4.5 资产引用关系块` |
 
@@ -160,18 +160,19 @@
 
 | 日期 | 来源 | 反馈内容 | 处理状态 |
 |------|------|----------|----------|
+| 2026-08-28 | v2.4 | 层名更名（人类指示 2026-08-28）——业务流程概要定义→业务流程概要、业务流程详细定义→业务流程方案、系统需求概要定义→系统需求概要、系统需求详细定义→系统需求方案（nfr/eng 链同构，含短名/标题后缀）；历史变更记录保留旧词。 |
 | 2026-08-27 | v2.3 | 链级清扫 | 术语更名 规范化需求→规范化的相关方需求（全链统一） | AI 链级清扫 |
 | — | — | — | — |
 
 <!-- /BLOCK: TRACE-TEMPLATE -->
 
-### 4.2 业务概要到业务详细关系块
+### 4.2 业务概要到业务方案关系块
 
-> 业务概要 到 业务详细 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `satisfies`、`uses_asset`。
+> 业务概要 到 业务方案 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `satisfies`、`uses_asset`。
 
-### 4.3 业务详细到系统需求概要关系块
+### 4.3 业务方案到系统需求概要关系块
 
-> 业务详细 到 系统需求概要 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `allocated_to`、`refines`。
+> 业务方案 到 系统需求概要 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `allocated_to`、`refines`。
 
 ### 4.4 系统需求概要到平台产品架构关系块
 
