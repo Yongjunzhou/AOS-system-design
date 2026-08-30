@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>随机选组 · 六面骰</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎲</text></svg>">
+<!--
+  随机选组 · 六面骰
+  用途：流程工程师培训课堂随机选组工具。
+  规则：单击骰子开始摇，再单击立即停止；正面点数（0~5）即结果，
+        0 = 空白（无组，重摇）。
+  传统六面体骰子，白色骰面 + 黑点（1~5 按标准骰布局，0 为空白面）。
+  结果面始终转正对观众（正面的点数）。画面只有骰子；隐藏快捷键：M = 静音。
+  单文件、零依赖，双击即用，可投屏。
+-->
+<style>
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ height:100%; }
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    background:
+      radial-gradient(1200px 700px at 50% -10%, #26345e 0%, transparent 60%),
+      linear-gradient(165deg, #0f1526, #1a2340);
+    height:100vh;
+    overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    -webkit-font-smoothing:antialiased;
+    user-select:none;
+    -webkit-tap-highlight-color:transparent;
+  }
+
+  .stage{ position:relative; }
+  .fit{ position:relative; width:240px; height:240px; }
+
+  .shadow{
+    position:absolute; left:50%; top:80%;
+    transform:translateX(-50%);
+    width:82%; height:16%;
+    border-radius:50%;
+    background:radial-gradient(closest-side, rgba(0,0,0,.55), transparent 72%);
+    filter:blur(7px);
+    transition:transform .25s ease, opacity .25s ease;
+    z-index:0;
+  }
+  .stage.rolling .shadow{ transform:translateX(-50%) scale(1.22); opacity:.55; }
+
+  /* 环境光晕：把面与面在顶点交汇的小缝隙融成柔和光影，而不是露出深色裂纹 */
+  .halo{
+    position:absolute; inset:0; margin:auto;
+    width:175%; height:175%;
+    border-radius:50%;
+    background:radial-gradient(closest-side, rgba(241,233,219,.34), transparent 68%);
+    filter:blur(8px);
+    z-index:0;
+    pointer-events:none;
+  }
+
+  .scene{
+    position:absolute; inset:0;
+    perspective:950px;
+    display:flex; align-items:center; justify-content:center;
+    z-index:1;
+  }
+  .stage.landing .scene{ animation:landpop .32s ease-out; }
+
+  /* ============ 3D 六面骰 ============ */
+  .cube{
+    position:relative; width:0; height:0;
+    transform-style:preserve-3d;
+  }
+  .face{
+    position:absolute; width:150px; height:150px; left:-75px; top:-75px;
+    border-radius:16px;
+    backface-visibility:hidden;
+  }
+  .pips{
+    position:absolute; inset:0;
+    display:grid;
+    grid-template-areas:
+      "tl tc tr"
+      "ml mc mr"
+      "bl bc br";
+    padding:14%;
+  }
+  .face[data-value="1"]{ --dc1:#ff7a6b; --dc2:#d63031; }
+  .face[data-value="2"]{ --dc1:#4be093; --dc2:#159457; }
+  .face[data-value="3"]{ --dc1:#ffc04f; --dc2:#f0740f; }
+  .face[data-value="4"]{ --dc1:#5eb1ff; --dc2:#2a5fd0; }
+  .face[data-value="5"]{ --dc1:#b06bff; --dc2:#6c35c9; }
+  .dot{
+    width:40%; aspect-ratio:1;
+    align-self:center; justify-self:center;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--dc1, #4a5160), var(--dc2, #141823) 72%);
+    box-shadow:0 1px 2px rgba(255,255,255,.3) inset;
+  }
+  .smile{
+    position:absolute; inset:0; margin:auto;
+    width:62%; height:62%;
+  }
+  .face.hit{ animation:faceGlow 1.15s ease-out; }
+
+  @keyframes landpop{
+    0%   { transform:scale(1.15); }
+    55%  { transform:scale(.96); }
+    100% { transform:scale(1); }
+  }
+  @keyframes faceGlow{
+    0%   { box-shadow:0 0 0 0 rgba(255,205,110,0); }
+    25%  { box-shadow:0 0 0 14px rgba(255,205,110,.35), 0 0 34px 10px rgba(255,205,110,.25); }
+    100% { box-shadow:0 0 0 0 rgba(255,205,110,0); }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .shadow, .stage.rolling .shadow{ transition:none; }
+    .stage.landing .scene, .face.hit{ animation:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stage" id="stage">
+  <div class="fit" id="fit">
+    <div class="shadow" id="shadow"></div>
+    <div class="halo"></div>
+    <div class="scene">
+      <div class="cube" id="cube"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  const stage = document.getElementById('stage');
+  const fitEl = document.getElementById('fit');
+  const cube  = document.getElementById('cube');
+
+  // ---------- 六面几何：点数 0~5（相对面相加 = 5） ----------
+  // 落定姿态：静止俯视 tilt = rotateX(-10) rotateY(-16)，再转 bring 使结果面正对观众
+  // 经 3D 数学验证：六面朝前时点数全部正立、不镜像，无需预转。
+  const L = 150;   // 边长（px）
+  // 各面按位置平面着色（顶受光最亮 → 前 → 侧 → 底最暗），边缘由明暗过渡定义
+  const FACES = [
+    { value:0, t:'rotateY(0deg)    translateZ(75px)', bg:'linear-gradient(180deg,#f7f2e7,#ebe5d8)' },
+    { value:5, t:'rotateY(180deg)  translateZ(75px)', bg:'linear-gradient(180deg,#f1ebde,#e3dccd)' },
+    { value:1, t:'rotateX(90deg)   translateZ(75px)', bg:'linear-gradient(180deg,#faf6ec,#efe9d9)' },
+    { value:4, t:'rotateX(-90deg)  translateZ(75px)', bg:'linear-gradient(180deg,#e2dbcb,#d4cdbc)' },
+    { value:2, t:'rotateY(90deg)   translateZ(75px)', bg:'linear-gradient(180deg,#ece6d8,#ded7c7)' },
+    { value:3, t:'rotateY(-90deg)  translateZ(75px)', bg:'linear-gradient(180deg,#ece6d8,#ded7c7)' },
+  ];
+  const REST = {
+    0: 'rotateX(-10deg) rotateY(-16deg)',
+    5: 'rotateX(-10deg) rotateY(-16deg) rotateY(180deg)',
+    1: 'rotateX(-10deg) rotateY(-16deg) rotateX(-90deg)',
+    4: 'rotateX(-10deg) rotateY(-16deg) rotateX(90deg)',
+    2: 'rotateX(-10deg) rotateY(-16deg) rotateY(-90deg)',
+    3: 'rotateX(-10deg) rotateY(-16deg) rotateY(90deg)',
+  };
+  // 标准骰点数布局（3×3 网格：tl tc tr / ml mc mr / bl bc br）
+  const PIPS = {
+    0: [],
+    1: ['mc'],
+    2: ['tl', 'br'],
+    3: ['tl', 'mc', 'br'],
+    4: ['tl', 'tr', 'bl', 'br'],
+    5: ['tl', 'tr', 'mc', 'bl', 'br'],
+  };
+
+  const facesByValue = {};
+
+  // 无点的面（0）：微笑脸
+  const SMILE = '<svg class="smile" viewBox="0 0 100 100" aria-hidden="true">' +
+    '<defs><radialGradient id="smileGrad" cx="0.35" cy="0.3" r="0.9">' +
+    '<stop offset="0" stop-color="#ffe05a"/><stop offset="1" stop-color="#f5b400"/>' +
+    '</radialGradient></defs>' +
+    '<circle cx="50" cy="50" r="45" fill="url(#smileGrad)"/>' +
+    '<circle cx="34" cy="41" r="6.5" fill="#3a3f4b"/>' +
+    '<circle cx="66" cy="41" r="6.5" fill="#3a3f4b"/>' +
+    '<path d="M28 54 Q50 76 72 54" fill="none" stroke="#3a3f4b" stroke-width="6" stroke-linecap="round"/>' +
+    '</svg>';
+
+  function buildCube(){
+    FACES.forEach(function(f){
+      const face = document.createElement('div');
+      face.className = 'face';
+      face.setAttribute('data-value', f.value);
+      face.style.width = face.style.height = L + 'px';
+      face.style.left = face.style.top = (-L / 2) + 'px';
+      face.style.transform = f.t;
+      face.style.background = f.bg;
+      if(f.value === 0){
+        face.innerHTML = SMILE;   // 0 面：微笑脸（= 无组，重摇）
+      } else {
+        const pips = document.createElement('div');
+        pips.className = 'pips';
+        PIPS[f.value].forEach(function(area){
+          const d = document.createElement('i');
+          d.className = 'dot';
+          d.style.gridArea = area;
+          pips.appendChild(d);
+        });
+        face.appendChild(pips);
+      }
+      facesByValue[f.value] = face;
+      cube.appendChild(face);
+    });
+  }
+
+  // ---------- 公平随机 0~5 ----------
+  function rnd(){
+    if (window.crypto && crypto.getRandomValues){
+      const a = new Uint32Array(1);
+      crypto.getRandomValues(a);
+      return a[0] / 4294967296;
+    }
+    return Math.random();
+  }
+  function pick(){ return Math.floor(rnd() * 6); }
+
+  // ---------- 音效（Web Audio 合成，隐藏快捷键 M 静音） ----------
+  let audioCtx = null;
+  let muted = false;
+  function ensureCtx(){
+    try{
+      if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      if(audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+    }catch(e){}
+  }
+  function playTick(){
+    if(muted || !audioCtx) return;
+    const t = audioCtx.currentTime;
+    const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+    o.type = 'triangle';
+    o.frequency.setValueAtTime(1500 + Math.random() * 500, t);
+    o.frequency.exponentialRampToValueAtTime(1000, t + 0.03);
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(0.16, t + 0.005);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + 0.05);
+    o.connect(g); g.connect(audioCtx.destination);
+    o.start(t); o.stop(t + 0.06);
+  }
+  function playThud(){
+    if(muted || !audioCtx) return;
+    const t = audioCtx.currentTime;
+    const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+    o.type = 'sine';
+    o.frequency.setValueAtTime(170, t);
+    o.frequency.exponentialRampToValueAtTime(70, t + 0.12);
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(0.4, t + 0.01);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + 0.28);
+    o.connect(g); g.connect(audioCtx.destination);
+    o.start(t); o.stop(t + 0.3);
+  }
+  function toggleMute(){ muted = !muted; }
+
+  // ---------- 摇骰状态机 ----------
+  const reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let rolling = false;
+  let rafId   = null;
+  let lastT   = null;
+  let rotX    = 0;
+  let rotY    = 0;
+  let tickInt = null;
+
+  function wrapAngle(a, t){
+    return t + ((((a - t + 180) % 360) + 360) % 360) - 180;   // 归到距 t 最近的等价角
+  }
+
+  function frame(now){
+    const dt = lastT ? now - lastT : 16;
+    lastT = now;
+    rotX = (rotX + dt * 0.00175 * 360) % 360;  // ≈ 1.75 转/秒（原 3.5 的一半）
+    rotY = (rotY + dt * 0.00225 * 360) % 360;  // ≈ 2.25 转/秒（原 4.5 的一半，双轴翻滚）
+    cube.style.transform = 'rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg)';
+    rafId = requestAnimationFrame(frame);
+  }
+
+  function clearHit(){
+    Object.keys(facesByValue).forEach(function(v){
+      facesByValue[v].classList.remove('hit');
+    });
+  }
+
+  function startRoll(){
+    if(rolling) return;
+    rolling = true;
+    clearHit();
+    cube.style.transition = 'none';
+    stage.classList.add('rolling');
+    stage.classList.remove('landing');
+    ensureCtx();
+    if(!reduced){
+      lastT = null;
+      rafId = requestAnimationFrame(frame);
+    }
+    tickInt = setInterval(playTick, 110);
+  }
+
+  function stopRoll(){
+    if(!rolling) return;
+    rolling = false;
+    cancelAnimationFrame(rafId);
+    clearInterval(tickInt);
+    const v = pick();
+    const target = REST[v];
+    if(reduced){
+      cube.style.transition = 'none';
+      cube.style.transform = target;
+    } else {
+      // 先把当前角度归到距目标最近的等价角（360° 整数倍差，视觉无跳变），
+      // 再短过渡落定，保证结果面正对观众、过渡走最短路径
+      const rxn = wrapAngle(rotX, -10);
+      const ryn = wrapAngle(rotY, -16);
+      cube.style.transition = 'none';
+      cube.style.transform = 'rotateX(' + rxn + 'deg) rotateY(' + ryn + 'deg)';
+      void cube.offsetWidth;
+      cube.style.transition = 'transform .18s ease-out';
+      cube.style.transform = target;
+      setTimeout(function(){ cube.style.transition = 'none'; }, 240);
+    }
+    playThud();
+    facesByValue[v].classList.add('hit');
+    stage.classList.remove('rolling');
+    stage.classList.add('landing');
+    setTimeout(function(){ stage.classList.remove('landing'); }, 340);
+  }
+
+  function toggle(){ rolling ? stopRoll() : startRoll(); }
+
+  // ---------- 交互：整个画面即骰子 ----------
+  stage.addEventListener('click', toggle);
+  document.addEventListener('keydown', function(e){
+    if(e.key === ' '){ e.preventDefault(); toggle(); }
+    else if(e.key === 'm' || e.key === 'M'){ toggleMute(); }
+  });
+
+  // ---------- 随窗口缩放 ----------
+  function fit(){
+    const vw = document.documentElement.clientWidth;
+    const vh = document.documentElement.clientHeight;
+    const s = Math.max(0.7, Math.min(3.2, Math.min(vw, vh) * 0.62 / 240));
+    fitEl.style.transform = 'scale(' + s + ')';
+  }
+  window.addEventListener('resize', fit);
+  window.addEventListener('orientationchange', fit);
+
+  // ---------- 初始化（正面 = 0，空白，即「无结果」） ----------
+  buildCube();
+  cube.style.transform = REST[0];
+  fit();
+})();
+</script>
+</body>
+</html>
