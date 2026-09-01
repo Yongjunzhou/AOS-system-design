@@ -8,7 +8,9 @@ cd "$(dirname "$0")"
 # 工具链 PATH（pandoc/typst 由 winget 安装，非系统 PATH）
 export PATH="/c/Users/HUAWEI/AppData/Local/Pandoc:/c/Users/HUAWEI/AppData/Local/Microsoft/WinGet/Packages/Typst.Typst_Microsoft.Winget.Source_8wekyb3d8bbwe/typst-x86_64-pc-windows-msvc:$PATH"
 # 图1-5 蛇形渲染依赖 puppeteer-core（随 mmdc 下载在 npx 缓存里）
-PPC="$(find /c/Users/HUAWEI/AppData/Local/npm-cache/_npx -maxdepth 4 -type d -name puppeteer-core 2>/dev/null | head -1)"
+# 注：find 目标为 Windows 专有路径；在非 Windows 上 find 会返回非 0，pipefail 下触发 set -e 退出——
+# 加 `|| true` 使跨平台安全（Windows 路径存在时正常、不存在时无害跳过）。
+PPC="$(find /c/Users/HUAWEI/AppData/Local/npm-cache/_npx -maxdepth 4 -type d -name puppeteer-core 2>/dev/null | head -1 || true)"
 if [ -n "$PPC" ]; then
   export NODE_PATH="$(dirname "$PPC")${NODE_PATH:+:$NODE_PATH}"
 fi
