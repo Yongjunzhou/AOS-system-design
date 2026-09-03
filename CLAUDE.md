@@ -162,6 +162,7 @@
 - 所有文档使用 Markdown + Mermaid 格式
 - 版本号格式：`v[主版本].[次版本]`
 - 中文为主体语言，术语附英文对照
+- **PDF 转换统一使用 [tools/md2pdf](tools/md2pdf/md2pdf.js)**：`node tools/md2pdf/md2pdf.js <md路径> [输出.pdf]`（marked + puppeteer 渲染，支持 Mermaid 图表，默认输出与源文件同名 .pdf；2026-09-03 用户定，后续所有 md→PDF 转换按此方式进行）
 
 ---
 
