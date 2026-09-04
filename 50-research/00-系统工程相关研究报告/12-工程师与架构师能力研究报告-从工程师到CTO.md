@@ -5,6 +5,8 @@
 > 定位：基于工程、需求、设计、开发等概念的认知链延伸。回答四个递进问题——什么是工程师、工程师需要哪些技能、架构师在工程师之上多了哪些技能、架构师再往上是什么。
 > 术语约定：requirement→需求；need→需要；expectation→期望；specified requirement→规定需求（参照 ISO 9000:2015 §3.6.4）。
 > 补充记录（2026-08-26）：§3.5 新增差异③（判据锚点：规定需求→目的，fundamental 判据）；新增 §3.7「对目的的权责——四职责与一条界线」（含《系统目的或任务理解确认单》）；§8.2 补"目的漂移"行与目的变更触发器。同日可读性优化：§3 标题改名「架构师：增量技能、能力体现与目的权责」；§3.4 补架构决策贯穿性桥句；§3.5 标题「两→三」、§8.2「三→四」、§1.6「一句话→三句话」；§3.6 六项能力补出处（教材书第 9 章 / 11 号笔记）；§9.2 阶梯补「级×方向」分叉；引用口径统一（教材书第N章 / §N）；附录 A·B 补齐。
+>
+> 补充记录（2026-09-04）：架构定义升格 ISO/IEC/IEEE 42010:2022（依 22 号报告「最新现行为主、旧版仅对照」，与 06/07/10 号同步）——§3.2 主定义改 2022、2011 降【历史对照】，并补 elements/relationships 在 2022 剥离于定义句的说明（工程师管元素、架构师管关系与演化的分工不变）；§8.2「design and evolution」引文、§9.2 处 42010 措辞、附录 A 标准行、附录 B「architecture」术语行随迁 2022。
 
 ---
 
@@ -153,11 +155,12 @@ flowchart BT
 
 ### 3.2 增量从哪来：42010 定义拆解
 
-ISO/IEC/IEEE 42010:2011：
+ISO/IEC/IEEE 42010:2022（现行）：
+> architecture: fundamental concepts or properties of an entity **in its environment** and governing principles for the realization and evolution of this entity and its related life cycle processes
 
-> architecture: fundamental concepts or properties of a system **in its environment**, embodied in its **elements**, **relationships**, and in the **principles of its design and evolution**.
+【历史对照】2011 版（42010:2011 §3.2）：fundamental concepts or properties of a system in its environment, *embodied in* its elements, relationships, and in the principles of its design and evolution。
 
-三个词决定了分工：**工程师的技能围绕 elements（把元素做对）；架构师的增量技能围绕 relationships（元素之间的关系与结构）与 evolution（系统的演化）**。
+两版对"架构由什么构成"的判断一致，分工由此而来：**工程师的技能围绕 elements（把元素做对）；架构师的增量技能围绕 relationships（元素之间的关系与结构）与 evolution（系统的演化）**。说明：elements/relationships 在 2011 定义句中与 concepts/properties 并列，2022 已将其从定义句剥离（并入生命周期过程的表达，作为架构在架构描述（AD）中的内容对象）——但"谁管元素、谁管关系与演化"的工程师/架构师分工不变。
 
 ### 3.3 叠加结构
 
@@ -181,7 +184,7 @@ flowchart TD
 | 质量属性权衡 | 性能/安全/可用/成本间的系统级 trade-off，用方法而非感觉 | SEI ATAM |
 | 抽象与架构建模 | 决定架构描述长什么样：抽象层级、视图切分、接口契约 | 42010；Kruchten 4+1 |
 | 技术领导力 | 无正式职权地影响团队，守住架构一致性 | INCOSE SE Handbook |
-| 演化与战略对齐 | 为系统全生命周期演化负责，与业务战略对齐 | 42010 定义中的 design **and evolution** |
+| 演化与战略对齐 | 为系统全生命周期演化负责，与业务战略对齐 | 42010 定义（2022：realization and evolution；2011：design and evolution） |
 
 六块中，架构决策是**贯穿性动作**而非独立领域——它的特殊性（影响全局、难逆转、靠评审）将在 §3.5② 与 §3.6 展开；做法融在后五节：关切清单是裁判席（§4.3）、权衡进决策记录（§5.5）、rationale 与 ADR 定型（§3.6）。以下 §4~§8 逐一展开其余五块；完整方法论见教材书第 12 章。
 
@@ -308,7 +311,7 @@ flowchart TD
 
 ## 4. 关切与干系人管理（怎么做）
 
-### 4.1 术语（42010:2011 原文定义）
+### 4.1 术语（ISO/IEC/IEEE 42010；下引 2011 原文定义，2022 沿同义、条款重编号）
 
 - **stakeholder（干系人）** §3.10：*individual, team, organization, or classes thereof, having an interest in a system*（对系统有兴趣的个人、团队、组织或其类别）——关键词是 interest，不是"使用者"
 - **concern（关切）** §3.2：*interest in a system relevant to one or more of its stakeholders*——可涵盖目的、质量属性、成本、进度、法规、组织政治
@@ -541,7 +544,7 @@ flowchart LR
 
 purpose drift 的处置是强制的：**目的一旦变更，即触发架构重审**（见 §3.7 守护职责）。
 
-关键：演化是**有方向的变化**；42010 定义里 "design **and evolution**" 明示——可演化性是架构的**构成要件**。架构决策是**长半衰期决策**（Martin Fowler：*architecture is about the things that are hard to change*）。
+关键：演化是**有方向的变化**；42010 现行定义里 "governing principles for the realization and **evolution**" 明示（2011 写作 design and evolution）——可演化性是架构的**构成要件**。架构决策是**长半衰期决策**（Martin Fowler：*architecture is about the things that are hard to change*）。
 
 注意 drift 与 purpose drift 的方向相反：前者是**实现**偏离了架构（架构对、执行歪）；后者是**目的**偏离了架构（执行对、判据过期）。技术栈旧了但目的没变，架构可能依然健康；目的悄悄变了而架构没跟上，才是大多数"遗留系统之痛"的根——防前者靠合规评审，防后者靠以目的为参照的定期检视（呼应§3.7 守护职责）。
 
@@ -643,7 +646,7 @@ architect = *archi-*（首）+ *tekton*（工匠）——"工匠之首"；**chie
 | ISO 9000:2015 §3.6.4 | requirement = stated / generally implied / obligatory |
 | ISO 9000:2015 §3.10.4 | competence = ability to apply knowledge and skills |
 | ISO 9000:2015 §3.4.8 | 设计开发 = 将需求转换为更详细需求的过程（§3.6） |
-| ISO/IEC/IEEE 42010:2011 | architecture 定义；stakeholder §3.10 / concern §3.2 / viewpoint / view / AD |
+| ISO/IEC/IEEE 42010:2022（2011 为历史对照） | architecture 定义（现行）；stakeholder / concern / viewpoint / view / AD（文内条款号为 2011 编号，2022 已重编号） |
 | ISO/IEC/IEEE 12207 / 15288 | architect 作为工程过程中的角色；Business or Mission Analysis（§3.7 目的定义权） |
 | ISO/IEC 25010 | 质量属性模型（SQuaRE） |
 | NSPE Code of Ethics | 工程师伦理责任序言 |
@@ -667,7 +670,7 @@ architect = *archi-*（首）+ *tekton*（工匠）——"工匠之首"；**chie
 | concern | 关切 | 干系人对系统的兴趣点 |
 | viewpoint / view | 视角 / 视图 | 规则 / 实例（菜谱 / 菜） |
 | architecture description | 架构描述 | 架构 ≠ 架构描述（地图 ≠ 疆域） |
-| architecture | 架构 | 系统在其环境中的本质概念与属性（elements / relationships / evolution，42010） |
+| architecture | 架构 | 实体（系统）在其环境中的基本概念或属性 + 实现与演化的治理原则（ISO/IEC/IEEE 42010:2022）；【历史对照】2011 曾作「系统……本质概念与属性（elements / relationships / evolution）」 |
 | quality attribute | 质量属性 | 非功能特性，由架构决定 |
 | trade-off | 权衡 | 属性冲突下的配比管理 |
 | architectural decision | 架构决策 | 影响全局、难逆转，须记 rationale |
