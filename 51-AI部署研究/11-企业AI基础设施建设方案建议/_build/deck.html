@@ -1,0 +1,87 @@
+<!doctype html><html><head><meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<style>
+ body{margin:0;background:#fff}
+ .d{width:1600px}
+ .d svg{max-width:100%;height:auto}
+</style></head><body>
+<div class="d" id="d0"><pre class="mermaid">flowchart TB
+    subgraph 四类需求
+        R1["① 产品智能化转型"]
+        R2["② 基于AI的产品数据开发"]
+        R3["③ AI技术研究"]
+        R4["④ AI办公&lt;br/&gt;数据分析整理/管理报告/问答"]
+    end
+    subgraph 三层基础设施诉求
+        A["A · 在线推理平台&lt;br/&gt;（实时问答+研发Agent环+吞吐队列）"]
+        B["B · 训练调优与研究区&lt;br/&gt;（造/调专用模型+实验田）"]
+        C["C · 数据与知识底座&lt;br/&gt;（接入/分析整理/分级/入库）"]
+    end
+    R1 --&gt; B
+    R1 --&gt;|产品内推理| A
+    R2 --&gt;|批量吞吐| A
+    R2 --&gt; C
+    R3 --&gt; B
+    R4 --&gt;|问答| A
+    R4 --&gt;|报告·吞吐| A
+    R4 --&gt; C
+    A --&gt; F["公共设施：机房/电力/网络/运维/安全审计"]
+    B --&gt; F
+    C --&gt; F
+</pre></div>
+<div class="d" id="d1"><pre class="mermaid">flowchart TB
+    P1["人头 · 研发 2500（办公问答另计）&lt;br/&gt;决定账户与配额，不决定硬件"] --&gt; P2["AI 活跃人时 · ~1375（55%）&lt;br/&gt;决定真实负载画像"]
+    P2 --&gt; P3["会话驻留 · ~825 Agent环(1M) + ~550 快问(短)&lt;br/&gt;决定容量墙（KV 池）"]
+    P3 --&gt; P4["解码路数 · ~570 路，峰值 ~700&lt;br/&gt;决定带宽墙（每步流量）"]
+</pre></div>
+<div class="d" id="d2"><pre class="mermaid">flowchart TB
+    subgraph 应用/人
+        U1["研发 Agent 环"] ; U2["产品与办公问答"] ; U3["管理报告/数据开发"] ; U4["产品智能化/技术研究"]
+    end
+    GW["AI 网关（统一 API/路由/配额/审计）"]
+    subgraph 算力层
+        A["在线推理双池（一期已测算 96 卡）"]
+        B["训练调优与研究区（预留·专项）"]
+    end
+    subgraph 数据层
+        C["数据与知识底座（接入/分析整理/分级/入库/RAG）"]
+    end
+    subgraph 设施层
+        F["共享底座：机房/电力/网络/存储/运维/安全"]
+    end
+    U1 &amp; U2 &amp; U3 &amp; U4 --&gt; GW
+    GW --&gt; A
+    GW --&gt;|离线任务| B
+    C --&gt; A
+    C --&gt; B
+    A --&gt; F ; B --&gt; F
+</pre></div>
+<div class="d" id="d3"><pre class="mermaid">flowchart TB
+    subgraph 用户层
+        U1["非研发 ~1500 人&lt;br/&gt;问答 · 报告 · 数据分析"]
+        U2["研发 ~2500 人&lt;br/&gt;Agent 环 · 快问（1M）"]
+    end
+    GW["AI 网关：统一 API · 路由 · 配额 · 优先级 · 审计"]
+    subgraph IP["交互池 · 千问3.8 27B dense · 8×TP2 = 16 卡"]
+        IP1["W8A8+KV INT8 · 32K 上下文&lt;br/&gt;50 tok/s · 峰值解码 ~270 路 · ~700 会话"]
+    end
+    subgraph HP["重负载池 · 千问3.8 Flash-Next MoE · 10×TP8 = 80 卡"]
+        HP1["125B 总参/6B 激活 · KV INT4 · 1M 能力&lt;br/&gt;Agent 环 825 + 快问 550 + 报告/数据任务排队填谷&lt;br/&gt;SLA 60~80 tok/s"]
+    end
+    BASE["共享底座：MindIE / vLLM-Ascend · continuous batching&lt;br/&gt;prefix caching · chunked prefill · KV 换出 · 三本账监控"]
+    U1 --&gt; GW ; U2 --&gt; GW
+    GW --&gt;|短输入交互| IP
+    GW --&gt;|长文档 / 研发一切请求 / 吞吐任务| HP
+    IP --&gt; BASE ; HP --&gt; BASE
+</pre></div>
+<div class="d" id="d4"><pre class="mermaid">flowchart TD
+    S["研发全员 1M 上下文&lt;br/&gt;瓶颈 = KV 驻留（容量墙），不是算力"] --&gt; A["A · 硬上：KV INT8 全驻留&lt;br/&gt;编码池 168 卡 · 全案 ~200 卡 · ¥1400~1600 万"]
+    S --&gt; A2["A′ · KV INT4 基线（推荐起步）&lt;br/&gt;编码池 80 卡 · 全案 96 卡"]
+    S --&gt; B["B · 三级驻留（进阶演进）&lt;br/&gt;HBM 热层 / 主机内存温层换出 / 超时丢弃&lt;br/&gt;56~80 卡 + 4TB 主机内存（+¥50~70 万）"]
+</pre></div>
+<div class="d" id="d5"><pre class="mermaid">flowchart LR
+    A["一期 POC&lt;br/&gt;2 台机 16 卡 · ¥150~200 万 · 3 个月&lt;br/&gt;验：占空比/上下文分布/INT4 精度/报告与数据任务频率"] --&gt; B["二期 · 在线推理全量&lt;br/&gt;12 台机 96 卡 · 累计 ¥850~1100 万"]
+    B --&gt; C["专项插入&lt;br/&gt;训练调优/数据底座&lt;br/&gt;随需求测算立项"]
+    C --&gt; D["运营优化&lt;br/&gt;KV 三级驻留 + MTP&lt;br/&gt;再省 8~20% 卡"]
+</pre></div>
+</body></html>
