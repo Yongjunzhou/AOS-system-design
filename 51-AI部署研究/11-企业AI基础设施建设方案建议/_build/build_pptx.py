@@ -238,9 +238,11 @@ def cover(slide, note):
     tf = add_textbox(slide, 1.0, 5.0, 11.8, 2.2)
     para_runs(tf, True, [('一个底座，支撑四类企业 AI 需求——产品智能化、产品数据开发、AI 技术研究、AI 办公', False)],
               size=18, color=INK, space=10)
-    para_runs(tf, False, [('在线推理一期 96 卡（约 100 张） · 一次性约 ¥850~1100 万 · 年运营 ¥110~160 万', False)],
-              size=15, color=GRAY, space=10)
-    para_runs(tf, False, [('汇报人 / 2026-09-07', False)], size=12, color=GRAY, space=0)
+    para_runs(tf, False, [('引擎 A · 在线推理一期 96 卡（12 台 8 卡机）：一次性 CapEx ¥850~1100 万 · 年运营 ¥110~160 万（估算·待询价）', False)],
+              size=15, color=GRAY, space=8)
+    para_runs(tf, False, [('整体预算边界（A+B 上界，估算·待询价）≈ ¥3000~4400 万 · C 与人力另计（见 P56）', False)],
+              size=13, color=GRAY, space=8)
+    para_runs(tf, False, [('汇报人 / 2026-09-09', False)], size=12, color=GRAY, space=0)
 
 def place_image(slide, png, x, y, w, h):
     from PIL import Image
