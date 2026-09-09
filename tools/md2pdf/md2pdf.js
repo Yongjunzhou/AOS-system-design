@@ -164,6 +164,65 @@ console.log(`📖 读取: ${relative(PROJECT_ROOT, inputPath)}`);
 
 const mdContent = readFileSync(inputPath, 'utf-8');
 
+// ---- 代码块长行折行：续行补回该行原有前导缩进，与上一行首字符对齐 ----
+function mdCodeCharPx(ch) {
+  const o = ch.codePointAt(0);
+  const full =
+    (o >= 0x2e80 && o <= 0x9fff) || // CJK / 全角汉字及扩展
+    (o >= 0x3000 && o <= 0x30ff) || // 全角标点、假名
+    (o >= 0x3400 && o <= 0x4dbf) ||
+    (o >= 0xf900 && o <= 0xfaff) ||
+    (o >= 0xff00 && o <= 0xffef) || // 全角符号
+    (o >= 0x2500 && o <= 0x257f);   // 框线（└ ─ ├ ┐ 等）
+  return full ? 10.7 : 6.7; // 8pt 代码字号的近似像素宽（保守取宽）
+}
+function mdCodeWidth(s) {
+  let w = 0;
+  for (const ch of s) w += mdCodeCharPx(ch);
+  return w;
+}
+function wrapCodeLines(text) {
+  const contentPx = 174 / 25.4 * 96; // A4 内容宽 174mm → px
+  const avail = (contentPx - 20) * 0.80; // 减 pre 左右 padding，留安全余量
+  const lines = text.split('\n');
+  const out = [];
+  let inFence = false;
+  for (const raw of lines) {
+    const line = raw.replace(/\r$/, '');
+    const t = line.trim();
+    if (t.startsWith('```') || t.startsWith('~~~')) { inFence = !inFence; out.push(line); continue; }
+    if (!inFence) { out.push(line); continue; }
+    if (mdCodeWidth(line) <= avail) { out.push(line); continue; }
+    // 续行对齐到"内容首字符"：跳过行首树形符号（└ ├ │ 及横线），用空格补到内容首列
+    const branchRe = /^([ \t]*)((?:[└├│][─═]*[ \t]+)+)/;
+    const bm = branchRe.exec(line);
+    let segPrefix;
+    if (bm) {
+      const leadStr = bm[1];
+      const branchPx = mdCodeWidth(bm[2]);
+      const spacePx = mdCodeCharPx(' ');
+      segPrefix = leadStr + ' '.repeat(Math.max(0, Math.round(branchPx / spacePx) - 2));
+    } else {
+      const lm = /^[ \t]*/.exec(line);
+      segPrefix = lm ? lm[0] : '';
+    }
+    let cur = '';
+    let curW = 0;
+    const flush = () => {
+      if (cur) { out.push(cur); cur = segPrefix; curW = mdCodeWidth(segPrefix); }
+    };
+    for (const ch of line) {
+      const cw = mdCodeCharPx(ch);
+      if (curW > 0 && curW + cw > avail) flush();
+      cur += ch;
+      curW += cw;
+    }
+    if (cur) out.push(cur);
+  }
+  return out.join('\n');
+}
+const wrappedContent = wrapCodeLines(mdContent);
+
 // 解析图片引用，转为 base64 data URI（让 puppeteer 直接渲染无需网络）
 const mdDir = dirname(inputPath);
 
@@ -172,7 +231,7 @@ const marked = new Marked({
   breaks: false,
 });
 
-let bodyHtml = marked.parse(mdContent);
+let bodyHtml = marked.parse(wrappedContent);
 
 // Mermaid 块：<pre><code class="language-mermaid"> → <div class="mermaid">
 bodyHtml = bodyHtml.replace(
@@ -269,9 +328,8 @@ const css = `
     padding: 8px 10px;
     font-size: 8pt;
     line-height: 1.5;
-    overflow-x: auto;
     white-space: pre;
-    word-break: normal;
+    overflow-x: hidden;
   }
   pre code { background: none; padding: 0; }
 
