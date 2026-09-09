@@ -11,8 +11,8 @@ from pptx.oxml.ns import qn
 BASE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(BASE, '..', '11-企业AI基础设施建设方案建议.md')
 OUT = os.path.join(BASE, '..', '11-企业AI基础设施建设方案建议.pptx')
-DIAG = {19: 'diagram_01.png', 21: 'diagram_02.png', 23: 'diagram_03.png',
-        24: 'diagram_04.png', 28: 'diagram_05.png', 39: 'diagram_06.png'}
+DIAG = {25: 'diagram_01.png', 27: 'diagram_02.png', 29: 'diagram_03.png',
+        30: 'diagram_04.png', 34: 'diagram_05.png', 54: 'diagram_06.png'}
 
 W, H = 13.333, 7.5
 C_TOP, C_BOT = 1.52, 6.90
@@ -25,9 +25,11 @@ LINE = RGBColor(0xC9, 0xD6, 0xE8)
 WHITE= RGBColor(0xFF, 0xFF, 0xFF)
 FONT = '微软雅黑'
 PART = {frozenset(range(1, 5)): '开场与口径', frozenset(range(5, 9)): '目的',
-        frozenset(range(9, 14)): '目标', frozenset(range(14, 23)): '主要需求',
-        frozenset(range(23, 32)): '内容', frozenset(range(32, 39)): '理由 · 构成推导',
-        frozenset(range(39, 41)): '落地与收口'}
+        frozenset(range(9, 14)): '目标', frozenset(range(14, 20)): '指标认知（原理与人感）',
+        frozenset(range(20, 29)): '需求与量化锚', frozenset(range(29, 38)): '内容（引擎 A · 在线）',
+        frozenset(range(38, 45)): '理由 · 构成推导',
+        frozenset(range(45, 54)): '引擎 B · 机载专用模型训练（02 号）',
+        frozenset(range(54, 57)): '统一推进 · 指标收口 · 汇报收口'}
 def part_of(p):
     for k, v in PART.items():
         if p in k:
@@ -91,7 +93,7 @@ def hdr(slide, page, title):
     para_runs(tf, True, [('编号 11 · 企业 AI 基础设施建设方案建议', False)],
               size=9, color=GRAY, align=PP_ALIGN.RIGHT, space=0)
     tf = add_textbox(slide, 0.55, 0.36, 8, 0.3)
-    para_runs(tf, True, [(part_of(page) + ' · ' + f'{page} / 40', False)],
+    para_runs(tf, True, [(part_of(page) + ' · ' + f'{page} / 56', False)],
               size=10.5, color=BLUE, space=0)
     size = 23
     while len(title) * size * 0.0205 > 11.9 and size > 15:
@@ -253,15 +255,15 @@ def place_image(slide, png, x, y, w, h):
     slide.shapes.add_picture(png, Inches(px), Inches(py), Inches(bw), Inches(bh))
 
 def render(slide, page, items):
-    # P21 竖长漏斗：左右双栏特排（左图右文+表），避免漏斗被压窄
-    if page == 21:
+    # P27 竖长漏斗：左右双栏特排（左图右文+表），避免漏斗被压窄
+    if page == 27:
         band = group_band([it for it in items if it[0] != 'image'])
         xr, wr = 3.75, W - 1.3 - 3.75 + 0.1
         fs = 12
         if est_band_h(band, wr, fs) > (C_BOT - C_TOP):
             fs = 11
         render_band(slide, band, xr, C_TOP, wr, fs, C_BOT)
-        place_image(slide, os.path.join(BASE, DIAG[21]), 0.45, C_TOP, 3.0, C_BOT - C_TOP)
+        place_image(slide, os.path.join(BASE, DIAG[27]), 0.45, C_TOP, 3.0, C_BOT - C_TOP)
         return
     x, w = 0.62, W - 1.3
     has_img = any(it[0] == 'image' for it in items)
@@ -382,7 +384,7 @@ def main():
             para_runs(tf, True, [('企业 AI 基础设施 · 依据 01 号研究报告', False)],
                       size=8.5, color=GRAY, space=0)
             tf = add_textbox(slide, W - 2.4, 7.12, 1.9, 0.28)
-            para_runs(tf, True, [(f'{page} / 40', False)], size=8.5, color=GRAY,
+            para_runs(tf, True, [(f'{page} / 56', False)], size=8.5, color=GRAY,
                       align=PP_ALIGN.RIGHT, space=0)
     prs.save(OUT)
     print('saved slides:', len(slides))

@@ -30,9 +30,9 @@
     C --&gt; F
 </pre></div>
 <div class="d" id="d1"><pre class="mermaid">flowchart TB
-    P1["人头 · 研发 2500（办公问答另计）&lt;br/&gt;决定账户与配额，不决定硬件"] --&gt; P2["AI 活跃人时 · ~1375（55%）&lt;br/&gt;决定真实负载画像"]
-    P2 --&gt; P3["会话驻留 · ~825 Agent环(1M) + ~550 快问(短)&lt;br/&gt;决定容量墙（KV 池）"]
-    P3 --&gt; P4["解码路数 · ~570 路，峰值 ~700&lt;br/&gt;决定带宽墙（每步流量）"]
+    P01["人头 · 研发 2500（办公问答另计）&lt;br/&gt;决定账户与配额，不决定硬件"] --&gt; P02["AI 活跃人时 · ~1375（55%）&lt;br/&gt;决定真实负载画像"]
+    P02 --&gt; P03["会话驻留 · ~825 Agent环(1M) + ~550 快问(短)&lt;br/&gt;决定容量墙（KV 池）"]
+    P03 --&gt; P04["解码路数 · ~570 路，峰值 ~700&lt;br/&gt;决定带宽墙（每步流量）"]
 </pre></div>
 <div class="d" id="d2"><pre class="mermaid">flowchart TB
     subgraph 应用/人
