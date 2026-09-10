@@ -49,7 +49,7 @@
 - [用户角色](user-role.md) — 流水线开发者/团队B架构师，中文工作，重视文档一致性
 - [反馈：主动规划](feedback-proactive-planning.md) — 用户要求更主动地理解完整意图，避免逐条指示反复修改
 - [符合性审查工作流](feedback-review-workflow.md) — 严格分两段：审查阶段仅发现不修改 → 修复阶段先清单确认后执行
-- [工作风格：先发现后修改](feedback-work-style.md) — 先审查列发现，等确认后再执行修改
+- [工作风格：先发现后修改](feedback-work-style.md) — 权威文档的树形/口径只提建议不落笔；"有证据"≠"有权改"、笼统答复先当范围约束读
 - [反馈：层级表联动审查](feedback-layer-table-as-authority.md) — 层级表变更后须逐节联动审查同章所有相关描述
 - [CLAUDE.md 不加章节号](feedback_claude_no_section_numbers.md) — 保持层级标题格式，不添加数字章节号
 - [CLAUDE.md 定位](feedback-claude-role.md) — 只做项目导航和文件引用，不包含方法论摘要
