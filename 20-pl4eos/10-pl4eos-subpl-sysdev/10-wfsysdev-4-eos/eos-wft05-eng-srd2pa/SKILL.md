@@ -105,7 +105,7 @@ bash ../scripts/read-node.sh ../../../80-pl4eos-2-eosdata/07-eos-platform-produc
 | `06-*.md` | srd-eng 正文（组件业务/pa-eng 收敛项） | 读 |
 | `06-*.md` | SR 详细定义索引（去重校验） | 读/写 |
 | `07-*.md` | 已有 pa-eng 组件节点 | 读/写 |
-| `23-eos-output-architecture.md` | A1 产品/组件索引 | 读/写 |
+| `23-eos-output-architecture.md` | P0 产品/组件索引 | 读/写 |
 | `25-eos-engine-models.md` | 引擎/CU/构件（引用更新） | **读/写** |
 | FR-BIZ 指标约束包（`10-eos-fr-biz-constraint-package.md`） | 跨路径正式输入 | 读 |
 | wft05-eng NFR 约束包（`11-eos-nfr-constraint-package.md`） | 正式输入（首版已确认为前置） | 读 |
@@ -249,7 +249,7 @@ bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/07-eos-platform-prod
 1. `07` 写入 pa-eng 组件方案，pa-eng→`待追溯验证`
 2. `06` 写入 SR 详细定义
 3. `05` srd-eng→`已pa-eng架构`（记录消费版本）
-4. `23` 更新 A1 产品组件索引
+4. `23` 更新 P0 产品组件索引
 5. `25` 更新引擎/CU/构件引用
 
 **提交基线**（链级不变式，顺序对齐 wft03-eng §5.7）：
@@ -432,6 +432,7 @@ bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/07-eos-platform-prod
 | 2026-08-28 | v2.7 | 层名更名（人类指示 2026-08-28）——业务流程概要定义→业务流程概要、业务流程详细定义→业务流程方案、系统需求概要定义→系统需求概要、系统需求详细定义→系统需求方案（nfr/eng 链同构，含短名/标题后缀）；历史变更记录保留旧词。 AI 执行规则语义不变 |
 | 2026-08-25 | v2.6 | 链级机械修正（wft01-nfr 深审链级联动，人类裁决 2026-08-25）——数据文件相对路径修正 `../../80-pl4eos-2-eosdata/`→`../../../80-pl4eos-2-eosdata/`（自 skill 子目录上跳 3 级）。AI 执行规则语义不变 |
 |------|------|------|
+| 2026-09-10 | v2.7 | 人类方案同步（树简称改 P0／R／P，对齐 94 v1.14）；AI 执行规则语义不变。 |
 | 2026-08-27 | v2.7 | 链级术语清扫同步（人类指示 2026-08-27）——规范化需求→规范化的相关方需求。AI 执行规则语义不变 |
 | 2026-08-25 | v2.5 | 人类方案 v10.12 同步（层名全对齐）——Step Start/Step 1/Step 8 等 `07-eos-product-summary.md`→`07-eos-platform-product-architecture.md`（07 数据文件随迁，机械替换）。AI 执行规则语义不变 |
 | 2026-08-24 | v2.2 | 人类方案 v10.9 同步（链级联动，同 wft01-eng v1.20）——Step 1 移除 `read-section.sh ... "pa-eng树画像"` 失效命令（07 数据文件实际分节为「0. 产品概要树画像」，read-section 精确匹配失败）；加载改由 AI可以处理节点 + read-node 定位。AI 执行规则语义不变 |

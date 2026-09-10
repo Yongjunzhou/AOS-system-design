@@ -96,7 +96,7 @@ bash ../scripts/read-node.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirem
 |------|------|------|
 | `05-*.md` | 系统需求概要 srh-eng 节点 | 读/写 |
 | `04-*.md` | bpd-eng 追溯来源 | 读 |
-| `23-eos-output-architecture.md` | A1 产品路径筛选 | 读 |
+| `23-eos-output-architecture.md` | P0 产品路径筛选 | 读 |
 | `25-eos-engine-models.md` | 引擎/CU 类型（引用更新） | **读/写** |
 
 **按需扩大原则**：仅在索引无法定位、候选冲突、追溯断裂或人类明确要求时扩大读取范围。
@@ -392,6 +392,7 @@ bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requir
 | 2026-08-28 | v1.12 | 层名更名（人类指示 2026-08-28）——业务流程概要定义→业务流程概要、业务流程详细定义→业务流程方案、系统需求概要定义→系统需求概要、系统需求详细定义→系统需求方案（nfr/eng 链同构，含短名/标题后缀）；历史变更记录保留旧词。 AI 执行规则语义不变 |
 | 2026-08-25 | v1.11 | 链级机械修正（wft01-nfr 深审链级联动，人类裁决 2026-08-25）——数据文件相对路径修正 `../../80-pl4eos-2-eosdata/`→`../../../80-pl4eos-2-eosdata/`（自 skill 子目录上跳 3 级）。AI 执行规则语义不变 |
 |------|------|------|
+| 2026-09-10 | v1.12 | 人类方案同步（树简称改 P0／R／P，对齐 94 v1.14）；AI 执行规则语义不变。 |
 | 2026-08-25 | v1.10 | 人类方案 v2.1 同步（C2 链级联动，人类逐项裁决）——srd-eng 文件位置 05→06（06=L4 详细档）：Step 6 写回、Phase C 组装写入、Step End 资产落账（06/25）、元信息维护（Step 2/Step 6 bump-version+update-head、add-recent-change 资产写回/反馈处理）全部 `05-eos-system-requirement-summary-architecture.md`→`06-eos-system-requirement-detailed.md`；Step Start/Step 1 变更感知与 Step Start 入口检测补 `06-eos-system-requirement-detailed.md`（输出 srd-eng 反馈/退回可达），输入侧 srh-eng 读取（05）保留。AI 执行规则语义不变 |
 | 2026-08-24 | v1.8 | 人类方案 v1.9 同步（标题全称正名）——「系统需求概要 srh-eng → 系统需求详细 srd-eng · 功能表单组件及其业务」→「平台能力系统需求概要定义 → 平台能力系统需求详细定义 · 组件业务详细定义」；frontmatter description 修正「系统需求概要srd-eng」→「系统需求概要srh-eng」笔误。AI 执行规则语义不变 |
 | 2026-08-24 | v1.7 | 人类方案同步（缩写更名 sfh→srh/sfd→srd + 中文层名统一）；AI 执行规则语义不变（术语随迁）。 |
