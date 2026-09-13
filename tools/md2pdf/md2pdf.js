@@ -233,6 +233,24 @@ const marked = new Marked({
 
 let bodyHtml = marked.parse(wrappedContent);
 
+// ── 标题补 id（2026-09-13 新增）─────────────────────────────────────────────
+// marked v5+ 起不再为标题生成 id，导致文档内的 [#锚点] 链接在 PDF 里无处可跳。
+// 此处按与正文链接完全相同的 slug 规则补 id，使 [#anchor] 成为 PDF 内部跳转目标。
+// 规则：转小写 → 去掉非「字母/数字/下划线/空白/连字符」→ 空白转连字符 → 去首尾连字符。
+// 与 Python 端（re: [^\w一-鿿\s\-]）等价，\p{L}\p{N} 覆盖 CJK。
+function mdSlugify(text) {
+  return String(text)
+    .trim()
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}_\s-]/gu, '')
+    .replace(/\s+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+bodyHtml = bodyHtml.replace(
+  /<h([1-6])>([\s\S]*?)<\/h\1>/g,
+  (m, lv, inner) => `<h${lv} id="${mdSlugify(inner.replace(/<[^>]+>/g, ''))}">${inner}</h${lv}>`
+);
+
 // Mermaid 块：<pre><code class="language-mermaid"> → <div class="mermaid">
 bodyHtml = bodyHtml.replace(
   /<pre><code class="language-mermaid">([\s\S]*?)<\/code><\/pre>/g,
