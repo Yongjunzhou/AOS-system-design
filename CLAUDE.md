@@ -162,6 +162,7 @@
 - 所有文档使用 Markdown + Mermaid 格式
 - 版本号格式：`v[主版本].[次版本]`
 - 中文为主体语言，术语附英文对照
+- **写作规则适用所有文档**：括号只放指针不放内容、交叉引用不作主干谓语、正文只写"现在是什么"（不写历史与待办）——详见 [00-doc-conventions §8.9~§8.10](00-generalspec/00-doc-conventions.md)
 - **PDF 转换统一使用 [tools/md2pdf](tools/md2pdf/md2pdf.js)**：`node tools/md2pdf/md2pdf.js <md路径> [输出.pdf]`（marked + puppeteer 渲染，支持 Mermaid 图表，默认输出与源文件同名 .pdf；2026-09-03 用户定，后续所有 md→PDF 转换按此方式进行）
 
 ---
