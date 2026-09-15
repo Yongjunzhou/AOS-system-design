@@ -1,5 +1,5 @@
 # 文档完善和发布
-**人类方案ID**: agile-t08 · **Step 8: Document Completion and Release**
+**SKILL 指南ID**: agile-t08 · **Step 8: Document Completion and Release**
 
 > **概述**：完善增量更新后的文档，生成变更日志，发布新版本。v2 增量区与 v1 基线区合并为新版本基线。
 >

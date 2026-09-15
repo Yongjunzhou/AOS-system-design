@@ -1,5 +1,5 @@
 # 业务方案影响分析
-**人类方案ID**: agile-t04 · **Step 4: Business Process Impact Analysis**
+**SKILL 指南ID**: agile-t04 · **Step 4: Business Process Impact Analysis**
 
 > **概述**：分析新需求对业务方案的影响，输出 bpd-biz 增量定义。bpd-biz 末级节点即组件定义，按 EOS 双设计链分别处理。
 >

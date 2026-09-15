@@ -7,7 +7,7 @@ description: 系统需求概要srh-eng→系统需求方案srd-eng·功能表单
 
 # eos-wft04-eng · 平台能力系统需求概要 → 平台能力系统需求方案 · 组件业务方案
 
-> **设计依据**：[eos-wft04-eng-srh2srd.md](../eos-wft04-eng-srh2srd.md)（人类方案——权威源）
+> **设计依据**：[eos-wft04-eng-srh2srd.md](../eos-wft04-eng-srh2srd.md)（SKILL 指南——权威源）
 > **运行时协议**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md) 附录A
 > **领域规范**：[91-eos-biz-eng-spec.md](../91-eos-biz-eng-spec.md)
 
@@ -68,7 +68,7 @@ bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requi
 
 **退回优先**：存在 `需wft04修订` srd-eng → 已提供改进方案则走 Phase B 修订，未提供则输出缺失说明退出。
 
-**锁定写回**：输入校验通过后，将承接的 srh-eng 状态写为 `在详细定义`（锁定态，本 Skill 消费展开期间，对齐人类方案 §4.1）；完成组件业务且人类确认后推进 `已详细定义`。
+**锁定写回**：输入校验通过后，将承接的 srh-eng 状态写为 `在详细定义`（锁定态，本 Skill 消费展开期间，对齐 SKILL 指南 §4.1）；完成组件业务且人类确认后推进 `已详细定义`。
 
 ---
 
@@ -383,23 +383,3 @@ bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requir
 | `read-node.sh` | `bash ../scripts/read-node.sh <文件> <节点ID>` | 按ID提取节点块 |
 | `detect-changes.sh` | `bash ../scripts/detect-changes.sh <文件>` | 检测文档变更 |
 | `update-meta.sh` | `bash ../scripts/update-meta.sh <文件> <操作>` | 维护元信息 |
-
----
-
-## 变更记录
-
-| 日期 | 版本 | 说明 |
-| 2026-08-28 | v1.12 | 层名更名（人类指示 2026-08-28）——业务流程概要定义→业务流程概要、业务流程详细定义→业务流程方案、系统需求概要定义→系统需求概要、系统需求详细定义→系统需求方案（nfr/eng 链同构，含短名/标题后缀）；历史变更记录保留旧词。 AI 执行规则语义不变 |
-| 2026-08-25 | v1.11 | 链级机械修正（wft01-nfr 深审链级联动，人类裁决 2026-08-25）——数据文件相对路径修正 `../../80-pl4eos-2-eosdata/`→`../../../80-pl4eos-2-eosdata/`（自 skill 子目录上跳 3 级）。AI 执行规则语义不变 |
-|------|------|------|
-| 2026-09-10 | v1.12 | 人类方案同步（树简称改 P0／R／P，对齐 94 v1.14）；AI 执行规则语义不变。 |
-| 2026-08-25 | v1.10 | 人类方案 v2.1 同步（C2 链级联动，人类逐项裁决）——srd-eng 文件位置 05→06（06=L4 详细档）：Step 6 写回、Phase C 组装写入、Step End 资产落账（06/25）、元信息维护（Step 2/Step 6 bump-version+update-head、add-recent-change 资产写回/反馈处理）全部 `05-eos-system-requirement-summary-architecture.md`→`06-eos-system-requirement-detailed.md`；Step Start/Step 1 变更感知与 Step Start 入口检测补 `06-eos-system-requirement-detailed.md`（输出 srd-eng 反馈/退回可达），输入侧 srh-eng 读取（05）保留。AI 执行规则语义不变 |
-| 2026-08-24 | v1.8 | 人类方案 v1.9 同步（标题全称正名）——「系统需求概要 srh-eng → 系统需求详细 srd-eng · 功能表单组件及其业务」→「平台能力系统需求概要定义 → 平台能力系统需求详细定义 · 组件业务详细定义」；frontmatter description 修正「系统需求概要srd-eng」→「系统需求概要srh-eng」笔误。AI 执行规则语义不变 |
-| 2026-08-24 | v1.7 | 人类方案同步（缩写更名 sfh→srh/sfd→srd + 中文层名统一）；AI 执行规则语义不变（术语随迁）。 |
-| 2026-08-24 | v1.6 | 人类方案 v1.5 同步——SR-F→srh-eng/srd-eng、PA→pa-eng、BP→bpd-eng（节点类型/节点ID/状态名/追溯链） |
-| 2026-08-24 | v1.5 | 文件名更名同步（人类定名 2026-08-24）——`eos-wft04-eng-sr2sr` → `eos-wft04-eng-srh2srd`（name/frontmatter/设计依据/全库引用改向）。AI 执行规则语义不变 |
-| 2026-08-22 | v1.4 | eng 链第三轮深审修复（人类逐项裁决）：①Step 2 特化参数表补**清除条件**行 + 确认状态状态机句补「已处理复活」分支；②Step 1 材料表 25 改「读/写（引用更新）」。 |
-| 2026-08-22 | v1.3 | 深审修正（人类裁决）：A.8 生命周期图补 `在详细定义` 锁定态（`可以详细定义 ──wft04锁定──→ 在详细定义 ──本Skill完成──→ 已详细定义`），「人类确认」移入内部待确认方案支线（对齐人类方案 §4.1；此前图直接跳过本 Skill Step Start 写入的锁定态，与自身矛盾）。 |
-| 2026-08-22 | v1.2 | 补足 v1.1 未落实项：A.6 PA 收敛项表与 A.4 示例的 `PA层待处理-*` 残留（A.6 表 4 行 + 示例 1 处）全部改为 `PA层收敛-*`（v1.1 变更记录已声明统一但正文未改，本版落实；对齐人类方案 v1.1 与 91 §8.4）。 |
-| 2026-08-22 | v1.1 | 同步人类方案 v1.1（E5 方案① + 机械项）：Step Start 输入校验通过后补**「锁定写回」**——将承接 SR-F 状态写为 `在详细定义`（锁定态，对齐人类方案 §4.1）、人类确认后推进 `已详细定义`；PA 层收敛项前缀统一 `PA层收敛-*`（删 `PA层待处理-*`）。 |
-| 2026-08-21 | v1.0 | 初始版本——eng 链「概要/详细」分工框架实施第④步（新增 Skill，人类裁决：同一 SR-F 文档承载 + sr2sr 命名 + v1.0 起）。承接系统需求概要 SR-F（功能表单清单/结构判定级概要说明/操作活动清单/页面编排概要），判定区域内布局组件/构件、定义组件业务（功能级不写实现）、标注 PA 层收敛项。布局组件判定/构件识别/PA 层收敛项自 wft03-eng v8.0 迁入（wft03-eng v9.0 收缩下移）。SR-F 状态机接力（03→`可以详细定义`、04→`已详细定义`）。04 组件业务是 wft05-eng 推断前后端组件的依据。 |

@@ -1,5 +1,5 @@
 # 模式2·局部设计
-**人类方案ID**: devops-t03 · **DevOps Step 3: Mode 2 — Local Design**
+**SKILL 指南ID**: devops-t03 · **DevOps Step 3: Mode 2 — Local Design**
 
 > **概述**：对涉及 系统需求概要 + pa-eng 层的局部设计变更进行修复，在 1 天内完成。需要修改系统需求和平台产品架构文档，但不涉及 SR/bpd-biz 层。
 >

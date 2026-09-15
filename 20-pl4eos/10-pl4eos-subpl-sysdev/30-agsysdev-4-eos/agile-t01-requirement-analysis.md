@@ -1,5 +1,5 @@
 # 增量变更分析与分类
-**人类方案ID**: agile-t01 · **Step 1: Incremental Change Analysis and Classification**
+**SKILL 指南ID**: agile-t01 · **Step 1: Incremental Change Analysis and Classification**
 
 > **概述**：将 00-presysdev-4-eos/（eos-ort00-textualize → eos-ort01-chunk → eos-ort02-clarify → eos-ort03-norm 规范化的相关方需求预处理） 产出的 规范化的相关方需求条目按变更类型分类（新增/修改/废弃），分别执行映射、变更影响分析或废弃标注。涉及 EOS 双设计链的变更请求，需按影响范围分类和优先级排序。
 >

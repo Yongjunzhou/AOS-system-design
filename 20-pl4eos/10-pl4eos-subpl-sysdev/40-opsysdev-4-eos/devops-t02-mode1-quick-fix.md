@@ -1,5 +1,5 @@
 # 模式1·快速修复
-**人类方案ID**: devops-t02 · **DevOps Step 2: Mode 1 — Quick Fix**
+**SKILL 指南ID**: devops-t02 · **DevOps Step 2: Mode 1 — Quick Fix**
 
 > **概述**：对仅涉及 pa-eng 层的最小化变更进行快速修复，在几小时内完成。仅修改平台产品架构，不涉及上层需求文档的改动。
 >

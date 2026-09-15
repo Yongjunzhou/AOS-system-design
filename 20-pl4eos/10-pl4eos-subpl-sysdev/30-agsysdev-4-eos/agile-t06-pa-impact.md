@@ -1,5 +1,5 @@
 # 平台产品架构影响分析
-**人类方案ID**: agile-t06 · **Step 6: Product Architecture Impact Analysis**
+**SKILL 指南ID**: agile-t06 · **Step 6: Product Architecture Impact Analysis**
 
 > **概述**：分析新需求对平台产品架构的影响，输出 pa-eng 增量定义。按 EOS 双设计链的平台链和业务链分别处理 pa-eng 组件影响分析。
 >

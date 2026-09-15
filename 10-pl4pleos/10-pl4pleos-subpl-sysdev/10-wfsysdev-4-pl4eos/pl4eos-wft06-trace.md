@@ -1,5 +1,5 @@
 # 追溯矩阵与验证报告
-**人类方案ID**: wft06 · **Step 6: Traceability Matrix and Verification Report**
+**SKILL 指南ID**: wft06 · **Step 6: Traceability Matrix and Verification Report**
 
 > **概述**：建立全链路追溯矩阵（OR→SR→BP→SysReq→PA），生成验证报告，确认设计完整性。
 >

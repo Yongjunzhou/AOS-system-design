@@ -1,5 +1,5 @@
 # 模式3·完整设计
-**人类方案ID**: devops-t04 · **DevOps Step 4: Mode 3 — Full Design**
+**SKILL 指南ID**: devops-t04 · **DevOps Step 4: Mode 3 — Full Design**
 
 > **概述**：对涉及多层（业务概要/业务方案/系统需求概要/平台产品架构）的完整设计变更进行修复，在 2-3 天内完成。需要跨多层修改需求文档和平台产品架构文档。
 >

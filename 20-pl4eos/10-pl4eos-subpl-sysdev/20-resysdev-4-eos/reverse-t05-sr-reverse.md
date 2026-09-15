@@ -1,5 +1,5 @@
 # 相关方需求推导
-**人类方案ID**: reverse-t05 · **Step 5: Stakeholder Requirements Reverse Engineering**
+**SKILL 指南ID**: reverse-t05 · **Step 5: Stakeholder Requirements Reverse Engineering**
 
 > **概述**：从 bpd-biz IPO 反向推导相关方需求（SR），包括架构定义和详细定义。非功能部分从 SysReq-NFR 反推（不经过 业务方案 层）。双链 业务方案 对应双链 SR。
 >

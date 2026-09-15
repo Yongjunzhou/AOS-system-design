@@ -1,5 +1,5 @@
 # 三路径双向追溯与跨链验证
-**人类方案ID**: wfwft06 · **Step 6: Bidirectional Traceability Verification**
+**SKILL 指南ID**: wfwft06 · **Step 6: Bidirectional Traceability Verification**
 
 > **概述**：验证 biz、eng、nfr 三条异构路径的完整追溯关系，输出追溯矩阵和验证报告；同时验证功能表单/窗口标签页及 FR-BIZ 指标与 eng 平台能力之间的跨路径分配，以及 nfr 约束包到 eng pa-eng 的消费闭环。biz 在 05 形成兼具业务配置需求与配置业务系统 pa-eng 身份的功能表单/窗口标签页；eng 在 07 形成平台软件 pa-eng；nfr 形成 SysReq-NFR 与约束包。
 >

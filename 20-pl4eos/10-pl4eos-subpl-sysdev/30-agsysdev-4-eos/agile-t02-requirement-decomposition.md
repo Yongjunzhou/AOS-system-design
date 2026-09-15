@@ -1,5 +1,5 @@
 # 新需求分解
-**人类方案ID**: agile-t02 · **Step 2: New Requirement Decomposition**
+**SKILL 指南ID**: agile-t02 · **Step 2: New Requirement Decomposition**
 
 > **概述**：对新需求进行规范化处理和分解，与现有需求进行冲突和重复检查。分解后的末级需求需按 EOS 双设计链分别归入。
 >

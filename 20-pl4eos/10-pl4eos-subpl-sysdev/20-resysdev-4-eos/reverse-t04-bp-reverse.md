@@ -1,5 +1,5 @@
 # 业务流程推导
-**人类方案ID**: reverse-t04 · **Step 4: Business Process Reverse Engineering**
+**SKILL 指南ID**: reverse-t04 · **Step 4: Business Process Reverse Engineering**
 
 > **概述**：从 系统需求概要 9 级场景活动反推业务流程 IPO，建立 业务方案 定义和去重机制。业务方案 末级节点即为组件定义，是 EOS 平台的核心资产。
 >
