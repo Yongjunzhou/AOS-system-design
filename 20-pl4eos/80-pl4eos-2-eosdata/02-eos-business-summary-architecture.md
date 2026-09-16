@@ -1,6 +1,10 @@
 # EOS 业务流程概要架构定义
 **EOS Business Summary Architecture Definition**
 
+> **【废弃 2026-09-16】**：业务流程概要不再单独成文档（94 号文档已定两个形态合并）。本文件让位于同编号的 [02-eos-business-role-process.md](02-eos-business-role-process.md)（角色履职视角业务流程）；其 9 个治理预置节点已迁入该文件的 `bpd-biz-GOV-001~009`，节点上的 P 侧内容迁入 [03-eos-business-product-process.md](03-eos-business-product-process.md) §4.2。本文件**不再维护、不再引用**；物理移入 `90-hold` 的归档动作随批次清理执行。
+>
+> 以下为原内容。
+
 **文档版本**：v2.7
 **创建日期**：2026-05-20
 **修订日期**：2026-08-27
