@@ -32,9 +32,9 @@ description: 三路径双向追溯与跨链验证。验证biz/eng/nfr三条异�
 
 | 路径 | 端到端链路 | 验证重点 |
 |------|------------|---------|
-| biz | FR-BIZ 规范化的相关方需求 → bpb-biz → bpl-biz 输出文档/PL6 → 功能表单/窗口标签页 → FR-BIZ 指标分配 | 需求承接、pa-eng 完整性、`可构件开发` 门禁 |
-| eng | FR-ENG 规范化的相关方需求节点 → bpb-eng → CU bpl-eng → 系统需求框架 srb-eng → 系统需求概要 srl-eng → pa-eng 三类组件 | 主责能力域唯一、共享不重复、CU 配置能力、系统需求框架/系统需求概要 srl-eng→pa-eng 承接、`待追溯验证` 门禁 |
-| nfr | 规范化非功能需求 → bpb-nfr → SysReq-NFR → 约束行 → 约束包 → pa-eng 消费结论 | 宿主唯一、约束包完整、pa-eng 承接闭环 |
+| biz | FR-BIZ 规范化的相关方需求 → bpl-biz → bpd-biz 输出文档/PL6 → 功能表单/窗口标签页 → FR-BIZ 指标分配 | 需求承接、pa-eng 完整性、`可构件开发` 门禁 |
+| eng | FR-ENG 规范化的相关方需求节点 → bpl-eng → CU bpd-eng → 系统需求框架 srb-eng → 系统需求概要 srl-eng → pa-eng 三类组件 | 主责能力域唯一、共享不重复、CU 配置能力、系统需求框架/系统需求概要 srl-eng→pa-eng 承接、`待追溯验证` 门禁 |
+| nfr | 规范化非功能需求 → bpl-nfr → SysReq-NFR → 约束行 → 约束包 → pa-eng 消费结论 | 宿主唯一、约束包完整、pa-eng 承接闭环 |
 
 **跨路径接口**：
 
@@ -67,8 +67,8 @@ description: 三路径双向追溯与跨链验证。验证biz/eng/nfr三条异�
 
 | 路径 | 加载文件 |
 |------|---------|
-| biz | `01/02/04/05/06` 中与选定 bpb-biz/bpl-biz/需求相关的节点块 + FR-BIZ 指标约束包（`10-eos-fr-biz-constraint-package.md`） |
-| eng | `01/02/04/05/06/07/23` 中与选定 bpb-eng/CU/系统需求框架 srb-eng/系统需求概要 srl-eng/pa-eng 相关的节点块 |
+| biz | `01/02/04/05/06` 中与选定 bpl-biz/bpd-biz/需求相关的节点块 + FR-BIZ 指标约束包（`10-eos-fr-biz-constraint-package.md`） |
+| eng | `01/02/04/05/06/07/23` 中与选定 bpl-eng/CU/系统需求框架 srb-eng/系统需求概要 srl-eng/pa-eng 相关的节点块 |
 | nfr | `01/02/05/06`、分层约束表、wft05-eng NFR 约束包（`11-eos-nfr-constraint-package.md`）及 wft05 消费记录 |
 | 跨链 | 额外加载 25 引擎模型和 FR-ENG 缺口线索 |
 
@@ -116,9 +116,9 @@ description: 三路径双向追溯与跨链验证。验证biz/eng/nfr三条异�
 
 | 路径 | 矩阵列 |
 |------|--------|
-| biz | `FR-BIZ 规范化的相关方需求 \| bpb-biz \| bpl-biz输出文档/PL6 \| 功能表单/窗口标签页 \| FR-BIZ指标分配 \| 追溯状态` |
-| eng | `FR-ENG 规范化的相关方需求节点 \| bpb-eng \| CU bpl-eng \| 系统需求框架srb-eng \| 系统需求概要srl-eng \| pa-eng组件 \| 追溯状态` |
-| nfr | `规范化非功能需求 \| bpb-nfr \| SysReq-NFR \| 约束行 \| 包版本 \| pa-eng消费结论 \| 追溯状态` |
+| biz | `FR-BIZ 规范化的相关方需求 \| bpl-biz \| bpd-biz输出文档/PL6 \| 功能表单/窗口标签页 \| FR-BIZ指标分配 \| 追溯状态` |
+| eng | `FR-ENG 规范化的相关方需求节点 \| bpl-eng \| CU bpd-eng \| 系统需求框架srb-eng \| 系统需求概要srl-eng \| pa-eng组件 \| 追溯状态` |
+| nfr | `规范化非功能需求 \| bpl-nfr \| SysReq-NFR \| 约束行 \| 包版本 \| pa-eng消费结论 \| 追溯状态` |
 | biz→eng | `功能表单/窗口标签页 \| FR-BIZ指标行ID \| 引擎/CU/srb-biz \| 承接组件/消费版本 \| FR-ENG缺口处理结论 \| 覆盖状态` |
 | nfr→eng | `约束行 \| 包版本 \| pa-eng组件/平台决策 \| 消费版本 \| 承接状态` |
 

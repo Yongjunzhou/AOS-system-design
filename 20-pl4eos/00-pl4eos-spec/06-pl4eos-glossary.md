@@ -17,8 +17,8 @@
 |------|------|------|
 | EOS 流水线 | EOS Pipeline | 服务于 EOS 全生命周期的流水线，由设计线/开发线/集成线/运维线四子线组成 |
 | 元流水线 | Meta-Pipeline | 用于设计 EOS 流水线的流水线，当前处于系统设计阶段 |
-| 输出产品架构锚定法 | Output Product Architecture Anchoring Method | 流水线类产品的业务方案（bpl-biz）开发特化方法：以输出产品的 pa-eng 节点类型为推导锚点 |
-| 用户角色架构锚定法 | User Role Architecture Anchoring Method | 业务方案（bpl-biz）开发的通用方法：以全量用户角色集为推导锚点 |
+| 输出产品架构锚定法 | Output Product Architecture Anchoring Method | 流水线类产品的业务方案（bpd-biz）开发特化方法：以输出产品的 pa-eng 节点类型为推导锚点 |
+| 用户角色架构锚定法 | User Role Architecture Anchoring Method | 业务方案（bpd-biz）开发的通用方法：以全量用户角色集为推导锚点 |
 | 四类构件 | Four Component Types | EOS 流水线 pa-eng 的四类交付物：设计准则、设计指南、AI 辅助文档、任务定义 |
 
 ## 三层工作层面
@@ -48,12 +48,12 @@
 | 层级 | 中文 | 英文 | 角色 |
 |------|------|------|------|
 | 第1层 | 原始需求 | Original Requirements (规范化的相关方需求) | 仅需求 |
-| 第2层 | 业务框架 | Business Framework (bpb) | 需求/方案 |
-| 第3层 | 业务方案 | Business Detailed (bpl) | 仅方案 |
+| 第2层 | 业务流程概要 | Business Framework (bpl) | 需求/方案 |
+| 第3层 | 业务流程定义 | Business Detailed (bpd) | 仅方案 |
 | 第4层 | 系统需求框架 | Function Framework (srb) | 需求/方案 |
 | 第5层 | 产品框架 | Product Framework (pa) | 仅方案 |
 
-> **资产前缀的第三位记形态**：`b` ＝ 树枝（branch），`l` ＝ 树叶（leaf）——`bpb`／`bpl`、`srb`／`srl` 成对；字母说的是**这一形态最深到哪一级**，框架深到枝、完整态深到叶。`d` 留给「定义／详细」。`pa` 是产品架构，不带形态位。
+> **资产前缀的第三位记形态**：`b` ＝ 框架、`l` ＝ 概要、`d` ＝ 定义——字母说的是**这一形态最深到哪一级**。各产品数据取哪几级不同，成对的样子也不同：系统需求取 `srb`（框架）／`srl`（概要），业务流程取 `bpl`（概要）／`bpd`（定义）。`pa` 是产品架构，不带形态位。
 
 ## 需求类型
 

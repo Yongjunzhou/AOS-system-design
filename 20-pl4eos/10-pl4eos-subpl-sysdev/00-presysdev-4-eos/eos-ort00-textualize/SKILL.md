@@ -6,7 +6,7 @@ description: 原始需求材料→文本化文档·纯文本化与原料登记�
 
 # eos-ort00 · 原始需求材料 → 文本化文档 · 纯文本化与原料登记
 
-> **设计依据**：[eos-ort00-textualize.md](../eos-ort00-textualize.md)（SKILL 指南——权威源）。本文档中「SKILL 指南」一律指此文件（`20-pl4eos/10-pl4eos-subpl-sysdev/00-presysdev-4-eos/eos-ort00-textualize.md`）。
+> **设计依据**：[eos-ort00-textualize.md](../eos-ort00-textualize.md)（SKILL 指南——权威源）。本文档中「SKILL 指南」一律指此文件（`20-pl4eos/10-pl4eos-subpd-sysdev/00-presysdev-4-eos/eos-ort00-textualize.md`）。
 > **领域规范**：[91-eos-biz-eng-spec.md](../../10-wfsysdev-4-eos/91-eos-biz-eng-spec.md)（Step Start、反馈优先、输出交接（三区模板）与变更传播通用协议；本步反馈走「表 A 编辑 + git」特化，见 91 §A.5）
 > **规则归属**：本文档只承载 AI 运行时执行指令（加载/写回/标注/速查）；所有设计规则、模板与字段定义以 [SKILL 指南（eos-ort00-textualize.md）](../eos-ort00-textualize.md) 为准，命中规则冲突时以 SKILL 指南为准。
 

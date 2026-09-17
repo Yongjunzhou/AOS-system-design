@@ -95,8 +95,8 @@
 | 角色ID | 角色名称 | 角色类型 | 关注需求类型 | 生命周期状态 | 来源 规范化的相关方需求 | 关联业务框架 | 块ID | 反馈入口 | 最后更新 |
 |--------|----------|----------|--------------|--------------|---------|----------|------|----------|----------|
 | ROLE-TEMPLATE | 角色模板 | 用户角色 / 相关方角色 | FR / NFR / FR+NFR | 模板 | — | — | ROLE-TEMPLATE | `ROLE-TEMPLATE/反馈区` | 2026-06-21 |
-| ROLE-GOV-ARCH | 业务架构管理员 | 用户角色 | FR | 已确认 | 平台预置 | bpb-biz-GOV-001~007 | ROLE-GOV-ARCH | `ROLE-GOV-ARCH/反馈区` | 2026-07-01 |
-| ROLE-GOV-DATA | 数据治理员 | 用户角色 | FR | 已确认 | 平台预置 | bpb-biz-GOV-008~009 | ROLE-GOV-DATA | `ROLE-GOV-DATA/反馈区` | 2026-07-01 |
+| ROLE-GOV-ARCH | 业务架构管理员 | 用户角色 | FR | 已确认 | 平台预置 | bpl-biz-GOV-001~007 | ROLE-GOV-ARCH | `ROLE-GOV-ARCH/反馈区` | 2026-07-01 |
+| ROLE-GOV-DATA | 数据治理员 | 用户角色 | FR | 已确认 | 平台预置 | bpl-biz-GOV-008~009 | ROLE-GOV-DATA | `ROLE-GOV-DATA/反馈区` | 2026-07-01 |
 
 ---
 
@@ -168,7 +168,7 @@
 | 首次识别 | 2026-07-01 / 平台预置 |
 | 最后确认 | 2026-07-01 / 平台预置 |
 | 承担的 规范化的相关方需求 末级 | 待渐进增补 |
-| 相关业务框架节点 | bpb-biz-GOV-001~007 |
+| 相关业务框架节点 | bpl-biz-GOV-001~007 |
 
 ##### 反馈区
 
@@ -194,7 +194,7 @@
 | 首次识别 | 2026-07-01 / 平台预置 |
 | 最后确认 | 2026-07-01 / 平台预置 |
 | 承担的 规范化的相关方需求 末级 | 待渐进增补 |
-| 相关业务框架节点 | bpb-biz-GOV-008~009 |
+| 相关业务框架节点 | bpl-biz-GOV-008~009 |
 
 ##### 反馈区
 
@@ -219,7 +219,7 @@
 | 源节点 | 关系类型 | 目标节点 | 目标文档 | 状态 | 说明 |
 |--------|----------|----------|----------|------|------|
 | 规范化的相关方需求条目 | identifies_role | ROLE-TEMPLATE | 本文档 | 模板 | 规范化的相关方需求 识别出候选或确认角色 |
-| ROLE-TEMPLATE | anchors | bpb-biz 节点 | `02-eos-business-summary-architecture.md` | 模板 | 已确认用户角色作为 业务框架功能树锚点 |
+| ROLE-TEMPLATE | anchors | bpl-biz 节点 | `02-eos-business-summary-architecture.md` | 模板 | 已确认用户角色作为 业务框架功能树锚点 |
 | ROLE-TEMPLATE | concerns | NFR 分类 | `22-eos-nfr-taxonomy.md` | 模板 | 角色关注的非功能维度 |
 
 ---

@@ -148,7 +148,7 @@ A1 元流水线 ──系统设计──→ A2 EOS 流水线 ──系统设计�
 | 工具组件 | 说明 | 位置 |
 |---------|------|------|
 | **设计规范**（本文档） | 定义系统设计的通用方法论和规则 | `00-pl4eos-spec/` |
-| **AI SKILL** | 各场景中各步骤的 AI 可执行技能定义 | `10-pl4eos-subpl-sysdev/` |
+| **AI SKILL** | 各场景中各步骤的 AI 可执行技能定义 | `10-pl4eos-subpd-sysdev/` |
 
 #### 1.2 EOS 平台架构
 
@@ -275,10 +275,10 @@ EOS 产品处于什么阶段？
 | 流水线构件类型 | → 交付为 EOS 系统设计目录下的 | 说明 |
 |----------------|---------------------------|------|
 | **设计规范** | `00-pl4eos-spec/` | 交付给 EOS 开发者使用的设计规范 |
-| **AI SKILL** | `10-pl4eos-subpl-sysdev/` | 交付给 EOS 开发者使用的可执行技能定义 |
+| **AI SKILL** | `10-pl4eos-subpd-sysdev/` | 交付给 EOS 开发者使用的可执行技能定义 |
 | **（非构件）** | `80-pl4eos-2-eosdata/` | **输出物**——EOS 开发者使用上述工具后产出的设计内容 |
 
-> **一句话理解**：流水线建造了"设计工具箱"交付给 EOS 团队（`00-pl4eos-spec/` + `10-pl4eos-subpl-sysdev/`），EOS 团队用这些工具去设计 EOS，产出的设计文档放入 `80-pl4eos-2-eosdata/`。
+> **一句话理解**：流水线建造了"设计工具箱"交付给 EOS 团队（`00-pl4eos-spec/` + `10-pl4eos-subpd-sysdev/`），EOS 团队用这些工具去设计 EOS，产出的设计文档放入 `80-pl4eos-2-eosdata/`。
 
 ---
 
@@ -1142,7 +1142,7 @@ v2.x 系列定位为"内嵌通用方法论"的独立文档版本，v3.0 及以�
 - 首次接触时：先读本文档 §一~§二，建立 EOS 的产品语境认知，再读通用设计规范建立方法论基础
 - 进行具体设计时：直接查阅本文 §四 的对应章节，按指引查阅通用设计规范对应阶段
 - 需要通用方法时：查阅[通用设计规范](../../../00-generalspec/01-generalspec-sysdev.md)对应章节
-- 需要场景化操作指导时：查阅[EOS 系统设计任务](../10-pl4eos-subpl-sysdev/README.md)中对应场景的 AI SKILL
+- 需要场景化操作指导时：查阅[EOS 系统设计任务](../10-pl4eos-subpd-sysdev/README.md)中对应场景的 AI SKILL
 - 遇到跨层问题时：回到本文档 §三 或通用设计规范 §三 寻找通用解决方案
 
 
@@ -1470,7 +1470,7 @@ EOS平台按四层结构组织，这是PA层构件划分的依据：
 ```
 20-pl4eos/
 ├── 00-pl4eos-spec/    ← 设计规范（含本文）
-├── 10-pl4eos-subpl-sysdev/            ← AI SKILL
+├── 10-pl4eos-subpd-sysdev/            ← AI SKILL
 └── 80-pl4eos-2-eosdata/            ← 产品数据（OR/SR/BP/SysReq/PA/追溯矩阵/验证报告）
 ```
 
@@ -1517,7 +1517,7 @@ EOS平台按四层结构组织，这是PA层构件划分的依据：
 │   ├── 03-agile-eos-sysdev-guide.md
 │   └── 04-devops-eos-sysdev-guide.md
 │
-├── 10-pl4eos-subpl-sysdev/                 ← AI SKILL
+├── 10-pl4eos-subpd-sysdev/                 ← AI SKILL
 └── 80-pl4eos-2-eosdata/                 ← EOS产品数据（已存在）
 
 通用层（00-generalspec/）：

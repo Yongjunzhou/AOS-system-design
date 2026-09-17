@@ -131,8 +131,8 @@ A1 元流水线 ──系统设计──→ A2 EOS 流水线 ──系统设计�
 
 | 角色 | 职责 | 参与方式 | 关注的目录 |
 |------|------|---------|-----------|
-| **元流水线开发者** | 对元流水线进行系统设计，并开发其构件（设计规范、AI SKILL），以及后续的维护与优化 | 主导（系统设计与构件开发） | `10-pl4pleos/00-pl4pleos-spec/`（规范）<br>`10-pl4pleos/10-pl4pleos-subpl-sysdev/`（AI SKILL） |
-| **AI** | 按提示词执行自动化任务，生成文档初稿、检查一致性、验证映射关系 | 协作（自动化执行） | `10-pl4pleos/10-pl4pleos-subpl-sysdev/`（AI SKILL） |
+| **元流水线开发者** | 对元流水线进行系统设计，并开发其构件（设计规范、AI SKILL），以及后续的维护与优化 | 主导（系统设计与构件开发） | `10-pl4pleos/00-pl4pleos-spec/`（规范）<br>`10-pl4pleos/10-pl4pleos-subpd-sysdev/`（AI SKILL） |
+| **AI** | 按提示词执行自动化任务，生成文档初稿、检查一致性、验证映射关系 | 协作（自动化执行） | `10-pl4pleos/10-pl4pleos-subpd-sysdev/`（AI SKILL） |
 | **EOS 构建与运维者** | 使用元流水线交付的设计规范、AI SKILL，对 EOS 进行系统设计、开发、集成和运维 | 使用（下游使用者） | `20-pl4eos/`（交付目录） |
 
 ### 2.4 设计场景
@@ -211,7 +211,7 @@ A1 元流水线 ──系统设计──→ A2 EOS 流水线 ──系统设计�
 
 ### 4.1 规范来源
 
-元流水线的 Skill 文档（位于 `10-pl4pleos/10-pl4pleos-subpl-sysdev/`）遵循与 EOS 流水线相同的 **S/D/E 三层结构**、**必要/推荐/可选要素标记体系**和 **§一~§九 章节框架**。规范性定义见 [EOS 流水线系统设计规范 §十五「Skill 文档规范」](../../20-pl4eos/00-pl4eos-spec/01-pl4eos-spec-sysdev.md#十五skill-文档规范)。
+元流水线的 Skill 文档（位于 `10-pl4pleos/10-pl4pleos-subpd-sysdev/`）遵循与 EOS 流水线相同的 **S/D/E 三层结构**、**必要/推荐/可选要素标记体系**和 **§一~§九 章节框架**。规范性定义见 [EOS 流水线系统设计规范 §十五「Skill 文档规范」](../../20-pl4eos/00-pl4eos-spec/01-pl4eos-spec-sysdev.md#十五skill-文档规范)。
 
 阅读 §十五 时，将"EOS 流水线"替换为"元流水线"即可。两者结构一致，仅路径不同。
 

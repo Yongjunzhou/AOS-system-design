@@ -25,7 +25,7 @@
 
 | 时间 | 操作 Skill | 操作类型 | 节点 ID | 变更摘要 |
 |------|-----------|---------|---------|---------|
-| 2026-08-24 | AI（资产更名） | 变更 | — | 资产名更名——规范化需求→业务框架、STR-*→bpb-biz-*；标题改「EOS 规范化需求清单」；文件名随迁 01-eos-specified-requirements.md |
+| 2026-08-24 | AI（资产更名） | 变更 | — | 资产名更名——规范化需求→业务框架、STR-*→bpl-biz-*；标题改「EOS 规范化需求清单」；文件名随迁 01-eos-specified-requirements.md |
 | 2026-07-11 | — | 初始 | — | 文档初始化为 v3.0 §十一 结构 |
 
 ---
@@ -290,7 +290,7 @@
 
 | 源节点 | 关系类型 | 目标节点 | 目标文档 | 状态 | 说明 |
 |--------|----------|----------|----------|------|------|
-| spr-* | allocated_to | bpb-biz-* | `02-eos-business-summary-architecture.md` | 待填充 | 规范化的相关方需求 末级分配到 业务框架架构末级 |
+| spr-* | allocated_to | bpl-biz-* | `02-eos-business-summary-architecture.md` | 待填充 | 规范化的相关方需求 末级分配到 业务框架架构末级 |
 | spr-* | verified_by | TRACE-* | `08-eos-sysdev-traceability-matrix.md` | 待填充 | 规范化的相关方需求 追溯关系由 08 统一索引 |
 
 ## 反馈区 / 建议区

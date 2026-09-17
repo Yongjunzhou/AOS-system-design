@@ -111,8 +111,8 @@
 | 关系ID | 源节点 | 源文档 | 关系类型 | 目标节点 | 目标文档 | 状态 | 块ID | 最后更新 |
 |--------|--------|--------|----------|----------|----------|------|------|----------|
 | TRACE-TEMPLATE | — | — | derived_from / refines / allocated_to / satisfies / implemented_by / uses_asset | — | — | 模板 | TRACE-TEMPLATE | 2026-06-21 |
-| TRACE-GOV-ARCH | bpb-biz-GOV-001~007 | 02-eos-business-summary-architecture.md | uses_asset | @prod-gov-arch | 23-eos-output-architecture.md | 已确认 | — | 2026-07-28 |
-| TRACE-GOV-DATA | bpb-biz-GOV-008~009 | 02-eos-business-summary-architecture.md | uses_asset | @prod-gov-data | 23-eos-output-architecture.md | 已确认 | — | 2026-07-28 |
+| TRACE-GOV-ARCH | bpl-biz-GOV-001~007 | 02-eos-business-summary-architecture.md | uses_asset | @prod-gov-arch | 23-eos-output-architecture.md | 已确认 | — | 2026-07-28 |
+| TRACE-GOV-DATA | bpl-biz-GOV-008~009 | 02-eos-business-summary-architecture.md | uses_asset | @prod-gov-data | 23-eos-output-architecture.md | 已确认 | — | 2026-07-28 |
 
 ---
 
@@ -123,8 +123,8 @@
 | 层间映射 | 检查项 | 期望结果 |
 |----------|--------|----------|
 | 规范化的相关方需求 末级 → 业务框架架构末级 | 每条 规范化的相关方需求 末级分配到唯一 业务框架架构末级 | 一条 规范化的相关方需求 不应同时分配给多个 业务框架 末级 |
-| bpb-biz 详细末级 → srb-biz 架构末级 | 每条 STR-F 详细末级分配到唯一 SysReq-F 架构末级 | 一条 业务框架详细定义不应同时分配给多个 SysReq-F |
-| bpb-nfr 详细末级 → SysReq-NFR 架构末级 | 每条 STR-NFR 详细末级分配到唯一 SysReq-NFR | 非功能需求分配唯一 |
+| bpl-biz 详细末级 → srb-biz 架构末级 | 每条 STR-F 详细末级分配到唯一 SysReq-F 架构末级 | 一条 业务框架详细定义不应同时分配给多个 SysReq-F |
+| bpl-nfr 详细末级 → SysReq-NFR 架构末级 | 每条 STR-NFR 详细末级分配到唯一 SysReq-NFR | 非功能需求分配唯一 |
 | 系统需求框架 9级活动 → 平台产品架构 末级 | 每条 系统需求框架活动分配到唯一 平台产品架构 末级 | 一个活动由一个 平台产品架构 末级主承接 |
 
 ### 3.2 N:1 承接口径

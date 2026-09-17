@@ -71,9 +71,9 @@
 ```
 第1层：规范化的相关方需求 (spr)         → 01-eos-specified-requirements.md
     ↓ N:1 分配
-第2层：业务流程框架 (bpb)       → 02-eos-...-architecture.md + 03-eos-...-detailed.md
+第2层：业务流程框架 (bpl)       → 02-eos-...-architecture.md + 03-eos-...-detailed.md
     ├─ 功能部分 ↓
-    │   第3层：业务流程概要 (bpl)  → 04-eos-business-detailed.md
+    │   第3层：业务流程概要 (bpd)  → 04-eos-business-detailed.md
     │       ↓
     │   第4层：系统需求框架 (srb) → 05-eos-...-architecture.md + 06-eos-...-detailed.md
     │       ↓
@@ -95,7 +95,7 @@
 1. **使用场景**：选择适合当前任务的开发场景（瀑布式/敏捷式/逆向工程/DevOps）
 2. **参考规范**：通用文档结构规则见 [文档编写约定 §十四](../../00-generalspec/00-doc-conventions.md#十四树形资产文档布局规范)
 3. **结构改造**：01~09 和 21~27 已完成首轮结构改造；后续填充正文时应维持 `0/1/2/3/4/5/6/9` 主结构
-4. **操作步骤**：按 `20-pl4eos/10-pl4eos-subpl-sysdev/` 中对应 Skill 的操作规程写回产品数据文档
+4. **操作步骤**：按 `20-pl4eos/10-pl4eos-subpd-sysdev/` 中对应 Skill 的操作规程写回产品数据文档
 5. **AI 辅助**：AI 应按目标文档的 AI读取文档说明、状态队列和节点索引局部读取，不默认全量读取正文
 
 ---
