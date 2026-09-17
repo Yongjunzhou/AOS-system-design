@@ -1,6 +1,6 @@
 ---
 name: biz-chain-renumbering-2026-09-16
-description: biz 链任务位重编号（2026-09-16 定）——01a／01b／02 与产品数据 02／03／04；R→P 是"同一个任务位的两半"（信息系统特有），完整态只做 R 侧；biz01c 正文已重写（第 1 版）
+description: biz 链任务位重编号（2026-09-16 定）——01a／01b／02 与产品数据 02／03／04；R→P 是"同一个任务位的两半"（信息系统特有），完整态只做 R 侧；biz01cr 正文已重写（第 1 版）
 metadata:
   node_type: memory
   type: project
@@ -10,9 +10,9 @@ metadata:
 
 | 任务 | 指南ID | 文件 | X → Y |
 |------|--------|------|-------|
-| **biz01ab** | `stfr2rbpl` | `eos-biz01ab-stfr2rbpl.md` | 相关方功能需求 → 角色履职视角业务流程概要 |
+| **biz01abr** | `stfr2rbpl` | `eos-biz01abr-stfr2rbpl.md` | 相关方功能需求 → 角色履职视角业务流程概要 |
 | **biz01abp** | `rbpl2pbpl` | `eos-biz01abp-rbpl2pbpl.md` | 角色履职视角业务流程概要 → 产品开发视角业务流程概要 |
-| **biz01c** | `rbpl2rbpd` | `eos-biz01c-rbpl2rbpd.md` | 角色履职视角业务流程概要 → 角色履职视角业务流程定义 |
+| **biz01cr** | `rbpl2rbpd` | `eos-biz01cr-rbpl2rbpd.md` | 角色履职视角业务流程概要 → 角色履职视角业务流程定义 |
 | biz03（尚未建） | `rbpl2srb` | — | → 系统需求框架 |
 
 **产品数据定形为三份**（94 v1.26 §1.1）：`02` 角色履职视角业务流程概要／`03` 产品开发视角业务流程概要／`04` 角色履职视角业务流程定义。**`04` 是恢复回来的**——它原名「业务流程概要」，2026-09-16 上午一度被作废，同日下午随这轮编号恢复并正名为「角色履职视角业务流程定义」。
@@ -24,6 +24,6 @@ metadata:
 
 **重编号把链带回了旧链的格局**：旧 `wft01-biz`（框架）/ `wft02-biz`（框架→方案）/ `wft03-biz`（系统需求）↔ 新 01a+01b / 02 / 03。
 
-**`eos-biz01c-rbpl2rbpd.md` 正文已重写**（2026-09-16，第 1 版）——见 [[eos-design-landing-spec-93-refactor]] 第四会话节。**一处须知的改名事故**：上轮 `git mv` 把**旧 biz03**（`bpl2srb`）的正文搬到了本文件路径、把**旧 biz01c**（`bpb2bpl`）删了，即改名配错了对；本次重写把内容整篇换掉，旧 biz03 正文自此只活在 Git（`git show 489e5b60:20-pl4eos/.../eos-biz01c-rbpl2rbpd.md`），将来建新 biz03 时从那里取。
+**`eos-biz01cr-rbpl2rbpd.md` 正文已重写**（2026-09-16，第 1 版）——见 [[eos-design-landing-spec-93-refactor]] 第四会话节。**一处须知的改名事故**：上轮 `git mv` 把**旧 biz03**（`bpl2srb`）的正文搬到了本文件路径、把**旧 biz01cr**（`bpb2bpl`）删了，即改名配错了对；本次重写把内容整篇换掉，旧 biz03 正文自此只活在 Git（`git show 489e5b60:20-pl4eos/.../eos-biz01cr-rbpl2rbpd.md`），将来建新 biz03 时从那里取。
 
 关联 [[page-ui-four-levels]]、[[94-eos-sys-dev-dbs-tree-authority]]、[[eos-design-landing-spec-93-refactor]]、[[eos-wft-retirement-biz-pilots-canonical]]。

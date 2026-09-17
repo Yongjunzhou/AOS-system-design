@@ -27,7 +27,7 @@ metadata:
 
 **标书与文件名同轮改**（人类 2026-09-15 定）：
 - 93 标题：`设计与开发落地方案编制规范（93 规范）` → **`设计与开发 SKILL 指南编制规范—93 号规范`**；英文副标题 `EOS Design-Development Landing Plan Authoring Spec` → `EOS Design-Development SKILL Guide Authoring Spec`。旧全称在整仓只此一处，别处一律引短称「93 规范」，故未牵动其他文档。
-- 93 文件名：`93-eos-sysdev-landing-spec.md` → **`93-eos-skill-guide-spec.md`**（`git mv`）；引用只 2 个文档（biz01c 3 处、biz03 2 处）+ 记忆 2 处，已全部跟改，无残留。
+- 93 文件名：`93-eos-sysdev-landing-spec.md` → **`93-eos-skill-guide-spec.md`**（`git mv`）；引用只 2 个文档（biz01cr 3 处、biz03 2 处）+ 记忆 2 处，已全部跟改，无残留。
 - 版本：93 **v0.33**。
 
 关联 [[eos-design-landing-spec-93-refactor]]、[[feedback-changelog-concise]]。
