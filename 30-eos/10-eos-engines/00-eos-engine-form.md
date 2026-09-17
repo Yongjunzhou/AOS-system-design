@@ -20,7 +20,7 @@
 
 - 表单定义（`20-eos-configs/00-eos-config-form.md`）
 
-## 接口概要
+## 接口框架
 
 <!-- TODO: 补充 API 接口定义 -->
 

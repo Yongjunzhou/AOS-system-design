@@ -43,23 +43,23 @@
 
 | 层级 | 源文档 | 目标文档 | 关系目标 |
 |------|--------|----------|----------|
-| 规范化的相关方需求 → 业务概要 | `01-eos-specified-requirements.md` | `02-eos-business-summary-architecture.md` | 规范化的相关方需求 末级分配到 业务概要架构末级 |
-| 业务概要 → 业务概要详细 | `02-eos-business-summary-architecture.md` | `03-eos-business-summary-detailed.md` | 业务概要架构节点细化为详细定义 |
-| 业务概要详细 → 业务方案 | `03-eos-business-summary-detailed.md` | `04-eos-business-detailed.md` | 业务概要详细定义由业务方案满足 |
-| 业务方案 → 系统需求概要 | `04-eos-business-detailed.md` | `05-eos-system-requirement-summary-architecture.md` | 业务方案末级节点映射为系统需求概要架构末级 |
-| 系统需求概要 → 系统系统需求方案 | `05-eos-system-requirement-summary-architecture.md` | `06-eos-system-requirement-detailed.md` | 系统需求概要架构节点细化为详细定义 |
-| 系统系统需求方案 → 平台产品架构 | `06-eos-system-requirement-detailed.md` | `07-eos-platform-product-architecture.md` | 系统系统需求方案活动或约束由平台产品架构组件承接 |
+| 规范化的相关方需求 → 业务框架 | `01-eos-specified-requirements.md` | `02-eos-business-summary-architecture.md` | 规范化的相关方需求 末级分配到 业务框架架构末级 |
+| 业务框架 → 业务框架详细 | `02-eos-business-summary-architecture.md` | `03-eos-business-summary-detailed.md` | 业务框架架构节点细化为详细定义 |
+| 业务框架详细 → 业务方案 | `03-eos-business-summary-detailed.md` | `04-eos-business-detailed.md` | 业务框架详细定义由业务方案满足 |
+| 业务方案 → 系统需求框架 | `04-eos-business-detailed.md` | `05-eos-system-requirement-summary-architecture.md` | 业务方案末级节点映射为系统需求框架架构末级 |
+| 系统需求框架 → 系统系统需求概要 | `05-eos-system-requirement-summary-architecture.md` | `06-eos-system-requirement-detailed.md` | 系统需求框架架构节点细化为详细定义 |
+| 系统系统需求概要 → 平台产品架构 | `06-eos-system-requirement-detailed.md` | `07-eos-platform-product-architecture.md` | 系统系统需求概要活动或约束由平台产品架构组件承接 |
 | 过程文档 → 资产 | `02~07` | `21~27` | 节点引用角色、NFR、输出产品、业务定义、引擎、文档和资源资产 |
 
 ### 0.2 关系类型
 
 | 关系类型 | 含义 | 典型场景 |
 |----------|------|----------|
-| `derived_from` | 从上游材料或节点推导而来 | 业务概要 derived_from 规范化的相关方需求 |
-| `refines` | 对上游架构节点做详细化 | 业务概要详细 refines 业务概要 |
-| `allocated_to` | 上游需求分配到下游方案节点 | 规范化的相关方需求 allocated_to 业务概要 |
-| `satisfies` | 下游节点满足上游需求 | 业务方案 satisfies 业务概要详细 |
-| `implemented_by` | 需求或定义由组件承接 | 系统需求概要 implemented_by 平台产品架构 |
+| `derived_from` | 从上游材料或节点推导而来 | 业务框架 derived_from 规范化的相关方需求 |
+| `refines` | 对上游架构节点做详细化 | 业务框架详细 refines 业务框架 |
+| `allocated_to` | 上游需求分配到下游方案节点 | 规范化的相关方需求 allocated_to 业务框架 |
+| `satisfies` | 下游节点满足上游需求 | 业务方案 satisfies 业务框架详细 |
+| `implemented_by` | 需求或定义由组件承接 | 系统需求框架 implemented_by 平台产品架构 |
 | `uses_asset` | 节点引用资产条目 | 业务方案 uses_asset @def-* |
 | `produces_doc` | 节点产生文档资产 | 业务方案 produces_doc @doc-* |
 | `consumes_doc` | 节点消费文档资产 | 业务方案 consumes_doc @doc-* |
@@ -69,10 +69,10 @@
 | 指标 | 值 | 最近更新 |
 |------|-----|----------|
 | 规范化的相关方需求 末级总数 | — | 2026-06-21 |
-| 映射到业务概要的覆盖率 | — | 2026-06-21 |
-| 业务概要详细定义末级总数 | — | 2026-06-21 |
-| 映射到系统需求概要的覆盖率 | — | 2026-06-21 |
-| 系统需求概要活动总数 | — | 2026-06-21 |
+| 映射到业务框架的覆盖率 | — | 2026-06-21 |
+| 业务框架详细定义末级总数 | — | 2026-06-21 |
+| 映射到系统需求框架的覆盖率 | — | 2026-06-21 |
+| 系统需求框架活动总数 | — | 2026-06-21 |
 | 映射到平台产品架构的覆盖率 | — | 2026-06-21 |
 | 端到端追溯链完整率 | — | 2026-06-21 |
 
@@ -100,10 +100,10 @@
 
 | 分片ID | 分片名称 | 范围 | 默认读取场景 | 关系数 | 入口 |
 |--------|----------|------|--------------|--------|------|
-| TRACE-SHARD-spr-BPH | 规范化的相关方需求 → 业务概要 | 原始需求到相关方需求架构 | `wft01` 验证 规范化的相关方需求 分配 | — | `4.1 规范化的相关方需求 到业务概要关系块` |
-| TRACE-SHARD-BPH-BPD | 业务概要 → 业务方案 | 业务概要详细定义到 业务方案 | `wft02` 验证 业务方案满足关系 | — | `4.2 业务概要到业务方案关系块` |
-| TRACE-SHARD-BPD-SRH | 业务方案 → 系统需求概要 | 业务方案 到系统需求 | `wft03` 验证映射 | — | `4.3 业务方案到系统需求概要关系块` |
-| TRACE-SHARD-SRH-平台产品架构 | 系统需求概要 → 平台产品架构 | 系统需求到产品架构 | `wft05` 验证组件承接 | — | `4.4 系统需求概要到平台产品架构关系块` |
+| TRACE-SHARD-spr-BPH | 规范化的相关方需求 → 业务框架 | 原始需求到相关方需求架构 | `wft01` 验证 规范化的相关方需求 分配 | — | `4.1 规范化的相关方需求 到业务框架关系块` |
+| TRACE-SHARD-BPH-BPD | 业务框架 → 业务方案 | 业务框架详细定义到 业务方案 | `wft02` 验证 业务方案满足关系 | — | `4.2 业务框架到业务方案关系块` |
+| TRACE-SHARD-BPD-SRH | 业务方案 → 系统需求框架 | 业务方案 到系统需求 | `wft03` 验证映射 | — | `4.3 业务方案到系统需求框架关系块` |
+| TRACE-SHARD-SRH-平台产品架构 | 系统需求框架 → 平台产品架构 | 系统需求到产品架构 | `wft05` 验证组件承接 | — | `4.4 系统需求框架到平台产品架构关系块` |
 | TRACE-SHARD-ASSET | 过程文档 → 资产 | 对 `21~27` 的资产引用 | 资产一致性检查 | — | `4.5 资产引用关系块` |
 
 ### 2.2 关系索引
@@ -111,8 +111,8 @@
 | 关系ID | 源节点 | 源文档 | 关系类型 | 目标节点 | 目标文档 | 状态 | 块ID | 最后更新 |
 |--------|--------|--------|----------|----------|----------|------|------|----------|
 | TRACE-TEMPLATE | — | — | derived_from / refines / allocated_to / satisfies / implemented_by / uses_asset | — | — | 模板 | TRACE-TEMPLATE | 2026-06-21 |
-| TRACE-GOV-ARCH | bph-biz-GOV-001~007 | 02-eos-business-summary-architecture.md | uses_asset | @prod-gov-arch | 23-eos-output-architecture.md | 已确认 | — | 2026-07-28 |
-| TRACE-GOV-DATA | bph-biz-GOV-008~009 | 02-eos-business-summary-architecture.md | uses_asset | @prod-gov-data | 23-eos-output-architecture.md | 已确认 | — | 2026-07-28 |
+| TRACE-GOV-ARCH | bpb-biz-GOV-001~007 | 02-eos-business-summary-architecture.md | uses_asset | @prod-gov-arch | 23-eos-output-architecture.md | 已确认 | — | 2026-07-28 |
+| TRACE-GOV-DATA | bpb-biz-GOV-008~009 | 02-eos-business-summary-architecture.md | uses_asset | @prod-gov-data | 23-eos-output-architecture.md | 已确认 | — | 2026-07-28 |
 
 ---
 
@@ -122,10 +122,10 @@
 
 | 层间映射 | 检查项 | 期望结果 |
 |----------|--------|----------|
-| 规范化的相关方需求 末级 → 业务概要架构末级 | 每条 规范化的相关方需求 末级分配到唯一 业务概要架构末级 | 一条 规范化的相关方需求 不应同时分配给多个 业务概要 末级 |
-| bph-biz 详细末级 → srh-biz 架构末级 | 每条 STR-F 详细末级分配到唯一 SysReq-F 架构末级 | 一条 业务概要详细定义不应同时分配给多个 SysReq-F |
-| bph-nfr 详细末级 → SysReq-NFR 架构末级 | 每条 STR-NFR 详细末级分配到唯一 SysReq-NFR | 非功能需求分配唯一 |
-| 系统需求概要 9级活动 → 平台产品架构 末级 | 每条 系统需求概要活动分配到唯一 平台产品架构 末级 | 一个活动由一个 平台产品架构 末级主承接 |
+| 规范化的相关方需求 末级 → 业务框架架构末级 | 每条 规范化的相关方需求 末级分配到唯一 业务框架架构末级 | 一条 规范化的相关方需求 不应同时分配给多个 业务框架 末级 |
+| bpb-biz 详细末级 → srb-biz 架构末级 | 每条 STR-F 详细末级分配到唯一 SysReq-F 架构末级 | 一条 业务框架详细定义不应同时分配给多个 SysReq-F |
+| bpb-nfr 详细末级 → SysReq-NFR 架构末级 | 每条 STR-NFR 详细末级分配到唯一 SysReq-NFR | 非功能需求分配唯一 |
+| 系统需求框架 9级活动 → 平台产品架构 末级 | 每条 系统需求框架活动分配到唯一 平台产品架构 末级 | 一个活动由一个 平台产品架构 末级主承接 |
 
 ### 3.2 N:1 承接口径
 
@@ -137,7 +137,7 @@
 
 ## 4. 正文关系块
 
-### 4.1 规范化的相关方需求 到业务概要关系块
+### 4.1 规范化的相关方需求 到业务框架关系块
 
 <!-- BLOCK: TRACE-TEMPLATE -->
 #### TRACE-TEMPLATE 追溯关系模板
@@ -160,23 +160,23 @@
 
 | 日期 | 来源 | 反馈内容 | 处理状态 |
 |------|------|----------|----------|
-| 2026-08-28 | v2.4 | 层名更名（人类指示 2026-08-28）——业务流程概要定义→业务流程概要、业务流程详细定义→业务流程方案、系统需求概要定义→系统需求概要、系统需求详细定义→系统需求方案（nfr/eng 链同构，含短名/标题后缀）；历史变更记录保留旧词。 |
+| 2026-08-28 | v2.4 | 层名更名（人类指示 2026-08-28）——业务流程框架定义→业务流程框架、业务流程详细定义→业务流程概要、系统需求框架定义→系统需求框架、系统需求详细定义→系统需求概要（nfr/eng 链同构，含短名/标题后缀）；历史变更记录保留旧词。 |
 | 2026-08-27 | v2.3 | 链级清扫 | 术语更名 规范化需求→规范化的相关方需求（全链统一） | AI 链级清扫 |
 | — | — | — | — |
 
 <!-- /BLOCK: TRACE-TEMPLATE -->
 
-### 4.2 业务概要到业务方案关系块
+### 4.2 业务框架到业务方案关系块
 
-> 业务概要 到 业务方案 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `satisfies`、`uses_asset`。
+> 业务框架 到 业务方案 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `satisfies`、`uses_asset`。
 
-### 4.3 业务方案到系统需求概要关系块
+### 4.3 业务方案到系统需求框架关系块
 
-> 业务方案 到 系统需求概要 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `allocated_to`、`refines`。
+> 业务方案 到 系统需求框架 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `allocated_to`、`refines`。
 
-### 4.4 系统需求概要到平台产品架构关系块
+### 4.4 系统需求框架到平台产品架构关系块
 
-> 系统需求概要 到 平台产品架构 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `implemented_by`。
+> 系统需求框架 到 平台产品架构 关系复用 `TRACE-TEMPLATE` 格式，关系类型通常为 `implemented_by`。
 
 ### 4.5 资产引用关系块
 

@@ -17,8 +17,8 @@
 |------|------|------|
 | EOS 流水线 | EOS Pipeline | 服务于 EOS 全生命周期的流水线，由设计线/开发线/集成线/运维线四子线组成 |
 | 元流水线 | Meta-Pipeline | 用于设计 EOS 流水线的流水线，当前处于系统设计阶段 |
-| 输出产品架构锚定法 | Output Product Architecture Anchoring Method | 流水线类产品的业务方案（bpd-biz）开发特化方法：以输出产品的 pa-eng 节点类型为推导锚点 |
-| 用户角色架构锚定法 | User Role Architecture Anchoring Method | 业务方案（bpd-biz）开发的通用方法：以全量用户角色集为推导锚点 |
+| 输出产品架构锚定法 | Output Product Architecture Anchoring Method | 流水线类产品的业务方案（bpl-biz）开发特化方法：以输出产品的 pa-eng 节点类型为推导锚点 |
+| 用户角色架构锚定法 | User Role Architecture Anchoring Method | 业务方案（bpl-biz）开发的通用方法：以全量用户角色集为推导锚点 |
 | 四类构件 | Four Component Types | EOS 流水线 pa-eng 的四类交付物：设计准则、设计指南、AI 辅助文档、任务定义 |
 
 ## 三层工作层面
@@ -48,10 +48,12 @@
 | 层级 | 中文 | 英文 | 角色 |
 |------|------|------|------|
 | 第1层 | 原始需求 | Original Requirements (规范化的相关方需求) | 仅需求 |
-| 第2层 | 业务概要 | Business Summary (bph) | 需求/方案 |
-| 第3层 | 业务方案 | Business Detailed (bpd) | 仅方案 |
-| 第4层 | 系统需求概要 | Function Summary (srh) | 需求/方案 |
-| 第5层 | 产品概要 | Product Summary (pa) | 仅方案 |
+| 第2层 | 业务框架 | Business Framework (bpb) | 需求/方案 |
+| 第3层 | 业务方案 | Business Detailed (bpl) | 仅方案 |
+| 第4层 | 系统需求框架 | Function Framework (srb) | 需求/方案 |
+| 第5层 | 产品框架 | Product Framework (pa) | 仅方案 |
+
+> **资产前缀的第三位记形态**：`b` ＝ 树枝（branch），`l` ＝ 树叶（leaf）——`bpb`／`bpl`、`srb`／`srl` 成对；字母说的是**这一形态最深到哪一级**，框架深到枝、完整态深到叶。`d` 留给「定义／详细」。`pa` 是产品架构，不带形态位。
 
 ## 需求类型
 
@@ -94,7 +96,7 @@
 |------|------|------|
 | 1:1 分配约束 | One-to-One Allocation Constraint | 每条详细定义末级分配到下层唯一的架构末级节点 |
 | N:1 承接 | Many-to-One Acceptance | 每个架构末级节点可承接多条上层末级条目 |
-| 双向追溯 | Bidirectional Traceability | 规范化的相关方需求→产品概要 正向和产品概要→规范化的相关方需求 反向均可追踪 |
+| 双向追溯 | Bidirectional Traceability | 规范化的相关方需求→产品框架 正向和产品框架→规范化的相关方需求 反向均可追踪 |
 | 资产优先 | Organizational Asset Priority | 按复用→改进→新增优先级处理架构变更 |
 
 ## pa-eng 节点定义三因素
@@ -103,7 +105,7 @@
 
 | 中文 | 英文 | 说明 |
 |------|------|------|
-| 知识领域内聚性 | Knowledge Domain Cohesion | 操作同一知识领域的系统需求概要 倾向合并为同一构件 |
+| 知识领域内聚性 | Knowledge Domain Cohesion | 操作同一知识领域的系统需求框架 倾向合并为同一构件 |
 | 质量要求相容性 | Quality Requirement Compatibility | 质量属性冲突的需求不应共享同一构件 |
 | 交付形态相似性 | Delivery Form Similarity | 信息处理模式相同的需求倾向合并（同模式可共享，不同模式应分离） |
 | 三因素决策矩阵 | Three-Factor Decision Matrix | 综合三因素判断 pa-eng 构件合并/分离的决策工具 |

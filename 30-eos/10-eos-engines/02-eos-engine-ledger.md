@@ -21,7 +21,7 @@
 - 台账定义（`20-eos-configs/01-eos-config-ledger.md`）
 - 视图定义
 
-## 接口概要
+## 接口框架
 
 <!-- TODO: 补充 API 接口定义 -->
 

@@ -125,12 +125,12 @@
 | 文件 | 内容 |
 |------|------|
 | `01-specified-requirements.md` | 规范化的相关方需求 |
-| `02-business-summary-architecture.md` | 业务流程概要架构定义 |
-| `03-business-summary-detailed.md` | 业务流程概要详细定义 |
-| `04-business-detailed.md` | 业务流程方案 |
-| `05-function-summary-architecture.md` | 系统功能概要架构定义 |
+| `02-business-summary-architecture.md` | 业务流程框架架构定义 |
+| `03-business-summary-detailed.md` | 业务流程框架详细定义 |
+| `04-business-detailed.md` | 业务流程概要 |
+| `05-function-summary-architecture.md` | 系统功能框架架构定义 |
 | `06-function-detailed.md` | 系统功能方案 |
-| `07-product-summary.md` | 产品概要 |
+| `07-product-summary.md` | 产品框架 |
 | `08-traceability-matrix.md` | 追溯矩阵 |
 | `09-verification-report.md` | 验证报告 |
 
