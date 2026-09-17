@@ -644,15 +644,15 @@ EOS            流水线类    可配置平台   输出产品架构锚定法   �
 ```
 10-pl4pleos/
 ├── 00-pl4pleos-spec/                   # 设计描述文档（系统设计规范 + 术语对照）
-├── 10-pl4pleos-subpl-sysdev/           # 系统设计子线（可运行技能定义）
+├── 10-pl4pleos-subpd-sysdev/           # 系统设计子线（可运行技能定义）
 │   ├── 00-presysdev-4-pl4eos/         #   OR 预处理
 │   ├── 10-wfsysdev-4-pl4eos/          #   瀑布式（6 任务）
 │   ├── 20-resysdev-4-pl4eos/          #   逆向工程（8 任务）
 │   ├── 30-agsysdev-4-pl4eos/          #   敏捷（8 任务）
 │   └── 40-opsysdev-4-pl4eos/          #   DevOps（4 任务）
-├── 20-pl4pleos-subpl-comdev/           # 构件开发子线（待扩展）
-├── 30-pl4pleos-subpl-sysint/           # 集成交付子线（待扩展）
-├── 40-pl4pleos-subpl-sysops/           # 系统运维子线（待扩展）
+├── 20-pl4pleos-subpd-comdev/           # 构件开发子线（待扩展）
+├── 30-pl4pleos-subpd-sysint/           # 集成交付子线（待扩展）
+├── 40-pl4pleos-subpd-sysops/           # 系统运维子线（待扩展）
 └── 80-pl4pleos-2-pl4eosdata/           # 运行数据（元流水线到 pl4eos 的产品数据）
 ```
 
@@ -661,17 +661,17 @@ EOS            流水线类    可配置平台   输出产品架构锚定法   �
 ```
 20-pl4eos/
 ├── 00-pl4eos-spec/                     # 设计描述文档（系统设计规范 + 术语对照）
-├── 10-pl4eos-subpl-sysdev/             # 系统设计子线（可运行技能定义）
+├── 10-pl4eos-subpd-sysdev/             # 系统设计子线（可运行技能定义）
 │   ├── 00-presysdev-4-eos/         #   OR 预处理（两子步骤）
 │   ├── 10-wfsysdev-4-eos/             #   瀑布式（6 任务）
 │   ├── 20-resysdev-4-eos/             #   逆向工程（8 任务）
 │   ├── 30-agsysdev-4-eos/             #   敏捷（8 任务）
 │   ├── 40-opsysdev-4-eos/             #   DevOps（4 任务）
 │   └── README.md
-├── 20-pl4eos-subpl-comdev/             # 构件开发子线（待扩展）
-├── 30-pl4eos-subpl-sysint/             # 集成交付子线（待扩展）
-├── 40-pl4eos-subpl-sysops/             # 系统运维子线（待扩展）
-├── 50-pl4eos-subpl-bizcfg/             # 业务配置子线（待扩展）
+├── 20-pl4eos-subpd-comdev/             # 构件开发子线（待扩展）
+├── 30-pl4eos-subpd-sysint/             # 集成交付子线（待扩展）
+├── 40-pl4eos-subpd-sysops/             # 系统运维子线（待扩展）
+├── 50-pl4eos-subpd-bizcfg/             # 业务配置子线（待扩展）
 └── 80-pl4eos-2-eosdata/                # 运行数据（EOS 产品数据）
 ```
 
@@ -683,7 +683,7 @@ EOS            流水线类    可配置平台   输出产品架构锚定法   �
 |---------|--------|
 | 通用方法论核心 | `00-generalspec/01-generalspec-sysdev.md` |
 | 两种 BP 开发方法 | `00-generalspec/01-generalspec-sysdev.md §6.2` |
-| 任务定义长什么样 | `10-pl4pleos/10-pl4pleos-subpl-sysdev/10-wfsysdev-4-pl4eos/pl4eos-wft01-or2str.md` |
+| 任务定义长什么样 | `10-pl4pleos/10-pl4pleos-subpd-sysdev/10-wfsysdev-4-pl4eos/pl4eos-wft01-or2str.md` |
 | 设计线的产品架构 | `10-pl4pleos/80-pl4pleos-2-pl4eosdata/07-pl4eos-product-architecture.md` |
 | EOS 设计准则总纲 | `20-pl4eos/00-pl4eos-spec/01-pl4eos-spec-sysdev.md` |
 
@@ -721,7 +721,7 @@ EOS            流水线类    可配置平台   输出产品架构锚定法   �
 | 两种 BP 开发方法 | `00-generalspec/01-generalspec-sysdev.md §6.2` |
 | 术语英中对照 | `00-generalspec/06-generalspec-glossary.md` |
 | 四种场景选择决策 | `00-generalspec/01-generalspec-sysdev.md` §十一 |
-| 任务定义样例 | 任一 `10-pl4eos-subpl-sysdev/` 下的技能文档 |
+| 任务定义样例 | 任一 `10-pl4eos-subpd-sysdev/` 下的技能文档 |
 | EOS 设计准则总纲 | `20-pl4eos/00-pl4eos-spec/01-pl4eos-spec-sysdev.md` |
 | 元流水线设计准则 | `10-pl4pleos/00-pl4pleos-spec/01-pl4pleos-spec-sysdev.md` |
 | 产品类型与产品形态 | `00-generalspec/01-generalspec-sysdev.md §6.5` |

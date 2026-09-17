@@ -624,15 +624,15 @@ Q：什么时候共享系统？什么时候必须分开？
 ```
 10-pl4pleos/
 ├── 00-pl4pleos-spec/                  设计描述文档
-├── 10-pl4pleos-subpl-sysdev/          系统设计子线
+├── 10-pl4pleos-subpd-sysdev/          系统设计子线
 │   ├── 00-presysdev-4-pl4eos/        OR 预处理
 │   ├── 10-wfsysdev-4-pl4eos/         瀑布（6 任务）
 │   ├── 20-resysdev-4-pl4eos/         逆向（8 任务）
 │   ├── 30-agsysdev-4-pl4eos/         敏捷（8 任务）
 │   └── 40-opsysdev-4-pl4eos/         DevOps（4 任务）
-├── 20-pl4pleos-subpl-comdev/          构件开发子线（待扩展）
-├── 30-pl4pleos-subpl-sysint/          集成交付子线（待扩展）
-├── 40-pl4pleos-subpl-sysops/          系统运维子线（待扩展）
+├── 20-pl4pleos-subpd-comdev/          构件开发子线（待扩展）
+├── 30-pl4pleos-subpd-sysint/          集成交付子线（待扩展）
+├── 40-pl4pleos-subpd-sysops/          系统运维子线（待扩展）
 └── 80-pl4pleos-2-pl4eosdata/          产品数据
 ```
 
@@ -643,16 +643,16 @@ Q：什么时候共享系统？什么时候必须分开？
 ```
 20-pl4eos/
 ├── 00-pl4eos-spec/                   设计描述文档
-├── 10-pl4eos-subpl-sysdev/           系统设计子线
+├── 10-pl4eos-subpd-sysdev/           系统设计子线
 │   ├── 00-presysdev-4-eos/        OR 预处理（两子步骤）
 │   ├── 10-wfsysdev-4-eos/           瀑布（6 任务）
 │   ├── 20-resysdev-4-eos/           逆向（8 任务）
 │   ├── 30-agsysdev-4-eos/           敏捷（8 任务）
 │   └── 40-opsysdev-4-eos/           DevOps（4 任务）
-├── 20-pl4eos-subpl-comdev/           构件开发子线
-├── 30-pl4eos-subpl-sysint/           集成交付子线
-├── 40-pl4eos-subpl-sysops/           系统运维子线
-├── 50-pl4eos-subpl-bizcfg/           业务配置子线
+├── 20-pl4eos-subpd-comdev/           构件开发子线
+├── 30-pl4eos-subpd-sysint/           集成交付子线
+├── 40-pl4eos-subpd-sysops/           系统运维子线
+├── 50-pl4eos-subpd-bizcfg/           业务配置子线
 └── 80-pl4eos-2-eosdata/              EOS 产品数据
         ↑                                ↑
   设计线的工具                     EOS 的成果
@@ -667,7 +667,7 @@ Q：什么时候共享系统？什么时候必须分开？
 | 核心方法论 | `00-generalspec/01-generalspec-sysdev.md` |
 | 两种 BA 方法 | 同上 §6.2 |
 | 术语对照 | `00-generalspec/06-generalspec-glossary.md` |
-| 任务定义样例 | 任一 `10-pl4eos-subpl-sysdev/` 下的技能文档 |
+| 任务定义样例 | 任一 `10-pl4eos-subpd-sysdev/` 下的技能文档 |
 | 设计线产品架构 | `10-pl4pleos/80-pl4pleos-2-pl4eosdata/07-pl4eos-product-architecture.md` |
 
 ---
