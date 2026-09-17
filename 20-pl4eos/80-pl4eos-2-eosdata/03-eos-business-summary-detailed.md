@@ -1,7 +1,7 @@
 # EOS 业务流程概要详细定义（已废弃 · DEPRECATED）
 **EOS Business Summary Detailed Definition — Retired**
 
-> **【废弃 2026-09-04】（93 §三.3「03 档型退役」定案）**：03 档型退役归档——概要不含叶，"概要详细定义"无物可载（一切详细定义在完整态 04，由 wft02-biz/biz01c 产出 bpl-biz 节点）。原写者 `wft02b` 已废弃、现链无写者。业务流程概要物理上以 [02-eos-business-summary-architecture.md](02-eos-business-summary-architecture.md) 为单一文件；方案/完整态节点定义见 [04-eos-business-detailed.md](04-eos-business-detailed.md)。本文件保留仅作历史参考，**不再维护、不再引用**（物理移入 90-hold 的归档动作随批次清理执行）。
+> **【废弃 2026-09-04】（93 §三.3「03 档型退役」定案）**：03 档型退役归档——概要不含叶，"概要详细定义"无物可载（一切详细定义在完整态 04，由 wft02-biz/biz01cr 产出 bpl-biz 节点）。原写者 `wft02b` 已废弃、现链无写者。业务流程概要物理上以 [02-eos-business-summary-architecture.md](02-eos-business-summary-architecture.md) 为单一文件；方案/完整态节点定义见 [04-eos-business-detailed.md](04-eos-business-detailed.md)。本文件保留仅作历史参考，**不再维护、不再引用**（物理移入 90-hold 的归档动作随批次清理执行）。
 >
 > 以下为原内容（未填充骨架）。
 
