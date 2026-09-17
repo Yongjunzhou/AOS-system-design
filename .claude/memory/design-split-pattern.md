@@ -22,4 +22,4 @@ metadata:
 - 人类在 Phase 1 后需两件事：选材（05 状态表）+ 审阅（07 反馈区）
 - Phase 2 上半机械执行不需要人类审阅
 
-**试点建议:** wft05，详细方案见 [90-design-split-pattern.md](../../20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/90-design-split-pattern.md)
+**试点建议:** wft05，详细方案见 [90-design-split-pattern.md](../../20-pl4eos/10-pl4eos-subpd-sysdev/10-wfsysdev-4-eos/90-design-split-pattern.md)

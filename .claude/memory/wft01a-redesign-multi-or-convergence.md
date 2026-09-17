@@ -61,4 +61,4 @@ AI 脑补的本质不是"生成最终需求"，而是**生成对业务人员的�
 ## 参考文档
 
 - [wft01a-brainfill-vs-subsequent-or](wft01a-brainfill-vs-subsequent-or.md) — 脑补与后续 OR 关系的原始问题记录
-- `20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft01a-or2str-design.md` v1.22（已包含引擎能力路径，但还未包含收敛机制）
+- `20-pl4eos/10-pl4eos-subpd-sysdev/10-wfsysdev-4-eos/eos-wft01a-or2str-design.md` v1.22（已包含引擎能力路径，但还未包含收敛机制）

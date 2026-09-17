@@ -5,7 +5,7 @@ metadata:
   type: project
 ---
 
-**待办（人类定 2026-09-15：「91 号文档也要与 94 号文档对齐，但不是现在」）**——91-eos-biz-eng-spec.md 需按 [94-eos-sys-dev-dbs.md](../../20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/94-eos-sys-dev-dbs.md)（v1.18，树形/级语义唯一权威）对齐。**启动须人类点头**，勿擅自动手。
+**待办（人类定 2026-09-15：「91 号文档也要与 94 号文档对齐，但不是现在」）**——91-eos-biz-eng-spec.md 需按 [94-eos-sys-dev-dbs.md](../../20-pl4eos/10-pl4eos-subpd-sysdev/10-wfsysdev-4-eos/94-eos-sys-dev-dbs.md)（v1.18，树形/级语义唯一权威）对齐。**启动须人类点头**，勿擅自动手。
 
 ## 已定位的偏差（2026-09-15 审视 93 时清扫所得）
 

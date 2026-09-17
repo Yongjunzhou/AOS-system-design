@@ -43,7 +43,7 @@ A"补充"行明确"全量重设计，非增量追加"。C 末尾加注：以更�
 
 ## 实施
 
-v2.3→v2.4，2026-06-26 写入 [eos-wft02-eng-str2ba.md](20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft02-eng-str2ba.md)。
+v2.3→v2.4，2026-06-26 写入 [eos-wft02-eng-str2ba.md](20-pl4eos/10-pl4eos-subpd-sysdev/10-wfsysdev-4-eos/eos-wft02-eng-str2ba.md)。
 
 ## 关联
 

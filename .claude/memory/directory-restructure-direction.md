@@ -44,12 +44,12 @@ metadata:
 
 #### 子线目录
 
-`{seq}-{产品前缀}-subpl-{领域}`
+`{seq}-{产品前缀}-subpd-{领域}`
 
 | 目录 | 含义 |
 |------|------|
-| `10-pl4pleos-subpl-sysdev/` | 元流水线的系统设计子线 |
-| `10-pl4eos-subpl-sysdev/` | EOS 流水线的系统设计子线 |
+| `10-pl4pleos-subpd-sysdev/` | 元流水线的系统设计子线 |
+| `10-pl4eos-subpd-sysdev/` | EOS 流水线的系统设计子线 |
 
 #### Skill 目录（子线内）
 
@@ -79,14 +79,14 @@ metadata:
 | `4` | for |
 | `2` | to |
 | `pl` | pipeline |
-| `subpl` | sub-pipeline |
+| `subpd` | sub-pipeline |
 | `data` | (输出)产品数据 |
 
 #### 链式命名
 
 ```
-pl4pleos ──→ subpl-X-4-pl4eos ──→ 80-pl4pleos-2-pl4eosdata
-pl4eos   ──→ subpl-X-4-eos      ──→ 80-pl4eos-2-eosdata
+pl4pleos ──→ subpd-X-4-pl4eos ──→ 80-pl4pleos-2-pl4eosdata
+pl4eos   ──→ subpd-X-4-eos      ──→ 80-pl4eos-2-eosdata
 ```
 
 ### 待确定的事项

@@ -27,11 +27,11 @@ metadata:
 
 ## 范围（61 文件）
 
-EOS 设计子线（10 wft 主文档 + 10 SKILL + 91 规范 + wft06-trace + 16 agile/reverse/devops 任务文档）+ EOS 规格（00-pl4eos-spec 01/06/README）+ 数据文件（02~35 各档 + README）+ 30-eos 规格 + 通用规范（01）+ CLAUDE.md/AGENTS.md。**零迁移**：bpb/bpl/srb/srl/pa 资产缩写、节点 ID、物理文件名（04-eos-business-detailed.md 等）、SKILL 协议、脚本。
+EOS 设计子线（10 wft 主文档 + 10 SKILL + 91 规范 + wft06-trace + 16 agile/reverse/devops 任务文档）+ EOS 规格（00-pl4eos-spec 01/06/README）+ 数据文件（02~35 各档 + README）+ 30-eos 规格 + 通用规范（01）+ CLAUDE.md/AGENTS.md。**零迁移**：bpl/bpd/srb/srl/pa 资产缩写、节点 ID、物理文件名（04-eos-business-detailed.md 等）、SKILL 协议、脚本。
 
 ## 保留（以后再统一）
 
-- **状态名**（仅 eng 链 162 处/11 文件）：可以/已/待补充/在 详细定义——保留不动。biz 链同过渡用「可以分解分配」（DP1 只改了 eng 链），两链本就两套词。后续统一可走 B' 方案：分解分配/详细定义→目标层+设计（可以bpl设计/可以srl设计），对齐既有「可以srb设计」「可以NFR设计」先例。
+- **状态名**（仅 eng 链 162 处/11 文件）：可以/已/待补充/在 详细定义——保留不动。biz 链同过渡用「可以分解分配」（DP1 只改了 eng 链），两链本就两套词。后续统一可走 B' 方案：分解分配/详细定义→目标层+设计（可以bpd设计/可以srl设计），对齐既有「可以srb设计」「可以NFR设计」先例。
 - **Step/活动名**：系统需求框架/详细设计、框架/详细开发（对象变"方案"但活动词保留）。
 - **档型名**：框架架构定义、框架详细定义（02/03/05 数据文件标题与分节，如「业务框架详细定义」「系统需求框架详细定义」）。
 - **SR 详细定义**（wft05-eng 产出内容档名）。

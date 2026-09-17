@@ -73,4 +73,4 @@ AI 下次启动时扫描文档，读到保留的选项 → 校验 → 执行（�
 此结论来自 t00a 设计讨论中的推演式对话——从"两个决策门合并"开始，经"三字段值分析→人类交互简化→文档选项机制推导"逐步收敛。此方法论（推演→定稿→重构）可作为后续 skill 设计的参考模式。
 
 **讨论时间**：2026-06-04
-**涉及文件**：`20-pl4eos/10-pl4eos-subpl-sysdev/00-presysdev-4-eos/t00-or-clarify.md`
+**涉及文件**：`20-pl4eos/10-pl4eos-subpd-sysdev/00-presysdev-4-eos/t00-or-clarify.md`

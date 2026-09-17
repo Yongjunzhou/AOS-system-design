@@ -13,17 +13,17 @@ metadata:
 | **biz01abr** | `stfr2rbpl` | `eos-biz01abr-stfr2rbpl.md` | 相关方功能需求 → 角色履职视角业务流程概要 |
 | **biz01abp** | `rbpl2pbpl` | `eos-biz01abp-rbpl2pbpl.md` | 角色履职视角业务流程概要 → 产品开发视角业务流程概要 |
 | **biz01cr** | `rbpl2rbpd` | `eos-biz01cr-rbpl2rbpd.md` | 角色履职视角业务流程概要 → 角色履职视角业务流程定义 |
-| biz03（尚未建） | `rbpl2srb` | — | → 系统需求框架 |
+| biz03（尚未建） | `rbpd2srb` | — | → 系统需求框架 |
 
 **产品数据定形为三份**（94 v1.26 §1.1）：`02` 角色履职视角业务流程概要／`03` 产品开发视角业务流程概要／`04` 角色履职视角业务流程定义。**`04` 是恢复回来的**——它原名「业务流程概要」，2026-09-16 上午一度被作废，同日下午随这轮编号恢复并正名为「角色履职视角业务流程定义」。
 
 **三条硬口径**：
 1. **P 侧不需要方案**——详细定义的落点是界面，界面只属 R 侧（见 [[page-ui-four-levels]]）；产品开发视角止于框架（`03`），其消费者在 94 §2.5／§2.6（配置方案／前后端组件方案，仍待定义）。**`03` 目前在链上无消费者，这是认下来的、不是漏。**
-2. **缩写规矩**：`…h` ＝ 框架、`…d` ＝ 方案（`bpb`/`bpl`、`srb`/`srl` 同族）；`r`／`p` 前缀标视角。故 `rbpl`／`pbpl`／`rbpl`。
+2. **缩写规矩**：`…h` ＝ 框架、`…d` ＝ 方案（`bpl`/`bpd`、`srb`/`srl` 同族）；`r`／`p` 前缀标视角。故 `rbpd`／`pbpd`／`rbpd`。
 3. **编号规矩**：同一步的两半写「同一序号 + 字母」。**每次把一个任务位劈成两半，要立刻问"这两半还占一个任务位吗"**——占，才 a/b；不占，才往下排号。新链此前正是没问这一句才漂成 01／02／03 各说各的。
 
 **重编号把链带回了旧链的格局**：旧 `wft01-biz`（框架）/ `wft02-biz`（框架→方案）/ `wft03-biz`（系统需求）↔ 新 01a+01b / 02 / 03。
 
-**`eos-biz01cr-rbpl2rbpd.md` 正文已重写**（2026-09-16，第 1 版）——见 [[eos-design-landing-spec-93-refactor]] 第四会话节。**一处须知的改名事故**：上轮 `git mv` 把**旧 biz03**（`bpl2srb`）的正文搬到了本文件路径、把**旧 biz01cr**（`bpb2bpl`）删了，即改名配错了对；本次重写把内容整篇换掉，旧 biz03 正文自此只活在 Git（`git show 489e5b60:20-pl4eos/.../eos-biz01cr-rbpl2rbpd.md`），将来建新 biz03 时从那里取。
+**`eos-biz01cr-rbpl2rbpd.md` 正文已重写**（2026-09-16，第 1 版）——见 [[eos-design-landing-spec-93-refactor]] 第四会话节。**一处须知的改名事故**：上轮 `git mv` 把**旧 biz03**（`bpd2srb`）的正文搬到了本文件路径、把**旧 biz01cr**（`bpl2bpd`）删了，即改名配错了对；本次重写把内容整篇换掉，旧 biz03 正文自此只活在 Git（`git show 489e5b60:20-pl4eos/.../eos-biz01cr-rbpl2rbpd.md`），将来建新 biz03 时从那里取。
 
 关联 [[page-ui-four-levels]]、[[94-eos-sys-dev-dbs-tree-authority]]、[[eos-design-landing-spec-93-refactor]]、[[eos-wft-retirement-biz-pilots-canonical]]。
