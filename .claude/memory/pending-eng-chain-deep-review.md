@@ -8,9 +8,9 @@ metadata:
   originSessionId: 1dd56fe9-9d2b-4481-8afe-e8749e82b8e3
 ---
 
-**2026-08-24（续）eng 链资产名更名已执行并提交**（与 biz 链同批，见 [[pending-biz-chain-deep-review]]）——STR-E→`bph-eng`、BP→`bpd-eng`、SR-F→`sfh-eng`（03 功能概要）/`sfd-eng`（04 功能详细，人类确认独立类型）、PA→`pa-eng`；nfr 链 STR-NFR→`bph-nfr`（SysReq-NFR 保留）；「配置信息组/CU」保留不动；节点 ID 前缀/分节名/状态名随迁；文件名随迁（01~07-eos-*.md、92-srf→92-sfh-biz）；「资产名保留，不迁移」句改写为迁移说明。eng 链 5 层终态：bph-eng→bpd-eng→sfh-eng→sfd-eng→pa-eng。
+**2026-08-24（续）eng 链资产名更名已执行并提交**（与 biz 链同批，见 [[pending-biz-chain-deep-review]]）——STR-E→`bpb-eng`、BP→`bpl-eng`、SR-F→`sfh-eng`（03 功能框架）/`sfd-eng`（04 功能详细，人类确认独立类型）、PA→`pa-eng`；nfr 链 STR-NFR→`bpb-nfr`（SysReq-NFR 保留）；「配置信息组/CU」保留不动；节点 ID 前缀/分节名/状态名随迁；文件名随迁（01~07-eos-*.md、92-srf→92-sfh-biz）；「资产名保留，不迁移」句改写为迁移说明。eng 链 5 层终态：bpb-eng→bpl-eng→sfh-eng→sfd-eng→pa-eng。
 
-**2026-08-24（续）eng 链文件名更名（5 层全部完成）**：wft01 `or2str`→**`spr2bph`**（v10.0/v1.15）；wft02 `str2bp`→**`bph2bpd`**（v10.5/v1.14）；wft03 `bp2sr`→**`bpd2sfh`**（v9.4/v1.9）；wft04 `sr2sr`→**`sfh2sfd`**（v1.3/v1.5）；wft05 `sr2pa`→**`sfd2pa`**（v10.6/v1.9）。语义链：规范化（Specified）需求→业务概要→业务详细→功能概要→功能详细→产品架构（spr→bph→bpd→sfh→sfd→pa），旧名不能反映实际转换；人类方案ID/全库引用/记忆同步。与 biz 链同批更名（spr2bph/bph2bpd/bpd2sfh），见 [[pending-biz-chain-deep-review]]。
+**2026-08-24（续）eng 链文件名更名（5 层全部完成）**：wft01 `or2str`→**`spr2bpb`**（v10.0/v1.15）；wft02 `str2bp`→**`bpb2bpl`**（v10.5/v1.14）；wft03 `bp2sr`→**`bpl2sfh`**（v9.4/v1.9）；wft04 `sr2sr`→**`sfh2sfd`**（v1.3/v1.5）；wft05 `sr2pa`→**`sfd2pa`**（v10.6/v1.9）。语义链：规范化（Specified）需求→业务框架→业务详细→功能框架→功能详细→产品架构（spr→bpb→bpl→sfh→sfd→pa），旧名不能反映实际转换；人类方案ID/全库引用/记忆同步。与 biz 链同批更名（spr2bpb/bpb2bpl/bpl2sfh），见 [[pending-biz-chain-deep-review]]。
 
 **第四轮深审（2026-08-22，人类逐项裁决，提交 01857e5，13 文件）已执行并提交**。覆盖记忆「下一轮聚焦方向」①~④ + 遗留待办 B4 + 本轮新讨论的 NFR 分解设计：
 
@@ -20,7 +20,7 @@ metadata:
 **B 级（口径/流程/契约）**：
 - **B1 wft05-eng 主文件操作条目缺 FR-BIZ**：§5.3.1 操作条目补「FR-BIZ 指标承接」+ §5.3.2 确认状态示例补 FR-BIZ 条目（SKILL v1.7 已有，主文件未随，SKILL↔主文件对齐）
 - **B2 wft06-trace 未同步 v5.32**：v3.4→v3.5——①§3.6 缺口行口径对齐 wft05 三可（候选线索/正式 OR/待裁决结论）+ 补 FR-BIZ 消费版本核对（PA 承接组件/消费版本与约束包行一致）；②nfr→eng 补分解预算守恒核对 + 约束包消费状态核对；③§3.2 加载清单补两约束包文件路径；④§5.7 biz→eng 矩阵列补「FR-BIZ指标行ID/承接组件/消费版本」
-- **B3 术语读法 A SKILL 未落地**：wft01-eng SKILL 三处「配置信息组（概要说明，结构判定级）」→「配置信息组（概要说明，业务概要定义末级节点；结构判定级）」（v1.13 版本记录声称已落地、正文漏改）
+- **B3 术语读法 A SKILL 未落地**：wft01-eng SKILL 三处「配置信息组（框架说明，结构判定级）」→「配置信息组（框架说明，业务框架定义末级节点；结构判定级）」（v1.13 版本记录声称已落地、正文漏改）
 
 **C 级（术语统一）**：
 - **C1 补充 FR-ENG 材料术语统一**：wft01-eng 主文件 §1.1 目标5「补充 FR-ENG OR 材料」+ 负责7 + 操作条目/示例「补充 FR-ENG 缺口」全部统一「补充 FR-ENG 材料」（SKILL 同步）

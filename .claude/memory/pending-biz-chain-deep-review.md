@@ -9,28 +9,28 @@ metadata:
 ---
 
 **2026-08-24（续）wft03-biz 单独轮审视完成——主 v10.8 / SKILL v1.18 + 全链联动**。人类逐项裁决：
-- **A 组（标题/pa-eng 旧定位）**：标题「业务详细（bpd-biz）→ 业务配置需求/pa-eng」→「**业务流程详细（bpd-biz）→ 系统需求概要定义**」（主+SKILL 标题/description）；正文 `pa-eng 末级节点`→`配置业务系统 PA 末级节点`×3、`不做 pa-eng 配置规格`→`不做配置业务系统 PA 的配置规格`×2；§二 章首补「srh-biz 的语义」注释；91 §7.3 同型残留同步。
+- **A 组（标题/pa-eng 旧定位）**：标题「业务详细（bpl-biz）→ 业务配置需求/pa-eng」→「**业务流程详细（bpl-biz）→ 系统需求框架定义**」（主+SKILL 标题/description）；正文 `pa-eng 末级节点`→`配置业务系统 PA 末级节点`×3、`不做 pa-eng 配置规格`→`不做配置业务系统 PA 的配置规格`×2；§二 章首补「srb-biz 的语义」注释；91 §7.3 同型残留同步。
 - **B 组（OR 口径）**：OR→规范化需求 4 处（治理承接/指标来源×2/追溯链）；**「OR 原料状态表」→「材料状态表」全链联动**（wft03 9 + wft02-biz 4 + wft02-eng 3 + wft01-eng 1 + wft01-nfr 3 + wft01-biz「规范化需求材料状态表」3 + 91 2 + 01-pl4eos-spec 1；联动文件版本各 +1 + 变更记录补行 + 头部版本号补落后）；**「正式 OR」/「FR-ENG OR」保留**（=01 资产 OR 节点身份，物理存在）。
-- **C 组（D1 全称统一）**：s01/s02/s03 全称 ×6（业务概要定义→业务流程概要定义、业务详细定义→业务流程详细定义、系统概要定义→系统需求概要定义）。
+- **C 组（D1 全称统一）**：s01/s02/s03 全称 ×6（业务框架定义→业务流程框架定义、业务详细定义→业务流程详细定义、系统框架定义→系统需求框架定义）。
 - **D 组（SKILL 同步）**：A.6 覆盖自查补资产对齐 9~12 + 缺口闭环 13；§7.4 补「完成后执行覆盖自查（A.6 清单）」。
-- **E 组**：输入线称呼统一（有反馈的 srh-biz 节点）；10-eos-fr-biz-constraint-package 格式镜像「来源 OR」→「来源 规范化需求」同步。
+- **E 组**：输入线称呼统一（有反馈的 srb-biz 节点）；10-eos-fr-biz-constraint-package 格式镜像「来源 OR」→「来源 规范化需求」同步。
 - **挂账（未决）**：**正式 OR 节点是否改名规范化需求节点**（横跨 ort 链 + 01 资产节点 ID OR-XXX + 01-eos-sysdev-status 标题 + 规范 §3.5「正式 OR 节点契约」）——独立链级清扫待办。
 
-**2026-08-24（续）命名更正已执行并提交**：**sfh→srh、sfd→srd**（`sr`=系统需求缩写，srh=系统需求概要定义、srd=系统需求详细定义）——全链更名完成：资产名（srh-biz/srh-eng/srd-eng）、状态名（可以srh设计/在srh设计/已srh设计/待补充srh设计）、文件名（wft03-biz bpd2sfh→bpd2srh、wft03-eng bpd2srh、wft04-eng srh2srd、wft05-eng srd2pa、92-sfh-biz→92-srh-biz、05/06-eos-system-requirement-*）、中文层名统一（eng 链「功能概要/功能详细」→「系统需求概要/详细」、资产「系统功能概要/功能系统需求」→「系统需求」）、英文标题随迁（System Requirement Summary/Detailed）。版本递增：wft01-biz v3.29/wft02 v9.12/wft03 v10.7、wft01-eng v10.2/wft02-eng v10.7/wft03-eng v9.7/wft04-eng v1.6/wft05-eng v10.8、nfr v5.9×2、wft06 v3.7、91 v5.38、92 v1.3、05 v3.2/06 v2.2、00-pl4eos-spec v1.4、SKILL 各 +1。范围=EOS 设计子线全层 + 00-pl4eos-spec + 记忆；**不含通用规范**（保留「系统功能架构定义」§7.5 锚点）。wft03 单独轮待办仍有效（标题 pa-eng 旧定位 + OR 残留）。
+**2026-08-24（续）命名更正已执行并提交**：**sfh→srb、sfd→srl**（`sr`=系统需求缩写，srb=系统需求框架定义、srl=系统需求详细定义）——全链更名完成：资产名（srb-biz/srb-eng/srl-eng）、状态名（可以srb设计/在srb设计/已srb设计/待补充srb设计）、文件名（wft03-biz bpl2sfh→bpl2srb、wft03-eng bpl2srb、wft04-eng srb2srl、wft05-eng srl2pa、92-sfh-biz→92-srb-biz、05/06-eos-system-requirement-*）、中文层名统一（eng 链「功能框架/功能详细」→「系统需求框架/详细」、资产「系统功能框架/功能系统需求」→「系统需求」）、英文标题随迁（System Requirement Summary/Detailed）。版本递增：wft01-biz v3.29/wft02 v9.12/wft03 v10.7、wft01-eng v10.2/wft02-eng v10.7/wft03-eng v9.7/wft04-eng v1.6/wft05-eng v10.8、nfr v5.9×2、wft06 v3.7、91 v5.38、92 v1.3、05 v3.2/06 v2.2、00-pl4eos-spec v1.4、SKILL 各 +1。范围=EOS 设计子线全层 + 00-pl4eos-spec + 记忆；**不含通用规范**（保留「系统功能架构定义」§7.5 锚点）。wft03 单独轮待办仍有效（标题 pa-eng 旧定位 + OR 残留）。
 
 **2026-08-24（续）wft02-biz 审视完成并提交（681e6c7）——主 v9.11 / SKILL v1.18**。人类逐项裁决：
-- **A 组更名残留**：5 处 STR/SR→bph-biz/sfh-biz（五层链/§3.1 标题/缺陷路由/不负责表×2/自检清单）+ 验证补抓 L4 概述/L538 状态表。
+- **A 组更名残留**：5 处 STR/SR→bpb-biz/sfh-biz（五层链/§3.1 标题/缺陷路由/不负责表×2/自检清单）+ 验证补抓 L4 概述/L538 状态表。
 - **B 组锚点/引用**：`#553-补充-or-材料生成` 失效→`#553-补充规范化需求材料生成`（wft01 标题早已全称，v9.5「自动生效」误判）；看板指标引 §2.5.4、活动节点引 §2.5.1。
-- **D1 术语全称统一**：s01/s02/s03 = **业务流程概要定义 / 业务流程详细定义 / 系统需求概要定义**（标题/正文/SKILL 全称）。
-- **D2 OR→规范化需求口径**：`[推断-待OR确认]`→`[推断-待规范化需求确认]`、FR-BIZ OR 材料→补充规范化需求材料、发起 OR 的签字→发起补充规范化需求的签字、OR→bph-biz 管道→规范化需求→bph-biz 管道；**「OR 原料状态表」表名保留**（wft03 轮定）。
+- **D1 术语全称统一**：s01/s02/s03 = **业务流程框架定义 / 业务流程详细定义 / 系统需求框架定义**（标题/正文/SKILL 全称）。
+- **D2 OR→规范化需求口径**：`[推断-待OR确认]`→`[推断-待规范化需求确认]`、FR-BIZ OR 材料→补充规范化需求材料、发起 OR 的签字→发起补充规范化需求的签字、OR→bpb-biz 管道→规范化需求→bpb-biz 管道；**「OR 原料状态表」表名保留**（wft03 轮定）。
 - **C 组 SKILL 四项**：Phase B 补「主子/下钻关系」（wft03 TAB 编排消费）、Step 5 补「覆盖自查」、Phase A 修正行补「同步修正任务类型」、A.6 补三项核对（业务缺口闭环/PCA 计划清单/任务关系+PL6-B）。
 - **E 组**：§4.1.3 补「待确认方案」中间态（对齐自家流程图/wft03）；回修表述统一「走 Step 3~5」。
 
-**术语定案（人类确认）**：**srh-biz（系统需求概要定义，sr=系统需求）= 配置业务系统的产品架构（产品物理结构概要定义）**——配置实现的业务需求落到系统层面即业务系统的物理产品结构；称「系统需求」是为对齐 eng 链命名节奏（bph-eng→bpd-eng→srh-eng→srd-eng→pa-eng）。已写入 wft02 §二 章首注释。
+**术语定案（人类确认）**：**srb-biz（系统需求框架定义，sr=系统需求）= 配置业务系统的产品架构（产品物理结构框架定义）**——配置实现的业务需求落到系统层面即业务系统的物理产品结构；称「系统需求」是为对齐 eng 链命名节奏（bpb-eng→bpl-eng→srb-eng→srl-eng→pa-eng）。已写入 wft02 §二 章首注释。
 
-**wft03 单独轮待办（本轮不碰 wft03）**：①标题「业务详细（bpd-biz）→ 业务配置需求/pa-eng」带 pa-eng 旧定位，应更新为「业务流程详细（bpd-biz）→ 系统需求概要定义」；②OR 残留（来源「OR/bph-biz/bpd-biz」、OR 原料状态表是否改名）；③D1 全称统一同步（业务流程概要定义/业务流程详细定义/系统需求概要定义）。
+**wft03 单独轮待办（本轮不碰 wft03）**：①标题「业务详细（bpl-biz）→ 业务配置需求/pa-eng」带 pa-eng 旧定位，应更新为「业务流程详细（bpl-biz）→ 系统需求框架定义」；②OR 残留（来源「OR/bpb-biz/bpl-biz」、OR 原料状态表是否改名）；③D1 全称统一同步（业务流程框架定义/业务流程详细定义/系统需求框架定义）。
 
-**2026-08-24（续）资产名更名清单已执行并提交**（人类定案全部待议项后）——biz 链：STR-F→`bph-biz`、BP→`bpd-biz`、SR-F→`sfh-biz`；eng 链：STR-E→`bph-eng`、BP→`bpd-eng`、SR-F→`sfh-eng`（03 功能概要）/`sfd-eng`（04 功能详细）、PA→`pa-eng`；nfr 链：STR-NFR→`bph-nfr`（SysReq-NFR 保留）。节点 ID 前缀直接替换+链后缀（STR-F-GOV-001→bph-biz-GOV-001 等）、分节名随新命名（STR树画像→业务概要树画像）、状态名随迁（可以SR设计→可以sfh设计）；「配置信息组/CU」保留不动；资产文件名随迁（02-eos-stakeholder-requirements-architecture.md→02-eos-business-summary-architecture.md 等，92-srf→92-sfh-biz）；「资产名保留，不迁移」句改写为迁移说明。执行范围=EOS 设计子线全层（91/92 + biz/eng/nfr/or 链 skill+SKILL + 00-pl4eos-spec + eosdata 全部资产 + reverse/agile/devops + 记忆），不含通用规范/元流水线/30-eos。
+**2026-08-24（续）资产名更名清单已执行并提交**（人类定案全部待议项后）——biz 链：STR-F→`bpb-biz`、BP→`bpl-biz`、SR-F→`sfh-biz`；eng 链：STR-E→`bpb-eng`、BP→`bpl-eng`、SR-F→`sfh-eng`（03 功能框架）/`sfd-eng`（04 功能详细）、PA→`pa-eng`；nfr 链：STR-NFR→`bpb-nfr`（SysReq-NFR 保留）。节点 ID 前缀直接替换+链后缀（STR-F-GOV-001→bpb-biz-GOV-001 等）、分节名随新命名（STR树画像→业务框架树画像）、状态名随迁（可以SR设计→可以sfh设计）；「配置信息组/CU」保留不动；资产文件名随迁（02-eos-stakeholder-requirements-architecture.md→02-eos-business-summary-architecture.md 等，92-srf→92-sfh-biz）；「资产名保留，不迁移」句改写为迁移说明。执行范围=EOS 设计子线全层（91/92 + biz/eng/nfr/or 链 skill+SKILL + 00-pl4eos-spec + eosdata 全部资产 + reverse/agile/devops + 记忆），不含通用规范/元流水线/30-eos。
 
 **2026-08-24 深审第四轮（wft01-biz 审视，人类逐项裁决）完成并提交（f5a7094）**。biz 链现版本：**wft01 v3.22 / wft02 v9.8 / wft03 v10.4 / 91 v5.36 / 25 v2.6 / 24 v1.6** + SKILL v1.17/v1.15/v1.14。
 
@@ -44,18 +44,18 @@ metadata:
 
 **2026-08-24（续）资产名更名清单（人类确认"都要更名"，待新对话执行）**：
 
-- **biz 链**：STR-F → **`bph-biz`**（业务概要）、BP → **`bpd-biz`**（业务详细）、SR-F → **`sfh-biz`**（系统功能概要）
-- **eng 链**：STR-E → **`bph-eng`**（业务概要）、BP → **`bpd-eng`**（业务详细）、SR-F → **`sfh-eng`**（03 功能概要；04 功能详细与 03 同 SR-F 节点，是否拆 `sfd-eng` 待议）、PA → **`pa-eng`**（产品架构）
-- **待议项**：配置信息组 / CU（eng 结构性资产）、STR-NFR（nfr 链，按 spr/bph 规律待定）、资产文件名（`01-original-requirements.md`/`02-eos-stakeholder-requirements-architecture.md` 等英文名）、节点 ID 前缀（`STR-F-XXX`→`bph-biz-XXX`）、分节名（"STR 树画像"/"STR 节点索引"）
+- **biz 链**：STR-F → **`bpb-biz`**（业务框架）、BP → **`bpl-biz`**（业务详细）、SR-F → **`sfh-biz`**（系统功能框架）
+- **eng 链**：STR-E → **`bpb-eng`**（业务框架）、BP → **`bpl-eng`**（业务详细）、SR-F → **`sfh-eng`**（03 功能框架；04 功能详细与 03 同 SR-F 节点，是否拆 `sfd-eng` 待议）、PA → **`pa-eng`**（产品架构）
+- **待议项**：配置信息组 / CU（eng 结构性资产）、STR-NFR（nfr 链，按 spr/bpb 规律待定）、资产文件名（`01-original-requirements.md`/`02-eos-stakeholder-requirements-architecture.md` 等英文名）、节点 ID 前缀（`STR-F-XXX`→`bpb-biz-XXX`）、分节名（"STR 树画像"/"STR 节点索引"）
 - **执行范围**：91 规范 + biz/eng/nfr 链 skill + ort 链 + `02/04/05/06/07-*.md` 资产 + 记忆
 
-**2026-08-24（续）wft01-biz 输出术语正名（人类纠正）**：「业务概要定义」→**「业务流程概要定义」**（bph=business process high-level definition，非「业务概要」）、「业务详细定义」→「业务流程详细定义」（成对一致）；章节标题/锚点随迁；主 v3.26 / SKILL v1.21。**注意**：「系统概要定义」（wft03 角色）未动，按 sfh=系统功能概要 或需同步。
+**2026-08-24（续）wft01-biz 输出术语正名（人类纠正）**：「业务框架定义」→**「业务流程框架定义」**（bpb=business process high-level definition，非「业务框架」）、「业务详细定义」→「业务流程详细定义」（成对一致）；章节标题/锚点随迁；主 v3.26 / SKILL v1.21。**注意**：「系统框架定义」（wft03 角色）未动，按 sfh=系统功能框架 或需同步。
 
 **2026-08-24（续）wft01-biz 内容层逻辑修正（清扫后续，人类指示"仔细看看"，v3.25/v1.20）**：修正清扫产生的逻辑矛盾——「零散表述/非结构化」与规范化需求自相矛盾（规范化需求已归一化）、「规范化需求需求」双重需求复合词、「规范化需求归一化」冗余（改需求规范化（ort03））、Step End「退回规范化规范化需求-ZZZ」、原料状态表→材料状态表；上游 ort03 口径还原（原始需求→规范化需求）；资产名保留叙述改「角色命名 vs 资产节点类型待更名」。
 
-**2026-08-24（续）wft01-biz 全篇术语清扫（人类定名，概念层）**：OR→规范化需求（spr）、STR-F→业务概要定义（bph）、原始需求/相关方需求/业务需求→规范化需求/业务概要定义，含章节标题（锚点随迁，SKILL 链接同步）；主 v3.24 / SKILL v1.19。**资产名（01/02-*.md、节点 ID 前缀）待后续资产更名同步**。wft02/03-biz 与 eng 链未清扫，待逐个执行（同定位）。
+**2026-08-24（续）wft01-biz 全篇术语清扫（人类定名，概念层）**：OR→规范化需求（spr）、STR-F→业务框架定义（bpb）、原始需求/相关方需求/业务需求→规范化需求/业务框架定义，含章节标题（锚点随迁，SKILL 链接同步）；主 v3.24 / SKILL v1.19。**资产名（01/02-*.md、节点 ID 前缀）待后续资产更名同步**。wft02/03-biz 与 eng 链未清扫，待逐个执行（同定位）。
 
-**2026-08-24（同日，续）链级文件名更名（biz 链 + wft01-eng 完成）**：①wft01-biz `or2str` → **`spr2bph`**（规范化（Specified）需求→业务流程概要定义，v3.23/v1.18）；②wft02-biz `str2bp` → **`bph2bpd`**（业务概要→业务详细，`d`=detailed，v9.9/v1.16）；③wft03-biz `bp2sr` → **`bpd2sfh`**（业务详细→系统功能概要，`sf`=系统功能、`h`=high-level，v10.5/v1.15）；④wft01-eng `or2str` → **`spr2bph`**（规范化（Specified）需求→业务概要定义，eng 链 01 层，v10.0/v1.15）。语义：旧名（or2str/str2bp/bp2sr）不能反映实际转换；人类方案ID/全库引用/记忆同步。**仍不动**：wft01-nfr（or2str）——后续单议。
+**2026-08-24（同日，续）链级文件名更名（biz 链 + wft01-eng 完成）**：①wft01-biz `or2str` → **`spr2bpb`**（规范化（Specified）需求→业务流程框架定义，v3.23/v1.18）；②wft02-biz `str2bp` → **`bpb2bpl`**（业务框架→业务详细，`d`=detailed，v9.9/v1.16）；③wft03-biz `bp2sr` → **`bpl2sfh`**（业务详细→系统功能框架，`sf`=系统功能、`h`=high-level，v10.5/v1.15）；④wft01-eng `or2str` → **`spr2bpb`**（规范化（Specified）需求→业务框架定义，eng 链 01 层，v10.0/v1.15）。语义：旧名（or2str/str2bp/bp2sr）不能反映实际转换；人类方案ID/全库引用/记忆同步。**仍不动**：wft01-nfr（or2str）——后续单议。
 
 **此前：2026-08-22 深审第三轮完成（人类逐项裁决）**。第三轮时版本：**wft01 v3.21 / wft02 v9.7 / wft03 v10.4 / 91 v5.36 / 25 v2.6 / 24 v1.6** + SKILL v1.16/v1.14/v1.14。
 

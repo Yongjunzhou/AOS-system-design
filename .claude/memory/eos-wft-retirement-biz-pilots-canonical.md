@@ -5,7 +5,7 @@ metadata:
   type: feedback
 ---
 
-EOS 设计线 wft 类人类方案的 20 号落地改造中，用户纠偏定案（2026-09-04）：**打磨/建设对象 = `eos-bizNN-*.md` 试点**（biz 链：eos-biz01-str2bph / eos-biz02-bph2bpd / eos-biz03-bpd2srh，v0.9-pilot，将成正式人类方案）；**`wft0?-biz-*`（eos-wft01/02/03-biz-*，v3.37/v9.16/v10.15）是未落实 20 号报告的旧版，以后可能不用（退役）**。
+EOS 设计线 wft 类人类方案的 20 号落地改造中，用户纠偏定案（2026-09-04）：**打磨/建设对象 = `eos-bizNN-*.md` 试点**（biz 链：eos-biz01-str2bpb / eos-biz02-bpb2bpl / eos-biz03-bpl2srb，v0.9-pilot，将成正式人类方案）；**`wft0?-biz-*`（eos-wft01/02/03-biz-*，v3.37/v9.16/v10.15）是未落实 20 号报告的旧版，以后可能不用（退役）**。
 
 **Why:** 试点是 93 规范六章骨架（20 号落地：人类方案 = 输入文档→输出文档 的翻译规格书）验证后的新形态；旧 wft 是改造前中间产物，不保留双轨、不作平行维护。
 
