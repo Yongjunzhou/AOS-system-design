@@ -52,7 +52,7 @@ metadata:
 ## 适用范围
 
 适用于：
-- `20-pl4eos/10-pl4eos-subpl-sysdev/00-presysdev-4-eos/`
-- `20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/`
+- `20-pl4eos/10-pl4eos-subpd-sysdev/00-presysdev-4-eos/`
+- `20-pl4eos/10-pl4eos-subpd-sysdev/10-wfsysdev-4-eos/`
 - `20-pl4eos/80-pl4eos-2-eosdata/00-origin-requirement-materials/01-eos-sysdev-status.md`
 

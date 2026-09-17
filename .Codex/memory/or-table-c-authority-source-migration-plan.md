@@ -38,9 +38,9 @@ metadata:
 
 - `20-pl4eos/80-pl4eos-2-eosdata/00-origin-requirement-materials/01-eos-sysdev-status.md`
 - `20-pl4eos/80-pl4eos-2-eosdata/01-eos-original-requirements.md`
-- `20-pl4eos/10-pl4eos-subpl-sysdev/00-presysdev-4-eos/eos-ort03-norm.md`
-- `20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft01-or2str.md`
-- `20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-wft06-trace.md`
+- `20-pl4eos/10-pl4eos-subpd-sysdev/00-presysdev-4-eos/eos-ort03-norm.md`
+- `20-pl4eos/10-pl4eos-subpd-sysdev/10-wfsysdev-4-eos/eos-wft01-or2str.md`
+- `20-pl4eos/10-pl4eos-subpd-sysdev/10-wfsysdev-4-eos/eos-wft06-trace.md`
 - 上层规范与本仓库记忆文件中关于表C权威源的表述
 
 ## 迁移执行原则
