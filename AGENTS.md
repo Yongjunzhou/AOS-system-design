@@ -166,19 +166,19 @@
 
 ### 记忆存储位置
 
-本仓库的记忆文件位于项目根目录下的 `.Codex/memory/`，纳入 Git 版本管理。这是记忆的**权威存储**，跨设备共享。
+本仓库的记忆文件位于项目根目录下的 `.claude/memory/`，纳入 Git 版本管理。这是记忆的**权威存储**，跨设备共享。
 
-Codex 自身的自动记忆是另一套，且**不能指向本目录**：它写在 `~/.codex/memories/`（`CODEX_HOME` 下），默认关闭（启用需在 `~/.codex/config.toml` 加 `[features] memories = true`），由 Codex 后台摘取会话生成，按用户、按机器各存一份，现行配置项中**没有可指定存储目录的键**，官方亦声明其不支持跨机同步。故本仓库**不设镜像、不做复制**——`.Codex/memory/` 即唯一存储。
+Codex 自身的自动记忆是另一套，且**不能指向本目录**：它写在 `~/.codex/memories/`（`CODEX_HOME` 下），默认关闭（启用需在 `~/.codex/config.toml` 加 `[features] memories = true`），由 Codex 后台摘取会话生成，按用户、按机器各存一份，现行配置项中**没有可指定存储目录的键**，官方亦声明其不支持跨机同步。故本仓库**不设镜像、不做复制**——`.claude/memory/` 即唯一存储。
 
 ### 共享工作流程
 
 ```
-设备A ──→ .Codex/memory/ 修改 ──→ git commit ──→ git push
+设备A ──→ .claude/memory/ 修改 ──→ git commit ──→ git push
                                                       ↓
-设备B ──→ git pull ──→ .Codex/memory/ 同步
+设备B ──→ git pull ──→ .claude/memory/ 同步
 ```
 
-1. **写入记忆**：直接写入 `.Codex/memory/`——无第二处副本，也无镜像
+1. **写入记忆**：直接写入 `.claude/memory/`——无第二处副本，也无镜像
 2. **共享记忆**：提交 git 并推送，另一台设备 pull 后即获得全部记忆（同机追加记忆亦照此办理）
 
 ### 文件规范
@@ -189,11 +189,11 @@ Codex 自身的自动记忆是另一套，且**不能指向本目录**：它写�
 
 ### 跨 Agent 使用约定
 
-- `.Codex/memory/` 是本仓库内各类 AI / Agent 的**共享规则源与项目记忆源**
-- 只要 Agent 打开本仓库并读取文件，就应优先把 `.Codex/memory/` 视为可复用上下文的一部分
-- 但**不要假设**所有 Agent 都会自动把 `.Codex/memory/` 注入运行时记忆；不同工具是否自动加载，取决于各自实现
+- `.claude/memory/` 是本仓库内各类 AI / Agent 的**共享规则源与项目记忆源**
+- 只要 Agent 打开本仓库并读取文件，就应优先把 `.claude/memory/` 视为可复用上下文的一部分
+- 但**不要假设**所有 Agent 都会自动把 `.claude/memory/` 注入运行时记忆；不同工具是否自动加载，取决于各自实现
 - 因此，凡是需要长期稳定复用、且对协作有约束力的内容，应优先落在：
   - `AGENTS.md`
-  - `.Codex/memory/`
+  - `.claude/memory/`
   - 对应对象的权威规范文档
-- 若 `.Codex/memory/` 中的规则与普通工作文档表述不一致，应以上层规范和对象级权威状态表为准，并及时同步修订记忆文件
+- 若 `.claude/memory/` 中的规则与普通工作文档表述不一致，应以上层规范和对象级权威状态表为准，并及时同步修订记忆文件
