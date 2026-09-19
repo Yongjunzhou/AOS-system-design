@@ -168,20 +168,18 @@
 
 本仓库的记忆文件位于项目根目录下的 `.Codex/memory/`，纳入 Git 版本管理。这是记忆的**权威存储**，跨设备共享。
 
-每台设备上还存在一个本机 auto-memory 路径（`C:\Users\<用户名>\.Codex\projects\e--mywork-AOS\memory\`），由 Codex 系统自动加载。该路径是 `.Codex/memory/` 的**运行时镜像**，不纳入版本管理。
+Codex 自身的自动记忆是另一套，且**不能指向本目录**：它写在 `~/.codex/memories/`（`CODEX_HOME` 下），默认关闭（启用需在 `~/.codex/config.toml` 加 `[features] memories = true`），由 Codex 后台摘取会话生成，按用户、按机器各存一份，现行配置项中**没有可指定存储目录的键**，官方亦声明其不支持跨机同步。故本仓库**不设镜像、不做复制**——`.Codex/memory/` 即唯一存储。
 
 ### 共享工作流程
 
 ```
 设备A ──→ .Codex/memory/ 修改 ──→ git commit ──→ git push
                                                       ↓
-设备B ──→ git pull ──→ .Codex/memory/ 同步 ──→ 复制到本机 auto-memory 路径
+设备B ──→ git pull ──→ .Codex/memory/ 同步
 ```
 
-1. **写入记忆**：Codex 将记忆文件写入 `.Codex/memory/`（写入时会同步到本机 auto-memory 路径以供系统加载）
-2. **共享记忆**：修改后提交 git 并推送，另一台设备 pull 后即获得全部记忆
-3. **同步机制**：每台设备 pull 后，需将 `.Codex/memory/` 中新文件复制到本机 auto-memory 路径（或让 Codex 在会话中自动完成同步）
-4. **在同一台设备上追加记忆后**：提交 git → 推送到远程 → 另一台设备 pull 即可获得
+1. **写入记忆**：直接写入 `.Codex/memory/`——无第二处副本，也无镜像
+2. **共享记忆**：提交 git 并推送，另一台设备 pull 后即获得全部记忆（同机追加记忆亦照此办理）
 
 ### 文件规范
 
