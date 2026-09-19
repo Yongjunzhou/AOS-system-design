@@ -35,7 +35,7 @@
 ## 文档规范
 
 - Markdown + Mermaid；版本 `v[主版本].[次版本]`；中文为主体、术语附英文。
-- **md→PDF（用户指定的统一转换方式）**：用 AOS 根 `tools/md2pdf/` 下的转换工具（`node tools/md2pdf/md2pdf.js <md路径> [输出.pdf]`，marked + puppeteer 渲染，支持 Mermaid）。工具在仓库根一级，故命令以**仓库根为工作目录**运行（即 `cd e:/mywork/AOS` 后再执行），从本子项目目录相对写即 `../tools/md2pdf/md2pdf.js`；默认输出与源文件同名 .pdf。规则源头见 AOS 根 CLAUDE.md §七（2026-09-03 用户定）。
+- **md→PDF（用户指定的统一转换方式）**：用 AOS 根 `tools/md2pdf/` 下的转换工具（`node tools/md2pdf/md2pdf.js <md路径> [输出.pdf]`，marked + puppeteer 渲染，支持 Mermaid）。工具在仓库根一级，故命令以**仓库根为工作目录**运行（即先切到仓库根再执行），从本子项目目录相对写即 `../tools/md2pdf/md2pdf.js`；默认输出与源文件同名 .pdf。规则源头见 AOS 根 CLAUDE.md §七（2026-09-03 用户定）。
 
 ## 关键文件导航
 
