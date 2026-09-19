@@ -16,7 +16,7 @@
 
 - 本子项目的记忆位于 [`10-claude memory/`](10-claude%20memory/)：`10-claude memory/MEMORY.md`（索引）+ `10-claude memory/教材项目.md`（主记忆）。
 - **编写/打磨教材时**：先读 `10-claude memory/MEMORY.md` 与相关记忆文件，写入 `10-claude memory/` 目录。
-- **禁止**把教材内容写入 AOS 根 `.claude/memory/` 或 AOS auto-memory（`C:\Users\HUAWEI\.claude\projects\e--mywork-AOS\memory\`）。AOS 根 MEMORY.md 只保留一行指向本目录的指针。
+- **禁止**把教材内容写入 AOS 根 `.claude/memory/`（auto-memory 即此目录，见 AOS 根 CLAUDE.md §八）。AOS 根 MEMORY.md 只保留一行指向本目录的指针。
 - 每个教材会话结束时，把最新状态同步回 `10-claude memory/`；跨设备共享走 git（机制见 AOS 根 CLAUDE.md）。
 
 ## 提交边界（单仓库 + 约定分区）
