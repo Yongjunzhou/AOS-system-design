@@ -233,22 +233,40 @@ const marked = new Marked({
 
 let bodyHtml = marked.parse(wrappedContent);
 
-// ── 标题补 id（2026-09-13 新增）─────────────────────────────────────────────
+// ── 标题补 id（2026-09-13 新增；2026-09-19 修 slug 规则）───────────────────
 // marked v5+ 起不再为标题生成 id，导致文档内的 [#锚点] 链接在 PDF 里无处可跳。
-// 此处按与正文链接完全相同的 slug 规则补 id，使 [#anchor] 成为 PDF 内部跳转目标。
-// 规则：转小写 → 去掉非「字母/数字/下划线/空白/连字符」→ 空白转连字符 → 去首尾连字符。
-// 与 Python 端（re: [^\w一-鿿\s\-]）等价，\p{L}\p{N} 覆盖 CJK。
+// 此处按 slug 规则补 id，使 [#anchor] 成为 PDF 内部跳转目标。
+//
+// 规则：转小写 → 去掉非「字母/数字/下划线/空白/连字符」→ **每个空格换一个连字符**
+// → 去首尾连字符。与 GitHub（github-slugger）一致，\p{L}\p{N} 覆盖 CJK。
+//
+// 2026-09-19 修：末步原为 `\s+`→`-`（连续空白**压成一个**连字符），与 GitHub 的
+// 逐空格替换不等价。凡标题里含「被剔除的标点夹在空格之间」者即出错，典型是
+// `## 第一部分 · 要点摘要`——「·」剔除后剩两个空格，GitHub 得 `第一部分--要点摘要`
+// （两个连字符），本工具只得一个，于是目录里手写的 `#第一部分--要点摘要` 找不到目标，
+// 链接在 PDF 里点不动。改为 `/ /g` 后两边一致。
+// 附注：曾疑心是「Chromium 不为非 ASCII 命名目标生成链接」，经隔离实验证伪——
+// 中文 id 照样落地（/Dest 与 /Dests 均为百分号转义名），故 id 无须改 ASCII。
 function mdSlugify(text) {
   return String(text)
     .trim()
     .toLowerCase()
     .replace(/[^\p{L}\p{N}_\s-]/gu, '')
-    .replace(/\s+/g, '-')
+    .replace(/ /g, '-')
     .replace(/^-+|-+$/g, '');
 }
+// 同名标题按 GitHub 约定顺次取 slug、slug-1、slug-2…（既免 id 重复这个无效 HTML，
+// 也让指向第 2 处及以后的锚点找得到目标）。
+const slugSeen = new Map();
 bodyHtml = bodyHtml.replace(
   /<h([1-6])>([\s\S]*?)<\/h\1>/g,
-  (m, lv, inner) => `<h${lv} id="${mdSlugify(inner.replace(/<[^>]+>/g, ''))}">${inner}</h${lv}>`
+  (m, lv, inner) => {
+    const base = mdSlugify(inner.replace(/<[^>]+>/g, ''));
+    const seen = slugSeen.get(base) || 0;
+    slugSeen.set(base, seen + 1);
+    const id = seen === 0 ? base : `${base}-${seen}`;
+    return `<h${lv} id="${id}">${inner}</h${lv}>`;
+  }
 );
 
 // Mermaid 块：<pre><code class="language-mermaid"> → <div class="mermaid">
