@@ -1,0 +1,19 @@
+# podcast2md 依赖
+#
+# 按平台分装：Apple Silicon 走 MLX，其它平台走 faster-whisper（CTranslate2）。
+# 直接 `pip install -r requirements.txt` 即可，标记会自动挑对的那个。
+
+# --- 通用 ---
+av>=18.0
+numpy>=1.26
+transformers>=4.40          # 标点恢复模型
+opencc-python-reimplemented>=0.1.7   # 繁体→简体（Whisper 偶尔整段吐繁体）
+
+# --- 转写后端（二选一，按平台自动）---
+mlx-whisper>=0.4.3; sys_platform == "darwin" and platform_machine == "arm64"
+faster-whisper>=1.0; sys_platform != "darwin" or platform_machine != "arm64"
+
+# PyTorch 只在跑标点恢复时需要。CPU 机器建议装 CPU 版省空间：
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+# NVIDIA 卡则装默认 CUDA 版即可。
+torch>=2.0
