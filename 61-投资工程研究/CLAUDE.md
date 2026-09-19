@@ -22,6 +22,8 @@
 
 **材料保真原则**：转写稿保留口语原貌（重复、语气词不删改），只做两件事——清除语音识别的复读幻觉、校正专有名词；每处校正须在说明注或「术语校正清单」中留痕，可回溯。
 
+**本目录材料由 [`tools/podcast2md`](../tools/podcast2md/README.md) 生成**（2026-09-19 起）：播客音频一条命令跑成上述体例的 md/srt——取源 → 下载 → 本地转写 → 缺口质检补转 → 补标点 → LLM 摘要＋专有名词校正 → 组装。**体例以本节为准**，工具按此实现；人工新增或改动材料时照此对齐。
+
 **材料稿不转 PDF**（2026-09-19 用户定）：材料稿属草案，按 AOS 根记忆 [`feedback-no-pdf-for-drafts`](../.claude/memory/feedback-no-pdf-for-drafts.md) 的惯例——**定稿前只留 md，不转 PDF**，免去反复重转。
 
 ## 子项目边界（互不干扰）
@@ -39,6 +41,7 @@
 - 本子项目的记忆位于 [`10-claude memory/`](10-claude%20memory/)：`10-claude memory/MEMORY.md`（索引）+ `10-claude memory/投资工程研究项目.md`（主记忆）。
 - **处理本子项目内容时**：先读 `10-claude memory/MEMORY.md` 与相关记忆文件，写入 `10-claude memory/` 目录。
 - **禁止**把本子项目内容写入 AOS 根 `.claude/memory/` 或 AOS auto-memory。AOS 根 MEMORY.md 只保留一行指向本目录的指针。
+- **本目录记忆不会被自动加载**，故须**主动读**：Claude Code 的自动记忆加载点锚在 **git 根**、不在工作目录，本项目拿不到自己的自动记忆（边界见 AOS 根 CLAUDE.md §八）。`10-claude memory/` 的加载完全依赖本节的协议。
 - 每个会话结束时，把最新状态同步回 `10-claude memory/`；跨设备共享走 git（机制见 AOS 根 CLAUDE.md §八）。
 
 ## 提交边界（单仓库 + 约定分区）
@@ -56,3 +59,4 @@
 
 - `10-claude memory/` —— 子项目记忆（独立）
 - `00-投资工程研究报告/` —— 研究材料（转写稿/研究稿，按 `NN-` 顺号编号）
+- [`../tools/podcast2md/`](../tools/podcast2md/README.md) —— 材料生成工具（播客音频 → 上述体例的 md/srt）
