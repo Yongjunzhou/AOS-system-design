@@ -48,8 +48,8 @@ description: bpd-biz→系统需求概要·页面组件开发。接收≥1个bpd
 **变更感知**（先于入口检测，检出人类线下修订）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md
-bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
+bash ../.scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md
+bash ../.scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
 ```
 
 检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 变更感知）。
@@ -58,9 +58,9 @@ bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/05-eos-system-req
 
 ```bash
 # 1. 读取待处理节点（三类分节：bpd 队列在 04，srb 队列在 05/06）
-bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md "AI可以处理节点"
+bash ../.scripts/read-section.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md "AI可以处理节点"
+bash ../.scripts/read-section.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md "AI可以处理节点"
+bash ../.scripts/read-section.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md "AI可以处理节点"
 ```
 
 三类入口节点：
@@ -94,8 +94,8 @@ bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requi
 **1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md
-bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
+bash ../.scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md
+bash ../.scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md
 ```
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
@@ -386,15 +386,15 @@ bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/05-eos-system-req
 
 ```bash
 # 更新文件头
-bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md bump-version
-bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md update-head
-bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md update-head
-bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md bump-version
-bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md update-head
+bash ../.scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md bump-version
+bash ../.scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/04-eos-business-detailed.md update-head
+bash ../.scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md bump-version
+bash ../.scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md update-head
+bash ../.scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md bump-version
+bash ../.scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md update-head
 
 # 追加 AI最近变更 记录
-bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md add-recent-change "wft03-biz" "资产写回" "<srb-biz-ID>" "功能表单+窗口标签页需求写回"
+bash ../.scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md add-recent-change "wft03-biz" "资产写回" "<srb-biz-ID>" "功能表单+窗口标签页需求写回"
 ```
 
 不写回 25（仅只读参照）、28（仅只读参照）。FR-ENG 候选线索登记到材料状态表 A。
@@ -439,7 +439,7 @@ FR-ENG 候选线索：<无 / Q 条，已登记材料状态表 A>
 **反馈总结**（仅在人类"整体确认"后执行）：
 
 ```bash
-bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md add-recent-change "wft03-biz" "反馈处理" "<srb-biz-ID>" "<AI 总结的反馈要点>"
+bash ../.scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/05-eos-system-requirement-summary-architecture.md add-recent-change "wft03-biz" "反馈处理" "<srb-biz-ID>" "<AI 总结的反馈要点>"
 ```
 
 ---
@@ -602,9 +602,9 @@ wft03-biz 写入 `待确认方案`/`可构件开发`/`需wft03修订`；下游�
 
 | 脚本 | 用法 | 说明 |
 |------|------|------|
-| `read-section.sh` | `bash ../scripts/read-section.sh <文件> <分节名>` | 提取 ##/### 分节完整内容 |
-| `read-node.sh` | `bash ../scripts/read-node.sh <文件> <节点ID>` | 按节点ID提取节点块（支持 bpd-biz-XXX / srb-biz-XXX / @srb-biz-tab-XXX / @engine-xxx 等） |
-| `detect-changes.sh` | `bash ../scripts/detect-changes.sh <文件>` | 检测人类自上次 AI 运行以来的文档变更 |
-| `update-meta.sh` | `bash ../scripts/update-meta.sh <文件> <操作>` | 维护文件元信息（bump-version / update-head / add-recent-change / move-node） |
+| `read-section.sh` | `bash ../.scripts/read-section.sh <文件> <分节名>` | 提取 ##/### 分节完整内容 |
+| `read-node.sh` | `bash ../.scripts/read-node.sh <文件> <节点ID>` | 按节点ID提取节点块（支持 bpd-biz-XXX / srb-biz-XXX / @srb-biz-tab-XXX / @engine-xxx 等） |
+| `detect-changes.sh` | `bash ../.scripts/detect-changes.sh <文件>` | 检测人类自上次 AI 运行以来的文档变更 |
+| `update-meta.sh` | `bash ../.scripts/update-meta.sh <文件> <操作>` | 维护文件元信息（bump-version / update-head / add-recent-change / move-node） |
 
 所有脚本路径相对于 `eos-wft03-biz-bpd2srb/` 目录。

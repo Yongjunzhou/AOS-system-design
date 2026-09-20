@@ -43,8 +43,8 @@ description: 规范化非功能需求→bpl-nfr 非功能需求框架设计。�
 **变更感知**（先于入口检测，检出人类线下修订）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
-bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
+bash ../.scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
+bash ../.scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
 ```
 
 检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 变更感知）。
@@ -53,8 +53,8 @@ bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-s
 
 ```bash
 # 1. 读取待处理节点
-bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "AI可以处理节点"
+bash ../.scripts/read-section.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md "AI可以处理节点"
+bash ../.scripts/read-section.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "AI可以处理节点"
 ```
 
 **输入校验**（按顺序，命中即退出）：
@@ -78,8 +78,8 @@ bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/02-eos-business-sum
 **1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
-bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
+bash ../.scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
+bash ../.scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
 ```
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
@@ -90,21 +90,21 @@ bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-s
 
 ```bash
 # 获取待处理 规范化的相关方需求 节点 ID 列表
-bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md "待 wft01-nfr 处理"
+bash ../.scripts/read-section.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md "待 wft01-nfr 处理"
 
 # 逐节点读取正文
-bash ../scripts/read-node.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md <spr-ID>
+bash ../.scripts/read-node.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md <spr-ID>
 ```
 
 **3. 加载已有 bpl-nfr 节点**（用于宿主匹配）：
 
 ```bash
 # 读取 STR 树画像和节点索引
-bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "STR树画像"
-bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "STR节点索引"
+bash ../.scripts/read-section.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "STR树画像"
+bash ../.scripts/read-section.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "STR节点索引"
 
 # 按需读取候选 bpl-nfr 节点块（同角色/同语境/同分类维度）
-bash ../scripts/read-node.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md <bpl-nfr-ID>
+bash ../.scripts/read-node.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md <bpl-nfr-ID>
 ```
 
 **4. 加载资产全貌**：
@@ -136,8 +136,8 @@ bash ../scripts/read-node.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summar
 6. **元信息维护**：
 
 ```bash
-bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
+bash ../.scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
+bash ../.scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
 ```
 
 ---
@@ -226,19 +226,19 @@ bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summ
 
 ```bash
 # 追加 AI最近变更 记录 + 移出已完成节点（先于提交，随基线入库）
-bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md add-recent-change "wft01-nfr" "资产写回" "<bpl-nfr-ID>" "22 分类引用写回"
-bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md move-node "<spr-ID>" "wft01-nfr" "done"
+bash ../.scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md add-recent-change "wft01-nfr" "资产写回" "<bpl-nfr-ID>" "22 分类引用写回"
+bash ../.scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md move-node "<spr-ID>" "wft01-nfr" "done"
 
 # 提交本轮 AI 产出（链级不变式：基线 = 最后 AI 提交，git diff <HEAD @上次 AI 运行>..HEAD 只含人类变更）
 git add -A && git commit -m "[AI] wft01-nfr 资产写回（Co-Authored-By: Claude）"
 
 # 更新文件头（HEAD = 刚提交的基线 hash）
-bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md bump-version
-bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md update-head
-bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
-bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md bump-version
-bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md update-head
+bash ../.scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md bump-version
+bash ../.scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md update-head
+bash ../.scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
+bash ../.scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
+bash ../.scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md bump-version
+bash ../.scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.md update-head
 ```
 
 ---
@@ -286,7 +286,7 @@ bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/22-eos-nfr-taxonomy.
 **反馈总结**（仅在人类"整体确认"后执行）：
 
 ```bash
-bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md add-recent-change "wft01-nfr" "反馈处理" "<bpl-nfr-ID>" "<AI 总结的反馈要点>"
+bash ../.scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md add-recent-change "wft01-nfr" "反馈处理" "<bpl-nfr-ID>" "<AI 总结的反馈要点>"
 ```
 
 摘要示例：`22判定修正：批量导入并发性能 Q1→Q2；新增待量化线索"高峰期并发数"`
@@ -409,9 +409,9 @@ bash ../scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summ
 
 | 脚本 | 用法 | 说明 |
 |------|------|------|
-| `read-section.sh` | `bash ../scripts/read-section.sh <文件> <分节名>` | 提取 ##/### 分节完整内容 |
-| `read-node.sh` | `bash ../scripts/read-node.sh <文件> <节点ID>` | 按节点ID提取节点块（支持 spr-NNN / bpl-nfr-XXX / @node-xxx 等） |
-| `detect-changes.sh` | `bash ../scripts/detect-changes.sh <文件>` | 检测人类自上次 AI 运行以来的文档变更 |
-| `update-meta.sh` | `bash ../scripts/update-meta.sh <文件> <操作>` | 维护文件元信息（bump-version / update-head / add-recent-change / move-node） |
+| `read-section.sh` | `bash ../.scripts/read-section.sh <文件> <分节名>` | 提取 ##/### 分节完整内容 |
+| `read-node.sh` | `bash ../.scripts/read-node.sh <文件> <节点ID>` | 按节点ID提取节点块（支持 spr-NNN / bpl-nfr-XXX / @node-xxx 等） |
+| `detect-changes.sh` | `bash ../.scripts/detect-changes.sh <文件>` | 检测人类自上次 AI 运行以来的文档变更 |
+| `update-meta.sh` | `bash ../.scripts/update-meta.sh <文件> <操作>` | 维护文件元信息（bump-version / update-head / add-recent-change / move-node） |
 
 所有脚本路径相对于 `eos-wft01-nfr-or2str/` 目录。

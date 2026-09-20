@@ -775,8 +775,8 @@ Step Start 已检出流水线开发者或 EOS 开发者反馈并纳入"待反馈
 **元信息维护**：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
+bash ../.scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md bump-version
+bash ../.scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md update-head
 ```
 
 #### 5.3.2 确认状态格式示例
@@ -818,7 +818,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary
 人类「整体确认」后，AI 将本轮反馈要点总结为一句话，通过 `update-meta.sh add-recent-change` 写入 `02-*.md` 的 `## AI最近变更` 表：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md add-recent-change "wft01-eng" "反馈处理" "<bpl-eng-ID>" "<AI总结的反馈要点>"
+bash ../.scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md add-recent-change "wft01-eng" "反馈处理" "<bpl-eng-ID>" "<AI总结的反馈要点>"
 ```
 
 摘要示例：`引擎修正：@engine-flow→@engine-workorder；配置信息组候选"流转规则配置"粒度过粗，建议拆分`

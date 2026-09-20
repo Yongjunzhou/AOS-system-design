@@ -43,8 +43,8 @@ description: 规范化的相关方需求→业务流程概要· 业务流程概�
 **变更感知**（先于入口检测，检出人类线下修订）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
-bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
+bash ../.scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
+bash ../.scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
 ```
 
 检出 `HAS_CHANGES=1` → AI 检查变更行，判定变更类型：结构化标注（`[同意]`/`[修改]`/`[驳回]`）→ 纳入"待反馈处理"分节；自由文本 → 标记 `[需确认]`；格式/排版 → 忽略。**先变更感知再入口判定**——纯线下修订若不先检出，会被误判"无待处理对象"退出（详见 human spec §5.1 变更感知）。
@@ -53,8 +53,8 @@ bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-s
 
 ```bash
 # 1. 读取待处理节点
-bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md "AI可以处理节点"
-bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "AI可以处理节点"
+bash ../.scripts/read-section.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md "AI可以处理节点"
+bash ../.scripts/read-section.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md "AI可以处理节点"
 ```
 
 **输入校验**（按顺序，命中即退出）：
@@ -77,8 +77,8 @@ bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/02-eos-business-sum
 **1. 安全复查**（加载前检查；变更感知已在 Step Start 完成）：
 
 ```bash
-bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
-bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
+bash ../.scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/01-eos-specified-requirements.md
+bash ../.scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md
 ```
 
 检出非预期修改时标记 `[需确认]`，不自动推进（§A.3.3 R0a）。
@@ -87,31 +87,31 @@ bash ../scripts/detect-changes.sh ../../../80-pl4eos-2-eosdata/02-eos-business-s
 
 ```bash
 # 获取待处理规范化的相关方需求节点 ID 列表
-bash ../scripts/read-section.sh <01-file> "待 wft01-biz 处理"
+bash ../.scripts/read-section.sh <01-file> "待 wft01-biz 处理"
 
 # 逐节点读取正文
-bash ../scripts/read-node.sh <01-file> <规范化的相关方需求-ID>
+bash ../.scripts/read-node.sh <01-file> <规范化的相关方需求-ID>
 ```
 
 **3. 加载已有业务流程概要节点**（用于宿主匹配）：
 
 ```bash
 # 读取业务概要树画像和节点索引（对应 02 数据文件实际分节名）
-bash ../scripts/read-section.sh <02-file> "0. 业务概要树画像"
-bash ../scripts/read-section.sh <02-file> "2. 业务概要节点索引 / 分片索引"
+bash ../.scripts/read-section.sh <02-file> "0. 业务概要树画像"
+bash ../.scripts/read-section.sh <02-file> "2. 业务概要节点索引 / 分片索引"
 
 # 按需读取候选业务流程概要节点块（同角色/同业务域）
-bash ../scripts/read-node.sh <02-file> <业务流程概要-ID>
+bash ../.scripts/read-node.sh <02-file> <业务流程概要-ID>
 ```
 
 **4. 加载资产全貌**（用于 P 组装）：
 
 ```bash
 # 23 资产：P 侧对齐锚点
-bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/23-eos-output-architecture.md "业务域索引"
+bash ../.scripts/read-section.sh ../../../80-pl4eos-2-eosdata/23-eos-output-architecture.md "业务域索引"
 
 # 25 资产：功能引擎清单（运行时动态读取，不缓存）
-bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/25-eos-engine-models.md "引擎全景"
+bash ../.scripts/read-section.sh ../../../80-pl4eos-2-eosdata/25-eos-engine-models.md "引擎全景"
 ```
 
 **按需扩大原则**：仅在索引无法定位、候选冲突、追溯断裂或人类明确要求时扩大读取范围。禁止默认加载全文件正文。
@@ -157,8 +157,8 @@ bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/25-eos-engine-model
 
 6. **元信息维护**：
    ```bash
-   bash ../scripts/update-meta.sh <02-file> bump-version
-   bash ../scripts/update-meta.sh <02-file> update-head
+   bash ../.scripts/update-meta.sh <02-file> bump-version
+   bash ../.scripts/update-meta.sh <02-file> update-head
    ```
 
 ---
@@ -196,7 +196,7 @@ bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/25-eos-engine-model
 
 **执行顺序**：
 
-1. **确定业务域**——从已加载的规范化的相关方需求节点块的 `**所属角色**` 字段获取角色名。若 Step 1 已加载的角色索引中有该角色的业务域信息则直接引用；否则用 `bash ../scripts/read-node.sh ../../../80-pl4eos-2-eosdata/21-eos-stakeholder-roles.md ROLE-<ID>` 加载角色定义块查找。若 21 文件中无该角色或角色定义中无业务域字段，标记 `[推断]` 并基于角色职责语义匹配
+1. **确定业务域**——从已加载的规范化的相关方需求节点块的 `**所属角色**` 字段获取角色名。若 Step 1 已加载的角色索引中有该角色的业务域信息则直接引用；否则用 `bash ../.scripts/read-node.sh ../../../80-pl4eos-2-eosdata/21-eos-stakeholder-roles.md ROLE-<ID>` 加载角色定义块查找。若 21 文件中无该角色或角色定义中无业务域字段，标记 `[推断]` 并基于角色职责语义匹配
 2. **定义端到端边界**——识别触发→追踪自然终点→闭合验证→边界检查（[§3.2.2](../eos-wft01-biz-spr2bpl.md#322-端到端边界定义)）（详见 human spec）
 3. **判定业务流程概要类型**——D 或 PCA（判据见附录 A.1）
 4. **逐文档要素提取**：
@@ -242,20 +242,20 @@ bash ../scripts/read-section.sh ../../../80-pl4eos-2-eosdata/25-eos-engine-model
 
 ```bash
 # 追加 AI最近变更 记录 + 移出已完成节点（先于提交，随基线入库）
-bash ../scripts/update-meta.sh <02-file> add-recent-change "wft01-biz" "资产写回" "<业务流程概要-ID>" "23B 引用写回"
-bash ../scripts/update-meta.sh <01-file> move-node "<规范化的相关方需求-ID>" "wft01-biz" "done"
+bash ../.scripts/update-meta.sh <02-file> add-recent-change "wft01-biz" "资产写回" "<业务流程概要-ID>" "23B 引用写回"
+bash ../.scripts/update-meta.sh <01-file> move-node "<规范化的相关方需求-ID>" "wft01-biz" "done"
 # 有未处理 `[修改]`/`[驳回]` 反馈的条目移入「待反馈处理」分节（对齐 SKILL 指南 §5.6 第6项）
 
 # 提交本轮 AI 产出（链级不变式：基线 = 最后 AI 提交，git diff <HEAD @上次 AI 运行>..HEAD 只含人类变更）
 git add -A && git commit -m "[AI] wft01-biz 资产写回（Co-Authored-By: Claude）"
 
 # 更新文件头（HEAD = 刚提交的基线 hash）
-bash ../scripts/update-meta.sh <01-file> bump-version
-bash ../scripts/update-meta.sh <01-file> update-head
-bash ../scripts/update-meta.sh <02-file> bump-version
-bash ../scripts/update-meta.sh <02-file> update-head
-bash ../scripts/update-meta.sh <23-file> bump-version
-bash ../scripts/update-meta.sh <23-file> update-head
+bash ../.scripts/update-meta.sh <01-file> bump-version
+bash ../.scripts/update-meta.sh <01-file> update-head
+bash ../.scripts/update-meta.sh <02-file> bump-version
+bash ../.scripts/update-meta.sh <02-file> update-head
+bash ../.scripts/update-meta.sh <23-file> bump-version
+bash ../.scripts/update-meta.sh <23-file> update-head
 ```
 
 ---
@@ -304,7 +304,7 @@ bash ../scripts/update-meta.sh <23-file> update-head
 反馈互动结束后，AI 将本轮反馈要点总结为一句话，写入 `## AI最近变更`：
 
 ```bash
-bash ../scripts/update-meta.sh <02-file> add-recent-change "wft01-biz" "反馈处理" "<业务流程概要-ID>" "<AI 总结的反馈要点>"
+bash ../.scripts/update-meta.sh <02-file> add-recent-change "wft01-biz" "反馈处理" "<业务流程概要-ID>" "<AI 总结的反馈要点>"
 ```
 
 摘要示例：`引擎修正：@engine-flow→@engine-workorder；PL6-B"订单及时率"新增口径定义`
@@ -427,9 +427,9 @@ D 和 PCA 处理逻辑**流程骨架同构**（场景业务→文档序列→每
 
 | 脚本 | 用法 | 说明 |
 |------|------|------|
-| `read-section.sh` | `bash ../scripts/read-section.sh <文件> <分节名>` | 提取 ##/### 分节完整内容 |
-| `read-node.sh` | `bash ../scripts/read-node.sh <文件> <节点ID>` | 按节点ID提取节点块（支持规范化的相关方需求-NNN / ROLE-XXX / 业务流程概要-XXX / bpl-nfr-XXX / @node-xxx / @engine-xxx / @nfr-NNN） |
-| `detect-changes.sh` | `bash ../scripts/detect-changes.sh <文件>` | 检测人类自上次 AI 运行以来的文档变更 |
-| `update-meta.sh` | `bash ../scripts/update-meta.sh <文件> <操作>` | 维护文件元信息（bump-version / update-head / add-recent-change / move-node） |
+| `read-section.sh` | `bash ../.scripts/read-section.sh <文件> <分节名>` | 提取 ##/### 分节完整内容 |
+| `read-node.sh` | `bash ../.scripts/read-node.sh <文件> <节点ID>` | 按节点ID提取节点块（支持规范化的相关方需求-NNN / ROLE-XXX / 业务流程概要-XXX / bpl-nfr-XXX / @node-xxx / @engine-xxx / @nfr-NNN） |
+| `detect-changes.sh` | `bash ../.scripts/detect-changes.sh <文件>` | 检测人类自上次 AI 运行以来的文档变更 |
+| `update-meta.sh` | `bash ../.scripts/update-meta.sh <文件> <操作>` | 维护文件元信息（bump-version / update-head / add-recent-change / move-node） |
 
 所有脚本路径相对于 `eos-wft01-biz-spr2bpl/` 目录。

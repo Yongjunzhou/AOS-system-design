@@ -2,7 +2,7 @@
 
 **用途**：规范化的相关方需求预处理链（`ort00-textualize` / `ort01-chunk` / `ort02-clarify` / `ort03-norm`）的状态追踪共享接口。AI 通过此表感知原始材料、文本化文档、切分子文件和 规范化的相关方需求基线条目的处理状态；人类通过此表做预处理阶段的批量决策。
 
-**HEAD @上次AI运行**：`{commit-hash}`（AI 每轮 `scripts/ai-commit.sh` 提交基线后更新；各步 Step 1 以 `git diff <该 hash>` 检出人类变更，`git log --author="EOS-AI" -1` 校验兜底）
+**HEAD @上次AI运行**：`{commit-hash}`（AI 每轮 `.scripts/ai-commit.sh` 提交基线后更新；各步 Step 1 以 `git diff <该 hash>` 检出人类变更，`git log --author="EOS-AI" -1` 校验兜底）
 
 **权威源契约**：
 

@@ -46,7 +46,7 @@ description: 文本化原始需求→切分文档·语义切分与反馈执行�
 2. `01-eos-sysdev-status.md` 存在；否则同上
 3. 校验表 A/表 B 表头与字段说明，与状态文档模板不符时按既有口径修正或提示（表 B 模板见 [SKILL 指南 §6.4](../eos-ort01-chunk.md#64-状态文档表-b-模板)）；否则同上
 4. `10-raw-files/` 中存在 `.textualized.md` 文档；否则同上
-5. 确认处于 git 仓库且 AI 基线可用：`scripts/ai-commit.sh` 存在；基线 = 状态文档 `HEAD @上次AI运行` 或最近 AI 提交（`git log --author="EOS-AI" -1`）
+5. 确认处于 git 仓库且 AI 基线可用：`.scripts/ai-commit.sh` 存在；基线 = 状态文档 `HEAD @上次AI运行` 或最近 AI 提交（`git log --author="EOS-AI" -1`）
 6. **感知前置——git diff 检出人类线下修订**（[SKILL 指南 §3.6](../eos-ort01-chunk.md#36-反馈检测判据)）：`git diff --name-status <基线>` + `git status --porcelain` 检出文档/表 A 变更。**存在变更（含纯线下编辑方案块/反馈区，表 A 可能无记录）→ 进入 Step 1 变更检测**（先检出反馈再判入口，避免"表 A 无记录 + 文档已被人类编辑"时误判无待处理退出、反馈丢失）
 7. 无任何变更且无待处理对象时输出「无待处理对象」并结束
 
@@ -118,7 +118,7 @@ description: 文本化原始需求→切分文档·语义切分与反馈执行�
 把本轮 Step 1~3 的处理结果提交为 git 基线（供下次 Step 1 作 diff 基准）：
 
 1. **提交范围**：本轮更新的文本化文档（方案块/反馈区）、切分文件、状态文档表 A/B；人类未提交的编辑一并纳入（`git add -A`）
-2. **执行提交**：`scripts/ai-commit.sh "<提交说明>"`——author=EOS-AI + `[AI]` 前缀 + Co-Authored-By，输出新基线 hash
+2. **执行提交**：`.scripts/ai-commit.sh "<提交说明>"`——author=EOS-AI + `[AI]` 前缀 + Co-Authored-By，输出新基线 hash
 3. **记录基线**：将新基线 hash 写入状态文档 `HEAD @上次AI运行` 字段（与 `git log --author="EOS-AI" -1` 一致；该写入发生在提交后、呈未提交态，下次 Step 1 检出该行时跳过判读，见 Step 1 step 3）
 4. **无变更**：工作区无改动时跳过提交，基线不变
 
@@ -153,7 +153,7 @@ description: 文本化原始需求→切分文档·语义切分与反馈执行�
 
 **一句话**：你表示反馈结束（「整体确认」/「可以了」）时，AI 确认本轮对话反馈均已处理、提交基线、推进状态。
 
-**动作**：人类表示反馈结束（「整体确认」/「可以了」）时，AI **立即收尾一次**——确认本轮对话反馈均已处理（无未追加 `[已处理]` 的记录）→ **提交基线（同 Step 4 机制——`scripts/ai-commit.sh` 全量提交，交接即完整基线）** → 推进状态 → 输出「已确认」摘要。
+**动作**：人类表示反馈结束（「整体确认」/「可以了」）时，AI **立即收尾一次**——确认本轮对话反馈均已处理（无未追加 `[已处理]` 的记录）→ **提交基线（同 Step 4 机制——`.scripts/ai-commit.sh` 全量提交，交接即完整基线）** → 推进状态 → 输出「已确认」摘要。
 
 **为什么必须提交**：否则下次 Step 1 `git diff` 会把 AI 自己的处理误判为人类反馈。对话期间你对文档的静默编辑也随收尾一并纳入基线（交互窗内应口头说明反馈；文档编辑是**线下/运行后**通道），下次不再单独检出。
 
@@ -310,7 +310,7 @@ description: 文本化原始需求→切分文档·语义切分与反馈执行�
 | 切分文件 | `10-raw-files/{原始文件名}.chunk-{seq}.md`（含 YAML frontmatter） |
 | 文本化文档（更新） | `10-raw-files/{原始文件名}.textualized.md`（生成分支含方案块；执行分支回归纯原文） |
 | 状态文档表 A/表 B | `01-eos-sysdev-status.md` |
-| git 基线 | 每次 Step 4 `scripts/ai-commit.sh` 提交生成（`[AI]` 标识 + 记录基线 hash） |
+| git 基线 | 每次 Step 4 `.scripts/ai-commit.sh` 提交生成（`[AI]` 标识 + 记录基线 hash） |
 
 ---
 
@@ -337,7 +337,7 @@ status: raw
 
 ## 六、自检清单
 
-- [ ] Step Start 已确认基线可用（`scripts/ai-commit.sh` 存在）
+- [ ] Step Start 已确认基线可用（`.scripts/ai-commit.sh` 存在）
 - [ ] Step 1 已 `git diff <基线>` 检变更并判读意图，记录到表 A `内容摘要`
 - [ ] 人类对表 A 的直接修改已标记 `[需确认]`、未覆盖
 - [ ] 状态文档 `HEAD @上次AI运行` 行已跳过判读（AI 自身元数据，不记录、不 `[需确认]`）

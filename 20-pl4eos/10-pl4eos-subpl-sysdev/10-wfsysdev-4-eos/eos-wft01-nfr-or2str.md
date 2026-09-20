@@ -620,7 +620,7 @@ Step Start 已检出人类反馈并纳入"待反馈处理"分节（§5.1 变更�
 人类「整体确认」后，AI 将本轮反馈要点总结为一句话，通过 `update-meta.sh add-recent-change` 写入 `02-*.md` 的 `## AI最近变更` 表：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md add-recent-change "wft01-nfr" "反馈处理" "<bpl-nfr-ID>" "<AI总结的反馈要点>"
+bash ../.scripts/update-meta.sh ../../80-pl4eos-2-eosdata/02-eos-business-summary-architecture.md add-recent-change "wft01-nfr" "反馈处理" "<bpl-nfr-ID>" "<AI总结的反馈要点>"
 ```
 
 摘要示例：`分类维度修正：系统性能→操作人机工效；"页面查询响应时间"适用对象限定为采购单列表页`

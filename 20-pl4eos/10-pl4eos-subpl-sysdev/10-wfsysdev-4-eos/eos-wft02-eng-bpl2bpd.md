@@ -724,8 +724,8 @@ Step Start 已检出人类反馈并纳入"待反馈处理"分节（§5.1 变更�
 **元信息维护**：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md bump-version
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md update-head
+bash ../.scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md bump-version
+bash ../.scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md update-head
 ```
 
 #### 5.3.2 确认状态格式示例
@@ -767,7 +767,7 @@ bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detaile
 人类「整体确认」后，AI 将本轮反馈要点总结为一句话，通过 `update-meta.sh add-recent-change` 写入 `04-*.md` 的 `## AI最近变更` 表：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md add-recent-change "wft02-eng" "反馈处理" "<bpd-eng-ID>" "<AI总结的反馈要点>"
+bash ../.scripts/update-meta.sh ../../80-pl4eos-2-eosdata/04-eos-business-detailed.md add-recent-change "wft02-eng" "反馈处理" "<bpd-eng-ID>" "<AI总结的反馈要点>"
 ```
 
 摘要示例：`CU 引擎归属修正：@engine-flow→@engine-entity；CU"节点基本信息"粒度过粗，建议拆分`

@@ -614,7 +614,7 @@ Step Start 已检出人类反馈并纳入"待反馈处理"分节（§5.1 变更�
 人类「整体确认」后，AI 将本轮反馈要点总结为一句话，通过 `update-meta.sh add-recent-change` 写入 `06-*.md` 的 `## AI最近变更` 表：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md add-recent-change "wft04-eng" "反馈处理" "<srl-eng-ID>" "<AI总结的反馈要点>"
+bash ../.scripts/update-meta.sh ../../80-pl4eos-2-eosdata/06-eos-system-requirement-detailed.md add-recent-change "wft04-eng" "反馈处理" "<srl-eng-ID>" "<AI总结的反馈要点>"
 ```
 
 摘要示例：`构件调整：节点配置区补"批量删除"构件（交互类）；组件业务补状态反馈`

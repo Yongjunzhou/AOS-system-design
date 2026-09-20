@@ -2127,7 +2127,7 @@ Skill 的 Step 1（设计材料加载）通过脚本按需加载产品数据或�
 读取目标文件之前，AI 用脚本检测是否有未预期的文件修改：
 
 ```
-bash scripts/detect-changes.sh <目标文件>
+bash .scripts/detect-changes.sh <目标文件>
   → HEAD @上次 AI 运行 字段取上次 hash
   → git diff <hash>..HEAD -- <文件>
   → HAS_CHANGES=0：无变更
@@ -2142,7 +2142,7 @@ bash scripts/detect-changes.sh <目标文件>
 **步骤一：读 AI可以处理节点（优先）**
 
 ```
-bash scripts/read-section.sh <文件> "AI可以处理节点"
+bash .scripts/read-section.sh <文件> "AI可以处理节点"
   → 输出整个分节（含所有子分节：待 <Skill> 处理 / 待反馈处理 / 待下游退回处理）
   → AI 从对应子分节获取待处理节点 ID 列表
 ```
@@ -2150,7 +2150,7 @@ bash scripts/read-section.sh <文件> "AI可以处理节点"
 **步骤二：逐节点加载**
 
 ```
-bash scripts/read-node.sh <文件> <节点ID>
+bash .scripts/read-node.sh <文件> <节点ID>
   → 按节点ID自动识别格式（spr-001 / bpl-biz-XXX / @node-xxx / @engine-xxx / ROLE-XXX）
   → 输出该节点块的完整内容（从块起始标记到下一个同级节点或分节边界）
 ```
@@ -2158,7 +2158,7 @@ bash scripts/read-node.sh <文件> <节点ID>
 **步骤三：按需加载分节**（用于索引、画像等非节点内容）
 
 ```
-bash scripts/read-section.sh <文件> <分节名>
+bash .scripts/read-section.sh <文件> <分节名>
   → 匹配 ## 或 ### 级别的标题
   → 输出该分节完整内容（到下一个同级或更高级标题为止）
 ```
@@ -2188,10 +2188,10 @@ AI 写入或修改产品数据文档或资产文档中的节点后，必须同�
 
 | 操作 | 更新方式 |
 |------|---------|
-| 新增/修改/删除节点 | `bash scripts/update-meta.sh move-node` 维护 AI可以处理节点 分节 |
-| 版本号递增 | `bash scripts/update-meta.sh bump-version` |
-| HEAD hash 更新 | `bash scripts/update-meta.sh update-head` |
-| 变更记录追加 | `bash scripts/update-meta.sh add-recent-change`（保留最近30条） |
+| 新增/修改/删除节点 | `bash .scripts/update-meta.sh move-node` 维护 AI可以处理节点 分节 |
+| 版本号递增 | `bash .scripts/update-meta.sh bump-version` |
+| HEAD hash 更新 | `bash .scripts/update-meta.sh update-head` |
+| 变更记录追加 | `bash .scripts/update-meta.sh add-recent-change`（保留最近30条） |
 
 | 规则 | 说明 |
 |------|------|
@@ -2308,7 +2308,7 @@ graph TD
 > 
 > **反馈通道双轨**——人类可任选两种方式反馈，各 Skill 均支持：①**自然语言对话讨论**（主通道）——AI 产出方案后不结束对话，等待人类反馈；②**线下文档修订**——人类直接打开方案文档，在 `确认状态` 字段标注 `[同意]`/`[修改]`/`[驳回]`，或自由文本编辑方案内容——经 Step Start 变更感知（git diff，§11.10）检出后按本协议处理。两轨等价：对话反馈由 AI 即时落账（追 `[已处理]`），线下修订经 git diff 检出后同样落账；AI 每轮提交基线，保证下一轮 diff 只含人类变更。`确认状态` 字段由 AI 在产出方案时初始化（空），对话反馈由 AI 追加 `[已处理]`，线下标注由人类写入、AI 检出后同样追加 `[已处理]`。
 >
-> **预处理链特化**：规范化的相关方需求预处理链（`eos-ort00-textualize` / `eos-ort01-chunk` / `eos-ort02-clarify` / `eos-ort03-norm`）的反馈交互与 wft 链一致（§A.5 双轨）——**人类反馈 = 直接编辑文档/状态表（线下）+ 自然语言对话（线上，AI 产出方案后不结束对话，即时处理）**，不用口令表（无「汇总/继续」等结构化口令，自然语言表达即反馈）；**ort00 例外**——其反馈单源 = 表 A 状态编辑，全自动无对话。每次运行结束 `scripts/ai-commit.sh` 提交基线（author=EOS-AI + `[AI]` 前缀 + 更新 `HEAD @上次AI运行`），维持「基线 = 最后 AI 提交，diff 只含人类变更」的链级不变式。
+> **预处理链特化**：规范化的相关方需求预处理链（`eos-ort00-textualize` / `eos-ort01-chunk` / `eos-ort02-clarify` / `eos-ort03-norm`）的反馈交互与 wft 链一致（§A.5 双轨）——**人类反馈 = 直接编辑文档/状态表（线下）+ 自然语言对话（线上，AI 产出方案后不结束对话，即时处理）**，不用口令表（无「汇总/继续」等结构化口令，自然语言表达即反馈）；**ort00 例外**——其反馈单源 = 表 A 状态编辑，全自动无对话。每次运行结束 `.scripts/ai-commit.sh` 提交基线（author=EOS-AI + `[AI]` 前缀 + 更新 `HEAD @上次AI运行`），维持「基线 = 最后 AI 提交，diff 只含人类变更」的链级不变式。
 >
 > **模式分化（按反馈类型）**：
 >

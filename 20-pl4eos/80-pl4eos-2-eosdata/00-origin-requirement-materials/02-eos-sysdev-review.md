@@ -723,7 +723,7 @@
 ### 2026-08-17 · ort01 第三轮审视（人类方案 v0.44→v0.45 / SKILL v2.26→v2.27）
 
 **对象**：[eos-ort01-chunk.md](../../10-pl4eos-subpd-sysdev/00-presysdev-4-eos/eos-ort01-chunk.md)（人类方案 v0.44→v0.45）+ [SKILL.md](../../10-pl4eos-subpd-sysdev/00-presysdev-4-eos/eos-ort01-chunk/SKILL.md)（v2.26→v2.27）
-**参照系**：91 规范 §A.5 模式分化表、ort00 v0.28 基线协议、`01-eos-sysdev-status.md`、`scripts/ai-commit.sh`
+**参照系**：91 规范 §A.5 模式分化表、ort00 v0.28 基线协议、`01-eos-sysdev-status.md`、`.scripts/ai-commit.sh`
 **结论**：主流程（Step 1~6、git 基线协议、语义切分规则）前两轮已稳定，本轮问题集中在**判读映射完备性**（F20/F24/F28）、**状态机闭合**（F23/F25）、**悬空引用**（F21）与**链级元数据一致性**（F22/F26）。发现 F20~F28 九项（中 4 / 低 5），已按用户确认的处置方向全量修复（D14=A、D15=A）。
 
 **发现清单**：
@@ -853,7 +853,7 @@
 
 **对象**：[eos-ort01-chunk.md](../../10-pl4eos-subpd-sysdev/00-presysdev-4-eos/eos-ort01-chunk.md)（人类方案 v0.34）+ [SKILL.md](../../10-pl4eos-subpd-sysdev/00-presysdev-4-eos/eos-ort01-chunk/SKILL.md)（v2.17）
 **参照系**：91 规范 §1.4/A.3.2/A.5/A.7、ort00/ort02/ort03、`01-eos-sysdev-status.md`
-**结论**：发现 F1~F10；反馈回路重设计为 **git 基线协议**并已实施（人类方案 v0.35 / SKILL v2.18 / 91 v5.14 / `scripts/ai-commit.sh` 新建）
+**结论**：发现 F1~F10；反馈回路重设计为 **git 基线协议**并已实施（人类方案 v0.35 / SKILL v2.18 / 91 v5.14 / `.scripts/ai-commit.sh` 新建）
 **评审方案存档**：[40-review/万辉-20260815-01-ort01反馈回路git基线协议-方案.md](../../../40-review/万辉-20260815-01-ort01反馈回路git基线协议-方案.md)
 
 **发现清单**：
@@ -889,7 +889,7 @@
 - `eos-ort01-chunk.md`：v0.34 → v0.35（反馈回路 git 基线协议全量重写）
 - `eos-ort01-chunk/SKILL.md`：v2.17 → v2.18（同步）
 - `91-eos-biz-eng-spec.md`：v5.13 → v5.14（§A.5 补预处理链特化声明，试点 ort01）
-- `scripts/ai-commit.sh`：新建（AI 标识提交 + 基线 hash 输出）
+- `.scripts/ai-commit.sh`：新建（AI 标识提交 + 基线 hash 输出）
 - `40-review/万辉-20260815-01-ort01反馈回路git基线协议-方案.md`：评审方案存档
 
 **待办**：
@@ -905,7 +905,7 @@
 ### 2026-08-15 · ort01 方案 A 细化后审视（人类方案 v0.38 / SKILL v2.21）
 
 **对象**：[eos-ort01-chunk.md](../../10-pl4eos-subpd-sysdev/00-presysdev-4-eos/eos-ort01-chunk.md)（人类方案 v0.38）+ [SKILL.md](../../10-pl4eos-subpd-sysdev/00-presysdev-4-eos/eos-ort01-chunk/SKILL.md)（v2.21）
-**参照系**：91 规范 §1.4/A.5/A.7/§11.2、ort00 v0.23 / ort02 v0.16 / ort03 v0.32、`01-eos-sysdev-status.md`、`scripts/ai-commit.sh`
+**参照系**：91 规范 §1.4/A.5/A.7/§11.2、ort00 v0.23 / ort02 v0.16 / ort03 v0.32、`01-eos-sysdev-status.md`、`.scripts/ai-commit.sh`
 **结论**：方案 A 细化（Step 4/5/6 拆分）主体自洽，但发现 F11~F19 九项——F11 阻断 `[重新切分]` 功能（F1 吸收不完整）、F12/F13 为 git 基线协议落地缺口；前次 F2/F3 确认仍未闭环。**先登记后修复**：F11~F19 与 F3 已按清单修复（见实施落地），其中 **F14 于同日改判（决策 B，Step 6 恢复全量提交）**；**F2 已裁决（B，见表 A「文本化文档」列口径）**。
 
 **发现清单**：
@@ -928,7 +928,7 @@
 |---|---------|------|
 | D9 | `[重新切分]` 反馈如何进入 Step 2 | Step 2 分两个入口：`切分方案待确认`（调整/同意/不拆分/废弃）+ `已切分`（重切）；或 Step 1 记录 `[重新切分]` 时直接路由为独立重切步骤——倾向前者 |
 | D10 | `HEAD @上次AI运行` 字段归属 | 加进状态文档表头（与 91 §11.2 产品文档文件头同构），ort00 §4.2 模板同步；git log 校验兜底。或弃用字段、仅依赖 `git log --author="EOS-AI" -1`（该命令天然容忍人类提交夹在中间）——倾向保留字段 |
-| D11 | Step 6 提交范围 | **已改判为 B**：与 Step 4 同机制全量提交（`scripts/ai-commit.sh` `git add -A`，交接即完整基线）。原「缩为表 A」方案因 ai-commit.sh 内部 `git add -A` 不可行（需改脚本加范围参数），且全量提交更符合「交接基线=完整状态」直觉；对话窗内文档静默编辑吸收可接受（交互窗内应口头反馈），线下（运行后）编辑仍由 Step 1 兜底 |
+| D11 | Step 6 提交范围 | **已改判为 B**：与 Step 4 同机制全量提交（`.scripts/ai-commit.sh` `git add -A`，交接即完整基线）。原「缩为表 A」方案因 ai-commit.sh 内部 `git add -A` 不可行（需改脚本加范围参数），且全量提交更符合「交接基线=完整状态」直觉；对话窗内文档静默编辑吸收可接受（交互窗内应口头反馈），线下（运行后）编辑仍由 Step 1 兜底 |
 | D12 | 表 A 内容摘要双角色 | 倾向内容摘要 = 「阶段摘要 ∥ 反馈记录」分段共存，同步状态文档与 ort00 字段说明（避免反馈记录挤掉阶段摘要） |
 | D13 | F2 表 A「文本化文档」列（前次遗留） | 裁决为 **B**：列始终指向 `.textualized.md`（切片清单由表 B `子文件` 列独揽，材料级不重复）；修正状态文档/ort00 声明（写入者 ort00，移除「ort01 切分后更新为 chunk 名」），ort01 行为不变；Step 2 执行切分时内容摘要阶段摘要补「已切分 N 片（见表 B）」 |
 

@@ -776,7 +776,7 @@ Step Start 已检出人类反馈并纳入"待反馈处理"分节（§5.1 变更�
 人类「整体确认」后，AI 将本轮反馈要点总结为一句话，通过 `update-meta.sh add-recent-change` 写入 `07-*.md` 的 `## AI最近变更` 表：
 
 ```bash
-bash ../scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-platform-product-architecture.md add-recent-change "wft05-eng" "反馈处理" "<pa-eng-ID>" "<AI总结的反馈要点>"
+bash ../.scripts/update-meta.sh ../../80-pl4eos-2-eosdata/07-eos-platform-product-architecture.md add-recent-change "wft05-eng" "反馈处理" "<pa-eng-ID>" "<AI总结的反馈要点>"
 ```
 
 摘要示例：`组件归属调整：流程配置发布服务从引擎专属组件调整为公共平台发布服务；发布动作 NFR 承接补幂等与回滚审计`

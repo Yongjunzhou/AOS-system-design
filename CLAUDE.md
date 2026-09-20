@@ -86,7 +86,7 @@
 │   ├── 20-eos-configs/             # 配置定义（开发线产出）
 │   ├── 30-eos-deployment/          # 部署交付（集成线产出）
 │   └── 40-eos-operation/           # 运维数据（运维线产出）
-50-subprojects/                         # 子项目区（AOS 项目集中的子项目；共同目标见 §九）
+100-subprojects/                         # 子项目区（AOS 项目集中的子项目；共同目标见 §九）
 │   ├── 00-topic-research/          #   杂项选题区——未定形选题的暂存与孵化（不是子项目）
 │   ├── 01-系统工程研究/            #   系统工程方法论 → 教材书 + 培训教材
 │   ├── 02-AI部署研究/              #   企业私域大模型推理平台选型
@@ -168,7 +168,7 @@
 - 版本号格式：`v[主版本].[次版本]`
 - 中文为主体语言，术语附英文对照
 - **写作规则适用所有文档**：括号只放指针不放内容、交叉引用不作主干谓语、正文只写"现在是什么"（不写历史与待办）——详见 [00-doc-conventions §8.9~§8.10](00-generalspec/00-doc-conventions.md)
-- **PDF 转换统一使用 [tools/md2pdf](tools/md2pdf/md2pdf.js)**：`node tools/md2pdf/md2pdf.js <md路径> [输出.pdf]`（marked + puppeteer 渲染，支持 Mermaid 图表，默认输出与源文件同名 .pdf；2026-09-03 用户定，后续所有 md→PDF 转换按此方式进行）
+- **PDF 转换统一使用 [.tools/md2pdf](.tools/md2pdf/md2pdf.js)**：`node .tools/md2pdf/md2pdf.js <md路径> [输出.pdf]`（marked + puppeteer 渲染，支持 Mermaid 图表，默认输出与源文件同名 .pdf；2026-09-03 用户定，后续所有 md→PDF 转换按此方式进行）
 
 ---
 
@@ -183,7 +183,7 @@ Claude Code 的加载点由**本机用户级设置** `autoMemoryDirectory` 直�
 ### 每台设备的一次性配置
 
 ```bash
-node tools/setup-memory.js        # 每台机器一次；--check 只查看，--dry-run 只显示
+node .tools/setup-memory.js        # 每台机器一次；--check 只查看，--dry-run 只显示
 ```
 
 - 该项设置**必须是绝对路径**，而两台设备的仓库位置不同，所以无法随 git 同步，只能各设备各跑一次。跑完重启会话生效。
@@ -212,7 +212,7 @@ node tools/setup-memory.js        # 每台机器一次；--check 只查看，--d
 | 记忆库 | 记忆根 |
 |--------|--------|
 | 主项目 | `.claude/memory/` |
-| 子项目 | `50-subprojects/<NN-名>/claude-memory/`（含 `00-topic-research/`） |
+| 子项目 | `100-subprojects/<NN-名>/claude-memory/`（含 `00-topic-research/`） |
 
 两处结构**完全相同**，只有事实记忆的**份数**不同：
 
@@ -246,7 +246,7 @@ node tools/setup-memory.js        # 每台机器一次；--check 只查看，--d
 
 AOS 整体是一个**项目集**——主线（元流水线 → EOS 流水线 → EOS 本体）与各子项目共同指向一个目标：**把不同专业的工作或事项工程化**。主线是该目标最系统的一次展开；各子项目是它在其他专业领域上的展开，也是通用工程化方法的产出源。
 
-仓库顶层因此分两区：**主项目区**（`00`~`40`、`80`、`90`）与**子项目区**（`50-subprojects/`）。子项目按 `NN-` 顺号编在区内，不在顶层单独占位。
+仓库顶层因此分两区：**主项目区**（`00`~`40`、`80`、`90`）与**子项目区**（`100-subprojects/`）。子项目按 `NN-` 顺号编在区内，不在顶层单独占位。
 
 区内另设 `00-topic-research/` 作**杂项选题区**——未定形选题的暂存与孵化处，不算子项目。判据是**该话题是否需要继续深入研究**：需要则移出本区、独立为 `NN-` 子项目并按建区配方配齐配件；不需要则留在区内。
 
@@ -263,12 +263,12 @@ AOS 整体是一个**项目集**——主线（元流水线 → EOS 流水线 �
 
 | 名称 | 位置 | 性质 | 独立记忆 | 说明 |
 |--------|------|------|---------|------|
-| 杂项选题 | `50-subprojects/00-topic-research/` | 杂项 | `claude-memory/` | 未定形选题的暂存与孵化处，**不算子项目**；判据是「该话题是否需要继续深入研究」——需要则移出独立为 `NN-` 子项目。现行内容：运营体系构建、指标与看板、目标价格管理、91 规范第十一章讨论。见 [`CLAUDE.md`](50-subprojects/00-topic-research/CLAUDE.md) |
-| 系统工程研究 | `50-subprojects/01-系统工程研究/` | 产出型 | `claude-memory/` | 研究报告（`00-系统工程相关研究报告/`）→ 两个产出：教材书（`03-架构师是个怎样的物种/`）+ 培训教材（`02-架构工程师培训材料/`）。导航与记忆隔离协议见子项目 [`CLAUDE.md`](50-subprojects/01-系统工程研究/CLAUDE.md) |
-| AI 部署研究 | `50-subprojects/02-AI部署研究/` | 研究型 | `claude-memory/` | 企业私域大模型推理平台选型研究。现行 01 号选型研究报告、02 号专用模型训练与机载部署专项研究报告、11 号建设方案建议，落 `01-AI私有部署研究报告/` 与 `11-企业AI基础设施建设方案建议/`。见子项目 [`CLAUDE.md`](50-subprojects/02-AI部署研究/CLAUDE.md) |
-| 健康研究报告 | `50-subprojects/03-健康研究报告/` | 研究型 | `claude-memory/` | 健康主题书稿讲读摘录。现行仅 `走路-被严重低估的生命体征.md` 一篇；用途边界、报告编号组织与后续内容形态待后续确定。见子项目 [`CLAUDE.md`](50-subprojects/03-健康研究报告/CLAUDE.md) |
-| 现代思维工具研究 | `50-subprojects/04-现代思维工具研究/` | 研究型 | `claude-memory/` | 思维工具研究。现行 `激励相容/01-相容理解相关对话记录.md`。见子项目 [`CLAUDE.md`](50-subprojects/04-现代思维工具研究/CLAUDE.md) |
-| 投资工程研究 | `50-subprojects/05-投资工程研究/` | 产出型 | `claude-memory/` | 路径「材料准备 → 输出」。当前处**材料准备期**，材料落 `00-投资工程研究报告/`（播客/访谈转写稿、研究稿）；产出形态待后续确定。见子项目 [`CLAUDE.md`](50-subprojects/05-投资工程研究/CLAUDE.md) |
+| 杂项选题 | `100-subprojects/00-topic-research/` | 杂项 | `claude-memory/` | 未定形选题的暂存与孵化处，**不算子项目**；判据是「该话题是否需要继续深入研究」——需要则移出独立为 `NN-` 子项目。现行内容：运营体系构建、指标与看板、目标价格管理、91 规范第十一章讨论。见 [`CLAUDE.md`](100-subprojects/00-topic-research/CLAUDE.md) |
+| 系统工程研究 | `100-subprojects/01-系统工程研究/` | 产出型 | `claude-memory/` | 研究报告（`00-系统工程相关研究报告/`）→ 两个产出：教材书（`03-架构师是个怎样的物种/`）+ 培训教材（`02-架构工程师培训材料/`）。导航与记忆隔离协议见子项目 [`CLAUDE.md`](100-subprojects/01-系统工程研究/CLAUDE.md) |
+| AI 部署研究 | `100-subprojects/02-AI部署研究/` | 研究型 | `claude-memory/` | 企业私域大模型推理平台选型研究。现行 01 号选型研究报告、02 号专用模型训练与机载部署专项研究报告、11 号建设方案建议，落 `01-AI私有部署研究报告/` 与 `11-企业AI基础设施建设方案建议/`。见子项目 [`CLAUDE.md`](100-subprojects/02-AI部署研究/CLAUDE.md) |
+| 健康研究报告 | `100-subprojects/03-健康研究报告/` | 研究型 | `claude-memory/` | 健康主题书稿讲读摘录。现行仅 `走路-被严重低估的生命体征.md` 一篇；用途边界、报告编号组织与后续内容形态待后续确定。见子项目 [`CLAUDE.md`](100-subprojects/03-健康研究报告/CLAUDE.md) |
+| 现代思维工具研究 | `100-subprojects/04-现代思维工具研究/` | 研究型 | `claude-memory/` | 思维工具研究。现行 `激励相容/01-相容理解相关对话记录.md`。见子项目 [`CLAUDE.md`](100-subprojects/04-现代思维工具研究/CLAUDE.md) |
+| 投资工程研究 | `100-subprojects/05-投资工程研究/` | 产出型 | `claude-memory/` | 路径「材料准备 → 输出」。当前处**材料准备期**，材料落 `00-投资工程研究报告/`（播客/访谈转写稿、研究稿）；产出形态待后续确定。见子项目 [`CLAUDE.md`](100-subprojects/05-投资工程研究/CLAUDE.md) |
 
 ### 执行路径约定
 
@@ -282,11 +282,11 @@ AOS 整体是一个**项目集**——主线（元流水线 → EOS 流水线 �
 
 - 主项目改动与子项目改动**分别 commit**（各自语义独立，commit message 注明归属）。
 - 处理主项目时，不把子项目改动混入本次提交；处理子项目时，不把主项目改动混入。
-- 新子项目创建时：跑 `node tools/new-subproject.js <名>`——一次建齐子目录、子 CLAUDE.md、`claude-memory/`（索引 ＋ 主记忆），编号自动顺延；**只剩指针区加一行需人工**（脚本会打印可粘贴的那一行）。
-- 区内每个条目都须有 `claude-memory/`（含索引与主记忆），无例外。复验跑 `node tools/check-subprojects.js`（有缺口则退出码 1）。
+- 新子项目创建时：跑 `node .tools/new-subproject.js <名>`——一次建齐子目录、子 CLAUDE.md、`claude-memory/`（索引 ＋ 主记忆），编号自动顺延；**只剩指针区加一行需人工**（脚本会打印可粘贴的那一行）。
+- 区内每个条目都须有 `claude-memory/`（含索引与主记忆），无例外。复验跑 `node .tools/check-subprojects.js`（有缺口则退出码 1）。
 
 ---
 
 ## 十、工作风格
 
-- **禁止选项式交互**：讨论/确认事项时一律自由散文陈述（背景 + 问题 + 建议 + 理由），不用选项卡片/选项卡界面让用户做多选题；用户自由回答"改/不改/怎么改"，再据其指示执行（2026-08-25 用户定）。教材子项目侧同步记录于 [`50-subprojects/01-系统工程研究/claude-memory/feedback-no-option-interaction.md`](50-subprojects/01-系统工程研究/claude-memory/feedback-no-option-interaction.md) 及 [`50-subprojects/01-系统工程研究/CLAUDE.md`](50-subprojects/01-系统工程研究/CLAUDE.md) 工作风格节。
+- **禁止选项式交互**：讨论/确认事项时一律自由散文陈述（背景 + 问题 + 建议 + 理由），不用选项卡片/选项卡界面让用户做多选题；用户自由回答"改/不改/怎么改"，再据其指示执行（2026-08-25 用户定）。教材子项目侧同步记录于 [`100-subprojects/01-系统工程研究/claude-memory/feedback-no-option-interaction.md`](100-subprojects/01-系统工程研究/claude-memory/feedback-no-option-interaction.md) 及 [`100-subprojects/01-系统工程研究/CLAUDE.md`](100-subprojects/01-系统工程研究/CLAUDE.md) 工作风格节。
