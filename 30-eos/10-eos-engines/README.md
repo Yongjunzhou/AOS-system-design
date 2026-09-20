@@ -54,4 +54,4 @@ form-engine/
 | 03 | `03-eos-engine-project.md` | 项目引擎规格（模板） |
 | 04 | `04-eos-engine-cax.md` | CAX 桥接引擎规格（模板） |
 
-（其余引擎的文档随阶段2开发启动后逐步补充）
+（其余引擎的文档随阶段2开发启动后逐步补充。AI 引擎的设计方案见 `00-eos-product-spec/15-eos-ai-capability.md`，待阶段2启动后在此按模板展开实现规格。）
