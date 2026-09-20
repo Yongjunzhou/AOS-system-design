@@ -30,7 +30,7 @@
 
 本子项目是 AOS 项目集内子项目区（`50-subprojects/`）的一员，各子项目共同指向「**把不同专业的工作或事项工程化**」这一目标；本子项目负责该目标在 **投资**上的展开。**自包含在本目录内**（AOS 主 CLAUDE.md §九）：
 
-- **处理本子项目**：工作目录 = 本目录（`50-subprojects/05-投资工程研究/`），读本文件 + `10-claude memory/`。
+- **处理本子项目**：工作目录 = 本目录（`50-subprojects/05-投资工程研究/`），读本文件 + `claude-memory/`。
 - **处理 AOS 主项目**：工作目录 = 仓库根，读 AOS 根 CLAUDE.md + 主记忆 `.claude/memory/`——**不擅自改动其内容**，除非明确要求。
 - **主题上可互引、操作上自包含**：本目录的方法与结论可被其他子项目引用，反之亦然；改动落在谁家由谁做。
 
@@ -38,11 +38,11 @@
 
 本子项目的记忆**独立存放**，与 AOS 项目根记忆（`.claude/memory/`）**互不干扰**：
 
-- 本子项目的记忆位于 [`10-claude memory/`](10-claude%20memory/)：`10-claude memory/MEMORY.md`（索引）+ `10-claude memory/投资工程研究项目.md`（主记忆）。
-- **处理本子项目内容时**：先读 `10-claude memory/MEMORY.md` 与相关记忆文件，写入 `10-claude memory/` 目录。
+- 本子项目的记忆位于 [`claude-memory/`](claude-memory/)：`claude-memory/MEMORY.md`（索引）+ `claude-memory/投资工程研究项目.md`（主记忆）。
+- **处理本子项目内容时**：先读 `claude-memory/MEMORY.md` 与相关记忆文件，写入 `claude-memory/` 目录。
 - **禁止**把本子项目内容写入 AOS 根 `.claude/memory/` 或 AOS auto-memory。AOS 根 MEMORY.md 只保留一行指向本目录的指针。
-- **本目录记忆不会被自动加载**，故须**主动读**：Claude Code 的自动记忆加载点锚在 **git 根**、不在工作目录，本项目拿不到自己的自动记忆（边界见 AOS 根 CLAUDE.md §八）。`10-claude memory/` 的加载完全依赖本节的协议。
-- 每个会话结束时，把最新状态同步回 `10-claude memory/`；跨设备共享走 git（机制见 AOS 根 CLAUDE.md §八）。
+- **本目录记忆不会被自动加载**，故须**主动读**：Claude Code 的自动记忆加载点锚在 **git 根**、不在工作目录，本项目拿不到自己的自动记忆（边界见 AOS 根 CLAUDE.md §八）。`claude-memory/` 的加载完全依赖本节的协议。
+- 每个会话结束时，把最新状态同步回 `claude-memory/`；跨设备共享走 git（机制见 AOS 根 CLAUDE.md §八）。
 
 ## 提交边界（单仓库 + 约定分区）
 
@@ -57,6 +57,6 @@
 
 ## 关键文件导航
 
-- `10-claude memory/` —— 子项目记忆（独立）
+- `claude-memory/` —— 子项目记忆（独立）
 - `00-投资工程研究报告/` —— 研究材料（转写稿/研究稿，按 `NN-` 顺号编号）
 - [`../../tools/podcast2md/`](../../tools/podcast2md/README.md) —— 材料生成工具（播客音频 → 上述体例的 md/srt）

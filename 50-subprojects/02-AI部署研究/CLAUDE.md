@@ -16,7 +16,7 @@
 
 本子项目的记忆与 AOS 根记忆（`.claude/memory/` 及本机 auto-memory）**互不干扰**：
 
-- 本研究如需记忆，独立存放于本目录下——**目录尚未建立**，需建立时按 AOS 主 CLAUDE.md §九 新建，组织仿 `50-subprojects/01-系统工程研究/10-claude memory/`。
+- 本研究如需记忆，独立存放于本目录下——**目录尚未建立**，需建立时按 AOS 主 CLAUDE.md §九 新建，组织仿 `50-subprojects/01-系统工程研究/claude-memory/`。
 - **禁止**把本研究内容写入 AOS 根 `.claude/memory/` 或 auto-memory。
 - 本子项目已在 AOS 主 CLAUDE.md §九 指针区与目录树登记；AOS 根 MEMORY.md 只保留一行指针，不复制内部内容。
 

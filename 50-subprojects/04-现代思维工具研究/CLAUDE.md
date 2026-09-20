@@ -6,7 +6,7 @@
 
 本子项目是 AOS 项目集内子项目区（`50-subprojects/`）的一员，各子项目共同指向「**把不同专业的工作或事项工程化**」这一目标；本子项目负责该目标在 **现代思维工具**上的展开。按 AOS 主 CLAUDE.md §九 **自包含在本目录内**：
 
-- **处理本目录研究**：工作目录 = 本目录（`50-subprojects/04-现代思维工具研究/`），读本文件 + `10-claude memory/`。
+- **处理本目录研究**：工作目录 = 本目录（`50-subprojects/04-现代思维工具研究/`），读本文件 + `claude-memory/`。
 - **处理 AOS 主项目 / 其他子项目**：工作目录 = 对应目录，读对应 CLAUDE.md——**不擅自改动其内容**，除非明确要求。
 - **主题上可互引、操作上自包含**：本子项目的方法与结论可被其他子项目引用，反之亦然；改动落在谁家由谁做。
 - 本子项目已在 AOS 主 CLAUDE.md §九 指针区与目录树登记；AOS 根 MEMORY.md 只保留一行指针，不复制内部内容。
@@ -15,7 +15,7 @@
 
 本子项目的记忆**独立存放**，与 AOS 根记忆（`.claude/memory/`，auto-memory 即此目录）**互不干扰**：
 
-- 本子项目的记忆位于 [`10-claude memory/`](10-claude%20memory/)：`10-claude memory/MEMORY.md`（索引）+ `10-claude memory/现代思维工具研究项目.md`（主记忆）。
+- 本子项目的记忆位于 [`claude-memory/`](claude-memory/)：`claude-memory/MEMORY.md`（索引）+ `claude-memory/现代思维工具研究项目.md`（主记忆）。
 - **禁止**把本目录内容写入 AOS 根 `.claude/memory/` 或 auto-memory。
 
 ## 提交边界（单仓库 + 约定分区）

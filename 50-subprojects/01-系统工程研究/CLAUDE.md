@@ -6,7 +6,7 @@
 
 本子项目是 AOS 项目集内子项目区（`50-subprojects/`）的一员，各子项目共同指向「**把不同专业的工作或事项工程化**」这一目标；本子项目负责该目标在 **系统工程方法论 → 教材**上的展开。**自包含在本目录内**（AOS 主 CLAUDE.md §九）：
 
-- **处理教材**：工作目录 = 本目录（`50-subprojects/01-系统工程研究/`），读本文件 + `10-claude memory/`。
+- **处理教材**：工作目录 = 本目录（`50-subprojects/01-系统工程研究/`），读本文件 + `claude-memory/`。
 - **处理 AOS 主项目**：工作目录 = 仓库根，读 AOS 根 CLAUDE.md + 主记忆 `.claude/memory/`——**不擅自改动其内容**，除非明确要求。
 - **主题上可互引、操作上自包含**：本目录的方法与结论可被其他子项目引用，反之亦然；改动落在谁家由谁做。
 
@@ -14,10 +14,10 @@
 
 本子项目的记忆**独立存放**，与 AOS 项目根记忆（`.claude/memory/`）**互不干扰**：
 
-- 本子项目的记忆位于 [`10-claude memory/`](10-claude%20memory/)：`10-claude memory/MEMORY.md`（索引）+ `10-claude memory/教材项目.md`（主记忆）。
-- **编写/打磨教材时**：先读 `10-claude memory/MEMORY.md` 与相关记忆文件，写入 `10-claude memory/` 目录。
+- 本子项目的记忆位于 [`claude-memory/`](claude-memory/)：`claude-memory/MEMORY.md`（索引）+ `claude-memory/教材项目.md`（主记忆）。
+- **编写/打磨教材时**：先读 `claude-memory/MEMORY.md` 与相关记忆文件，写入 `claude-memory/` 目录。
 - **禁止**把教材内容写入 AOS 根 `.claude/memory/`（auto-memory 即此目录，见 AOS 根 CLAUDE.md §八）。AOS 根 MEMORY.md 只保留一行指向本目录的指针。
-- 每个教材会话结束时，把最新状态同步回 `10-claude memory/`；跨设备共享走 git（机制见 AOS 根 CLAUDE.md）。
+- 每个教材会话结束时，把最新状态同步回 `claude-memory/`；跨设备共享走 git（机制见 AOS 根 CLAUDE.md）。
 
 ## 提交边界（单仓库 + 约定分区）
 
@@ -28,11 +28,11 @@
 
 ## 工作风格
 
-- **禁止选项式交互**：讨论/确认事项时一律自由散文陈述（背景 + 问题 + 建议 + 理由），不用 AskUserQuestion 选项卡片让用户做多选题；用户自由回答"改/不改/怎么改"（2026-08-25 用户定，详见 `10-claude memory/feedback-no-option-interaction.md`）。
+- **禁止选项式交互**：讨论/确认事项时一律自由散文陈述（背景 + 问题 + 建议 + 理由），不用 AskUserQuestion 选项卡片让用户做多选题；用户自由回答"改/不改/怎么改"（2026-08-25 用户定，详见 `claude-memory/feedback-no-option-interaction.md`）。
 
 ## 关键文件导航
 
-- `10-claude memory/` —— 子项目记忆（独立）
+- `claude-memory/` —— 子项目记忆（独立）
 - `00-系统工程相关研究报告/` —— 研究报告 00~29 号 + 20250326 正向设计（概念原料源；2026-09-02 统一正名并归档）
 - `01-流程工程师培训课件/` —— 流程工程师培训课件（`00-培训PPT编制要求思路与规则.md` 为编制权威）
 - `02-架构工程师培训材料/` —— 培训教材（17 单元；`00-培训教材-总览.md` 为训练权威框架；单元模板=六件套）
