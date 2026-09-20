@@ -15,7 +15,8 @@
 
 本子项目的记忆与 AOS 根记忆（`.claude/memory/`，auto-memory 即此目录）**互不干扰**：
 
-- 本目录如需记忆，独立存放于本目录下——**目录尚未建立**，需建立时按 AOS 主 CLAUDE.md §九 新建，组织仿 `50-subprojects/01-系统工程研究/claude-memory/`。
+- 本子项目的记忆位于 [`claude-memory/`](claude-memory/)：`claude-memory/MEMORY.md`（索引）+ `claude-memory/健康主题研究项目.md`（主记忆）。
+- **编写/研究本子项目时**：先读 `claude-memory/MEMORY.md` 与相关记忆文件，写入 `claude-memory/` 目录。
 - **禁止**把本目录内容写入 AOS 根 `.claude/memory/` 或 auto-memory。
 
 ## 提交边界（单仓库 + 约定分区）
