@@ -207,11 +207,36 @@ node tools/setup-memory.js        # 每台机器一次；--check 只查看，--d
 - **子目录会话读得到本目录**：记忆内容由系统直接注入，不受工作区边界限制；改动其中文件则属工具调用，须该路径落在可达范围内（`permissions.additionalDirectories` 或 allow 规则）。故子目录会话对根记忆是**上级视角**，反向只看到 §九 指针区的一行指针。
 - **记忆进 Git 即会被推送**：写进 `.claude/memory/` 的内容会进入版本历史，对外分享或公开仓库前须过一遍。
 
-### 文件规范
+### 目录结构
 
-- 格式：Markdown 文件，每条记忆一个文件，带 YAML frontmatter（name / description / metadata.type）
-- `MEMORY.md` 为索引文件，列出所有记忆文件的一行摘要
-- 文件名可保持自然风格（kebab-case 或 snake_case），`MEMORY.md` 中正确引用即可
+| 记忆库 | 记忆根 |
+|--------|--------|
+| 主项目 | `.claude/memory/` |
+| 子项目 | `50-subprojects/<NN-名>/10-claude memory/` |
+
+两处结构**完全相同**，只有事实记忆的**份数**不同：
+
+```
+<记忆根>/
+├── MEMORY.md            # 索引——固定名
+├── <子项目名>项目.md      # 主记忆——每处一份
+└── <主题>.md             # 事实记忆——0~N
+```
+
+### 命名规则
+
+1. **索引固定 `MEMORY.md`**——协议入口，根与各子 CLAUDE.md 都指向它，改名即断链。
+2. **主记忆 `<项目名>项目.md`，每处一份**——项目名取该库所属项目的自称；子项目取其子 CLAUDE.md 标题里的自称。
+3. **事实记忆用主题名，前缀表封闭**——只允许 `feedback-`（用户给的工作方式指示）与 `pending-`（挂账与未决）；其余用主题名本身，不自造前缀。
+4. **文件名不带日期**——日期由索引行的标题承载。
+5. **语言随区**——主项目区（目录名英文）用英文 kebab-case；子项目区（目录名中文）用中文自然名。
+6. **分隔符一律连字符 `-`**。
+7. **存量文件名不迁移**；以上各条约束新增。
+
+### 文件格式
+
+- Markdown 文件，每条记忆一个文件，带 YAML frontmatter（`name` / `description` / `metadata.type`）。
+- `metadata` 下的 `node_type` / `originSessionId` / `modified` 由 Claude Code 自动写入，人不必维护。
 
 ---
 
