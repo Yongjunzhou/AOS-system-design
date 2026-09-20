@@ -212,7 +212,7 @@ node tools/setup-memory.js        # 每台机器一次；--check 只查看，--d
 | 记忆库 | 记忆根 |
 |--------|--------|
 | 主项目 | `.claude/memory/` |
-| 子项目 | `50-subprojects/<NN-名>/claude-memory/` |
+| 子项目 | `50-subprojects/<NN-名>/claude-memory/`（含 `00-topic-research/`） |
 
 两处结构**完全相同**，只有事实记忆的**份数**不同：
 
@@ -263,7 +263,7 @@ AOS 整体是一个**项目集**——主线（元流水线 → EOS 流水线 �
 
 | 名称 | 位置 | 性质 | 独立记忆 | 说明 |
 |--------|------|------|---------|------|
-| 杂项选题 | `50-subprojects/00-topic-research/` | 杂项 | 不建 | 未定形选题的暂存与孵化处，**不算子项目**；判据是「该话题是否需要继续深入研究」——需要则移出独立为 `NN-` 子项目。现行内容：运营体系构建、指标与看板、目标价格管理、91 规范第十一章讨论。见 [`CLAUDE.md`](50-subprojects/00-topic-research/CLAUDE.md) |
+| 杂项选题 | `50-subprojects/00-topic-research/` | 杂项 | `claude-memory/` | 未定形选题的暂存与孵化处，**不算子项目**；判据是「该话题是否需要继续深入研究」——需要则移出独立为 `NN-` 子项目。现行内容：运营体系构建、指标与看板、目标价格管理、91 规范第十一章讨论。见 [`CLAUDE.md`](50-subprojects/00-topic-research/CLAUDE.md) |
 | 系统工程研究 | `50-subprojects/01-系统工程研究/` | 产出型 | `claude-memory/` | 研究报告（`00-系统工程相关研究报告/`）→ 两个产出：教材书（`03-架构师是个怎样的物种/`）+ 培训教材（`02-架构工程师培训材料/`）。导航与记忆隔离协议见子项目 [`CLAUDE.md`](50-subprojects/01-系统工程研究/CLAUDE.md) |
 | AI 部署研究 | `50-subprojects/02-AI部署研究/` | 研究型 | `claude-memory/` | 企业私域大模型推理平台选型研究。现行 01 号选型研究报告、02 号专用模型训练与机载部署专项研究报告、11 号建设方案建议，落 `01-AI私有部署研究报告/` 与 `11-企业AI基础设施建设方案建议/`。见子项目 [`CLAUDE.md`](50-subprojects/02-AI部署研究/CLAUDE.md) |
 | 健康研究报告 | `50-subprojects/03-健康研究报告/` | 研究型 | `claude-memory/` | 健康主题书稿讲读摘录。现行仅 `走路-被严重低估的生命体征.md` 一篇；用途边界、报告编号组织与后续内容形态待后续确定。见子项目 [`CLAUDE.md`](50-subprojects/03-健康研究报告/CLAUDE.md) |
