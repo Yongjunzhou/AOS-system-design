@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
-$src = 'E:\mywork\AOS\50-program\02-AI部署研究\11-企业AI基础设施建设方案建议\11-企业AI基础设施建设方案建议.pptx'
-$out = 'E:\mywork\AOS\50-program\02-AI部署研究\11-企业AI基础设施建设方案建议\_build\qa'
+$src = 'E:\mywork\AOS\50-subprojects\02-AI部署研究\11-企业AI基础设施建设方案建议\11-企业AI基础设施建设方案建议.pptx'
+$out = 'E:\mywork\AOS\50-subprojects\02-AI部署研究\11-企业AI基础设施建设方案建议\_build\qa'
 if (-not (Test-Path $out)) { New-Item -ItemType Directory -Path $out | Out-Null }
 $ppt = New-Object -ComObject PowerPoint.Application
 try {
