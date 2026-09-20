@@ -282,7 +282,8 @@ AOS 整体是一个**项目集**——主线（元流水线 → EOS 流水线 �
 
 - 主项目改动与子项目改动**分别 commit**（各自语义独立，commit message 注明归属）。
 - 处理主项目时，不把子项目改动混入本次提交；处理子项目时，不把主项目改动混入。
-- 新子项目创建时：在 `50-subprojects/` 下建 `NN-<名>/` 子目录 → 建子 CLAUDE.md（复制隔离协议模板）→ 建 `claude-memory/`（独立 MEMORY.md + 主记忆）→ 在本章指针区加一行。
+- 新子项目创建时：跑 `node tools/new-subproject.js <名>`——一次建齐子目录、子 CLAUDE.md、`claude-memory/`（索引 ＋ 主记忆），编号自动顺延；**只剩指针区加一行需人工**（脚本会打印可粘贴的那一行）。
+- 区内每个条目都须有 `claude-memory/`（含索引与主记忆），无例外。复验跑 `node tools/check-subprojects.js`（有缺口则退出码 1）。
 
 ---
 
