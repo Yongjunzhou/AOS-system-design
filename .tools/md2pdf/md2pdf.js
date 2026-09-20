@@ -275,6 +275,10 @@ bodyHtml = bodyHtml.replace(
   (_, code) => `<div class="mermaid">${unescapeHtml(code)}</div>`
 );
 
+// 正文里真的出现图表，才值得去外网取 Mermaid。无图表的文档若也注入 CDN，
+// waitUntil:'networkidle0' 就得等它，CDN 一抖便 60 秒硬超时。
+const useMermaid = options.mermaid && bodyHtml.includes('<div class="mermaid">');
+
 // 图片引用：<img src="xxx.png"> → 内联 base64
 bodyHtml = bodyHtml.replace(
   /<img\s+src="([^"]+)"/g,
@@ -417,7 +421,17 @@ const css = `
 // 4. 组装 HTML + 渲染 PDF
 // ============================================================
 
+// Mermaid 优先用随工具入库的本地副本（离线可转，不受 CDN 抖动影响）；
+// 副本不在时才回落 CDN——那样需要等网络，waitUntil 也随之放宽。
 const mermaidCdn = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+const mermaidLocal = join(__dirname, 'vendor', 'mermaid.min.js');
+const hasLocalMermaid = existsSync(mermaidLocal);
+
+// 内联时把 </script 拆开写，免得日后换版本、副本里带上这个字面量而截断脚本。
+const mermaidScriptTag = !useMermaid ? ''
+  : hasLocalMermaid
+    ? `<script>${readFileSync(mermaidLocal, 'utf8').replace(/<\/script/gi, '<\\/script')}</script>`
+    : `<script src="${mermaidCdn}"></script>`;
 
 const html = `<!DOCTYPE html>
 <html lang="zh-CN">
@@ -425,11 +439,11 @@ const html = `<!DOCTYPE html>
 <meta charset="utf-8">
 <title>${escapeHtml(basename(inputPath, extname(inputPath)))}</title>
 <style>${css}</style>
-${options.mermaid ? `<script src="${mermaidCdn}"></script>` : ''}
+${mermaidScriptTag}
 </head>
 <body>
 ${bodyHtml}
-${options.mermaid ? `<script>mermaid.initialize({startOnLoad:true, theme:"default", securityLevel:"loose"});</script>` : ''}
+${useMermaid ? `<script>mermaid.initialize({startOnLoad:true, theme:"default", securityLevel:"loose"});</script>` : ''}
 </body>
 </html>`;
 
@@ -444,11 +458,12 @@ try {
   const page = await browser.newPage();
 
   await page.setContent(html, {
-    waitUntil: options.mermaid ? 'networkidle0' : 'load',
+    // 脚本是内联的就无需等网络；只有回落 CDN 时才要求网络静默。
+    waitUntil: (useMermaid && !hasLocalMermaid) ? 'networkidle0' : 'load',
     timeout: 60000,
   });
 
-  if (options.mermaid) {
+  if (useMermaid) {
     console.log('⏳ 等待 Mermaid 图表渲染...');
     await page.waitForFunction(() => {
       const mermaidEls = document.querySelectorAll('.mermaid');
