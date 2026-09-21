@@ -1,6 +1,6 @@
 ---
 name: pending-biz01abp-revision
-description: 挂账：biz01abp 三、四、五章修订——第 13 版已落（15 条审查项全做，未提交）；余项＝戊组两条待裁、23 退役外围三处、8 份 wft 指南旧名
+description: 挂账：biz01abp 三、四、五章修订——第 13 版已落并双推送（提交 088be86b）；余项＝戊组两条待裁、23 退役外围三处、8 份 wft 指南旧名
 metadata:
   type: project
 ---
@@ -14,7 +14,7 @@ metadata:
 | 目标文件 | `20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/eos-biz01abp-rbpl2pbpl.md` |
 | 现状 | **第 13 版、五章、545 行**（第 12 版为 543 行） |
 | 参考文件 | `eos-biz01abr-stfr2rbpl.md` **第 90 版**（试点权威，见 [[eos-pilot-authority]]；本轮因更名由 89 → 90） |
-| 未提交 | 本轮全部改动仍在工作区（abp ＋ 91／93／94／01-pl4eos-spec／abr／cr／02／03／04／24／25／README，含删 23 号文件） |
+| 已提交已推 | `088be86b`（[EOS]）＋ `4fc02498`（[AOS] 记忆）——github 与 gitee 两仓均已推 |
 
 ## 射程（人类 2026-09-21 定）
 
