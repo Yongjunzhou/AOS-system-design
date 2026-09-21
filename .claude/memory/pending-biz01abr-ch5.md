@@ -53,11 +53,13 @@ metadata:
 
 ## 仍开着的口
 
+> **射程**：按 [[feedback-abr-only-scope]]（2026-09-21 收窄为「不参考其他文档」），下面**只有第 3 项**落在下一轮的射程里；1／2／4／5／6 都要看别处才判得了，记下不判。
+
 1. **第六轮报告里以 91 为锚的条目——按新依据一律搁置**（91 与 00-doc-conventions 都不算判据）：增量标记那句把 `[待下游推断]`／`供人类确认` 挂在 §A.3.1（该节只定义四枚主标记 ＋ `[推断]`）；`[需确认]`／`[需重设计]` 的双指针各挂一半；三区「下游 →」与 §1.4「同一任务位」相抵；补充材料文件名 `YYYYMMDD-biz01abr-批次ID-文档序列类…`（链上统一为 `<YYYYMMDD>-<对象名>补充原始需求材料.md`）；补充材料回路不写落点与登记。**abp／cr 与 8 份 wft 指南不在依据内，不再作对照**。
 2. **「说明」的落点**（最重，超出 abr＋93／94 工作集）——94 §1.3 用「各级只到说明」定义概要，abr 表3-3~3-9 逐级要「说明」，而 02 与 03 两份数据文件的节点模板都没有说明字段。改它要先定说明落在树画像区还是节点块，牵 abp／cr 两份模板。
-3. **abr 自己仍有的前后相抵**（按 [[eos-pilot-authority]] 仍是 abr 的 bug）：§5.2「读的是 X」冒号后混进 Y 侧的存量方案节点、且漏「未确认的存量方案节点」；§5.2「判的是归属，不是内容」与 §5.1「按条目正文语义归拢」相抵、又与第二章末那条注重复；表5-2 第 3 行文档级条件配条目级动作；「合理空置」无判据（链上写法带「原因」二字）；**「E2E职责检查并补充需求」不动作领起**（93 §3.5 名体例要求动作领起）；§1.2 链图三处待裁（跳过整个方案空间／`业务信息系统` 不是产品数据／五个词在 93 与 94 里零出现）。
+3. **abr 自己仍有的前后相抵**（按 [[eos-pilot-authority]] 仍是 abr 的 bug）：§5.2「读的是 X」冒号后混进 Y 侧的存量方案节点、且漏「未确认的存量方案节点」；§5.2「判的是归属，不是内容」与 §5.1「按条目正文语义归拢」相抵、又与第二章末那条注重复；表5-2 第 3 行文档级条件配条目级动作；「合理空置」无判据（同篇两处用它当通过条件，没有一处说什么是合理）；**「E2E职责检查并补充需求」不动作领起**（abr 自己其余四个 Step 名都动作领起，只有这一个不是）；§1.2 链图三处待裁（跳过整个方案空间／`业务信息系统` 不是产品数据／五个词在 93 与 94 里零出现）——后两条按新射程只报内部那一面（同一图内三段的体例不一、与 §1.4 衔接表对不上）。
 4. **93 §4.3 链尾与 94 §1.1 相抵**——93 写「设计线的产品数据链止于框架」，94 §1.1 之后还有平台构成概要、配置方案、前后端组件方案三行；abr 对链尾无表述，本条裁不了。
 5. **跟随面**——abp／cr 仍是七章结构，未随 abr 的五章、章首引题、表号、Step 名与写回位置。
 6. **01 号相关方需求按 94 §2.1.1 重建**——见 [[pending-01-align-to-94]]。
 
-关联 [[feedback-basis-abr-93-94]]、[[eos-pilot-authority]]、[[ch4-ch5-rename-and-abr-ch4-rebuild]]、[[ch2-structure-only-verify-in-ch5]]、[[ch3-y-tree-tables-and-rules]]、[[skill-guide-ch3-ch4-split]]、[[skill-guide-ch2-ch3-tabling-2026-09-18]]、[[skill-guide-ch1-writing-criteria]]、[[chain-form-three-tiers-naming]]、[[feedback-code-whitelist-2026-09-16]]、[[feedback-work-style]]、[[eos-design-landing-spec-93-refactor]]。
+关联 [[feedback-abr-only-scope]]、[[eos-pilot-authority]]、[[ch4-ch5-rename-and-abr-ch4-rebuild]]、[[ch2-structure-only-verify-in-ch5]]、[[ch3-y-tree-tables-and-rules]]、[[skill-guide-ch3-ch4-split]]、[[skill-guide-ch2-ch3-tabling-2026-09-18]]、[[skill-guide-ch1-writing-criteria]]、[[chain-form-three-tiers-naming]]、[[feedback-code-whitelist-2026-09-16]]、[[feedback-work-style]]、[[eos-design-landing-spec-93-refactor]]。
