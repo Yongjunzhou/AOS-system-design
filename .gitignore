@@ -1,6 +1,11 @@
-200-put-on-hold/
+# macOS 目录元数据
 .DS_Store
+
+# Claude Code 运行现场：worktree 与子项目工作目录
+# （子项目运行现场常含模型与虚拟环境，体积会超出 GitHub 单文件上限）
 .claude/worktrees/
+.work-*/
+
+# Python 缓存与虚拟环境
 __pycache__/
 .venv/
-.work-*/
