@@ -1,3 +1,4 @@
+- [环境故障：DSH pwsh 沙箱全部命令失败（2026-09-22，已修）](env-dsh-pwsh-sandbox-acl.md) — 曾报 `SetNamedSecurityInfoW failed (Win32 5): grantWrite(E:\mywork\AOS)`，命令根本没跑起来；根因＝目录**既非本用户所有（属主 `BUILTIN\Administrators`）、也没有属于本用户的显式 `WRITE_DAC` ACE**（ACE 全为继承，UAC 拆分令牌使非提权进程不在管理员组）；**修法＝管理员窗口 `icacls <目录> /grant <用户>:(OI)(CI)F`，补显式完全控制即可、不必夺属主**（`takeown /D` 须配 `/R`，本机并未生效），不必重启 DSH；**授权不随 git 同步**，换机换路径需重补。附带边界：沙箱内 `Get-CimInstance` 一律拒绝访问，非故障
 - **教材子项目（`100-subprojects/01-系统工程研究` 教材书＋培训教材）**：记忆独立，在 `100-subprojects/01-系统工程研究/claude-memory/`（`MEMORY.md` ＋ `教材项目.md`）——打磨教材时读/写该目录，**勿写本项目记忆**。
 - **投资工程研究（`100-subprojects/05-投资工程研究`）**：记忆独立，见其 `claude-memory/`（`投资工程研究项目.md`）——2026-09-19 建区，产出型（材料准备 → 输出）。
 - **现代思维工具研究（`100-subprojects/04-现代思维工具研究`）**：记忆独立，见其 `claude-memory/`（`现代思维工具研究项目.md`）——研究型。
