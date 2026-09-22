@@ -1,8 +1,11 @@
 ---
 name: progress-93-skill-guide
 description: 进行中的工作：93 SKILL 指南编制规范与三份试点（abr／abp／cr）的真实进度、记忆落后的三处、以及编排类术语正名与路径名挂账
-metadata:
+metadata: 
+  node_type: memory
   type: progress
+  originSessionId: d9d470f3-bb34-43d0-9c31-85ebd491b29e
+  modified: 2026-09-22T13:50:01.357Z
 ---
 
 # 进行中的工作：SKILL 指南规范（93）与三份试点
@@ -11,16 +14,18 @@ metadata:
 
 | 对象 | 文件 | 实际版次 |
 |------|------|---------|
-| 93 SKILL 指南编制规范 | `93-eos-skill-guide-spec.md` | 第 **78** 版 |
-| 试点一 相关方需求 → 职责视角业务流程概要 | `eos-biz01abr-stfr2rbpl.md` | 第 **92** 版 |
-| 试点二 R 树 → P 树 | `eos-biz01abp-rbpl2pbpl.md` | 第 **21** 版 |
+| 93 SKILL 指南编制规范 | `93-eos-skill-guide-spec.md` | 第 **80** 版 |
+| 试点一 相关方需求 → 职责视角业务流程概要 | `eos-biz01abr-stfr2rbpl.md` | 第 **95** 版 |
+| 试点二 R 树 → P 树 | `eos-biz01abp-rbpl2pbpl.md` | 第 **30** 版 |
 | 试点三 R 树 → 职责视角业务流程定义 | `eos-biz01cr-rbpl2rbpd.md` | 第 **13** 版 |
 
-文件位置：`20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/`。最近一轮改动见提交 `dceb4998`（目标表补全、§1.2 对齐、工位更名、复述清理）、`67686451`（链级术语正名"任务位 → 工位"）、`1e7ec407`（占位与合并、处理单位改批次、定位版式重排、表达风格全篇扫改）、`5e6ebf44`（占位节点机制落定 ＋ 表达规则三条 ＋ 阶段／环节正位）。
+文件位置：`20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/`。最近一轮改动见提交 `a7fab8c5`（abp 第 28~30 版：第五章重写、第四章各步提级、§4.5 整节删）、`98a64f45`（93 第 80 版：§2.4 第十二条「标题与引子写足限定」）、`e5deaac4`（删本目录 PDF 六份）；此前另有 `dceb4998`（目标表补全、§1.2 对齐、工位更名、复述清理）、`67686451`（链级术语正名"任务位 → 工位"）、`1e7ec407`（占位与合并、处理单位改批次、定位版式重排、表达风格全篇扫改）、`5e6ebf44`（占位节点机制落定 ＋ 表达规则三条 ＋ 阶段／环节正位）。
 
 ## 下一轮从哪继续
 
-**先修记忆落后，再谈新进展。** 索引里几条挂账的版次已经过时，读它们会误判对象状态，逐条改为上表实查值：`pending-biz01abr-ch5` 记的"abr 第 88 版／93 第 74 版"、`pending-abr-cleanup-open` 记的"93 第 75 版 ＋ abr 第 89 版"、`asset23-retired-and-perspective-renamed` 记的"93 第 76 版／abr 第 90 版"，均已低于实查值；**abp 侧已随第 21 版回填（2026-09-22）**——`pending-biz01abp-revision` 已重写为第 19~21 版记录、`pending-biz01abp-rewrite` 只作存档；`asset23-retired-and-perspective-renamed` 还写着"三处外围未落"（`01-pl4eos-spec §2.6` 整节、`ort03` 的 23 匹配基准约 60 处、8 份 wft 指南旧名），是否已随手落掉也要核。
+**版次以本表为唯一现状源。** 挂账文件里写的版次（`pending-biz01abr-ch5` 的「abr 第 88 版／93 第 74 版」、`pending-abr-cleanup-open` 的「93 第 75 版 ＋ abr 第 89 版」、`asset23-retired-and-perspective-renamed` 的「93 第 76 版／abr 第 90 版」）都是**当轮记录**，记的是那一轮改到哪一版，不是现状——**不改它们**（改了反而把当轮历史写错），已各自加「当轮」二字标明。查现状只读上表。
+
+**`asset23-retired-and-perspective-renamed` 还写着"三处外围未落"**（`01-pl4eos-spec §2.6` 整节、`ort03` 的 23 匹配基准约 60 处、8 份 wft 指南旧名），是否已随手落掉要核。
 
 **顺手核一条术语。** 这几处版次跳变与提交 `67686451`（"任务位 → 工位"）同时发生，说明**编排类术语又正了一轮名**；核对 `93` §2.4 规则七的词例与三份试点正文是否已全数换过，未换的按 `[[feedback-93-principles-over-terms]]` 的裁决依据（**以 91／94 里找不找得到为准**）处理。
 

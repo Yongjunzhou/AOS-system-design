@@ -1,11 +1,14 @@
 ---
 name: pending-abr-cleanup-open
-description: 挂账：abr／93 清理轮（2026-09-21，第十至十四轮）剩下的未落项——交出与移交两词并立、93 规则七词例、⊆ 记法、两张长格表、接不住与隐藏遗漏两份试点同步、"写的是 Y" 体例
-metadata:
+description: "挂账：abr／93 清理轮（2026-09-21，第十至十四轮）剩下的未落项——交出与移交两词并立、93 规则七词例、⊆ 记法、两张长格表、接不住与隐藏遗漏两份试点同步、\"写的是 Y\" 体例"
+metadata: 
+  node_type: memory
   type: project
+  originSessionId: d9d470f3-bb34-43d0-9c31-85ebd491b29e
+  modified: 2026-09-22T13:50:06.588Z
 ---
 
-**本轮已落**（详见 [[skill-guide-rule-no-layout-explanation]]、[[term-chuanchu-chengnuo-renamed-shouyi]]）：93 第 75 版 ＋ abr 第 89 版，提交 `61a69018`、`28ff50ae`，github 与 gitee 两仓已推。abr 第一至五章连同其 PDF 一并重转。
+**本轮已落**（详见 [[skill-guide-rule-no-layout-explanation]]、[[term-chuanchu-chengnuo-renamed-shouyi]]）：当轮至 93 第 75 版 ＋ abr 第 89 版，提交 `61a69018`、`28ff50ae`，github 与 gitee 两仓已推。abr 第一至五章连同其 PDF 一并重转。
 
 ## 未落项
 
