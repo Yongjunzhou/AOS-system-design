@@ -109,3 +109,5 @@ metadata:
 6. **01 号相关方需求按 94 §2.1.1 重建**——见 [[pending-01-align-to-94]]。
 
 关联 [[feedback-abr-only-scope]]、[[eos-pilot-authority]]、[[ch4-ch5-rename-and-abr-ch4-rebuild]]、[[ch2-structure-only-verify-in-ch5]]、[[ch3-y-tree-tables-and-rules]]、[[skill-guide-ch3-ch4-split]]、[[skill-guide-ch2-ch3-tabling-2026-09-18]]、[[skill-guide-ch1-writing-criteria]]、[[chain-form-three-tiers-naming]]、[[feedback-code-whitelist-2026-09-16]]、[[feedback-work-style]]、[[eos-design-landing-spec-93-refactor]]。
+
+**第 100 版四处**（人类 2026-09-23 同轮追加：「你查 abr 中类似的情况并修订之」——承接 abp 第 37／38 版的去啰嗦）：扫法同上（字数 ≥150 或破折号 ≥2，排除引题的单破折号与两条独立引题同行）。**修四处**：① **§1.2「两个任务跑的是同一批…」**——「干枝——…那几级：」引题双标记改「，也就是…那几级：」，「末三级——…——是同一批」**双破折号夹注**改「最下的三级是同一批，也就是**末三级**：…」；② **§1.2「这棵树最下的三级…」**——开头的**双破折号夹注**改「已经由上游给出，也就是…：」，同段「**叶**——也就是用例场景那一级——的详细定义」改「用例场景那一级是**叶**，它的详细定义…」；该段是全篇最重的两处夹注重叠处；③ **§3.3 引题**——「除块头的三个字段——…——外」改两句（与 abp 同形）；④ **§4.5 实现方式三项规则**末句「以 X 的文档级E2E任务为准——本任务不另立清单」改逗号。**判为无病不改**：§5.2／§5.3／§5.4 各长句（均为枚举或引题体例）、§1.3 目标5、§5.6 自检与增量标记（列表体例）。

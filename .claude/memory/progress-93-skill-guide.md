@@ -15,7 +15,7 @@ metadata:
 | 对象 | 文件 | 实际版次 |
 |------|------|---------|
 | 93 SKILL 指南编制规范 | `93-eos-skill-guide-spec.md` | 第 **80** 版 |
-| 试点一 相关方需求 → 职责视角业务流程概要 | `eos-biz01abr-stfr2rbpl.md` | 第 **99** 版 |
+| 试点一 相关方需求 → 职责视角业务流程概要 | `eos-biz01abr-stfr2rbpl.md` | 第 **100** 版 |
 | 试点二 R 树 → P 树 | `eos-biz01abp-rbpl2pbpl.md` | 第 **38** 版 |
 | 试点三 R 树 → 职责视角业务流程定义 | `eos-biz01cr-rbpl2rbpd.md` | 第 **13** 版 |
 
