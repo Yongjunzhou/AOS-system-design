@@ -1,5 +1,14 @@
-flowchart LR
-    M["概要末级指标<br/>（M）"] -->|"①分解"| D["需求条目指标<br/>（D_i）"]
-    D -->|"④分配"| S["方案末级指标<br/>（S_j）"]
-    M -.->|"查① 分解闭合<br/>ΣD_i 组合回 M"| D
-    D -.->|"查② 分配预判<br/>S_j ≥ D_i 留裕量"| S
+flowchart TB
+    A["① 接需求<br/>需求就位：链首自原始材料结构化；链上验收上一对移交的叶节点"]
+    B["② 验就位<br/>可转化 · 可分配：叶节点能不能用，指标闭不闭合"]
+    C["③ 出方案<br/>基于需求 + 组织资产，出 ≥2 个候选'怎么做'（方案框架骨架）"]
+    D["④ 对需求<br/>把叶节点挂到枝梢节点：复用 → 改进 → 新增"]
+    E["⑤ 做裁决<br/>按规则比较候选，挑一个，把理由记下来"]
+    F["⑥ 签定稿<br/>分解分析：枝梢节点 → 方案叶节点；覆盖检查/符合性分析 → 相关方确认 → 冻结基线"]
+    A --> B --> C --> D --> E --> F
+    classDef req fill:#fdf6ec,stroke:#c9a44a,color:#4a3c28;
+    classDef sol fill:#eef3f8,stroke:#5b7fa6,color:#2c3e50;
+    classDef fin fill:#e8f3ec,stroke:#3d7a4f,color:#2c5a3a;
+    class A,B req;
+    class C,D,E sol;
+    class F fin;

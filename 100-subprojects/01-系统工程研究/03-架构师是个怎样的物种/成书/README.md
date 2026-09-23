@@ -49,7 +49,7 @@ bash build.sh --rerender   # 强制重渲全部 19 个 mermaid 图
 ## 关键设计决策
 
 - **图用 PNG 而非 SVG**：mermaid 的 SVG 含 `<foreignObject>`，typst 无法渲染（中文标签会消失）。PNG 为 3× 栅格，A5 打印清晰度 >600dpi。
-- **图1-5 两列蛇形（手绘 SVG 特例）**：全书认知链 16 章，单列竖排时方块在 A5 版心只能压到 ~5pt 字；mermaid 11.16 的子图 `direction` 指令失效又画不出两列蛇形 → 改用**手绘 SVG**（`build/assets/ch01-fig05-snake.svg`，第1~8章左列、9~16章右列、底部回绕箭头）经无头 Chrome 直渲（步骤 2.5，`render-fig05-snake.cjs`）。md 源已是显式 `![图 1-5](figs/ch01-fig05.png)` 引用；改版式改 SVG + `--rerender`。蛇形满版宽 ~110×135mm、字 ~7pt，可读。
+- **图1-5 两列蛇形（手绘 SVG 特例）**：全书认知链 17 章，单列竖排时方块在 A5 版心只能压到 ~5pt 字；mermaid 11.16 的子图 `direction` 指令失效又画不出两列蛇形 → 改用**手绘 SVG**（`build/assets/ch01-fig05-snake.svg`，第1~8章左列、9~17章右列、底部回绕箭头）经无头 Chrome 直渲（步骤 2.5，`render-fig05-snake.cjs`）。md 源已是显式 `![图 1-5](figs/ch01-fig05.png)` 引用；改版式改 SVG + `--rerender`。蛇形满版宽 ~110×150mm、字 ~7pt，可读。**待核**：ch1 第 5 个 mermaid 块（§1.6.4 阻抗生成树）与蛇形共用 `ch01-fig05.png` 这一文件名，蛇形渲染会覆盖前者——两者取一须裁（2026-09-23 登记）。
 - **目录自动生成**：PDF 用 typst `outline()`、EPUB 用 pandoc `--toc`。章首·误解现场与章末件（本章问题/判据/练习等）通过 `{.unlisted}` → `outlined:false` 排除，与 `00-目录.md` 的三级结构一致。
 - **剔「版本变更记录」**：每文件尾的写作元数据表不入书；章末参考文献保留。
 - **图片尺寸按 viewBox 注入**：mermaid 图宽高差异极大（1841×94 到 220×734），`fix-typ.mjs` 按比例适配 A5 版心（宽≤110mm、高≤150mm）防溢出。

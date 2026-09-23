@@ -13,8 +13,8 @@ const path = require('node:path');
 const CHROME = 'C:/Users/HUAWEI/.cache/puppeteer/chrome/win64-148.0.7778.97/chrome-win64/chrome.exe';
 const SRC = path.join(__dirname, 'assets', 'ch01-fig05-snake.svg');
 const OUT = path.join(__dirname, 'figs', 'ch01-fig05.png');
-// SVG 内在尺寸（viewBox 660×810），3× 输出 = 1980×2430，与 mmdc -s 3 同分辨率
-const W = 660, H = 810, SCALE = 3;
+// SVG 内在尺寸（viewBox 660×935 —— 2026-09-23 增第15章后右列 9 格），3× 输出 = 1980×2805，与 mmdc -s 3 同分辨率
+const W = 660, H = 935, SCALE = 3;
 
 let puppeteer;
 try { puppeteer = require('puppeteer-core'); }

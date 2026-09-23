@@ -3,7 +3,7 @@
  * preprocess.mjs — 教材书 → .book.md 清洗脚本
  *
  * 职责（不动源文件，输出到 build/）：
- *   1. 按 MANIFEST 顺序组装（序言/前言/01~16 章/17 附录）
+ *   1. 按 MANIFEST 顺序组装（序言/前言/01~17 章/18 附录）
  *   2. 剔除每文件末尾「## 版本变更记录」表（写作元数据）
  *   3. 提取 mermaid 块 → build/.mmd/chNN-figKK.mmd 源，替换为 ![](figs/chNN-figKK.svg)
  *      图号「图 N-K」按章内序号；修复 ch9 裸 `&` 转义
@@ -34,8 +34,8 @@ function findFile(prefix) {
   if (!hit) throw new Error(`preprocess: 未找到源文件 ${prefix}*（实际：${files.slice(0, 8).join(', ')}…）`);
   return hit;
 }
-const chapters = Array.from({ length: 16 }, (_, i) => `${String(i + 1).padStart(2, '0')}-第${i + 1}章`);
-const MANIFEST = ['00-序言', '00-前言', ...chapters, '00-后记', '17-附录'].map(prefix => [findFile(prefix), prefix]);
+const chapters = Array.from({ length: 17 }, (_, i) => `${String(i + 1).padStart(2, '0')}-第${i + 1}章`);
+const MANIFEST = ['00-序言', '00-前言', ...chapters, '00-后记', '18-附录'].map(prefix => [findFile(prefix), prefix]);
 
 // ---------- 变换 ----------
 function stripVersionRecord(text) {
@@ -94,7 +94,7 @@ for (const [srcName, base] of MANIFEST) {
   text = stripLeadingMetaQuote(text, base);
   const chap = base.match(/^(\d+)/)?.[1] ?? '00';
   text = extractMermaid(text, chap);
-  text = markUnlisted(text, base === '17-附录');
+  text = markUnlisted(text, base === '18-附录');
   writeFileSync(join(OUT, base + '.book.md'), text);
   manifestRows.push(base);
   console.log(`✓ ${srcName} → ${base}.book.md（${(text.length / 1024).toFixed(0)} KB）`);
