@@ -50,10 +50,10 @@
 #include "build/13-第13章.typ"
 #include "build/14-第14章.typ"
 #include "build/15-第15章.typ"
-#include "build/15-第15章.typ"
 #include "build/16-第16章.typ"
 #include "build/17-第17章.typ"
-#include "build/18-附录.typ"
+#include "build/18-第18章.typ"
+#include "build/19-附录.typ"
 
 // ── 封底占位 ──
 #pagebreak(weak: true)
