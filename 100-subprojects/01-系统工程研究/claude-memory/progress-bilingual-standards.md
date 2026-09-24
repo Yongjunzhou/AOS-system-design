@@ -99,5 +99,6 @@ metadata:
 
 ## 五、待办
 
-- **八份产出（四份英文 MD ＋ 四份对照版）均未提交 git**；两处源件改名（`BS ISO-IEC-IEEE 42020 2019.pdf`→`ISO-IEC-IEEE 42020 2019.pdf`、`AS ISO IEC IEEE 42020 2019.pdf`→`ISO IEC IEEE 42020 2019.pdf`）同样未提交。
+- **八份产出（四份英文 MD ＋ 四份对照版）均未提交 git**；两处源件改名（`BS ISO-IEC-IEEE 42020 2019.pdf`→`ISO-IEC-IEEE 42020 2019.pdf`、`AS ISO IEC IEEE 42020 2019.pdf`→`ISO IEC IEEE 42020 2019.pdf`）已随 `0b31fc0a` 提交。
+- 四份对照版**已导出 PDF**（2026-09-24，用 `.tools/md2pdf`），见 [progress-standards-md2pdf.md](progress-standards-md2pdf.md)——该轮修掉了本主题遗留的两处 MD 缺陷：**图片链接含空格**（33 幅图不被当图）与**域标注尖括号被渲染器吞掉**（12 处）。故八份 MD 又有改动待提交。
 - 收尾时 `.work-bilingual/` 与 `.work-mdconv/` 两个工作稿目录应删除或移入 `.tools/`。

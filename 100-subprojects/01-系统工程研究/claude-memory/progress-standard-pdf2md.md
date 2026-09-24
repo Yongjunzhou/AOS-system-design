@@ -85,6 +85,6 @@ metadata:
 
 ## 七、待办
 
-- **四份 MD 均未提交 git**；四份中英文对照版同样未提交（见 [progress-bilingual-standards.md](progress-bilingual-standards.md)）。
+- 四份 MD 与四份对照版**已随 `0b31fc0a` 提交**；但其后导出 PDF 时又修了八份 MD 的两处缺陷（**图片链接含空格致 33 幅图不被当图**、**域标注尖括号被渲染器吞掉 12 处**），这批改动**未提交**——详见 [progress-standards-md2pdf.md](progress-standards-md2pdf.md)。
 - 42030 的 20 幅插图缺（源件所致），如需图须取正版 PDF 重转。
 - 工作稿 `.work-mdconv/` 与 `.work-bilingual/` 属临时目录，定稿后可删（转换器若要留档应移入 `.tools/`）。
