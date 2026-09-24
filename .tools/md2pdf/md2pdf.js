@@ -286,7 +286,13 @@ bodyHtml = bodyHtml.replace(
     if (src.startsWith('http://') || src.startsWith('https://') || src.startsWith('data:')) {
       return match; // 外部 URL 或已内联，保持原样
     }
-    const imgPath = resolve(mdDir, src);
+    // 图片目标里含空格时，CommonMark 要求写成 <x y.png>；marked 接收后会把空格
+    // 等字符做百分号编码（src="x%20y.png"）。按编码后的字面路径去找文件必然落空，
+    // 于是图片既不内联、相对 src 在 about:blank 下也无从解析——先解码再解析路径。
+    // （2026-09-24 修）
+    let decoded = src;
+    try { decoded = decodeURIComponent(src); } catch { /* 非法转义则按原样 */ }
+    const imgPath = resolve(mdDir, decoded);
     if (!existsSync(imgPath)) return match;
     try {
       const ext = extname(imgPath).toLowerCase();
@@ -348,6 +354,13 @@ const css = `
     border-radius: 3px;
   }
   a { color: #1a6fb5; text-decoration: none; }
+
+  /* ---- 图片 ----
+     不加这条，图会按 PNG 的固有像素尺寸换算成物理尺寸（96dpi）直接摆放：
+     一张 2000px 宽的截图＝529mm 宽，而 A4 内容区只有 174mm——图右侧被裁掉，
+     且高度动辄上千 pt，每幅图白吃一整页。max-width 收进内容区，height:auto
+     保比例。（2026-09-24 修）*/
+  img { max-width: 100%; height: auto; }
 
   /* ---- 引用块 ---- */
   blockquote {
