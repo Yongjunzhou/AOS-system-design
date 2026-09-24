@@ -1,6 +1,6 @@
 ---
 name: env-dsh-pwsh-sandbox-acl
-description: 环境故障与修法：DSH 的 pwsh 沙箱曾全部命令失败（SetNamedSecurityInfoW Win32 5），根因是 E:\mywork\AOS 缺属于本用户的显式 WRITE_DAC ACE；已修，附复现、修法与一条误判纠正
+description: 环境故障与修法：DSH 的 pwsh 沙箱曾全部命令失败（SetNamedSecurityInfoW Win32 5），根因是 E:\mywork\AOS 缺属于本用户的显式 WRITE_DAC ACE；已修，附复现、修法与一条误判纠正；另记一条沙箱边界——git push 在沙箱内必断，需放行
 metadata:
   type: pending
 ---
@@ -37,6 +37,17 @@ E:\mywork\AOS S-1-4-935922043-301527324:(OI)(CI)(W,D,DC)   <- 沙箱写入能力
 **注意授权不随 git 同步**：上述 ACE 是本机、本路径的安全描述符，克隆到别的机器或换路径后不会带过去，需重新补一次。
 
 **顺带确认的沙箱边界**：受限令牌里 `Authenticated Users` 缺席导致 WMI 命名空间检查失败，故 `Get-CimInstance`／`Get-ComputerInfo` 在受沙箱限制的命令里一律报"拒绝访问"（`0x80041003`）。这不是故障。
+
+**沙箱边界的另一条（2026-09-24 实测）：`git push` 在沙箱内必断，需放行。** 沙箱内推送一律在 pack 送完后失败：
+
+```
+Read from remote host ssh.github.com: Connection reset by peer
+client_loop: send disconnect: Connection reset by peer
+send-pack: unexpected disconnect while reading sideband packet
+fatal: the remote end hung up unexpectedly
+```
+
+**判据**：与包大小无关（推 1 笔小提交同样断）；与凭据、链路无关（沙箱内 `ssh -T git@github.com` 认证成功，`~/.ssh/config` 走 `ssh.github.com:443`；`git ls-remote` 在沙箱内外都取不到输出）；**放行后同一条 `git push` 立刻成功**（2026-09-24 六笔、origin 与 gitee 同批推成）。故推送、抓取这类长连接命令按环境故障处置，**别在沙箱内反复重试**——两次重试＝白等四分钟。
 
 **故障期间的影响**：`git log`／`git status`／`node .tools/*.js`／md2pdf 全部不可用，只能用文件工具读写；记忆机制那条线里"用提交号对账"因此停摆。
 

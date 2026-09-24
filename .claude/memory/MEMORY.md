@@ -1,7 +1,7 @@
 - **[进行中的工作]**（每轮收尾更新，收口后并入正式记忆或删除）：
   - [记忆机制建设（2026-09-22）](progress-dsh-memory-mechanism.md) — 读写触发已写入 `AGENTS.md` §八、`CLAUDE.md` 命名规则纳入 `progress-`、本两份进度记忆与索引行同轮落地；**下一轮**＝第三层 hook 自动注入（`dsh-hooks-claude-code` 的 `SessionStart`，落机器级配置，待人类点头，倾向只做 DSH 一侧）＋ 拿干净会话验闭环；待裁＝`progress-` 前缀与 `pending-` 的界线是否重叠
   - [SKILL 指南规范与三份试点（2026-09-22 实查）](progress-93-skill-guide.md) — **实版次：93 第 80 版／abr 第 102 版／abp 第 41 版／cr 第 13 版**（文件在 `20-pl4eos/10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/`）；**版次以该文件的表为唯一现状源**（挂账文件里的版次是当轮记录，已标「当轮」）；**下一轮**＝核"任务位 → 工位"正名是否已扫全；阻塞＝路径名 `subpl`／`subpd` 仍不一致（证据冲突，待定名后统一）
-- [环境故障：DSH pwsh 沙箱全部命令失败（2026-09-22，已修）](env-dsh-pwsh-sandbox-acl.md) — 根因＝目录没有本用户的显式 `WRITE_DAC` ACE（ACE 全为继承）；**修法＝管理员窗口 `icacls <目录> /grant <用户>:(OI)(CI)F`，补显式完全控制、不必夺属主**；授权不随 git 同步
+- [环境故障：DSH pwsh 沙箱全部命令失败（2026-09-22，已修）](env-dsh-pwsh-sandbox-acl.md) — 根因＝目录没有本用户的显式 `WRITE_DAC` ACE（ACE 全为继承）；**修法＝管理员窗口 `icacls <目录> /grant <用户>:(OI)(CI)F`，补显式完全控制、不必夺属主**；授权不随 git 同步；另：**`git push` 在沙箱内必断（放行后即通）**
 - **教材子项目（`100-subprojects/01-系统工程研究` 教材书＋培训教材）**：记忆独立，在 `100-subprojects/01-系统工程研究/claude-memory/`（`MEMORY.md` ＋ `教材项目.md`）——打磨教材时读/写该目录，**勿写本项目记忆**。
   - **该目录下的引文纪律**（2026-09-23，跨项目通用）：`feedback-quote-original-and-chinese.md` — 引外文一律**原文＋中译并列**、并标一手／二手／形式化；中译不是引文，见不到条款文本写「未核」。**主项目做标准取证与复核时同样照此办**。
 - **投资工程研究（`100-subprojects/05-投资工程研究`）**：记忆独立，见其 `claude-memory/`（`投资工程研究项目.md`）——2026-09-19 建区，产出型（材料准备 → 输出）。
