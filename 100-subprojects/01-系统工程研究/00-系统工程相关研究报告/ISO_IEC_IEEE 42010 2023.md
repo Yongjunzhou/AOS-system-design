@@ -8,7 +8,7 @@
 
   - [Foreword](#foreword)
   - [Introduction](#introduction)
-  - [Software, systems and enterprise — Architecture](#software-systems-and-enterprise-architecture)
+  - [Software, systems and enterprise — Architecture description](#software-systems-and-enterprise-architecture-description)
     - [1 Scope](#1-scope)
     - [2 Normative references](#2-normative-references)
     - [3 Terms and definitions](#3-terms-and-definitions)
@@ -17,7 +17,7 @@
     - [6 Specification of an architecture description](#6-specification-of-an-architecture-description)
     - [7 Architecture description frameworks and architecture description languages](#7-architecture-description-frameworks-and-architecture-description-languages)
     - [8 Architecture viewpoints and model kinds](#8-architecture-viewpoints-and-model-kinds)
-  - [Annex A — Notes on terms and concepts](#annex-a-notes-on-terms-and-concepts)
+  - [Annex A (informative) — Notes on terms and concepts](#annex-a-informative-notes-on-terms-and-concepts)
     - [A.1 General](#a1-general)
     - [A.2 Entities and their architectures](#a2-entities-and-their-architectures)
     - [A.3 Concerns](#a3-concerns)
@@ -25,11 +25,11 @@
     - [A.5 Architecture views and viewpoints](#a5-architecture-views-and-viewpoints)
     - [A.6 Correspondences](#a6-correspondences)
     - [A.7 Perspectives on architecture description languages](#a7-perspectives-on-architecture-description-languages)
-  - [Annex B — Guidelines to specification of architecture viewpoints](#annex-b-guidelines-to-specification-of-architecture-viewpoints)
+  - [Annex B (informative) — Guidelines to specification of architecture viewpoints](#annex-b-informative-guidelines-to-specification-of-architecture-viewpoints)
     - [B.1 General](#b1-general)
     - [B.2 Template for documenting specification of architecture viewpoints](#b2-template-for-documenting-specification-of-architecture-viewpoints)
     - [B.3 Resources for specifications of architecture viewpoints](#b3-resources-for-specifications-of-architecture-viewpoints)
-  - [Annex C — Relationship to other standards](#annex-c-relationship-to-other-standards)
+  - [Annex C (informative) — Relationship to other standards](#annex-c-informative-relationship-to-other-standards)
     - [C.1 General](#c1-general)
     - [C.2 Use with ISO/IEC/IEEE 42020](#c2-use-with-isoiecieee-42020)
     - [C.3 Use with ISO/IEC/IEEE 42030](#c3-use-with-isoiecieee-42030)
@@ -37,13 +37,13 @@
     - [C.5 Use with ISO/IEC/IEEE 12207](#c5-use-with-isoiecieee-12207)
     - [C.6 Use with ISO/IEC/IEEE 15288](#c6-use-with-isoiecieee-15288)
     - [C.7 Use with open distributed processing standards](#c7-use-with-open-distributed-processing-standards)
-  - [Annex D — Uses of architecture descriptions](#annex-d-uses-of-architecture-descriptions)
+  - [Annex D (informative) — Uses of architecture descriptions](#annex-d-informative-uses-of-architecture-descriptions)
     - [D.1 General](#d1-general)
     - [D.2 Uses of architecture descriptions](#d2-uses-of-architecture-descriptions)
-  - [Annex E — Architecture and architecture description life cycles](#annex-e-architecture-and-architecture-description-life-cycles)
+  - [Annex E (informative) — Architecture and architecture description life cycles](#annex-e-informative-architecture-and-architecture-description-life-cycles)
     - [E.1 General](#e1-general)
     - [E.2 Architecting in the life cycle](#e2-architecting-in-the-life-cycle)
-  - [Annex F — Architecture description frameworks](#annex-f-architecture-description-frameworks)
+  - [Annex F (informative) — Architecture description frameworks](#annex-f-informative-architecture-description-frameworks)
     - [F.1 General](#f1-general)
     - [F.2 Evolution of ADFs](#f2-evolution-of-adfs)
     - [F.3 ADF concepts](#f3-adf-concepts)
@@ -188,7 +188,7 @@ In this document, the following verbal forms are used:
 
 - “may” indicates a permission.
 
-## Software, systems and enterprise — Architecture
+## Software, systems and enterprise — Architecture description
 
 ### 1 Scope
 
@@ -1256,7 +1256,7 @@ If a model is used as an information source when creating a view, a view method 
 
 If a “non-model” is used as an information source when creating a view, a view method should define how its contents are portrayed in the view component as AD elements, how the non-model-related data are transformed or translated for use in the view component, and how relationships between information from different sources are portrayed in the view component.
 
-## Annex A — Notes on terms and concepts
+## Annex A (informative) — Notes on terms and concepts
 
 ### A.1 General
 
@@ -1528,7 +1528,7 @@ EXAMPLE 3 The Unified Architecture Framework Profile (UAFP[48]) is a modelling l
 
 An ADL frames a particular set of concerns for an audience of stakeholders, by defining one or more model kinds together with any other methods or tools. Similar to an ADF or an architecture viewpoint, an ADL is a reusable resource—it is not limited in use to an individual entity or AD.
 
-## Annex B — Guidelines to specification of architecture viewpoints
+## Annex B (informative) — Guidelines to specification of architecture viewpoints
 
 ### B.1 General
 
@@ -1676,7 +1676,7 @@ The source above defines a catalogue of architecture viewpoints: Functional, Inf
 
 NOTE Rozanski and Woods’ perspectives do not fit the definition in this document.
 
-## Annex C — Relationship to other standards
+## Annex C (informative) — Relationship to other standards
 
 ### C.1 General
 
@@ -1880,7 +1880,7 @@ domain-specific specifications for these technologies;
 
 - provide support for testing.
 
-## Annex D — Uses of architecture descriptions
+## Annex D (informative) — Uses of architecture descriptions
 
 ### D.1 General
 
@@ -1954,7 +1954,7 @@ v) scenario-based simulation.
 
 NOTE Annex C discusses the use of ADs in the context of other standards.
 
-## Annex E — Architecture and architecture description life cycles
+## Annex E (informative) — Architecture and architecture description life cycles
 
 ### E.1 General
 
@@ -1990,7 +1990,7 @@ This document does not depend upon, assume or prescribe any particular life cycl
 
 NOTE 2 Annex C demonstrates how this document can be used when applying the life cycle processes of ISO/IEC/IEEE 12207 and ISO/IEC/IEEE 15288. ISO/IEC/IEEE 42020 specifies a set of processes for architecting, and for architecture governance, management, and enablement within the context of a life cycle.
 
-## Annex F — Architecture description frameworks
+## Annex F (informative) — Architecture description frameworks
 
 ### F.1 General
 
