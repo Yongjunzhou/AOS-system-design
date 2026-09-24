@@ -989,15 +989,15 @@ place containing collections of *work products* (3.26) and useful information it
 
 #### 3.11 life cycle 生存周期
 
-<entity> set of distinguishable *phases* (3.15) or *stages* (3.20) that an entity goes through from its conceptualization until it ceases to exist
+&lt;entity&gt; set of distinguishable *phases* (3.15) or *stages* (3.20) that an entity goes through from its conceptualization until it ceases to exist
 
-<实体>实体从其概念化直至不复存在所历经的一组可区分的*阶段*(3.15)或*时期*(3.20)
+&lt;实体&gt;实体从其概念化直至不复存在所历经的一组可区分的*阶段*(3.15)或*时期*(3.20)
 
 #### 3.12 life cycle 生存周期
 
-<architecture> set of distinguishable *phases* (3.15) or *stages* (3.20) that an *architecture* (3.3) goes through
+&lt;architecture&gt; set of distinguishable *phases* (3.15) or *stages* (3.20) that an *architecture* (3.3) goes through
 
-<架构>*架构*(3.3)所历经的一组可区分的*阶段*(3.15)或*时期*(3.20)
+&lt;架构&gt;*架构*(3.3)所历经的一组可区分的*阶段*(3.15)或*时期*(3.20)
 
 > **Note 1 to entry:** The architecture life cycle starts with the identification of a need for the architecture and ends when it is no longer needed.
 
@@ -1147,9 +1147,9 @@ recommended action intended to contribute to the achievement of one or more outc
 
 #### 3.24 view 架构视图
 
-<architecture> information item expressing the *architecture* (3.3) from the perspective of specific *stakeholders* (3.21) regarding specific aspects of the *architecture entity* (3.6) and its environment
+&lt;architecture&gt; information item expressing the *architecture* (3.3) from the perspective of specific *stakeholders* (3.21) regarding specific aspects of the *architecture entity* (3.6) and its environment
 
-<架构> 从特定*利益相关方*(3.21)的角度、针对*架构实体*(3.6)及其环境的特定方面体表达*架构*(3.3)的信息部件
+&lt;架构&gt; 从特定*利益相关方*(3.21)的角度、针对*架构实体*(3.6)及其环境的特定方面体表达*架构*(3.3)的信息部件
 
 > **Note 1 to entry:** When the term view is used without any qualifier it refers to the general case. When a qualifier is prepended to the word view, this indicates that the architecture view is specific to a particular *viewpoint* (3.25), such as illustrated in these examples:
 
@@ -1165,9 +1165,9 @@ recommended action intended to contribute to the achievement of one or more outc
 
 #### 3.25 viewpoint 架构视角
 
-<architecture> conventions for the construction, interpretation and use of *architecture* (3.3) *views* (3.24) to address specific *concerns* (3.8) about the *architecture entity* (3.6)
+&lt;architecture&gt; conventions for the construction, interpretation and use of *architecture* (3.3) *views* (3.24) to address specific *concerns* (3.8) about the *architecture entity* (3.6)
 
-<架构> 用于构造、解释和使用*架构*(3.3)*视图*(3.24)以应对关于*架构实体*(3.6)的特定*关注点*(3.8)的约定
+&lt;架构&gt; 用于构造、解释和使用*架构*(3.3)*视图*(3.24)以应对关于*架构实体*(3.6)的特定*关注点*(3.8)的约定
 
 > **Note 1 to entry:** When the word "viewpoint" is used without any qualifier it refers to the general case. When a qualifier is prepended to the word viewpoint, this indicates that the viewpoint applies to a specific set of concerns, such as in the following examples: operational viewpoint, capability viewpoint, services viewpoint.
 
@@ -1297,7 +1297,7 @@ The architecture processes may execute concurrently with interactions between th
 
 各架构过程可并发执行，其间存在交互并随时间迭代。同时，治理指令与管理指令从架构治理过程流向架构管理过程，运行计划和状态则从架构管理过程流向架构治理过程。核心过程之间的交互在 5.4 中描述。
 
-![Figure 1 — Architecture processes and their interactions](ISO-IEC-IEEE 42020 2019.assets/fig-01.png)
+![Figure 1 — Architecture processes and their interactions](<ISO-IEC-IEEE 42020 2019.assets/fig-01.png>)
 
 **Figure 1 — Architecture processes and their interactions**
 
@@ -1353,7 +1353,7 @@ Key interactions between the core processes (Conceptualization, Evaluation and E
 
 核心过程（概念化、评估与细化）之间的关键交互见图 2。这些过程也能由这三个过程之外的其他过程触发。概念化规定架构的目标以及可用于评定其价值的质量度量。价值按利益相关方关注点得到满足的程度来定义。这些架构目标以此过程中发生的问题／机会识别与定义为基础。架构概念在生成时即考虑价值，随后使用这些质量度量对其加以评定。
 
-![Figure 2 — Interactions between the core processes and with other processes](ISO-IEC-IEEE 42020 2019.assets/fig-02.png)
+![Figure 2 — Interactions between the core processes and with other processes](<ISO-IEC-IEEE 42020 2019.assets/fig-02.png>)
 
 **Figure 2 — Interactions between the core processes and with other processes**
 
@@ -6165,7 +6165,7 @@ GERAM 附录中提供的过程描述；
 
 - 提供应用 ISO/IEC/IEEE 42030 所定义的架构评估的过程。
 
-![Figure D.1 — Main relationships between ISO/IEC/IEEE 42020 and other ISO standards](ISO-IEC-IEEE 42020 2019.assets/fig-03.png)
+![Figure D.1 — Main relationships between ISO/IEC/IEEE 42020 and other ISO standards](<ISO-IEC-IEEE 42020 2019.assets/fig-03.png>)
 
 **Figure D.1 — Main relationships between ISO/IEC/IEEE 42020 and other ISO standards**
 
@@ -6225,7 +6225,7 @@ Solution is a term used very often in scientific and technical activities. Figur
 
 解决方案是科学技术活动中十分常用的一个术语。图 E.1 给出了解决方案概念的概览。
 
-![Figure E.1 — Solution concepts](ISO-IEC-IEEE 42020 2019.assets/fig-04.png)
+![Figure E.1 — Solution concepts](<ISO-IEC-IEEE 42020 2019.assets/fig-04.png>)
 
 **Figure E.1 — Solution concepts**
 
@@ -6297,7 +6297,7 @@ Figure E.2 identifies key architecture life concepts and their relationships.
 
 图 E.2 标示了关键的架构生存期概念及其关系。
 
-![Figure E.2 — Architecture life concepts](ISO-IEC-IEEE 42020 2019.assets/fig-05.png)
+![Figure E.2 — Architecture life concepts](<ISO-IEC-IEEE 42020 2019.assets/fig-05.png>)
 
 **Figure E.2 — Architecture life concepts**
 
@@ -6345,7 +6345,7 @@ Some typical architecture life cycles featuring varying degrees of use (and revi
 
 图 E.3 中示出若干典型的架构生存周期，其使用（与修订）程度各不相同。
 
-![Figure E.3 — Architecture life cycle options](ISO-IEC-IEEE 42020 2019.assets/fig-06.png)
+![Figure E.3 — Architecture life cycle options](<ISO-IEC-IEEE 42020 2019.assets/fig-06.png>)
 
 **Figure E.3 — Architecture life cycle options**
 
@@ -7094,7 +7094,7 @@ This framework categorizes product quality into characteristics, which in some c
 
 该框架将产品质量归类为若干特性，某些情况下特性进一步细分为子特性。某些情况下子特性又可分为子子特性。由此形成如图 E.4 所示的质量分解结构。
 
-![Figure E.4 — ISO/IEC 25000 Quality model framework](ISO-IEC-IEEE 42020 2019.assets/fig-07.png)
+![Figure E.4 — ISO/IEC 25000 Quality model framework](<ISO-IEC-IEEE 42020 2019.assets/fig-07.png>)
 
 **Figure E.4 — ISO/IEC 25000 Quality model framework**
 
@@ -7108,7 +7108,7 @@ This quality in use model defines five characteristics related to outcomes of in
 
 该使用质量模型定义了与系统交互结果相关的五个特性。它刻画了产品对利益相关方的影响。该模型见图 E.5。
 
-![Figure E.5 — ISO/IEC 25010 Quality in use model](ISO-IEC-IEEE 42020 2019.assets/fig-08.png)
+![Figure E.5 — ISO/IEC 25010 Quality in use model](<ISO-IEC-IEEE 42020 2019.assets/fig-08.png>)
 
 **Figure E.5 — ISO/IEC 25010 Quality in use model**
 
@@ -7120,7 +7120,7 @@ This product quality model categorizes a system/software product quality propert
 
 该产品质量模型将系统／软件产品的质量属性归类为八个特性，聚焦于目标系统。该模型见图 E.6。
 
-![Figure E.6 — ISO/IEC 25010 System/software product quality model](ISO-IEC-IEEE 42020 2019.assets/fig-09.png)
+![Figure E.6 — ISO/IEC 25010 System/software product quality model](<ISO-IEC-IEEE 42020 2019.assets/fig-09.png>)
 
 **Figure E.6 — ISO/IEC 25010 System/software product quality model**
 
@@ -7153,7 +7153,7 @@ This product quality measurement reference model describes the relationship betw
 
 该产品质量测量参考模型描述质量模型、其关联的质量特性（及子特性），以及系统与软件产品属性同相应的软件质量测度、测量函数、质量测度元素和测量方法之间的关系。该模型如图 E.7 所示。
 
-![Figure E.7 — ISO/IEC 25020 System/software product quality measurement reference model](ISO-IEC-IEEE 42020 2019.assets/fig-10.png)
+![Figure E.7 — ISO/IEC 25020 System/software product quality measurement reference model](<ISO-IEC-IEEE 42020 2019.assets/fig-10.png>)
 
 **Figure E.7 — ISO/IEC 25020 System/software product quality measurement reference model**
 
@@ -7447,7 +7447,7 @@ TOGAF[36], an Open Group standard, is a framework that provides a detailed metho
 
 TOGAF[36] 是开放群组（Open Group）的一项标准，该框架为开发企业架构提供了详细方法和一套配套工具。它包括一个用于开发架构描述的过程，称为架构开发方法（ADM）（见图 H.1），还包括开展架构工作与进行架构治理的一般原则。
 
-![Figure H.1 — Architecture development cycle, TOGAF v9.1, 2011\[36\]](ISO-IEC-IEEE 42020 2019.assets/fig-11.png)
+![Figure H.1 — Architecture development cycle, TOGAF v9.1, 2011\[36\]](<ISO-IEC-IEEE 42020 2019.assets/fig-11.png>)
 
 **Figure H.1 — Architecture development cycle, TOGAF v9.1, 2011[36]**
 
@@ -7496,7 +7496,7 @@ While the coverage mapping is not one-to-one (e.g. several sections of the TOGAF
 | Ch 50 Architecture Governance ／ 第 50 章 架构治理 | X | X |  |  |  |  |
 | Ch 51 Architecture Maturity Models ／ 第 51 章 架构成熟度模型 | X |  |  |  |  | X |
 | Ch 52 Architecture Skills Framework ／ 第 52 章 架构技能框架 |  |  |  | X |  | X |
-| NOTE This table is sourced from TOGAF®<?> Version 9.1[36]. ／ 本表来源于 TOGAF®<?> 9.1 版[36]。 |  |  |  |  |  |  |
+| NOTE This table is sourced from TOGAF®&lt;?&gt; Version 9.1[36]. ／ 本表来源于 TOGAF®&lt;?&gt; 9.1 版[36]。 |  |  |  |  |  |  |
 
 #### H.2.3 Items in the TOGAF framework not addressed in this document TOGAF 框架中本文件未处理的条目
 
@@ -7544,7 +7544,7 @@ PEAF proposes to perform enterprise transformation based on methods, artifacts, 
 
 PEAF 提出基于方法、人工制品、文化与环境来开展企业转型，其行动与基础如下图所示。
 
-![Figure H.2 — PEAF functional areas and foundation (PEAF v3, August 2014\[31\])](ISO-IEC-IEEE 42020 2019.assets/fig-12.png)
+![Figure H.2 — PEAF functional areas and foundation (PEAF v3, August 2014\[31\])](<ISO-IEC-IEEE 42020 2019.assets/fig-12.png>)
 
 **Figure H.2 — PEAF functional areas and foundation (PEAF v3, August 2014[31])**
 
@@ -7657,7 +7657,7 @@ Figure H.3 and Figure H.4 show respectively version 1.6.3 (current) and version 
 
 > **注 2**：除另有说明外，所有关系的参与约束与基数约束均为 0...\*。
 
-![Figure H.3 — GERAM1.6.3 and GERAM meta-model V2.1](ISO-IEC-IEEE 42020 2019.assets/fig-13.png)
+![Figure H.3 — GERAM1.6.3 and GERAM meta-model V2.1](<ISO-IEC-IEEE 42020 2019.assets/fig-13.png>)
 
 **Figure H.3 — GERAM1.6.3 and GERAM meta-model V2.1**
 
@@ -7675,7 +7675,7 @@ Figure H.3 and Figure H.4 show respectively version 1.6.3 (current) and version 
 
 > **注 3**：NB：模型范围能跨越多个企业实体。
 
-![Figure H.4 — GERAM Modeling Aspect concept V2.1](ISO-IEC-IEEE 42020 2019.assets/fig-14.png)
+![Figure H.4 — GERAM Modeling Aspect concept V2.1](<ISO-IEC-IEEE 42020 2019.assets/fig-14.png>)
 
 **Figure H.4 — GERAM Modeling Aspect concept V2.1**
 
@@ -7711,7 +7711,7 @@ Architecture Processes includes activities and tasks being allocated to and roll
 
 包括将活动与任务分配并推行至公司管理层、业务单元（SBU）中的各角色，以及项目群管理、项目使命履行、项目管理中的各角色，还可能包括外部实体（如咨询及其他服务提供方）中的各角色。如图 H.5 所示，建造生存周期时期涉及：图 H.5 a) 建立所需的人员架构工作、治理和管理技能与能力（通过招聘与培训个人、组建委员会并任命人员担任角色）；图 H.5 b) 选定、调试并部署工具（以支持架构工作、建模、沟通、管理和治理）及其各自的存储库。
 
-![Figure H.5 — a) Deploying Architecture Processes (establishment stage) and](ISO-IEC-IEEE 42020 2019.assets/fig-15.png)
+![Figure H.5 — a) Deploying Architecture Processes (establishment stage) and](<ISO-IEC-IEEE 42020 2019.assets/fig-15.png>)
 
 **Figure H.5 — a) Deploying Architecture Processes (establishment stage) and**
 
@@ -7821,7 +7821,7 @@ Architectural Description development team and emphasizes the guiding principles
 
 > **注**：此处所示过程是对多个版本 DoDAF 信息的综合。具体而言，在 DoDAF 的最初几个版本中，第 6 步的标题为“Document results in accordance with the Architecture Framework”，意为结果按已确立的模板加以细化，但并不总能满足决策者的全部需要；也就是说，结果是将第 5 步所作权衡分析中找到的最佳折衷予以形式化。
 
-![Figure H.6 — DoDAF six-step architecture process](ISO-IEC-IEEE 42020 2019.assets/fig-16.png)
+![Figure H.6 — DoDAF six-step architecture process](<ISO-IEC-IEEE 42020 2019.assets/fig-16.png>)
 
 **Figure H.6 — DoDAF six-step architecture process**
 
@@ -7899,7 +7899,7 @@ The RM-ODP family of recommendations and international standards defines a syste
 
 RM-ODP 系列建议书和国际标准定义了规定开放分布式处理系统所必需的一套相互关联的基本概念体系，并为构造任何大规模系统（包括软件系统）的规格提供了发展完善的企业架构框架。
 
-![Figure H.7 — RM-ODP framework](ISO-IEC-IEEE 42020 2019.assets/fig-17.png)
+![Figure H.7 — RM-ODP framework](<ISO-IEC-IEEE 42020 2019.assets/fig-17.png>)
 
 **Figure H.7 — RM-ODP framework**
 

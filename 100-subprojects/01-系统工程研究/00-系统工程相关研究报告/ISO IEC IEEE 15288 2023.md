@@ -355,7 +355,7 @@ Note 1 to entry: Each enabling system has a life cycle of its own. This document
 
 #### 3.16 environment
 
-<system> context determining the setting and circumstances of all influences upon a *system* (3.46)
+&lt;system&gt; context determining the setting and circumstances of all influences upon a *system* (3.46)
 
 #### 3.17 incident
 
@@ -425,7 +425,7 @@ set of interrelated or interacting *activities* (3.3) that transform inputs into
 
 #### 3.28 iteration
 
-<process> repeating the application of the same *process* (3.27) or set of processes on the same level of the *system* (3.46) structure
+&lt;process&gt; repeating the application of the same *process* (3.27) or set of processes on the same level of the *system* (3.46) structure
 
 #### 3.29 process purpose
 
@@ -439,7 +439,7 @@ observable result of the successful achievement of the *process purpose* (3.29)
 
 #### 3.31 recursion
 
-<process> repeating the application of the same *process* (3.27) or set of processes to successive levels of *system elements* (3.47) in the system structure
+&lt;process&gt; repeating the application of the same *process* (3.27) or set of processes to successive levels of *system elements* (3.47) in the system structure
 
 #### 3.32 product
 
@@ -485,7 +485,7 @@ Note 2 to entry: Resources include those that are reusable, renewable or consuma
 
 #### 3.38 retirement
 
-<system> withdrawal of active support by the operation and maintenance *organization* (3.25), partial or total replacement by a new *system* (3.46)*,* or installation of an upgraded system, or final decommissioning and disposal
+&lt;system&gt; withdrawal of active support by the operation and maintenance *organization* (3.25), partial or total replacement by a new *system* (3.46)*,* or installation of an upgraded system, or final decommissioning and disposal
 
 #### 3.39 risk
 
@@ -713,13 +713,13 @@ Whatever the boundaries chosen to define the system, the concepts in this docume
 
 The system life cycle processes in this document are described in relation to a system (see Figure 1) which is composed of a set of interacting system elements, each of which can be implemented to fulfil its respective specified requirements. System elements may include software elements, hardware elements, services, and utilization and support resources. Responsibility for the implementation of any system element may be delegated to another party through an agreement.
 
-![Figure 1 — System and system element relationship](ISO IEC IEEE 15288 2023.assets/fig-01.png)
+![Figure 1 — System and system element relationship](<ISO IEC IEEE 15288 2023.assets/fig-01.png>)
 
 **Figure 1 — System and system element relationship**
 
 The relationship between system elements can be expressed in many forms, including hierarchies or networks. For more complex SoIs, a prospective system element may itself need to be considered as a system (that in turn is comprised of system elements) before a complete set of system elements can be defined with confidence (see Figure 2). In this manner, the appropriate system life cycle processes are applied recursively to an SoI to resolve its structure to the point where understandable and manageable system elements can be implemented (made, bought, or reused). While Figures 1 and 2 imply a hierarchical relationship, in reality there are an increasing number of systems that, from one or more aspects, are not hierarchical, such as networks and other distributed systems. 5.4 discusses the concept of a system of systems (SoS).
 
-![Figure 2 — System-of-interest structure](ISO IEC IEEE 15288 2023.assets/fig-02.png)
+![Figure 2 — System-of-interest structure](<ISO IEC IEEE 15288 2023.assets/fig-02.png>)
 
 **Figure 2 — System-of-interest structure**
 
@@ -747,7 +747,7 @@ EXAMPLE A manufacturing system is necessary for the supplier and is usually not 
 
 In this perspective, for a given SoI, the business or mission analysis process is intended to address the set of solution contexts (see Figure 3).
 
-![Figure 3 — System solution contexts](ISO IEC IEEE 15288 2023.assets/fig-03.png)
+![Figure 3 — System solution contexts](<ISO IEC IEEE 15288 2023.assets/fig-03.png>)
 
 **Figure 3 — System solution contexts**
 
@@ -951,7 +951,7 @@ The groups and the processes included in each group are depicted in Figure 4. Ea
 
 The processes described in this document are not intended to preclude or discourage the use of additional processes that organizations find useful. The order of the subclauses in which the processes are defined in this document does not determine the order in which the processes are performed during the system life cycle or any of its stages (i.e. there is no prescriptive order or sequence). A description of each process group is provided in 5.7.2 to 5.7.5.
 
-![Figure 4 — System life cycle processes](ISO IEC IEEE 15288 2023.assets/fig-04.png)
+![Figure 4 — System life cycle processes](<ISO IEC IEEE 15288 2023.assets/fig-04.png>)
 
 **Figure 4 — System life cycle processes**
 
@@ -1107,7 +1107,7 @@ The changing nature of the influences on the system (e.g. operational environmen
 
 Where justified by quality risks, detailed descriptions of process instances in the context of the specific product or service may also be created. Instantiation of processes involves identifying specific success criteria for a process instance, derived from the requirements, and identifying the specific activities and tasks needed to achieve the success criteria, derived from the activities and tasks identified in this document. Creating detailed descriptions of process instances enables better management of quality risks by establishing the link between the process and the specific requirements.
 
-![Figure 5 — Interrelationships between processes](ISO IEC IEEE 15288 2023.assets/fig-05.png)
+![Figure 5 — Interrelationships between processes](<ISO IEC IEEE 15288 2023.assets/fig-05.png>)
 
 **Figure 5 — Interrelationships between processes**
 

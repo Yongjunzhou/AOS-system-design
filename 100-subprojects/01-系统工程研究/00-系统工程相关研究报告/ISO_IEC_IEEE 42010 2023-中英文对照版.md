@@ -1052,7 +1052,7 @@ Figure 1 depicts relationships between concerns, aspects, and stakeholder perspe
 
 图 1 描绘了架构描述中所使用的关注点、方面体与利益相关方角度之间的关系。
 
-![Figure 1 — Concerns, aspects, and stakeholder perspectives](ISO_IEC_IEEE 42010 2023.assets/fig-01.png)
+![Figure 1 — Concerns, aspects, and stakeholder perspectives](<ISO_IEC_IEEE 42010 2023.assets/fig-01.png>)
 
 **Figure 1 — Concerns, aspects, and stakeholder perspectives**
 
@@ -1098,7 +1098,7 @@ Figure 2 depicts the relationship between architecture views and architecture vi
 
 图 2 描绘了 AD 中架构视图与架构视角之间的关系。
 
-![Figure 2 — Architecture views and architecture viewpoints](ISO_IEC_IEEE 42010 2023.assets/fig-02.png)
+![Figure 2 — Architecture views and architecture viewpoints](<ISO_IEC_IEEE 42010 2023.assets/fig-02.png>)
 
 **Figure 2 — Architecture views and architecture viewpoints**
 
@@ -1146,7 +1146,7 @@ Figure 3 depicts the composition of views from view components and the kinds of 
 
 图 3 描绘了视图由视图组件构成的方式以及视图组件的种类。
 
-![Figure 3 — Conceptual model for views and view components](ISO_IEC_IEEE 42010 2023.assets/fig-03.png)
+![Figure 3 — Conceptual model for views and view components](<ISO_IEC_IEEE 42010 2023.assets/fig-03.png>)
 
 **Figure 3 — Conceptual model for views and view components**
 
@@ -1270,7 +1270,7 @@ Figure 4 depicts the nature of AD element correspondences.
 
 图 4 描绘了架构描述元素对应关系的性质。
 
-![Figure 4 — Conceptual model of AD element correspondences](ISO_IEC_IEEE 42010 2023.assets/fig-04.png)
+![Figure 4 — Conceptual model of AD element correspondences](<ISO_IEC_IEEE 42010 2023.assets/fig-04.png>)
 
 **Figure 4 — Conceptual model of AD element correspondences**
 
@@ -1398,7 +1398,7 @@ Figure 5 depicts the conceptual model of an ADF.
 
 图 5 描绘了 ADF 的概念模型。
 
-![Figure 5 — Conceptual model of an architecture description framework](ISO_IEC_IEEE 42010 2023.assets/fig-05.png)
+![Figure 5 — Conceptual model of an architecture description framework](<ISO_IEC_IEEE 42010 2023.assets/fig-05.png>)
 
 **Figure 5 — Conceptual model of an architecture description framework**
 
@@ -1564,7 +1564,7 @@ Figure 6 provides the conceptual model for an ADL.
 
 > **注 3**：对 ADL 的要求在 7.2 中规定。
 
-![Figure 6 — Conceptual model of an architecture description language](ISO_IEC_IEEE 42010 2023.assets/fig-06.png)
+![Figure 6 — Conceptual model of an architecture description language](<ISO_IEC_IEEE 42010 2023.assets/fig-06.png>)
 
 **Figure 6 — Conceptual model of an architecture description language**
 
@@ -2396,7 +2396,7 @@ This annex discusses the principles, concepts and terms on which this document i
 
 本附录讨论本文件所依据的原则、概念和术语。图 A.1 描绘了 AD 的主要概念。
 
-![Figure A.1 — Conceptual model of an architecture description](ISO_IEC_IEEE 42010 2023.assets/fig-07.png)
+![Figure A.1 — Conceptual model of an architecture description](<ISO_IEC_IEEE 42010 2023.assets/fig-07.png>)
 
 **Figure A.1 — Conceptual model of an architecture description**
 
@@ -2756,7 +2756,7 @@ The remainder of this subclause presents examples of correspondences and corresp
 
 > **示例 1**：考虑汽车系统的架构描述中的两个视图组件：一个软件应用视图组件和一个电子控制单元（ECU）视图组件。软件应用视图组件包括下列元素：Autopilot、Dashboard（由Controls、Instrument panel cluster、Center stack组成）、Braking、GPS、LIDAR和Sensor Fusion。ECU视图组件标识了若干ECU，编号为1到4。图A.2以矩阵形式示出描绘应用到ECU分配的一个对应关系。对应关系的形式不由本文件规定。
 
-![Figure A.2 — Example of a correspondence](ISO_IEC_IEEE 42010 2023.assets/fig-08.png)
+![Figure A.2 — Example of a correspondence](<ISO_IEC_IEEE 42010 2023.assets/fig-08.png>)
 
 **Figure A.2 — Example of a correspondence**
 
@@ -2802,7 +2802,7 @@ Many correspondences will be binary, but this is not required. A correspondence 
 
 > **示例 4**：View Versioning：在本架构描述发布之前，每个架构视图的版本标识符都需要大于1.5。
 
-![Figure A.3 — Example of a correspondence satisfying the Task-Interactions method](ISO_IEC_IEEE 42010 2023.assets/fig-09.png)
+![Figure A.3 — Example of a correspondence satisfying the Task-Interactions method](<ISO_IEC_IEEE 42010 2023.assets/fig-09.png>)
 
 **Figure A.3 — Example of a correspondence satisfying the Task-Interactions method**
 
@@ -3238,7 +3238,7 @@ An example of a modelling framework is provided in ISO 15704:2019 Annex B (GERAM
 
 建模框架的一个示例见 ISO 15704:2019 附录 B（GERAM）和 ISO 19439，后者是 GERAM 的 GERA 建模框架的细化（见图 C.1）。
 
-![Figure C.1 — Depiction of GERA modelling framework](ISO_IEC_IEEE 42010 2023.assets/fig-10.png)
+![Figure C.1 — Depiction of GERA modelling framework](<ISO_IEC_IEEE 42010 2023.assets/fig-10.png>)
 
 **Figure C.1 — Depiction of GERA modelling framework**
 
@@ -3256,7 +3256,7 @@ Another distinguishing feature of the GERAM approach is the use of recursion and
 
 GERAM 方法的另一个显著特征是使用递归与迭代来管理企业及其供应链内部的复杂关系（见图 C.2）。
 
-![Figure C.2 — Recursive use of ADs that iterate life cycle modelling phases](ISO_IEC_IEEE 42010 2023.assets/fig-11.png)
+![Figure C.2 — Recursive use of ADs that iterate life cycle modelling phases](<ISO_IEC_IEEE 42010 2023.assets/fig-11.png>)
 
 **Figure C.2 — Recursive use of ADs that iterate life cycle modelling phases**
 

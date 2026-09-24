@@ -604,7 +604,7 @@ design attributes or distinguishing features that pertain to a measurable descri
 
 #### 3.16 environment 环境
 
-<system> context determining the setting and circumstances of all influences upon a *system* (3.46)
+&lt;system&gt; context determining the setting and circumstances of all influences upon a *system* (3.46)
 
 〈系统〉确定对*系统*(3.46)的一切影响之背景与境况的语境
 
@@ -716,7 +716,7 @@ set of interrelated or interacting *activities* (3.3) that transform inputs into
 
 #### 3.28 iteration 迭代
 
-<process> repeating the application of the same *process* (3.27) or set of processes on the same level of the *system* (3.46) structure
+&lt;process&gt; repeating the application of the same *process* (3.27) or set of processes on the same level of the *system* (3.46) structure
 
 〈过程〉在*系统*(3.46)结构的同一层级上重复应用同一*过程*(3.27)或过程集
 
@@ -738,7 +738,7 @@ observable result of the successful achievement of the *process purpose* (3.29)
 
 #### 3.31 recursion 递归
 
-<process> repeating the application of the same *process* (3.27) or set of processes to successive levels of *system elements* (3.47) in the system structure
+&lt;process&gt; repeating the application of the same *process* (3.27) or set of processes to successive levels of *system elements* (3.47) in the system structure
 
 〈过程〉将同一*过程*(3.27)或过程集重复应用于系统结构中相继层级的*系统元素*(3.47)
 
@@ -816,7 +816,7 @@ asset that is utilised or consumed during the execution of a *process* (3.27)
 
 #### 3.38 retirement 退役
 
-<system> withdrawal of active support by the operation and maintenance *organization* (3.25), partial or total replacement by a new *system* (3.46)*,* or installation of an upgraded system, or final decommissioning and disposal
+&lt;system&gt; withdrawal of active support by the operation and maintenance *organization* (3.25), partial or total replacement by a new *system* (3.46)*,* or installation of an upgraded system, or final decommissioning and disposal
 
 〈系统〉运行与维护*组织*(3.25)撤出主动支持，由新*系统*(3.46)部分或全部替换*，*或安装经升级的系统，或最终退役和处置
 
@@ -1204,7 +1204,7 @@ The system life cycle processes in this document are described in relation to a 
 
 本文件中的系统生存周期过程是相对于一个系统来描述的（见图 1），该系统由一组相互作用的系统元素组成，其中每个系统元素都能以实现其各自的规定需求的方式实现。系统元素可包括软件元素、硬件元素、服务以及使用与保障资源。任何系统元素的实现职责都能通过协议委托给另一方。
 
-![Figure 1 — System and system element relationship](ISO IEC IEEE 15288 2023.assets/fig-01.png)
+![Figure 1 — System and system element relationship](<ISO IEC IEEE 15288 2023.assets/fig-01.png>)
 
 **Figure 1 — System and system element relationship**
 
@@ -1214,7 +1214,7 @@ The relationship between system elements can be expressed in many forms, includi
 
 系统元素之间的关系能以多种形式表达，包括层级或网络。对于更复杂的 SoI，在能有把握地定义完整的系统元素集之前，某个预期的系统元素本身可能就需要被看作一个系统（该系统又由系统元素构成）（见图 2）。以此方式，将适宜的系统生存周期过程递归地应用于一个 SoI，以将其结构分解到能够实现（制造、购买或复用）可理解且可管理的系统元素的程度。虽然图 1 和图 2 暗示了层级关系，但在现实中，越来越多的系统从一个或多个方面看并非层级结构，例如网络和其他分布式系统。5.4 讨论了系统的系统（SoS）的概念。
 
-![Figure 2 — System-of-interest structure](ISO IEC IEEE 15288 2023.assets/fig-02.png)
+![Figure 2 — System-of-interest structure](<ISO IEC IEEE 15288 2023.assets/fig-02.png>)
 
 **Figure 2 — System-of-interest structure**
 
@@ -1260,7 +1260,7 @@ In this perspective, for a given SoI, the business or mission analysis process i
 
 在这一视角下，对于给定的 SoI，业务或任务分析过程旨在处理解决方案语境的集合（见图 3）。
 
-![Figure 3 — System solution contexts](ISO IEC IEEE 15288 2023.assets/fig-03.png)
+![Figure 3 — System solution contexts](<ISO IEC IEEE 15288 2023.assets/fig-03.png>)
 
 **Figure 3 — System solution contexts**
 
@@ -1622,7 +1622,7 @@ The processes described in this document are not intended to preclude or discour
 
 本文件所述过程无意排除或阻止组织使用其认为有用的其他过程。本文件中定义各过程的子条款的顺序，并不决定各过程在系统生存周期或其任何阶段中执行的顺序（即不存在规定性的顺序或序列）。5.7.2 至 5.7.5 给出了各过程组的描述。
 
-![Figure 4 — System life cycle processes](ISO IEC IEEE 15288 2023.assets/fig-04.png)
+![Figure 4 — System life cycle processes](<ISO IEC IEEE 15288 2023.assets/fig-04.png>)
 
 **Figure 4 — System life cycle processes**
 
@@ -1916,7 +1916,7 @@ Where justified by quality risks, detailed descriptions of process instances in 
 
 在质量风险证明有必要时，还可创建特定产品或服务语境下过程实例的详细描述。过程的实例化包括：确定某一过程实例的特定成功准则（由需求导出），并确定实现这些成功准则所需的特定活动与任务（由本文件所确定的活动与任务导出）。创建过程实例的详细描述，能通过建立过程与特定需求之间的联系，更好地管理质量风险。
 
-![Figure 5 — Interrelationships between processes](ISO IEC IEEE 15288 2023.assets/fig-05.png)
+![Figure 5 — Interrelationships between processes](<ISO IEC IEEE 15288 2023.assets/fig-05.png>)
 
 **Figure 5 — Interrelationships between processes**
 

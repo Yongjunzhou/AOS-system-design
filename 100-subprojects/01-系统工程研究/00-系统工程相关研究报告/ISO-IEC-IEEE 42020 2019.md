@@ -563,11 +563,11 @@ Note 1 to entry: In a *repository* (3.19), work products and other items are pre
 
 #### 3.11 life cycle
 
-<entity> set of distinguishable *phases* (3.15) or *stages* (3.20) that an entity goes through from its conceptualization until it ceases to exist
+&lt;entity&gt; set of distinguishable *phases* (3.15) or *stages* (3.20) that an entity goes through from its conceptualization until it ceases to exist
 
 #### 3.12 life cycle
 
-<architecture> set of distinguishable *phases* (3.15) or *stages* (3.20) that an *architecture* (3.3) goes through
+&lt;architecture&gt; set of distinguishable *phases* (3.15) or *stages* (3.20) that an *architecture* (3.3) goes through
 
 Note 1 to entry: The architecture life cycle starts with the identification of a need for the architecture and ends when it is no longer needed.
 
@@ -657,7 +657,7 @@ recommended action intended to contribute to the achievement of one or more outc
 
 #### 3.24 view
 
-<architecture> information item expressing the *architecture* (3.3) from the perspective of specific *stakeholders* (3.21) regarding specific aspects of the *architecture entity* (3.6) and its environment
+&lt;architecture&gt; information item expressing the *architecture* (3.3) from the perspective of specific *stakeholders* (3.21) regarding specific aspects of the *architecture entity* (3.6) and its environment
 
 Note 1 to entry: When the term view is used without any qualifier it refers to the general case. When a qualifier is prepended to the word view, this indicates that the architecture view is specific to a particular *viewpoint* (3.25), such as illustrated in these examples:
 
@@ -667,7 +667,7 @@ Note 1 to entry: When the term view is used without any qualifier it refers to t
 
 #### 3.25 viewpoint
 
-<architecture> conventions for the construction, interpretation and use of *architecture* (3.3) *views* (3.24) to address specific *concerns* (3.8) about the *architecture entity* (3.6)
+&lt;architecture&gt; conventions for the construction, interpretation and use of *architecture* (3.3) *views* (3.24) to address specific *concerns* (3.8) about the *architecture entity* (3.6)
 
 Note 1 to entry: When the word "viewpoint" is used without any qualifier it refers to the general case. When a qualifier is prepended to the word viewpoint, this indicates that the viewpoint applies to a specific set of concerns, such as in the following examples: operational viewpoint, capability viewpoint, services viewpoint.
 
@@ -747,7 +747,7 @@ These architecture processes and their key interactions in terms of typical info
 
 The architecture processes may execute concurrently with interactions between them and iterating over time. At the same time, governance directives and management instructions flow from Architecture Governance process to the Architecture Management process and operational plans and status flows from the Architecture Management process to the Architecture Governance process. The interactions between the core processes are described in 5.4.
 
-![Figure 1 — Architecture processes and their interactions](ISO-IEC-IEEE 42020 2019.assets/fig-01.png)
+![Figure 1 — Architecture processes and their interactions](<ISO-IEC-IEEE 42020 2019.assets/fig-01.png>)
 
 **Figure 1 — Architecture processes and their interactions**
 
@@ -779,7 +779,7 @@ NOTE 3 See Annex G for additional information regarding architecture governance 
 
 Key interactions between the core processes (Conceptualization, Evaluation and Elaboration) are illustrated in Figure 2. These processes can also be triggered by other processes external to these three processes. Conceptualization specifies the objectives of the architecture and the quality measures that can be used in the assessment of its value. Value is defined in terms of the extent to which stakeholder concerns are addressed. These architecture objectives are based on the problem/opportunity identification and definition that occurs in this process. Architecture concepts are generated with value in mind and are then assessed using these quality measures.
 
-![Figure 2 — Interactions between the core processes and with other processes](ISO-IEC-IEEE 42020 2019.assets/fig-02.png)
+![Figure 2 — Interactions between the core processes and with other processes](<ISO-IEC-IEEE 42020 2019.assets/fig-02.png>)
 
 **Figure 2 — Interactions between the core processes and with other processes**
 
@@ -3687,7 +3687,7 @@ the GERAM annex;
 
 - provides processes for application of Architecture Evaluation defined by ISO/IEC/IEEE 42030.
 
-![Figure D.1 — Main relationships between ISO/IEC/IEEE 42020 and other ISO standards](ISO-IEC-IEEE 42020 2019.assets/fig-03.png)
+![Figure D.1 — Main relationships between ISO/IEC/IEEE 42020 and other ISO standards](<ISO-IEC-IEEE 42020 2019.assets/fig-03.png>)
 
 **Figure D.1 — Main relationships between ISO/IEC/IEEE 42020 and other ISO standards**
 
@@ -3723,7 +3723,7 @@ Architectures as constraint are limited by the counter-balancing desire to maxim
 
 Solution is a term used very often in scientific and technical activities. Figure E.1 gives an overview of the solution concepts.
 
-![Figure E.1 — Solution concepts](ISO-IEC-IEEE 42020 2019.assets/fig-04.png)
+![Figure E.1 — Solution concepts](<ISO-IEC-IEEE 42020 2019.assets/fig-04.png>)
 
 **Figure E.1 — Solution concepts**
 
@@ -3761,7 +3761,7 @@ NOTE 2 Architecture can exhibit any part of the solution being considered as ent
 
 Figure E.2 identifies key architecture life concepts and their relationships.
 
-![Figure E.2 — Architecture life concepts](ISO-IEC-IEEE 42020 2019.assets/fig-05.png)
+![Figure E.2 — Architecture life concepts](<ISO-IEC-IEEE 42020 2019.assets/fig-05.png>)
 
 **Figure E.2 — Architecture life concepts**
 
@@ -3787,7 +3787,7 @@ Every architecture goes through various distinct stages of development, use and 
 
 Some typical architecture life cycles featuring varying degrees of use (and revision) are indicated in Figure E.3 bellow.
 
-![Figure E.3 — Architecture life cycle options](ISO-IEC-IEEE 42020 2019.assets/fig-06.png)
+![Figure E.3 — Architecture life cycle options](<ISO-IEC-IEEE 42020 2019.assets/fig-06.png>)
 
 **Figure E.3 — Architecture life cycle options**
 
@@ -4256,7 +4256,7 @@ The ISO/IEC 25000 family of standards, also known as SQuaRE (System and Software
 
 This framework categorizes product quality into characteristics, which in some cases are further subdivided into sub-characteristics. A sub-characteristic in some cases can be divided into sub-sub-characteristics. This results in a quality breakdown structure as illustrated in Figure E.4.
 
-![Figure E.4 — ISO/IEC 25000 Quality model framework](ISO-IEC-IEEE 42020 2019.assets/fig-07.png)
+![Figure E.4 — ISO/IEC 25000 Quality model framework](<ISO-IEC-IEEE 42020 2019.assets/fig-07.png>)
 
 **Figure E.4 — ISO/IEC 25000 Quality model framework**
 
@@ -4266,7 +4266,7 @@ This framework categorizes product quality into characteristics, which in some c
 
 This quality in use model defines five characteristics related to outcomes of interaction with a system. It characterizes the impact that the product has on stakeholders. This model is presented in Figure E.5.
 
-![Figure E.5 — ISO/IEC 25010 Quality in use model](ISO-IEC-IEEE 42020 2019.assets/fig-08.png)
+![Figure E.5 — ISO/IEC 25010 Quality in use model](<ISO-IEC-IEEE 42020 2019.assets/fig-08.png>)
 
 **Figure E.5 — ISO/IEC 25010 Quality in use model**
 
@@ -4274,7 +4274,7 @@ This quality in use model defines five characteristics related to outcomes of in
 
 This product quality model categorizes a system/software product quality properties into eight characteristics that focuses on the target system. This model is presented in Figure E.6.
 
-![Figure E.6 — ISO/IEC 25010 System/software product quality model](ISO-IEC-IEEE 42020 2019.assets/fig-09.png)
+![Figure E.6 — ISO/IEC 25010 System/software product quality model](<ISO-IEC-IEEE 42020 2019.assets/fig-09.png>)
 
 **Figure E.6 — ISO/IEC 25010 System/software product quality model**
 
@@ -4299,7 +4299,7 @@ This data quality model, as illustrated in Table E.3, categorizes data quality a
 
 This product quality measurement reference model describes the relationship between a quality model, its associated quality characteristics (and sub-characteristics), and system and software product attributes with the corresponding software quality measures, measurement functions, quality measure elements and measurement methods. This model is presented in Figure E.7.
 
-![Figure E.7 — ISO/IEC 25020 System/software product quality measurement reference model](ISO-IEC-IEEE 42020 2019.assets/fig-10.png)
+![Figure E.7 — ISO/IEC 25020 System/software product quality measurement reference model](<ISO-IEC-IEEE 42020 2019.assets/fig-10.png>)
 
 **Figure E.7 — ISO/IEC 25020 System/software product quality measurement reference model**
 
@@ -4471,7 +4471,7 @@ Other well-known architecture frameworks like NAF, AUS-DAF, UPDM, UAF and Archim
 
 TOGAF[36], an Open Group standard, is a framework that provides a detailed method and a set of supporting tools for developing enterprise architectures. It includes a process for developing the architecture description called the Architecture Development Method (ADM) (see Figure H.1), as well as general principles for doing architecting and for architecture governance.
 
-![Figure H.1 — Architecture development cycle, TOGAF v9.1, 2011\[36\]](ISO-IEC-IEEE 42020 2019.assets/fig-11.png)
+![Figure H.1 — Architecture development cycle, TOGAF v9.1, 2011\[36\]](<ISO-IEC-IEEE 42020 2019.assets/fig-11.png>)
 
 **Figure H.1 — Architecture development cycle, TOGAF v9.1, 2011[36]**
 
@@ -4508,7 +4508,7 @@ NOTE 2 Refinement and updates to architecture governance and architecture manage
 | Ch 50 Architecture Governance | X | X |  |  |  |  |
 | Ch 51 Architecture Maturity Models | X |  |  |  |  | X |
 | Ch 52 Architecture Skills Framework |  |  |  | X |  | X |
-| NOTE This table is sourced from TOGAF®<?> Version 9.1[36]. |  |  |  |  |  |  |
+| NOTE This table is sourced from TOGAF®&lt;?&gt; Version 9.1[36]. |  |  |  |  |  |  |
 
 #### H.2.3 Items in the TOGAF framework not addressed in this document
 
@@ -4538,7 +4538,7 @@ PEAF artifacts are metamodels used for enterprise planning and governance in ord
 
 PEAF proposes to perform enterprise transformation based on methods, artifacts, culture and environment with actions and foundation described in the following figure.
 
-![Figure H.2 — PEAF functional areas and foundation (PEAF v3, August 2014\[31\])](ISO-IEC-IEEE 42020 2019.assets/fig-12.png)
+![Figure H.2 — PEAF functional areas and foundation (PEAF v3, August 2014\[31\])](<ISO-IEC-IEEE 42020 2019.assets/fig-12.png>)
 
 **Figure H.2 — PEAF functional areas and foundation (PEAF v3, August 2014[31])**
 
@@ -4609,7 +4609,7 @@ NOTE 1 GERAM metamodel V2.1 elements in italics are not explicitly mentioned in 
 
 NOTE 2 For all relations the participation and cardinality constraint is 0...\* unless otherwise noted.
 
-![Figure H.3 — GERAM1.6.3 and GERAM meta-model V2.1](ISO-IEC-IEEE 42020 2019.assets/fig-13.png)
+![Figure H.3 — GERAM1.6.3 and GERAM meta-model V2.1](<ISO-IEC-IEEE 42020 2019.assets/fig-13.png>)
 
 **Figure H.3 — GERAM1.6.3 and GERAM meta-model V2.1**
 
@@ -4619,7 +4619,7 @@ NOTE 2 Aspect was called “view” in V1.6.3.
 
 NOTE 3 NB model scope can span multiple enterprise entities.
 
-![Figure H.4 — GERAM Modeling Aspect concept V2.1](ISO-IEC-IEEE 42020 2019.assets/fig-14.png)
+![Figure H.4 — GERAM Modeling Aspect concept V2.1](<ISO-IEC-IEEE 42020 2019.assets/fig-14.png>)
 
 **Figure H.4 — GERAM Modeling Aspect concept V2.1**
 
@@ -4639,7 +4639,7 @@ adopted as part of a portfolio activity (possibly through an EA maturity improve
 
 Architecture Processes includes activities and tasks being allocated to and rolled out to roles in Corporate Management, in Business Units (SBUs), as well as in Program management, Project mission fulfillment, Project management, as well as possibly external entities (e.g., consulting and other service providers). As shown in Figure H.5, the build life cycle phase is concerned with Figure H.5 a) establishing the required human architecting, governance and management skills and competencies (through hiring & training individuals, forming committees, and appointing personnel to roles), Figure H.5 b) selecting, commissioning and deploying of tools (in support architecting, modeling, communication, management and governance) and of their respective repositories.
 
-![Figure H.5 — a) Deploying Architecture Processes (establishment stage) and](ISO-IEC-IEEE 42020 2019.assets/fig-15.png)
+![Figure H.5 — a) Deploying Architecture Processes (establishment stage) and](<ISO-IEC-IEEE 42020 2019.assets/fig-15.png>)
 
 **Figure H.5 — a) Deploying Architecture Processes (establishment stage) and**
 
@@ -4701,7 +4701,7 @@ Architectural Description development team and emphasizes the guiding principles
 
 NOTE The process illustrated here is a synthesis of information from multiple versions of DoDAF. In particular, Step-6 was titled “Document results in accordance with the Architecture Framework” in the first versions of DoDAF, meaning that the results are elaborated according to established templates; but are not always fulfilling all the decision maker needs; i.e. the results are formalizing the best compromise found during the trade-off analysis done during the Step-5.
 
-![Figure H.6 — DoDAF six-step architecture process](ISO-IEC-IEEE 42020 2019.assets/fig-16.png)
+![Figure H.6 — DoDAF six-step architecture process](<ISO-IEC-IEEE 42020 2019.assets/fig-16.png>)
 
 **Figure H.6 — DoDAF six-step architecture process**
 
@@ -4751,7 +4751,7 @@ Figure H.7 shows the RM-ODP framework. As shown, the RM-ODP consists of 5 viewpo
 
 The RM-ODP family of recommendations and international standards defines a system of interrelated essential concepts necessary to specify open distributed processing systems and provides a well-developed enterprise architecture framework for structuring the specifications for any large-scale systems including software systems.
 
-![Figure H.7 — RM-ODP framework](ISO-IEC-IEEE 42020 2019.assets/fig-17.png)
+![Figure H.7 — RM-ODP framework](<ISO-IEC-IEEE 42020 2019.assets/fig-17.png>)
 
 **Figure H.7 — RM-ODP framework**
 

@@ -546,7 +546,7 @@ EXAMPLE 3 Connectivity aspects in a communications network AD (commonly shown as
 
 Figure 1 depicts relationships between concerns, aspects, and stakeholder perspectives as utilized in an AD.
 
-![Figure 1 — Concerns, aspects, and stakeholder perspectives](ISO_IEC_IEEE 42010 2023.assets/fig-01.png)
+![Figure 1 — Concerns, aspects, and stakeholder perspectives](<ISO_IEC_IEEE 42010 2023.assets/fig-01.png>)
 
 **Figure 1 — Concerns, aspects, and stakeholder perspectives**
 
@@ -574,7 +574,7 @@ EXAMPLE 2 A Parts and Variations View describing the content of a product line (
 
 Figure 2 depicts the relationship between architecture views and architecture viewpoints in an AD.
 
-![Figure 2 — Architecture views and architecture viewpoints](ISO_IEC_IEEE 42010 2023.assets/fig-02.png)
+![Figure 2 — Architecture views and architecture viewpoints](<ISO_IEC_IEEE 42010 2023.assets/fig-02.png>)
 
 **Figure 2 — Architecture views and architecture viewpoints**
 
@@ -602,7 +602,7 @@ EXAMPLE 3 A symbology table can be a legend of an operational view.
 
 Figure 3 depicts the composition of views from view components and the kinds of view components.
 
-![Figure 3 — Conceptual model for views and view components](ISO_IEC_IEEE 42010 2023.assets/fig-03.png)
+![Figure 3 — Conceptual model for views and view components](<ISO_IEC_IEEE 42010 2023.assets/fig-03.png>)
 
 **Figure 3 — Conceptual model for views and view components**
 
@@ -668,7 +668,7 @@ EXAMPLE 2 “Self-referential” correspondences are an activity that is refined
 
 Figure 4 depicts the nature of AD element correspondences.
 
-![Figure 4 — Conceptual model of AD element correspondences](ISO_IEC_IEEE 42010 2023.assets/fig-04.png)
+![Figure 4 — Conceptual model of AD element correspondences](<ISO_IEC_IEEE 42010 2023.assets/fig-04.png>)
 
 **Figure 4 — Conceptual model of AD element correspondences**
 
@@ -740,7 +740,7 @@ EXAMPLE 1 Well known structuring formalisms include: GERAM cube in ISO 15704, Re
 
 Figure 5 depicts the conceptual model of an ADF.
 
-![Figure 5 — Conceptual model of an architecture description framework](ISO_IEC_IEEE 42010 2023.assets/fig-05.png)
+![Figure 5 — Conceptual model of an architecture description framework](<ISO_IEC_IEEE 42010 2023.assets/fig-05.png>)
 
 **Figure 5 — Conceptual model of an architecture description framework**
 
@@ -826,7 +826,7 @@ Figure 6 provides the conceptual model for an ADL.
 
 NOTE 3 Requirements on ADLs are specified in 7.2.
 
-![Figure 6 — Conceptual model of an architecture description language](ISO_IEC_IEEE 42010 2023.assets/fig-06.png)
+![Figure 6 — Conceptual model of an architecture description language](<ISO_IEC_IEEE 42010 2023.assets/fig-06.png>)
 
 **Figure 6 — Conceptual model of an architecture description language**
 
@@ -1276,7 +1276,7 @@ If a “non-model” is used as an information source when creating a view, a vi
 
 This annex discusses the principles, concepts and terms on which this document is based. Figure A.1 depicts the main concepts of AD.
 
-![Figure A.1 — Conceptual model of an architecture description](ISO_IEC_IEEE 42010 2023.assets/fig-07.png)
+![Figure A.1 — Conceptual model of an architecture description](<ISO_IEC_IEEE 42010 2023.assets/fig-07.png>)
 
 **Figure A.1 — Conceptual model of an architecture description**
 
@@ -1476,7 +1476,7 @@ The remainder of this subclause presents examples of correspondences and corresp
 
 EXAMPLE 1 Consider two view components in an automotive system’s AD: a software application view component and an electronic control unit (ECU) view component. The software application view component includes these elements: Autopilot, Dashboard (consisting of Controls, Instrument panel cluster, Center stack), Braking, GPS, LIDAR and Sensor Fusion. The ECU view component identifies a number of ECUs, numbered 1 through 4. A correspondence, depicting the assignment of applications to ECUs, is shown in Figure A.2 as a matrix. The form of a correspondence is not specified by this document.
 
-![Figure A.2 — Example of a correspondence](ISO_IEC_IEEE 42010 2023.assets/fig-08.png)
+![Figure A.2 — Example of a correspondence](<ISO_IEC_IEEE 42010 2023.assets/fig-08.png>)
 
 **Figure A.2 — Example of a correspondence**
 
@@ -1500,7 +1500,7 @@ Many correspondences will be binary, but this is not required. A correspondence 
 
 EXAMPLE 4 View Versioning: The version identifier of each view needs to be greater than 1.5 prior to publication of this AD.
 
-![Figure A.3 — Example of a correspondence satisfying the Task-Interactions method](ISO_IEC_IEEE 42010 2023.assets/fig-09.png)
+![Figure A.3 — Example of a correspondence satisfying the Task-Interactions method](<ISO_IEC_IEEE 42010 2023.assets/fig-09.png>)
 
 **Figure A.3 — Example of a correspondence satisfying the Task-Interactions method**
 
@@ -1756,7 +1756,7 @@ NOTE Most ISO standards can be represented as partial models or reference models
 
 An example of a modelling framework is provided in ISO 15704:2019 Annex B (GERAM) and ISO 19439, which latter is an elaboration of GERAM’s GERA Modelling Framework (see Figure C.1).
 
-![Figure C.1 — Depiction of GERA modelling framework](ISO_IEC_IEEE 42010 2023.assets/fig-10.png)
+![Figure C.1 — Depiction of GERA modelling framework](<ISO_IEC_IEEE 42010 2023.assets/fig-10.png>)
 
 **Figure C.1 — Depiction of GERA modelling framework**
 
@@ -1766,7 +1766,7 @@ This approach is more economical than updating views and propagating the effects
 
 Another distinguishing feature of the GERAM approach is the use of recursion and iteration to manage the complicated relationships within an enterprise and its supply chain (see Figure C.2).
 
-![Figure C.2 — Recursive use of ADs that iterate life cycle modelling phases](ISO_IEC_IEEE 42010 2023.assets/fig-11.png)
+![Figure C.2 — Recursive use of ADs that iterate life cycle modelling phases](<ISO_IEC_IEEE 42010 2023.assets/fig-11.png>)
 
 **Figure C.2 — Recursive use of ADs that iterate life cycle modelling phases**
 
