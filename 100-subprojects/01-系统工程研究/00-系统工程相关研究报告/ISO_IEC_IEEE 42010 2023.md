@@ -2,6 +2,20 @@
 
 > **Software, systems and enterprise — Architecture description**
 
+> **转换说明 / About this file**
+>
+> 本文件由 `ISO_IEC_IEEE 42010 2023.pdf` 自动转换生成，正文为**英文原文照录**，未作翻译或改写。
+>
+> - **条款号**：一律保留印刷条款号（`1`、`5.2.6`、`A.1`、术语条目 `3.1`…），标题层级按原版字号还原。
+> - **插图**：原 PDF 的图为矢量轮廓，文字不在文本层，故按图区渲染为 PNG，存于同名 `.assets/` 目录，在原文位置以 `![Figure …](…)` 引用，共 11 幅（图 1~6、A.1~A.3、C.1~C.2）。
+> - **表格**：表 F.1／F.2 转为 Markdown 表；原表跨页处被版面切为三段，转换后仍分段呈现。
+> - **目录**：原印刷目录为点线制表符且页码不可靠，已替换为按标题层级生成的 Markdown 目录。
+> - **页眉页脚**（`ISO/IEC/IEEE 42010:2022(E)`、版权行、页码）为版面构件，未收入正文。
+> - **断行连字符**已还原（`identi- fying` → `identifying`），固有连字符保留（`non-functional`）。
+> - **封面与版权页**照录于正文之前，未作标题化处理。
+>
+> **校验**：正文按 70 字符窗口全文比对，4281 个窗口 **0 未命中**；表格 57 个单元格 **0 缺失**。
+
 ---
 
 ## Contents
@@ -80,7 +94,7 @@ ISO copyright office Institute of Electrical and Electronics Engineers, Inc CP 4
 
 ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) form the specialized system for worldwide standardization. National bodies that are members of ISO or IEC participate in the development of International Standards through technical committees established by the respective organization to deal with particular fields of technical activity. ISO and IEC technical committees collaborate in fields of mutual interest. Other international organizations, governmental and non-governmental, in liaison with ISO and IEC, also take part in the work.
 
-The procedures used to develop this document and those intended for its further maintenance are described in the ISO/IEC Directives, Part 1. In particular, the different approval criteria needed for the different types of ISO/IEC documents should be noted. This document was drafted in accordance with the rules given in the ISO/IEC Directives, Part 2 (see www.iso.org/directives or www.iec.ch/members_experts/refdocs).
+The procedures used to develop this document and those intended for its further maintenance are described in the ISO/IEC Directives, Part 1. In particular, the different approval criteria needed for the different types of ISO/IEC documents should be noted. This document was drafted in accordance with the rules given in the ISO/IEC Directives, Part 2 (see www.iso.org/directives or www.iec.ch/members_experts/refdocs).
 
 IEEE Standards documents are developed within the IEEE Societies and the Standards Coordinating Committees of the IEEE Standards Association (IEEE-SA) Standards Board. The IEEE develops its standards through a consensus development process, approved by the American National Standards Institute, which brings together volunteers representing varied viewpoints and interests to achieve the final product. Volunteers are not necessarily members of the Institute and serve without compensation. While the IEEE administers the process and establishes rules to promote fairness in the consensus development process, the IEEE does not independently evaluate, test, or verify the accuracy of any of the information contained in its standards.
 
@@ -394,15 +408,15 @@ This document is designed such that “tailoring” is neither required nor perm
 
 ### 5 Conceptual foundations
 
-**5.1 General**
+#### 5.1 General
 
 This clause introduces the conceptual foundations of architecture description expressed in a set of conceptual models (see 5.2) and the application of those foundations to ADs (5.2), ADFs (see 5.4.2) and ADLs (see 5.4.3). The use of the architecture descriptions to support different architecture practices is outlined in Annex D. The concepts introduced in this clause are used in Clauses 6 to 8 to express requirements.
 
 NOTE Annex A provides further discussion of the terms and concepts used in this document and presents examples of their use in an historical context.
 
-**5.2 Conceptual models of an architecture description**
+#### 5.2 Conceptual models of an architecture description
 
-#### 5.2.1 Context of architecture description
+##### 5.2.1 Context of architecture description
 
 The term "entity of interest" is used in this document to refer to the subject of an architecture description. The term is intended to encompass, but is not limited to, entities within the following fields of application, reflecting the intended scope of this document as specified in Clause 1.
 
@@ -428,7 +442,7 @@ NOTE 2 Identification of the EoI can emerge from the analysis of the concerns of
 
 EXAMPLE The identification of an EoI generally results from the definition of the problem space. The problem description can be expressed with an architecture definition of a set of operational capabilities (often called “capability architecture”). At this capability definition stage, identified stakeholders are potentially concerned by the future EoI.
 
-#### 5.2.2 Architectures and architecture descriptions
+##### 5.2.2 Architectures and architecture descriptions
 
 The architecture of an entity of interest comprises the fundamental concepts or properties of that entity considered in its environment. The architecture of an entity of interest can pertain to any or all of the entity’s:
 
@@ -450,7 +464,7 @@ The architecture of an entity of interest can be understood through one or more 
 
 NOTE ISO/IEC/IEEE 42020 specifies a set of processes for architecting which can be employed in support of creating one or more ADs.
 
-#### 5.2.3 Stakeholders and concerns
+##### 5.2.3 Stakeholders and concerns
 
 Stakeholders are parties with direct or indirect interests in an entity. Among the stakeholders are those parties that have influence or control over and those who are impacted by an entity. A stakeholder’s interests are typically expressed as concerns about an entity of interest or the architecture of which they are aware. Concerns are often the result of the stakeholder's perspective gained from domain knowledge, experience, training, responsibility and authority.
 
@@ -492,7 +506,7 @@ system quality attributes as described in ISO/IEC 25010.)?
 
 capability?
 
-#### 5.2.4 Stakeholder perspectives
+##### 5.2.4 Stakeholder perspectives
 
 Stakeholders often form distinct groupings, or stakeholder perspectives, based on their common roles, experiences, beliefs or other characteristics. A perspective can reflect domain knowledge, professional experience, training or proximity to the entity of interest in its lifecycle (e.g. design, development, manufacturing, supply, operation and use). Importantly, a stakeholder perspective can also be influenced by personality, character traits, culture, peer pressure, constituency, etc.
 
@@ -512,7 +526,7 @@ EXAMPLE 5 Data user and data provider perspectives about a content provider enti
 
 Each perspective results in one or more concerns. Because concerns arise from stakeholder perspectives, architecture viewpoints framing those concerns are often grouped by stakeholder perspectives. Concerns are based on current interests and influences of the stakeholders and are often subjective in nature.
 
-#### 5.2.5 Aspects
+##### 5.2.5 Aspects
 
 Aspects capture a set of characteristics or features of the entity of interest in its environment to address concerns within an AD.
 
@@ -536,7 +550,7 @@ Figure 1 depicts relationships between concerns, aspects, and stakeholder perspe
 
 **Figure 1 — Concerns, aspects, and stakeholder perspectives**
 
-#### 5.2.6 Architecture considerations
+##### 5.2.6 Architecture considerations
 
 Architecture considerations are factors taken into account when architecting. Concerns (see 5.2.3), stakeholder perspectives (see 5.2.4) and aspects (see 5.2.5) are different considerations to consider while architecting. There are other considerations that can arise due to the architecture practices in use.
 
@@ -546,7 +560,7 @@ EXAMPLES Considerations include: the ability of stakeholders to interpret the ar
 
 NOTE Other considerations can relate to contexts, criteria, building blocks and domain vocabulary.
 
-#### 5.2.7 Architecture views and architecture viewpoints
+##### 5.2.7 Architecture views and architecture viewpoints
 
 An AD contains one or more architecture views. An architecture viewpoint governs one or more of these architecture views. A specification of an architecture viewpoint establishes the conventions for creating, interpreting, presenting and analysing a view to address the concerns framed by that viewpoint. Viewpoint specifications typically reflect the information elements required to facilitate
 
@@ -576,7 +590,7 @@ Architecture viewpoints are important analytical resources for development of ar
 
 NOTE 3 Clause 8 specifies requirements on specification of architecture viewpoints. Annex B provides guidance on preparing architecture viewpoints.
 
-#### 5.2.8 Model kinds, legends and architecture view components
+##### 5.2.8 Model kinds, legends and architecture view components
 
 An architecture view is composed of one or more architecture view components. A view component that can be based on a model or not. Each view component is governed by a model kind or legend identified by its architecture viewpoint. A model kind determines the conventions for model-based view components. A legend documents the conventions for view components. These conventions include the intended uses, the terminology, the notations and their syntax and semantics and symbology of its governed models. A model kind or legend can be used by more than one viewpoint in an AD. Within an AD, an architecture view component can be part of more than one architecture view to enable sharing information when its content and presentation is relevant to more than one view.
 
@@ -592,7 +606,7 @@ Figure 3 depicts the composition of views from view components and the kinds of 
 
 **Figure 3 — Conceptual model for views and view components**
 
-#### 5.2.9 Architecture description (AD) elements
+##### 5.2.9 Architecture description (AD) elements
 
 An AD element is an occurrence of one or more architectural concepts in an AD. The AD elements include occurrences of the following architectural concepts: stakeholder, concern, aspect, stakeholder perspective, architecture viewpoint, architecture view, model kind, legend, architecture view component, architecture decision, architecture rationale and any correspondence and correspondence method specified on those constructs.
 
@@ -604,7 +618,7 @@ As viewpoints (see 5.2.7), model kinds (see 5.2.8) and legends (see 5.2.8) are s
 
 EXAMPLE AD elements introduced by viewpoints or model kinds include use case constructs such as preconditions, actors, boundaries, systems; activity model constructs such as activities, inputs, outputs, controls, and mechanisms; architecture or design patterns to be employed.
 
-#### 5.2.10 View methods
+##### 5.2.10 View methods
 
 A specification of an architecture viewpoint includes one or more view methods. View methods provide guidance, heuristics, metrics, patterns, design rules or guidelines, best practices and examples to aid in view construction and use of associated views. View methods specify expression rules, modelling methods, analysis techniques and other operations on views. These methods specify the AD elements used when creating the view and methods to analyse, interrogate or query views to assess properties of interest. Requirements on view methods are specified in 8.3.
 
@@ -626,7 +640,7 @@ NOTE View methods are usually defined in a viewpoint and are referenced by or us
 
 EXAMPLE View methods pertaining to: chaining dependencies to assess the impact of a change; workshops to trade-off qualities or other concerns; boundary analyses to determine whether context and entity of interest are well defined; guidance on partitioning; analysis of architectural complexity; creation and enforcement of architecture styles (such as layered, aspect-oriented); pattern families to promote intended properties of the entity of interest; analyses against requirements for completeness and coverage; interpretation and integration of external models as information sources.
 
-#### 5.2.11 AD element correspondence
+##### 5.2.11 AD element correspondence
 
 An AD element correspondence identifies an identified or named relation between two or more AD elements.
 
@@ -668,7 +682,7 @@ NOTE 3 Usually correspondence methods are “cross model” or “cross view” 
 
 NOTE 4 Correspondences and correspondence methods can be applied to multiple AD elements to express architecture relations pertaining to multiple AD elements.
 
-#### 5.2.12 Architecture decisions and rationale
+##### 5.2.12 Architecture decisions and rationale
 
 An architecture decision is a collection of choices made in the overall context of an architecture. These choices usually pertain to various AD elements, entity requirements, or environmental influences on the architecture.
 
@@ -682,7 +696,7 @@ EXAMPLE 3 Modelling tool selections to align with related architectures (e.g. cu
 
 NOTE Requirements for capturing decisions and rationale within an AD are specified in 6.10.
 
-**5.3 Architecture description in the life cycle**
+#### 5.3 Architecture description in the life cycle
 
 Architecting activities occur and ADs are produced for various reasons throughout the life of the entity of interest, from initial concept through the operation, refurbishment or final retirement from use, and eventual disposal of this entity.
 
@@ -694,9 +708,9 @@ During the entity of interest life cycle, an AD can precede or follow architectu
 
 NOTE 2 See Annex E for more details of the role of architecting in the life cycle.
 
-**5.4 Architecture description frameworks and languages**
+#### 5.4 Architecture description frameworks and languages
 
-#### 5.4.1 General
+##### 5.4.1 General
 
 ADFs and ADLs are now widely used in architecting to facilitate normalized expression of the architecture for those constructing and using ADs, and to ensure consistency of style and content coverage across ADs. ADFs and ADLs built on the concepts of architecture description presented in this document, can be utilized effectively for:
 
@@ -708,7 +722,7 @@ and situational awareness;
 
 c) entity implementation frameworks and languages intended to facilitate entity engineering, operation and retirement.
 
-#### 5.4.2 Architecture description frameworks
+##### 5.4.2 Architecture description frameworks
 
 An ADF establishes a common practice for creating, interpreting, analysing and using ADs within a particular domain of interest, e.g. defense, aerospace and banking. An ADF can also guide or serve as a reference for one or more than one specialized ADF. For a generalized entity of interest within the context of a particular domain of practice, an ADF intended as a reference typically identifies architecture viewpoints for expected or known architecture considerations, often as stakeholder perspectives, concerns or aspects related to structure, function (both behaviour and fitness) and life cycle. For a reference use, the many different stakeholder perspectives can be generalized. Utilizing an architecture viewpoint, users of the reference have access to views appropriate for the generalized entity of interest that can satisfy the architecture considerations framed by that viewpoint.
 
@@ -742,7 +756,7 @@ Within an ADF, architecture viewpoints are important analytical resources for de
 
 Depending upon the intended application for a framework, the extent of detail resulting from a viewpoint can vary widely. A framework for reference can be expected to have more generalized stakeholder perspectives and architecture considerations, often partitioned into multiple functional clusters, e.g. product and life cycle.
 
-#### 5.4.3 ADF utilization
+##### 5.4.3 ADF utilization
 
 When sharing typical AD elements in a common methodology, users can develop and maintain a less generalized domain specific ADF as a reference with architecture considerations and stakeholder viewpoints with appropriate model kinds and legends. Some ADFs used for references include explicit definitions of the AD elements associated with the model kinds and legends to use for each view of the entity of interest. Additional model kinds can address needed architecture considerations not covered by a particular framework.
 
@@ -784,7 +798,7 @@ However, given the objective(s) of a particular architecting effort, domain spec
 
 This continuum from generic to reference (or partial) and particular models is an application of the identical concepts expressed in ISO 15704 (for further details, see C.4).
 
-#### 5.4.4 Architecture description languages
+##### 5.4.4 Architecture description languages
 
 An ADL is a specified syntax and semantics intended for use in describing the architecture of an entity of interest. An ADL is a language for stakeholders, including those involved in the architecting effort that allows the expression of architecture considerations by means of AD elements pertaining to the entity of interest, and the architecting context. An AD can use more than one ADL, even a different ADL for each viewpoint, or even distinct ADLs for each model kind specified by a single architecture viewpoint.
 
@@ -818,7 +832,7 @@ NOTE 3 Requirements on ADLs are specified in 7.2.
 
 ### 6 Specification of an architecture description
 
-**6.1 Architecture description identification and overview**
+#### 6.1 Architecture description identification and overview
 
 An AD shall identify the entity of interest and the expected environment of that entity of interest.
 
@@ -836,11 +850,11 @@ NOTE 3 This document does not prescribe how ADs are created. For example, they c
 
 NOTE 4 This document does not prescribe the extent or expectation regarding the use of formal modelling methods in an AD. While informal methods can be used effectively, formal modelling methods are often less ambiguous.
 
-**6.2 Identification of stakeholders**
+#### 6.2 Identification of stakeholders
 
 An AD shall identify the stakeholders having concerns that are considered fundamental to the architecture of the entity of interest and consistent with the purpose of the AD.
 
-EXAMPLE Stakeholders include users, operators, acquirers, owners, suppliers and vendors, architects, designers and developers, implementers, maintainers, regulators (including government), testers, public-at- large, adversaries and competitors.
+EXAMPLE Stakeholders include users, operators, acquirers, owners, suppliers and vendors, architects, designers and developers, implementers, maintainers, regulators (including government), testers, public-at-large, adversaries and competitors.
 
 An AD should identify the possible impacts of the architecture on the current and future stakeholders.
 
@@ -850,7 +864,7 @@ An AD shall include a statement of known resource limitations or other constrain
 
 Non-conformances shall be identified and explained with rationales.
 
-**6.3 Identification of stakeholder perspectives**
+#### 6.3 Identification of stakeholder perspectives
 
 An AD shall identify stakeholder perspectives considered relevant to the architecture of the entity of interest and consistent with the purpose of the AD.
 
@@ -866,7 +880,7 @@ NOTE 1 This document does not prescribe: the granularity of concerns; the granul
 
 NOTE 2 See Annex F for examples of stakeholder perspectives as used in ADFs.
 
-**6.4 Identification of concerns**
+#### 6.4 Identification of concerns
 
 An AD shall identify the concerns considered relevant to the architecture of the entity of interest and consistent with the purpose of the AD.
 
@@ -880,7 +894,7 @@ NOTE 2 Consideration of past, present or future concerns can be relevant to the 
 
 NOTE 3 Concerns expressed as interrogative questions and with appropriate detail to the purpose of the AD enable more efficient and effective communication.
 
-**6.5 Identification of aspects**
+#### 6.5 Identification of aspects
 
 An AD shall identify aspects considered relevant to the architecture of the entity of interest and consistent with the purpose of the AD.
 
@@ -890,7 +904,7 @@ EXAMPLE Aspects include, among others, structural, behavioural, functional, prog
 
 NOTE This document does not prescribe: the granularity and dependencies of aspects; how aspects relate to each other; or how aspects relate to other statements about an entity such as stakeholder needs, entity goals, or entity requirements. These issues are subjects for specific ADs, ADFs, ADLs, architecting methods, or other practices. See Annex F for examples of ADFs that use particular aspects and stakeholder perspectives.
 
-**6.6 Inclusion of architecture viewpoints**
+#### 6.6 Inclusion of architecture viewpoints
 
 An AD shall include or reference each architecture viewpoint used therein.
 
@@ -910,7 +924,7 @@ NOTE 2 Annex B and Annex C provide additional information pertaining to specific
 
 NOTE 3 An architecture viewpoint can serve as a contract between architect and other stakeholders. For the concerns framed by the viewpoint, architect and stakeholders can agree on what notations and representational conventions will be used to address those concerns. This contract agreement can be made before any detailed architecting is undertaken to reduce or avoid surprises.
 
-**6.7 Inclusion of architecture views**
+#### 6.7 Inclusion of architecture views
 
 An AD shall include one or more architecture views for each architecture viewpoint used.
 
@@ -948,7 +962,7 @@ An AD may include other information which is not part of any architecture view.
 
 EXAMPLE 2 Information parts not within any view could include overviews of the entity of interest, architecture principles, architecture patterns and architecture styles whose application spans more than one view; referenced bases for the architecture, such as domain or reference architectures; correspondences between views; and architecture rationale. This information can assist stakeholders and other users of the AD responsible for its maintenance and development.
 
-**6.8 Inclusion of view components**
+#### 6.8 Inclusion of view components
 
 An architecture view shall be composed of one or more view components in accordance with its governing architecture viewpoint.
 
@@ -968,9 +982,9 @@ NOTE 1 Sharing view components between architecture views permits an AD to captu
 
 NOTE 2 This document does not prescribe the level of formality of view components to be used in an AD. While model-based view components that have a formal specification of semantics and syntax can be less ambiguous, non-model-based view components can also be used effectively.
 
-**6.9 Recording of architecture correspondences**
+#### 6.9 Recording of architecture correspondences
 
-#### 6.9.1 Consistency within an architecture description
+##### 6.9.1 Consistency within an architecture description
 
 An AD shall record any known inconsistencies.
 
@@ -978,7 +992,7 @@ An AD should include or reference an analysis of consistency of its architecture
 
 Correspondences and correspondence methods, as specified in 6.9.2 and 6.9.3, may be used to express, record, enforce and analyse consistency between views, their view components and other AD elements within and among ADs.
 
-#### 6.9.2 Correspondences
+##### 6.9.2 Correspondences
 
 An AD shall include or reference a list of AD element correspondences.
 
@@ -994,7 +1008,7 @@ Each AD element correspondence shall identify the participating ADs.
 
 NOTE AD element Correspondences can be used to express relations among ADs, ADFs, and ADLs. See Zachman Framework [56] example in Annex F.
 
-#### 6.9.3 Correspondence methods
+##### 6.9.3 Correspondence methods
 
 An AD shall include or reference a list of correspondence methods applying to itself or its AD elements.
 
@@ -1006,9 +1020,9 @@ An AD shall include or reference each correspondence method applying to it.
 
 NOTE 2 A correspondence method applying to an AD could originate in the AD; in the specification of a viewpoint or a model kind (see Clause 8); or in the specification of an ADF or ADL selected for use in that AD (see Clause 7).
 
-**6.10 Recording of architecture decisions and rationale**
+#### 6.10 Recording of architecture decisions and rationale
 
-#### 6.10.1 Decision recording
+##### 6.10.1 Decision recording
 
 An AD shall record architecture decisions considered essential to the architecture of the entity of interest within the scope and intended purpose of the AD.
 
@@ -1080,7 +1094,7 @@ EXAMPLE Examples of types of relationships are: constrains, influences, enables,
 
 Relations among decisions can be captured via correspondences or by applying correspondence methods.
 
-#### 6.10.2 Rationale recording
+##### 6.10.2 Rationale recording
 
 An AD should include or reference a rationale for each architecture viewpoint selected for use (per 6.6).
 
@@ -1094,7 +1108,7 @@ An AD should include a rationale for an AD limitation (e.g. resource problem, ti
 
 ### 7 Architecture description frameworks and architecture description languages
 
-**7.1 Specification of an architecture description framework**
+#### 7.1 Specification of an architecture description framework
 
 **7.1.1** An ADF (3.5) shall include or reference:
 
@@ -1178,7 +1192,7 @@ EXAMPLE 2 Structural categories include architectural constructs such as: domain
 
 NOTE 4 See Annex F for examples of architecture frameworks using aspects, stakeholder perspectives and other structural categories.
 
-**7.2 Specification of an architecture description language**
+#### 7.2 Specification of an architecture description language
 
 The specification of an ADL shall include or reference:
 
@@ -1196,7 +1210,7 @@ f) version identification as specified by the organization and/or project.
 
 ### 8 Architecture viewpoints and model kinds
 
-**8.1 Specification of an architecture viewpoint**
+#### 8.1 Specification of an architecture viewpoint
 
 The specification of an architecture viewpoint shall include or reference:
 
@@ -1230,7 +1244,7 @@ NOTE 2 This document does not require any particular specifications of architect
 
 NOTE 3 Annex B provides guidance to specification of architecture viewpoints.
 
-**8.2 Specification of a model kind**
+#### 8.2 Specification of a model kind
 
 The specification of a model kind shall include or reference:
 
@@ -1246,7 +1260,7 @@ d) any sources of information about this model kind.
 
 NOTE Item a) can be met in a number of ways such as with a metamodel, grammar or template for the specification of a model kind that defines the structure and interpretation of its models (see B.2.9).
 
-**8.3 View methods**
+#### 8.3 View methods
 
 A specification of an architecture viewpoint may include one or more view methods.
 
@@ -1312,7 +1326,7 @@ As specified in this document, each architecture viewpoint frames one or more co
 
 ### A.4 Aspects and perspectives
 
-**A.4.1 General**
+#### A.4.1 General
 
 Historically architecting efforts were driven by the concerns of stakeholders. However, the advent of ADFs (and to a much lesser extent ADLs) established practices that drew upon prior architecting experience which resulted in the organizing of architecting efforts which are not necessarily driven by concerns specific to the architecting effort in question but significantly driven by this prior experience. This approach to architecting enabled specific concerns to be identified at a later point in time after first building architecture views using the ADF-driven approach.
 
@@ -1326,7 +1340,7 @@ Stakeholder perspective is driven more by architecting thinking and approach. As
 
 The use of aspects and stakeholder perspectives is compatible with a more organized and disciplined (and standardized) approach to both architecting and AD. It is noted that some architectural issues can be direct stakeholder concerns in particular domains or circumstances. In such cases, they are usually addressed through the mechanism of stakeholder perspectives. In other cases, they are not, but instead can be addressed through the mechanism of aspects. This gives rise to variation in the organizing of material employed in commonly used ADFs.
 
-**A.4.2 Aspects**
+#### A.4.2 Aspects
 
 Aspects provide a way to partition the architecture to enable a more systematic examination of the architecture’s fundamental concepts such as structure and properties, and the evaluation of architecture alternatives. This document uses the term aspect as an organizing basis for views in an architecture description (see 6.5). Aspects, concerns and stakeholder perspectives focus views on cohesive sets of interests within an architecture description. Aspects, concerns and perspectives can provide a basis for capturing many of the relevant architecture considerations with respect to the architecture.
 
@@ -1358,9 +1372,9 @@ Aspects are also useful during evaluation of alternative architectures (see ISO/
 
 The concept of aspects has been used in software development to deal with “cross-cutting concerns.” An aspect is a feature of a program shared across by many parts of the program and unrelated to its primary function (Kiczales et al [39]).
 
-Non-functional properties such as performance, cost, and quality factors (like reliability, confidentiality and resilience) are concerns that are structured using the notion of aspects (5.2.5). These non- functional properties are often termed “-ilities” or “non-functional requirements (NFRs)”.
+Non-functional properties such as performance, cost, and quality factors (like reliability, confidentiality and resilience) are concerns that are structured using the notion of aspects (5.2.5). These non-functional properties are often termed “-ilities” or “non-functional requirements (NFRs)”.
 
-**A.4.3 Stakeholder perspectives**
+#### A.4.3 Stakeholder perspectives
 
 This document uses the term stakeholder perspective to mean a particular way of thinking about an entity, especially one that is influenced by one’s beliefs or experiences. The way one thinks about an entity (i.e. one’s perspective) can be influenced by organizational role, training, experience, knowledge, personality, character traits, culture, peer pressure, etc. Different ways of thinking about an architecture are often employed when architecting. (See examples in 5.2.4.)
 
@@ -1368,7 +1382,7 @@ EXAMPLE From UAF[48]: strategic, operational, services, personnel, resources, se
 
 The determination of relevant stakeholder perspectives is dependent upon the interests of, and stances adopted by, the various stakeholders that are relevant to the architecture. For a given stakeholder perspective there are usually multiple concerns and aspects to be considered.
 
-**A.4.4 Structuring formalisms and structural categories**
+#### A.4.4 Structuring formalisms and structural categories
 
 An ADF can provide a structuring formalism, i.e. a set of rules for using architecture considerations and correspondences between them, to organize the architecture viewpoints used to generate associated views, e.g. a grid framework formalism. The purpose of the structuring formalism is to provide ways of representing relationships among various elements of the architecture and enhancing opportunities for analysis of interactions among those elements.
 
@@ -1388,17 +1402,17 @@ The rows in these grids are the perspectives referred to in this document, altho
 
 ‘Genericity’ is a key conceptual approach from ISO 15704 that applies to an enterprise when modelling the expression of increasingly specific concepts. ISO 15704 defines three levels of genericity: generic, partial and particular. This genericity concept is applicable to other kinds of entities and to the notion of ADFs as well. A progression of increasingly specific (i.e., less generic) ADFs can be used to provide more specificity as one approaches the level of implementation of entities in the real world.
 
-EXAMPLE 3 One possibility is to begin with the generic ICT terminology ADF, such as concepts used in the Zachman Framework, and transition to an ADF with more prototypical domain detail, such as UAF (with a UAF Profile and accompanying SysML notation and semantics), which in turn can transition to an implementation- specific ADF for a particular project using a further modelling profile extension with detail sufficient for the particular domain specific context.
+EXAMPLE 3 One possibility is to begin with the generic ICT terminology ADF, such as concepts used in the Zachman Framework, and transition to an ADF with more prototypical domain detail, such as UAF (with a UAF Profile and accompanying SysML notation and semantics), which in turn can transition to an implementation-specific ADF for a particular project using a further modelling profile extension with detail sufficient for the particular domain specific context.
 
 The transitions from generic through partial to particular that provide more domain-specific detail in an ADF are useful due to reasons of quality and efficiency, since any particular project prefers to use an ADF tailored to the application area (such as having predefined perspectives and aspects that are common and reusable in similar projects), has previously been tested (prior success provides expertise and knowledge), and utilizes a terminology shared among experts of the given domain.
 
-**A.4.5 Relationship between aspect and stakeholder perspective**
+#### A.4.5 Relationship between aspect and stakeholder perspective
 
 Stakeholder perspective and aspect are closely related and often confused. While perspective is the way one thinks about something, aspect can be used for capturing the relevant features of the *entity of* *interest*. An aspect of properties or concepts associated with the entity is perceived when viewing it and thinking about it from a particular perspective. When the perspective is shifted, often the properties or concepts are different. Likewise, when the viewing aspect is changed then different properties or concepts about the entity can be discerned.
 
-Aspects and stakeholders perspectives are commonly used in the ADF as a way to organize architecture viewpoints as illustrated by the examples described in Annex F (see References [38] [63]). An architecture view can be constructed for a particular aspect and a particular perspective. The perspective can represent an aggregation of concerns held by one or more stakeholders. When an architecture framework matrix or grid uses these concepts, the columns usually represent aspect- related items and the rows usually represent perspective-related items.
+Aspects and stakeholders perspectives are commonly used in the ADF as a way to organize architecture viewpoints as illustrated by the examples described in Annex F (see References [38] [63]). An architecture view can be constructed for a particular aspect and a particular perspective. The perspective can represent an aggregation of concerns held by one or more stakeholders. When an architecture framework matrix or grid uses these concepts, the columns usually represent aspect-related items and the rows usually represent perspective-related items.
 
-**A.4.6 Complementary ADF approaches**
+#### A.4.6 Complementary ADF approaches
 
 The combination of stakeholder perspectives and aspects to conduct architecting in a manner informed by prior experience can serve as a different and complementary approach to architecting driven by identified stakeholders and their specific concerns (see 5.2.3). For example, using prior experience in conducting the architecting of a similar entity situated in a similar environment, potential issues can be identified which when raised with stakeholders give rise to real concerns.
 
@@ -1412,7 +1426,7 @@ The terms architecture view and architecture viewpoint are central to this docum
 
 It is a goal of this document to encompass existing AD practices by providing common terminology and concepts. Many existing practices express architectures through collections of models. Typically, these models are further organized into cohesive groups, called views. The cohesion of a group of models or other information is determined by the perspective taken and the concerns and aspects addressed by that group of models and other information sources. In this document, a specification of an architecture viewpoint refers to the conventions for expressing an architecture with respect to a given perspective, set of concerns and aspects:
 
-*A view is a* way *of expressing the architecture of an entity of interest from a particular viewpoint.*
+*A view is a* way *of expressing the architecture of an entity of interest from a particular viewpoint.\*
 
 The use of multiple views to express an architecture is a fundamental premise of this document. The need for multiple views in ADs is widely recognized. While the use of multiple views is widespread, authors differ on what views are needed, based on audience, and on appropriate methods for expressing each view. Because of the wide range of opinion, this document does not require a predefined set of architecture viewpoints and their specifications; it encourages the practice of defining or selecting architecture viewpoints appropriate to the entity of interest.
 
@@ -1536,51 +1550,51 @@ This annex provides a template for preparing specifications of architecture view
 
 ### B.2 Template for documenting specification of architecture viewpoints
 
-**B.2.1 Template overview**
+#### B.2.1 Template overview
 
 A template for the specification of architecture viewpoints is presented. An architecture viewpoint that is documented in this form meets the requirements of 8.1.
 
 The template identifies the contents of a specification of an architecture viewpoint. Each element of the content includes its name (B.2.X), and a brief description of its intended content, and guidance for developing that content. In some cases, additional contents are nested within top-level description contents of the specification.
 
-**B.2.2 Architecture viewpoint name**
+#### B.2.2 Architecture viewpoint name
 
 The name for the architecture viewpoint. If there are synonyms or other common names by which the architecture viewpoint is known, in addition to the name of the architecture viewpoint, other common names can be identified.
 
-**B.2.3 Architecture viewpoint overview**
+#### B.2.3 Architecture viewpoint overview
 
 An abstract or brief overview of the architecture viewpoint and the related architecture viewpoint features.
 
-**B.2.4 Concerns**
+#### B.2.4 Concerns
 
 A listing of the architecture-related concerns to be framed by this architecture viewpoint per 8.1 item b). This helps decide whether the related architecture viewpoint will be useful for modelling a particular entity of interest.
 
 A listing of the kinds of issues an architecture viewpoint is not appropriate for to avoid misuse. This can be a good antidote for certain overly used viewpoints and model kinds.
 
-**B.2.5 Stakeholder perspectives**
+#### B.2.5 Stakeholder perspectives
 
 A listing of any stakeholder perspectives associated with this architecture viewpoint [per 8.1 item b)].
 
-**B.2.6 Aspects**
+#### B.2.6 Aspects
 
 A listing of the aspects refining the above concerns [per 8.1 item c)] or encompassing potential concerns.
 
 NOTE The identification of concerns, stakeholder perspectives and aspects are intended to assist architects and other stakeholders in determining the utility of this viewpoint for their entity of interest.
 
-**B.2.7 Typical stakeholders**
+#### B.2.7 Typical stakeholders
 
 A listing of the stakeholders expected to be users or audiences for views prepared using this architecture viewpoint [per 8.1 item d)].
 
 NOTE When an architecture viewpoint is selected for use and applied in an AD, it is useful to document the association of actual stakeholders with concerns framed by this viewpoint and related specification (per 6.4).
 
-**B.2.8 Correspondence methods**
+#### B.2.8 Correspondence methods
 
 A listing of any correspondence methods defined by this viewpoint or its model kinds (per 8.1, 8.2 and 6.9.3).
 
 These methods can be applied across view components, across views within an AD or across ADs.
 
-**B.2.9 Specification of model kinds**
+#### B.2.9 Specification of model kinds
 
-#### B.2.9.1 General
+##### B.2.9.1 General
 
 The architecture viewpoint identifies each model kind [per 8.1 item e)].
 
@@ -1598,7 +1612,7 @@ d) by some combination of these, or other means.
 
 Guidance on methods a) to c) is provided in B.2.9.2 to B.2.9.4.
 
-#### B.2.9.2 Metamodel related to the specification of a model kind
+##### B.2.9.2 Metamodel related to the specification of a model kind
 
 A metamodel presents one or more constructs which are the AD elements that comprise the vocabulary of the model kind and its specification. There are various ways of representing metamodels. The metamodel will present:
 
@@ -1616,29 +1630,29 @@ Within an AD, instances of entities, attributes, relationships and constraints a
 
 NOTE When specification of an architecture viewpoint specifies multiple model kinds it can be useful to specify a single architecture viewpoint related metamodel unifying the definition of the model kinds. Furthermore, it is often helpful to use a unified metamodel to express a set of related architecture viewpoints (such as when defining an ADF or ADL).
 
-#### B.2.9.3 Templates of specifications of model kinds
+##### B.2.9.3 Templates of specifications of model kinds
 
 Provide a template or form specifying the format or expected content of view components governed by this model kind specification.
 
 Each such template, form, or their parts, can have a legend to be used when this model kind is used within an AD.
 
-#### B.2.9.4 Language related to the specification of a model kind
+##### B.2.9.4 Language related to the specification of a model kind
 
 Identify an existing notation or modelling language or define one that can be used when applying this model kind in an AD. Describe its syntax, semantics, and tool support, as needed.
 
-**B.2.10 View methods**
+#### B.2.10 View methods
 
 Define methods available on views. (see 5.2.10 and 8.3).
 
-**B.2.11 Examples**
+#### B.2.11 Examples
 
 This subclause provides examples for users.
 
-**B.2.12 Notes**
+#### B.2.12 Notes
 
 Any additional information that users of this specification may need or find helpful.
 
-**B.2.13 Sources**
+#### B.2.13 Sources
 
 Identify the sources for this specification, if any, including author, history, literature references and prior art [per 8.1 item g)].
 
@@ -1672,7 +1686,7 @@ The source above specifies architecture viewpoints for Logical, Development, Pro
 
 and Perspectives”[54]
 
-The source above defines a catalogue of architecture viewpoints: Functional, Information, Concurrency, Development, Deployment and Operational viewpoints and perspectives (see 5.2.4): Security, Performance and Scalability, Availability and Resilience, and Evolution perspectives for software- intensive systems.
+The source above defines a catalogue of architecture viewpoints: Functional, Information, Concurrency, Development, Deployment and Operational viewpoints and perspectives (see 5.2.4): Security, Performance and Scalability, Availability and Resilience, and Evolution perspectives for software-intensive systems.
 
 NOTE Rozanski and Woods’ perspectives do not fit the definition in this document.
 
@@ -1700,7 +1714,7 @@ ISO 15704 specifies those terms, concepts and principles considered necessary to
 
 ISO 15704 does not present or adopt specific methodologies for creating or using enterprise architectures or models but does utilize this document as a source of some terminology and overall characterization of an architecture description. However, the focus is on establishing a reference base capable of supporting specific enterprise programs, rather than a design intended to fulfil the stated requirements.
 
-ISO 15704 identifies an extensive collection of potential artefacts for expressing an enterprise- referencing architecture and its associated methodologies. Not all of these artefacts will be applicable, necessary or even desirable for all architecting efforts. The identification of these artefacts assures that this document meets the needs of the widest possible number of enterprise-referencing architecture and methodology situations. Users of this document need to assess not only the value of generating an identified artefact but also the value of maintaining that artefact under the changing circumstances of the referenced enterprise.
+ISO 15704 identifies an extensive collection of potential artefacts for expressing an enterprise-referencing architecture and its associated methodologies. Not all of these artefacts will be applicable, necessary or even desirable for all architecting efforts. The identification of these artefacts assures that this document meets the needs of the widest possible number of enterprise-referencing architecture and methodology situations. Users of this document need to assess not only the value of generating an identified artefact but also the value of maintaining that artefact under the changing circumstances of the referenced enterprise.
 
 The approach taken in ISO 15704 is the use of systems thinking and systems theory in enterprise architecture and about how it is possible to reconcile and understand, based on a single overarching framework, the interplay of two major enterprise change endeavours: enterprise engineering (i.e. deliberate change) and evolutionary, organic change. This approach has stood the test of time in diverse applications [51].
 
@@ -1726,7 +1740,7 @@ In addition, ISO 15704 provides a categorization of models according to a generi
 
 - Generic models that capture the semantics of concepts used across all of the dimensions of enterprise
 
-modelling in the domain of interest. Typical representations of generic models (in increasing level of formality) include taxonomies, meta-models, and ontological theories. The level of detail of meta- models would vary depending on the domain (examples include ISO 19440, UAF domain meta- model, etc.)
+modelling in the domain of interest. Typical representations of generic models (in increasing level of formality) include taxonomies, meta-models, and ontological theories. The level of detail of metamodels would vary depending on the domain (examples include ISO 19440, UAF domain metamodel, etc.)
 
 - Partial models, which are reusable, paradigmatic, typical models (or model fragments, or model
 
@@ -1778,7 +1792,7 @@ An AD can conform to this document and to ISO/IEC/IEEE 15288.
 
 ### C.7 Use with open distributed processing standards
 
-**C.7.1 General**
+#### C.7.1 General
 
 The reference model of open distributed processing (RM-ODP)[2] defines an ADF for distributed processing systems; systems “in which discrete components may be located in different places, or where communication between components may suffer delay or may fail.” (see ISO/IEC 10746-2).
 
@@ -1792,7 +1806,7 @@ Elements of that specification specific to ADs (such as stakeholders) are omitte
 
 NOTE ISO/IEC 19793 defines a UML profile for the specification of open distributed processing systems using these viewpoints.
 
-**C.7.2 Enterprise viewpoint**
+#### C.7.2 Enterprise viewpoint
 
 The enterprise viewpoint frames these concerns:
 
@@ -1826,7 +1840,7 @@ NOTE 2 Policies are defined in terms of permissions, obligations, and prohibitio
 
 NOTE 3 The enterprise language is defined in ISO/IEC 15414.
 
-**C.7.3 Information viewpoint**
+#### C.7.3 Information viewpoint
 
 The information viewpoint frames these concerns: the semantics of information and information processing in an ODP system.
 
@@ -1838,7 +1852,7 @@ The information language is defined in terms of three schemata:
 
 - dynamic schema: allowable state changes of one or more objects.
 
-**C.7.4 Computational viewpoint**
+#### C.7.4 Computational viewpoint
 
 The computational viewpoint frames these concerns: a functional decomposition of the system into objects which interact at interfaces.
 
@@ -1852,7 +1866,7 @@ The computational language covers concepts for specifying:
 
 - implicit and explicit bindings and compound binding objects.
 
-**C.7.5 Engineering viewpoint**
+#### C.7.5 Engineering viewpoint
 
 The engineering viewpoint frames these concerns: the mechanisms and functions required to support distributed interaction between objects in the system.
 
@@ -1866,7 +1880,7 @@ binders, protocols and interceptors;
 
 failure transparencies.
 
-**C.7.6 Technology viewpoint**
+#### C.7.6 Technology viewpoint
 
 The technology viewpoint frames these concerns: the selection of implementable standards for the system, their implementation and testing.
 
@@ -2004,7 +2018,7 @@ The specification of ADF is intended to establish the relationships between an A
 
 ### F.3 ADF concepts
 
-**F.3.1 ADF domains**
+#### F.3.1 ADF domains
 
 Various architecture frameworks have been in existence over a few decades.
 
@@ -2024,7 +2038,7 @@ Most of them are dedicated to creating ADs in different domains like:
 
 automation, transformation, critical infrastructure.
 
-**F.3.2 Identification of stakeholders and definition of their perspectives**
+#### F.3.2 Identification of stakeholders and definition of their perspectives
 
 Some ADFs like Zachman[67] clearly identify typical stakeholders like: Planner, Owner, Designer, Builder, Implementer and User.
 
@@ -2052,7 +2066,7 @@ Information;
 
 preliminary design, detailed design, implementation, operation and decommissioning.
 
-**F.3.3 Definition of aspects**
+#### F.3.3 Definition of aspects
 
 ADFs organize the properties and features of architecture models and views in various ways, such as:
 
@@ -2068,7 +2082,7 @@ Sequences, Information, Parameters, Constraints, Roadmap and Traceability.
 
 ADFs attempt to generalize or harmonize multiple particular ADs to offer guidance for creation of new particular cases by specifying generic stakeholder perspectives and generic aspects (see Zachman[67] [66] and others).
 
-**F.3.4 Specification of architecture viewpoint**
+#### F.3.4 Specification of architecture viewpoint
 
 An ADF generally specifies architecture viewpoints providing specifications of model kinds to frame typical concerns and to govern the architecture views and ease understanding of the legends.
 
@@ -2076,7 +2090,7 @@ EXAMPLE Reference Model for Open distributed (RM-ODP)[3] defines the following c
 
 ADFs often utilize one or more structural categories to represent distribution of architecture viewpoints in a two-dimensional grid or matrix. See References [38][63] for example. There are some ADFs, such as GERA (ISO 15704) and SABSA[56], which use three or more categories to convey the complexity of describing architectures.
 
-**F.3.5 Specification of formalisms and languages**
+#### F.3.5 Specification of formalisms and languages
 
 Generally the ADFs define their formalism for constructing models with a metamodel: like DoDAF’s[31] DoDAF Metamodel (DM2), UAF’s[48][48] Domain Metamodel (DMM), and NAF’s[44] metamodel (MM).
 
@@ -2100,35 +2114,35 @@ NOTE In Table F.1 and Table F.2 “Partial” means that the requirement is fulf
 
 |  | GERA (ISO 15704) | RM-ODP[2] | Zachman[67] | TOGAF[62] |
 |---|---|---|---|---|
-| Information identi- fying the ADF | Implementation depend- ent | Implementation dependent | Yes | Yes |
-| Stakeholder identifi- cation | Organization viewpoint | No | Yes | No |
-| Concern identifica- tion | Covered by identification, concept and requirements life cycle phases | Yes (in Viewpoints) | Partial | Partial |
-| Aspects | Aspect-oriented views | No | Called “interroga- tives” | No |
-| Stakeholder per- spectives | Covered by identification, concept and requirements life cycle phases | No | Yes | Called “phases” |
+| Information identifying the ADF | Implementation dependent | Implementation dependent | Yes | Yes |
+| Stakeholder identification | Organization viewpoint | No | Yes | No |
+| Concern identification | Covered by identification, concept and requirements life cycle phases | Yes (in Viewpoints) | Partial | Partial |
+| Aspects | Aspect-oriented views | No | Called “interrogatives” | No |
+| Stakeholder perspectives | Covered by identification, concept and requirements life cycle phases | No | Yes | Called “phases” |
 | Formalism | GERAM Metamodel | UML Profile | No | No |
-| Architecture View- point | Aspect-oriented view- points | Viewpoint specifi- cation or viewpoint language | Partial | No |
+| Architecture Viewpoint | Aspect-oriented viewpoints | Viewpoint specification or viewpoint language | Partial | No |
 | Model kinds | Criteria explained | One per viewpoint | Partial | Partial |
-| Legends and corre- spondence methods | Partial | Formalized | Partial | Partial |
+| Legends and correspondence methods | Partial | Formalized | Partial | Partial |
 | Framework methods | GERAM | No | Partial | TOGAF/ADM |
 
 **Table F.2 — ADF requirements compliance (2/2)**
 
 |  | UAF[48] | NAF[44] | DoDAF[31] | ArchiMate[61] |
 |---|---|---|---|---|
-| Information identi- fying the ADF | Yes | Yes | Yes | Yes |
-| Stakeholder identifi- cation | Yes (in view specifica- tions) | No | No | Yes (as part of the "Motivation Elements") |
-| Concern identifica- tion | Yes (in view specifica- tions) | Partial | Partial | Yes (in View- points) |
+| Information identifying the ADF | Yes | Yes | Yes | Yes |
+| Stakeholder identification | Yes (in view specifications) | No | No | Yes (as part of the "Motivation Elements") |
+| Concern identification | Yes (in view specifications) | Partial | Partial | Yes (in Viewpoints) |
 
 **Table F.2** *(continued)***Table F.2** *(continued)*
 
 |  | UAF[48] | NAF[44] | DoDAF[31] | ArchiMate[61] |
 |---|---|---|---|---|
 | Aspects | Called “Model kinds” | Called “Aspects of concerns” | No | Called “Aspects” |
-| Stakeholder per- spectives | Called “domains” | Called “subjects of concerns” | Called “view- points” | Called “Layers” |
-| Formalism | Domain metamodel (DMM) and a Profile | NAF metamodels | DM2 metamodel | ArchiMate Speci- fication |
-| Architecture View- point | Called “view specifica- tions” within a Grid | Called “viewpoints” within a Grid | Called “Models” | Called “viewpoint mechanism” |
-| Model kinds | Recommended imple- mentations in UAF Pro- file’s view specifications | Partial | Partial | ArchiMate Speci- fication |
-| Legends and corre- spondence methods | Partial | Partial | Partial | Partial |
+| Stakeholder perspectives | Called “domains” | Called “subjects of concerns” | Called “viewpoints” | Called “Layers” |
+| Formalism | Domain metamodel (DMM) and a Profile | NAF metamodels | DM2 metamodel | ArchiMate Specification |
+| Architecture Viewpoint | Called “view specifications” within a Grid | Called “viewpoints” within a Grid | Called “Models” | Called “viewpoint mechanism” |
+| Model kinds | Recommended implementations in UAF Profile’s view specifications | Partial | Partial | ArchiMate Specification |
+| Legends and correspondence methods | Partial | Partial | Partial | Partial |
 | Framework methods | No | NAF Chapter 2 | 6 Step Approach | No |
 
 ## Bibliography
@@ -2209,7 +2223,7 @@ NOTE In Table F.1 and Table F.2 “Partial” means that the requirement is fulf
 
 [38] Josey A, Lankhorst M, Band I, Jonkers H, Quartel D., “An Introduction to the ArchiMate® 3.0 Specification”, June 2016
 
-[39] Kiczales G., Lamping J., Menhdhekar A., Maeda C., Lopes C., Loingtier J.M. et al., Aspect- oriented programming. In Akșit, M., Matsuoka, S., eds.: Proceedings European Conference on Object-Oriented Programming. Volume 1241. Springer-Verlag, Berlin, Heidelberg, and New York (1997) 220–242
+[39] Kiczales G., Lamping J., Menhdhekar A., Maeda C., Lopes C., Loingtier J.M. et al., Aspect-oriented programming. In Akșit, M., Matsuoka, S., eds.: Proceedings European Conference on Object-Oriented Programming. Volume 1241. Springer-Verlag, Berlin, Heidelberg, and New York (1997) 220–242
 
 [40] Kruchten P.B., The ‘4+1’ View Model of Architecture. IEEE Softw. 1995, **12** (6) pp. 45–50
 
@@ -2343,4 +2357,4 @@ ISO/IEC/IEEE 42010:2022 addresses the creation, analysis and sustainment of arch
 
 **Keywords**: architecture description, architecture view, architecture viewpoint, architecture view component, architecture description framework, architecture description language, architecture decision, architecture rationale, architecture consideration, concern, architecture aspect, stakeholder perspective, model kind, correspondence, correspondence method.
 
-**ICS 35.080** **ISBN 978-1-5044-9155-6 STD25753 (PDF); 978-1-5044-9156-3 STDPD25753 (Print)**
+#### ICS 35.080 ISBN 978-1-5044-9155-6 STD25753 (PDF); 978-1-5044-9156-3 STDPD25753 (Print)
