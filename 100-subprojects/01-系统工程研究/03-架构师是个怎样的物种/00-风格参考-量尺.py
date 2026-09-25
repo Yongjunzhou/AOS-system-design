@@ -46,8 +46,8 @@ def kind(h):
         return 'open'
     if '案例进展' in h:
         return 'case'
-    if '概念总图' in h:
-        return 'map'
+    if '概念总图' in h or '能力级' in h:
+        return 'map'          # 2026-09-26：「本章的能力级」升为独立节（### B），与总图同归 map 类
     if '认知反转' in h:
         return 'reversal'
     if '本章判据' in h:
