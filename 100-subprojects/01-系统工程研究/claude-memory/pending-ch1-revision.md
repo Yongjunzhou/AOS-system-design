@@ -9,7 +9,7 @@ metadata:
 
 > **状态**：**第1章这一轮已收工**（2026-09-25 开题，2026-09-26 落地并推双远端）。用户定：「**后续的每一章都要单独修订**」「**明天继续修订后续章节**」。
 > **本文件用途**：①第1章的落地清单（备查）；②**逐章修订的入口**（明天从哪开始、照哪份文件走）。
-> **开工话术**：「读 `claude-memory/MEMORY.md` 与 `claude-memory/pending-ch1-structure.md`，继续修订后续章节。」
+> **开工话术（第1章已完成；本文件自此＝样例入口）**：本章已收工，后续开工请说「读 `claude-memory/MEMORY.md` 与 `claude-memory/pending-ch<N>-revision.md`，修订第 N 章」——**一次对话只修订一章**（2026-09-26 用户定）。
 > **复算**：`python .work-style/ch1_layout.py`（逐块字数）｜`python "03-架构师是个怎样的物种/00-风格参考-量尺.py"`（配比红线）｜`python .work-style/check_ch1.py`（目录↔正文·围栏·表格·条数）｜`python .work-style/check_tail_order.py`（章末件与「附录」定位）｜`python .work-style/audit_chapter_openings.py`（18 章章首块与旧叫法）｜`python .work-style/check_manual.py`（手册体检）
 
 ---
