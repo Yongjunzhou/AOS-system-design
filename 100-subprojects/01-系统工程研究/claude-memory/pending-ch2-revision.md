@@ -82,6 +82,7 @@ python .work-style/check_glued_paragraphs.py     # 粘段
 python .work-style/audit_plainwords.py           # 白话体检（每章提示线 ≤10）
 python .work-style/audit_chapter_openings.py     # 章首块名与旧叫法
 python .work-style/scan_block_matchers.py        # 扫按块名认块的脚本（防静默失效）
+python .work-style/slim_bold_ch2.py              # 加粗瘦身（预览；加 --write 落盘）
 python "03-架构师是个怎样的物种/00-三条线索-核对.py"   # 收束句 18/18＋刻度行 17/17
 ```
 **目录↔正文对账**：`.work-style/_check_ch2_toc.py`（本章专用，26 对 26、0 差异；同类可逐章复制改章号）。
