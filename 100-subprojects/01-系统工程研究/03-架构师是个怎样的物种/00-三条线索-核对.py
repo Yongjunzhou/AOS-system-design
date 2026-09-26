@@ -75,9 +75,13 @@ for ch, path in chapters():
     body = '\n'.join(b for _, b in bl)
     rev = next((b for h, b in bl if '认知见转' in h or '认知反转' in h), '')
     summ = next((b for h, b in bl if '小结' in h), '')
+    # 收束句自 2026-09-26 起移入章末「本章的能力级」清点块（框架 §五 第 12 条）；
+    # 迁到一半的章两处都查，迁完的章查清点块，故取二者之并。
+    cap = next((b for h, b in bl if '能力级' in h), '')
+    line_src = rev + '\n' + cap
     data.append(dict(
         ch=ch, body=body, rev=rev, summ=summ,
-        line=('才算拥有' in rev) or ('才算真正拥有' in rev),
+        line=('才算拥有' in line_src) or ('才算真正拥有' in line_src),
         layer='§1.3.5' in body,
         members={m: body.count(m) for _, m in MEMBERS},
     ))
