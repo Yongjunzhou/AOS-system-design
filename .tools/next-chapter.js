@@ -76,7 +76,7 @@ console.log('  开工语    ：新开一个对话、工作目录选上面那个�
 console.log('                开工下一章');
 console.log(`                开工第${next}章`);
 if (doneN.includes(next)) {
-  console.log(`  ★ 提醒    ：第 ${next} 章入口状态为「已收工」——若确要重做，按手册走四阶段；首章另有特例（形制与 §1.3.5／§1.3.6 冻结）。`);
+  console.log(`  ★ 提醒    ：第 ${next} 章入口状态为「已收工」——若确要重做，照《逐章修订手册》四阶段走（手册对所有章一视同仁，无例外）。`);
 }
 
 if (wantCheck) {
