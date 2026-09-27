@@ -206,7 +206,7 @@ metadata:
 
 ---
 
-## 总评
+### 总评（本表部分）
 
 1. **有，且集中在一处**：ISO 9000:2026 第 3 章「与特性有关的术语」（§3.10）三条连读，就是第 1 章"知识 → 技能 → 能力"的现成标准定义链——**§3.10.4 knowledge**＝*understanding that enables effective context-specific decisions and action*（示例：洞见／专有诀窍／良好实践；注 1：知识存在于个人、团队和组织之内，也存在于它们之间）；**§3.10.5 skill**＝*learned capacity to perform a task to a specified expectation*（来源 ISO 30400:2022, 3.14.12）；**§3.10.6 competence**＝*ability to apply knowledge and skills to achieve intended results*。
 2. **§3.10.5 的 "learned（经学习获得的）" 是库内七份标准的术语定义中唯一出现的一次**，可作第 1 章"学习能力的杠杆"最直接的标准支点；且 3.10.6 的定义句交叉引用 3.10.4／3.10.5，三条构成一条闭链，不是散条。
