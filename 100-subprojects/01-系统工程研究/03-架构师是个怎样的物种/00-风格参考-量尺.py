@@ -44,8 +44,8 @@ def kind(h):
         return 'skip'
     if '误解现场' in h:
         return 'open'
-    if '案例进展' in h:
-        return 'case'
+    if '案例进展' in h or '案例回场' in h:
+        return 'case'          # 2026-09-27：第1章（双线章）的案例块用「案例回场」，与「案例进展」同类计量
     if '概念总图' in h or '能力级' in h:
         return 'map'          # 2026-09-26：「本章的能力级」升为独立节（### B），与总图同归 map 类
     if '认知反转' in h:

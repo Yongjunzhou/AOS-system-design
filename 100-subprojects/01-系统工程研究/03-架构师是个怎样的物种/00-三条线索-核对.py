@@ -82,14 +82,14 @@ for ch, path in chapters():
     data.append(dict(
         ch=ch, body=body, rev=rev, summ=summ,
         line=('才算拥有' in line_src) or ('才算真正拥有' in line_src),
-        layer='§1.3.5' in body,
+        layer=('§1.4.4' in body) or ('§1.3.5' in body),   # 2026-09-27：第1章重写后能力四级节由 §1.3.5 变为 §1.4.4（旧号兼容保留）
         members={m: body.count(m) for _, m in MEMBERS},
     ))
 
 print('=== ① 明线核对（两件回收件，逐章） ===')
-print('章  收束句"才算拥有"  §1.3.5 刻度行   所在层级')
+print('章  收束句"才算拥有"  §1.4.4 刻度行   所在层级')
 for d in data:
-    lv = re.search(r'第\s*([①②③④])?\s*层|§1\.3\.5[^\n]{0,40}', d['body'])
+    lv = re.search(r'第\s*([①②③④])?\s*层|§1\.4\.4[^\n]{0,40}|§1\.3\.5[^\n]{0,40}', d['body'])
     print('{}  {:^14}  {:^14}  {}'.format(
         d['ch'], '✓' if d['line'] else '✗ 缺', '✓' if d['layer'] else '✗ 缺',
         (lv.group(0)[:26].replace('\n', ' ') if lv else '—')))
