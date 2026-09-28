@@ -259,7 +259,7 @@ metadata:
 
 **备份**：`_backup-before-dash1~4.md`＋`_backup-before-numnames.md`／`_backup-before-requirement.md`。
 **工具**：`ruler4.py`（四项对表·同一把尺）／`block_audit.py`（块内破折号＋短句体检）／`join_pairs.py`（相邻短句可接对）／`dash_block1~4.py`／`dash_block1_join.py`／`lengthen_block1.py`／`lengthen2.py`（**改法留痕**）＋阶段五那批。
-**★ 未做**：**提交与双推**——手册：提交是全章收工的唯一一处，**须在用户确认阶段六之后**。
+**★ 提交与双推（2026-09-28 收工）**：用户「好的」确认阶段六 → **提交 `d8631245`**（9 个文件，+542/−213，**全部落在本子项目目录**）→ **origin 与 gitee 均已推送**（`93c596e6..d8631245`，**三处 ref 一致**）。★ 本批**未含**主项目侧 `../../.claude/memory/*` 与 `20-pl4eos/...`（**另一会话所改**，按提交边界排除；只走显式路径 `git add`，未用 `git add -A`）。**下一章入口＝[`pending-ch4-revision.md`](pending-ch4-revision.md) §〇 开工单（六阶段版，已备）**。
 
 ### 六、代理报告与裁定（§5.13 规程⑤：成立→即改／不成立→写明理由／报备→单列给用户）
 
