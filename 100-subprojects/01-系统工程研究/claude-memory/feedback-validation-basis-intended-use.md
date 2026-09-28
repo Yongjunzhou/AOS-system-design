@@ -23,7 +23,7 @@ metadata:
 
 **正确口径（现行标准逐字＋本项目 23 号已定案）：**
 
-- **确认的尺子＝「为特定预期用途或应用的要求」**。ISO 9000:2026 §3.11.14 逐字：*confirmation, through the provision of objective evidence, that **the requirements for a specific intended use or application** have been fulfilled*（通过提供客观证据，证实**针对特定预期用途或应用的要求**已得到满足）。ISO 9001:2015 §8.3.4 d）落地口径：确认＝产品和服务满足**预期用途**需求。
+- **确认的尺子＝「针对特定预期用途或应用的要求」**（**2026-09-28 第4章阶段五改定**：全书照正本中文用字引作"针对"，旧写法"为"作废）。ISO 9000:2026 §3.11.14 逐字：*confirmation, through the provision of objective evidence, that **the requirements for a specific intended use or application** have been fulfilled*（通过提供客观证据，证实**针对特定预期用途或应用的要求**已得到满足）。ISO 9001:2015 §8.3.4 d）落地口径：确认＝产品和服务满足**预期用途**需求。
 - **必须在"使用"中兑现**。ISO/IEC/IEEE 15288:2015 §6.4.11.1 逐字（本项目 23 号所引）：*objective evidence that the system, **when in use**, fulfills its business or mission objectives and stakeholder requirements, achieving its **intended use in its intended operational environment***；ISO 9000:2026 §3.11.14 注 3：**使用条件可真实、可模拟**。故"预期用途"＋"使用（情境／条件）"两件都要。（15288:2023 §6.4.11 条款号已核，**逐字未取**。）
 - **关切的位置不是这里**：关切是①视角选择的锚（42010 的机制：视角 frames 关切、视图 addresses 关切）、②漏项检查的雷达、③需要与需求的来源。**关切不可验证、随人走、且互相冲突**（关切随立场走、需求随系统走；换人测试即此意），不能充当判决基准——冲突的东西只能当输入，不能当尺子。
 - **判据在派生链之外**（23 号 §9.1）：预期用途的主体常是**未被显性化的隐含需求**（generally implied 支），需求基线只承载 stated；故确认须另配一个与派生链**异构**的参照层，载体是 **use specification／ConOps／使用情境／用例**，而不是逐条需求。
