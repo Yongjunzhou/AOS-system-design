@@ -60,6 +60,8 @@ metadata:
 
 ① 落在正文的条目**改完即复算**第2章红线，并**单看"案例单块 ≤700"**（教训第 15 条）✓ 已办；② 改引用与来源的条目（H3~H10）**改完同步附录 D 与章末附录 E 切片**（D 是单一权威）✓ 已办（T-24／附录 B／附录 C／附录 D R-04／附录 E 第9题）。
 
+**★ origin 推送待补（2026-09-29）**：`git push origin master` 连试三次未成——`ssh: connect to host ssh.github.com port 443: Connection timed out`；**本地与 gitee 均已到 `595c7782`**。网络恢复后在本机执行一次 `git push origin master` 即可（gitee 侧已全，无内容差异）。
+
 ## 六、留痕
 
 - 交付件：`03-架构师是个怎样的物种/00-ch2-概念一致性审视清单.md`（408 → **1004 行**）
