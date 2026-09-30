@@ -10,7 +10,7 @@
 原始材料 (PDF/图片/邮件/纪要)
     │
     ▼
-eos-ort00-textualize ── 纯格式转换（非文本 → Markdown）
+eos-or00-x2md ── 纯格式转换（非文本 → Markdown）
     │                      产出：文本化 `.textualized.md` 文档
     ▼
 eos-ort01-chunk ──────── 语义切分

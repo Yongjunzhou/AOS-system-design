@@ -58,7 +58,7 @@
 
 本 Skill 不负责：
 
-1. 原始材料文本化（由 eos-ort00-textualize 负责）
+1. 原始材料文本化（由 eos-or00-x2md 负责）
 2. 模糊需求澄清和标注（由 eos-ort02-clarify 负责）
 3. 规范化的相关方需求条目规范化、编号、分类或冲突检测（由 eos-ort03-norm 负责）
 4. 按 FR-BIZ / FR-ENG / NFR 分配到 wft01 系列
@@ -416,10 +416,10 @@ Step 2 只读表 A 记录执行处理
 
 按顺序检查以下前置条件，缺什么补什么：
 
-1. `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/` 是否存在；不存在则提示先运行 `eos-ort00-textualize` 并结束
-2. `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/01-eos-sysdev-status.md` 是否存在；不存在则提示先运行 `eos-ort00-textualize` 并结束
+1. `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/` 是否存在；不存在则提示先运行 `eos-or00-x2md` 并结束
+2. `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/01-eos-sysdev-status.md` 是否存在；不存在则提示先运行 `eos-or00-x2md` 并结束
 3. 若状态文档已存在，校验表 A/表 B 的表头和字段说明；与状态文档模板不符时按既有口径修正或提示（表 B 模板见 §六 6.4）
-4. `10-raw-files/` 中是否存在 `.textualized.md` 文档；不存在则提示先运行 `eos-ort00-textualize` 并结束
+4. `10-raw-files/` 中是否存在 `.textualized.md` 文档；不存在则提示先运行 `eos-or00-x2md` 并结束
 5. 确认处于 git 仓库且 AI 基线可用：`.scripts/ai-commit.sh` 存在；基线 = 状态文档 `HEAD @上次AI运行` 或最近 AI 提交（`git log --author="EOS-AI" -1`）
 6. **感知前置——git diff 检出人类线下修订**（§三 3.6 反馈检测判据）：`git diff --name-status <基线>` + `git status --porcelain` 检出文档/表 A 变更。**存在变更（含纯线下编辑方案块/反馈区，表 A 可能无记录）→ 进入 Step 1 变更检测**（先检出反馈再判入口，避免"表 A 无记录 + 文档已被人类编辑"时误判无待处理退出、反馈丢失）
 7. 无任何变更且无待处理对象（表 A 无待切分材料、无已记录反馈）时输出「无待处理对象」并结束

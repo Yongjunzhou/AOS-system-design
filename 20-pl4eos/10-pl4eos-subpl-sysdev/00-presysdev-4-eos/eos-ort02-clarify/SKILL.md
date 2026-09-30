@@ -20,7 +20,7 @@ description: 切分原始需求→已澄清切分文档·模糊标注与澄清�
 
 | 负责 | 不负责（路由指向） |
 |------|-------------------|
-| Step 1：状态扫描检出正文区 `[✓已澄清]`/表 B 变更 → 登记表 B 内容摘要（查重幂等） | 原始材料文本化 → `eos-ort00-textualize` |
+| Step 1：状态扫描检出正文区 `[✓已澄清]`/表 B 变更 → 登记表 B 内容摘要（查重幂等） | 原始材料文本化 → `eos-or00-x2md` |
 | Step 2：读表 B 内容摘要未处理反馈 → 生成新正文/终止/重标 → 追 `[已处理]` | 语义切分 → `eos-ort01-chunk` |
 | Step 3：读取表 B `已切分`+`同意澄清` 选入材料，首轮全量模糊标注 + 结构完整性扫描 + 生成向相关方确认的问题 | 规范化的相关方需求条目规范化/分类/编号 → `eos-ort03-norm` |
 | Step 5/6：对话反馈即时处理 +「整体确认」提交基线（反馈收尾） | 代替开发者/相关方确认业务事实（AI 只生成问题、不提供答案） |
@@ -45,7 +45,7 @@ description: 切分原始需求→已澄清切分文档·模糊标注与澄清�
 
 按顺序检查，首次遇缺即处理：
 
-1. `../../../80-pl4eos-2-eosdata/00-origin-requirement-materials/01-eos-sysdev-status.md` 存在；否则提示先运行 `eos-ort00-textualize` 并结束
+1. `../../../80-pl4eos-2-eosdata/00-origin-requirement-materials/01-eos-sysdev-status.md` 存在；否则提示先运行 `eos-or00-x2md` 并结束
 2. 若状态文档已存在，校验表 B 表头与字段说明，与状态文档模板不符时按既有口径修正或提示
 3. `10-raw-files/` 中存在 `.chunk-*.md` 切分文件；否则提示先运行 `eos-ort01-chunk` 并结束
 4. 确认处于 git 仓库且 AI 基线可用：`.scripts/ai-commit.sh` 存在；基线 = 状态文档 `HEAD @上次AI运行` 或最近 AI 提交（`git log --author="EOS-AI" -1`）

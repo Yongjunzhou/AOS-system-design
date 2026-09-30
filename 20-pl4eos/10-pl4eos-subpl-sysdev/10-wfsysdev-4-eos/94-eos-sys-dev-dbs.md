@@ -158,7 +158,7 @@ EOS 设计线以「需求—方案结对」逐对生成产品数据；结对之�
 | 加工形态 | 载体（EOS 实例） | 产出工序 | 结构上做了什么 |
 |---------|----------------|---------|--------------|
 | 原始需求 | `00-origin-requirement-materials/10-raw-files/`（PDF/图片/邮件/纪要/已有 `.md`） | 外部输入 | —（尚在 EOS 结构之外） |
-| 文本化的原始需求 | `*.textualized.md` | `eos-ort00-textualize` | 只换载体，结构照搬原文 |
+| 文本化的原始需求 | `*.textualized.md` | `eos-or00-x2md` | 只换载体，结构照搬原文 |
 | 切分后的原始需求 | `*.chunk-{seq}.md`（`status=raw`） | `eos-ort01-chunk` | **长出业务对象闭环**——按对象切分，在 01 树里落为 ① 的场景坐标 |
 | 澄清后的原始需求 | 同上文件（`status=clarified`） | `eos-ort02-clarify` | 树形不动，只消歧 |
 | 规范化的相关方需求 | `01-eos-specified-requirements.md` | `eos-ort03-norm` | **长满 01 树**（① 文档级E2E任务 → ② 任务节点 → ③ 条目）+ 条目落位 |
