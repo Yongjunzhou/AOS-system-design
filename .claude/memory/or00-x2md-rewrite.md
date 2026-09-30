@@ -29,6 +29,6 @@ metadata:
 
 ## 已办的机械改名
 
-`eos-ort00-textualize` → `eos-or00-x2md` 的**纯指针**（不含运行时口径的）已扫：`94` §2.0.1 产出工序列、`00-presysdev-4-eos/README.md`、`01-eos-sysdev-status.md` 用途行、ort01／ort02 的文档与 SKILL、`agile-t01-requirement-analysis.md`。表 A 记录ID 前缀 `ORT-` 保留原值（状态值与 ID 按 93 §2.4 保留原值）。**未提交**。
+`eos-ort00-textualize` → `eos-or00-x2md` 的**纯指针**（不含运行时口径的）已扫：`94` §2.0.1 产出工序列、`00-presysdev-4-eos/README.md`、`01-eos-sysdev-status.md` 用途行、ort01／ort02 的文档与 SKILL、`agile-t01-requirement-analysis.md`。表 A 记录ID 前缀 `ORT-` 保留原值（状态值与 ID 按 93 §2.4 保留原值）。**已提交 `691108c3`、origin＋gitee 双推（2026-09-30 收工）**。
 
 相关：[[eos-design-landing-spec-93-refactor]]（93 骨架铺开的总体进程）、[[ort00-dedup-design-decisions]]（查重设计，内容已并入新文档 §4.3）、[[ort02-03-readability-revision-plan]]（另三份仍是旧「知识层」形态）。
