@@ -967,7 +967,7 @@ EOS 流水线的系统设计遵循通用设计规范定义的**六步法**，按
 >
 > **◆ 本节差异**：规范化的相关方需求 收集阶段需覆盖四条子线（设计线/开发线/集成线/运维线），区分"新建子线"和"改进现有构件"两类需求——前者走完整五层设计，后者走敏捷或 DevOps 路径。通用规范 §7.3 不涉及此类流水线特有的需求分类。
 >
-> **◆ 技能间协调**：EOS 预处理链（eos-or00-x2md → eos-or01-x2docbiz → eos-ort02-clarify → eos-ort03-norm → t01 ...）中，各顺序 Skill 通过 `80-pl4eos-2-eosdata/00-origin-requirement-materials/01-eos-sysdev-status.md`（设计链登记表）协调工作。体量大的原始需求材料先经 eos-or00-x2md 文本化、再由 eos-or01-x2docbiz 按需求落点切分，然后进入澄清与规范化。每个 Skill 从登记表读取符合生命周期状态条件的记录，处理后将状态回写，下游 Skill 通过状态变化感知上游产出。登记表是 Skill 之间的唯一接口，不直接共享文件或会话状态。
+> **◆ 技能间协调**：EOS 预处理链（eos-or00-x2md → eos-or01-x2docbiz → eos-or02-x2vv → eos-ort03-norm → t01 ...）中，各顺序 Skill 通过 `80-pl4eos-2-eosdata/00-origin-requirement-materials/01-eos-sysdev-status.md`（设计链登记表）协调工作。体量大的原始需求材料先经 eos-or00-x2md 文本化、再由 eos-or01-x2docbiz 按需求落点切分，然后进入澄清与规范化。每个 Skill 从登记表读取符合生命周期状态条件的记录，处理后将状态回写，下游 Skill 通过状态变化感知上游产出。登记表是 Skill 之间的唯一接口，不直接共享文件或会话状态。
 
 #### 4.2 第2层 STR：相关方需求
 
@@ -2000,15 +2000,15 @@ Step 5 · 写入输出
 
 **各 Skill 对照表**：
 
-| 方面 | eos-or01-x2docbiz（切分） | eos-ort02-clarify（澄清） | eos-ort03-norm（规范化） |
+| 方面 | eos-or01-x2docbiz（切分） | eos-or02-x2vv（澄清） | eos-ort03-norm（规范化） |
 |------|--------------------------|--------------------------|--------------------------|
 | 处理对象 | 文本化文档 `.textualized.md` | 需求文档 `.chunk-{seq}.md`（`status=raw`） | 已澄清的需求文档（`status=clarified`） |
 | 输出 | 需求文档 `.chunk-{seq}.md`（功能需求文档 / 非功能需求文档） | 原地更新同文件（`status=clarified`） | `01-eos-specified-requirements.md` |
-| 方案载体 | 切分方案块 | 行内 `[⨯]` 标注 + 模糊标注报告 | 分析建议块 |
-| 人类反馈通道 | 对话单轨 | 状态扫描 · 双轨（另可对话） | 状态扫描 · 双轨（另可对话） |
+| 方案载体 | 切分方案块 | 行内 `[⨯]` 标注 + 标注方案块 | 分析建议块 |
+| 人类反馈通道 | 对话单轨 | 对话单轨 | 状态扫描 · 双轨（另可对话） |
 | 状态推进目标 | `已切分` | `已澄清` | `已规范化` |
 
-**适用范围**：本节定义的五步操作模式适用于预处理链中在状态文档选材、在输出文档审阅的 Skill（当前为 eos-ort02-clarify 与 eos-ort03-norm）。链上前两步（eos-or00-x2md 文本化、eos-or01-x2docbiz 切分）按 SKILL 指南五章骨架的六步模式运行，见 [93 号规范](10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/93-eos-skill-guide-spec.md)。
+**适用范围**：本节定义的五步操作模式适用于预处理链中在状态文档选材、在输出文档审阅的 Skill（当前为 eos-ort03-norm）。链上前三步（eos-or00-x2md 文本化、eos-or01-x2docbiz 切分、eos-or02-x2vv 澄清）按 SKILL 指南五章骨架的六步模式运行，见 [93 号规范](10-pl4eos-subpl-sysdev/10-wfsysdev-4-eos/93-eos-skill-guide-spec.md)。
 
 #### 15.8 文本化步骤的简化操作模式（检测即执行）【待校准】
 
