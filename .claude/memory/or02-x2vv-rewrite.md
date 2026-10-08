@@ -27,6 +27,8 @@ metadata:
 - 机械改名（指针 `eos-ort02-clarify` → `eos-or02-x2vv`）：README、94 §2.0.1 产工序、91 §A.5 线名、or00／or01 的 SKILL 互引、ort03 的文档与 SKILL、`agile-t01`、`01-pl4eos-spec` §970。
 - 语义更新：README 各步运行模式表与各步对照表（or02 行改「对话单轨」）；`01-pl4eos-spec` §15.7 各 Skill 对照表 or02 列（方案载体→行内标注＋标注方案块、反馈通道→对话单轨）＋ 适用范围（五步模式当前只剩 or03）。
 
+**已提交 `66abc365`（2026-10-08 收工）；origin＋gitee 双推**（同批另提交教材子项目第7章在办件 `ee2a541a`）。
+
 ## 未落 / 挂账
 
 - **prose 里的步骤昵称 `ort02` 未扫**（承 or01 先例，prose `ort01` 也留着 49 处）——`91` 正文、wft 各 Skill、ort03 正文、`00-doc-conventions` §12、`01-pl4eos-spec` §15.8 等处；是否统一扫待人类定。
