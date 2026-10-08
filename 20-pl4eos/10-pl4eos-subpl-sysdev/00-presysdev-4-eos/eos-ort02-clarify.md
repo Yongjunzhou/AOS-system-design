@@ -62,7 +62,7 @@
 本 Skill 不负责：
 
 1. 原始材料文本化（由 eos-or00-x2md 负责）
-2. 语义切分和切分方案执行（由 eos-ort01-chunk 负责）
+2. 语义切分和切分方案执行（由 eos-or01-x2docbiz 负责）
 3. 规范化的相关方需求条目规范化、编号、分类和冲突检测（由 eos-ort03-norm 负责）
 4. 代替开发者或需求提出方确认业务事实（AI 只生成问题、不提供答案；缺少定量指标由相关方确认目标值，AI 不发明指标数值）
 5. 将澄清内容扩展为设计方案或下游需求分解
@@ -392,7 +392,7 @@
 
 1. `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/01-eos-sysdev-status.md` 是否存在；不存在则提示先运行 `eos-or00-x2md` 并结束
 2. 若状态文档已存在，校验表 B 的表头和字段说明；与状态文档模板不符时按既有口径修正或提示
-3. `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/` 中是否存在 `.chunk-*.md` 切分文件；不存在则提示先运行 `eos-ort01-chunk` 并结束
+3. `../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/` 中是否存在 `.chunk-*.md` 切分文件；不存在则提示先运行 `eos-or01-x2docbiz` 并结束
 4. 确认处于 git 仓库且 AI 基线可用：`.scripts/ai-commit.sh` 存在；基线 = 状态文档 `HEAD @上次AI运行` 或最近 AI 提交（`git log --author="EOS-AI" -1`）
 5. **感知前置确认**：本步反馈检测用**状态扫描**（正文区 `[✓已澄清]` / 表 B 变更，§3.5 反馈检测判据），Step Start 无「无待处理提前退出」判定——**全部就绪后无条件进入 Step 1 反馈检测与汇总**，先检出反馈（含纯线下写 `[✓已澄清]`，表 B 可能无登记）再判入口，不因表 B 无待处理登记而漏检
 6. 全部就绪后进入 Step 1 反馈检测与汇总
