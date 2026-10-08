@@ -38,6 +38,8 @@ metadata:
 - 状态文档表 B：**摘 `iteration_count`**（护栏去掉后无消费者）、`unresolved_count` 说明改"澄清问题清单条数"、生命周期表两行改"清单不空／复核后清单空"；`last_size` 留待 ort03 重写时一并定。
 - 指针改名与 README／§15.7 语义更新见本轮前一版（提交 `66abc365`）。
 
+**已提交 `187d64d4`（2026-10-08 本轮收工）；origin＋gitee 双推。** 同日前一版（五章骨架初稿）为 `66abc365`＋回填 `253afbb7`。
+
 ## 未落 / 挂账
 
 - [[pending-or01-chain-followups]] 第 1、2 项（or02 侧）已清；第 7 项（prose 昵称 `ortNN` 未统一扫）仍在。
