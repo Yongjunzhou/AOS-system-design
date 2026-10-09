@@ -43,8 +43,8 @@ metadata:
 4. **资产退场（整链原则）**：人类定"20 号及后续文档不再保留、**资产全部放产品数据**"；2X 资产（21/22/24/25/27/28）退场另开一轮。
 5. 其余 `ort03` 引用（`00-doc-conventions` §十二、`01-pl4eos-spec` §2.6／§970）。
 
-## 下一开工点
+## 开工点（已做毕）
 
-**新开对话：审"原始需求处理整条链路的业务逻辑正确性"**（or00→or01→or02→or03 三支）。
+**审"原始需求处理整条链路的业务逻辑正确性"**（or00→or01→or02→or03 三支）——**已于 2026-10-09 做毕**，12 条发现及落改见 [[or-chain-logic-review-fixes]]。
 
 关联 [[ort03-normalization-connotation]]（旧口径，本件部分取代）、[[eos-design-landing-spec-93-refactor]]、[[94-eos-sys-dev-dbs-tree-authority]]、[[pending-01-align-to-94]]（部分落地）、[[pending-91-align-to-94]]。
