@@ -1,15 +1,15 @@
 ---
 name: or-chain-or03-rewrite-and-status-model
-description: 定案：EOS 规范化任务重写为 eos-or03-x2norm（三支树／对话单轨／不引资产）＋链级定名（功能→业务、①=业务输出文档）＋01 重建 v4.0＋91 §11 状态模型收口（§十四）＋撤表 C；提交 7c234dfe 双推（2026-10-09）；下一开工点＝审原始需求处理整链业务逻辑正确性
+description: 定案：EOS 规范化任务重写为 eos-or03-norm（成稿时名 eos-or03-x2norm）＋链级定名（功能→业务、①=业务输出文档）＋01 重建 v4.0＋91 §11 状态模型收口（§十四）＋撤表 C；提交 7c234dfe 双推（2026-10-09）；下一开工点＝审原始需求处理整链业务逻辑正确性
 metadata:
   type: project
 ---
 
 **2026-10-09 人类逐轮定，本会话落笔。提交 `7c234dfe`（15 文件，除 `100-subprojects`），github＝origin＋gitee 双推。**
 
-## 一、规范化任务重写 → `eos-or03-x2norm`
+## 一、规范化任务重写 → `eos-or03-norm`（成稿时名 `eos-or03-x2norm`）
 
-`eos-ort03-norm` → **`eos-or03-x2norm`**（`git mv`；重写为**五章 X→Y 体**，对齐 or00/01/02）。**三支成树**：
+`eos-ort03-norm` → **`eos-or03-norm`**（`git mv`；2026-10-09 成稿时名 `eos-or03-x2norm`，2026-10-10 复原；重写为**五章 X→Y 体**，对齐 or00/01/02）。**三支成树**：
 
 - **业务需求**：① 业务输出文档（**带五属性**，AI 出方案＋人类确认）→ ② 任务节点 → ③ 用例场景（＝条目 `@spr`）
 - **非功能需求**：① 一级类目 → ② 分类维度 → ③ 具体需求
@@ -41,10 +41,10 @@ metadata:
 2. **`wft01-eng` 措辞**：目标 2／任务 2"分解配置信息组"→"认领／收敛／命名／分配 CU"。
 3. **①名链级剩余**：`02` 的 ⑤"业务文档"、`biz01abr` 的"文档级任务"→"业务输出文档"。
 4. **资产退场（整链原则）**：人类定"20 号及后续文档不再保留、**资产全部放产品数据**"；2X 资产（21/22/24/25/27/28）退场另开一轮。
-5. 其余 `ort03` 引用（`00-doc-conventions` §十二、`01-pl4eos-spec` §2.6／§970）。
+5. 其余 `or03` 引用（`00-doc-conventions` §十二、`01-pl4eos-spec` §2.6／§970）。
 
 ## 开工点（已做毕）
 
 **审"原始需求处理整条链路的业务逻辑正确性"**（or00→or01→or02→or03 三支）——**已于 2026-10-09 做毕**，12 条发现及落改见 [[or-chain-logic-review-fixes]]。
 
-关联 [[ort03-normalization-connotation]]（旧口径，本件部分取代）、[[eos-design-landing-spec-93-refactor]]、[[94-eos-sys-dev-dbs-tree-authority]]、[[pending-01-align-to-94]]（部分落地）、[[pending-91-align-to-94]]。
+关联 [[or03-normalization-connotation]]（旧口径，本件部分取代）、[[eos-design-landing-spec-93-refactor]]、[[94-eos-sys-dev-dbs-tree-authority]]、[[pending-01-align-to-94]]（部分落地）、[[pending-91-align-to-94]]。

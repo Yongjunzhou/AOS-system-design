@@ -29,6 +29,6 @@ metadata:
 
 ## 归批 2（不动）
 
-- **F11** 91 §A.5 通用正文仍要求 `[已处理]`／`## AI最近变更`（链已撤），特化段又以旧名 `eos-ort03-norm` 指本链——见 [[pending-or-chain-batch2-migration]]。
+- **F11** 91 §A.5 通用正文仍要求 `[已处理]`／`## AI最近变更`（链已撤），特化段又以旧名 `eos-or03-norm` 指本链——见 [[pending-or-chain-batch2-migration]]。
 
 **How to apply:** 再动 or 链时，回写规则的命名一律 `<动作>记录规则`、各管本步写的那张表；"退不退回"先看 X、Y 是否同一批文件。相关：[[or-chain-or03-rewrite-and-status-model]]、[[or-chain-expression-and-naming-sweep]]、[[pending-or-chain-batch2-migration]]。

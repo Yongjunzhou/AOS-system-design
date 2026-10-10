@@ -50,5 +50,5 @@ metadata:
 3. **L3 §2.4 确认状态位置**——反馈协议字段放「规则与校验」需求要素组，语义上非需求要素（低优先）
 4. **PDF 产物** eos-wft03-biz-bpd2sfh.pdf 为渲染副本，v9.0/v9.1 均未重新生成
 
-**Why:** 用户要求 wft03-biz 以 wft02-biz 为标杆；知识层三章模式 + 原理审视模式已在 wft01→wft02→ort00~ort03 全链落地，wft03 补齐对齐。
+**Why:** 用户要求 wft03-biz 以 wft02-biz 为标杆；知识层三章模式 + 原理审视模式已在 wft01→wft02→or00~or03 全链落地，wft03 补齐对齐。
 **How to apply:** 下次审视/修订 wft03-biz 以此为结构基线；后续轮次按遗留项逐个推进（自检清单/E3 菜单树判据提炼，参照 [[wft02-biz-v80-knowledge-layer-restructure]]）；wft03-eng 未来对标 biz 结构时可直接参照 v9.1 骨架。

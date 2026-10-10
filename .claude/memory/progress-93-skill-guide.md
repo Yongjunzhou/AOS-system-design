@@ -25,7 +25,7 @@ metadata:
 
 **版次以本表为唯一现状源。** 挂账文件里写的版次（`pending-biz01abr-ch5` 的「abr 第 88 版／93 第 74 版」、`pending-abr-cleanup-open` 的「93 第 75 版 ＋ abr 第 89 版」、`asset23-retired-and-perspective-renamed` 的「93 第 76 版／abr 第 90 版」）都是**当轮记录**，记的是那一轮改到哪一版，不是现状——**不改它们**（改了反而把当轮历史写错），已各自加「当轮」二字标明。查现状只读上表。
 
-**`asset23-retired-and-perspective-renamed` 还写着"三处外围未落"**（`01-pl4eos-spec §2.6` 整节、`ort03` 的 23 匹配基准约 60 处、8 份 wft 指南旧名），是否已随手落掉要核。
+**`asset23-retired-and-perspective-renamed` 还写着"三处外围未落"**（`01-pl4eos-spec §2.6` 整节、`or03` 的 23 匹配基准约 60 处、8 份 wft 指南旧名），是否已随手落掉要核。
 
 **顺手核一条术语。** 这几处版次跳变与提交 `67686451`（"任务位 → 工位"）同时发生，说明**编排类术语又正了一轮名**；核对 `93` §2.4 规则七的词例与三份试点正文是否已全数换过，未换的按 `[[feedback-93-principles-over-terms]]` 的裁决依据（**以 91／94 里找不找得到为准**）处理。
 

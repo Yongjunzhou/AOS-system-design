@@ -2,7 +2,7 @@
 # ai-commit.sh <message>
 # AI 标识提交：author/committer = EOS-AI，message 前缀 [AI]，Co-Authored-By trailer。
 # 提交后输出新基线 hash，供 AI 记录到状态文档 `HEAD @上次AI运行` 字段。
-# 用法示例：.scripts/ai-commit.sh "ort01: 已生成切分方案，等待反馈"
+# 用法示例：.scripts/ai-commit.sh "or01: 已生成切分方案，等待反馈"
 set -euo pipefail
 
 if [ $# -lt 1 ]; then

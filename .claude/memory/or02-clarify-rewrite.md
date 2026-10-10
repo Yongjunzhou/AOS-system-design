@@ -1,11 +1,11 @@
 ---
-name: or02-x2vv-rewrite
-description: ort02-clarify 已按 biz01abr 五章骨架重写为 or02-x2vv（vv＝验证和确认，暂名）——澄清＝维护一份问题清单：四步（选材／出题／对话确认与落答／复核与判定），撤行内标记与裁决步，判据＝复核后清单空
+name: or02-clarify-rewrite
+description: ort02-clarify 已按 biz01abr 五章骨架重写为 or02-clarify（成稿时名 `or02-x2vv`，vv＝验证和确认，暂名）——澄清＝维护一份问题清单：四步（选材／出题／对话确认与落答／复核与判定），撤行内标记与裁决步，判据＝复核后清单空
 metadata:
   type: project
 ---
 
-# ort02 → or02-x2vv：预处理链第三步重写（2026-10-08）
+# ort02-clarify → or02-clarify：预处理链第三步重写（2026-10-08）
 
 人类指示「参照 biz01abr 重写 `eos-ort02-clarify`，重写结果为 `eos-or02-x2vv`（vv＝验证和确认，**暂名**）；重写之前先讨论澄清规则」。经多轮讨论，**澄清的模型本身被重立**——最终定案如下，已全部落地。
 
@@ -35,8 +35,8 @@ metadata:
 
 ## 落地文件
 
-- `20-pl4eos/10-pl4eos-subpl-sysdev/00-presysdev-4-eos/eos-or02-x2vv.md`（第 2 版，五章）＋ `eos-or02-x2vv/SKILL.md`。
-- 状态文档表 B：**摘 `iteration_count`**（护栏去掉后无消费者）、`unresolved_count` 说明改"澄清问题清单条数"、生命周期表两行改"清单不空／复核后清单空"；`last_size` 留待 ort03 重写时一并定。
+- `20-pl4eos/10-pl4eos-subpl-sysdev/00-presysdev-4-eos/eos-or02-clarify.md`（第 2 版，五章；成稿时名 `eos-or02-x2vv.md`）＋ `eos-or02-clarify/SKILL.md`。
+- 状态文档表 B：**摘 `iteration_count`**（护栏去掉后无消费者）、`unresolved_count` 说明改"澄清问题清单条数"、生命周期表两行改"清单不空／复核后清单空"；`last_size` 留待 or03 重写时一并定。
 - 指针改名与 README／§15.7 语义更新见本轮前一版（提交 `66abc365`）。
 
 **已提交（2026-10-08 本轮收工，origin＋gitee 双推）**：初稿五章骨架 `66abc365` ＋回填 `253afbb7` → 重立（澄清＝问题清单）`187d64d4` ＋回填 `d54a5d9c` → 一轮一篇 `c571d599` → 引用对象缺失查法注 `ac46cf3e` ＋记忆 `f3e24c4d`。**收工于 `f3e24c4d`。**
@@ -44,8 +44,8 @@ metadata:
 ## 未落 / 挂账
 
 - [[pending-or01-chain-followups]] 第 1、2 项（or02 侧）已清；第 7 项（prose 昵称 `ortNN` 未统一扫）仍在。
-- 同一"无运行内回环"口径也在 `eos-biz01abr`／`eos-or00-x2md`／`eos-or01-x2docbiz` 里有（「回 Step 1」「复跑检查」），本轮未动。
+- 同一"无运行内回环"口径也在 `eos-biz01abr`／`eos-or00-textualize`／`eos-or01-chunk` 里有（「回 Step 1」「复跑检查」），本轮未动。
 
-**Why:** 这一轮把澄清从"改正文里的一串标记 ＋ 一堆待处置项"收敛成"**维护一份问题清单**"——清单可数、可勾销，"做完没有"成了清单自己的状态，于是"无回环"与"本轮自结束"同时成立；也说明为什么澄清不需要"裁决步"。这是理解 or02 与后续 ort03 重写的前提。
+**Why:** 这一轮把澄清从"改正文里的一串标记 ＋ 一堆待处置项"收敛成"**维护一份问题清单**"——清单可数、可勾销，"做完没有"成了清单自己的状态，于是"无回环"与"本轮自结束"同时成立；也说明为什么澄清不需要"裁决步"。这是理解 or02 与后续 or03 重写的前提。
 
-**How to apply:** 写 ort03 重写时先读本件；or02 的澄清一律写"问题清单／出题／落答"，别再用"行内 `[⨯]` 标注""待处置项""三项条件""裁决"。相关：[[or01-x2docbiz-rewrite]]（同题前一轮）、[[or00-x2md-rewrite]]（同题第一轮）、[[ort02-clarify-question-list]] 与 [[ort02-structural-completeness]]（两份旧口径**已被本件取代**）、[[ort03-normalization-connotation]]（下游接口）。
+**How to apply:** 写 or03 重写时先读本件；or02 的澄清一律写"问题清单／出题／落答"，别再用"行内 `[⨯]` 标注""待处置项""三项条件""裁决"。相关：[[or01-chunk-rewrite]]（同题前一轮）、[[or00-textualize-rewrite]]（同题第一轮）、[[or02-clarify-question-list]] 与 [[or02-structural-completeness]]（两份旧口径**已被本件取代**）、[[or03-normalization-connotation]]（下游接口）。

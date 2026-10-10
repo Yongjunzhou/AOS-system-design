@@ -1,17 +1,17 @@
 ---
-name: ort00-dedup-design-decisions
-description: ort00-textualize 精确查重设计决策——内联查重/独立生命周期/软链接定向引用/语义查重边界
+name: or00-dedup-design-decisions
+description: or00-textualize 精确查重设计决策——内联查重/独立生命周期/软链接定向引用/语义查重边界
 metadata:
   type: reference
 ---
 
-# ort00-textualize 精确查重设计决策
+# or00-textualize 精确查重设计决策
 
 ## 设计决策
 
 ### 1. 查重位置：流程内联（文本化后、登记前）
 
-在 Step 2 内部，格式转换完成后立即查重，不另设汇总步骤。理由：保持"检测即执行"的原子操作节奏，与 ort00 现有模式一致。
+在 Step 2 内部，格式转换完成后立即查重，不另设汇总步骤。理由：保持"检测即执行"的原子操作节奏，与 or00 现有模式一致。
 
 ### 2. 查重方法：正文区逐字精确匹配（忽略空白差异）
 

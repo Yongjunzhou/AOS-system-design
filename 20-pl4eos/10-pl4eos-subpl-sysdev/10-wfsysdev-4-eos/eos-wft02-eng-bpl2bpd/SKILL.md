@@ -205,7 +205,7 @@ bash ../.scripts/update-meta.sh ../../../80-pl4eos-2-eosdata/04-eos-business-det
 
 **2. 要素机械检查**——R 上下文完整（承接自 bpl-eng）、P0 路径到位、CU 承接非空且含配置信息组（框架说明）清单、每个 CU 操作活动定义（配置操作/系统处理/运行期能力）+ 配置入口/FR-ENG 指标已定义、依赖已定义并校验、变更影响声明已写入。
 
-**3. 补充 FR-ENG 材料生成**——写入 `../../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<bpd-eng名称>补充原始需求材料.md`，登记到 材料状态表。与 wft03-biz 缺口线索同一管道（SKILL 指南 §5.5）：经确认 + ort00→ort03 转FR-ENG 规范化的相关方需求节点，不豁免预处理链。
+**3. 补充 FR-ENG 材料生成**——写入 `../../../80-pl4eos-2-eosdata/00-origin-requirement-materials/10-raw-files/<YYYYMMDD>-<bpd-eng名称>补充原始需求材料.md`，登记到 材料状态表。与 wft03-biz 缺口线索同一管道（SKILL 指南 §5.5）：经确认 + or00→or03 转FR-ENG 规范化的相关方需求节点，不豁免预处理链。
 
 ---
 

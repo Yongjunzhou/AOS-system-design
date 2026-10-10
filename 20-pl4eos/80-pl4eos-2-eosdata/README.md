@@ -46,7 +46,7 @@
 | 07 | [平台产品架构](07-eos-platform-product-architecture.md) | 第 5 层 | 第 5 步 | 结构已改造，待填充 |
 | 08 | [追溯矩阵](08-eos-sysdev-traceability-matrix.md) | 全层 | 第 6 步 | 结构已改造，待填充 |
 | 09 | [验证报告](09-eos-sysdev-verification-report.md) | 全层 | 第 6 步 | 结构已改造，待填充 |
-| 21 | [相关方角色目录](21-eos-stakeholder-roles.md) | 全层（跨层资产·发现型） | ort03/wft01~wft06 | 结构已改造，待填充 |
+| 21 | [相关方角色目录](21-eos-stakeholder-roles.md) | 全层（跨层资产·发现型） | or03/wft01~wft06 | 结构已改造，待填充 |
 | 22 | [非功能需求分类资产](22-eos-nfr-taxonomy.md) | 全层（跨层资产·发现型） | wft01/wft04 | 结构已改造，既有 NFR 已保留 |
 | 24 | [可复用业务资产](24-eos-business-assets.md) | 跨层（定义型资产·wft02 写回目标） | wft02 | 结构已改造，待填充 |
 | 25 | [引擎资产](25-eos-engine-models.md) | 跨层（定义型资产·wft02 写回目标，含业务文档承接 §1.7） | wft02 | 结构已改造，待填充 |
