@@ -1,18 +1,18 @@
 flowchart TD
-    Z["阻抗（impedance）<br/>电磁波行为的路 · 唯一根概念"]
-    Z --> Z0["特性阻抗<br/>几何·材料投影"]
-    Z --> R1["反射<br/>不连续投影"]
-    Z --> X1["串扰<br/>耦合投影"]
-    Z --> S1["损耗<br/>衰减投影"]
-    Z --> T1["时序<br/>时间投影"]
-    Z0 --> SI["信号完整性（SI）<br/>围绕阻抗匹配的电磁波行为整合"]
-    R1 --> SI
-    X1 --> SI
-    S1 --> SI
-    T1 --> SI
+    P["产品数据（广义产品）<br/>企业运行的货 · 唯一根概念"]
+    P --> F["流程<br/>时间投影"]
+    P --> O["组织<br/>空间投影"]
+    P --> K["绩效<br/>价值投影"]
+    P --> CM["配置管理<br/>受控管理本身"]
+    P --> IT["IT 系统<br/>数字化载体"]
+    F --> E["企业运行体系<br/>围绕产品数据的组织化运转"]
+    O --> E
+    K --> E
+    CM --> E
+    IT --> E
     classDef root fill:#B5D4F4,stroke:#185FA5,color:#0C447C
     classDef proj fill:#D3D1C7,stroke:#5F5E5A,color:#444441
     classDef comp fill:#E1F5EE,stroke:#0F6E56,color:#085041
-    class Z root
-    class Z0,R1,X1,S1,T1 proj
-    class SI comp
+    class P root
+    class F,O,K,CM,IT proj
+    class E comp
