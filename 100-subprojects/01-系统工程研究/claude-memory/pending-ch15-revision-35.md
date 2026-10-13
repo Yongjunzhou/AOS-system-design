@@ -12,6 +12,9 @@ metadata:
 
 ---
 
+> **★ 37 号料源（2026-10-13 批 0 登记）**：本章重写时须取用 **报告 37 号**〔架构视图口径研究报告（v1.12）〕——**§七 7.6**（决策与理由写入 AD 依据 §6.10；冻结的是那一版描述——Table B.1 产出物）。
+> 逐章判定与本批施工序见 [pending-align-textbook-to-37.md](pending-align-textbook-to-37.md)。
+
 ## 〇、开工单（agent 自读）
 
 读 `claude-memory/MEMORY.md`、本件、[`pending-ch10-18-restructure-35.md`](pending-ch10-18-restructure-35.md)、[`pending-ch13-placement.md`](pending-ch13-placement.md)（本章位置的裁定与两处缺环）、[`架构语义立场表-ch10至ch18.md`](架构语义立场表-ch10至ch18.md)，按《逐章修订手册》**七阶段**重写**第15章**。

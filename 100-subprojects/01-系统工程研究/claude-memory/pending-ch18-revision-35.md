@@ -12,6 +12,9 @@ metadata:
 
 ---
 
+> **★ 37 号料源（2026-10-13 批 0 登记）**：本章重写时须取用 **报告 37 号**〔架构视图口径研究报告（v1.12）〕——**§九 9.3 七类视图各问什么**（能力条目改"会建七类、会判符合视角"，指向 ch13）。
+> 逐章判定与本批施工序见 [pending-align-textbook-to-37.md](pending-align-textbook-to-37.md)。
+
 ## 〇、开工单（agent 自读）
 
 读 `claude-memory/MEMORY.md`、本件、[`pending-ch10-18-restructure-35.md`](pending-ch10-18-restructure-35.md)、[`架构语义立场表-ch10至ch18.md`](架构语义立场表-ch10至ch18.md)（**本章是那一轮的"重灾区"：39 行／6 族，须逐条复核是否已清**），按《逐章修订手册》**七阶段**重写**第18章**。
