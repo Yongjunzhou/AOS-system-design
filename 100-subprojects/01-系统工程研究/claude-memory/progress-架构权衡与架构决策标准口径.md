@@ -213,6 +213,32 @@ metadata:
 
 **五例同构（可作 ch12 收束）**：承重侧重——HUD 偏属性／EOS 偏概念与准则／M3 概念与属性并重／**合同审批偏概念与规则**；典型失效——误导／演进失控／断链漏检／**架构未识别**。**合同审批给的洞见与前三个不同**：HUD 是决策没做对、EOS 是封顶没守住、M3 是判定与归属没先定，而**合同审批是"决策已经发生了，却没人把它当决策"**——所以药方不是"把决策做对"，而是**先认出这是决策**（G9 新增对外接口须回架构识别；案例进展里万辉那句"这条不是违规，是我的架构没识别"）。**这一例正好闭环了本轮整串问题**（决策是什么、与定义／权衡／技术决策／项目决策的关系）：**分不清那四组界，就会把架构决策当成"细化"、当成"技术问题"、当成"改个字段"。**
 
+## 十四、2026-10-13 追加：架构目标是什么、与"系统目标"什么关系（面谈分析，供 ch11／ch12 取用）
+
+**零命中检索**：四份正本**第 3 章都没有 `objective` 词条**，也没有 `architecture objective` 词条；`system objectives` 全库仅 **15288 §6.4.2 NOTE 7** 一处（讲用户活动是为达成 system objectives）。→ **「架构目标」不是被定义的标准术语，而是过程里被确立的东西**（42020 §8.4.4 是一条活动名：Establish architecture objectives and critical success criteria）。
+
+**标准实际使用的三串"目标"（不可混）**：① **上层侧**——enterprise objectives（42020 §6.4.3 任务要求 examine current and future enterprise objectives）、mission objectives、business/mission drivers、organizational goals and objectives（附录 G.1：*Architecture governance has oversight of the architecture objectives … to ensure their consistency with organizational goals and objectives*（中译：架构治理对架构目标有监督……以保证其与组织目标的一致性））；② **架构侧**——`architecture objectives`（42020 §5.4／§8.2 b)／§8.4.4／§8.4.6 e)／§9.1／§9.4.7 i)；15288 §6.4.4.3 b) 2)）；③ **集合侧**——`architecture collection objectives`（42020 §6.4.3／§7.2，治理与管理层，**不是单个架构的目标**）。**"系统目标"这个总称标准不用**，它按主体分别说。
+
+**可用定义性表述**：42020 **§5.4** 逐字——*Conceptualization specifies the objectives of the architecture and the quality measures that can be used in the assessment of its value. … These architecture objectives are based on the problem/opportunity identification and definition that occurs in this process.*（中译：概念化规定了架构的目标，以及可用于评估其价值的质量度量；这些架构目标基于本过程中发生的问题／机会识别与定义。）；**§8.2 b)** 成果逐字——*Architecture objectives that address the key stakeholder concerns are established.*（中译：应对关键相关方关注点的架构目标被确立。）；**§8.4.4 任务 f)** 逐字——*Identify and define architecture objectives that address the problem(s) and opportunities with respect to the stakeholder concerns, requirements or quality attributes, or that take advantage of identified opportunities.*（中译：识别并定义架构目标——它们就相关方关注点、需求或质量属性应对问题与机会，或利用已识别的机会。）→ 本报告归拢（④）：**架构目标＝"这份架构凭什么算立住了"的可判定表述：以关键相关方关切为源、以关键成功准则为形、以评估准则为用。**
+
+**与系统目标的关系三条**：① **派生**——系统目标在上，架构目标由它＋关切派生（§8.4.4 的位置在"刻画问题空间"之后、"合成潜在解"之前；§5.4 明说基于问题／机会识别与定义）；42020 §8.4.4 NOTE 2／§8.4.6 h) NOTE 7 另分 **ends objectives（目的目标·问题侧）** 与 **means objectives（手段目标·解侧）**，架构目标**横跨两侧**（既承接 ends，又对 means 提约束）。② **互相约束**——架构目标不得与系统目标相抵（案例：合同审批候选 C′ 因"与目的正面相抵"被淘汰）；反向，系统目标要经架构目标检验可行性（§8.2 e)：*Tradeoffs among architecture objectives and feasibility limitations are identified…*（中译：架构目标与可行性限制之间的权衡被识别……））。③ **不同层**（下表，④定性）：
+
+| | 系统目标 | 架构目标 |
+|---|---|---|
+| 主语 | 系统／产品（用户要的结果） | 这份架构（概念／属性／原则要守住什么） |
+| 判据形态 | 结果值（活性 ≥95%、对账 ≤2 h） | 守住与否（挂到 K／P／G 上）＋可转评估准则 |
+| 兑现时点 | 交付与使用期 | 设计与演化期 |
+| 谁定 | 业务方／用户／组织（架构师有质询权无改写权） | 架构师确立并请相关方确认（§8.4.4；§9.4.3 g) 验证） |
+
+**判别尺三问**：① 主语是谁？② 能不能挂到 K／P／G 上（"去掉它的后果"写得出来吗）？③ 是否必须先定一个取值才可判（若是，那是属性值／评估准则，不是目标本身）。
+
+**★ 一条操作化（本次新得）**：37 号四套示例的 K／P／G 三张清单，**每一行都带"去掉它／不共享的后果"一列——那一列就是架构目标的反面表述**（保住它＝达成架构目标）。故本书**不必为"架构目标"另立一张表**，它就住在 K／P／G 的"去掉它的后果"栏里。
+
+**三条常见误读**：① 把系统目标抄成架构目标（→ 不可判定："架构要保证到站活性 ≥95%"没法判）；② 把**架构集合目标**（治理层）当单个架构的目标；③ 把关键成功准则当目标本身——42020 把两者放在同一条活动（§8.4.4）里，关系是**目标→准则**（准则让目标可判），不是同义。
+
+**一处口径待核（登记，勿擅改）**：`00-案例设定.md` 的 M3／恒信"目标"是**系统目标**口径（到站活性 ≥95%、对账 ≤2 h、逐笔 100%）；而 37 号四套示例的"目标（每条带关键成功准则）"是**架构目标**口径（HUD 共形精度／不误导／可维修；EOS 贯通即设计保证／语义唯一；M3 的 K／P／G 亦然）。两者并存不算错（正是两层分野的现场），**但若要全书齐一，宜在各处标明是哪一层**——**未裁定**。
+
+
 
 
 
