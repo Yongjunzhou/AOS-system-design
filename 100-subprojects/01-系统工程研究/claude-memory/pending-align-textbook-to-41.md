@@ -34,7 +34,7 @@ metadata:
 ## 二、待裁事项
 
 1. **HUD／EOS 两案是否进教材书**（40 号遗留的待裁，41 号 §8.2 又引用了一次四案的 CM 格）。**未裁**——在裁之前，41 号四案内容只作**报告库证据**，不进教材正文。
-2. **`.work-cm/` 是否留档**（SEH 5.0 配置管理全节抽取＋脚本）。用户未表态。
+2. **`.work-cm/` 是否留档**——**已裁（2026-10-15 用户令「保持」）：保持不入库**（理由与处置口径见 [`pending-cm-archdef-governance.md`](pending-cm-archdef-governance.md) §三 第 3 条；脚本若要留档按 `progress-standard-pdf2md.md` §七 移入 `.tools/`）。
 
 ## 三、口径级连带（须与既有件对齐）
 
