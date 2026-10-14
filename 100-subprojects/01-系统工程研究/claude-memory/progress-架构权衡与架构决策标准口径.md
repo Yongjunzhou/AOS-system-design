@@ -238,6 +238,29 @@ metadata:
 
 **一处口径待核（登记，勿擅改）**：`00-案例设定.md` 的 M3／恒信"目标"是**系统目标**口径（到站活性 ≥95%、对账 ≤2 h、逐笔 100%）；而 37 号四套示例的"目标（每条带关键成功准则）"是**架构目标**口径（HUD 共形精度／不误导／可维修；EOS 贯通即设计保证／语义唯一；M3 的 K／P／G 亦然）。两者并存不算错（正是两层分野的现场），**但若要全书齐一，宜在各处标明是哪一层**——**未裁定**。
 
+## 十五、2026-10-13 追加：决策前的候选集里可以有不满足关切的候选项吗（面谈分析，供 ch11／ch12 取用）
+
+**答：可以，而且标准把"不完全满足"当作常态。** 14 条引文逐字实测全过（量具 `.work-38/verify_candidates.py`）。
+
+**三条标准依据（逐字）**：
+1. 42020 **§8.4.5 NOTE 6**——*The solution might not be addressing the entire problem or all aspects of the problem. Therefore, it is important to understand where the solutions fall short and the tradeoffs that are to be considered when choosing among alternative solutions.*（中译：解可能并不应对整个问题或问题的所有方面；因此重要的是理解各解**在哪里差一截**，以及在备选之间作选择时要考虑的权衡。）同组 NOTE 5（每个解可有不同目的陈述）、NOTE 9（各解可能应对问题的不同方面）。
+2. 42020 **§8.4.6 NOTE 2**——*The tradespace often does not include a solution that will completely satisfy the architecture objectives and stakeholder concerns.*（中译：tradespace 往往并不包含能**完全满足**架构目标与相关方关注点的解。）
+3. 42020 **§9.4.8 b) NOTE 1**——筛选判据**不是"是否满足"，而是"是否凸显权衡、是否跨越 tradespace"**：*Alternatives that don't "highlight" the tradeoff criteria are screened. Two alternatives that present the exact same tradeoffs are not examined. A set of alternatives that "span" the tradespace is also examined.*（中译：不"凸显"权衡准则的备选会被筛掉；权衡完全相同的两条不予考察；还会考察一组"跨越"tradespace 的备选。）
+
+**三条硬约束（"可以留"≠"可以糊涂地留"）**：
+① **差距必须已知**：§8.4.5 f) 为每个解刻画优劣势与权衡；§8.4.6 c) 6) *Determine remaining gaps or shortfalls after implementing the proposed solutions.*（中译：确定实施所提各解之后仍然剩下的缺口或不足。）
+② **必须可区分**：§9.4.7 b) 剔除的是"彼此相似且不具区分度"者（*Eliminate alternatives that are similar to each other and that do not provide a discriminating case…*（中译：剔除彼此相似、就评估目标与准则不具区分情形的备选。））；备选不够时还要再造（§9.4.7 a) NOTE 3）。
+③ **强制项另算**：不满足强制项者**可以留**（*It is sometimes better to eliminate … earlier … However, it could also be helpful to see how far off these are from meeting the mandates and imperatives.*（中译：有时宜早筛掉不满足强制项的备选……然而，看看它们离满足强制项还差多远也可能有助益。）），但**要选它就得走减免／豁免／改需求**（§9.4.8 d) NOTE 4；§9.4.10 f) NOTE：*if a promising architecture with high stakeholder value does not close*（中译：若一个高价值、前景好的架构收不了口）即与相关方讨论放宽需求）。→ **"能不能留"与"能不能选"是两件事。**
+
+**两条结构性要点**：① **完整性是"集合"的性质，不是"个体"的性质**——§8.4.5 d) 要求审"问题因—缓解策略"的关系以 *assure the completeness of the potential solution(s)*（中译：确保潜在解的完备性），而 NOTE 6 明说单个解可以只应对一部分；② **现状天然是"不满足关切"的候选**（否则就不必改），标准仍要求把它摆上桌（§9.4.7 NOTE 2、§8.4.6 NOTE 4）——**这就是最硬的反证**。
+
+**与本书 ch11 口径对接**：ch11 的"**候选四道准入**（有类可归·有物可依·有径可循·**有辨可评**）"里，**"有辨可评"正是 §9.4.7 b)／§9.4.8 b) 的"可区分"要求**，**四道准入没有一条是"满足全部关切"**——本书口径与标准自洽，**不需要改**。另须分清**两个"准入"**：**内容准入**（哪些内容进三张清单，＝ch11 的目的必要性／承重测试）与**候选准入**（哪条方案摆上桌，＝四道准入）。
+
+**反面风险三条（候选不满足关切何时有害）**：① **凑数的假备选**（straw man）——它与其他候选不具区分度（§9.4.7 b) 会筛掉），若仍写进决策记录，被否理由也是假的，未来无用（42010 §6.10.1 NOTE 3 要求被否备选将来"理据失效时可重作决策"）；② **用"不满足者"占位，掩盖"根本没有可行解"**——此时正解是回上游改需求或议减免（§9.4.10 f) NOTE），不是硬选一个差得多的；③ **把不满足强制项者当正常候选比**——应先筛（§9.4.8 d) NOTE 5），否则评估成本白花且结论不可用。
+
+**一句话判据（④本报告定性）**：候选的合格线是"**可区分 ＋ 差距已知（差在哪、差多少、能否补）**"，不是"满足全部关切"；**若候选都满足全部关切，就不存在权衡，也就不需要决策了**。
+
+
 
 
 
