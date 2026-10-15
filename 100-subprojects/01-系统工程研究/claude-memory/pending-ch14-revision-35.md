@@ -1420,3 +1420,138 @@ metadata:
 | 24 | 换手 | — （本书命名） | `14.1.3` | **本书读法**（题面已撤"从…到…"，改用"分界在种类"） |
 
 **合计 24 条**（基础 10／核心 9／普通 5）。**下一步＝第 2 步：给权威定义与判据汇编**（逐条逐字＋出处＋本章用法 ✓/△/✗）。
+
+---
+
+# 阶段五稿·第 2 步：权威定义与判据汇编（2026-10-15）
+
+> **口径**（§1.5 第 2 步）：逐条**逐字引用＋出处＋"本章用法是否一致"**；**按等级判**——**基础**看是否与本章定义句同构｜**核心**看用法是否落在权威用法范围内｜**普通**只判意思不发冲突。
+
+## 一、本体侧
+
+| 概念 | 权威逐字（英）｜（中译：…） | 出处 | 本章用法 |
+|---|---|---|---|
+| **架构** | *fundamental concepts or properties of an entity in its environment and governing principles for the realization and evolution of this entity and its related life cycle processes*（中译：实体在其环境中的基本概念或属性，以及为实现和演化该实体及其相关生存周期过程的管控原则） | 42010:2022 §3.2 | **✓**（`14.2.1` 只说"那份内容"，未在定义句外添第三样） |
+| **架构描述 AD** | *work product used to express an architecture*（中译：用于表达架构的工作产品） | 42010:2022 §3.3 | **✓**（`14.2.1`"承载那份内容的工作产品"同构） |
+| **架构实体** | *thing being considered, described, discussed, studied or otherwise addressed during the architecting effort*（中译：在架构工作中正被考虑、描述、讨论、研究或以其他方式处理的事物） | 42020:2019 §3.6 | **✓**（`14.4.3`"被架构的那个事物"同构） |
+| **架构实体 ≠ 系统元素** | *Note that an architecture entity … and a system element … represent **two different notions**.*（中译：架构实体……与系统元素……代表**两种不同的概念**） | 15288:2023 §5.9 末段 | **✓**（`14.4.3` 逐字引用） |
+| **系统元素** | *discrete part of a system that can be implemented to fulfil specified requirements*（中译：系统的离散部分，能加以实现以满足规定的要求） | 15288:2023 §3.47 | **✓** |
+| **设计（名词）** | *specification of system elements and their relationships, that is sufficiently complete to support a **compliant implementation of the architecture***（中译：系统元素及其关系的规定，其完整程度足以支撑对架构的**合规实现**） | 15288:2023 §3.13 | **✓**（`14.3.3` 只作"与架构相容"的判据源，未滑成"架构的细化"） |
+| **名义的／notional** | *Sometimes the elements of the architecture entity are **initially notional** until Design Definition process … has occurred*（中译：有时，架构实体的元素在最初是**概念性的**，直至设计定义过程……完成） | 42020:2019 §5.6 | **△**（**本书译名取"名义的"**，与库内对照版"概念性的"异译——`14.4.4` 已加译名说明；**须在附录 A 立户时同步标**） |
+| **元素不必是实物** | *They are **neither necessarily tangible objects nor visible items**.*（中译：它们**既不必是有形物体，也不必是可见条目**） | 42020:2019 §10.4.4 b) 注 1 | **✓** |
+
+## 二、过程与产物侧
+
+| 概念 | 权威逐字｜（中译：…） | 出处 | 本章用法 |
+|---|---|---|---|
+| **系统架构定义过程** | *to generate system architecture alternatives, select one or more alternative(s) that address stakeholder concerns and system requirements, and express this in consistent views and models*（中译：生成系统架构备选方案，选择一个或多个应对利益相关方关注点和系统需求的备选方案，并在一致的视图与模型中表达该架构） | 15288:2023 §6.4.4.1 | **✓** |
+| **架构＝定义解**（本章对句之左） | *The system architecture definition activities **define a solution based on principles, concepts, and properties** …*（中译：系统架构定义活动**基于……原则、概念和属性来定义解**） | 15288:2023 §6.4.4.1 | **✓**（`14.2.6` 逐字引用，是"架构不是基于需求设计出来的"的判据源） |
+| **设计定义过程** | *to provide sufficient detailed data and information about the system and its elements to realise the solution in accordance with the system requirements and architecture*（中译：提供关于系统及其元素的足够详细的数据与信息，以按照系统需求与架构实现解） | 15288:2023 §6.4.5.1 | **✓** |
+| **设计＝转换**（对句之右） | *This process **transforms architecture and requirements into a design** of the system that can be realised.*（中译：本过程将**架构与需求转换**为可实现的系统设计） | 15288:2023 §6.4.5.1 | **✓** |
+| **分工对句** | *Architecture focuses on suitability, viability, and desirability, whereas design focuses on compatibility with technologies and other design elements and on feasibility of construction and integration.*（中译：架构聚焦于适宜性、可行性与合意性，而设计聚焦于与技术及其他设计元素的兼容性，以及构建与集成的可行性） | 15288:2023 §5.9 | **✓**（`14.2.3` 逐字；本书译名分流为"适宜·存续·合意／兼容·可造·可集"，已在同处给出英文逐字） |
+| **独立性要求** | *An effective architecture is **as design-agnostic as possible** to allow for maximum flexibility in the design trade space.*（中译：有效的架构**尽可能与设计无关**，以便在设计权衡空间中获得最大灵活性） | 15288:2023 §5.9 | **✓**（`14.2.5` 以它作"深浅说不通"的判据） |
+| **需求是输入不是原料** | *a **necessary and sufficient response to stakeholder requirements** and a **necessary and sufficient input to other processes, in particular architecture and design***（中译：对利益相关方需求的**必要且充分的响应**，并且是其他过程（**尤其是架构过程与设计过程**）的**必要且充分的输入**） | 15288:2023 §6.4.3.3 注 18 | **✓**（`14.2.6` 逐字引用） |
+| **出口＝可用于采购或实现** | *This includes the design description in a form that can be used to either procure or realise the system elements that comprise the system*（中译：这包括以可用于采购或实现构成系统的系统元素的形式给出的设计描述） | 15288:2023 §6.4.5.3 b) 8)＋注 12 | **✓** |
+| **转化与分配** | b) 2) *Transform architectural entities and relationships into design elements.*／b) 3) *Transform architectural characteristics into design characteristics.*／b) 1) *Allocate system requirements to system elements.*（注 4 补 *…to address all system requirements **and architecture objectives***） | 15288:2023 §6.4.5.3 b) 1)2)3)＋注 4 | **✓**（`14.3.2` 逐字；**注 4 用 `architecture objectives`，非 `goals`**） |
+| **接口可新增** | *It is possible that **additional interfaces** need to be identified and defined that were not addressed in the system architecture definition process.*（中译：可能需要识别并定义系统架构定义过程中未予处理的附加接口） | 15288:2023 §6.4.5.3 注 10 | **✓**（`14.3.3` 按新口径写，旧"只细化不新增"已废） |
+| **反馈回架构** | *This process provides feedback to the system architecture definition process to consolidate or confirm the allocation, partitioning, and alignment of architectural entities to system elements*（中译：本过程向系统架构定义过程提供反馈，以整合或确认将架构实体分配、划分并对齐到构成系统的系统元素） | 15288:2023 §6.4.5.1 注 2 | **✓** |
+| **交配置管理** | *The design definition process identifies candidates for the baseline and then provides the artefacts to configuration management.*（中译：设计定义过程识别基线的候选对象，随后将人工制品提供给配置管理） | 15288:2023 §6.4.5.3 注 20 | **✓**（`14.3.4` 逐字；**单数 `the baseline` ＋ `and then`**） |
+
+## 三、描述侧（准入与"基本"）
+
+| 概念 | 权威逐字｜（中译：…） | 出处 | 本章用法 |
+|---|---|---|---|
+| **视图** | *information part comprising portion of an architecture description*（中译：包含架构描述的一部分的信息部件） | 42010:2022 §3.7 | **✓** |
+| **视角** | *set of conventions for the creation, interpretation and use of an architecture view to frame one or more concerns*（中译：用于创建、解释和使用架构视图以框定一项或多项关注点的一组惯例） | 42010:2022 §3.8 | **✓**（`14.5.2` 用其"一组惯例"义） |
+| **两张清单** | §3.4 注 1（12 项，**不含** decision／rationale）／§5.2.9（**含** architecture decision、architecture rationale） | 42010:2022 | **△**（`14.4.2` 已**显式标"本书归拢"**——正本只是给出两张并列清单，**没有**"不可混"的对照句） |
+| **准入尺** | §6.6／§6.7／§6.8／§6.9.2 的 shall（**共二十句**）＋§5.2.9／§3.7 的定义性约束 | 42010:2022 | **△**（`14.6.1` 已**显式标"本书归拢"**并写明正本无"六项"枚举；第五项标"定义性，非 shall"） |
+| **"基本"只修饰内容** | *architecture* — **fundamental** concepts or properties … and **governing principles** … | 42010:2022 §3.2 | **✓**（`14.5.1` 按语法位置论证） |
+| **基本只从视角这一环起作用** | §6.6 *Each concern identified in accordance with 6.4 shall be framed by at least one architecture viewpoint.*／§6.7 c) 组件须应对该视角框定的全部关切 | 42010:2022 | **✓** |
+| **非基本的东西可以合法留在描述里** | §6.7 示例 2（概览／架构原则·模式·风格／引用的依据／视图间对应关系／**架构理由**）＋主句 *An AD **may** include other information which is not part of any architecture view.* | 42010:2022 | **✓**（`14.6.2` 引示例 2；**注意主句是 may，不是 shall**） |
+
+## 四、工具与底本机制
+
+| 概念 | 权威逐字／来源 | 出处 | 本章用法 |
+|---|---|---|---|
+| **设计描述符** | 正本检索 `descriptor` **零命中** | **INCOSE SEH 5.0（同版同年旁证）** | **△**（`14.3.3` 判据 4 已标"SEH 表述"；**附录 A T-166 的出处须同批改**） |
+| **原子元素** | 同上（`atomic`／`black box`／`opaque box` 正本零命中） | **INCOSE SEH 5.0** | **△**（`14.3.5` 已标"同版同年旁证"；T-167 已标） |
+| **入口＝检查架构** | 正本 §6.4.5.3 a) 1)~6) 为六项**准备任务**（Define／Determine／Identify／Obtain） | 15288:2023 §6.4.5.3 a) | **△**（`14.3.1` 已把"检查系统架构"一句标为 **SEH 同版同年旁证**，并同时给出正本 a) 六项任务） |
+| **系统分解结构 SBS** | *Typical breakdown structures include work breakdown structure, functional breakdown structure, **system breakdown structure**, and organizational breakdown structure.* | 15288:2023 §6.3.1 任务 4)＋注 4 | **✓**（`14.4.6` 逐字；**PBS 正本零命中**，已写明本书不用） |
+| **分解不唯一** | 正本**无字面命题句**；最接近＝§8.4.7 f)＋k) 与 §8.4.5 注 8 | 42020:2019 | **✓**（`14.4.6` **未**写"标准说分解不唯一"，只写"系统结构本身不必是层级"） |
+| **架构即约束** | *The constraint is on the design space available to the design definition process.* | 42020:2019 附录 E.2.1 | **✓**（`14.2.5` 未用它作准入，只作"留空间"一支的旁证） |
+| **基线架构** | *Baseline architecture is the definition of the architecture being defined for a given point of time.* | 42020:2019 附录 **E.4.1.6** | **✓**（本章只把"设计依从的是哪一版"交出去；**出处订正已在册**——非 E.2.2） |
+
+---
+
+# 阶段五稿·第 3 步：不一致清单（A~E 五组）
+
+> 每条＝**位置｜原文逐字｜问题｜依据｜建议改法**；并标**术语等级**。
+
+## A 组·定义与判据（本章内部）
+
+| # | 位置 | 原文 | 问题 | 依据 | 建议改法 | 等级 |
+|---|---|---|---|---|---|---|
+| A1 | `14.3.3` 判据表第 4 条 | "描述符匹配…（**INCOSE SEH 5.0 表述——同版同年旁证；正本 §6.4.5 全节检索 `descriptor` 零命中**）" | **已改**（首稿曾误标为"§6.4.5.3 注 12 一带"） | 三路核查·15288 回执 | 无需再改；**须同批改附录 A T-166 的出处** | 基础（T-166） |
+| A2 | `14.4.2` | "两张清单一长一短、覆盖不同——**这一点是本书的归拢，不是标准里的对照句**" | **已改**（首稿曾写成标准原话） | 三路核查·42010 回执 | 无需再改 | 核心 |
+| A3 | `14.6.1` | "**说明（本书归拢）**：……标准本身没有一份'六项'清单……" | **已改**（首稿曾写"标准规定六项 shall"） | 同上（shall 句实数二十，第五项为定义性） | 无需再改 | 基础 |
+| A4 | `14.3.4` "评估反馈"一句 | "设计定义的评估活动给出的结论，可以回到架构那一侧去（§6.4.5.3 c) 一带）" | **△ 出处偏宽**：§6.4.5.3 c) 是"评估系统设计"这一活动，未逐字说"回馈架构" | 15288 回执（c) 未列回馈句） | 改为**只写活动、不写成回馈通道**，或与注 2 合并叙述 | 核心 |
+| A5 | `14.6.3` | "架构定义过程的成果里确有'系统元素及其相互接口被定义'这一项" | **△ 未给条款号**，正本落点＝§6.4.4.2 g) | 35 号 §17.3.2 引 §6.4.4.2 g)（**本批未自核该条逐字**） | 补条款号并**落库前回正本核**；核不到则删该半句 | 核心 |
+
+## B 组·名称与指称
+
+| # | 位置 | 原文 | 问题 | 依据 | 建议改法 | 等级 |
+|---|---|---|---|---|---|---|
+| B1 | 全章 | "**设计描述**"（简称） | 首出全名已按裁决办（本章首次给标准户名"系统设计描述"） | ch8／ch13 已用简称 | 无需改 | 基础 |
+| B2 | `14.4.4` | 译名说明："库内 42020 中英对照版译作'概念性的'，本章用'**名义的**'" | **✓ 已交代**；但**附录 A 尚无"名义的"户**且 T-166/T-167 未标 SEH | 三个口径（§1.5 第 0 步"本书读法须显式标"） | **附录 A 立户时同步**：T-167 已标；**"名义的"随 T-? 一并交代** | 普通 |
+| B3 | `14.4.6` | "**系统分解结构**（*system breakdown structure*，SBS）" | **✓ 处内已给全名**；**附录 A 待立户**（主章第14章） | 37 号 §五＋本次自核 §6.3.1 注 4 | 随落库批在附录 A 立 SBS 一条 | 基础 |
+
+## C 组·数量与口径
+
+| # | 位置 | 原文 | 问题 | 依据 | 建议改法 | 等级 |
+|---|---|---|---|---|---|---|
+| C1 | `14.4.7` | "就是**五条关系**"＋表五行 | **✓**（表达／两种概念／转化／一致／双向追溯） | 35 号 §17.3.1 | 无需改 | 核心 |
+| C2 | `14.3.3` | "合起来是**四条**"（判据） | **✓**（旧第五条"接口只细化不新增"已废，改为分两半的接口口径） | 15288 §6.4.5.3 注 10 | 无需改 | 基础 |
+| C3 | 附录 B | "**四个层名**" | **✓**（描述层／模型层／设计层／实现层） | 35 号 §17.3 | 无需改 | 核心 |
+
+## D 组·与权威定义的偏差
+
+| # | 位置 | 原文 | 问题 | 依据 | 建议改法 | 等级 |
+|---|---|---|---|---|---|---|
+| D1 | 全章 | 无"架构＝结构／元素与关系"型表述 | **✓ 零违规**（第 0 步已核） | 42010 §3.2＋禁词表 | 无需改 | — |
+| D2 | 全章 | 无"不可逆／改起来贵"作准入 | **✓**（唯一一处是 `14.6.4` 的**否定用法**） | 框架 §五 第 22 条 | 无需改 | — |
+| D3 | `14.2.5` | "一个逼着设计只能有一种做法的架构，通常不是严谨，是越界" | **✓**（与 42020 E.2.1＋15288 §5.9 同向；**未**写成"架构支配设计"） | 24 号 §2.1 L160 勘误 | 无需改 | 核心 |
+
+## E 组·跨文件连带（随落库批一次做净）
+
+| # | 位置 | 要改什么 | 依据 |
+|---|---|---|---|
+| E1 | `19-附录.md` **T-166** | 出处由暗示的"据 24765"改为 **INCOSE SEH 5.0（同版同年旁证）**，并注明**正本 `descriptor` 零命中** | 本批三路核查 |
+| E2 | `19-附录.md` **附录 A** | **新立 SBS（系统分解结构）一条**（主章第14章；三句：属项目规划过程／系统结构不必是层级／PBS 非标准术语本书不用） | 框架 §五 第 22 条② |
+| E3 | `19-附录.md` **T-157** | 其释文以"视角规格"为名、挂 42010 §3.16——**正本 §3.16 是 `specification`，无 `viewpoint specification` 术语条**；**该条属第13章主章**，登记另批（**不在本章擅动**） | 三路核查·42010 回执 |
+| E4 | `19-附录.md` **附录 C 第14行** | **重写**：现文含已废口径（"接口只细化不新增"）＋旧骨（"八项可实现性关切各配一个视角"） | 本批裁定 |
+| E5 | `19-附录.md` **附录 E 第14章块** | 重写（练习答案按新骨） | 体例 |
+| E6 | **框架 §三 ch14 行** | 标题列已改；**骨架格**改五块 26 节；**篇幅 `≈2.2 万`→`≈1.65 万`**；核心命题列按新主张回正 | 本章阶段三／四 |
+| E7 | **`00-目录.md` 第十四章块** | 块题与节清单整块重排（五块 26 节＋案例三处） | 同上 |
+| E8 | **`00-主线与各章支撑.md` §二·§三** | 主张／摘要／框架三格按定稿回填 | 阶段一回填升级 |
+| E9 | **`00-三条线索.md`** | **明线第14站收束句新编**（＝附录 B 那句）＋暗线站董勐点名＋逸人实质在场 | 线索单一权威 |
+| E10 | **`00-案例设定.md`** | §三 任务卡／§五 画像／§九 弧线／§十 章块（三处案例进展口径） | 案例圣经 |
+| E11 | **报告库 32 号 §C.1.6／§C.1.7 与 34 号 §五** | PBS 两行按 `14.4.6` 定稿措辞就地改 | 框架 §五 第 22 条 |
+| E12 | **随章取料 38／39／40／41** | 39 号 B1 切法声明**取原文逐字**；38 号 §14.4 与 §11.3；40 号 §4.4＋§5.3.5；41 号 §4.1＋§3.1 | 入口文件抬头 |
+| E13 | **训侧单元十四／派生件／`成书/build`** | 训侧随重派生批；build 排末位 | 库口径 |
+
+**合计 22 条**（A5／B2／B3／E1~E13），其中**待裁 3 条**（A4／A5／E3）。
+
+---
+
+# 阶段五稿·第 4 步：处置建议汇总表（按等级分三档）
+
+| 档 | 条目 | 建议 | 影响面 |
+|---|---|---|---|
+| **基础** | A1·A3·C2·B1·B3·E1·E2·E4·E5·E6·E7 | **按建议施工**；E1（T-166 出处）与 E2（SBS 立户）**同批**、E4／E5（附录 C·E 第14行）随落库批 | 正文 0 处＋附录 5 处＋框架／目录 2 处 |
+| **核心** | A2·A4·A5·C1·C3·D3·E8·E9·E10 | **A4／A5 待裁**（见下）；其余按建议 | 正文 2 处待裁＋台账 3 处 |
+| **普通** | B2·D1·D2·E11·E12·E13 | 按建议 | 报告库 2 处＋随章 4 处＋训侧 |
+
+**★ 请裁三条**：
+1. **A4**（`14.3.4` 的"评估反馈"）：**建议＝不把它单列成一条回退通道**，改为与注 2 的"迭代反馈"合并叙述，或降为半句（理由＝正本只逐字给了注 2 那一处回馈；把两处并成三条通道，会让"三条通道"这个数字失去逐字支撑）。
+2. **A5**（`14.6.3` 的"架构定义成果里有系统元素被定义"）：**建议＝保留但补 §6.4.4.2 g) 条款号，并标"落库前回正本核"**；若核不到，则删该半句（理由＝它是"架构已经定义了系统元素"那句错话的正确面，删了会少一个必要的界）。
+3. **E3**（`19-附录.md` T-157 的"视角规格"名与 §3.16 出处）：**建议＝不在本章擅动，另立一项**（理由＝T-157 主章是第13章，动它属跨章改；但**正本无 `viewpoint specification` 术语条**这件事须登记，以免被后章继续沿用）。
