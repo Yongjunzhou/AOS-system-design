@@ -1,0 +1,20 @@
+flowchart TD
+    subgraph ARCH["架构这一侧"]
+      A["架构（本体，抽象）<br/>基本概念或属性 ＋ 管控原则"]
+      AD["架构描述 AD（工作产品）"]
+      V["架构视图／视图组件<br/>由视角治理"]
+      A -->|"expressed by（由……表达）"| AD
+      AD --- V
+    end
+    subgraph DES["设计这一侧"]
+      DD["设计定义过程"]
+      DS["系统设计描述（工作产品）"]
+      DE["设计元素／设计特性"]
+      DD --> DS
+      DS --- DE
+    end
+    AD -->|"input：检查架构、取约束"| DD
+    AD -->|"§6.4.5.1：consistent with architectural entities defined in models and views"| DS
+    DE -->|"b)2) Transform … into design elements"| V
+    DS -->|"注 2 feedback to the architecture definition process"| A
+    DS -->|"注 20 candidates for the baseline"| CM["配置管理（第15章）"]
