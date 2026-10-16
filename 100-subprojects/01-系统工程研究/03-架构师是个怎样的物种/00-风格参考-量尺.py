@@ -89,15 +89,19 @@ rows = []
 for ch, path in chapters(BOOK):
     a = dict.fromkeys(KEYS, 0)
     big = []
+    case_sizes = []
     for h, body in blocks(path):
         k = kind(h)
         if k == 'skip':
             continue
         v = han(body)
         a[k] += v
+        if k == 'case':
+            case_sizes.append(v)
         if k == 'case' and v > 700:
             big.append(v)
-    rows.append(dict(ch=ch, tot=sum(a.values()), big=big, **a))
+    rows.append(dict(ch=ch, tot=sum(a.values()), big=big, case_n=len(case_sizes),
+                     case_max=max(case_sizes) if case_sizes else 0, **a))
 
 print('=== ① 逐章语体配比（口径 v3） ===')
 print('章   总汉字  章首%  案例%  叙事%  论证%  核心尾%  可压件%(B)  认知反转  案例块>700')
@@ -157,3 +161,15 @@ print('案例单块 >700：', '、'.join('ch%s %s' % (r['ch'], '／'.join(str(v)
 print()
 print('注：硬门「同一概念点不得两处各讲一遍」为人工判读，本脚本不判；')
 print('    处置顺序＝改口径 → 外移自查＋练习 → 压认知反转 → 去重复 → 才轮到叙事（见 00-风格参考.md §6.1）。')
+
+print()
+print('=== ④ §3.3 表行（口径 v3；可直接粘贴进 00-风格参考.md §3.3） ===')
+print('| 章 | 总汉字 | 章首% | 案例% | 叙事合计% | 论证% | 核心尾件% | 附属尾件% | 案例块数 | 案例单块最大 |')
+print('|---|---|---|---|---|---|---|---|---|---|')
+for r in rows:
+    core = r['map'] + r['reversal'] + r['criteria']
+    tail = r['selfcheck'] + r['exercise'] + r['summary']
+    print('| {} | {} | {:.1f} | {:.1f} | {:.1f} | {:.1f} | {:.1f} | {:.1f} | {} | {} |'.format(
+        r['ch'], r['tot'], pc(r['open'], r['tot']), pc(r['case'], r['tot']),
+        pc(r['open'] + r['case'], r['tot']), pc(r['argue'], r['tot']), pc(core, r['tot']),
+        pc(tail, r['tot']), r['case_n'], r['case_max'] or '—'))
