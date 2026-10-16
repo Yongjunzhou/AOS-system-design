@@ -9,3 +9,6 @@
 # Python 缓存与虚拟环境
 __pycache__/
 .venv/
+
+# 成书构建：本机浏览器探测出的 puppeteer 配置（随机器而异，不进库）
+100-subprojects/01-系统工程研究/03-架构师是个怎样的物种/成书/build/.puppeteer.local.json

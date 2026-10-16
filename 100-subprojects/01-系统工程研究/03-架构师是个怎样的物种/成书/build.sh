@@ -10,7 +10,7 @@ export PATH="/c/Users/HUAWEI/AppData/Local/Pandoc:/c/Users/HUAWEI/AppData/Local/
 # 图1-5 蛇形渲染依赖 puppeteer-core（随 mmdc 下载在 npx 缓存里）
 # 注：find 目标为 Windows 专有路径；在非 Windows 上 find 会返回非 0，pipefail 下触发 set -e 退出——
 # 加 `|| true` 使跨平台安全（Windows 路径存在时正常、不存在时无害跳过）。
-PPC="$(find /c/Users/HUAWEI/AppData/Local/npm-cache/_npx -maxdepth 4 -type d -name puppeteer-core 2>/dev/null | head -1 || true)"
+PPC="$(find /c/Users/HUAWEI/AppData/Local/npm-cache/_npx "$HOME/.npm/_npx" -maxdepth 4 -type d -name puppeteer-core 2>/dev/null | head -1 || true)"
 if [ -n "$PPC" ]; then
   export NODE_PATH="$(dirname "$PPC")${NODE_PATH:+:$NODE_PATH}"
 fi
@@ -22,10 +22,27 @@ echo "[1/6] 预处理（剔版本记录 / mermaid 提取 / .unlisted 归一化�
 node "$OUT/preprocess.mjs" .. "$OUT"
 
 echo "[2/6] mermaid → PNG"
+# 浏览器可执行文件：按平台探测，写一份本机配置（不进 git）；探不到则用库内那份（Windows 机上的路径）
+PCFG="$OUT/puppeteer.json"
+if [ -z "${CHROME_PATH:-}" ]; then
+  for c in \
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+    "$HOME"/.cache/puppeteer/chrome/*/chrome-mac-arm64/"Google Chrome for Testing.app"/Contents/MacOS/"Google Chrome for Testing" \
+    "$HOME"/.cache/puppeteer/chrome/*/chrome-mac-x64/"Google Chrome for Testing.app"/Contents/MacOS/"Google Chrome for Testing" \
+    "/usr/bin/google-chrome" "/usr/bin/chromium" "/usr/bin/chromium-browser" \
+    "/c/Users/HUAWEI/.cache/puppeteer/chrome/"*"/chrome-win64/chrome.exe" ; do
+    if [ -x "$c" ]; then export CHROME_PATH="$c"; break; fi
+  done
+fi
+if [ -n "${CHROME_PATH:-}" ] && [ "$CHROME_PATH" != "$(sed -n 's/.*"executablePath": "\(.*\)",/\1/p' "$OUT/puppeteer.json" 2>/dev/null)" ]; then
+  printf '{\n  "executablePath": "%s",\n  "args": ["--no-sandbox", "--disable-gpu"]\n}\n' "$CHROME_PATH" > "$OUT/.puppeteer.local.json"
+  PCFG="$OUT/.puppeteer.local.json"
+  echo "  浏览器：$CHROME_PATH"
+fi
 if [ "${1:-}" = "--rerender" ] || [ -z "$(ls "$OUT/figs"/*.png 2>/dev/null)" ]; then
   for mmd in "$OUT"/.mmd/ch*.mmd; do
     base=$(basename "$mmd" .mmd)
-    npx -y @mermaid-js/mermaid-cli@11.16 -i "$mmd" -o "$OUT/figs/$base.png" -b white -s 3 -p "$OUT/puppeteer.json" -c "$OUT/mermaid.json"
+    npx -y @mermaid-js/mermaid-cli@11.16 -i "$mmd" -o "$OUT/figs/$base.png" -b white -s 3 -p "$PCFG" -c "$OUT/mermaid.json"
   done
 else
   echo "  图已存在（重渲请加 --rerender）"
